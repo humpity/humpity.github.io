@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>ziproot</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><small>humpty
+promotes - Linux - Lubuntu
+Tips</small><br></small></big></big></big><span style=
+"font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%; white-space: nowrap;">
+<big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">ZipRoot<br></span></big></big>zip
+your OS to a file for backup<span style=
+"font-family: Helvetica,Arial,sans-serif;"><br></span></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><span style=
+"font-weight: bold;">You should first read about How to <a href=
+"lubuntu-copy.html">Clone your root partition to a backup
+stick</a>.<br>
+This script will compress a mounted backup stick to a .tgz (tar.gz)
+file.<br></span><small><br style="font-weight: bold;"></small>There
+will be a time when you've run out of backup usb sticks. And you
+might want to archive the backups.<br>
+This script merely compresses any attached backup disk to a .tgz
+file.<br>
+<br>
+The compression script is <span style=
+"color: rgb(102, 0, 0);">ziproot.</span><br>
+The opposite (recovery) script is <span style=
+"color: rgb(102, 0, 0);">unziproot.</span><br>
+<br>
+<span style="text-decoration: underline;">It is NOT advisable to
+zip the live system</span> ('/'). Make sure you just archive the
+<span style="color: rgb(0, 0, 153);">backup stick</span>. In this
+example it is sdb1.<br>
+<br>
+You will need another <span style="color: rgb(0, 0, 153);">free
+partition</span> to save the coompressed file. In this example it
+is sda4.<br>
+<br>
+e.g <span style="color: rgb(153, 0, 0);"><span style=
+"color: rgb(102, 0, 0);">ziproot</span> <span style=
+"color: rgb(0, 102, 0);">sdb1 sda4</span></span><br>
+<div style="margin-left: 40px;">will zip /mnt/<span style=
+"color: rgb(0, 102, 0);">sdb1</span> to /mnt/<span style=
+"color: rgb(0, 102, 0);">sda4</span>/rootbackup.tgz<br></div>
+<br>
+<span style="color: rgb(0, 102, 0);"><span style=
+"color: rgb(102, 0, 0);">ziproot</span><br></span>
+<div style="margin-left: 40px;"><small><span style=
+"color: rgb(0, 0, 153);">#!/bin/bash<br>
+#e.g ziproot sdb1 sda4 - zips /mnt/sdb1 to
+/mnt/sda4/rootbackup.tgz<br>
+<br>
+if [[ "$1" == "" || "$2" == "" ]]; then<br>
+&nbsp;echo please specify ziproot source dest; exit;<br>
+fi<br>
+<br>
+if [ `whoami` != root ]; then<br>
+&nbsp;&nbsp;&nbsp; echo Please run as root or sudo; exit<br>
+fi<br>
+<br>
+echo zipping root on /mnt/$1 to /mnt/$2/rootbackup.tgz<br>
+echo enter to continue or ctrl-c to cancel<br>
+read<br>
+<br>
+umount /dev/$2 2&gt;/dev/null<br>
+mkdir /mnt/$2 2&gt;/dev/null<br>
+mount /dev/$2 /mnt/$2<br>
+rm /mnt/$2/rootbackup.tgz &gt;/dev/null<br>
+<br>
+umount /dev/$1 2&gt;/dev/null<br>
+mkdir /mnt/$1 2&gt;/dev/null<br>
+mount /dev/$1 /mnt/$1<br>
+sync<br>
+<br>
+tar -cvpzf /mnt/$2/rootbackup.tgz --one-file-system -C/mnt/$1/
+./<br>
+#-exclude=/mnt/<br>
+#--exclude-from=excludes.txt<br>
+<br>
+echo output: /mnt/$2/rootbackup.tgz<br>
+echo done</span></small><br></div>
+<div style="margin-left: 40px;"><br>
+<br></div>
+<span style="color: rgb(102, 0, 0);"><br></span>e.g <span style=
+"color: rgb(153, 0, 0);"><span style=
+"color: rgb(102, 0, 0);">unziproot</span> <span style=
+"color: rgb(0, 102, 0);">sdb1 sda4</span></span><br>
+<div style="margin-left: 40px;">will unzip /mnt/<span style=
+"color: rgb(0, 102, 0);">sda4</span> to /mnt/<span style=
+"color: rgb(0, 102, 0);">sdb1</span>/rootbackup.tgz</div>
+The parameter ordering is the same but the action is in the
+opposite direction.<br>
+Make sure you <span style=
+"text-decoration: underline; color: rgb(0, 0, 153);">unzip back to
+the same usb stick partition</span> otherwise the stick will not
+boot, (and you might have to use <a href=
+"lubuntu-copy.html#prime-boot">prime-boot</a> to re-prime it
+again).<br>
+<br>
+<span style="color: rgb(102, 0, 0);">unziproot</span><br>
+<div style="margin-left: 40px;"><small><span style=
+"color: rgb(0, 0, 153);">#!/bin/bash<br>
+#e.g unziproot sdb1 sda4 - unzips /mnt/sda4/rootbackup.tgz to
+/mnt/sdb1<br>
+<br>
+echo unzipping /mnt/sda4/rootbackup.tgz to /mnt/$1<br>
+<br>
+if [ "$1" == "" ]; then<br>
+&nbsp;echo please specify destination e.g sdb1; exit;<br>
+fi<br>
+if [ `whoami` != root ]; then<br>
+&nbsp;&nbsp;&nbsp; echo Please run as root or sudo; exit<br>
+fi<br>
+<br>
+umount /dev/$1 2&gt;/dev/null<br>
+mkdir /mnt/$1 2&gt;/dev/null<br>
+mount /dev/$1 /mnt/$1<br>
+sync<br>
+<br>
+tar -xvpzf /mnt/sda4/rootbackup.tgz -C /mnt/$1<br>
+<br>
+echo output: /mnt/$1<br>
+echo done</span><span style=
+"color: rgb(0, 0, 153);"><br></span></small></div>
+<br>
+It is up to you rename and organise your backup files. It's not
+something you have to do everyday so it should not be a
+problem.<br>
+<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><a href="lubuntu.html">More
+Lubuntu Tips</a><br>
+<br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br>
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+<HEAD>
+  <META content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org"
+  name="generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=us-ascii">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+
+  <TITLE>rfo</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+
+<BODY alink="#000099" link="#000099" vlink="#990099">
+  <BIG style="font-family: Helvetica,Arial,sans-serif;">Humpty
+  Promotes <SMALL><BR></SMALL></BIG><BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+
+  <TABLE class="pad">
+    <TBODY>
+      <TR>
+        <TD style="width: 95%;">
+          <BIG><BIG style=
+          "color: rgb(0, 0, 153);">RFO-BASIC!</BIG></BIG><BR>
+          <BR>
+          <SPAN style="font-family: monospace;">An opensource BASIC
+          program</SPAN> <SPAN style=
+          "font-family: monospace;">interpreter</SPAN> <SPAN style=
+          "font-family: monospace;">for
+          ANDROID.</SPAN><SMALL>&nbsp; ( by <A href=
+          "http://laughton.com/basic/">Paul
+          Laughton</A>.)<BR></SMALL><BR>
+          <BIG style="font-style: italic;"><SPAN style=
+          "color: rgb(51, 51, 255);"><SPAN style=
+          "color: rgb(0, 0, 153);">The FASTEST way to <SPAN style=
+          "color: black;">make an Android APP !!!</SPAN> (</SPAN>do
+          you want to <SPAN style=
+          "color: rgb(0, 0, 153); text-decoration: underline;">program</SPAN>
+          without the mess of java, xml and slow emulators? -
+          <SPAN style="color: black;">read
+          on..</SPAN>)</SPAN></BIG><BR>
+          <BR>
+          Features :&nbsp;<BR>
+
+          <TABLE>
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: top; width: 100px; background-color: rgb(103, 103, 103);">
+                <BR></TD>
+
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153);">Quick
+                Development</TD>
+
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153);">
+                Interfaces<BR></TD>
+
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153);">
+                Android Phone Resources</TD>
+              </TR>
+
+              <TR>
+                <TD style=
+                "vertical-align: top; background-color: rgb(103, 103, 103);">
+                <IMG style="width: 128px; height: 128px;" alt=""
+                src="pics/logo.png"><BR></TD>
+
+                <TD style="vertical-align: top; width: 25%;" class=
+                "c64">Interpreter runs *.bas files<BR>
+                <BR>
+                No compilation !<BR>
+                No Java !<BR>
+                No XML !<BR>
+                Easy APK building!<BR></TD>
+
+                <TD style="vertical-align: top;"><SMALL>Graphics /
+                Console<BR>
+                HTML (browser / data)<BR>
+                File I/O<BR>
+                SQL database<BR>
+                shell / root shell<BR>
+                TCP/IP sockets<BR>
+                FTP<BR>
+                <BR></SMALL></TD>
+
+                <TD style="vertical-align: top;"><SMALL>GPS,<BR>
+                Device Sensors (acc, temp, motion..etc)<BR>
+                Audio play/record, tone generation,<BR>
+                Camera,<BR>
+                Bluetooth,<BR>
+                Email, SMS.<BR></SMALL> <SMALL>Text To
+                Speech</SMALL><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <HR style="width: 100%; height: 2px;">
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Writing</SPAN><BR>
+
+
+          <DIV style="margin-left: 40px;">
+            Edit programs with the built-in editor ( inside&nbsp;
+            BASIC! interpreter app)<BR>
+            <SPAN style="color: rgb(153, 0, 0);">OR</SPAN><BR>
+            Any desktop editor and then copy *.bas file/s to the
+            Android phone for the interpreter app.<BR>
+          </DIV><BR>
+          <SPAN style=
+          "color: rgb(0, 0, 153); text-decoration: underline;">Testing</SPAN><BR>
+
+
+          <DIV style="margin-left: 40px;">
+            Because the language is interpreted, there is
+            <SPAN style="color: rgb(153, 0, 0);">no waiting</SPAN>
+            for compilation or building process during
+            development.<BR>
+            Because the execution is on the phone, there is no need
+            for a slow emulator. What you see is 'really' what you
+            get.<BR>
+          </DIV><BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Deploying</SPAN><BR>
+
+
+          <DIV style="margin-left: 40px;">
+            When the program is finished, you have the option to
+            distribute as .bas files and run on an Android phone
+            (previously installed with interpreter),<BR>
+            <SPAN style="color: rgb(153, 0, 0);">OR</SPAN><BR>
+            Wrapped with a copy of the interpreter and <SPAN style=
+            "color: rgb(153, 0, 0);">packaged as an .APK</SPAN>
+            ready to be installed onto any Android phone and run as
+            a standalone app.<BR>
+          </DIV><SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);"><BR></SPAN>
+          The Interpreter is found on <A href=
+          "https://play.google.com/store/apps/details?id=com.rfo.basic&amp;hl=en">
+          Google Play Store</A> is called&nbsp; BASIC!<BR>
+          <BR>
+          For serious programming, it is easier to edit on a PC and
+          then transfer the files to phone for running/testing.
+          There are some tools to streamline this.<BR>
+          <HR style="width: 100%; height: 2px;">
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Development
+          Tools</SPAN><BR>
+
+          <TABLE>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 100px;">
+                Transfer<BR></TD>
+
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="http://mougino.free.fr/">RFO-BASIC!
+                Launcher</A><BR>
+                <SMALL>(windows)<BR>
+                <BR>
+                versions for SciTE or Notepad++<BR>
+                <BR></SMALL></TD>
+
+                <TD class="cell_underline" style=
+                "vertical-align: top;">Enables an editor on a PC to
+                send a BASIC! program file to the phone and to run
+                it with the interpreter.<BR>
+                <BR>
+                <A href=
+                "https://play.google.com/store/apps/details?id=com.rfo.basic&amp;hl=en">
+                BASIC!</A> interpreter must already be
+                installed<BR>
+                <A href=
+                "https://play.google.com/store/apps/details?id=com.rfo.BASICLauncher">
+                BASIC! Launcher (WiFi)</A> (receiver) must be
+                installed on the phone.<BR>
+                <A href="http://mougino.free.fr/">PC Launcher</A>
+                (sender) is called with the chosen editor.<BR>
+                <BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Transfer<BR></TD>
+
+                <TD style="vertical-align: top;">
+                  <DIV style="text-align: left;">
+                    &nbsp; <SPAN style=
+                    "text-decoration: underline; color: rgb(0, 0, 153);">
+                    *&nbsp; The Manual Method&nbsp;&nbsp;
+                    *</SPAN><BR>
+                  </DIV><SMALL>(linux, windows)<BR>
+                  <BR>
+                  This is the most convenient method as having a
+                  mapped SMB drive means you can treat the shared
+                  drive on your phone like any other
+                  drive.<BR></SMALL>
+                </TD>
+
+                <TD class="cell_underline" style=
+                "vertical-align: top;">
+                  <SPAN style=
+                  "color: rgb(102, 51, 102);"><SPAN style=
+                  "color: rgb(56, 28, 56);">An alternative to the
+                  launcher is to just copy the .bas file to your
+                  android phone and send it to the BASIC!
+                  interpreter.<BR></SPAN></SPAN> <SMALL>(this is
+                  all the launcher does
+                  anyway).</SMALL><SPAN style="color: rgb(102, 51, 102);"><SPAN style="color: rgb(56, 28, 56);"><BR>
+
+                  <BR></SPAN></SPAN> 1. First install <A href=
+                  "https://play.google.com/store/apps/details?id=com.funkyfresh.samba&amp;hl=en">
+                  Samba Filesharing</A> on your phone which will
+                  <SPAN style="color: rgb(153, 0, 0);">share your
+                  phone's drive</SPAN> via wi-fi.<BR>
+                  You will need a rooted phone, if you are not
+                  rooted, then use the <A href="#ftp">ftp
+                  method</A>.<BR>
+                  <BR>
+                  2. Then, on your PC, find and <A href=
+                  "../linux/lubuntu-samba.html#android_host">map</A>
+                  the shared drive.<BR style=
+                  "color: rgb(0, 102, 0);">
+                  <BR style="color: rgb(0, 102, 0);">
+                  3. <SPAN style="color: rgb(0, 102, 0);">Use a
+                  batch file to <SPAN style=
+                  "color: rgb(153, 0, 0);">copy the .bas file to
+                  the phone</SPAN>.<BR>
+                  e.g<BR></SPAN>
+
+                  <DIV>
+                    <SMALL>linux : cp myfile.bas &nbsp;
+                    /mnt/sda1/rfo-basic/source/try.bas<SMALL><BR></SMALL></SMALL>
+                  </DIV><SMALL>or<BR></SMALL>
+
+                  <DIV>
+                    <SMALL>windows : copy myfile.bas &nbsp;
+                    G:\rfo-basic\source\try.bas</SMALL><BR>
+                  </DIV><BR>
+                  Use a fixed name on the phone, eg. "<SPAN style=
+                  "color: rgb(0, 0, 153);">try.bas</SPAN>".<SPAN style="color: rgb(102, 0, 0);"><BR>
+                  </SPAN><BR>
+                  <SMALL>(<SPAN style="font-style: italic;">Some
+                  editors allow Fkey commands to copy</SPAN>
+                  <SPAN style="color: black;"><SPAN style=
+                  "font-style: italic;">the current file to your
+                  phone, e.g geany, scite, context..etc.</SPAN>
+                  )</SPAN></SMALL><BR>
+                  <SPAN style="color: rgb(102, 0, 0);"><BR style=
+                  "color: rgb(102, 0, 0);"></SPAN> 4. <A href=
+                  "hew/first.html#shortcut"><SPAN style=
+                  "color: rgb(153, 0, 0);">Create a Launcher
+                  shortcut</SPAN></A> on the Android desktop
+                  (BASIC! interpreter, with <SPAN style=
+                  "color: rgb(0, 0, 153);">try.bas</SPAN> as the
+                  input program filename. <SMALL>(you only need to
+                  do this once)</SMALL><BR style="color: white;">
+                  <BR>
+                  Now you can run the program anytime by just
+                  pressing the shortcut !<BR>
+                  <BR>
+                </TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Transfer</TD>
+
+                <TD style="vertical-align: top;"><A name="ftp" id=
+                "ftp"></A>FTP<BR>
+                <BR>
+                <SMALL>For most, this would be the most
+                conventional method as there are many ftp clients
+                and servers already out there.</SMALL><BR></TD>
+
+                <TD class="cell_underline" style=
+                "vertical-align: top;">Similar to the manual method
+                is to<BR>
+                Install an <A href=
+                "https://sites.google.com/site/andreasliebigapps/ftpserver">
+                <SPAN style="text-decoration: underline;">FTP
+                server</SPAN></A> on you phone <SMALL>(no need for
+                root)</SMALL>.<BR>
+                And an <A href=
+                "https://filezilla-project.org/download.php?type=client">
+                <SPAN style="text-decoration: underline;">FTP
+                client</SPAN></A> on your PC.<BR>
+                <BR>
+                Make sure your main prorgram matches the name in
+                the shortcut on the phone <SMALL>(see manual method
+                above)</SMALL>.<BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Building<BR></TD>
+
+                <TD style="vertical-align: top;"><A href=
+                "http://api.viglink.com/api/click?format=go&amp;jsonp=vglnk_jsonp_13983327695246&amp;key=354d60520f2c76c930c5c04f9ab39ae3&amp;libId=1857c3e6-33c4-4112-b8b7-bf59c166a01e&amp;loc=http%3A%2F%2Frfobasic.freeforums.org%2Fquick-apk-version-v01-79-00-released-t2371.html&amp;v=1&amp;out=http%3A%2F%2Fmougino.free.fr%2Fquickapk.html&amp;ref=http%3A%2F%2Frfobasic.freeforums.org%2Fannouncements-f21.html&amp;title=rfobasic.freeforums.org%20-%20View%20topic%20-%20Quick%20APK%20version%20v01.79.00%20released&amp;txt=http%3A%2F%2Fmougino.free.fr%2Fquickapk.html">
+                QuickAPK</A><BR>
+                <SMALL>(windows)</SMALL><BR></TD>
+
+                <TD class="cell_underline" style=
+                "vertical-align: top;">Quick APK is an all-in-one
+                solution which bundles together the basic program,
+                resources and the interpreter.<BR>
+                Requires: <SPAN style=
+                "color: rgb(153, 0, 0);">JRE</SPAN><BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Building<BR></TD>
+
+                <TD style="vertical-align: top;"><A href=
+                "http://stefanopalmeri.altervista.org/xab/">XAB&nbsp;&nbsp;
+                x-apk-builder</A><BR>
+                <SMALL>(linux)</SMALL><BR></TD>
+
+                <TD class="cell_underline" style=
+                "vertical-align: top;">XAB uses Gambas as a front
+                end to a scripted builder for linux.<BR>
+                Requires: <SPAN style=
+                "color: rgb(153, 0, 0);">gambas</SPAN>,
+                <SPAN style="color: rgb(153, 0, 0);">sdk,
+                ant</SPAN> and <SPAN style=
+                "color: rgb(153, 0, 0);">java/jdk</SPAN>. (<A href=
+                "misc/xab/xab.html">installation
+                guide</A>)<BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;"><A href=
+                "http://stefanopalmeri.altervista.org/xqa/">XQA
+                &nbsp; x-quick-apk builder</A><BR>
+                <SMALL>(linux)</SMALL><BR></TD>
+
+                <TD class="cell_underline" style=
+                "vertical-align: top;">XQA is the same as XAB
+                except it does away sdk and ant.<BR>
+                Requires: <SPAN style=
+                "color: rgb(153, 0, 0);">gambas</SPAN>, and
+                <SPAN style=
+                "color: rgb(153, 0, 0);">java/jdk</SPAN>.
+                <SMALL>(see xab installation
+                guide).</SMALL><BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Building<BR></TD>
+
+                <TD style="vertical-align: top;">Manual
+                Building<BR></TD>
+
+                <TD style="vertical-align: top;">The lowest level
+                of building is to use <SPAN style=
+                "color: rgb(153, 0, 0);">Eclipse</SPAN> with
+                Android's <SPAN style="color: rgb(153, 0, 0);">SDK
+                and java/jdk.</SPAN><BR>
+                Instructions for building this way is found in the
+                <A href=
+                "http://laughton.com/basic/help/De_Re_BASIC%21.htm">
+                BASIC! Manual</A>.<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <HR style="width: 100%; height: 2px;">
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Forum</SPAN><SMALL><BR>
+          </SMALL> The <A href=
+          "http://rfobasic.freeforums.org">rfo-basic forum</A> is
+          hosted on freeforums.org.<SMALL><BR>
+          <BR>
+          <BR></SMALL> Acknowledgments<SMALL><BR>
+          Paul Laughton (creator)</SMALL> <SMALL>- <A href=
+          "http://laughton.com/basic/">RFO Basic</A> (named after
+          "The Dr. Richard Feynman Observatory")<BR></SMALL>
+          <SMALL>jMarc (developer / gate keeper)</SMALL><BR>
+          <SMALL>Nicolas Mougin - RFO-basic Launcher and
+          App-Builder/QuickAPK for windows<BR>
+          stefano - XAB x-apk-builder for linux<BR>
+          Nick Antonaccio - <A href="http://rfobasic.com/">Learn
+          RFO Basic</A> tutorials<BR></SMALL>
+        </TD>
+
+        <TD style="vertical-align: top; width: 5%;">
+        <SMALL>Advertisement<BR>
+        <BR>
+        <A href=
+        "http://www.thefreecountry.com/compilers/basic.shtml"
+        target="_top">Free BASIC Compilers and
+        Interpreters</A><BR></SMALL></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR style="font-family: Helvetica,Arial,sans-serif;">
+
+  <TABLE>
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);">My Stuff</BIG><BR>
+          <BR>
+
+          <TABLE>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 40%;">
+                <A href="hew/hew.html"><BIG>Humpty's Easy
+                Widgets</BIG></A><BR>
+                (^ click to learn more ^)<BR>
+                <BR>
+                <BR>
+                <IMG style="width: 30px; height: 29px;" alt="" src=
+                "hew/pics/gformfill_check.png"> <IMG style=
+                "width: 153px; height: 30px;" alt="" src=
+                "hew/pics/gformfill_counter.png"> <IMG style=
+                "width: 30px; height: 28px;" alt="" src=
+                "hew/pics/gformfill_radio.png"><BR>
+                <IMG style="width: 230px; height: 23px;" alt=""
+                src="hew/pics/gformfill_tin.png"><IMG style=
+                "width: 75px; height: 48px;" alt="" src=
+                "hew/pics/btimer.png"><BR>
+                &nbsp; <IMG style="width: 119px; height: 248px;"
+                alt="" src="hew/pics/gf_c.png">&nbsp; <IMG style=
+                "width: 200px; height: 271px;" alt="" src=
+                "hew/pics/gselect.png"> &nbsp;</TD>
+
+                <TD style="vertical-align: top; width: 40%;">An
+                easy to use GUI framework for making apps with
+                BASIC!<BR>
+                <BR>
+                <IMG style="width: 80px; height: 60px;" alt="" src=
+                "hew/pics/multi-line.png">&nbsp; <IMG style=
+                "width: 83px; height: 60px;" alt="" src=
+                "hew/pics/rounded2.png"> <IMG style=
+                "width: 80px; height: 27px;" alt="" src=
+                "hew/pics/bitbutton.png"><BR>
+                <IMG style="width: 154px; height: 127px;" alt=""
+                src="hew/pics/gnumpad_c.png"><IMG style=
+                "width: 147px; height: 25px;" alt="" src=
+                "hew/pics/progress.png"><BR>
+                <IMG style="width: 200px; height: 190px;" alt=""
+                src="hew/pics/btm_demo2.png"><BR>
+                &nbsp;<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+
+  <TABLE>
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;"><BIG style=
+        "color: rgb(0, 0, 153);"><A href="apps/apps.html">My
+        Apps</A></BIG></TD>
+
+        <TD style="vertical-align: top; width: 80%;"><BIG>Stuff
+        built with RFO-Basic</BIG><BR></TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;"><A href=
+        "articles/articles.html"><BIG style=
+        "color: rgb(0, 0, 153);">Articles</BIG></A></TD>
+
+        <TD style="vertical-align: top;"><BIG>Project Info and
+        Stories</BIG></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  Miscellaneous<BR>
+
+  <TABLE>
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">Context Editor <A href=
+        "https://www.dropbox.com/s/tdmaez3txtfvvms/v3_RFO_Basic.chl.zip?dl=0">
+        highlighter</A> for RFO Basic!
+        <SMALL>(windows)</SMALL></TD>
+
+        <TD style="vertical-align: top;">A highlighter file for the
+        ConText Editor keywords. <SMALL>(place inside the
+        'Highligthers' directory.)</SMALL><BR></TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">Geany <A href=
+        "https://www.dropbox.com/s/ha0787ezlyb7yua/v2_geany_filetype.zip?dl=0">
+        highlighter</A> <SMALL>(linux)</SMALL><BR></TD>
+
+        <TD style="vertical-align: top;">A highlighter file to
+        replace freebasic keywords. <SMALL>Put in <SPAN style=
+        "color: rgb(0, 102, 0);">$home/
+        .config/geany/filedefs/filetypes.freebasic</SPAN></SMALL></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<BR>
+  <A href="../../donate.html">Donate</A><BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+  <SPAN style=
+  "font-family: Helvetica,Arial,sans-serif;">End.</SPAN><BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "http://humpty.drivehq.com/main_index.js">
+</SCRIPT><BR>
+</BODY>
+</HTML>

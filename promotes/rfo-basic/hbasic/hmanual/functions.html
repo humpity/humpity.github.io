@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Functions</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" alink="#000099" link="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; Functions<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><FONT size="+2" color="#000099">Function
+          changes</FONT><BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR>
+          <BR></BIG></BIG>
+          <TABLE style=
+          "text-align: left; width: 742px; height: 150px" border=
+          "0" cellspacing="2" cellpadding="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Convert</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#device_function">DEVICE$ (..)</A></TD>
+                <TD style="vertical-align: top;">Gets specific
+                device information as a string</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href="#int">INT
+                &nbsp;&nbsp; ( nexp | sexp )</A></TD>
+                <TD style="vertical-align: top;">accepts a
+                string<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#int">INT$&nbsp; ( nexp | sexp</A> <A href=
+                "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/functions.html#version">
+                )</A></TD>
+                <TD style="vertical-align: top;">accepts a
+                string</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Extract</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD valign="top"><A href="#round">ROUND
+                (..)<BR></A></TD>
+                <TD valign="top">Fix for ROUND function for precise
+                input values</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD valign="top"><SPAN style=
+                "color: rgb(0, 0, 153);"><A href=
+                "#version">VERSION$ (..)</A><BR></SPAN></TD>
+                <TD valign="top">return base version<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#word_all">WORD_ALL$ ( .. )</A><BR></TD>
+                <TD style="vertical-align: top;">Does not trim
+                leading and trailing empty words<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A name="graphics"
+                id="graphics"></A>Graphics<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#gr_contains">GR_CONTAINS ( .. )</A><BR></TD>
+                <TD style="vertical-align: top;">Does object
+                contain a coordinate ?<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="int" id=
+          "int"></A>INT (..) and INT$ (..)</SPAN><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            These functions now accept a string as well as a
+            number.<FONT size="+1"><TT><BR>
+            <BR></TT></FONT> <SPAN style=
+            "color: rgb(0, 0, 153);">INT</SPAN> &nbsp;
+            (<SPAN style="color: rgb(102, 51, 0);">nexp |
+            sexp</SPAN>)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; %
+            convert to real + dismiss fractional part<BR>
+            <SPAN style="color: rgb(0, 0, 153);">INT$</SPAN>
+            (<SPAN style="color: rgb(102, 51, 0);">nexp |
+            sexp</SPAN>)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; %
+            convert to string + truncate fractional part<BR>
+            <BR>
+            e.g<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 102, 0);">s$ =
+            "</SPAN>99.12<SPAN style=
+            "color: rgb(0, 102, 0);">"</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New,Courier,monospace;"><SPAN style="color: rgb(0, 102, 0);">
+            PRINT <SPAN style=
+            "color: rgb(0, 0, 153);">INT</SPAN>(s$)&nbsp;</SPAN>&nbsp;&nbsp;
+            &nbsp;&nbsp; <SPAN style="color: rgb(51, 51, 51);">%
+            99.0</SPAN></SPAN><BR style=
+            "font-family: Courier New,Courier,monospace;">
+            <SPAN style=
+            "font-family: Courier New,Courier,monospace;"><SPAN style="color: rgb(0, 102, 0);">
+            PRINT <SPAN style=
+            "color: rgb(0, 0, 153);">INT$</SPAN>(s$)</SPAN>&nbsp;
+            &nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(51, 51, 51);">% 99<BR></SPAN></SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="device_function" id=
+          "device_function"></A>DEVICE$ ()<BR>
+          <BR></SPAN></FONT>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">DEVICE$ (</SPAN>
+            <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">key</SPAN>_sexp</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">&gt; <FONT color=
+            "#000099">)</FONT></SPAN><BR>
+            <BR>
+            Gets device information without needing
+            permissions.<BR>
+            This function is an alternative to the legacy DEVICE
+            sub-commands<BR>
+            <BR>
+            Pass a <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">key</SPAN>_sexp</SPAN> to get
+            information about the key.<BR>
+            e.g<BR>
+            <BLOCKQUOTE>
+              <FONT face="Courier New, Courier, monospace">a$ =
+              <FONT color=
+              "#000099">DEVICE$</FONT>("locale")&nbsp;&nbsp;&nbsp;
+              %</FONT> will return e.g "<FONT color=
+              "#663300">en_US</FONT>"
+            </BLOCKQUOTE>The allowed keys are;
+            <BLOCKQUOTE>
+              <TABLE style="text-align: left; width: 90%;" border=
+              "0" cellspacing="0" cellpadding="2">
+                <TBODY>
+                  <TR>
+                    <TD valign="top" align="center"><FONT color=
+                    "#666666">Key</FONT></TD>
+                    <TD valign="top" align="center"><FONT color=
+                    "#666666">example<BR></FONT></TD>
+                    <TD style="vertical-align: top;"><FONT color=
+                    "#666666">comment</FONT><BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    "LANGUAGE"</TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    "English"&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    Language<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    "LOCALE"</TD>
+                    <TD style="vertical-align: top;">"en_US"</TD>
+                    <TD style="vertical-align: top;">
+                    Locale<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    "OS"</TD>
+                    <TD style="vertical-align: top;">"4.0.3"</TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    Android version<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD valign="top">"BATT_PERCENT"</TD>
+                    <TD valign="top">"73"</TD>
+                    <TD width="30%" valign="top" nowrap="nowrap">
+                    battery level as percentage left.</TD>
+                  </TR>
+                  <TR>
+                    <TD valign="top">"BATT_STATUS"</TD>
+                    <TD valign="top">"Discharging"</TD>
+                    <TD valign="top">"Charging", "Not Charging",
+                    "Discharging", "Full","Unknown"<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">
+                    "ORIENT_SIMPLE"<BR></TD>
+                    <TD style="vertical-align: top;">
+                    "Portrait"<BR></TD>
+                    <TD style="vertical-align: top;">"Portrait",
+                    "Lansdscape"<BR></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </BLOCKQUOTE>All keys are case-insensitive.<BR>
+            <BR>
+            Notes: Returned value is a string. You may have to use
+            IS_NUMBER and VAL to parse it for a number.<BR>
+            (This function is similar /but not the same/ as the
+            legacy DEVICE and&nbsp; sub commands).<BR>
+            Some items are not part of the legacy DEVICE command
+            and will not show up in it's bundles or strings.<BR>
+            <BR>
+            ORIENT_SIMPLE<BR>
+            <DIV style="margin-left: 40px;">
+              Returns the last view orientation as simply
+              "Portrait" or "Landscape". This is the last config
+              set for the top most view and might not be the same
+              as the last requested orientation - depending on what
+              is allowed by the hardware. It is mainly used with
+              <A href="commands.html#onorient">OnORIENT
+              ..ORIENT.Resume</A>.<BR>
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="version" id="version"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">VERSION$(0)</FONT><BR>
+          <BR></SPAN>
+          <TABLE style=
+          "text-align: left; width: 100px; margin-left: 40px;"
+          border="0" cellspacing="0" cellpadding="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">VERSION$()</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">returns
+                the app version</TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <SPAN style=
+                "color: rgb(0, 0, 153);">VERSION$(0)</SPAN></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>
+                </TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">returns
+                a base version<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 40px;">
+            This command returns a version string.<BR>
+            e.g<BR>
+            <DIV style="margin-left: 80px;">
+              <FONT face="Courier New, Courier, monospace">PRINT
+              VERSION$()<BR style="color: rgb(0, 102, 0);">
+              PRINT VERSION$(0)<BR></FONT>
+            </DIV><FONT face=
+            "Courier New, Courier, monospace"><BR></FONT>
+            <DIV style="margin-left: 80px;">
+              <FONT face=
+              "Courier New, Courier, monospace">04.30<BR>
+              02.14</FONT><BR>
+            </DIV><BR>
+            The current version of hBasic e.g 04.30 is equal to the
+            master version with almost ALL patches applied.<BR>
+            <BR>
+            The master version e.g 02.14 is the code base version
+            used to build hBasic. This is the master shipped with
+            hSuite. If you apply all patches within hSuite amd
+            compile, you have the equivalent of the current
+            version.<BR>
+            <BR>
+            Both version numbers are user-definable within the
+            hSuite compiler.<BR>
+            So if you are making a standalone APK with hSuite, they
+            will reflect the version numbers that you type in for
+            your app.<BR>
+            If you don't use hSuite, your app maker will have to
+            change the versions itself internally.<BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="word_all"
+          id="word_all"></A></BIG><SPAN style=
+          "color: rgb(0, 0, 153);">WORD_ALL$ ( ..
+          )</SPAN><BIG style="color: rgb(0, 0, 153);"><BR></BIG>
+          <FONT size="+1"><TT><BR></TT></FONT>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">WORD_ALL$</SPAN>
+            <SPAN style=
+            "color: rgb(102, 51, 0);">(</SPAN><SPAN style=
+            "font-weight: bold;">source</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp, <SPAN style=
+            "color: black; font-weight: bold;">nth</SPAN>_nexp {,
+            <SPAN style=
+            "color: black; font-weight: bold;">separator</SPAN>_sexp})</SPAN><BR>
+          </DIV>
+          <BLOCKQUOTE>
+            Same as <SPAN style=
+            "color: rgb(0, 0, 153);">WORD$</SPAN> except that it
+            will not trim leading and trailing empty words.<BR>
+            This is useful for empty data in specific columns.<BR>
+            <BR>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New,Courier,monospace; color: rgb(0, 102, 0);">
+              s$ = "<SPAN style=
+              "color: black;">,,1,2,3,,</SPAN>"&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+              <SPAN style="color: rgb(51, 51, 51);">% get the 3rd
+              word/column</SPAN></SPAN><BR style=
+              "font-family: Courier New,Courier,monospace;">
+              <SPAN style=
+              "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+              PRINT <SPAN style=
+              "color: rgb(0, 0, 153);">WORD$</SPAN>
+              (s$,3,"<SPAN style=
+              "color: black;">,</SPAN>")&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; <SPAN style=
+              "color: rgb(51, 51, 51);">% 3<BR></SPAN> PRINT
+              <SPAN style="color: rgb(0, 0, 153);">WORD_ALL$</SPAN>
+              (s$,3,"<SPAN style=
+              "color: black;">,</SPAN>")&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(51, 51, 51);">%
+              1</SPAN></SPAN><BR style=
+              "font-family: Courier New,Courier,monospace; color: rgb(0, 102, 0);">
+            </DIV>
+          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="round" id="round"></A><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">ROUND
+          (..)</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Fix for ROUND function for precise input values<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            The math function <SPAN style=
+            "color: rgb(0, 0, 153);">ROUND</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">(&lt;value_nexp&gt;{,
+            &lt;count_nexp&gt;{, &lt;mode_sexp&gt;}})</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              ..was using java BigDecimal for rounding BUT the
+              input values were still binary64 leading to precision
+              errors.<BR style="font-family: Liberation Sans;">
+              This was fixed internally to first convert to a
+              string.
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <A name="gr_contains" id="round"></A><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">GR_CONTAINS
+          (..)</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">GR_CONTAINS</SPAN>
+            (<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(0, 0, 0);"><SPAN style=
+            "font-weight: bold;">objPtr</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp,
+            <SPAN style=
+            "color: black; font-weight: bold;">x</SPAN>_nexp
+            ,</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">y</SPAN>_nexp</SPAN></SPAN>)<BR>
+
+            <BR>
+            Returns true if object given by object number
+            <SPAN style="font-weight: bold;">objPtr</SPAN> contains
+            coordinate <SPAN style="font-weight: bold;">x,y</SPAN>.
+            Otherwise returns false.<BR>
+            e.g this can be used after GR.TOUCH to test if an
+            object was touched.<BR style=
+            "font-family: Liberation Sans;">
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "font-family: Liberation Sans;"><BR></SPAN></SPAN>
+          </DIV>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,26 @@
+I have found a workaround;
+
+q$ = "myform.html" + ~
+                "?tx_name=Joe" + ~
+                "&tx_email=joe@mail.box" + ~
+                "&bt_submit=click me" + ~
+                "&ck_f1=0" + ~
+                "&ta_msg=Hello World"
+
+s$ = "<script type=\"text/javascript\">" + ~
+              "window.location.href = " + "\""+q$+"\"" + ~
+     "</script>"
+html.load.string s$
+
+HID\VID_0A81&PID_0101&MI_00\8&27757097&0&0000
+HID\VID_0458&PID_003A\7&2491B2DC&0&0000
+
+
+Options > Environment Options > Execute Keys > 
+e.g 
+F9 Execute > F:\rfo-basic-app-builder\launcher\rfo-basic launcher.exe
+Add : bas
+Parameters %n
+Capture console output = Yes
+Scroll console to last line = Yes
+

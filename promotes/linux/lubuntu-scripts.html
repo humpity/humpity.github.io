@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>scripts</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" vlink=
+"#990099" link="#000099" alink="#000099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big>
+<span style="font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" cellspacing="2"
+cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Handy
+Scripts<br></span></big></big>
+<div><br></div>
+</td>
+<td style="vertical-align: top;"><a href=
+"#disktest"><big><big><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><small>Quick Disk
+Speed Test</small></small></span></big></big></a><br>
+<a href="#pushpop"><big><big><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><small>Quick
+Mount/Unmount</small></small></span></big></big></a><br>
+<a href="#cleanup"><big><big><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><small>CleanOut
+Trash</small></small></span></big></big></a><br>
+<a href="#freemem"><big><big><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><small>Free
+Memory</small></small></span></big></big></a></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+cellspacing="2" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><span style=
+"color: black;">Scripts are small programs written in text that
+Linux can run immediately (without compilation.)<br>
+<br>
+After writing a script in a text editor, save it and make it
+executable;<br>
+e.g<br></span></small></span></big></big>
+<div style="margin-left: 40px;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><span style=
+"color: black;">chmod 755 <span style=
+"color: rgb(0, 0, 153);">myscript</span></span></small></span></big></big><br>
+</div>
+<big><big style="color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><span style=
+"color: black;"><br>
+Here are some handy bash scripts.</span><br>
+<br>
+<span style="text-decoration: underline;"><a name="disktest" id=
+"disktest"></a>Quick Disk Speed
+Test</span></small><br></span></big></big><br>
+There's a copy program called <span style=
+"color: rgb(102, 51, 0);">dd</span> that displays speed info by
+default that we can use;<br>
+<span style="color: rgb(0, 0, 153);">disktest</span> works in the
+current directory or you can specify a device e.g<br>
+<span style="color: rgb(0, 0, 153);">disktest</span> <span style=
+"color: rgb(0, 102, 0);">sda1</span><br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">disktest</span><br>
+<div style="margin-left: 40px;">#<small>!/bin/bash<br>
+if [ `whoami` != root ]; then<br>
+&nbsp;&nbsp;&nbsp; echo Please run as root or sudo; exit<br>
+fi<br>
+if [ "$1" == "" ]; then<br>
+&nbsp;&nbsp; echo assuming current device and directory<br>
+else<br>
+&nbsp;&nbsp; echo device $1<br>
+&nbsp;&nbsp; mkdir /mnt/$1 2&gt; /dev/null<br>
+&nbsp;&nbsp; mount /dev/$1 /mnt/$1<br>
+&nbsp;&nbsp; cd /mnt/$1<br>
+fi<br>
+echo<br>
+echo write-test<br>
+sync<br>
+<big style="color: rgb(102, 51, 0);">dd if=/dev/zero of=test.data
+bs=8k count=64k</big><br>
+echo<br>
+<br>
+echo read-test<br>
+sudo sh -c "echo 3 &gt; /proc/sys/vm/drop_caches"<br>
+sync<br>
+<big><span style="color: rgb(102, 51, 0);">dd if=test.data
+of=/dev/null bs=8k count=64k</span></big><br>
+echo<br>
+<br>
+echo read-write-test<br>
+sudo sh -c "echo 3 &gt; /proc/sys/vm/drop_caches"<br>
+sync<br>
+<big><span style="color: rgb(102, 51, 0);">dd if=test.data
+of=test.out bs=8k count=32k</span></big><br>
+<br>
+echo done.</small><br>
+<br></div>
+</div>
+<div style="margin-left: 80px;"><span style=
+"color: rgb(0, 0, 153);"><img style="width: 442px; height: 324px;"
+alt="" src="pics/disktest.png"><br></span></div>
+<br>
+<hr style="width: 100%; height: 2px;">
+<br>
+<big><big style="color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><span style=
+"text-decoration: underline;"><a name="pushpop" id=
+"pushpop"></a>Quick Mount /
+Unmount</span></small><br></span></big></big><br>
+<span style="color: rgb(0, 0, 153);">push</span> <span style=
+"color: rgb(0, 0, 153);">&lt;dev&gt;</span> mounts a
+drive&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g
+<span style="color: rgb(0, 0, 153);">push
+sda1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+the drive is found at <span style=
+"color: rgb(102, 51, 0);">/mnt/sda1</span><br>
+<span style="color: rgb(0, 0, 153);">pop&nbsp;&nbsp;</span>
+&lt;dev&gt; un-mounts a drive&nbsp;&nbsp;&nbsp; e.g <span style=
+"color: rgb(0, 0, 153);">pop&nbsp;&nbsp; sda1</span><br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">push</span><br>
+<div style="margin-left: 40px;">#<small>!/bin/bash<br>
+umount /dev/$1 2&gt;/dev/null<br>
+mkdir /mnt/$1 2&gt;/dev/null<br>
+mount /dev/$1 /mnt/$1 -o uid=batman -o gid=batman<br>
+cd /mnt/$1</small><br>
+<br>
+<br></div>
+Activate user permissions and go into the directory.<br>
+<br></div>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">pop<br></span>
+<div style="margin-left: 40px;">#<small>!/bin/bash<br></small>
+<small>cd ~<br>
+umount /dev/$1<br></small></div>
+Leave directory and unmount.<span style=
+"color: rgb(0, 0, 153);"><br>
+<br></span></div>
+<br>
+<hr style="width: 100%; height: 2px;">
+<br>
+<span style=
+"color: rgb(0, 0, 153); text-decoration: underline;"><a name=
+"cleanup" id="cleanup"></a>CleanUp Trash</span><br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">cleanup</span><br>
+<div style="margin-left: 40px;">#<small>!/bin/bash</small><br>
+<small>sudo rm /home/batman/.cache/chromium/Default/Cache/*<br>
+sudo rm -r /home/batman/.opera/cache<br>
+sudo rm -r /home/batman/.opera/application_cache<br>
+sudo rm -r /home/batman/.opera/opcache<br>
+sudo rm -r /home/batman/.opera/pstorage<br>
+sudo rm -r /home/batman/.opera/vps<br>
+sudo rm -r /home/batman/.opera/temporary_downloads<br>
+<br>
+sudo rm /usr/share/icons/gnome/icon-theme.cache<br>
+sudo rm /usr/share/app-install/icon-theme.cache<br>
+sudo rm /var/log/*.gz<br>
+sudo rm /var/log/*.old<br>
+<br>
+sudo apt-get clean<br>
+sudo apt-get autoclean<br>
+sudo apt-get autoremove -y<br>
+sudo rm /var/cache/apt/pkgcache.bin<br>
+sudo rm /var/cache/apt/srcpkgcache.bin</small><br></div>
+</div>
+<br>
+This is a script I routinely use to maximise storage.<br>
+If you don't use the opea browser, you can delete those lines.<br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<br>
+<span style=
+"color: rgb(0, 0, 153); text-decoration: underline;"><a name=
+"freemem" id="freemem"></a>Free Up Memory</span><br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">freemem</span><br>
+<div style="margin-left: 40px;">#<small>!/bin/bash<br>
+<br></small> <small>free -m<br>
+sync<br>
+sudo sh -c "echo 3 &gt; /proc/sys/vm/drop_caches"<br>
+sync<br>
+free -m</small><br></div>
+</div>
+<br>
+This shows memory before and after dropping the cache.<br>
+<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><a href="lubuntu.html">More
+Lubuntu Tips</a><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br>
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

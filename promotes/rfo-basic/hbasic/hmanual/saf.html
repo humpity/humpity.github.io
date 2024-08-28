@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>SAF Commands</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; SAF Commands<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">FILE.SAF
+          Commands<BR></BIG></BIG>
+          <BLOCKQUOTE>
+            FILE.SAF commands offer a limited interface into the
+            Storage Access Framework.<BR>
+            The intention is to provide read/write access for
+            SDcards that are External Secondary Storage.<BR>
+            e.g this could be a an sdcard slot for a removable
+            sdcard.<BR>
+            <BR>
+            These commands ONLY work for <SPAN style=
+            "color: rgb(0, 0, 153);">Android 5 (Lollipop / api 21)
+            or later</SPAN>. Any lower version will fail silently
+            (will not runtime-error). <SMALL>You can check for a
+            phone's android version with Basic's DEVICE command
+            (which requires the "make and manage phone calls "
+            permission OR hBasic's DEVICE.OS command which does not
+            require any permissions.</SMALL><BR>
+            <BR>
+            For any failed or unsuccessful command, there might be
+            (or not) additional information in GetError$().<BR>
+            To see these messages automatically, you can turn on
+            debugging mode with Debug.ON.<BR>
+            <BR>
+            <SPAN style="font-style: italic;">Since Android 11,
+            Google has furthur limited SAF access. SAF can no
+            longer access the top level directory of</SPAN>
+            <SPAN style=
+            "font-weight: bold; font-style: italic;">Download</SPAN><SPAN style="font-style: italic;">,&nbsp;</SPAN>
+            <SPAN style=
+            "font-weight: bold; font-style: italic;">Android/data</SPAN><SPAN style="font-style: italic;">,</SPAN>
+            <SPAN style=
+            "font-weight: bold; font-style: italic;">Android/obb</SPAN>
+            <SPAN style="font-style: italic;">and</SPAN>
+            <SPAN style=
+            "font-weight: bold; font-style: italic;">root</SPAN>.
+            In affect, the directories that you can access must
+            pre-exist.<BR>
+          </BLOCKQUOTE>
+          <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BR>
+          <DIV style="margin-left: 40px;"></DIV>
+          <TABLE style="text-align: left; width: 100%;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: bottom;" align="right">
+                Uri commands<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 30%;">
+                <SPAN style="color: rgb(0, 0, 153);"><A href=
+                "#FILE.SAF.GRANT">FILE.SAF.GRANT</A>&nbsp;</SPAN></TD>
+                <TD style=
+                "vertical-align: top; width: 30%; color: rgb(102, 51, 0);">
+                Uri$</TD>
+                <TD style="vertical-align: top;">grants r/w
+                permission, persistence<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#FILE.SAF_REVOKE"><SPAN style=
+                "color: rgb(0, 0, 153);">FILE.SAF.REVOKE</SPAN></A></TD>
+                <TD style=
+                "vertical-align: top; color: rgb(102, 51, 0);">
+                {baseUri$}</TD>
+                <TD style="vertical-align: top;">release permssion,
+                persistence</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#FILE.SAF_CHECK"><SPAN style=
+                "color: rgb(0, 0, 153);">FILE.SAF.CHECK</SPAN></A></TD>
+                <TD style=
+                "vertical-align: top; color: rgb(102, 51, 0);">rc
+                {,baseUri$}</TD>
+                <TD style="vertical-align: top;">check
+                permssion,persistence</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#FILE.SAF_SET"><SPAN style=
+                "color: rgb(0, 0, 153);">FILE.SAF.SET</SPAN></A></TD>
+                <TD style=
+                "vertical-align: top; color: rgb(102, 51, 0);">rc,
+                Uri$</TD>
+                <TD style="vertical-align: top;">set the saf base
+                directory</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#FILE.SAF_GET"><SPAN style=
+                "color: rgb(0, 0, 153);">FILE.SAF.GET&nbsp;</SPAN></A></TD>
+                <TD style=
+                "vertical-align: top; color: rgb(102, 51, 0);">
+                Uri$&nbsp; {,name$}</TD>
+                <TD style="vertical-align: top;">get the saf base
+                directory</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: bottom;" align="right">
+                Path commands<SPAN style=
+                "color: rgb(0, 0, 153);"><BR></SPAN></TD>
+                <TD style=
+                "vertical-align: top; color: rgb(102, 51, 0);">
+                <BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><BR></SPAN></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#FILE.SAF_DIR"><SPAN style=
+                "color: rgb(0, 0, 153);">FILE.SAF.DIR</SPAN></A></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                path$, Array$[]&nbsp; {,dirmark$}</TD>
+                <TD style="vertical-align: top;">get a directory
+                list<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#FILE.SAF_MKDIR"><SPAN style=
+                "color: rgb(0, 0, 153);">FILE.SAF.MKDIR</SPAN></A></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                rc, path$<BR></TD>
+                <TD style="vertical-align: top;">create a
+                directory<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><A href=
+                "#FILE.SAF_RENAME">FILE.SAF.RENAME</A><BR></SPAN></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                rc, oldPath$, newName$</TD>
+                <TD style="vertical-align: top;">rename a
+                file<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><A href=
+                "#FILE.SAF_DELETE">FILE.SAF.DELETE</A><BR></SPAN></TD>
+                <TD style=
+                "vertical-align: top; color: rgb(102, 51, 0);">rc,
+                path$&nbsp;<BR></TD>
+                <TD style="vertical-align: top;">delete a file or
+                dir<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><A href=
+                "#FILE.SAF_EXISTS">FILE.SAF.EXISTS</A><BR></SPAN></TD>
+                <TD style=
+                "vertical-align: top; color: rgb(102, 51, 0);">rc,
+                path$<BR></TD>
+                <TD style="vertical-align: top;">see if file
+                exists<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#FILE.SAF_OPEN"><SPAN style=
+                "color: rgb(0, 0, 153);">FILE.SAF.OPEN</SPAN></A></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                mode{t b r w a}, fileNum, SAF.path$<BR></TD>
+                <TD style="vertical-align: top;">open a file for
+                basic<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+          <DIV style="margin-left: 40px;"></DIV><BR>
+          <BR>
+          <A name="FILE.SAF.GRANT" id=
+          "FILE.SAF.GRANT"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.GRANT</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style=
+          "color: rgb(102, 51, 0);">Uri$</SPAN>&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; grants r/w permission for SAF
+          storage<BR>
+          <BR>
+          A system dialog will appear listing the available SAF
+          storage devices and directories/files if available.<BR>
+          <BR>
+          Normally, a phone manufacturer will include a
+          'DocumentProvider' with the Android OS for removable
+          sdcards, If so, then this would show up with the sdcard
+          name on the first screen or a slide-in&nbsp; 'recent' or
+          'advanced' menu.<BR>
+          <IMG style="width: 300px; height: 307px;" alt="" src=
+          "pics/grant.jpg"><BR>
+          You should ask the user to select this name which is the
+          root directory of the sdcard.<BR>
+          This action grants read/write permission from this
+          directory and all sub-directories below it.<BR>
+          This action also persists the permission to survive
+          reboots for the lifetime of the app (until the app is
+          un-installed).<BR>
+          <BR>
+          On Success :<BR>
+          <SPAN style="color: rgb(102, 51, 0);">Uri$</SPAN> will be
+          overwriten with the base uri of the saf drive.<BR>
+          This uri is a string and can be saved for future use
+          (<SMALL>see FILE.SAF.SET)</SMALL>.<BR>
+          <BR>
+          On Failure:<BR>
+          <SPAN style="color: rgb(102, 51, 0);">Uri$</SPAN> will be
+          the empty string.<BR>
+          <BR>
+          <BR>
+          <A name="FILE.SAF_REVOKE" id=
+          "FILE.SAF_REVOKE"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.REVOKE</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style=
+          "color: rgb(102, 51, 0);">{baseUri$}&nbsp;</SPAN>&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; release
+          permission,persistence<BR>
+          <BR>
+          This is the opposite to GRANT. It removes permission and
+          releases persistence for <SPAN style=
+          "color: rgb(102, 51, 0);">baseUri$.<BR></SPAN> If
+          <SPAN style="color: rgb(102, 51, 0);">baseUri$</SPAN> is
+          not given, the current base uri is released.<BR>
+          There is no return code for this command.<BR>
+          <BR>
+          Usually, persistence is released immediately.<BR>
+          For permissions, you may need to exit the app for it to
+          be effective.<BR>
+          Normally, you don't need to revoke a saf grant, doing so
+          means you have to re-grant the drive on the next access.
+          Uninstalling the app automatically revokes any previous
+          grant.<BR>
+          <BR>
+          <BR>
+          <A name="FILE.SAF_CHECK" id=
+          "FILE.SAF_CHECK"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.CHECK</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">rc&nbsp;
+          {,baseUri$}</SPAN>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; check permission and persistence<BR>
+          <BR>
+          Check if the <SPAN style=
+          "color: rgb(102, 51, 0);">baseUri$</SPAN> has read+write
+          permission and persistence for file access.<BR>
+          <BR>
+          if <SPAN style="color: rgb(102, 51, 0);">baseUri$</SPAN>
+          is not given, the current saf base uri will be
+          checked.<BR>
+          <BR>
+          The numvar <SPAN style=
+          "color: rgb(102, 51, 0);">rc</SPAN> will be returned with
+          the following return codes;<BR>
+          <BR>
+          0 =&gt; has permission and has persistence<BR>
+          1 =&gt; has permission but no persistence<BR>
+          2 =&gt; no permission but has persistence<BR>
+          3 =&gt; no permission and no persistence<BR>
+          4 =&gt; bad uri<BR>
+          5 =&gt; not supported<BR>
+          <BR>
+          <BR>
+          <A name="FILE.SAF_SET" id="FILE.SAF_SET"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.SET</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">rc,
+          Uri$</SPAN>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; set the saf base directory<BR>
+          <BR>
+          Sets the current saf base location to <SPAN style=
+          "color: rgb(102, 51, 0);">Uri$ (</SPAN>the uniform
+          resource identifier).<BR>
+          <BR>
+          The numvar <SPAN style=
+          "color: rgb(102, 51, 0);">rc</SPAN> will return;<BR>
+          0 =&gt; ok<BR>
+          1 =&gt; bad uri<BR>
+          5 =&gt; not supported<BR>
+          6 =&gt; could not set base<BR>
+          9 =&gt; other<BR>
+          <BR>
+          <A name="FILE.SAF_GET" id="FILE.SAF_GET"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.GET</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">Uri$
+          {,name$}&nbsp;</SPAN>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; get the saf base directory<BR>
+          <BR>
+          Gets the current saf base location (a uniform resource
+          identifier),&nbsp; into <SPAN style=
+          "color: rgb(102, 51, 0);">Uri$.<BR></SPAN> Optionally,
+          also get the directory name into name$.<SPAN style=
+          "color: rgb(102, 51, 0);"><BR>
+          <BR></SPAN><BR>
+          <A name="FILE.SAF_DIR" id="FILE.SAF_DIR"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.DIR</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">path$, Array$[]
+          {,dirmark$}&nbsp;</SPAN>&nbsp;&nbsp; saf version of
+          file.dir<BR>
+          <BR>
+          Get a directory list of <SPAN style=
+          "color: rgb(102, 51, 0);">path$</SPAN> into <SPAN style=
+          "color: rgb(102, 51, 0);">Array$[]</SPAN>.<BR>
+          Optionally mark directories with <SPAN style=
+          "color: rgb(102, 51, 0);">dirmark$.<BR>
+          <BR></SPAN> All paths are relative to the current saf
+          base.<BR>
+          For the current directory (root of saf base) set to the
+          empty string <SPAN style=
+          "color: rgb(102, 51, 0);">path$=""</SPAN><BR>
+          For a sub-directory, set <SPAN style=
+          "color: rgb(102, 51, 0);">path$="subdir"</SPAN> or
+          <SPAN style="color: rgb(102, 51, 0);">"/subdir"</SPAN> or
+          <SPAN style=
+          "color: rgb(102, 51, 0);">"subdir/"&nbsp;</SPAN> or
+          <SPAN style=
+          "color: rgb(102, 51, 0);">"/subdir/"</SPAN><BR>
+          <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN> Upon
+          return, <SPAN style=
+          "color: rgb(102, 51, 0);">Array$[]</SPAN> will always
+          have at least 1 cell.<SPAN style=
+          "color: rgb(102, 51, 0);"><BR>
+          Array$[1]</SPAN> =&gt; ""&nbsp; <SMALL>(empty
+          string)</SMALL> &nbsp;&nbsp;&nbsp; means failed to get
+          dir<SPAN style="color: rgb(102, 51, 0);"><BR></SPAN>
+          <SPAN style="color: rgb(102, 51, 0);">Array$[1]</SPAN>
+          =&gt; " " <SMALL>(one space
+          only)</SMALL>&nbsp;&nbsp;&nbsp; means the dir was
+          empty.<BR>
+          <BR>
+          If <SPAN style="color: rgb(102, 51, 0);">dirmark$</SPAN>
+          is not given. the default is directory marker is
+          "<SPAN style="color: rgb(0, 102, 0);">(d)</SPAN>" .<BR>
+          <BR>
+          <BR>
+          <A name="FILE.SAF_MKDIR" id=
+          "FILE.SAF_DIR"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.MKDIR</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">rc,
+          path$&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;</SPAN>
+          &nbsp;&nbsp; saf version of file.mkdir<BR>
+          <BR>
+          Creates a directory given by <SPAN style=
+          "color: rgb(102, 51, 0);">path$</SPAN>.<BR>
+          <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN>
+          &nbsp;<SPAN style="color: rgb(102, 51, 0);">path$</SPAN>
+          is relative to the current saf base.<BR>
+          <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN> e.g
+          <SPAN style=
+          "color: rgb(0, 0, 153);">file.saf.mkdir</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style=
+          "color: rgb(102, 0, 0);">"docs/accounts/department_001"</SPAN><BR>
+
+          <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN> The
+          numvar <SPAN style="color: rgb(102, 51, 0);">rc</SPAN>
+          will be returned with the following return codes;<BR>
+          <BR>
+          0 =&gt; ok<BR>
+          1 =&gt; empty path<BR>
+          3 =&gt; invalid SAF base<BR>
+          4 =&gt; could not create<BR>
+          5 =&gt; not supported<BR>
+          9 =&gt; other<BR>
+          <BR>
+          If the directory already exists, return code <SPAN style=
+          "color: rgb(102, 51, 0);">rc</SPAN> will be 0 (considered
+          as success).<BR>
+          For any unsucessful return code, there may be additional
+          info in GetError$().<BR>
+          <BR>
+          <BR>
+          <BR>
+          <A name="FILE.SAF_RENAME" id=
+          "FILE.SAF_RENAME"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.RENAME</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">rc,oldPath$,
+          newName$</SPAN>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; saf
+          version of file.rename<BR>
+          <BR>
+          Rename a file on oldpath to newName.<BR>
+          <BR>
+          All paths are relative to the current saf base.<BR>
+          <BR>
+          e.g <SPAN style=
+          "color: rgb(0, 0, 153);">file.saf.rename</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style=
+          "color: rgb(102, 0, 0);">"docs/accounts/aaaa.txt"</SPAN>
+          "<SPAN style="color: rgb(0, 51, 0);">bbbb.txt"</SPAN><BR>
+          <BR>
+          Note that oldname can include a path in front, while
+          newName should not have a path at all.<BR>
+          <BR>
+          The numvar <SPAN style=
+          "color: rgb(102, 51, 0);">rc</SPAN> will be returned with
+          the following return codes;<BR>
+          <BR>
+          0 =&gt; ok<BR>
+          1 =&gt; empty path<BR>
+          2 =&gt; invalid path or oldfile<BR>
+          3 =&gt; invalid SAF base<BR>
+          4 =&gt; invalid new name<BR>
+          5 =&gt; not supported<BR>
+          9 =&gt; other<BR>
+          <BR>
+          <A name="FILE.SAF_DELETE" id=
+          "FILE.SAF_DELETE"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.DELETE</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">rc,
+          path$</SPAN>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; saf version of file.delete<BR>
+          <BR>
+          Deletes a file or directory given the <SPAN style=
+          "color: rgb(102, 51, 0);">path$</SPAN>.<BR>
+          <BR>
+          All paths are relative to the current saf base.<BR>
+          <BR>
+          e.g <SPAN style=
+          "color: rgb(0, 0, 153);">file.saf.delete</SPAN>
+          &nbsp;&nbsp; rc, <SPAN style=
+          "color: rgb(102, 0, 0);">"docs/accounts/your_sub_dir.txt"</SPAN><BR>
+
+          <BR>
+          The numvar <SPAN style=
+          "color: rgb(102, 51, 0);">rc</SPAN> will be returned with
+          the following return codes;<BR>
+          0 =&gt; ok<BR>
+          1 =&gt; empty path<BR>
+          2 =&gt; invalid path or file<BR>
+          3 =&gt; invalid SAF base<BR>
+          4 =&gt; could not delete<BR>
+          5 =&gt; not supported<BR>
+          9 =&gt; other<BR>
+          <BR>
+          <BR>
+          <A name="FILE.SAF_EXISTS" id=
+          "FILE.SAF_EXISTS"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.EXISTS</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">rc,
+          path$</SPAN>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; saf version of file.exists<BR>
+          <BR>
+          <BR>
+          Check if a file or directory exists given it's
+          <SPAN style="color: rgb(102, 51, 0);">path$</SPAN>.<BR>
+          <BR>
+          e.g&nbsp; <SPAN style=
+          "color: rgb(0, 0, 153);">file.saf.exists</SPAN>&nbsp;&nbsp;&nbsp;
+          rc, <SPAN style=
+          "color: rgb(102, 0, 0);">"docs/accounts/your_sub_dir/something.txt"</SPAN><BR>
+
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if rc then print
+          "File Exists"<BR>
+          <BR>
+          All paths are relative to the current saf base.<BR>
+          <BR>
+          The numvar <SPAN style=
+          "color: rgb(102, 51, 0);">rc</SPAN> will be returned with
+          the following return codes;<BR>
+          0 =&gt; not exist<BR>
+          else exists<BR>
+          <BR>
+          Note that 0 (not exist) could be a false negative since
+          any failure during the call will result as 0.<BR>
+          It is therefore recommended to check you have a valid saf
+          base and path before usage.<BR>
+          <BR>
+          <BR>
+          <A name="FILE.SAF_OPEN" id=
+          "FILE.SAF_OPEN"></A><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.SAF.OPEN</SPAN>&nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+          "color: rgb(153, 0, 0);">mode</SPAN></SPAN>{ <SPAN style=
+          "color: rgb(153, 0, 0);">t b r w</SPAN> <SPAN style=
+          "color: rgb(153, 0, 0);">a</SPAN>}<SPAN style=
+          "color: rgb(102, 51, 0);">, <SPAN style=
+          "color: rgb(0, 102, 0);">fileNum</SPAN>,
+          path$</SPAN>&nbsp;&nbsp;&nbsp; saf version of text.open
+          and byte.open<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Open a file for Basic.<BR>
+            <BR>
+            e.g <SPAN style=
+            "color: rgb(0, 0, 153);">file.saf.open</SPAN>
+            <SPAN style="color: rgb(153, 0, 0);">tr</SPAN>
+            ,<SPAN style="color: rgb(0, 102, 0);">fileNum</SPAN>,
+            "docs/accounts/abc.txt"<BR>
+            <BR>
+            This call returns a <SPAN style=
+            "text-decoration: underline;">file number</SPAN>
+            <SPAN style="color: rgb(0, 102, 0);">fileNum</SPAN>
+            which can be used for other basic commands; e.g
+            <SPAN style=
+            "color: rgb(0, 0, 153);">byte.read.byte</SPAN>. It is
+            basic's internal file table entry index for the opened
+            file.<BR>
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);">path$</SPAN> is
+            relative to the current saf base.<BR>
+            <BR>
+            <SPAN style=
+            "text-decoration: underline; color: rgb(153, 0, 0);">mode</SPAN><BR>
+
+            The open modes are <SPAN style=
+            "color: rgb(153, 0, 0);">t, b, r</SPAN>,&nbsp;
+            <SPAN style="color: rgb(153, 0, 0);">w</SPAN> or
+            <SPAN style="color: rgb(153, 0, 0);">a</SPAN> (
+            <SPAN style="text-decoration: underline;">without
+            quotes</SPAN> ) in any combination, where;<BR>
+            <BR>
+            <SPAN style="color: rgb(153, 0, 0);">t</SPAN> =&gt;
+            text<BR>
+            <SPAN style="color: rgb(153, 0, 0);">b</SPAN> =&gt;
+            byte<BR>
+            <BR>
+            <SPAN style="color: rgb(153, 0, 0);">r</SPAN> =&gt;
+            read<BR>
+            <SPAN style="color: rgb(153, 0, 0);">w</SPAN> =&gt;
+            write<BR>
+            <SPAN style="color: rgb(153, 0, 0);">a</SPAN> =&gt;
+            append<BR>
+            <BR>
+            The default open mode is text+read <SPAN style=
+            "color: rgb(153, 0, 0);">tr</SPAN>.<BR>
+            For the mode word;<BR>
+            If <SPAN style="color: rgb(153, 0, 0);">b</SPAN> is
+            found , it overrides <SPAN style=
+            "color: rgb(153, 0, 0);">t</SPAN>.<BR>
+            If <SPAN style="color: rgb(153, 0, 0);">w</SPAN> is
+            found, it overrides <SPAN style=
+            "color: rgb(153, 0, 0);">r</SPAN>.<BR>
+            If <SPAN style="color: rgb(153, 0, 0);">a</SPAN> is
+            found, it overrides both <SPAN style=
+            "color: rgb(153, 0, 0);">w</SPAN> and <SPAN style=
+            "color: rgb(153, 0, 0);">r</SPAN>.<BR>
+            <BR>
+            To close a file, use the normal basic commands
+            <SPAN style="color: rgb(0, 0, 153);">text.close</SPAN>
+            or <SPAN style=
+            "color: rgb(0, 0, 153);">byte.close</SPAN>.<BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,696 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Random Access</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="http://humpty.drivehq.com/home.htm">Humpty Promotes</A>
+  &gt; <A href=
+  "http://humpty.drivehq.com/promotes/rfo-basic/rfo.html">Rfo-Basic</A>&gt;
+  <A href="articles.html">Project Articles</A> &gt; Random
+  Access<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8" border="0">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><BIG style="color: rgb(0, 0, 153);">Random
+          Access</BIG></BIG> (advanced Basic!
+          language)<BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <A href="#simple"><FONT size="+1">Simple Random
+            Access</FONT></A><BR>
+            <FONT size="+1"><A href="#marklimit">Mark &amp;
+            Limit</A><BR></FONT> <FONT size="+1"><A href=
+            "#rules">The Rules</A><BR></FONT> <A href=
+            "#fourways"><FONT size="+1">4 ways to random access
+            files and big files</FONT></A><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="simple" id="simple"></A>Simple Random
+          Access</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            The original Basic! for Android language provides a way
+            for random access inside a file.<BR>
+            To set the position for the <SPAN style=
+            "text-decoration: underline;">next read</SPAN> use;<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+            "+1">byte.position.set&nbsp;</FONT></SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;</SPAN>file_index<SPAN style="color: rgb(102, 51, 0);">_nexp&gt;,
+            &lt;</SPAN>position<SPAN style=
+            "color: rgb(102, 51, 0);">_nexp&gt;</SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);"><FONT size=
+            "+1">&nbsp;&nbsp;</FONT></SPAN> (legacy v01.91 manual
+            page 114)<SPAN style=
+            "color: rgb(0, 0, 153);"><BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            This command alone allows direct positioning anywhere
+            within a file.<BR>
+            Internally, there is a window buffer that covers the
+            whole file.<BR>
+            <BR>
+            If you are NOT dealing with very large files, you can
+            use this command alone and not have any problems.<BR>
+            If you are NOT using random access at all, then you
+            won't have any problems with large files.<BR>
+            <BR>
+            After a read, the next_read position will move
+            forward.<BR>
+            To get the current read position at any time, use;<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <FONT size="+1"><SPAN style=
+              "color: rgb(0, 0, 153);">byte.position.get</SPAN></FONT>
+              <SPAN style=
+              "color: rgb(102, 51, 0);">&lt;</SPAN>file_index<SPAN style="color: rgb(102, 51, 0);">_nexp&gt;,
+              &lt;</SPAN>position<SPAN style=
+              "color: rgb(102, 51, 0);">_nvar&gt;</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              (legacy v01.91 manual page 114)<SPAN style=
+              "color: rgb(0, 0, 153);"><BR></SPAN>
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><BIG style="color: rgb(0, 0, 153);"><A name=
+          "marklimit" id="marklimit"></A></BIG></BIG><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">Mark and
+          Limit</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            There is also another command that let's you define the
+            internal window buffer position and size when using
+            <SPAN style=
+            "color: rgb(0, 0, 153);">byte.position.set</SPAN>.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <FONT size="+1"><SPAN style=
+            "color: rgb(0, 0, 153);">byte.position.mark</SPAN></FONT><SPAN style="color: rgb(0, 0, 153);"><FONT size="+1">&nbsp;&nbsp;</FONT></SPAN>
+            <SPAN style=
+            "color: rgb(102, 51, 0);">{{&lt;</SPAN>file_index<SPAN style="color: rgb(102, 51, 0);">_nexp&gt;}{,
+            &lt;</SPAN>limit<SPAN style=
+            "color: rgb(102, 51, 0);">_nexp&gt;}}</SPAN>&nbsp;<SPAN style="color: rgb(0, 0, 153);"><FONT size="+1">&nbsp;</FONT></SPAN>
+            (legacy v01.91 manual page 115)<SPAN style=
+            "color: rgb(0, 0, 153);"><BR></SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            You would only ever need to use this command If a file
+            is too large for <SPAN style=
+            "color: rgb(0, 0, 153);">byte.position.set</SPAN> (e.g
+            500mb).<BR>
+            If the file is too large, you may get an out-of-memory
+            error.<BR>
+            <BR>
+            The command sets the Mark and Limit of the window
+            meaning you can make the window buffer smaller and move
+            it's position.<BR>
+            <IMG src="pics/marklimit.png" alt="" style=
+            "width: 742px; height: 314px;"><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1">The <SPAN style=
+            "color: rgb(0, 0, 153);">Mark</SPAN></FONT> is the
+            Start of the random access window within the file.<BR>
+            You may view it like an anchor of a ship.<BR>
+            The Mark and Limit are both set by the command<BR>
+            &nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">byte.position.mark</SPAN>
+            {file_index_nexp},{Limit_nexp}<BR>
+            <BR>
+            When you execute this command, the Mark is always
+            dropped at the <SPAN style=
+            "font-weight: bold;">current</SPAN> position (the next
+            read).<BR>
+            Therefore you may need to <SPAN style=
+            "color: rgb(0, 0, 153);">byte.position.set</SPAN>
+            before dropping the Mark.<BR>
+            When a file is opened the Mark is by default at
+            position 1.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1">The <SPAN style=
+            "color: rgb(0, 0, 153);">Limit</SPAN></FONT> is the
+            size or width of the random access window.<BR>
+            By default the Limit is the whole size of the file.<BR>
+            <BR>
+            If the file is too large (e.g 500mb) and you attempt
+            random access (byte.position.set) then this will
+            trigger an out-of-memory error. In this case you can
+            reduce the size of the Limit with the above
+            command.<BR>
+            <BR>
+            If you reduce the Limit, this means that you may not be
+            able to get to some parts of the file that are not
+            covered by the window.<BR>
+            But you can move the window by moving the Mark. Don't
+            forget that the Mark can only be dropped at the
+            <SPAN style="font-weight: bold;">current</SPAN>
+            position.<BR>
+          </DIV><BR>
+          <BR>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">byte.position.mark
+            fv, bsize&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(51, 51, 51);">
+            % first shrink the window buffer to prevent
+            OOM</SPAN></SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(0, 102, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">byte.position.set
+            fv, <SPAN style=
+            "color: rgb(0, 0, 153);">pos</SPAN>&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(51, 51, 51);">
+            % set read
+            position</SPAN></SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(0, 102, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">byte.position.mark
+            fv,bsize&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(51, 51, 51);">
+            % move mark to read
+            position</SPAN></SPAN></SPAN></SPAN><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="rules" id="rules"></A>The
+          Rules</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            There are some hard rules when using <SPAN style=
+            "color: rgb(0, 0, 153);">byte.position.set</SPAN>.<BR>
+            <BR>
+            1. You cannot set a position to less than 1.<BR>
+            &nbsp;&nbsp;&nbsp; Doing so will run-time-error.<BR>
+            <BR>
+            2. You cannot set a position <SPAN style=
+            "text-decoration: underline;">before</SPAN> the current
+            Mark.<BR>
+            &nbsp;&nbsp;&nbsp; Doing so will have unpredictable
+            results to the position.<BR>
+            <BR>
+            3. You <SPAN style="font-weight: bold;">can</SPAN> set
+            a position after the Limit (outside the window)<BR>
+            &nbsp;&nbsp;&nbsp; But this is not recommended unless
+            you are also moving the Mark afterwards.<BR>
+            &nbsp;&nbsp;&nbsp; If you try to read data outside the
+            window, this will force the Mark to move to the end of
+            the read, for each read,<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; so you will never
+            be able to set position backwards from the last
+            read.<BR>
+            &nbsp;&nbsp;&nbsp; If you never have to access data
+            before your current position, then this can be
+            acceptable.<BR>
+            <BR>
+            4. You can set the position <SPAN style=
+            "text-decoration: underline;">at EOF</SPAN> just after
+            the last byte (filesize+1).<BR>
+            5. You cannot set a position <SPAN style=
+            "text-decoration: underline;">after EOF</SPAN>, doing
+            so sets the position to EOF.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Note that because of rule 2, <SPAN style=
+            "text-decoration: underline;">the window is only able
+            to move forward</SPAN>. The only way to place the
+            window earlier than it's current position is by closing
+            and re-opening the file.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="fourways" id="fourways"></A>4 ways to
+          random access files and big files.</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Here are four functions that can random access large
+            files.<BR>
+            <BR>
+            Function 1 is what you would normally use for average
+            sized files.<BR>
+            <DIV style="margin-left: 40px;">
+              You can access anywhere in the file, forwards or
+              backwards.<BR>
+              If the file is several hundred megabytes in size, it
+              may crash with OOM (out-of-memory).<BR>
+              <BR>
+            </DIV>Function 2 shrinks the window to avoid OOM but
+            uses read positions outside of the window, so it can
+            only read forwards.<BR>
+            <BR>
+            Function 3 shrinks the window and also moves it to the
+            target position.<BR>
+            <DIV style="margin-left: 40px;">
+              It allows safe access anywhere from the target to the
+              end of the window forwards or backwards.<BR>
+              If you set a position higher than limit (outside the
+              window), it's behaviour is Rule 3.<BR>
+              <BR>
+            </DIV>Function 4 is the same as Function 3 but places
+            the window so that the target is in the middle of the
+            window.<BR>
+            <DIV style="margin-left: 40px;">
+              This allows backward access before the target by half
+              a window.<BR>
+            </DIV>
+          </DIV><BR>
+          <TABLE style="text-align: left; width: 100%;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+                "-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">%</SPAN></FONT></SPAN>
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">Function</SPAN></FONT></SPAN>
+                <SPAN style="color: rgb(0, 0, 153);">1</SPAN><BR>
+                <BR>
+                fn.def OpenBytePos1 (fpath$, pos,
+                bsize)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+
+                <SPAN style=
+                "color: rgb(102, 102, 102);">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % open file at pos for next
+                read</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % random access for whole
+                window/file</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % OOM if file too big (e.g
+                500MB)</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % -1=fail else return file
+                index</SPAN></SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+
+                <BR></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.open r, fv, fpath$</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                if fv = -1 then fn.rtn -1</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.set fv, pos <SPAN style=
+                "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+                % direct
+                positioning</SPAN></SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.rtn
+                fv</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.end</SPAN></FONT><BR>
+
+                <BR></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">%
+                Function</SPAN></FONT></SPAN> <SPAN style=
+                "color: rgb(0, 0, 153);">2</SPAN><BR>
+                <BR>
+                fn.def OpenBytePos2 (fpath$, pos,
+                bsize)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+
+                <SPAN style=
+                "color: rgb(102, 102, 102);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                % open binary file at pos for next
+                read</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % maybe outside the read
+                window</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % mark will follow
+                read</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % forward access
+                only</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                % -1=fail else</SPAN></SPAN></FONT> <FONT size=
+                "-1"><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><FONT size="-1">
+                <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">return
+                file
+                index</SPAN></SPAN></FONT></SPAN></SPAN><SPAN style="color: rgb(102, 102, 102);"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.open r, fv, fpath$</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                if fv = -1 then fn.rtn -1</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.mark fv, bsize <SPAN style=
+                "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+                % shrink the
+                buffer</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.get fv,g : ?"mark at
+                ";int$(g)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.set fv, pos&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+                % set read
+                position</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.get fv,g : ?"ptr at
+                ";int$(g)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                ? "mark will follow read"</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.rtn
+                fv</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.end</SPAN></FONT><BR>
+                </TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; width: 50%; white-space: nowrap;">
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">%
+                Function</SPAN></FONT></SPAN> <SPAN style=
+                "color: rgb(0, 0, 153);">3</SPAN><BR>
+                <BR>
+                fn.def OpenBytePos3 (fpath$, pos,
+                bsize)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+
+                <SPAN style=
+                "color: rgb(102, 102, 102);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                % open binary file at pos for next
+                read</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp; % read window starts at
+                pos</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp; % random access within
+                window</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                % -1=fail else</SPAN></SPAN></FONT> <FONT size=
+                "-1"><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><FONT size="-1">
+                <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">return
+                file index<BR>
+                <BR></SPAN></SPAN></FONT></SPAN></SPAN>
+                <SPAN style="font-family: Courier New, Courier, monospace;">
+                &nbsp; byte.open r, fv, fpath$</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                if fv = -1 then fn.rtn -1</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.mark fv, bsize <SPAN style=
+                "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+                % first shrink the
+                buffer</SPAN></SPAN></SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.set fv, pos&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+                % set read
+                position</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.mark fv,bsize&nbsp; <SPAN style=
+                "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+                % move mark to it</SPAN></SPAN></SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.get fv,g : ?"mark at
+                ";int$(g)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.get fv,g : ?"ptr at
+                ";int$(g)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.rtn
+                fv</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.end</SPAN></FONT><BR>
+                </TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                % Function 4</SPAN><BR>
+                <BR>
+                fn.def OpenBytePos4 (fpath$, pos,
+                bsize)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+
+                <SPAN style=
+                "color: rgb(102, 102, 102);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                % open binary file at pos for next
+                read</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % put pos in the middle of a
+                read window</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; % random access within the
+                window</SPAN></SPAN><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                % -1=fail else</SPAN></SPAN></FONT> <FONT size=
+                "-1"><SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><FONT size="-1">
+                <SPAN style=
+                "color: rgb(102, 102, 102);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">return
+                file
+                index</SPAN></SPAN></FONT></SPAN></SPAN><SPAN style="color: rgb(102, 102, 102);"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.open r, fv, fpath$</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                if fv = -1 then fn.rtn -1</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.mark fv,
+                bsize&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                <SPAN style="color: rgb(102, 102, 102);">% shrink
+                the buffer</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.set fv, pos-bsize/2</SPAN></FONT>
+                <FONT size="-1"><SPAN style=
+                "color: rgb(102, 102, 102);">% mark
+                before</SPAN></FONT><FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.mark fv,bsize&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;</SPAN></FONT> <FONT size=
+                "-1"><SPAN style="color: rgb(102, 102, 102);">% by
+                half a buffer</SPAN></FONT><FONT size=
+                "-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.get fv,g : ?"mark at
+                ";int$(g)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;</SPAN></FONT><FONT size=
+                "-1">&nbsp; <SPAN style=
+                "color: rgb(102, 102, 102);">% target must be
+                within limit</SPAN></FONT><FONT size=
+                "-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.set fv, pos <SPAN style=
+                "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+                % set it halfway</SPAN></SPAN></SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                byte.position.get fv,g : ?"ptr at
+                ";int$(g)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.rtn
+                fv</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">fn.end</SPAN></FONT><BR>
+                </TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          -End<BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+
+  <meta content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" name="generator">
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii"><title>fltk</title>
+
+  
+  <link rel="stylesheet" href="main.css" type="text/css"></head><body alink="#000099" link="#000099" vlink="#990099">
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <big style="font-family: Helvetica,Arial,sans-serif;">Humpty
+  Promotes <small><br></small></big><br style="font-family: Helvetica,Arial,sans-serif;">
+
+  <table style="border: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellpadding="8" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="width: 50%;"><big><small><big><span style="font-weight: bold;"><br></span></big></small></big>
+        <big><big style="font-weight: bold;"><a href="http://www.fltk.org">FLTK</a><br></big> <big>Fast Light
+        Toolkit</big><big style="font-weight: bold;"><br></big></big><br>
+        A cross platform Gui widget toolkit for linux and
+        windows.<br></td>
+      </tr>
+
+      <tr>
+        <td>FLTK is an easy to use lightweight gui toolkit. It can
+        be used standalone or best with Fluid, a designer for FLTK
+        widgets.<br>
+        The learning curve for Fluid is relatively quicker than
+        other Guis, especially if used with Fluid.<br>
+        <br>
+        FLTK has been around for a long time. A great place to get
+        examples is at <a href="http://seriss.com/people/erco/fltk/">Erco's</a>.<br>
+        <br>
+        <br></td>
+      </tr>
+    </tbody>
+  </table><br style="font-family: Helvetica,Arial,sans-serif;">
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+
+  <table style="border: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellpadding="8" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="width: 50%;"><big><small>My
+        Contributions</small></big><br></td>
+      </tr>
+
+      <tr>
+        <td>
+          <big><span style="text-decoration: underline; color: rgb(0, 0, 153);">FL_Chart
+          Extension</span></big><br>
+          <br>
+          I was working on a program to draw stock charts but I
+          couldn't find any charts suitable to draw candlesticks or
+          double line-charts.<br>
+          <br>
+          Normally, the two files to use for Fl_Chart&nbsp; are
+          <span style="font-style: italic;">(Fl_Chart.cxx,
+          Fl_Chart.H).</span><br>
+          <span style="font-style: italic;">The replacement class
+          is <span style="color: rgb(0, 0, 153);">Fl_ChartEx</span>
+          (<span style="color: rgb(0, 102, 0);">Fl_ChartEx.cpp</span></span><span style="color: rgb(0, 102, 0);">,</span>
+          <span style="font-style: italic; color: rgb(0, 102, 0);">Fl_ChartEx.H</span>).<br>
+
+          Just add them to your project directory. The new object
+          is called Fl_ChartEx.<br>
+          <br>
+          Use them to get these added effects;<br>
+          <br>
+          <img style="width: 572px; height: 313px;" alt="" src="stkgraffer/Fl_ChartEx.jpg"><br>
+          <br>
+          What they do is add two extra arguments to various
+          functions in the Fl_ChartEx class.<br>
+          val2 and col2. This way, both FL_BAR_CHART and
+          FL_LINE_CHART can have<br>
+          an extra value to make candlesticks or add an extra line.
+          col2 is the color for<br>
+          FL_LINE_CHART's 2nd line.<br>
+          <br>
+          <br>
+          <span style="text-decoration: underline;">Files
+          Download<br></span><a href="https://www.dropbox.com/s/svqk1ak2w4y3a19/Fl_ChartEx.v1.1.zip?dl=0"><span style="color: rgb(0, 0, 153);">Fl_ChartEx.v1.1.zip</span></a><br>
+
+          <br>
+          <span style="text-decoration: underline;">Compiling</span><br>
+          To compile, you will need <span style="color: rgb(0, 0, 153);">flstring.h</span> and comment
+          out <span style="color: rgb(0, 102, 0);">config.h</span>
+          from it.<br>
+          <span style="color: rgb(0, 0, 153);">flstring.h</span> is
+          found from the src directory of <a href="http://www.fltk.org/software.php">fltk's source</a>
+          package.<br>
+          <br>
+          <small>Comment out config.h from flstring.h<br>
+          //#&nbsp; include &lt;config.h&gt;</small><br>
+          <small>Alternatively, generate config.h from the souce
+          file package (./configure).</small><br>
+          <br>
+          e.g mychart-&gt;add(double val, const char *str, unsigned
+          col, <span style="color: rgb(0, 102, 0);">double val2,
+          unsigned col2</span>);<br>
+          <br>
+          <br>
+          changelog<br>
+          v1.0<br>
+
+          <div style="margin-left: 40px;">
+            Fl_ChartEx.H : add val2,col2 to structure<br>
+            Fl_ChartEx.cpp : add arguments (val2, col2)<br>
+            <br>
+            &nbsp;&nbsp;&nbsp; void add&nbsp;&nbsp;&nbsp;&nbsp;
+            (&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; val, str, col , val2 ,
+            col2 );<br>
+            &nbsp;&nbsp;&nbsp; void insert&nbsp; ( ind, val, str,
+            col , val2 , col2 );<br>
+            &nbsp;&nbsp;&nbsp; void replace ( ind, val, str, col ,
+            val2 , col2 );<br>
+          </div>v1.1<br>
+
+          <div style="margin-left: 40px;">
+            Fl_ChartEx.cpp : copied bwidth definition from barchart
+            to linechart to make all charts the same x-scale.<br>
+          </div><br>
+          <br>
+          <span style="text-decoration: underline;">Examples</span><br>
+          <a href="stkgraffer/stkgraffer.html">STKgraffer</a>&nbsp;
+          , <a href="menjob/menjob.html">MenJob</a><br>
+        </td>
+      </tr>
+    </tbody>
+  </table><br style="font-family: Helvetica,Arial,sans-serif;">
+  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <span style="font-family: Helvetica,Arial,sans-serif;">End.</span><br style="font-family: Helvetica,Arial,sans-serif;">
+  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <br>
+  <script type="text/javascript" src="http://humpty.drivehq.com/main_index.js">
+</script>
+</body></html>

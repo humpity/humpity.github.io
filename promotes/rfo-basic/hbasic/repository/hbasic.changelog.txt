@@ -1,0 +1,463 @@
+hBasic changelog
+
+Date		Summary of Versions			(hcodes in brackets)
+---------------	------------------------------------------------------------
+2024-05-02 v5.00
+		Consistent search/replace dialog (0494)
+		Add smoothing flag to CONSOLE.BACKIMG  (0495)
+		Fix BACK key not exiting dialogs (-dkal) (0496)
+		Fix ENCODE$ not parsing comma	 (-dkal) (0497)
+		Added asyncPrep flag to AUDIO.PLAY (0498)
+		hFtp Preferences update (0499)
+		Upgrade graphics engine (0500)
+		- Floating point coordinates
+		- Motion for objects. GR.MOTION/.MARK
+		- Sprite objects and animations GR.SPRITE/ANIM
+		- More common parameters, whole object movement
+		- Array for GR.MODIFY
+		- GR.DL.GETZ,MOVE,REMOVE z-ordering
+		- GR.BITMAP.SCAF scale factor
+		- GR.TOUCH/2/ unscale, BOUNDED/2 scale
+		- GR_CONTAINS(obj,x,y)
+
+2024-01-03	v4.93
+		Fix GR.SCREEN		(-Spike) (0492)
+		Fix TEXT.WRITELN	(-Spike) (0493)
+
+2023-11-30	v4.91
+		Internal changes. 			(0485)
+			Fix BACKGROUND()	(-Spike)
+			Fix GR.OPEN
+			Detach CONSOLE.ORIENT from Preferences
+		Fix hFTPs server dates 	(-mougino)	(0486)
+		Add CONSOLE.EXIT (-Spike)		(0487)
+		Add onORIENT..ORIENT.Resume 		(0488)
+		Add DEVICE$ ("orient_simple")		(0489)
+		Add CONSOLE.BACKIMG	(-Joel_Zerpa) 	(0490)
+		Targets API 34				(0491)
+
+2023-10-13	v4.84
+		Cleanup entry appearence into standalone APK	(0479)
+		Add directive @@hide_actionbar (-Spike)		(0480)
+		Removed directives				(0481)
+			@@localstacksoff
+			@preloadoff
+		Fix MENU.SHOW for webview			(0482)
+		Fix waiting for NOTIFY dismissal (-Spike)	(0483)
+			Add NOTIFY.STATUS
+			Add NOTIFY.CANCEL
+		Add function DEVICE$(key_sexp)	(-Spike,Alberto)(0484)
+
+2023-08-23	v4.78
+		Fix CLS					(0469)
+		GR.SCREEN w,h,denDP,denSP		(0470)
+		Fix Themes & dialogs		-(Spike)
+			Fix systembars when dialog up	(0471)
+			block activity transitions	(0472)
+		Fix camera stuff			(0473)
+		- UI mode crash
+		- preview was distorted
+		- assume jpg as returned format
+
+		Fix CONSOLE.SCREEN crashes -(aFox,hallesaale) (0474)
+		- fix crash during conversion
+		- prevent division by zero
+		- prevent Android 6+ deprecation
+
+		SELECT orientation now follows CONSOLE.ORIENT	(0475)
+		Fix Bluetooth permissions for Android 12+	(0476)
+		Fix BT.WRITE conflicting with PRINT buffer	(0477)
+		Make sure SENSORS.LIST is sorted by type -(aFox)(0478)
+
+2023-06-27	v4.68
+		Fix EXIT bug					(0468)
+
+2023-06-21	v4.67
+		Fix crash on illegal nested IFs	-(Spike)	(0461)
+		Fix GPS crashing -(Joel_Zerpa)			(0462)
+		GPS PRN number change				(0463)
+		Add GPS.Open ,,,useNET,useLAST			(0464)
+		Add SENSORS Pseudo Orientation sensor		(0465)
+		Add PRINT.IMG 	-(Joel_Zerpa)			(0466)
+		PRINT.AT no longer dictates append mode		(0467)
+
+2023-03-04	v4.60
+		Fix CONSOLE.SCREEN				(0450)
+		INT and INT$ accept a string as a number	(0451)
+		Add WORD_ALL$					(0452)
+		Singleline INPUT				(0453)
+		Fix FILE.DELETE					(0454)
+		Add DEBUG.DUMP.FN				(0455)
+		Robust shortcuts				(0456)
+		Fix Notifications for Android 12+		(0457)
+		Upgrade SENSORS					(0458)
+		Fix clipboard					(0459)
+		Targets API 33					(0460)
+
+2022-12-17	v4.49
+		Fix Shortcuts and fileshares not initiating new run -Spike (0449)
+	        Fix fileshares lookup in scoped storage (H0290)
+	        Removed shortcut permissions
+	        Removed defunct code
+
+2022-11-19	v4.48
+		Fix Prevent disabling of MENU system item	(0440)
+		Fix More reliable CONSOLE.GOTO 		 	(0441)
+		Add TGET.S/N/I/P				(0442)
+		Add CONSOLE.TAPPED				(0443)
+		Add CLR						(0444)
+		Optimised console printing			(0445)
+		Optimised  accelerations			(0446)
+		Add GR.SETACC pref for gr acceleration		(0447)
+		Add CONSOLE.ORIENT pref for console orientation	(0448)
+
+2022-08-31	v4.39
+		Correct Manifest to allow Android-12 installation -JoelHinson
+
+2022-08-15	v4.38
+		Add Menu sanity check if lose context. 		(0431)
+		Add more items for Program.Info 		(0432)
+			PkgName, SysPathC, LibPath, BasePath & App_Path
+		Fix FILE.DELETE bug returning wrong value 	(0433)
+		Allow absolute paths for FILE commands 		(0434)
+		Add optional return code for FILE commands 	(0435)
+		Fix FTP error codes inline with FILE cmds 	(0436)
+		Fix Loops not cancelling own type 		(0437)
+		Fix APK program name/path for Program.Info	(0438)
+
+2022-07-01	v4.30
+		VERSION$(0) - gets base version 	-dkal	(0422)
+		Loop bottoms can cancel inner blocks -Spike 	(0423)
+		Tidy up stack code.				(0424)
+		Display Error Line number in Editor 		(0425)
+		Add CONSOLE/GR/HTML.SUBTITLE			(0426)
+		Fix HTML.OPEN 					(0427)
+		Removed CONSOLE.SET "TITLE COLORS" 		(0428)
+		Targets API 31 (Android 12) and built with API 31. (0430)
+
+2022-04-07	v4.21
+		Fix KB.SHOW for Android 9+ (0416)
+		Upgraded hFTPS server -compatible with more clients (0417)
+		Added return codes for FTP commands (0418)
+		Added recursive delete for FILE.DELETE (0419)
+		Fixed cancel for INPUT and TEXT.INPUT, add cancel for TEXT.INPUT (0420)
+		Fix skip buttons omitted or empty string for DIALOG.MESSAGE (0421)
+
+2022-02-28	v4.15
+		Fix dialog themes/touches/button ordering (0414)
+		Upgrade HTML screen (0415)
+			HTML.OPEN statusbar flag is now decors flag
+			Add HTML.TITLE
+2022-02-16	v4.13
+		Fix bug SELECT dialog crash (0404)
+		Fix some more Preload bugs (0405)
+		Fix Editor search dialog to support older versions of aapt (0406)
+
+		Simplify Menu Item Stop/Editor/Exit	(0407)
+		Add User Menu Items			(0408)
+			MENU.SET/GET/ENABLE/DISABLE/SHOW
+			OnMenuTap.. MenuTap.Resume
+
+		Mod GR.OPEN 				(0409)
+			StatusBar flag is now Decors Flag
+			show StatusBar by default
+			show ActionBar option
+
+		Mod SCREEN.Size and GR.screen 		(0410)
+			to return view size instead of display size
+
+		Add GR.TITLE title$, textcolor$, backcolor$ (0411)
+		Mod CONSOLE.TITLE title$, textcolor$, backcolor$ (0412)
+		
+		Changed DIRECTIVE syntax to "@@" (0413)
+
+2021-12-24	v4.03
+		Fix bug Preload System/SU (0401)
+		Fix bug PreLoad Socket (0402)
+		Shorten Editor title. (0403)
+
+2021-12-12	v4.00	(0333,0400)
+		Command Pre-Loading
+		Unified Stack for Loops, Gosub & IF.
+		Local control stack for Functions
+		Commands for HFTPS (0333)
+
+2021-10-30	v3.32
+		Fix bug for console.set for string locale (0329)
+		Fix another color bug (again) for color search (0330)
+		Make GR.OPEN and GR.COLOR accept a color string (0331)
+		Add CONSOLE.SET "AntiAlias <ON|OFF>"
+				"UnderLine <ON|OFF>"
+			and	"Strike <ON|OFF>"	(0332)
+
+2021-10-18	v3.28
+		Fix color search bugs (0322)
+		Add console styling for PRINT.AT (0323)
+		Fix CONSOLE.SET "FONT <font>.NORMAL (0324)
+		Add fake .bold/.italic support for loadable fonts (0325)
+		Add CONSOLE.SET "TITLE COLORS" (0326)
+		Add CONSOLE.SCREEN w,h (0327)
+		Add .cs shortcut command for CONSOLE.SET (0328)
+
+2021-09-19	v3.21
+		Optimize PRINT code and	restructure console styling.
+		Add PRINT.AT command (?.AT) (0315)
+		Add more colors for CONSOLE.SET.. (0316)
+		Add CONSOLE.SET "VOIDCOLOR (0317)
+		Add CONSOLE.SET "FONT (0318)
+		Add CONSOLE.SET "WRAP (0319)
+		Add CONSOLE.SET "SCROLL FASTON | FASTOFF" (0320)	
+		Add CONSOLE.SET "STACK FROMBASE | FROMTOP"(0320)
+		Upgrade HFTPS with Rename (0321)
+
+2021-08-23	v3.14
+		TGET overhaul (0310)
+		Console overhaul (0311)
+			Add CONSOLE.SET
+			Add CONSOLE.GOTO
+			Console Fast scroll
+			Remove some unused commands
+				console.line.char
+				console.line.new
+		Add BACKSPACE (0312)
+			PRINT ".."; will now show in console (0312)
+
+		help screen fast scroll (0313)
+		Fix Search dialog colors (0314)
+		Updated f01_commands.bas
+
+2021-07-21	v3.09
+		Remove MyPhoneNumber command (0307)
+		Add android:hasFragileUserData to Manifest (0308)
+		Fix TGET double LF (0309)
+		Updated Sample_Programs
+
+2021-04-06	v3.06
+		Fix DEVICE permission for Android 11+
+		Fix invalid base paths
+		Changes to 'About' screen
+		Updated f01_commands.bas
+
+2021-02-14	v3.04
+		Targets API 30	(Android 11) and built with API 30.
+		hFTPS server default port changed to 2345 (from 1025)
+		Fix typo for WAKE_LOCK permission (0302)
+		Fix Gr.Modify "list" (0303)
+		Fix status bar for Gr.Open on Android 11+ (0304)
+
+2020-12-08	v3.01
+		Embedded an FTP Server to get around Android Scoping. (0301)
+
+		Internal note: K0001 merged to hbasic-master-v2.01
+
+2020-07-19	v3.00	(0300, K0001)
+		Scoped Storage
+			Base directory moved to Scoped Storage. 
+			Removed legacy storage access
+		minSdkVersion bumped up to API 19 (KitKat)
+		Package name changed from com.rfo.basich to com.rfo.hbasic
+		Fix for Sensors (K0001)
+
+2020-06-02	v2.94	(0294)
+		Fix bug typo of manifest permission.BLUETOOTH_ADMIN
+
+2020-04-02	v2.93	(0293)
+		Fix to suppress crash for DEVICE command for Android-10+
+
+2020-03-02	v2.92	(0292)
+		Targets API 29 with legacy storage mode.
+
+2019-11-01	v2.91	(0290-0291)
+		Shortcut support for standalone APK. (only works if compiled with hSuite) (0290)
+		Added Device.OS (0291)
+		a) changed Program output Title to generic.
+		b) changed default Titles for Console, SELECT, TEXT.INPUT, and TGET to generic.
+		c) changed splash screen
+		d) APK signed with a different key. (you need to un-install any old version).
+
+2019-07-09	v2.81	(0281)
+		Changed Brackets '[..]' to Braces '{..}' for Bundle.put/get 'auto' mode.
+
+2019-07-07	v2.80	(0271-0273,0280)
+		Added 'auto' mode for bundle.get/put (0280)
+		Added FILE.SAF.MKDIR (0271)
+		Added 'a'ppend mode for FILE.SAF.OPEN (0273)
+		Upgraded support library for FILE.SAF commands (master 1.51)
+		Minor change to TEXT/BYTE.open (0272)
+
+2019-06-09	v2.70	(0270)
+		Added FILE.SAF commands
+
+2019-05-21	v2.61	(0261)
+		Replaced GR.CLIP with GR.CLIP.START/END (solution for API 28). (0261).
+
+2019-05-15	v2.60	(0260)
+		Support to android target api level 28. (min:14, target:28, compile:28)
+		SMS commands removed.
+
+		Changes to 'About' screen as per 01.92.
+		Internal note: all changes this round merged to hbasic-master-v1.4
+
+2019-01-15	v2.50	(0250)
+		Added SQL.PING
+		+
+		Removed H0210 - Bundle Expressions (interfering with webview/basic interface)
+		+
+		(v2.40 no release)
+		Added Array Functions
+		Accept solo FN.RTN
+		Change error msg of gr.modify if syntax error instead of "Object Out of Range"
+		Fixed "&=" pre-assign op bug.
+		(Internal note: hPatch 0240 merged into hbasic-master-v1.3)
+
+2018-12-04	v2.30	(0230)
+		Added REDIM
+		+
+		(v2.20 no release)
+		Accept Array pointers for assignment
+		(Internal note: hPatch 0220 merged into hbasic-master-v1.2)
+
+2018-10-17	v2.11	(0211)
+		Enhanced bundle expressions;
+			Accept quoted key as string constant bundle."quoted key"
+			Accept embedded bundle.keys
+
+2018-10-07	v2.10	(0210) (* removed in v2.50 *)
+		Added recognition of a 'bundle expression' to parser.
+		Changed the App Icon.
+		(Internal note: hPatch 0120 merged into hbasic-master-v1.1)
+
+2018-09-10	v2.00
+		Support to android target api level 26. (min:14, target:26, compile:26)
+		Changed package_name to com.rfo.basich (* changed again v3.00 *)
+		Changed version number to 02.00
+		Changes to 'About' and Editor start screens.
+		Internal note: all changes this round merged to hbasic-master-v1.0
+
+2018-04-08	v1.61	(0161)
+		Remove fos.flush() from byte.write.buffer
+
+2018-03-21	v1.60	(0160)
+		Faster byte.write.buffer (ack:aFox)
+
+2018-03-13	v1.50	(0150)
+		a) gr.hide/show	Multiple objects
+		b) bundle.get/put	Multiple key,value pairs
+		c) Program output Title changed back to 'BASIC!'
+
+2018-03-10	v1.40	(0140)
+		gr.bitmap.clr clears a bitmap with transparency
+		gr.bitmap.blot clears a rectangle in a bitmap with transparency
+
+2018-02-18	v1.30	(0130)
+		Fix for ROUND function for precise input values
+
+2018-02-14	v1.21	(0121)
+		Fix scope for new variables created in main interrupt block.
+
+2018-01-14	v1.20	(0110,0120)
+		a) Fix for volkeys - to reset to ON (no block) at start of Run. (ack:aFox)
+		b) Fix for scope during interrupt.
+		c) Program output Title changed to hBASIC! to distinguish
+
+2017-10-29	v1.00	(0100)
+		Added FN.IMPORT
+============================================================================
+hBasic	hMaster Changes on master
+
+v2.00	v1.0	First master with code to target api-26.
+v2.10	v1.1	H0120 merged to master (avoids conflict with H0210)
+v2.11	v1.1
+v2.20	v1.2    H0220 merged to master (avoids conflict with H0210)
+v2.30	v1.2
+v2.50	v1.3	H0240 merged to master (avoids conflict with H0100)
+v2.60	v1.4	Targets api-28.
+v2.61	v1.41	H0261 merged to master. Replaced gr.clip to work with api-28.
+v2.70	v1.5	Added infrastructure for SAF. Fixed colors for adding shortcut.
+v2.72	v1.51	More infrastructure for SAF, cwac-document upgraded to 0.4.1
+		H0150,H0272,H0273 merged to master.
+v2.80	v1.51
+v2.81	v1.51
+v2.91	v1.52	Title changes: Program Output,Console,SELECT,TEXT.INPUT,TGET.
+		Changed splash screen
+		Changed APK signature
+v2.92	v1.6	Targets API 29 with legacy storage mode.
+v2.93	v1.6	fixed DEVICE crash
+v2.94	v1.61	fixed bluetooth permission bug
+v3.00	v2.0	Base moved to Scoped Storage. minSdkVersion API 19 (KitKat)
+		Merged H0100, H0110, H0130, H0160, H0230, H0291, H0293
+		package name changed to com.rfo.hbasic (instead of com.rfo.basich)
+v3.01	v2.01	K0001 merged to master and some minor internal changes with Editor utils.
+v3.04	v2.02	Targets API 30
+		Fix WAKE_LOCK typo in manifest.
+v3.06	v2.03	'About' screen changes.
+		Merged 0303 - 0306
+v3.09	v2.04	Merged 0307-0309
+v3.13	v2.05	Merged 0250,0310 TGET overhaul
+v3.21	v2.06	Merged 0315-0320
+v3.28	v2.07   Merged 0322-0328
+v3.32   v2.08	Merged 0329-0332
+v4.00	v2.09	Merged 0333-0400 many internal changes
+v4.03   v2.10	Merged 0401-0403
+v4.13	v2.11	Merged 0404-0413 menu, actionbar, gropen
+v4.15	v2.12	Merged 0413-0415 html.open
+v4.21	v2.13	Merged 0416-0421
+v4.30	v2.14	Merged 0422-0430 Targets API 31
+v4.36	v2.15	Merged 0431-0438
+v4.39	v2.16	Merged 0439	 Installable on Android 12
+v4.48	v2.17	Merged 0440-0448
+v4.49   v2.18   Merged 0449
+v4.60	v2.19   Merged 0450-0460 Targets API 33
+v4.67	v2.20	Merged 0280-0281 + 0461-0467 Gnss
+v4.68	v2.21	Merged 0468 	 EXIT bug
+v4.78	v2.22	Merged 0140 + 0469-0478
+v4.84	v2.23	Merged 0479-0484
+v4.91	v2.24	Merged 0485-0491 Targets API 34
+v4.93	v2.25	Merged 0492-0493
+v5.00	v2.26	Merged 0494-0500 Graphics upgrade 
+============================================================================
+Patches that were created.
+	O = optional S = suspended (do not use)	D = defunct U=Upgraded
+	M = Merged to hmaster and patch deleted (do not use after)
+Patch		hCode
+H0100	M	0100	FN.IMPORT
+H0110	M	0110	VolKeys fix
+H0120	M	0120 + 0121
+			Interrupt Scope fixes
+H0130	M	0130	ROUND math function fix
+H0140	M	0140	gr.bitmap.clr/blot
+H0150	M	0150	Multi input for gr.hide/show bundle.put/get
+
+H0160	M	0160 + 0161
+			faster byte.write.buffer
+H0210	S	0210 (+ 0211)	bundle.key expressions
+H0220	M	0220	Array pointers and assignment
+H0230	M	0230	REDIM
+H0240	M	0240	Array Functions 
+		M	0241	FN_RTN mod
+		M	0242    gr.modify error_msg mod
+		M	0243	Fix "&=" pre-assign op
+H0250	M	0250	SQL.PING
+H-SMS	S	+SMS	put back SMS commands (for future use only)
+H0261	M	0261	replace GR.CLIP with GR.CLIP.START and GR.CLIP.END
+H0270	O	0270 + 0271 + 0273
+			FILE.SAF commands
+H0272	M	0272	change TEXT/BYTE.OPEN to not add file table entry if failed to open.
+H0280	M	0280 + 0281
+			BUNDLE.PUT/GET 'auto' mode
+H0290	O	0290	Enable standalone APK to pick up data from a shortcut launcher.
+H0291	M	0291	Device.OS
+H0293	M	0293	Fix crash for DEVICE on Android-10+
+K0001   M	0300	Fix Sensors with less then 3 Return Values. ack:dkal,afox
+H0301	D	0301	Embeded an FTP server
+HFTPS	O	0301	Renamed patch and changed Ftp command port from 1025 to 2345
+H0303	M	0303	Fix Gr.Modify Group "list" and tidy up code. ack:afox
+H0304	M	0304	Fix status bar for Gr.Open on Android 11 devices. ack:dkal
+H0305	M	0305	Fix DEVICE permission for Android 11+. ack:dkal
+H0306	M	0306	Fix invalid base paths
+H0312	D	0312	BACKSPACE and re-code append mode for PRINT
+HFTPS	O	0321	add Rename
+HFTPS	O	0333	basic can control hftps
+============================================================================
+(hCodes details have been discontinued)
+-End-

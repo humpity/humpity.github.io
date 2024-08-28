@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>configs</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html"></a><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><small><br>
+</small></big></big></big> <span style=
+"font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Config
+files&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+</span></big></big>
+<div><br></div>
+</td>
+<td style="vertical-align: top;"><a href=
+"#position"><big><big><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><small>Always
+Open an app at the same
+position</small></small></span></big></big></a><br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><span style=
+"color: black;">Config files determine how your system looks and
+feels.<br>
+<br></span></small></span></big></big> <big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><small><br>
+<span style="text-decoration: underline;"><a name="position" id=
+"position"></a>Open an App at the same
+position</span></small><br></span></big></big><br>
+It's so annying that some apps don't remember their last closed
+position and even more annoying that they randomly pick a spot on
+the screen. Well at least with <span style=
+"color: rgb(0, 0, 153);">Openbox</span>, you can pick a specific
+position for a particular app.<br>
+The standard config file to set is ~/.config/openbox/rc.xml
+<span style="color: rgb(153, 0, 0);">but</span> in Lubuntu it's
+<span style=
+"color: rgb(102, 51, 0);">~/.config/openbox/lubuntu-rc.xml</span><br>
+
+<br>
+Near the bottom of the file there is an <span style=
+"font-style: italic; color: rgb(0, 0, 153);">applications</span>
+section where you can set <span style=
+"color: rgb(0, 0, 153);">per-application</span> settings;<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 51, 0);">lubuntu-rc.xml</span>
+<div style="margin-left: 40px;">.<br style=
+"font-style: italic; color: rgb(0, 102, 0);">
+<span style=
+"font-style: italic; color: rgb(0, 102, 0);">blah</span><br style=
+"font-style: italic; color: rgb(0, 102, 0);">
+<span style=
+"font-style: italic; color: rgb(0, 102, 0);">blah</span><br style=
+"font-style: italic; color: rgb(0, 102, 0);">
+.<br>
+<span style=
+"color: rgb(0, 0, 153);">&lt;applications&gt;</span><br style=
+"color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;
+&lt;application name="pcmanfm"&gt;</span><br style=
+"color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;position force="no"&gt;</span><br style=
+"color: rgb(0, 0, 153);">
+<span style=
+"color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;x&gt;0&lt;/x&gt;</span><br style="color: rgb(0, 0, 153);">
+<span style=
+"color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;y&gt;0&lt;/y&gt;</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/position&gt;</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;
+&lt;/application&gt;</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;
+&lt;application name="spacefm"&gt;</span><br style=
+"color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;position force="no"&gt;</span><br style=
+"color: rgb(0, 0, 153);">
+<span style=
+"color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;x&gt;-0&lt;/x&gt;</span><br style="color: rgb(0, 0, 153);">
+<span style=
+"color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;y&gt;0&lt;/y&gt;</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;/position&gt;</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;
+&lt;/application&gt;</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;
+&lt;/applications&gt;</span><br style="color: rgb(0, 0, 153);">
+<span style=
+"color: rgb(0, 0, 153);">&lt;/openbox_config&gt;</span><br>
+<br></div>
+</div>
+In this example, PCmanFM will always open at location 0,0 (top left
+of the screen) while SpaceFM will open at location -0,0 . The minus
+sign means count from the right-hand-edge.<br>
+<br>
+There are more example settings found inside
+/etc/xdg/openbox/rc.xml<br>
+<br>
+To restart Openbox, enter "<span style=
+"color: rgb(0, 0, 153);">openbox --restart</span>".<br>
+<br>
+To find the name of the app, open the app window and enter into a
+terminal<br>
+<div style="margin-left: 40px;">&nbsp;"<span style=
+"color: rgb(0, 0, 153);">obxprop | grep
+"^_OB_APP</span>".<br></div>
+<br>
+A cursor will appear, use it to click on the app. Some info will
+appear in the terminal.<br>
+<br>
+For some mis-behaving apps, you might need to
+position-force="yes'.<br>
+<hr style="width: 100%; height: 2px;">
+<br>
+<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><a href="lubuntu.html">More
+Lubuntu Tips</a><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

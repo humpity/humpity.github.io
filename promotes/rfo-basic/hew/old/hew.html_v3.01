@@ -1,0 +1,610 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+<HEAD>
+  <META content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org"
+  name="generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=us-ascii">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+
+  <TITLE>hew</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+
+<BODY alink="#000099" link="#000099" vlink="#990099">
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <BIG style="font-family: Helvetica,Arial,sans-serif;">Humpty
+  Promotes - HEW<SMALL><BR></SMALL></BIG><BR>
+  What's New ?<BR>
+  <BR>
+  June 2015<BR>
+
+  <DIV style="margin-left: 40px;">
+    *** News -- <SPAN style=
+    "color: rgb(204, 0, 0); font-weight: bold;">HeadsUp</SPAN> !
+    *** Major Changes !<BR>
+    <BR>
+    <BIG>gformfill =&gt; pickform<BR></BIG><BIG>gselect =&gt;
+    picklist<BR>
+    gnumpad =&gt; numpad<BR></BIG>
+
+    <DIV style="margin-left: 40px;">
+      "gformfill" will be renamed to "<SPAN style=
+      "color: rgb(0, 0, 153);">pickform</SPAN>" !<BR>
+      "gselect" will be renamed to "<SPAN style=
+      "color: rgb(0, 0, 153);">picklist</SPAN>" !<BR>
+      "gnumpad" will be renamed to "<SPAN style=
+      "color: rgb(0, 0, 153);">numpad</SPAN>" !<BR>
+      I have removed them for the time being.<BR>
+      <BR>
+      picklist will behave the same except that <SPAN style=
+      "text-decoration: underline;"><SPAN style=
+      "color: rgb(0, 0, 153);">commas will be used to seperate list
+      items instead of '|'</SPAN>.</SPAN><BR>
+      In addition, you will be able to place it at any x,y position
+      for any transistion.<BR>
+    </DIV><BR>
+    (<BIG>gformfill) <SPAN style=
+    "color: rgb(0, 0, 153);">pickform</SPAN> 3rd gen</BIG><BR>
+
+    <DIV style="margin-left: 40px;">
+      pickform replaces gformfill and is being re-written to cater
+      only for short lists (2 screensful max) similar to picklist.
+      It uses only 1 bitmap.<BR>
+      This means you will not be able to use it for very long
+      lists.<BR>
+      The upside is that it will be a lot smoother. And it will be
+      able to call embedded forms and other widgets to do some of
+      it's work.<BR>
+      e.g you will be able to create forms with subforms to
+      simulate multi-level drop down lists.<BR>
+      <BR>
+      If you still want the 'infinite' list version (gformfill),
+      then this is your last chance to download that version.<BR>
+      The new version restarts as pickform v1.00.<BR>
+    </DIV><BR>
+  </DIV><BR>
+  May 2015<BR>
+  <BR>
+
+  <DIV style="margin-left: 40px;">
+    *** Major changes !<BR>
+    <BR>
+    *** Notice - - HEW requires Basic 1.87+ . *** this is now the
+    minimum requirement.<BR>
+
+    <DIV style="margin-left: 40px;">
+      <SMALL>Basic!1.87 has a host of new features and bug
+      fixes.</SMALL><BR>
+    </DIV><BR>
+    *** Notice - - <SPAN style="color: rgb(153, 0, 0);">INIT.BAS -
+    is now a function</SPAN> <SPAN style=
+    "color: rgb(0, 0, 153);">init_hew().</SPAN><BR>
+    <BR>
+    This means that init.bas can be included anywhere before the
+    first piece of code in your main program,<BR>
+    It also means you need to bundle.get 'global' (1) hew values
+    before you use them.<BR>
+    <BR>
+    e.g<BR>
+
+    <DIV style="margin-left: 40px;">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">include <SPAN style=
+      "color: rgb(102, 0, 0);">themes.bas</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      % widget colors</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">include <SPAN style=
+      "color: rgb(102, 0, 0);">event.bas&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      % event loop</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">include <SPAN style=
+      "color: rgb(102, 0, 0);">init.bas&nbsp;</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      % init screen and globals</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">%--------------------</SPAN></SMALL><BR style="font-family: monospace; color: rgb(51, 51, 255);">
+
+      <SMALL style="color: black; font-weight: bold;"><SPAN style=
+      "font-family: monospace;">init_hew()</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">bundle.get 1, "scr_w",
+      scr_w</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">bundle.get 1, "scr_h",
+      scr_h</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">bundle.get 1, "row_height",
+      row_h</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">bundle.get 1, "tx_height",
+      tx_height</SPAN></SMALL><BR style=
+      "font-family: monospace; color: rgb(51, 51, 255);">
+      <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+      "font-family: monospace;">bundle.get 1, "widgets",
+      widgets</SPAN></SMALL><BR>
+    </DIV><BR>
+    <BR>
+    All demos have been updated.<BR>
+    <HR style="width: 100%; height: 2px;">
+    <BR>
+
+    <TABLE style="text-align: left; width: 90%;" border="0"
+    cellpadding="2" cellspacing="2">
+      <TBODY>
+        <TR>
+          <TD style="vertical-align: top; width: 50%;">**
+          <BIG style="color: rgb(0, 0, 153);">Qconvert</BIG> is a
+          new app using the upgraded HEW and Basic!v1.87.<BR>
+          <BR>
+          <BR>
+          download<BR>
+          <A href=
+          "https://www.dropbox.com/s/pamz8kycorqjun6/qconvert.zip?dl=0">
+          Zip</A><BR>
+          <A href=
+          "https://www.dropbox.com/s/0awd6mzdgwqrq31/qconvert1000.apk?dl=0">
+          Apk</A><BR></TD>
+
+          <TD style="vertical-align: top; width: 50%;"><IMG style=
+          "width: 350px; height: 197px;" alt="" src=
+          "../apps/qconvert/pics/qconvert_1.jpg"><BR></TD>
+        </TR>
+      </TBODY>
+    </TABLE><BR>
+    <BR>
+  </DIV><BR>
+  The full change.log&nbsp; is <A href=
+  "source/changelog.txt">here</A> and the manual <A href=
+  "manual.html">here</A>.<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 800px; font-family: Helvetica,Arial,sans-serif; height: 3139px;"
+  cellpadding="8" cellspacing="2">
+    <TBODY>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG><BIG style="font-weight: bold;"><SMALL><BIG style=
+          "color: rgb(0, 0, 153);">HEW</BIG> <SPAN style=
+          "color: rgb(0, 0, 153);">- Humpty's</SPAN> <SPAN style=
+          "color: rgb(0, 0, 153);">Easy</SPAN> <SPAN style=
+          "color: rgb(0, 0, 153);">Widgets&nbsp;</SPAN>&nbsp;&nbsp;</SMALL></BIG>
+          <BIG><SMALL>A GUI Framework</SMALL></BIG>
+          <BIG><SMALL><SMALL>for <A href=
+          "../rfo.html">RFO-Basic</A></SMALL></SMALL></BIG><BIG style="font-weight: bold;"><BR>
+          </BIG></BIG><BR>
+          The purpose of this project is for the easy building of
+          the graphic user interface for apps on Android using
+          RFO-Basic. HEW is put in the <A href=
+          "http://en.wikipedia.org/wiki/Public_domain">Public
+          Domain</A>.<BR>
+          It is the hope that by relieving the programmer of the
+          complexity of the GUI, then he/she can concentrate more
+          on the actual core of the application.<BR>
+          <BR>
+          The framework consists of the following components;<BR>
+          <BR>
+          Components :&nbsp;<BR>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 10%;">
+                <SPAN style=
+                "color: rgb(0, 0, 153);">Main</SPAN><BR></TD>
+
+                <TD style="vertical-align: top; width: 10%;">
+                <BR></TD>
+
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153); width: 20%;">
+                Widgets</TD>
+
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153); width: 20%;">
+                Theme Manager<BR></TD>
+
+                <TD style="vertical-align: top; width: 20%;">Group
+                Manager<BR>
+                (to do)<BR></TD>
+
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153); width: 20%;">
+                Other interfaces<BR></TD>
+
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153); width: 50%;">
+                &nbsp;<BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top; width: 15%;">
+                <SPAN style=
+                "text-decoration: underline; color: rgb(0, 0, 153);">
+                <A href="manual.html#init">Init</A></SPAN><BR>
+                screen init.<BR>
+                globals vars.<BR>
+                <SPAN style="text-decoration: underline;"><BR>
+                </SPAN> <A href="manual.html#event"><SPAN style=
+                "text-decoration: underline; color: rgb(0, 0, 153);">
+                Event Loop</SPAN></A><BR>
+                <SPAN style="text-decoration: underline;">touch
+                detection.<BR>
+                <BR>
+                <BR></SPAN> <SPAN style=
+                "text-decoration: underline; color: rgb(0, 0, 153);">
+                <A href=
+                "manual.html#isr">ISR</A></SPAN><SPAN style="text-decoration: underline;"><BR>
+
+                Interrupt code<BR></SPAN></TD>
+
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top; width: 20%;">
+                <A href="manual.html#button">Buttons</A><BR>
+                <A href="manual.html#botmenu">Bottom Menu</A><BR>
+                <A href="manual.html#link">Link</A><BR>
+                <A href="manual.html#text">Text</A><BR>
+                Grid selectors<BR>
+                <A href="manual.html#gselect">Select List</A><BR>
+                <BR>
+                <A href="manual.html#textbox">Text Box</A><BR>
+                <A href="manual.html#keyinp">Key Input</A><BR>
+                <A href="manual.html#gnumpad">Numeric
+                KeyPad</A><BR>
+                <BR>
+                <A href="manual.html#ask_yn">Ask_YN,</A> <A href=
+                "manual.html#msg_ok">Msg_OK</A><BR>
+                <BR>
+                <A href="manual.html#console">Console</A><BR>
+                <A href="manual.html#txtscroll">TxtScroll</A><BR>
+                <A href="manual.html#progress">Progress Bar</A><BR>
+                <A href="manual.html#btimer">Timer</A><BR></TD>
+
+                <TD style="vertical-align: top;"><A href=
+                "manual.html#themes">themes.bas</A><BR>
+                themes.ini<BR></TD>
+
+                <TD style="vertical-align: top;">Positions widgets
+                in a group.<BR></TD>
+
+                <TD style="vertical-align: top;"><A href=
+                "../apps/formfill/v4_readme.txt">FormFill</A><SMALL><BR>
+
+                An HTML Form Filler (gets input from user).<BR>
+                <BR></SMALL> <A href=
+                "manual.html#gformfill">gFormFill</A><BR>
+                <SMALL>graphic version of
+                FormFill.<BR></SMALL><BR></TD>
+
+                <TD style="vertical-align: top;">
+                <SMALL><BR></SMALL></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: top; width: 10%; white-space: nowrap;">
+                Source files :</TD>
+
+                <TD style="vertical-align: top; width: 60%;">
+                <A href="source/themes.bas">themes.bas</A> &nbsp;
+                <A href="source/event.bas">event.bas</A>&nbsp;
+                &nbsp; <A href=
+                "source/init.bas">init.bas</A>&nbsp;&nbsp;&nbsp;&nbsp;
+                <A href="source/isr.bas">isr.bas</A><BR>
+                <A href=
+                "source/ask_yn.bas">ask_yn.bas</A>&nbsp;&nbsp;
+                <A href="source/botmenu.bas">botmenu.bas</A>
+                &nbsp;&nbsp; <A href=
+                "source/btimer.bas">btimer.bas</A> &nbsp;&nbsp;
+                <A href="source/button.bas">button.bas</A> &nbsp;
+                <A href=
+                "source/console.bas">console.bas</A>&nbsp;&nbsp;
+                &nbsp; <A href=
+                "source/gformfill.bas">gformfill</A>&nbsp;&nbsp;
+                &nbsp; <A href="source/gnumpad.bas">gnumpad</A>
+                &nbsp;&nbsp; <A href=
+                "source/gselect.bas">gselect.bas</A> &nbsp;
+                <A href="source/keyinp.bas">keyinp.bas</A> &nbsp;
+                <A href="source/link.bas">link.bas</A> &nbsp;&nbsp;
+                <A href=
+                "source/msg_ok.bas">msg_ok.bas</A>&nbsp;&nbsp;
+                <A href=
+                "source/progress.bas">progress.bas</A>&nbsp;&nbsp;
+                <A href="source/text.bas">text.bas&nbsp;</A> &nbsp;
+                <A href="source/textbox.bas">textbox.bas</A> &nbsp;
+                <A href=
+                "source/txtscroll.bas">txtscroll.bas</A><BR></TD>
+
+                <TD style="vertical-align: top;"><A href=
+                "https://www.dropbox.com/s/xmekh3izhhk2wfr/v42_formfill.zip?dl=0">
+                FormFill.zip</A><BR>
+                <BR>
+                <A href="source/themes.ini">themes.ini</A><BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Reference
+                Manual:</TD>
+
+                <TD style="vertical-align: top;"><BR>
+                <A href="manual.html">html</A></TD>
+
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;"><SMALL>In order to
+                ensure compatibility, be sure to have the latest
+                verison of BASIC!</SMALL><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <HR style="width: 100%; height: 2px;">
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Main<BR>
+
+          <A href="manual.html#themes">Themes</A></SPAN>: Theme
+          mananger. Sets colors, changes themes.<BR>
+          <A href="manual.html#event"><SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Event
+          Loop</SPAN></A> : Main event loop (waits for events)<BR>
+          <A href="manual.html#init"><SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Init</SPAN></A>
+          : Screen initialisation, set global variables.<BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);"><A href="manual.html#isr">
+          ISR</A></SPAN> : Interrupt handling code. (interrupt
+          service routines).<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Widgets<BR>
+          </SPAN> The term '<SPAN style=
+          "color: rgb(0, 0, 153);">widget</SPAN>' here is
+          <SPAN style="color: rgb(153, 0, 0);">not</SPAN> the same
+          as an android widget. A hew widget is a graphical u.i
+          control ( e.g a clickable button). A hew widget will try
+          to re-use graphic objects whenever possible, this is
+          because rfo-basic objects cannot be deleted, so some
+          memory will be saved especially if the widget is used
+          frequently.<BR>
+          <BR>
+          Most widgets have a 'make' function (constructor) and a
+          common callback function so it can respond when called by
+          the main loop or by other functions.<BR>
+          All widgets have a 'bundle' of data that saves the
+          current state of the widget. This bundle is returned by
+          the constructor.<BR>
+          Some callbacks will have a 'command' parameter if it
+          needs to handle more than one command.<BR>
+          If using the themes module, gr.color calls must be
+          manually replaced with theme_color().<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Theme
+          Manager</SPAN><BR>
+          All widgets uses themes.bas to get colors. This is done
+          by calling theme_color() instead of gr.color().<BR>
+          The theme manager can also change themes and colors for
+          formfill.css.<BR>
+          (<A href="manual.html#themes">more here</A>).<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Group
+          Manager</SPAN><BR>
+          The group manager's task is to relieve the programmer of
+          positioning widgets. Each widget can be assigned to a
+          group (a row), the group manager evenly distributes each
+          widget in a group and each group on the screen, If the
+          screen dimensions change, the group manager re-positions
+          everything. Widgets are ordered in a group according to
+          when they are assigned.<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Other
+          Interfaces</SPAN><BR>
+          At the moment Formfill (an html form filler) supports HEW
+          themes. It does this by wrapping it's colors with CSS
+          comments.<BR>
+          The Theme manager can then replace these colors by
+          overwriting the CSS file with new colors.<BR>
+          <BR>
+          <HR style="width: 100%; height: 2px;">
+          <A href="first.html"><SPAN style=
+          "color: rgb(0, 0, 153); text-decoration: underline;">Getting
+          Started</SPAN></A><BR>
+          Write your first app with HEW !. <A href=
+          "first.html">click here</A>.<BR>
+          <HR style="width: 100%; height: 2px;">
+          <BR>
+          <SPAN style="color: rgb(0, 0, 153);"><A name="demos" id=
+          "demos"></A>Pics &amp; Demos</SPAN>
+          <SMALL>examples</SMALL>
+
+          <TABLE style="text-align: left; width: 100px;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <A name="Bottom_popup_menu" id=
+                "Bottom_popup_menu"></A>Bottom popup menu<BR>
+                <BR>
+                <IMG style="width: 200px; height: 218px;" alt=""
+                src="demos/btm_demo/pics/btm_demo3.png"><BR>
+                <BR>
+                <SMALL><BR>
+                6 pane popup menu.</SMALL><BR>
+                <BR>
+                <A href=
+                "https://www.dropbox.com/s/ewc0a8ptlg4ai15/big_demo.zip?dl=0">
+                btm_demo.zip</A><BR></TD>
+
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <A name="Text_Scroll_Pane" id=
+                "Text_Scroll_Pane"></A>Text Scroll Pane<BR>
+                <BR>
+                <IMG style="width: 200px; height: 313px;" alt=""
+                src="demos/txtscroll_demo/pics/tsdemo_a.png"><BR>
+                <A href=
+                "https://www.dropbox.com/s/ddhl04q69gw60uw/txtscroll_demo.zip?dl=0">
+                txtscroll_demo.zip</A> <A href=
+                "https://www.dropbox.com/s/sjt1j0s5dn7lpjv/txtscroll_demo.apk?dl=0">
+                apk</A><BR></TD>
+
+                <TD style="vertical-align: top;"><A name="modals"
+                id="Text_Scroll_Pane"></A>Modal Dialogs<BR>
+                <IMG style="width: 200px; height: 244px;" alt=""
+                src="demos/dialog_demo/pics/200.png"><BR>
+                <BR>
+                <BR>
+                <BR>
+                <A href=
+                "https://www.dropbox.com/s/kagof0em75klh8m/dialog_demo.zip?dl=0">
+                dialog_demo.zip</A><BR></TD>
+
+                <TD style="vertical-align: top;"><A name="btimer"
+                id="Timer"></A>Timer<BR>
+                <BR>
+                <IMG style="width: 110px; height: 152px;" alt=""
+                src="demos/btimer_demo/pics/3.png"><BR>
+                <BR>
+                <BR>
+                <BR>
+                <BR>
+                <BR>
+                <BR>
+                <BR>
+                <A href=
+                "https://www.dropbox.com/s/r6omdjmgtt765f1/btimer_demo.zip?dl=0">
+                btimer_demo.zip</A><BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Big Demo<BR>
+                <IMG style="width: 200px; height: 303px;" alt=""
+                src="demos/big_demo/pics/big_demo2.jpg"><BR>
+                <A name="big_demo" id="big_demo"></A>big demo
+                <A href=
+                "https://www.dropbox.com/s/ewc0a8ptlg4ai15/big_demo.zip?dl=0">
+                zip</A> <A href=
+                "https://www.dropbox.com/s/jivceclde9anmew/bigdemo.apk?dl=0">
+                apk</A><BR></TD>
+
+                <TD style="vertical-align: top;">Terminal Demo<BR>
+                <IMG style="width: 200px; height: 356px;" alt=""
+                src="demos/terminal_demo/pics/2.png"><BR>
+                <A href=
+                "https://www.dropbox.com/s/o3kdltq1pp7nxf6/terminal_demo.zip?dl=0">
+                terminal_demo.zip</A> apk<BR></TD>
+
+                <TD style="vertical-align: top;">PopOut Select
+                List<BR>
+                <IMG style="width: 200px; height: 278px;" alt=""
+                src="pics/gselect.png"><BR>
+                <A href=
+                "https://www.dropbox.com/s/su91blbxvhfajps/gselect_demo.zip?dl=0">
+                gselect_demo.zip</A><BR>
+                <SMALL>Fully automated quick version of gformfill
+                for short lists.</SMALL><BR>
+                <BR></TD>
+
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;">Super
+                FormFiller<BR>
+                <IMG style="width: 200px; height: 283px;" alt=""
+                src="pics/gf_b.png"><BR>
+                <A href=
+                "https://www.dropbox.com/s/5hvey4wybrdhrfz/gformfill_demo.zip?dl=0">
+                gformfill_demo.zip</A> <A href=
+                "https://www.dropbox.com/s/veag03xotb815nt/gformfill_demo.apk?dl=0">
+                apk</A> <SMALL>Windowed or full screen list or
+                form.</SMALL><BR></TD>
+
+                <TD style="vertical-align: top;">PopUp Numeric
+                Keypad<BR>
+                <IMG style="width: 200px; height: 309px;" alt=""
+                src="pics/gnumpad_a.png"><BR>
+                <A href=
+                "https://www.dropbox.com/s/nqgupt5ijm05urw/gnumpad_demo.zip?dl=0">
+                gnumpad_demo.zip</A><BR></TD>
+
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <HR style="width: 100%; height: 2px;">
+          Examples of HEW in use ;<BR>
+          <BR>
+          <A href="../rfo.html#readyrss">Ready RSS</A><BR>
+          <A href="../rfo.html#qiching">Quick I-Ching</A><BR>
+          <BR>
+          <HR style="width: 100%; height: 2px;">
+          The full change.log.txt is <A href=
+          "source/changelog.txt">here</A><BR>
+          <BR>
+          ( <A href="old/old.html">Older News</A> )<BR>
+          <HR style="width: 100%; height: 2px;">
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Forum</SPAN><SMALL><BR>
+          </SMALL> The <A href=
+          "http://rfobasic.freeforums.org">rfo-basic forum</A> is
+          hosted on freeforums.org.<SMALL><BR>
+          <BR>
+          <BR></SMALL> Acknowledgments<SMALL><BR>
+          Paul Laughton - <A href="http://laughton.com/basic/">RFO
+          Basic</A> (named after "The Dr. Richard Feynman
+          Observatory").<BR>
+          Nicolas Mougin - RFO-basic Launcher and App-Builder<BR>
+          stefano - XAB x-apk-builder<BR>
+          Nick Antonaccio - <A href="http://rfobasic.com/">Learn
+          RFO Basic</A> tutorials</SMALL><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<BR>
+  <A href="../../donate.html">Donate via BitCoin</A>.<BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "http://humpty.drivehq.com/main_index.js">
+</SCRIPT>
+</BODY>
+</HTML>

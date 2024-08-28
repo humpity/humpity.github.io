@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Sensors</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; Sensors<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Sensors
+          command changes</BIG></BIG><BR>
+          <BR>
+          <BR>
+          <TABLE style=
+          "text-align: left; width: 742px; height: 150px; margin-left: 40px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#overview"><FONT size=
+                "+1">Overview</FONT></A><BR></TD>
+                <TD style="vertical-align: top;">Changes to the
+                sensors system<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#list">SENSORS.LIST</A><BR>
+                <A href="#openread">SENSORS.OPEN / READ</A></TD>
+                <TD style="vertical-align: top;">Changes made.</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD valign="top"><A href="#pseudo3"><FONT size=
+                "+1">Pseudo Sensor type -3</FONT><BR></A></TD>
+                <TD valign="top">A special sensor to replace type 3
+                Orientation<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="overview"
+          id="fn_import"></A>Overview</BIG><BR>
+          <BLOCKQUOTE>
+            The minimum sensor type was changed to 1<BR>
+            The maximum sensor type was changed to 42<BR>
+            There is a special sensor allowed -3<BR>
+            <BR>
+            Officially, Android does not support sensors outside
+            this range and also a few inside the range.<BR>
+            (For supported sensors, search this <A href=
+            "https://developer.android.com/reference/android/hardware/Sensor">
+            Android developer page of the Sensor object.</A>)<BR>
+            <BR>
+            <FONT size="+1"><FONT color="#000099"><A name="list"
+            id="list"></A>SENSORS.LIST</FONT> <FONT color=
+            "#663300">{<SPAN style=
+            "color: black; font-weight: bold;">size</SPAN>_nvar,}
+            <SPAN style=
+            "color: black; font-weight: bold;">sensor_array$[]</SPAN></FONT></FONT><BR>
+
+            <BR>
+            Gets a list of sensors returned in <SPAN style=
+            "font-weight: bold;">sensor_array$[]</SPAN>.<BR>
+            <BR>
+            Any sensors reported from SENSORS.LIST beginning with
+            "<FONT color="#990000">Unknown</FONT>"<BR>
+            is not supported by Android. <U>However, those that are
+            still within the range 1-42 can still be OPENed and
+            READ.</U><BR>
+            <FONT color="#990000">"Unknown"</FONT> sensors will
+            also try to print their names after <FONT color=
+            "#990000">"Unknown"</FONT>.<BR>
+            Also (now), this command will remove any duplicate
+            types reported.<BR>
+            <BR>
+            If <SPAN style="font-weight: bold;">size</SPAN> is
+            given, the array size is returned in <SPAN style=
+            "font-weight: bold;">size</SPAN> and may be zero.<BR>
+            If <SPAN style="font-weight: bold;">size</SPAN> is
+            omitted, and there are no detected sensors, (array size
+            is zero) then there will be a RunTimeError.<BR>
+            <BR>
+            <FONT color="#000099"><A name="openread" id=
+            "openread"></A>SENSORS.OPEN</FONT> and <FONT color=
+            "#000099">SENSORS.READ</FONT> both check (now) if the
+            sensor falls within the allowed range. <FONT color=
+            "#990000">"Unknown"</FONT> sensors that are inside this
+            range are also let through. Special sensors e.g -3 are
+            also allowed through.<BR>
+            <BR>
+            <U>Unknown Sensors</U><BR>
+            Here is a list of <FONT color=
+            "#990000">"Unknown"</FONT> sensors within range 1-42,
+            which may be of interest.<BR>
+            <FONT color="#000099">They are by no means
+            definitive</FONT>, since each manufacturer can choose
+            their own numbers.<BR>
+            They may or may not work.
+          </BLOCKQUOTE>
+          <BLOCKQUOTE>
+            <TABLE style="text-align: left; width: 100px;"
+            cellspacing="3" cellpadding="3" border="0">
+              <CAPTION>
+                Unknown Types<BR>
+              </CAPTION>
+              <TBODY>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap;"
+                  nowrap="nowrap" align="center">Type</TD>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap;"
+                  nowrap="nowrap" align="center">
+                  &nbsp;&nbsp;&nbsp;&nbsp; Reported &nbsp;<BR></TD>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap;"
+                  nowrap="nowrap" width="80%" align="center">
+                  comment</TD>
+                </TR>
+                <TR>
+                  <TD nowrap="nowrap" valign="top" align="center">
+                  17<BR></TD>
+                  <TD nowrap="nowrap" valign="top">Significant
+                  Motion<BR></TD>
+                  <TD nowrap="nowrap" width="80%" valign="top">
+                  (samsung, xiaomi)</TD>
+                </TR>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap;"
+                  nowrap="nowrap" align="center">18<BR></TD>
+                  <TD style="vertical-align: top;" nowrap="nowrap">
+                  Step Detect<BR></TD>
+                  <TD style="vertical-align: top;" nowrap="nowrap"
+                  width="80%">(xiaomi)</TD>
+                </TR>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap;"
+                  nowrap="nowrap" align="center">19</TD>
+                  <TD style="vertical-align: top;" nowrap="nowrap">
+                  pedometer<BR></TD>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap;"
+                  nowrap="nowrap" width="80%">(xiaomi)</TD>
+                </TR>
+                <TR>
+                  <TD valign="top" align="center">22<BR></TD>
+                  <TD nowrap="nowrap" valign="top">Tilt
+                  detector<BR></TD>
+                  <TD nowrap="nowrap" width="80%" valign="top">
+                  (samsung, xiaomi)</TD>
+                </TR>
+                <TR>
+                  <TD valign="top" align="center">27<BR></TD>
+                  <TD nowrap="nowrap" valign="top">
+                  Orientation<BR></TD>
+                  <TD nowrap="nowrap" width="80%" valign="top">
+                  discrete orientation<BR>
+                  (samsung, xiaomi)</TD>
+                </TR>
+                <TR>
+                  <TD valign="top" align="center">29<BR></TD>
+                  <TD nowrap="nowrap" valign="top">Stationary
+                  detect<BR></TD>
+                  <TD nowrap="nowrap" valign="top">(xiaomi)</TD>
+                </TR>
+                <TR>
+                  <TD valign="top" align="center">30<BR></TD>
+                  <TD nowrap="nowrap" valign="top">Motion
+                  detect<BR></TD>
+                  <TD nowrap="nowrap" valign="top">(xiaomi)</TD>
+                </TR>
+                <TR>
+                  <TD valign="top" align="center">35<BR></TD>
+                  <TD nowrap="nowrap" valign="top">
+                  Accelerometer-Uncalibrated<BR></TD>
+                  <TD nowrap="nowrap" valign="top">(xiaomi)</TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </BLOCKQUOTE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="pseudo3" id=
+          "printat"></A>Pseudo</BIG> <BIG style=
+          "color: rgb(0, 0, 153);">Sensor type -3 Orientation<BR>
+          <BR></BIG>
+          <DIV style="margin-left: 40px;">
+            Sensor Type (+)3 was deprecated since Android 4.4W (API
+            20).<BR>
+            This special type of -3 is an hBasic replacement.<BR>
+            <BR>
+            The&nbsp; SENSORS commands do not normally allow a
+            negative type, but will<BR>
+            treat this request as a special case.<BR>
+            <FONT color="#000099">SENSORS.OPEN</FONT> and
+            <FONT color="#000099">SENSORS.READ</FONT> will not
+            error for special type of -3.<BR>
+            <BR>
+            Type -3 uses the Acceleration and Magnetic Field
+            sensors.<BR>
+            <U>Both sensors must be available in hardware to
+            work</U>.<BR>
+            <BR>
+            <FONT color="#000099">SENSORS.OPEN</FONT> -3 is the
+            same as SENSORS.OPEN 1,2 (with common delay)&nbsp;<BR>
+            <BR>
+            &nbsp;&nbsp; &nbsp;e.g<SMALL><BR></SMALL> <FONT face=
+            "Courier New, Courier, monospace">&nbsp;&nbsp;
+            &nbsp;<SPAN style=
+            "color: rgb(0, 0, 153);">SENSORS.Open</SPAN>
+            -3&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <FONT color=
+            "#333333"><FONT color="#006600">% or SENSORS.open
+            1,2</FONT></FONT><BR>
+            &nbsp;&nbsp; &nbsp;<SPAN style=
+            "color: rgb(0, 0, 153);">SENSORS.Read</SPAN> -3,
+            azimuth, pitch, roll</FONT> <FONT size="+1"><TT><BR>
+            <BR></TT></FONT> An example of using this sensor is
+            found in the sample program <FONT color=
+            "#663300">h06_compass.bas</FONT>.<BR>
+            <BR>
+            Notes<BR>
+            <BLOCKQUOTE>
+              This pseudo sensor follows the guideline found
+              <A href=
+              "https://developer.android.com/guide/topics/sensors/sensors_position?hl=en#sensors-pos-orient">
+              here</A> ;<BR>
+              Also, the old sensor type 3 had the roll reversed,
+              this one doesn't.<BR>
+            </BLOCKQUOTE>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top"><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

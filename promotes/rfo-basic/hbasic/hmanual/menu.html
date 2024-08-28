@@ -1,0 +1,453 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Menu</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; Menu<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Menu
+          Commands</BIG></BIG><BR>
+          <BR>
+          <TABLE style=
+          "text-align: left; width: 742px; height: 150px; margin-left: 40px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#console_set">MENU</A><BR>
+                <BR></TD>
+                <TD style="vertical-align: top;"><BR>
+                <BR>
+                <A href="#stop">Stop / Editor / Exit</A><BR>
+                <BR>
+                <A href="#set">MENU.SET</A><BR>
+                <A href="#enable">MENU.ENABLE</A><BR>
+                <A href="#disable">MENU.DISABLE</A><BR>
+                <A href="#show">MENU.SHOW</A><BR>
+                <A href="#get">MENU.GET</A><BR>
+                <BR>
+                <A href="#tap"></A><A href="#intr">OnMenuTap:<BR>
+                MenuTap.Resume</A><BR></TD>
+                <TD style="vertical-align: top;">Menu related
+                changes<BR>
+                <BR>
+                menu item change<BR>
+                <BR>
+                Set menu items<BR>
+                Enable menu items<BR>
+                Disable menu items<BR>
+                Shows the menu<BR>
+                <BR>
+                <BR>
+                Interrupt block<BR>
+                <BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="stop" id=
+          "fn_import"></A>The (Stop / Editor / Exit) System menu
+          item</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            In legacy basic two of the above items appear in the
+            console menu. One is Stop and the other is either
+            Editor or Exit (for apk). When the program is stopped,
+            Stop is disabled and vice-versa.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG style="text-decoration: underline;">In hBasic this
+            system menu item has been simplified to just <B>one</B>
+            item.</BIG><BR>
+            <BR>
+            It will show Stop or Exit or Editor depending on if the
+            program has stopped or if the app is standard or
+            standalone (apk).<BR>
+            <BR>
+            When defining&nbsp; a user menu, this system item is
+            recognised as "<BIG style=
+            "color: rgb(0, 0, 153);">$stop"</BIG>.&nbsp; The "$"
+            tells hBasic that it is a system item. It is case
+            in-sensitve.<BR>
+            <BR>
+            System items cannot be disabled but they <U>can be
+            hidden</U>. They will never appear dimmed if shown.<BR>
+            <BR>
+            System items can be <B>hidden</B> from the menu&nbsp;
+            by <U>not including</U> them in the MENU.SET
+            string.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="set" id=
+          "printat"></A>MENU.SET <SPAN style=
+          "color: rgb(102, 51, 0);">&lt;itemList</SPAN>_<SPAN style="color: black;">sexp</SPAN></BIG><BIG style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">&gt;</SPAN><BR>
+          </BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1">Sets the menu to a list of
+            items</FONT><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            &nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(102, 51, 0);">itemList</SPAN>_sexp is a
+            string of labels separated with commas.<BR>
+            <BR>
+            e.g<BR>
+            <SPAN style=
+            "font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
+            MENU.SET</SPAN> <SPAN style=
+            "font-family: Courier New,Courier,monospace;">"Item
+            1,Item 2,~Item 3,Item 4,Item 5,</SPAN><SPAN style=
+            "color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">$stop</SPAN><SPAN style="font-family: Courier New,Courier,monospace;">"</SPAN><BR>
+
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style=
+            "text-decoration: underline;">Items</SPAN></BIG><BR>
+            Each supplied item label is entered into the menu in
+            that order starting with index 1.<BR>
+            In the example. the label "<SPAN style=
+            "font-family: Courier New,Courier,monospace;">Item
+            1</SPAN>" has index 1.<BR>
+            <BR>
+            Spaces before and after an item label count as part of
+            the label.<BR>
+            Comma is not allowed as part of an item.<BR>
+            Normally, an empty Item string is not allowed except to
+            mark an empty menu.<BR>
+            <BR>
+            <BIG><SPAN style="text-decoration: underline;">Empty
+            Menu<BR></SPAN></BIG> You can create an emtpy menu with
+            an emtpy Item <SPAN style=
+            "text-decoration: underline;">as the first
+            Item,</SPAN><BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
+              MENU.SET</SPAN> <SPAN style=
+              "font-family: Courier New,Courier,monospace;">""<BR>
+              <BR></SPAN>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            An empty menu <SPAN style=
+            "text-decoration: underline;">will <SPAN style=
+            "font-weight: bold;">not</SPAN> show the menu</SPAN> (3
+            dots).<BR>
+          </DIV>
+          <DIV style="text-align: right; margin-left: 320px;">
+            <SPAN style="font-style: italic;">Warning: Because it
+            is empty, you will not get the system item, so your
+            program will be harder to debug.</SPAN><BR style=
+            "font-style: italic;">
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            If you need a blank Item as part of a <SPAN style=
+            "text-decoration: underline;">non-empty</SPAN> menu,
+            then use space(s) instead of an empty string.<BR>
+            <BR>
+            <BIG><SPAN style="text-decoration: underline;">Disabled
+            Items</SPAN></BIG><BR>
+            By default, all items are enabled (not dimmed).<BR>
+            Items that start with a twiddle&nbsp; <BIG>'<FONT size=
+            "+2">~</FONT>'</BIG>&nbsp; will be disabled and
+            dimmed.<BR>
+            You can use disabled items as labels for menu headers
+            that don't respond to a touch.<BR>
+            You can also enable or disable items later on (see
+            menu.enable / menu.disable)<BR>
+            <BR>
+            <BIG><SPAN style="text-decoration: underline;">System
+            Item</SPAN></BIG><BR>
+            System items begin with a '$'.<BR>
+            Therefore do not begin your user items with a "$".<BR>
+            <BR>
+            There is only one system item and that is the Stop
+            item&nbsp; (Stop/Exit/Editor).<BR>
+            The default menu will already contain the system
+            item.<BR>
+            If you want the $stop system item in your custom menu,
+            use <SPAN style="color: rgb(0, 51, 0);">"$stop"</SPAN>
+            (case insensitive).<BR>
+            System items are always enabled (even though they maybe
+            hidden).<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG style="color: rgb(0, 0, 153);"><A style=
+          "font-family: monospace;" name="enable" id=
+          "fn_import"></A>MENU.ENABLE <SMALL><SPAN style=
+          "color: rgb(102, 51, 0);">&lt;itemList_<SPAN style=
+          "color: black;">sexp</SPAN>&gt; | &lt;index<SPAN style=
+          "color: black;">_nexp</SPAN>&gt; {,..}</SPAN><SPAN style=
+          "color: rgb(102, 51, 0); font-family: monospace;"><BR>
+          <BR></SPAN></SMALL></BIG> <BIG style=
+          "color: rgb(0, 0, 153);"><A name="disable" id=
+          "fn_import"></A><SPAN style=
+          "color: rgb(0, 0, 153);">MENU.DISABLE</SPAN></BIG>
+          <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(102, 51, 0);">&lt;itemList_<SPAN style=
+          "color: black;">sexp</SPAN>&gt; | &lt;index_<SPAN style=
+          "color: black;">nexp</SPAN>&gt; {,..}</SPAN></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <BIG>Enables or Disable items.<BR></BIG><BR>
+            A disabled item will appear dimmed and will not respond
+            to a tap.<BR>
+            <BR>
+            You can supply multiple items seperated by commas.<BR>
+            An item can be a label (string) or it's item index
+            (number).<BR>
+            <BR>
+            You can also provide a string containing multiple
+            labels (but not numbers).<BR>
+            Be careful with spaces, they are counted as part of the
+            label.<BR>
+            <BR>
+            System items will be ignored.<BR>
+          </DIV><BR>
+          Examples<BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+            <SPAN style="color: rgb(0, 0, 153);">MENU.ENABLE
+            <SPAN style="color: black;">"Item 2,Item
+            3"</SPAN></SPAN></SPAN><BR style=
+            "font-family: Courier New,Courier,monospace;">
+            <SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+            <SPAN style="color: rgb(0, 0, 153);">MENU.ENABLE
+            <SPAN style=
+            "color: black;">4,5,6</SPAN></SPAN></SPAN><BR style=
+            "font-family: Courier New,Courier,monospace;">
+            <SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+            <SPAN style="color: rgb(0, 0, 153);">MENU.ENABLE
+            <SPAN style="color: black;">"Item 2,Item 3",
+            4,5</SPAN></SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><BR>
+            MENU.DISABLE <SPAN style="color: black;">4,5, "Item
+            3"</SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(0, 102, 0); font-family: monospace;"><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: black;"><BR>
+
+            <BR></SPAN></SPAN></SPAN>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="show" id=
+          "console_screen"></A><SPAN style=
+          "color: rgb(0, 0, 153);">MENU.SHOW</SPAN></BIG><BIG style="color: rgb(0, 0, 153);">&nbsp;</BIG><BR>
+
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <BIG>Opens the menu as if you had tapped it.</BIG><BR>
+            <BR>
+            You can use this to bring up another (changed) menu
+            after the user taps the first menu.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="get" id=
+          "console_screen"></A><SPAN style=
+          "color: rgb(0, 0, 153);">MENU.GET</SPAN></BIG>
+          <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(102, 51, 0);">{ &lt;label$_<SPAN style=
+          "color: black;">svar</SPAN>&gt;} {,
+          &lt;index_<SPAN style="color: black;">nvar</SPAN>&gt;
+          }</SPAN></SPAN></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1">Get the last tap of a&nbsp;
+            menu.</FONT><BR>
+            <BR>
+            Either the label or/and the index variable must be
+            given.<BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;item_<SPAN style=
+            "color: black;">svar</SPAN>&gt;</SPAN></SPAN></SPAN>
+            will be the tapped label string<BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;index_<SPAN style=
+            "color: black;">nvar</SPAN>&gt;</SPAN></SPAN></SPAN>
+            will be the tapped index (1..n)<BR>
+            <BR>
+            If the user tapped outside the menu to close it, the
+            index will be 0 and the item will be the empty string
+            "".<BR>
+            <BR>
+          </DIV>Example<BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+            <SPAN style="color: rgb(0, 0, 153);">MENU.GET
+            <SPAN style=
+            "color: black;">mLabel$<BR></SPAN></SPAN></SPAN>
+            <SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+            <SPAN style="color: rgb(0, 0, 153);">MENU.GET
+            <SPAN style="color: black;">mLabel$,
+            mIndex<BR></SPAN></SPAN></SPAN> <SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+            <SPAN style="color: rgb(0, 0, 153);">MENU.GET
+            <SPAN style="color: black;">,
+            mIndex</SPAN></SPAN></SPAN><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG style="color: rgb(0, 0, 153);">Menu interrupt
+          block</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
+            OnMenuTap:<BR>
+            ..<BR></SPAN> <SPAN style=
+            "font-family: Courier New,Courier,monospace;">&nbsp;
+            MENU.GET..</SPAN><BR style=
+            "font-family: Courier New,Courier,monospace;">
+            <SPAN style=
+            "font-family: Courier New,Courier,monospace;">..</SPAN><BR style="font-family: Courier New,Courier,monospace;">
+
+            <SPAN style=
+            "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
+            MenuTap.Resume</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-family: monospace;"><BR></SPAN></SPAN>
+          </DIV><BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style=
+            "color: rgb(0, 0, 153);">OnMenuTap</SPAN></BIG><BR>
+            <DIV style="margin-left: 40px;">
+              Start of interrupt -&nbsp; is run whenever the user
+              taps an item in the menu.<BR>
+              <BR>
+              It is also run if the user taps outside an open
+              menu.<BR>
+              If the tap was outside, you will get the an empty
+              string as the label and zero as the index.<BR>
+              <BR>
+            </DIV><BR>
+            <BIG><SPAN style=
+            "color: rgb(0, 0, 153);">MenuTap.Resume</SPAN></BIG><BR>
+
+            <DIV style="margin-left: 40px;">
+              End of interrupt routine - will return to the point
+              that the program got interrupted.<BR>
+            </DIV>
+          </DIV><BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-style: italic;">Note :&nbsp;</SPAN>
+            <SMALL style="font-style: italic;">Statements that run
+            inside any interrupt block will use the 'main' variable
+            space.<BR>
+            Although functions called inside the block will still
+            run in their own local scope.</SMALL><BR>
+          </DIV><BR>
+          Example<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "font-family: Courier New,Courier,monospace;">? "Tap
+            the menu"<BR>
+            <BR>
+            debug$ = ",$stop"<BR>
+            finish = 0<BR>
+            menuSelected = 0<BR>
+            <BR>
+            main_menu$ = "~Main Menu,Item 1,Item 2,~disabled
+            item,Quit"+debug$<BR>
+            menu.set main_menu$<BR>
+            <BR>
+            do<BR>
+            &nbsp;&nbsp;&nbsp; menuSelected = 0<BR>
+            &nbsp;&nbsp;&nbsp;
+            do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            % wait for a menu selection<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pause
+            100<BR>
+            &nbsp;&nbsp;&nbsp; until menuSelected<BR>
+            until
+            finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            % user quits from menu<BR>
+            ? "Done"<BR>
+            END<BR>
+            <BR>
+            do_Menu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            % process menu tap<BR>
+            &nbsp;&nbsp;&nbsp; MENU.GET label$, m<BR>
+            &nbsp;&nbsp;&nbsp; print "Tapped: ";label$,m<BR>
+            &nbsp;&nbsp;&nbsp; if label$ = "Quit" then finish =
+            1<BR>
+            &nbsp;&nbsp;&nbsp; menuSelected = 1<BR>
+            return<BR>
+            <BR>
+            onMenuTap:&nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % when user
+            taps an open menu<BR>
+            &nbsp;&nbsp;&nbsp; gosub do_Menu<BR>
+            &nbsp;&nbsp;&nbsp; MenuTap.Resume<BR>
+            end</SPAN><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

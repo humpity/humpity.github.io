@@ -1,0 +1,148 @@
+% big demo. < HEW framework < public domain. by humpty.drivehq.com 
+% v2.1
+                                        % include widget functions here
+include text.bas                        % text widget
+include button.bas                      % button widget
+include msg_ok.bas                      % msg_ok dialog
+include ask_yn.bas                      % ask_yn dialog
+include progress.bas                    % progress bar
+include btimer.bas                      % timer
+include botmenu.bas                     % bottom menu
+%---------------------------------------
+include themes.bas                      % widget colors
+include event.bas                       % get event
+include init.bas                        % init screen, vars
+%---------------------------------------
+init_hew()
+bundle.get 1, "scr_w", scr_w
+bundle.get 1, "scr_h", scr_h
+bundle.get 1, "tx_height", tx_height
+bundle.get 1, "widgets", widgets
+
+gr.text.typeface 3                      % sans serif
+gr.text.size tx_height
+
+wg_txt1 = text_make ("", "Please wait..", scr_w*1/30, scr_h*3.5/10)
+gr.render
+wg_txt2 = text_make ("", "Timer",  scr_w*1/30, scr_h*0.52)
+
+gr.text.size tx_height*0.9
+wg_btn_1= button_make ("", "|hide|this|  button ! ", 4,  scr_w/3, scr_h*0.06)
+wg_btn_set= button_make ("", "is Unset", 1,  scr_w*1/30, scr_h*0.25)
+
+wg_btn_2= button_make ("", "Msg OK", 2, scr_w*0.28, scr_h*0.45)
+wg_btn_3= button_make ("", "Ask YN", 2, scr_w*0.65, scr_h*0.45)
+wg_btn_4= button_make ("", "  move  |it", 1, scr_w*20/30, scr_h*6/10)
+
+wg_btn_5= button_make ("|button", "BotMenu",5, scr_w*1/30, scr_h*7/10)
+
+gr.text.size tx_height
+wg_btn_exit= button_make ("R", "Exit", 4, scr_w*0.9, scr_h*0.8)
+wg_prg_1 = progress_make ()
+wg_timer = btimer_make ("",1, scr_w*1/30, scr_h*6/10)
+wg_link = button_make ("","link",0, scr_w*0.45, scr_h*6/10)  % borderless btn
+wg_btn_6= button_make ("", "reset", 1, scr_w*0.23, scr_h*6/10)
+
+btimer("reset", "0:10", wg_timer)
+                                        % create botmenu list
+gr.text.size tx_height*0.8
+list.create s,itms
+list.add itms, "Menu 1","Menu 2","Menu 3","Menu 4","Menu 5","Menu 6"
+wg_botmen1 = botmenu_make (itms)
+                                        % create modals last of all
+gr.text.size tx_height
+wg_msg_ok = msg_ok_make (2)             % the only msg_OK
+wg_ask_yn = ask_yn_make (1)             % the only ask_yn
+gr.text.size tx_height
+                                        % create the main detection list
+list.add widgets, wg_btn_2, wg_btn_3, wg_btn_4, wg_btn_1, wg_btn_5 ~
+                  wg_btn_6, wg_btn_set, wg_timer, wg_link, wg_btn_exit
+check=0
+quit=0
+text_do ("text", "", wg_txt1)
+gr.render                               % show objects
+%---------------------------------------
+do                                      % main loop
+   wg= event_get ()                     % get an event from widgets list
+   if wg=0 then end                     % bakkey pressed, end program
+   bundle.get wg, "type", wtype$
+   if wtype$="button" then button ("flash","1",wg) % flash it
+                                        
+   sw.begin wg                          % execute widget callbacks
+   sw.case wg_btn_4                      % move
+           gosub move_button
+           sw.break
+   sw.case wg_btn_2                              % msg ok demo
+           msg_ok ("Test OK Message|here")
+           text_do ("text", "OK", wg_txt1)
+           gr.render
+           sw.break
+   sw.case wg_btn_3                              % ask yn demo
+           rc= ask_yn ("Having a good|time ?")
+           if !rc then text_do ("text", "sorry i asked!", wg_txt1)
+           if rc=1 then text_do ("text", "thought so", wg_txt1)
+           if rc=2 then text_do ("text", "never mind", wg_txt1)
+           gr.render
+           sw.break
+   sw.case wg_btn_1                              % hide no-border button
+           button ("flash", "", wg_btn_1)
+           button ("hide", "", wg_btn_1)     
+           text_do ("text", "hidden", wg_txt1)
+           gr.render
+           sw.break
+   sw.case wg_btn_5
+           rc = botmenu ( wg_botmen1)
+           text_do ("text", str$( floor(rc) ), wg_txt1) 
+           gr.render
+           sw.break
+   sw.case wg_btn_6                              % reset timer
+           btimer ("reset", "", wg_timer)
+           btimer ("flash", "", wg_timer)
+           text_do ("text", "timer reset", wg_txt1)
+           sw.break
+   sw.case wg_btn_set                            % set or unset btn
+           check = !check
+           if check then c$="is Set" else c$="is UnSet"
+           button ("text", c$, wg_btn_set)
+           button ("set", int$(check), wg_btn_set)
+           sw.break
+   sw.case wg_timer                              % start/stop timer
+           if btimer ("is_running", "", wg_timer) then
+              btimer ("stop", "", wg_timer)
+              text_do ("text", "timer stopped", wg_txt1)
+           else
+              btimer ("start", "", wg_timer)
+              text_do ("text", "timer started", wg_txt1)
+           endif
+!           btimer ("flash", "", wg_timer)
+           sw.break
+   sw.case wg_link
+           text_do ("text", "link pressed", wg_txt1)
+           text_do ("flash", "2", wg_txt1)
+           sw.break
+   sw.case wg_btn_exit                      % exit btn pressed
+           quit=1
+           sw.break
+   sw.end
+until quit
+end
+%=======================================
+% gosub code here                       % include any other gosub code here
+% include your_code_here
+move_button:
+           progress ("show", 0 ,wg_prg_1)
+           bundle.get wg_btn_set,"right",r
+           if r+10 > scr_w then button ("move", "0,-0", wg_btn_set)
+           for i=1 to 10
+               button ("move", "+10,+0", wg_btn_set)
+               progress ("set", i/10 ,wg_prg_1)
+               gr.render
+               pause 20
+           next
+           text_do ("text", "moved!", wg_txt1)
+           progress ("hide", 0 ,wg_prg_1)
+           gr.render
+return
+%=======================================
+include isr.bas                         % interrupt handlers
+end

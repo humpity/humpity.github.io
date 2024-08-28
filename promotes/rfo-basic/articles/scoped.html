@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Scoped Storage</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="http://humpty.drivehq.com/home.htm">Humpty Promotes</A>
+  &gt; <A href=
+  "http://humpty.drivehq.com/promotes/rfo-basic/rfo.html">Rfo-Basic</A>
+  &gt; <BIG style=
+  "font-family: Helvetica,Arial,sans-serif;"><SMALL><A href=
+  "articles.html">Project Articles</A> &gt; Scoped
+  Storage</SMALL></BIG><BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8" border="0">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><BIG style="color: rgb(0, 0, 153);">Android Scoped
+          Storage<BR></BIG></BIG><BR>
+          This whine is a modified summary of a <A href=
+          "https://www.tapatalk.com/groups/rfobasic/viewtopic.php?p=47273#p47273">
+          post on a forum</A> explaining Android Scoped
+          Storage.<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1"><A href="#external">External</A>
+            Storage<BR>
+            <A href="#private">Private</A> Storage<BR>
+            <A href="#internal">Internal</A> Storage<BR>
+            Google kills off <A href="#shared">Shared</A>
+            storage</FONT><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BR>
+          Here is a map of <A href="storage.html">Android
+          Storage</A> I made in 2015.<BR>
+          It maps an overview of the different areas of storage
+          found on an Android device.<BR>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="external" id=
+          "external"></A>What is External storage
+          ?</SPAN></FONT><BR>
+          <DIV style="margin-left: 40px;">
+            For a long time now,&nbsp; many apps have used
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 102, 0);">External</SPAN>
+            Storage</SPAN>.<BR>
+            This has either been on<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            Primary&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; External
+            <SPAN style="color: rgb(0, 0, 153);">Shared</SPAN>
+            storage <SPAN style=
+            "font-weight: bold;">(sdcard)</SPAN><BR>
+            or&nbsp; Secondary External <SPAN style=
+            "color: rgb(0, 0, 153);">Shared</SPAN> storage
+            (<SPAN style="font-weight: bold;">removable
+            sdcard</SPAN>).<BR>
+            <BR>
+            Since Android 11, Google has been enforcing Scoped
+            Storage.<BR>
+            This forced developers to move their apps to<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Primary&nbsp;&nbsp;&nbsp;&nbsp; External <SPAN style=
+            "color: rgb(102, 0, 0);">Private</SPAN> storage
+            <SPAN style="font-weight: bold;">(sdcard)</SPAN><BR>
+            or<SPAN style="color: rgb(0, 102, 0);">&nbsp;</SPAN>
+            Secondary External <SPAN style=
+            "color: rgb(102, 0, 0);">Private</SPAN> storage
+            (<SPAN style="font-weight: bold;">removable
+            sdcard</SPAN>).<BR>
+            i.e this is how apps can be scoped.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="private" id="private"></A>What is Private
+          storage ?</FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            The word '<SPAN style=
+            "color: rgb(102, 0, 0);">Private</SPAN>' has become
+            synonymous with '<SPAN style=
+            "color: rgb(0, 0, 153);">Scoped</SPAN>'.<BR>
+            These are areas where nobody but your app can
+            access.<BR>
+            <SPAN style="text-decoration: underline;">Google wants
+            each app to get <SPAN style=
+            "font-weight: bold;">scoped,</SPAN> so that they cannot
+            see each other.</SPAN><BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="internal" id="internal"></A>What is
+          Internal storage ?</FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            There is also another area called <SPAN style=
+            "text-decoration: underline;"><SPAN style=
+            "color: rgb(153, 0, 0);">Internal</SPAN> Storage</SPAN>
+            which a fewer number of apps use.<BR>
+            This storage is also <SPAN style=
+            "color: rgb(102, 0, 0);">Private</SPAN> and has been
+            there since the beginning of Android.<BR>
+            Not many apps used it because it was a small area
+            (expensive in those days) and because they were
+            'scoped' (i.e private).<BR>
+            So most apps chose to use External instead where shared
+            storage areas were more plentiful and easily shared
+            between apps.<BR>
+            <BR>
+            The greatest confusion for users has been the
+            difference between <SPAN style=
+            "text-decoration: underline;">'Internal</SPAN> Storage'
+            and <SPAN style=
+            "text-decoration: underline;">'External</SPAN>
+            storage'.<BR>
+            <SPAN style="text-decoration: underline;">Modern phones
+            emulate the primary sdcard using 'internal' storage,
+            and this is where the word gets confused.</SPAN><BR>
+            Even though an 'sdcard' uses 'internal' (fast) storage,
+            it is still classified as 'External'.<BR>
+            True Internal Storage, is not emulated, and has always
+            been Private storage (not Shared).<BR>
+            Any type of Private storage is also removed after the
+            app is uninstalled.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="shared" id="shared"></A>Google slowly
+          killed off Shared storage<BR></FONT></SPAN>
+          <DIV style="margin-left: 40px;">
+            Shared storage are those areas where apps can see each
+            other's files with read and write access.<BR>
+            There are fewer areas where apps can freely share
+            storage.<BR>
+            Infact, according to the documentation apps are not
+            even allowed to write to Download unless there is
+            already a subdirectory waiting for it there.<BR>
+            <BR>
+            The official way to share storage is to use special
+            APIs like File-Provider or Media Collections.<BR>
+            These allow access '<SPAN style=
+            "text-decoration: underline;">per file</SPAN>', they
+            cannot share whole directories.<BR>
+            And even then, there are rules to write-access
+            depending whether it was your app that created the
+            file.<BR>
+            And you cannot access them via normal libraries. You
+            have to send an intent..etc<BR>
+            In short, they are a real pain to implement.<BR>
+            <BR>
+            <SPAN style="text-decoration: line-through;">For now,
+            the easiest way to copy files between different areas
+            is with file-managers which know how to get
+            access</SPAN><SPAN style=
+            "text-decoration: line-through;"><BR></SPAN>
+            <SPAN style="text-decoration: line-through;">e.g&nbsp;
+            Total-Commander.</SPAN><SPAN style=
+            "text-decoration: line-through;"><BR></SPAN> Since
+            Android 14, Google has tightened the screws, even file
+            managers like Total Commander can only open scoped
+            storage by opening Androids' internal file-manager, an
+            indepedent app that is only single pane. You need a
+            phone that can open two panes (split-screen) in order
+            to copy files into it.<BR>
+            <BR>
+            All apps that have been compiled for Android 11 and
+            higher (Target API 30+) are forced to be scoped. Apps
+            can no longer access areas outside of their own scoped
+            storage.<BR>
+            As a simple example;<BR>
+            Where before we could open any .html file on your phone
+            with a web browser and browse via a link to any other
+            .html file in the same directory. You can no longer do
+            this any more.<BR>
+            The directory does not belong to the web browser
+            app.<BR>
+            Even if you properly shared the first .html file to the
+            browser, the second file was not shared with the first
+            file, so the second file cannot be accessed. In scoped
+            storage, directories cannot be shared.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta content="HTML Tidy for HTML5 for Linux version 5.2.0" name=
+"generator">
+<title>samba</title>
+
+<style type="text/css">
+body {
+border: 2px solid #666666;
+color: #000000;
+font-family: sans-serif,Helvetica,Arial;
+width: 800px;
+padding-left: 20px;
+padding-right: 20px;
+background-color: white;
+}
+
+table {
+border-width: 1px;
+text-align: left;
+width: 800px;
+font-family: Arial,Helvetica,sans-serif;
+}
+
+
+</style>
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" vlink=
+"#990099" link="#000099" alink="#000099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big>
+<span style="font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" cellspacing="2"
+cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Setting up SAMBA (SMB
+file sharing)</span></big></big><big><span style=
+"color: rgb(0, 0, 153);"><br>
+<br></span></big>
+<div style="margin-left: 40px;"><a href="#gvfs"><big><span style=
+"color: rgb(0, 0, 153);"><small><span style=
+"font-family: Helvetica,Arial,sans-serif;">How to access SMB shares
+using GVFS</span></small></span></big></a><br style=
+"font-family: Helvetica,Arial,sans-serif;">
+<a href="#setup"><span style=
+"font-family: Helvetica,Arial,sans-serif; color: rgb(0, 0, 153);">How
+to setup a SAMBA share</span></a><br style=
+"font-family: Helvetica,Arial,sans-serif;">
+<a href="#no-gvfs"><span style=
+"color: rgb(0, 0, 153); font-family: Helvetica,Arial,sans-serif;">How
+to access SMB shares <span style=
+"color: rgb(153, 0, 0);">without</span> GVFS</span></a></div>
+</td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 800px; font-family: Helvetica,Arial,sans-serif; height: 812px;"
+cellspacing="2" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top;">One of the most useful things you
+might like to do after installing Lubuntu is to share files between
+PCs.<br>
+<br>
+SMB has been the choice for most users because you can share files
+between linux,windows and most other OSs including Android on
+mobile phones.<br>
+<br>
+Linux can use SAMBA to do this but If you only want to 'get' files
+from another smb source, installing CIFS alone is enough.<br>
+<br>
+Even with CIFS, accessing a share involves having to set up
+'mounts', But, there is <span style="color: rgb(153, 0, 0);">an
+easier</span> way by installing a system called '<span style=
+"color: rgb(102, 0, 0);">gvfs</span>' which allows a '<span style=
+"color: rgb(102, 0, 0);">gio</span>' enabled app to access samba
+shares with a simple <a href=
+"http://en.wikipedia.org/wiki/Uniform_resource_identifier">URI</a>
+string e.g <span style=
+"color: rgb(0, 102, 0);">smb://hostname/shared_dir<br></span><br>
+The gvfs/gio system has matured for a good many years now and is
+pretty fast and reliable. No more messing about with scripts and
+config files or wondering why smb performance is so slow.<br>
+<br>
+<big><span style="color: rgb(0, 0, 153);"><a name="gvfs" id=
+"gvfs"></a>How to access SMB shares using GVFS</span></big><br>
+<div style="margin-left: 40px;">using Synaptic, install</div>
+<br>
+<div style="margin-left: 80px;">gvfs-bin<br>
+gvfs-backends</div>
+<br>
+<div style="margin-left: 40px;">Open PCmanFM and enter &nbsp;
+&nbsp; &nbsp; <span style=
+"color: rgb(0, 102, 0);">smb://&nbsp;</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+on the address line.<br>
+<br>
+If you have any smb shares on you network, then you should see
+something like 'WORKGROUP' in the file manager and you can click
+into it to access the shares.<br>
+<br>
+In the past you had to install CIFS and write some scripts to mount
+the shares, but gvfs/gio transparently integrates the shares to a
+requested URI (<span style=
+"color: rgb(0, 102, 0);">smb://hostname/shared_dir</span>).</div>
+<br>
+<big style="color: rgb(0, 0, 153);"><a name="setup" id=
+"setup"></a>How to setup a SAMBA share</big><br>
+<div style="margin-left: 40px;">using Synaptic, install</div>
+<br>
+<div style="margin-left: 80px;">samba<br>
+system-config-samba</div>
+<br>
+<div style="margin-left: 40px;">From LxPanel menu, open System
+Tools&gt;Samba<br>
+Here you can easily create a share of your choice directory, which
+you can access using the gvfs setup (above).<br>
+<br>
+In the past, you had to go through the horrible process of writing
+config files and scripts for mounting. But this gui combined with
+the gvfs setup does it all for you.</div>
+<br>
+<big><span style="color: rgb(0, 0, 153);"><a name="no-gvfs" id=
+"no-gvfs"></a>How to access SMB shares <u><big style=
+"color: rgb(153, 0, 0);">without</big></u> GVFS<br>
+<br></span></big> The problem with gvfs (<small>apart from
+installing a bloatload of other stuff</small>) is that your apps
+needs to be 'gio' enabled, that is they <u>must be designed to
+access gvfs type URIs</u>.<br>
+<br>
+Gvfs does infact also create a hidden directory <span style=
+"color: rgb(0, 102, 0);">~/.gvfs</span> containing
+<small>(fuse)</small>mounts for non-gio apps. But they only exist
+if the smb share is actually accessed <span style=
+"color: rgb(153, 0, 0);">for the first time</span>, which is like a
+chicken-egg situation.<br>
+<br>
+Another sticking point is that copying files via gvfs <u>do not
+preserve their attributes</u>. e.g you could copy over an
+executable file from shared storage only to find it doesn't
+run.<br>
+<br>
+Gvfs provides a way to look up smb shares without first knowing the
+IP of the host. But there is <span style=
+"color: rgb(0, 0, 153);">another way</span> (<span style=
+"color: rgb(153, 0, 0);">without installing gvfs</span>) of knowing
+the IP if you already know the <span style=
+"color: rgb(102, 0, 0);">hostname</span>.<br>
+<br>
+There is a utility called <span style=
+"color: rgb(0, 0, 153);">nmblookup</span> that maps netbios names
+to IP addresses, (in Lubuntu it is part of the package
+samba-common-bin and is part of the samba suite).<br>
+<br>
+nmblookup &lt;hostname of your other PC&gt;<br>
+e.g<br>
+<div style="margin-left: 40px;">&gt;<span style=
+"color: rgb(0, 0, 153);">nmblookup</span> <span style=
+"color: rgb(102, 0, 0);">myhost</span><br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 51, 0);">querying myhost on
+192.168.1.255</span><br style="color: rgb(102, 51, 0);">
+<span style="color: rgb(102, 51, 0);">192.168.1.102
+myhost&lt;00&gt;</span></div>
+</div>
+<br>
+with some ingenuity, you can filter out the output to leave just
+the IP address (below).<br>
+<br>
+Setup your share as above ('<a href="#setup"><span style=
+"font-style: italic;">how to setup a samba share</span></a>') on
+your other PC. Then try the scripts below;<br>
+<br>
+<span style="text-decoration: underline;">Script to mount a
+Share<br>
+<br></span>
+<div style="margin-left: 40px;">Automatically mount a share knowing
+<small><big style="color: rgb(153, 0, 0);">host</big>=<span style=
+"color: black;">myhost</span>, <big style=
+"color: rgb(153, 0, 0);">sharename</big>=<span style=
+"color: black;">myshare</span>, <big>and <span style=
+"color: rgb(153, 0, 0);">user</span></big>=<span style=
+"color: black;">myuser</span>; <big><br>
+to a directory on <span style=
+"color: rgb(0, 102, 0);">/mnt/myshare</span>;</big></small></div>
+<br>
+&nbsp; e.g mount-host.sh<br>
+<div style="margin-left: 40px;"><small><span style=
+"color: rgb(0, 0, 153);">sudo mkdir /mnt/<span style=
+"color: black;">myshare</span> 2&gt;/dev/null<br>
+sudo umount /mnt/<span style="color: black;">myshare</span>
+2&gt;/dev/null<br>
+<br>
+<span style="color: rgb(102, 0, 0);">IPADR</span>=$(nmblookup -R
+<span style="color: black; font-weight: bold;">myhost</span> | grep
+'<span style=
+"color: black; font-weight: bold;">myhost</span>&lt;00&gt;' | cut
+-d' ' -f1)</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">sudo mount --type
+cifs&nbsp;-o</span></small> <small><span style=
+"color: rgb(0, 0, 153);">guest,</span></small><small><span style=
+"color: rgb(0, 0, 153);">uid=<span style=
+"color: black;">myuser</span>,gid=<span style=
+"color: black;">myuser</span></span></small> <small><span style=
+"color: rgb(0, 0, 153);">//<span style=
+"color: rgb(102, 0, 0);">$IPADR</span>/<span style=
+"color: black;">myshare</span></span></small> <small><span style=
+"color: rgb(0, 0, 153);">/mnt/<span style=
+"color: black;">myshare</span></span></small><br>
+<small><span style="color: rgb(0, 0, 153);"><span style=
+"color: black;"><br style="color: rgb(0, 0, 153);"></span> echo
+myhost/myshare $IPADR on /mnt</span>/<span style=
+"color: rgb(0, 0, 153);">myshare</span></small></div>
+<big><span style="color: rgb(0, 0, 153);"><br>
+<i>note: some newer servers default to smb protocol 2 or 3 if the
+protocol version is not given</i><br>
+<br>
+<br></span></big> <span style=
+"text-decoration: underline;"><a name="android_host"></a>Script to
+mount a Share on Android phone host to your PC /mnt/myshare<br>
+<br></span>
+<div style="margin-left: 40px;">Automatically mount a share on a
+phone knowing <small><big style=
+"color: rgb(153, 0, 0);">host</big>=<span style=
+"color: black;">phone_host</span>,</small> <small><big style=
+"color: rgb(153, 0, 0);">password</big>=<span style=
+"color: black;">a_pass</span>,</small><br>
+<small><big style=
+"color: rgb(153, 0, 0);">sharename</big>=<span style=
+"color: black;">my_share</span>, <big>and <span style=
+"color: rgb(153, 0, 0);">user</span></big>=<span style=
+"color: black;">myuser</span>; <big>to a directory on <span style=
+"color: rgb(0, 102, 0);">/mnt/myshare</span>;</big></small></div>
+<span style="text-decoration: underline;"><br></span> &nbsp; e.g
+mount-android.sh<big><span style=
+"color: rgb(0, 0, 153);"><br></span></big>
+<div style="margin-left: 40px;"><small><span style=
+"color: rgb(0, 0, 153);">sudo mkdir /mnt/<span style=
+"color: black;">myshare</span> 2&gt;/dev/null</span><br>
+<span style="color: rgb(0, 0, 153);">sudo umount /mnt/<span style=
+"color: black;">myshare</span> 2&gt;/dev/null</span><br>
+<br>
+<span style="color: rgb(0, 0, 153);"><span style=
+"color: rgb(102, 0, 0);">IPADR</span>=$(nmblookup -R <span style=
+"color: black; font-weight: bold;">phone_host</span> | grep
+'<span style=
+"color: black; font-weight: bold;">phone_host</span>&lt;00&gt;' |
+cut -d' ' -f1)<br>
+<span style=
+"color: rgb(102, 0, 0);">OPTS</span>='</span></small><small><span style="color: rgb(0, 0, 153);">--type
+cifs -o noperm,rw,user=</span>myuser<span style=
+"color: rgb(0, 0, 153);">,password=</span>a_pass<span style=
+"color: rgb(0, 0, 153);">,sec=ntlm,uid=</span>myuser<span style=
+"color: rgb(0, 0, 153);">,gid=</span>root'</small><br style=
+"color: rgb(0, 0, 153);">
+<small><span style="color: rgb(0, 0, 153);">sudo mount&nbsp;</span>
+<span style="color: rgb(102, 0, 0);">$OPTS</span> //<span style=
+"color: rgb(102, 0, 0);">$IPADR</span>/<span style=
+"font-weight: bold;">sdcard</span> /mnt/$myshare<br>
+<br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">echo myhost/myshare $IPADR on
+/mnt</span>/<span style=
+"color: rgb(0, 0, 153);">myshare</span></small></div>
+<big><span style="color: rgb(0, 0, 153);"><br>
+<br></span></big> For this to work , you need only install<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 51, 0);">samba</span> (includes samba-common,
+samba-bcommon-bin)<br>
+<span style=
+"color: rgb(102, 51, 0);">system-config-samba</span><br>
+<span style="color: rgb(102, 51, 0);">cifs-utils</span></div>
+<big><span style="color: rgb(0, 0, 153);"><br></span></big> It
+might be a little work to setup at first, but it is much more
+reliable than gvfs because there are still a lot of apps that don't
+work well with gvfs URIs.<br>
+<br>
+<br>
+End.<br>
+<br>
+Notes:<br>
+<small style="font-style: italic;">In a SMB share network, certain
+ports have to be open if you are using a firewall. These are for
+PCs to request share names and communication. The ports are
+135,139,445 tcp and 137,138 udp and need to be let through in both
+directions.<br>
+<br>
+(<a href="http://en.wikipedia.org/wiki/Gvfs">GVFS</a> also works
+for other resources e.g ftp://, afp, afc, cdda .. and a bloatload
+of other stuff you never use..)<br>
+<br>
+The default filemanager PCmanFM is already enabled with gio, but
+apps that don't accept these URIs can still access the shares
+through a hidden fuse mounted directory in ~/.gvfs/<br>
+In order to access this directory you must be added to the group
+'fuse';&nbsp; usermod -a -G fuse &lt;username&gt;</small></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<div style="text-align: right;">[ <a href=
+"http://humpty.drivehq.com/home.htm">home</a> ]</div>
+<script style="font-family: Helvetica,Arial,sans-serif;" type=
+"text/javascript" src="http://humpty.drivehq.com/main_index.js">
+</script>
+</body>
+</html>

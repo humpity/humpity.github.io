@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>tools</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="../../../home.htm">Humpty Promotes</A>
+  <SMALL>&gt;</SMALL> <A href="../rfo.html">rfo-Basic</A>&gt;
+  <A href="hbasic.html">hBasic</A> <SMALL>&gt;</SMALL> Development
+  Tools<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE class="pad">
+    <TBODY>
+      <TR>
+        <TD style="width: 95%;">
+          <BR>
+          <BIG>RFO Basic !&nbsp;&nbsp;</BIG> <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);"><BIG>
+          <BIG>Development Tools</BIG></BIG><BR>
+          <BR></SPAN> For serious programming, it is sometimes
+          easier to edit on a PC and then transfer the files to
+          phone for running/testing. There are some tools to
+          streamline this.<BR>
+          <BR>
+          Because of Android's scoped storage, these tips now only
+          apply to hBasic - a fork of rfo-Basic.<BR>
+          <BR>
+          <TABLE>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Transfer</TD>
+                <TD style="vertical-align: top;"><A name="ftp" id=
+                "ftp"></A>FTP<BR>
+                <SMALL>(wifi)</SMALL><BR>
+                <SMALL>(linux, windows)</SMALL><BR>
+                <SMALL>For most, this would be the most
+                conventional method as there are many ftp clients
+                and servers already out there.<BR>
+                <BR>
+                Some will let you drag n drop files from PC
+                directly to server directory.<BR>
+                <BR>
+                root not required.<BR></SMALL></TD>
+                <TD class="cell_underline" style=
+                "vertical-align: top;">
+                  <SPAN style="color: rgb(102, 0, 0);">Starting
+                  with Android 11, FTP servers cannot access
+                  another app's private storage. To fix this,
+                  hBasic v3.01+ has an embedded ftp server which
+                  allows outside access (e.g to an ftp client or
+                  ftp plugin of a file manager).<BR>
+                  <BR></SPAN> 1. Open the built-in <A href=
+                  "hmanual/system.html#ftp_server"><SPAN style=
+                  "text-decoration: underline;">FTP
+                  server</SPAN></A> in hBasic.<BR>
+                  2. Use an <A href=
+                  "https://filezilla-project.org/download.php?type=client">
+                  <SPAN style="text-decoration: underline;">FTP
+                  client</SPAN></A> on your PC.<BR>
+                  <BR>
+                  3. Copy your file from PC to phone using ftp.<BR>
+                  e.g (PC<SPAN style="color: rgb(0, 0, 153);">)
+                  try.bas</SPAN> to (phone) <SPAN style=
+                  "color: rgb(0, 0, 153);">rfo-basic\source\try.bas</SPAN><BR>
+
+                  <BR>
+                  4a.&nbsp;&nbsp;&nbsp; Load try.bas from within
+                  hBasic.<BR>
+                  Or<BR>
+                  <DIV style="margin-left: 40px;">
+                    4b. Create a Launcher shortcu<A href=
+                    "hew/first.html#shortcut">t</A> on your
+                    phone,<BR>
+                    App: hBASIC<BR>
+                    Input filename: <SPAN style=
+                    "color: rgb(0, 0, 153);">try.bas</SPAN>
+                    (program filename)<BR>
+                    Icon filename: &lt;blank&gt; (default)<BR>
+                    Shorcut Name: Try<BR>
+                  </DIV><BR style="color: white;">
+                  Now you can run the program anytime by pressing
+                  the shortcut.<BR>
+                  Make sure your main program matches the name in
+                  the shortcut on the phone.<BR>
+                  <BR>
+                </TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Transfer<BR></TD>
+                <TD style="vertical-align: top;">
+                  <DIV style="text-align: left;">
+                    Third Party Method<BR>
+                  </DIV><SMALL>(wifi)<BR></SMALL><BR>
+                </TD>
+                <TD class="cell_underline" style=
+                "vertical-align: top;"><SPAN style=
+                "color: rgb(102, 0, 0);">Starting with Android 14,
+                this no longer works.<BR>
+                <BR></SPAN> 1. On your PC, share a directory via
+                FTP or SMB.<BR>
+                <BR>
+                2. Install a file manager that can connect to your
+                PC.<BR>
+                e.g Total Commander + FTP plugin or LAN plugin.,
+                that can find the directory in (1).<BR>
+                <BR style="color: rgb(0, 102, 0);">
+                3. In the file manager's other pane, find hBasic's
+                base directory,<BR>
+                e.g <SPAN style=
+                "color: rgb(0, 0, 153);">/Android/data/com.rfo.hbasic</SPAN><BR>
+
+                <SMALL><BR></SMALL> 4. Transfer
+                files.<SMALL><BR></SMALL><BR>
+                <SPAN style="color: rgb(102, 0, 0);"><BR>
+                </SPAN></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 100px;">
+                <BR></TD>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href=
+                "http://mougino.free.fr/rfo-basic/"></A><SMALL><BR></SMALL></TD>
+                <TD class="cell_underline" style=
+                "vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                Building<BR></TD>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                <A style="text-decoration: line-through;" href=
+                "http://mougino.free.fr/rfo-basic/">QuickAPK</A><BR style="text-decoration: line-through;">
+
+                <SMALL style=
+                "text-decoration: line-through;">(windows)</SMALL><BR>
+                </TD>
+                <TD class="cell_underline" style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                <SPAN style="text-decoration: line-through;">Quick
+                APK is an all-in-one solution which bundles
+                together the basic program, resources and the
+                interpreter.</SPAN><BR style=
+                "text-decoration: line-through;">
+                <SPAN style=
+                "text-decoration: line-through;">Requires:</SPAN>
+                <SPAN style="color: rgb(153, 0, 0);"><SPAN style=
+                "text-decoration: line-through;">JRE</SPAN><BR>
+                <BR></SPAN> QuickAPK is no longer
+                supported.<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                <BR></TD>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                <A style="text-decoration: line-through;" href=
+                "http://stefanopalmeri.altervista.org/xqa/">XQA
+                &nbsp; x-quick-apk builder</A><BR style=
+                "text-decoration: line-through;">
+                <SMALL style=
+                "text-decoration: line-through;">(linux)</SMALL><BR>
+                </TD>
+                <TD class="cell_underline" style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                <SPAN style="text-decoration: line-through;">XQA is
+                an apk repackager for linux.</SPAN><BR style=
+                "text-decoration: line-through;">
+                <SPAN style=
+                "text-decoration: line-through;">Requires:</SPAN>
+                <SPAN style=
+                "color: rgb(153, 0, 0); text-decoration: line-through;">
+                gambas</SPAN><SPAN style=
+                "text-decoration: line-through;">, and</SPAN>
+                <SPAN style=
+                "color: rgb(153, 0, 0); text-decoration: line-through;">
+                java/jdk</SPAN><SPAN style=
+                "text-decoration: line-through;">.</SPAN> <A style=
+                "text-decoration: line-through;" href=
+                "misc/xqa/xqa-install.html">Installation guide
+                here</A><SPAN style=
+                "text-decoration: line-through;">.</SPAN><BR style=
+                "text-decoration: line-through;">
+                <BR>
+                XQA is no longer supported.<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                Building<BR></TD>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                Manual Building<BR></TD>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                The lowest level of building is to use <SPAN style=
+                "color: rgb(153, 0, 0);">Eclipse</SPAN> with
+                Android's <SPAN style="color: rgb(153, 0, 0);">SDK
+                and java/jdk.</SPAN><BR>
+                Instructions for building this way is found in the
+                <A href=
+                "http://laughton.com/basic/help/De_Re_BASIC%21.htm">
+                BASIC! Manual</A>.<BR>
+                <BR>
+                Eclipse has been replaced with Android Studio,<BR>
+                (but may still work).<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                Building<BR></TD>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                <A href="hbasic/hsuite/index.html">hSuite</A><BR>
+                <BR>
+                All-In-One Compiler.<BR></TD>
+                <TD style=
+                "vertical-align: top; background-color: rgb(255, 255, 204);">
+                hSuite can create APKs or AAB for Google
+                Playstore.<BR>
+                <BR>
+                Customise hBasic or create a Standalone App.<BR>
+                <BR>
+                hSuite includes everything in a single zip
+                file.<BR>
+                &nbsp; -hBasic-master (hBasic source)<BR>
+                &nbsp; -All Patches that can make hBasic or a
+                custom version.<BR>
+                - hPatcher (a patching program and
+                compiler)<BR style="color: rgb(153, 153, 153);">
+                &nbsp; -ADT (customised with the lastest API)<BR>
+                &nbsp; -JDK (customised)<BR>
+                <BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><SMALL><BR></SMALL>
+        </TD>
+        <TD style="vertical-align: bottom; width: 5%;"><BR>
+        <BR>
+        <SMALL>Advertisement<BR></SMALL></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<BR>
+  <A href=
+  "http://humpty.drivehq.com/payments/payment.html">Donate</A><BR style="font-family: Helvetica,Arial,sans-serif;">
+
+  <SPAN style="font-family: Helvetica,Arial,sans-serif;"><BR>
+  /End.</SPAN><BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/main_index.js"></SCRIPT><BR>
+</BODY>
+</HTML>

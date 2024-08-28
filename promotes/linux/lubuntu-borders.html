@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>lubuntu-borders</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><small style=
+"font-family: monospace;"><small>(2015-2020)</small></small></big>
+<big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Get Back Proper
+Borders<br>
+<br></span></big></big> (Lubuntu 18.04, 20.04
+Specific)<big><big style="color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><br></span></big></big></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 800px; font-family: Helvetica,Arial,sans-serif; height: 812px;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><big><big>L</big></big>ubuntu has
+unfortunately given way to the modern windows look of having razor
+thin borders for windows.<br>
+<br>
+You can get back thicker borders by editing or replacing the
+current OpenBox Theme.<br>
+<span style="font-style: italic;"><br></span>Follow the
+instructions below to get back proper borders.<br>
+<br>
+1. Make a Copy of a theme you like.<br>
+<br>
+<div style="margin-left: 40px;">To get a list of themes
+installed;<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 0, 0);">ls -1 /usr/share/themes/</span></div>
+<div style="margin-left: 40px;">.<br>
+.<br>
+Lubuntu-default<br>
+Mikachu<br>
+Mist<br>
+Natura<br>
+Onyx<br>
+Onyx-Citrus<br>
+.<br>
+.<br></div>
+<br>
+Pick One and copy it with a different name to your local directory
+eg.<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 0, 0);">cp -r /usr/share/themes/<span style=
+"color: rgb(0, 0, 153);">Natura</span>
+~/.local/share/themes/<span style=
+"color: rgb(0, 0, 153);">Natura3d</span><br></span><br></div>
+<br></div>
+<br>
+2. Modify the copied Theme<br>
+<br>
+<div style="margin-left: 40px;">There should be an <span style=
+"color: rgb(0, 102, 0);">openbox-3</span> directory under the
+theme. (If it doesn't, choose another theme.)<br></div>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 0, 0);">ls -1 ~/.local/share/themes/<span style=
+"color: rgb(0, 0, 153);">Natura3d</span>/<span style=
+"color: rgb(0, 102, 0);">openbox-3</span></span><br></div>
+<br>
+<div style="margin-left: 40px;">close_hover.xbm<br>
+close.xbm<br>
+desk_hover.xbm<br>
+desk_toggled.xbm<br>
+desk.xbm<br>
+iconify_hover.xbm<br>
+iconify.xbm<br>
+max_hover.xbm<br>
+max_toggled.xbm<br>
+max.xbm<br>
+shade_hover.xbm<br>
+shade.xbm<br>
+themerc&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+&lt;&lt;-- EDIT THIS FILE<br></div>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 51, 0);"><br></span></div>
+<br>
+3. Stuff To Edit<br>
+<div style="margin-left: 40px;"><span style=
+"text-decoration: underline;">themerc<br>
+<br></span>
+<div style="margin-left: 40px;">!! The extra bar below the window
+is nice if we don't have borders<br>
+!! but overthick if we increase the borders. So turn it off with
+0.<br>
+<span style="color: rgb(102, 0, 0);"><span style=
+"color: rgb(0, 0, 153);">window.handle.width:
+0</span>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;</span> !! below the window<br>
+<br>
+!! Now make all borders this thick..<br>
+<span style="color: rgb(102, 0, 0);"><span style=
+"color: rgb(0, 0, 153);">border.Width: 4</span></span>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; !! easier
+to grab<br>
+<br>
+!! This is the padding above and below the title text.<br>
+!! change this if you think the title bar needs to be taller or
+shorter.<br>
+<span style="color: rgb(0, 0, 153);">padding.width:
+2</span><br></div>
+<br></div>
+<br>
+4. Restart OpenBox<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 0, 0);">openbox --restart</span><br></div>
+<br>
+That's it.!<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<hr style="width: 100%; height: 2px; font-style: italic;">
+<small>Advertisement<br></small><br>
+<a href="lubuntu.html">[ More Lubuntu Tips,&nbsp;</a> <a href=
+"http://humpty.drivehq.com/home.htm">Home ]</a></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

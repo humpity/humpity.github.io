@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>mime</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" vlink=
+"#990099" link="#000099" alink="#000099">
+<a href="http://humpty.drivehq.com/"></a> <a href=
+"http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html"></a><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><small><br>
+</small></big></big></big> <span style=
+"font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" cellspacing="2"
+cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Create a local file MIME
+type<br>
+<small style="color: black;">Open the file you want with the App
+you want</small><br></span></big></big></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 800px; font-family: Helvetica,Arial,sans-serif; height: 812px;"
+cellspacing="2" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><big><big>A</big></big>nother
+horrible monstrosity of Linux (distros) is the use of
+Mime-Types.<br>
+<br>
+Of all the hair pulling and head banging, Mime-types is near the
+top of the list when it comes to having to jump through hoops in
+order to do something basic.<br>
+<br>
+Rewind back to 30 years ago. A simple beautiful idea of the ancient
+DOS file system that has survived<br>
+the tides of time is the notion of a postfixed 'extension'. i.e the
+3 character code stuck after the 'dot' at the end of a filename e.g
+sample.doc. Modern OSs let you extend this 'file-type' to more than
+3 chars, but this is beside the
+point.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; This was and still is a simple
+solution to giving a file a 'type'.<br>
+<br>
+And then somebody had the terrible idea of using internet MIME
+types for local files.<br>
+I guess this is fine if each file's type can be detected with 100%
+accuracy. But it can't. (whereareas the 3 char system CAN).<br>
+Even worse, to revert back to the solution of using the 'extension'
+can be a nightmare to implement if your OS is infested with
+MIME.<br>
+<br>
+So here is one relatively painless way to do it using the brilliant
+<a href="lubuntu-apps.html#spacefm">SpaceFM</a> file
+manager,&nbsp;&nbsp;&nbsp;&nbsp; ( also compatible with
+PCmanFM)<br>
+<br>
+<big style="text-decoration: underline;">SpaceFM has a built-in
+function to generate the xml file needed to create a new
+mime-type</big>.<br>
+<br>
+<big style="color: rgb(0, 0, 153);">The following example</big> is
+to open a config file for an app called Geany.<br>
+The file is <span style="color: rgb(0, 102, 0);">plain text,</span>
+but we don't want to open it with the default editor (e.g
+Leafpad).<br>
+We want to open all "<span style=
+"color: rgb(102, 51, 0);">.geany</span>" files with Geany. And
+leave <span style="color: rgb(102, 51, 0);">all other text
+files</span> to be opened with Leafpad.<br>
+<br>
+<br>
+<big><span style="color: rgb(0, 0, 153);">To Apply
+Locally</span></big><br>
+<br>
+<div style="margin-left: 40px;">1. First, modify the app's desktop
+entry..<br>
+<div style="margin-left: 40px;">file:&nbsp;&nbsp; &nbsp;
+<span style=
+"color: rgb(102, 51, 0);">~/.local/share/applications/geany.desktop</span><br>
+
+entry:&nbsp;&nbsp;&nbsp; <span style=
+"color: rgb(0, 0, 153);">MimeType=text/geany</span>;text/plain; ..
+.. ... etc<br></div>
+<br>
+<br>
+2. Make sure geany is associated with text files.<br>
+<div style="margin-left: 40px;">e.g <span style=
+"color: rgb(153, 0, 0);">right-click sample.geany &gt; Open
+&gt;</span><br>
+should show 'Geany' under Open. If not, click Choose, and choose
+Geany, and set it as <span style=
+"color: rgb(0, 0, 153);">Default</span>.<br></div>
+<br>
+3.&nbsp; Generate mime file: with SpaceFM,<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(153, 0, 0);">right-click sample.geany &gt; Open &gt;
+right-click on the 'Geany' &gt;
+text-plain.xml(*new)</span><br></div>
+<br>
+<div style="margin-left: 40px;">&nbsp;&nbsp;&nbsp; This creates
+~/.local/share/mime/packages/text-plain.xml<br>
+Rename it to<br>
+file: &nbsp;&nbsp;&nbsp; <span style=
+"color: rgb(102, 51, 0);">~/.local/share/mime/packages/text-geany.xml</span><br>
+</div>
+<br>
+4.&nbsp; Edit the generated mime file, change<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">&lt;mime-type
+type='text/geany'&gt;</span><br>
+<br>
+&nbsp;&nbsp;&nbsp; delete all unneccessary file types but
+<span style="color: rgb(102, 0, 0);">do include</span><br>
+<span style="color: rgb(0, 0, 153);"><br>
+&lt;glob pattern="*.geany"/&gt;</span><br>
+<br>
+&nbsp;&nbsp;&nbsp; save the file.<br></div>
+<br>
+5. Update the mime cache<br>
+<div style="margin-left: 40px;">&gt; <span style=
+"color: rgb(0, 102, 0);">update-mime-database
+~/.local/share/mime</span><br></div>
+<br>
+6. close all instances of SpaceFM and restart it.<br></div>
+<br>
+<big style="color: rgb(0, 0, 153);">To Apply for All
+users</big><br>
+<br>
+<div style="margin-left: 40px;">file: &nbsp;&nbsp;&nbsp;
+<span style=
+"color: rgb(102, 51, 0);">/usr/share/applications/geany.desktop</span><br>
+
+entry: <span style=
+"color: rgb(0, 0, 153);">MimeType=text/geany;text/plain; .. .. ...
+etc</span><br>
+<br>
+&nbsp;&nbsp;&nbsp; generate, rename and edit the xml as above (as
+per local) and<br>
+&nbsp;&nbsp;&nbsp; copy the local file from <span style=
+"color: rgb(102, 51, 0);">~/.local/share/mime/packages/text-geany.xml</span><br>
+
+&nbsp;&nbsp;&nbsp; to<br>
+file: &nbsp;&nbsp;&nbsp; <span style=
+"color: rgb(102, 51, 0);">/usr/share/mime/packages/text-geany.xml<br>
+
+&nbsp;&nbsp;&nbsp;</span> and update the mime cache<br>
+command: <span style="color: rgb(0, 102, 0);">update-mime-database
+/usr/share/mime</span><br>
+<br>
+close all instances of SpaceFM and restart it.<br></div>
+<br>
+<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">End.<br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>
