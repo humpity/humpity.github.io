@@ -1,0 +1,331 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Patches</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <BR>
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hSuite</A> &gt; Patches<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hSuite</BIG><BR>
+          </DIV><BIG><BIG style=
+          "color: rgb(0, 0, 153);">Patches<BR>
+          <BR></BIG></BIG>
+          <DIV style="margin-left: 40px;">
+            Patches change the source code of hBasic.<BR>
+            <BR>
+            They are used for either <SPAN style=
+            "text-decoration: underline;">temporary</SPAN> fixes or
+            <SPAN style=
+            "text-decoration: underline;">optional</SPAN>
+            features.<BR>
+            <BR>
+            Patches represent the differences between the base (the
+            master) and a future version.<BR>
+            <BR>
+            All official hBasic versions have most of the patches
+            applied to the master and released under the name of
+            hBasic.<BR>
+            <BR>
+            Normally, by applying all of the patches, you end up
+            with the current version of hBasic.<BR>
+            Alternatively by choosing patches, or manually
+            modifying the source code yourself,<BR>
+            you can create a <SPAN style=
+            "text-decoration: underline;">custom</SPAN> version of
+            hBasic.<BR>
+          </DIV><BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG></BIG>
+          <TABLE style=
+          "text-align: left; width: 742px; height: 150px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 50%;">
+                <BIG><A href="#patches_using">How to use
+                hPatcher</A></BIG><BR></TD>
+                <TD style="vertical-align: top;">Using patches with
+                hPatcher<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">
+                  <DIV style="margin-left: 40px;">
+                    <SPAN style="color: rgb(51, 51, 51);">The Patch
+                    List<BR>
+                    Selection<BR>
+                    Apply<BR>
+                    Create<BR>
+                    Regen<BR>
+                    Reset<BR></SPAN>
+                  </DIV>
+                </TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#patches_manual_create"><BIG>Creating Patches
+                without hPatcher</BIG><BR></A></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(51, 51, 51);">Manual Patch
+                Making</SPAN></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#guidelines">Guidelines for Patches</A></BIG></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(51, 51, 51);">Modifying source
+                code<BR></SPAN></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name=
+          "patches_using" id="fn_import"></A>How to use
+          hPatcher</BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153); text-decoration: underline;">The
+            Patch List</SPAN><BR>
+            <BR>
+            The first pane you see in hpatcher is the available
+            patches list.<BR>
+            <BR>
+            The patch list is generated by looking for
+            patch_ID<SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">.desc</SPAN></SPAN> files in the
+            work directory.<BR>
+            These are one-line description files for the list and
+            can be created with a text editor.<BR>
+            <BR>
+            The accompanying patch_ID<SPAN style=
+            "color: rgb(102, 0, 0);"><SPAN style=
+            "font-weight: bold;">.patch</SPAN></SPAN> files must
+            also exist, as these are the actual patch files.<BR>
+            <BR>
+            <SPAN style=
+            "text-decoration: underline; color: rgb(0, 0, 102);">Selection<BR>
+
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              Select the patches that you want to operate with.<BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline; color: rgb(0, 0, 102);">Apply
+            button<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              Selected patches are <SPAN style=
+              "color: rgb(0, 0, 102);">merged and applied</SPAN> to
+              the <SPAN style=
+              "color: rgb(102, 51, 0);">work/basic/</SPAN>
+              directory.<BR>
+              The source file(s) under the 'basic' directory will
+              then be modified&nbsp; according to the patches.<BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline; color: rgb(0, 0, 102);">Create
+            button<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              Creates a new patch to contain the <SPAN style=
+              "color: rgb(0, 0, 102);">differences between</SPAN>
+              <SPAN style="color: rgb(0, 51, 0);">[basic]</SPAN>
+              <SPAN style="color: rgb(0, 0, 102);">and</SPAN>
+              <SPAN style=
+              "color: rgb(0, 51, 0);">[master]</SPAN><SPAN style=
+              "color: rgb(0, 0, 102);">.</SPAN><BR>
+              Follow the prompts.<BR>
+              <BR>
+              If successful, a <SPAN style=
+              "color: rgb(102, 0, 0);">patch_ID</SPAN><SPAN style=
+              "color: rgb(102, 0, 0); font-weight: bold;">.patch</SPAN>
+              file is created.<BR>
+              You need to <SPAN style="font-weight: bold;">manually
+              create</SPAN> a <SPAN style=
+              "color: rgb(0, 0, 102);">patch_ID</SPAN><SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">.desc</SPAN></SPAN> file in
+              order for the patch to appear in hPatcher.<BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline; color: rgb(0, 0, 102);">Regen
+            button<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              You can Re-Generate patches with hSuite.<BR>
+              This will sync their offsets with the master
+              copy.<BR>
+              You should do this if you had made changes to the
+              master.<BR>
+              <BR>
+              Make sure you backup all your changes.<BR>
+              <BR>
+              A backup of <SPAN style=
+              "color: rgb(0, 51, 0);">[basic]</SPAN> is copied to a
+              <SPAN style=
+              "color: rgb(0, 51, 0);">[patch_name]</SPAN>
+              directory.<BR>
+              <SPAN style="color: rgb(0, 51, 0);">[basic]</SPAN>
+              is&nbsp; overwriiten with a copy of <SPAN style=
+              "color: rgb(0, 51, 0);">[master]</SPAN> during and
+              after the operation.<BR>
+              <BR>
+              If successful, the existing <SPAN style=
+              "color: rgb(102, 0, 0);">patch_ID</SPAN><SPAN style=
+              "color: rgb(102, 0, 0); font-weight: bold;">.patch</SPAN>
+              file is overwritten.<BR>
+              <BR>
+              Check your patch file manually (with an editor), if
+              it looks ok, you can safely delete the <SPAN style=
+              "color: rgb(0, 51, 0);"><BR>
+              [patch_name]</SPAN> directory.<BR>
+              <BR>
+              <BR>
+              If not succesful, you will see an error message.<BR>
+              Theoretically the more patches there are, the more
+              likely you'll have conflicts.<BR>
+              If this happens, you need to manually combine patches
+              that use the same area of code or are very close to
+              one another, into a <SPAN style=
+              "text-decoration: underline;">single
+              patch</SPAN>.<BR>
+            </DIV><BR>
+            <SPAN style=
+            "color: rgb(0, 0, 102); text-decoration: underline;">Reset
+            button</SPAN><BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              Overwrites the [basic] directory with a copy of
+              [master]<BR>
+              You will need this if want to lose all your [basic]
+              modifications and start afresh.<BR>
+              You will also need to do this if you want to re-apply
+              any patches.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;"><BR></TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="patches_manual_create" id=
+          "round"></A><BIG><SPAN style=
+          "color: rgb(0, 0, 153);">Creating Patches without
+          hPatcher</SPAN></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 102); text-decoration: underline;">Manual
+            Patch Making</SPAN><BR>
+            <BR>
+            You can make your own patches manually without
+            hPatcher.<BR>
+            <BR>
+            Reset the work/basic/ in hpatcher to a fresh copy of
+            the master.<BR>
+            <BR>
+            Copy your modified source tree under the [work]
+            directory as the patch_ID name<BR>
+            <BR>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; e.g <SPAN style=
+            "color: rgb(0, 51, 0);">work/<SPAN style=
+            "font-weight: bold;">mypatch</SPAN>/</SPAN><BR>
+            <BR>
+            Open a Terminal in the directory [work].<BR>
+            <BR>
+            To make a patch (the differences between [mypatch] and
+            [basic] use the hpatch program.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 0, 0);">../bin/hpatch
+              make mypatch</SPAN><BR>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              will produce <SPAN style=
+              "color: rgb(0, 51, 0);">mypatch.patch</SPAN><BR>
+            </DIV><BR>
+            Create a text file called <SPAN style=
+            "color: rgb(0, 51, 0);">mypatch.desc</SPAN><BR>
+            <DIV style="margin-left: 80px;">
+              with the first line of text as a short description.
+              e.g "<SPAN style="color: rgb(102, 51, 0);">my super
+              new command</SPAN>"<BR>
+            </DIV><BR>
+            Re-opening hpatcher will then pick up the patch in it's
+            selection list.<BR>
+            <BR>
+          </DIV><BR>
+          <BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="guidelines" id=
+          "gr_bitmap_clr"></A><BIG><SPAN style=
+          "color: rgb(0, 0, 102);">Guidelines for
+          Patches</SPAN></BIG>
+          <DIV style="margin-left: 40px;">
+            Modifying Source Code<BR>
+            <BR>
+            You modify the [basic] source code to make a difference
+            between [basic] and [master].<BR>
+            After your modifications, you make a patch.<BR>
+            <BR>
+            The less differences there are, the easier It is for
+            the patching programs.<BR>
+            <BR>
+            Keep to these rules to minimize conflict;<BR>
+            <BR>
+            DO NOT change anything that doesn't need changing.<BR>
+            Don't use editors that reformat the code, tabs,
+            indentation..etc<BR>
+            The official Basic source uses;<BR>
+            * a single LF at the end of lines.<BR>
+            * 4 char tab indentation.<BR>
+            Change as little as possible. The less the change, the
+            smaller the patch file.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">-End.<BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

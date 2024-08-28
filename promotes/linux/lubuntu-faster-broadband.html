@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>lubuntu-faster-broadband</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Faster internet
+broadband tweak<br></span></big></big></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;">Stabilise and increase your
+broadband internet speed with this tweak.<br>
+<br>
+This tweak is quite well known. It involves adding some lines into
+<span style="color: rgb(0, 102, 0);">/etc/<span style=
+"color: rgb(102, 51, 0);">sysctl.conf</span></span><br>
+<br>
+You can add/change quite a number of things, but the ones that made
+the most difference were these;<br>
+<br>
+<span style="color: rgb(0, 102, 0);">/etc/<span style=
+"color: rgb(102, 51, 0);">sysctl.conf</span></span><br>
+<br>
+<div style="margin-left: 40px;"># add these lines..<br>
+<br>
+# Speed Teaks<br>
+<span style="color: rgb(0, 0, 153);">net.core.rmem_max =
+16777216</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">net.core.wmem_max =
+16777216</span><br>
+<span style="color: rgb(0, 0, 153);"><br>
+net.ipv4.tcp_rmem = 4096 65536 16777216</span><br style=
+"color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">net.ipv4.tcp_wmem = 4096 65536
+16777216</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);"><br>
+net.ipv4.tcp_window_scaling = 1</span><br style=
+"color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">net.ipv4.tcp_sack =
+1</span><br>
+# End Speed Tweaks<br></div>
+<br>
+The last line (<span style=
+"color: rgb(0, 0, 153); font-style: italic;">net.ipv4.tcp_sack =
+1</span>) is quite important. Some users turn this off, but for me,
+it causes instability (throughput suddenly pauses in the middle of
+a download) so I leave it on.<br>
+<br>
+And here is an example of a test at&nbsp; <a href=
+"https://comparite.ch/speed">https://comparite.ch/speed</a><br>
+<div style="text-align: right;"><small><span style=
+"font-style: italic;">(comparitech donates some money to worthy
+causes per user)</span></small><br></div>
+<big style=
+"font-style: italic; text-decoration: underline;">Before</big><br>
+<img style="width: 233px; height: 101px;" alt="" src=
+"pics/comparitech-before.png"><br>
+<big><span style=
+"font-style: italic; text-decoration: underline;">After<br>
+<img style="width: 235px; height: 99px;" alt="" src=
+"pics/comparitech-after.png"><br>
+<br></span></big></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

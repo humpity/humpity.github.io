@@ -1,0 +1,24 @@
+
+RadarGhost is a ghost detector.
+
+(ah.., ok maybe not, - yeah, you guessed it, it's a Basic version that looks
+not unlike the 100s of other ghost radars that clog up playstore.
+
+I dug out this old project and tried to revamp it. I remember I first gave up
+because it wouldn't work on all my phones, only to find that the phones didn't
+actually have the sensors(!). That and it was too slow. 
+With the new phones these days, it performs a ok and I have tried to
+make it work with old devices. 
+
+
+..and now for the real reason for the post;
+Of interest is the block at the bottom of the file misc.bas. Here you'll
+see two functions 'with the same name'!, but only one of them gets used 
+depending on the android version. 
+
+ZIP
+APK
+http://humpty.drivehq.com/promotes/rfo-basic/apps/apps.html#radarg
+
+
+(p.s/ app will not work for some phones, don't be surprised)

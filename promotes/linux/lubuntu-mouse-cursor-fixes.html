@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>lubuntu-mouse-busy-fix</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><br>
+
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips<br></small></big></big></big><big><small style=
+"font-family: monospace;"><small>(2015-2020)</small></small><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Cursor
+Fixes<br></span></big></big><br>
+e.g<br>
+Mouse randomly spins as if busy.<br>
+Pointing hand cursor never shows up.<br>
+<div style="text-align: right;"><span style=
+"font-style: italic; color: black;">( lubuntu 18.04
+)</span><br></div>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table style=
+"text-align: left; width: 800px; font-family: Helvetica,Arial,sans-serif; height: 812px;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><a name="busy-fix" id="busy-fix"></a>The
+'stuck' busy mouse cursor fix.</big></big><br>
+<br>
+<big><big><big>T</big><small>his <a href=
+"https://askubuntu.com/questions/329268/busy-cursor-spinning-wait-hangs">
+problem</a>&nbsp;</small></big></big> is where the mouse randomly
+spins as if busy is annoying. It is a bug where the mouse cursor
+gets stuck with the busy cursor.<br>
+<br>
+This fix just changes&nbsp; the busy cursor to a normal
+pointer.<br>
+<br>
+For this to work, you need to install a custom mouse theme, e.g
+Chameleon-White.<br>
+To do that first have a look <a href=
+"lubuntu-bigger-cursor.html">here</a>.<br>
+<br>
+In a Terminal, go to where the cursors are;<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153); font-family: monospace;">cd
+/usr/share/icons/Chameleon-White-Large/cursors</span><br></div>
+<br>
+Make a backup of the busy cursor (watch) then link it to the normal
+cursor (left_ptr);<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153); font-family: monospace;">mv watch
+watch.old<br>
+ln -s left_ptr watch</span><br style=
+"color: rgb(0, 0, 153); font-family: monospace;"></div>
+<br>
+<br>
+Do the same for left_ptr_watch busy cursor<br>
+<br>
+<div style="margin-left: 40px; font-family: monospace;">
+<span style="color: rgb(0, 0, 153);">mv left_ptr_watch
+left_ptr_watch.old</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">ln -s left_ptr
+left_ptr_watch</span><br></div>
+<br>
+That's it.<br>
+<big><big style=
+"text-decoration: underline; color: rgb(0, 0, 153);"><br>
+<a name="pointing-hand-fix" id="pointing-hand-fix"></a>The missing
+Pointing Hand Fix</big></big><br>
+Here is a siimilar fix for the '<span style=
+"text-decoration: underline;">pointing hand</span>' cursor not
+showing up sometimes if you are using the pcmanfm desktop
+manager.<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"font-family: monospace; color: rgb(0, 0, 153);">mv pointing_hand
+pointing_hand.old</span><br style=
+"font-family: monospace; color: rgb(0, 0, 153);">
+<span style="font-family: monospace; color: rgb(0, 0, 153);">ln -s
+hand2 pointing_hand</span><br style=
+"font-family: monospace;"></div>
+<br>
+<br>
+<hr style="width: 100%; height: 2px; font-style: italic;">
+End.<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<hr style="width: 100%; height: 2px; font-style: italic;">
+<small>Advertisement Space<br></small><br>
+<a href="lubuntu.html">[ More Lubuntu Tips,&nbsp;</a> <a href=
+"http://humpty.drivehq.com/home.htm">Home ]</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

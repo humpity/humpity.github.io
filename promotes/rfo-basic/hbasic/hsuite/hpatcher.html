@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>hPatcher Manual</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <BR>
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hSuite</A> &gt; hPatcher<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hSuite</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">hPatcher
+          Manual<BR></BIG></BIG><BR>
+          hPatcher is the main gui of hSuite. Aside from creating
+          and applying patches, it is the front-end to customising
+          the hBasic app.<BR>
+          <BIG><BIG style="color: rgb(0, 0, 153);"><BR></BIG></BIG>
+          <TABLE style=
+          "text-align: left; width: 742px; height: 150px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 50%;">
+                <BIG><A href="patches.html#patches_using">How to
+                use hPatcher</A></BIG><BR></TD>
+                <TD style="vertical-align: top;">Quick guide to
+                using patches with hPatcher.<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">
+                  <DIV style="margin-left: 40px;">
+                    <SPAN style=
+                    "color: rgb(51, 51, 51);"><BR></SPAN>
+                  </DIV>
+                </TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#settings"><BIG>Settings</BIG><BR></A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#customise">Customise</A></BIG></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(51, 51, 51);"><BR></SPAN></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="settings"
+          id="fn_import"></A>Settings</BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153); text-decoration: underline;">Compile
+            Settings</SPAN><BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">APK
+            Package</SPAN> - Compiles to APK format.<BR>
+            <SPAN style="text-decoration: underline;">AAB
+            Package</SPAN> - Compiles to AAB format.&nbsp;
+            (Requirement if you upload to PlayStore).<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "text-decoration: underline;">Build with
+            API</SPAN></SPAN><BR>
+            This is currently set to the highest found version of
+            the Android SDK library found in <SPAN style=
+            "font-weight: bold;">adt</SPAN> directory of hSuite. If
+            you have more than one version, you may find more
+            options here.<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "text-decoration: underline;">Run after
+            compile</SPAN></SPAN><BR>
+            You may enter an extra command here to run after
+            compilation successfully completes.<BR>
+            The command is OS dependent.<BR>
+            The default directory is <SPAN style=
+            "font-weight: bold;">work</SPAN>.<BR>
+            e.g for linux, you could enter "mv log.txt
+            last-log.txt"<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "text-decoration: underline;">Viewer
+            Command</SPAN></SPAN><BR>
+            This is what is executed when you&nbsp; press the "view
+            log" button.<BR>
+            The command is OS dependent.<BR>
+            e.g lxterminal -l -e "less log.txt"<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "text-decoration: underline;">Debug
+            Options</SPAN></SPAN><BR>
+            This option controls how verbose the output will be and
+            is mainly for the hSuite developer.<BR>
+            However, the half option is recommended to see how the
+            compilation process is going.<BR>
+            <BR>
+            Off - no debug output.<BR>
+            half - some debug output. (recommended)<BR>
+            full - very verbose - includes polling states.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;"><BR></TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">-End.<BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

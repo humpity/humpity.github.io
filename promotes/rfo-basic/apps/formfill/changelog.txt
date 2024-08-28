@@ -1,0 +1,23 @@
+source/formfill.bas
+data/formfill.css
+
+For the latest versions of formfill pls visit 
+http://humpty.drivehq.com/promotes/rfo-basic/rfo.html
+
+v4.2
+	accept any case for item type.
+	cosmentic change:radio button
+v4.1
+	fix rapid backkey problem.
+v.4
+	formfill.css supports HEW themes.(http://humpty.drivehq.com/promotes/rfo-basic/rfo.html)
+	'jump_to' fixed to center-align.
+	menus & comments can now be aligned right or center.
+v.3
+	comment type added.
+	jump_to added.
+v.2
+	colors set to black bg, white text.
+	embedded commands (!, ~) added .
+	embedded small text added.
+

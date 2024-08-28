@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>no-sudo-passwd</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">No sudo
+password<br></span></big></big>
+<div align="right"><br></div>
+</td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><br>
+One of the most annoying things with modern operating systems is
+the security mentality. Some people don't really care about
+security as long as they don't keep anything important on the PC
+and don't keep it running 24hrs. Having to enter a password to
+change a setting, install a new app, mount a drive..etc can be
+downright irritating. If I want no security, then why not?<br>
+<br>
+To make life easier, this is how you disable the password prompt
+while sudo'ing. Some apps (such as synaptic) will still prompt you
+for a password, but most commands e.g terminal commands will
+not.<br>
+<br>
+This involves editing the file <font color=
+"#663300">/etc/sudoers</font><br>
+open an LXTerminal and type;<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">sudo visudo</span><br></div>
+<br>
+<span style="font-style: italic;"><small>(The editor may not
+actually be vi. it could be any editor e.g Nano,<br>
+If you are root, you can use any editor e.g <font color=
+"#663300"><font style="color: rgb(0, 0, 102);" color=
+"#006600">leafpad</font> /etc/sudoers</font></small>)<br>
+<br></span> Edit these lines when you find them;<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 51, 0);"># User privilege
+specification</span><br style="color: rgb(0, 51, 0);">
+<span style="color: rgb(0, 51, 0);">root&nbsp;&nbsp;&nbsp;
+ALL=(ALL:ALL) NOPASSWD: ALL</span><br style=
+"color: rgb(0, 51, 0);">
+<br style="color: rgb(0, 51, 0);">
+<span style="color: rgb(0, 51, 0);"># Members of the admin group
+may gain root privileges</span><br style="color: rgb(0, 51, 0);">
+<span style="color: rgb(0, 51, 0);">%admin ALL=(ALL:ALL) NOPASSWD:
+ALL</span><br style="color: rgb(0, 51, 0);">
+<br style="color: rgb(0, 51, 0);">
+<span style="color: rgb(0, 51, 0);"># Allow members of group sudo
+to execute any command</span><br style="color: rgb(0, 51, 0);">
+<span style="color: rgb(0, 51, 0);">%sudo&nbsp;&nbsp;&nbsp;
+ALL=(ALL:ALL) NOPASSWD: ALL</span><br></div>
+<br>
+Save the file <span style="font-style: italic;">(for vi, use ": +
+"wq") (for Nano, ^O+^X)</span><br>
+<br>
+Logout or reboot. That's it.<br>
+<hr style="width: 100%; height: 2px;">
+<br>
+<span style="text-decoration: underline;">The mysterious Line At
+The Bottom</span><br>
+<br>
+In some distros (e.g lubuntu 20.04), there might be a line at the
+bottom of /etc/sudoers<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 51, 0);">#includedir /etc/sudoers.d</span><br></div>
+<br>
+This line looks like a comment because it begins with a hash
+<span style="text-decoration: underline;">BUT</span> it is not. It
+is an include directive that loads whatever files there are in
+directory /etc/sudoers.d.<br>
+<br>
+You should check if there are any files there.e.g<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 51, 0);">/etc/sudoers.d<br></span> <span style=
+"color: rgb(0, 51, 0);">10-installer</span><br></div>
+<br>
+If there are, then these files will override any changes made
+earlier (because the directive is at the bottom of /etc/sudoers).
+The best thing to do then is to make your changes here instead.
+e.g,<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 102);">&gt; sudo leafpad
+/etc/sudoers.d/10-installer</span><br></div>
+change<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 51, 0);">%sudo&nbsp;&nbsp;&nbsp; ALL=(ALL)
+ALL</span><br></div>
+to<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 51, 0);">%sudo&nbsp;&nbsp;&nbsp; ALL=(ALL:ALL)
+NOPASSWD: ALL</span><br></div>
+<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><a href="lubuntu.html">More
+Lubuntu Tips</a></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

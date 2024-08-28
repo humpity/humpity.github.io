@@ -1,0 +1,2342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+<HEAD>
+  <META content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org"
+  name="generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=us-ascii">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+
+  <TITLE>hew manual</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+
+<BODY alink="#000099" link="#000099" vlink="#990099">
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <BIG style="font-family: Helvetica,Arial,sans-serif;">Humpty
+  Promotes <SMALL><BR></SMALL></BIG><BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellpadding="8" cellspacing="2">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;"><BIG><BIG><SMALL>HEW
+        <A href="hew.html"><SMALL><SPAN style=
+        "color: rgb(0, 0, 153);">Humpty's</SPAN> <SPAN style=
+        "color: rgb(0, 0, 153);">Easy</SPAN></SMALL></A></SMALL></BIG>
+        <A href="hew.html"><BIG><SMALL><SPAN style=
+        "color: rgb(0, 0, 153);"><SMALL>Widgets</SMALL></SPAN></SMALL></BIG></A><SMALL><SPAN style="color: rgb(0, 0, 153);">&nbsp;</SPAN>&nbsp;&nbsp;</SMALL>
+        <SMALL>A GUI Framework</SMALL> <SMALL><SMALL>using
+        RFO-Basic APP development for
+        Android.</SMALL></SMALL><BIG style=
+        "font-weight: bold;"><BR></BIG></BIG><BR>
+        <BIG>HEW Reference Manual v2.0<BR></BIG></TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;"></DIV>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                  <DIV style="text-align: right;">
+                    <A href="manual.html#themes">Themes</A><BR>
+                    <A href="manual.html#event"><SPAN style=
+                    "text-decoration: underline; color: rgb(0, 0, 153);">
+                    Event Loop</SPAN></A><BR>
+                    <SPAN style=
+                    "text-decoration: underline; color: rgb(0, 0, 153);">
+                    <A href="manual.html#init">Init</A></SPAN><BR>
+                    <A href="manual.html#isr">ISR</A><BR>
+                    <BR>
+                    <A href="#ask_yn">Ask_YN</A>&nbsp;<BR>
+                    <A href="manual.html#botmenu">Bottom
+                    Menu</A>&nbsp; <A href=
+                    "manual.html#btimer">bTimer</A>&nbsp;&nbsp;
+                    <A href="manual.html#button">Button</A><BR>
+                    <A href="manual.html#console">Console</A><BR>
+                    <A href=
+                    "../apps/formfill/v4_readme.txt">FormFill</A><BR>
+
+                    <A href=
+                    "manual.html#gformfill">gFormFill</A><BR>
+                    <A href="manual.html#gnumpad">gNumPad</A><BR>
+                    <A href="manual.html#gselect">gSelect</A><BR>
+                    <A href="manual.html#keyinp">KeyInp</A><BR>
+                    <A href="manual.html#link">Link</A><BR>
+                    <A href="#msg_ok">M<SPAN style=
+                    "text-decoration: underline;">sg_OK</SPAN></A><BR>
+
+                    <A href="manual.html#progress">Progress</A><BR>
+                    <A href="manual.html#text">Text</A> &nbsp;
+                    <A href="#textin">TextIn</A>&nbsp;&nbsp;
+                    <A href=
+                    "manual.html#txtscroll">TxtScroll</A><BR>
+                  </DIV><BR>
+                  (todo)<BR>
+                  Grid selectors<BR>
+                  Select List<BR>
+                </TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="width: 50%;">
+          <A name="init" id="init"></A><BIG style=
+          "color: rgb(0, 0, 153);">Init.bas<BR></BIG> <SPAN style=
+          "color: black;">This section mainly initiates the
+          graphics screen and sets global variables.<BR>
+          <BR></SPAN> <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Screen
+          Initialisation<BR></SPAN> Everything, if possible happens
+          in graphics mode using graphics objects.<BR>
+          The exception is if the built-in WebView is needed to
+          display an html page (e.g formfill).<BR>
+          <BR>
+          There are three problems that stand when designing HEW
+          apps to run on different sized phones.<BR>
+          a) Different screen sizes.<BR>
+          b) Different aspect ratios.<BR>
+          c) Different pixel densities.<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Development
+          Device Size</SPAN><BR>
+          At the start, <SPAN style=
+          "color: rgb(0, 102, 0);">dev_w</SPAN> and <SPAN style=
+          "color: rgb(0, 102, 0);">dev_h</SPAN> are your
+          development device width and height in pixels.<BR>
+          These must be defined whether you use scaling or not. It
+          let's HEW know about the aspect ratio.<BR>
+          <BR>
+          Init.bas gives you the choice of whether to use
+          scaling/or not.<BR>
+          It sets up <SPAN style=
+          "color: rgb(0, 102, 0);">scr_w</SPAN> and <SPAN style=
+          "color: rgb(0, 102, 0);">scr_h</SPAN> to be used by the
+          rest of your app.<BR>
+          (This bit of compact code took a lot of trial and error
+          to make perfect.)<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Scaling<BR>
+          </SPAN> If you don't need scaling then set <SPAN style=
+          "color: rgb(0, 102, 0);">scaling=0</SPAN> <SPAN style=
+          "color: rgb(0, 0, 153);">.</SPAN><SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);"><BR></SPAN><BR>
+
+          <SPAN style="color: rgb(0, 102, 0);">scaling=1</SPAN><BR>
+          For certain things like bitmaps, scaling is neccessary.
+          As a result, all widgets <SPAN style=
+          "color: rgb(102, 0, 0);">that do their own touch
+          detection</SPAN> (e.g gr.touch x,y) will also re-scale
+          according to <SPAN style=
+          "color: rgb(0, 102, 0);">scale_x</SPAN> and <SPAN style=
+          "color: rgb(0, 102, 0);">scale_y</SPAN> which are read
+          from the global bundle (1).<BR>
+          <BR>
+          Init.bas scales <SPAN style=
+          "text-decoration: underline;">both</SPAN> width and
+          height to the smallest found ratio (act(w|h) /
+          dev(w|h).<BR>
+          This means everything will<BR>
+          a) <SPAN style="color: rgb(102, 0, 0);">fit inside the
+          screen,</SPAN> and<BR>
+          b) <SPAN style="color: rgb(102, 0, 0);">be squarely
+          proportioned</SPAN> (i.e circles will be circle and
+          squares will be square after scaling)<BR>
+          <BR>
+          Therefore it is advisable to develop on device with a
+          shorter height (e.g h/w ratio 1.5) compared with longer
+          height devices (&gt;1.5). This way, when the apps are run
+          on taller devices, the bottom will be unused to preserve
+          the aspect ratio. Scaling by one-side-only prevents
+          widgets looking distorted.<BR>
+          <BR>
+          <SPAN style="color: rgb(102, 0, 0);">All HEW widgets
+          avoid actual pixel coordinates</SPAN> and instead are
+          relative according to the screen width|height and/or the
+          current <SPAN style=
+          "color: rgb(0, 102, 0);">gr.text.size</SPAN>. The
+          dependency is as follows ;<BR>
+          gr.text.size &lt;- tx_height &lt;- row_height &lt;- srows
+          &lt;- scr_h / (30 pixels at reference density of 160)<BR>
+          <BR>
+          <SPAN style="color: rgb(0, 0, 153);">If you choose to use
+          scaling</SPAN> (scaling=1),<SPAN style=
+          "color: rgb(0, 0, 153);">&nbsp;</SPAN> then <SPAN style=
+          "color: rgb(0, 102, 0);">scr_w,scr_h</SPAN> are set the
+          same as <SPAN style="color: rgb(0, 102, 0);">dev_w,
+          dev_h</SPAN>. And you must treat your coordinates as if
+          using the development machine sizes. All the graphics
+          code is then scaled up/down automatically when the app is
+          run on a different machine by BASIC's gr.scale
+          command.<BR>
+          <BR>
+          The advantage of scaling is that you can use absolute
+          (dev) coordinates&nbsp; without worry.<BR>
+          The dis-advantage is that widgets will look fat and
+          bloaty on machines with large screens.<BR>
+          <BR>
+          <SPAN style="color: rgb(0, 0, 153);">If you choose not to
+          use scaling</SPAN> (scaling=0),&nbsp; then widgets are
+          sized by relative density. So for the same density (160),
+          larger screens will have more rows.<BR>
+          <BR>
+          The advantage is that widgets will look the same size on
+          any screen-size. And you can have more rows for larger
+          screens with same density.<BR>
+          The dis-advantage is that you can't use absolute
+          coordinates and sizes in your app. Instead all values
+          have to be relative to either <SPAN style=
+          "color: rgb(0, 102, 0);">scr_h, scr_w</SPAN> and
+          <SPAN style="color: rgb(0, 102, 0);">srows</SPAN>. These
+          three values are setup and globalised by init.bas, as
+          well as <SPAN style=
+          "color: rgb(0, 102, 0);">scale_x</SPAN> and <SPAN style=
+          "color: rgb(0, 102, 0);">scale_y</SPAN>.<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Colors</SPAN><BR>
+
+          init.bas will call <SPAN style=
+          "color: rgb(0, 102, 0);">theme_init()</SPAN> to load
+          default colors for all widget creation.<BR>
+          <BR>
+          <HR style="width: 100%; height: 2px;">
+          <BIG><SPAN style=
+          "color: rgb(102, 0, 204);">Pre-Requisites</SPAN></BIG><BR>
+
+          <BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(102, 0, 204); font-style: italic;">Requires&nbsp;&nbsp;</SPAN>
+            (include)<BR>
+            <BR>
+            All apps must include <SPAN style=
+            "color: rgb(0, 0, 153);">themes.bas,</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);">event.bas</SPAN>
+            and <SPAN style=
+            "color: rgb(0, 0, 153);">init.bas</SPAN>, and
+            <SPAN style="text-decoration: underline;">in that
+            order</SPAN>. This is the minimum requirement. (isr.bas
+            at the end of the app is also encouraged)<BR>
+            <BR>
+            All widgets are assumed to require <SPAN style=
+            "color: rgb(0, 0, 153);">themes.bas,</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);">event.bas</SPAN>
+            and <SPAN style=
+            "color: rgb(0, 0, 153);">init.bas</SPAN>.<BR>
+            Additional requirements will be stated.<BR>
+            <BR>
+            <SPAN style=
+            "font-style: italic; color: rgb(102, 0, 204);">Visual
+            updates</SPAN><BR>
+            Most widget commands do not provide <SPAN style=
+            "color: rgb(102, 51, 0);">gr.render</SPAN> unless it is
+            needed. So you need to add this in your own code. This
+            is because some apps don't want the user to see the
+            change until a later time.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="event" id="event"></A><BIG><SPAN style=
+          "color: rgb(0, 0, 153);">Event.bas</SPAN></BIG><BR>
+          <BR>
+          The main event loop <SPAN style=
+          "color: rgb(0, 102, 0);">event_get ()</SPAN>&nbsp; waits
+          for user input (touches) and figures out which widget was
+          touched.<BR>
+          <BR>
+          It also handles BakKey detection, and tests if app was
+          put in the background.<BR>
+          <BR>
+          To do this, all detectable widgets are put in a list so
+          that the control loop can query their locations.<BR>
+          The widget detection list (widgets) is central to HEW and
+          is built up at the start of your program.<BR>
+          'widgets' is also saved in the global bundle '1'.
+          <SMALL>Some widgets can borrow the event loop by 'taking
+          over' the widget list.</SMALL><BR>
+          <BR>
+          If a widget was touched it will return the widget bundle.
+          If Bakkey was pressed, it will return 0.<BR>
+          Your program should figure out what to do with the return
+          code.<BR>
+          <BR>
+          Event.bas does not wait for an 'off-touch', this means
+          your program code has the option to furthur process a
+          'hold-down' touch <SMALL><SPAN style=
+          "font-style: italic;">(infact some HEW widgets rely on
+          this mechanism).</SPAN></SMALL><BR>
+          <HR style="width: 100%; height: 2px;">
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="themes" id=
+          "isr"></A><BIG>Theme.bas</BIG></SPAN><BR>
+          <BR>
+          Defines the colors used to paint widgets.<BR>
+          Widgets will call <SPAN style=
+          "color: rgb(0, 102, 0);">theme_color()</SPAN> instead of
+          <SPAN style=
+          "color: rgb(0, 102, 0);">gr.color()</SPAN>.<BR>
+          <BR>
+          If you don't want <SPAN style=
+          "color: rgb(0, 0, 153);">themes.bas</SPAN>, you must
+          replace all the <SPAN style=
+          "color: rgb(0, 102, 0);">theme_color</SPAN> calls with
+          your own <SPAN style=
+          "color: rgb(0, 102, 0);">gr.color</SPAN> and remove
+          <SPAN style="color: rgb(0, 102, 0);">theme_init()</SPAN>
+          from init.bas.<BR>
+          <BR>
+          To change the default colors, modify the entry in
+          <SPAN style="color: rgb(0, 0, 153);">themes.bas</SPAN>
+          inside <SPAN style=
+          "color: rgb(0, 102, 0);">theme_init()</SPAN>.<BR>
+          <BR>
+          <SPAN style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Themes.INI</SPAN><BR>
+
+          If you want additional themes, you must create
+          data/<SPAN style=
+          "color: rgb(0, 0, 153);">themes.ini</SPAN>. If this file
+          does not exist, the default colors inside <SPAN style=
+          "color: rgb(0, 102, 0);"><SPAN style=
+          "color: rgb(0, 0, 153);">themes.bas</SPAN></SPAN> &gt;
+          <SPAN style="color: rgb(0, 102, 0);">themes_init()</SPAN>
+          will be used instead. Therefore you do not need
+          <SPAN style="color: rgb(0, 0, 153);">themes.ini</SPAN> if
+          you don't change themes.<BR>
+          <BR>
+          This is what themes.ini looks like;<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SMALL style="color: black;"><SPAN style=
+            "font-family: monospace;">use_theme =
+            Dark</SPAN></SMALL><BR style=
+            "font-family: monospace; color: rgb(51, 51, 255);">
+            <BR style=
+            "font-family: monospace; color: rgb(51, 51, 255);">
+            <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+            "font-family: monospace;">[default]</SPAN></SMALL><BR style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <BR style=
+            "font-family: monospace; color: rgb(51, 51, 255);">
+            <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+            "font-family: monospace;">[Dark]</SPAN></SMALL><BR style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <SMALL style="color: black;"><SPAN style=
+            "font-family: monospace;">p_background=&nbsp;&nbsp;&nbsp;
+            255,0,0,0,1<BR>
+            p_title=&nbsp;&nbsp;&nbsp; 255,230,140,30,0<BR>
+            p_link=&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            255,230,140,30,0<BR>
+            p_text=&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            255,157,218,112,0</SPAN></SMALL><BR style=
+            "font-family: monospace; color: rgb(51, 51, 255);">
+            <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+            "font-family: monospace;">.</SPAN></SMALL><BR style=
+            "font-family: monospace; color: rgb(51, 51, 255);">
+            <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+            "font-family: monospace;">..etcd</SPAN></SMALL><BR style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+            "font-family: monospace;">[Fancy]</SPAN></SMALL><BR style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <SMALL style="color: black;"><SPAN style=
+            "font-family: monospace;">p_background=&nbsp;&nbsp;&nbsp;
+            255,255,255,255,1</SPAN></SMALL><BR style=
+            "font-family: monospace; color: black;">
+            <SMALL style="color: black;"><SPAN style=
+            "font-family: monospace;">p_title=&nbsp;&nbsp;&nbsp;
+            255,200,140,250,0</SPAN></SMALL><BR style=
+            "font-family: monospace; color: rgb(51, 51, 255);">
+            <SMALL style="color: rgb(51, 51, 255);"><SPAN style=
+            "font-family: monospace;">..etc</SPAN></SMALL><BR>
+          </DIV>
+
+          <DIV style="margin-left: 40px; text-align: right;">
+            <SMALL>(download a sample file <A href=
+            "source/themes.ini">here</A>)<BR></SMALL>
+          </DIV><BR>
+          In this example, there are <SPAN style=
+          "text-decoration: underline;">blank entries</SPAN> under
+          the first theme <SPAN style=
+          "color: rgb(51, 51, 255);">[default]</SPAN> and some
+          entries under themes <SPAN style=
+          "color: rgb(51, 51, 255);">[Dark]</SPAN> and <SPAN style=
+          "color: rgb(51, 51, 255);">[Fancy]</SPAN>.<BR>
+          <BR>
+          If there are blank entries under <SPAN style=
+          "color: rgb(51, 51, 255);">[default]</SPAN> then the
+          code-default colors in <SPAN style=
+          "color: rgb(0, 102, 0);">theme_init()</SPAN> will be used
+          instead. Otherwise the colors defined here will override
+          the default theme 'default'.<BR>
+          <BR>
+          For any [theme], if there are blank color entries for any
+          specific color name, then the code-default color in
+          <SPAN style="color: rgb(0, 102, 0);">theme_init()</SPAN>
+          for that color will be used instead.<BR>
+          <BR>
+          <SPAN style="color: rgb(51, 51, 255);">[use theme]</SPAN>
+          will be the theme that <SPAN style=
+          "color: rgb(0, 102, 0);">theme_init()</SPAN> will
+          load.<BR>
+          <SPAN style="color: rgb(0, 102, 0);"><BR>
+          theme_set()</SPAN> will set the next <SPAN style=
+          "color: rgb(51, 51, 255);">[use theme]</SPAN> inside
+          themes.ini.<BR>
+          <BR>
+          Here are the calls you are likely to use;<BR>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: top; width: 25%; white-space: nowrap; color: rgb(0, 102, 0);">
+                theme_color (name$)<BR>
+                theme_init ()<BR>
+                theme_list (tlist)<BR>
+                theme_set (theme$)</TD>
+
+                <TD style="vertical-align: top; width: 5%;">
+                &nbsp;<BR></TD>
+
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">set the
+                current color to the color name<BR>
+                load default colors <SPAN style=
+                "color: rgb(102, 0, 0);">(called from
+                init.bas)</SPAN> and load <SPAN style=
+                "color: rgb(0, 0, 153);">themes.ini</SPAN>, if
+                exists<SPAN style=
+                "color: rgb(102, 0, 0);">.</SPAN><BR>
+                returns a list of themes found in themes.ini<BR>
+                sets the next used theme by changing <SPAN style=
+                "color: rgb(51, 51, 255);">[use theme]</SPAN>
+                inside themes.ini<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          A new theme is loaded using <SPAN style=
+          "color: rgb(0, 102, 0);">theme_init()</SPAN> to
+          load&nbsp; colors from data/<SPAN style=
+          "color: rgb(0, 0, 153);">themes.ini</SPAN>.<BR>
+          The <SPAN style=
+          "color: rgb(0, 102, 0);">theme.init()</SPAN> manager also
+          updates colors in formfill.css (if it exists), although
+          any css file can be updated by changing the filename. The
+          css file must support themes by having embedded color
+          markers (see formfill.css).<BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="isr" id=
+          "isr"></A><BIG>ISR.bas</BIG></SPAN><BR>
+          When an interrupt occurs, e.g BakKey is pressed, timer is
+          called, or an error occurs, this area catches<BR>
+          the interrupt and decides what to do.<BR>
+          <BR>
+          <A name="backkey" id="backkey"></A> OnBackKey<BR>
+          Some functions or code may need to know if the backkey
+          was pressed (e.g inside a loop).<BR>
+          When the backkey is pressed BASIC! first checks in the
+          main namespace, if the variable is undefined, then it
+          will work it's way down the calls looking for the
+          variable until the last function (where the interrupt
+          occurred). Unfortunately there is no way you can identify
+          this last level function <SMALL>(whether by using a
+          commonly named variable or uncommonly named
+          variable)</SMALL>.<BR>
+          <BR>
+          Therefore a system of using a global bundle variable
+          "<SPAN style="color: rgb(0, 102, 0);">isr$</SPAN>" is
+          used to identify the interrupted scope. This interrupt
+          status flag is defined at the end of <SPAN style=
+          "color: rgb(0, 0, 153);">init.bas</SPAN> together with
+          functions<BR>
+          <SPAN style="color: rgb(0, 102, 0);">isr_set(
+          <SMALL>state$</SMALL> )</SPAN> and <SPAN style=
+          "color: rgb(0, 102, 0);">bk_pressed()<BR></SPAN><BR>
+          Any function/code wanting to identify itself as the
+          current scope can call <SPAN style=
+          "color: rgb(0, 102, 0);">isr_set ("a_name")</SPAN> for
+          debugging purposes. This will also clear the flag for
+          backkey. <SMALL style="color: rgb(102, 0, 0);">(do
+          <BIG>not</BIG> start the 'name' with an <BIG><SPAN style=
+          "text-decoration: underline;">Underscore</SPAN></BIG>
+          since this indicates backkey pressed).</SMALL><BR>
+          <BR>
+          Any function/code can query <SPAN style=
+          "color: rgb(0, 102, 0);">bk_pressed()</SPAN> to see if
+          the backkey was pressed.<BR>
+          To force (trick) a backkey pressed, access the bundle
+          variable <SPAN style="color: rgb(0, 102, 0);">isr$</SPAN>
+          directly and start it with an underscore.<BR>
+          <BR>
+          <HR style="width: 100%; height: 2px;">
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="ask_yn" id=
+          "ask_yn"></A><BIG>ask_yn.bas<BR></BIG></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            Displays a message in a box with a "yes" and
+            "no"button.<BR>
+            <BR>
+            <SMALL>This is a modal dialog and manipulates the
+            global bundle 'widgets' list variable before using
+            event.bas.</SMALL><BR>
+          </DIV>
+
+          <DIV style="margin-left: 40px;">
+            <IMG style="width: 150px; height: 107px;" alt="" src=
+            "demos/dialog_demo/pics/small_ask.png"><BR>
+          </DIV><SPAN style=
+          "color: rgb(153, 0, 0);">requires:</SPAN> <SPAN style=
+          "color: rgb(0, 0, 153);">button.bas</SPAN><BR>
+          <SPAN style="color: rgb(153, 0, 0);"><BR>
+          constructor</SPAN> :&nbsp; ask_yn_make <SPAN style=
+          "color: rgb(0, 102, 0);">(style)<BR></SPAN> where
+          :<SPAN style="color: rgb(0, 102, 0);"><BR></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">style</SPAN> = the
+            buttons style <SMALL>(according to button.bas)<BR>
+            <BR></SMALL> return code : the widget bundle<BR>
+          </DIV><SMALL><SPAN style=
+          "font-style: italic;"><BR></SPAN></SMALL><SPAN style=
+          "font-style: italic;">(since there is only one ask_yn
+          widget, this widget will save itself into the global
+          bundle '1' for the callback)</SPAN><SMALL><SPAN style=
+          "font-style: italic;"><BR>
+          <BR></SPAN></SMALL> <SPAN style=
+          "color: rgb(153, 0, 0);">callback</SPAN> : ask_yn
+          <SPAN style="color: rgb(0, 102, 0);">(t$)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> = the
+            question<BR>
+
+            <DIV style="margin-left: 40px;">
+              lines can be seperated with the character
+              '|'.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g "line
+              1|line2"<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code
+            :</SPAN> 0=backkey,&nbsp; 1=yes,&nbsp; 2=no<BR>
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><BIG><A name=
+          "botmenu" id="botmenu"></A>botmenu.bas</BIG></SPAN><BR>
+
+          <DIV style="margin-left: 40px;">
+            Bottom menu widget. This is a six panel popup menu
+            which slides up from the bottom of the screen.<BR>
+          </DIV><BR>
+
+          <DIV style="text-align: right;">
+            <SMALL>example</SMALL> <IMG src=
+            "demos/btm_demo/pics/btm_demo2.png" alt="" style=
+            "width: 200px; height: 190px;"><BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">constructor</SPAN> :
+          botmenu_make ( <SPAN style=
+          "color: rgb(0, 102, 0);">itms</SPAN> )<SPAN style=
+          "color: rgb(0, 102, 0);"><BR></SPAN> where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            &nbsp;itms = list of items (1..6)<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            :&nbsp; the widget bundle.<BR>
+          </DIV><BR>
+          <BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          botmenu ( <SPAN style="color: rgb(0, 102, 0);">wg</SPAN>
+          )<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">wg</SPAN> = the
+            widget bundle<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            : the item number selected (1..6) or 0 for quit.<BR>
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="btimer" id=
+          "btimer"></A><BIG>btimer.bas</BIG></SPAN><BR>
+
+          <DIV style="margin-left: 40px;">
+            bTimer is a countdown timer inside a button.<BR>
+            <BR>
+            <SPAN style="color: red;">warning</SPAN>: btimer.bas
+            appends the Basic! <SPAN style=
+            "color: rgb(102, 0, 204);">OnTimer</SPAN> keyword and
+            segment at the end of the file.<BR>
+            This means you cannot use OnTimer anywhere else in your
+            code if you include btimer).<BR>
+            <SMALL>(a goto-skip is used, so you can include
+            btimer.bas at the start of your files)</SMALL><BR>
+            <BR>
+            <SMALL>Btimer is a Hew example of simulating a
+            'subclass' in Basic!<BR>
+            The timer creates a button, replaces the text with
+            mm:ss. And adds a few more commands.<BR>
+            It also inserts an OnTimer code segment to handle the
+            timer interrupt every second.<BR>
+            <BR>
+            Other than that, it behaves like any other button. i.e
+            OnTimer will pass on any button command to it's
+            'parent' (button). Alternatively you may just call the
+            parent 'button' fuction directly.</SMALL> <SMALL><BR>
+            </SMALL>
+          </DIV>
+
+          <DIV style="text-align: right;">
+            <SMALL>example</SMALL> <A href=
+            "btimer_demo/btimer_demo.zip">btimer_demo.zip</A><IMG src="demos/btimer_demo/pics/1.png"
+            alt="" style="width: 200px; height: 200px;"><BR>
+          </DIV><SPAN style=
+          "color: rgb(153, 0, 0);">requires:</SPAN> <SPAN style=
+          "color: rgb(0, 0, 153);">button.bas<BR>
+          <BR></SPAN> <SPAN style=
+          "color: rgb(153, 0, 0);">constructor</SPAN>:&nbsp;
+          btimer_make ( <SPAN style="color: rgb(0, 102, 0);">aux$,
+          style, x, y</SPAN> <SPAN style=
+          "color: rgb(0, 102, 0);">)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">aux$</SPAN> = any
+            auxiliary data passed to button.bas<BR>
+
+            <DIV style="margin-left: 40px;">
+              <SMALL>This should normally be empty ("") but can be
+              used to pass data to button.bas e.g
+              "C"enter..etc.<BR>
+              (see button.bas)<BR></SMALL>
+            </DIV><BR>
+            x,y = position of widget (top left corner)<BR>
+            style = (same as button)<BR>
+            <SPAN style="color: rgb(0, 0, 153);"><BR>
+            return code :</SPAN> the widget bundle.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN>:
+          btimer ( <SPAN style="color: rgb(0, 102, 0);">cmd$, t$,
+          wg</SPAN> )<SPAN style=
+          "color: rgb(0, 102, 0);"><BR></SPAN> where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+          </DIV>
+
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              "reset" : stops and resets the timer to the total
+              time.<BR>
+            </DIV>
+
+            <DIV style="margin-left: 120px;">
+              if <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> is
+              a time e.g "25:29" then the timer will take on this
+              new total. Otherwise the last total is used.<BR>
+            </DIV>
+
+            <DIV style="margin-left: 40px;">
+              "stop" :&nbsp; stops the countdown<BR>
+              "start" : starts the timer countdown<BR>
+            </DIV><BR>
+
+            <DIV style="margin-left: 40px;">
+              The rest of the commands are the same as
+              button.bas<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> = the
+            time "mm:ss" for 'reset' command.<BR>
+
+            <DIV style="margin-left: 40px;">
+              otherwise same use as button.bas.<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">wg</SPAN> = the
+            widget bundle<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code
+            :</SPAN> none.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="button" id=
+          "button"></A><BIG>button.bas</BIG></SPAN><BR>
+
+          <DIV style="margin-left: 40px;">
+            Button widget.<BR>
+          </DIV><SPAN style="color: rgb(153, 0, 0);"><BR>
+          constructor</SPAN>:&nbsp; button_make ( <SPAN style=
+          "color: rgb(0, 102, 0);">aux$, t$, style, x, y</SPAN>
+          )<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">aux$</SPAN> =
+            auxiliary data<BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);">"C"</SPAN> =
+              centre the button at the x coordinate<BR>
+              <SPAN style="color: rgb(102, 51, 0);">"R"</SPAN> =
+              right justify the button at the x coordinate<BR>
+              e.g <SPAN style="color: rgb(0, 102, 0);">button_make
+              (</SPAN> "C", "press me", 4, 200,200 <SPAN style=
+              "color: rgb(0, 102, 0);">)<BR>
+              <BR></SPAN> <SPAN style=
+              "color: rgb(102, 51, 0);">"|.."</SPAN> = filename
+              prefix<BR>
+
+              <DIV style="margin-left: 40px;">
+                If aux$ <SPAN style=
+                "text-decoration: underline;">contains a bar ' |
+                '</SPAN> then this indicates a file prefix is
+                appended for a background bitmap for type 5 (see
+                below).<BR>
+                e.g <SPAN style=
+                "color: rgb(0, 102, 0);">button_make (</SPAN>
+                "|mybitmap", "press me", 4, 200,200 <SPAN style=
+                "color: rgb(0, 102, 0);">)</SPAN><BR>
+                (see style type 5 below)<BR>
+                <BR>
+              </DIV>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">x,y</SPAN> =
+            position of widget (top left corner)<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> = text
+            inside button <SMALL>(will be centered inside) (The
+            font size will follow gr.text.size.)</SMALL><BR>
+            <SMALL><BR></SMALL>
+
+            <DIV style="margin-left: 40px;">
+              The amount of text will determine the size (width,
+              height) of the button.<BR>
+              The size does not change. If you want all your
+              buttons to be the same size, then initialize them all
+              with the same text and then change the text with the
+              "text" command.<BR>
+              <BR>
+              Multi-Line text can be separated with bars
+              '|'<IMG style="width: 80px; height: 60px;" alt=""
+              src="pics/multi-line.png" align="top"> e.g
+              "Multi|line|&nbsp; button! "<BR>
+              Spaces can be used to increase horizontal width.<BR>
+              Blank lines at the start of the text e.g "|||foobar"
+              can be used to increase the vertical height of the
+              button and the remaining text lines will be centered
+              vertically.<BR>
+              e.g "two|lines " vs "|two|lines "&nbsp; <IMG style=
+              "width: 65px; height: 43px;" alt="" src=
+              "pics/twolines_a.jpg"> =&gt; <IMG style=
+              "width: 69px; height: 60px;" alt="" src=
+              "pics/twolines_b.jpg"><BR>
+              If you don't want the effect of vertical blank line
+              spacing, then use a spaces at the begining instead of
+              empty strings (e.g "&nbsp; |&nbsp; |&nbsp;
+              |tall|button|&nbsp; |&nbsp; |&nbsp; |").<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">style</SPAN> =
+            1,2,3,4 or 5<BR>
+
+            <DIV style="margin-left: 40px;">
+              0 = no border (just text)&nbsp;&nbsp; <SMALL>(
+              previously <SPAN style=
+              "text-decoration: line-through;">type
+              5</SPAN></SMALL> )<BR>
+              1 = rectangle<BR>
+              2 = oval<BR>
+              3 = rounded corners<BR>
+              4 = rounded
+              2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SMALL>( previously <SPAN style=
+              "text-decoration: line-through;">simple brackets e.g
+              [ click ]</SPAN></SMALL> )<BR>
+              <BR>
+              <A name="bitbutton" id="bitbutton"></A>5 = bitmap
+              background button<BR>
+
+              <DIV style="text-align: center;">
+                <SMALL>example</SMALL> <IMG style=
+                "width: 80px; height: 27px;" alt="" src=
+                "pics/bitbutton.png"><BR>
+              </DIV>
+
+              <DIV style="margin-left: 40px;">
+                A <SPAN style="color: rgb(102, 51, 0);">bitmap
+                prefix</SPAN> is appended after an excalmation ' !
+                ' in <SPAN style=
+                "color: rgb(0, 102, 0);">aux$</SPAN> (see
+                above)<BR>
+                <BR>
+                e.g&nbsp;<SPAN style=
+                "color: rgb(0, 51, 0);">button_make
+                (</SPAN>"<SPAN style=
+                "color: rgb(51, 0, 153);">myname!bitname</SPAN>"<SPAN style="color: rgb(0, 51, 0);">,
+                "BitButton", 5, 100,100)</SPAN><BR>
+                <BR>
+                "myname" is the button name<BR>
+                "bitname" is the bitmap filename prefix<BR>
+
+                <DIV style="text-align: right;">
+                  <SMALL>(no spaces are allowed around the "|")<BR>
+                  (The ' ! ' and prefix will be removed from the
+                  widget name)<BR></SMALL>
+                </DIV><BR>
+                The widget will then expect to find filenames
+                <SPAN style=
+                "color: rgb(51, 0, 153);">"bitname_on.png"</SPAN>
+                and "<SPAN style=
+                "color: rgb(51, 0, 153);">bitname_off.png</SPAN>"
+                in the<BR>
+                default directory
+                &lt;base&gt;/data.&nbsp;&nbsp;&nbsp;&nbsp;
+                <SMALL>(you <SPAN style=
+                "font-weight: bold;">must</SPAN> make available
+                these images if you use this button
+                type)</SMALL><BR>
+                <BR>
+                The filename prefix will override the <SPAN style=
+                "color: rgb(102, 51, 0);">default prefix</SPAN>
+                "button" ( <SPAN style=
+                "color: rgb(102, 51, 0);">button<SPAN style=
+                "color: rgb(51, 51, 153);">_on</SPAN>.png</SPAN>,
+                <SPAN style=
+                "color: rgb(102, 51, 0);">button<SPAN style=
+                "color: rgb(51, 51, 153);">_off</SPAN>.png</SPAN>
+                ).<BR>
+                If no prefix is given, the default prefix is
+                used.<BR>
+                <BR>
+                &lt;name&gt;<SPAN style=
+                "color: rgb(51, 0, 153);">_on</SPAN> will be the
+                image when the button is pressed.<BR>
+                &lt;name&gt;_<SPAN style=
+                "color: rgb(51, 0, 153);">off</SPAN> will be the
+                image when the button is released.<BR>
+                The action will happen when a "<SPAN style=
+                "color: rgb(0, 102, 0);">flash</SPAN>" command is
+                called.<BR>
+                <BR>
+                Note that images are rectangle, only rectangle
+                buttons work well with this type. If you have a
+                round image, it's background will also show, so you
+                must match the display background with it.<BR>
+              </DIV><BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code
+            :</SPAN> the widget bundle.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN>:
+          button ( <SPAN style="color: rgb(0, 102, 0);">cmd$, t$,
+          wg</SPAN> )<SPAN style=
+          "color: rgb(0, 102, 0);"><BR></SPAN> where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">flash</SPAN>"
+              : flash the button momentarily<BR>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; <SMALL>depending on the button style,
+              either the border/background flashes or bitmap
+              changed momentarily.</SMALL><BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">text</SPAN>"&nbsp; :&nbsp;
+              change the text inside the button<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; &nbsp; <SMALL style=
+              "color: rgb(153, 0, 0);">note: The button size does
+              not change. Be sure to create a size (using spaces)
+              that can surround future text)</SMALL><BR>
+              "<SPAN style="color: rgb(102, 51, 0);">show</SPAN>" :
+              shows the widget <SMALL>and enabled in touch
+              detection list</SMALL><BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">hide</SPAN>"&nbsp; : hides
+              the widget <SMALL>and disabled in touch detection
+              list</SMALL><BR>
+              "<SPAN style="color: rgb(102, 51, 0);">move</SPAN>":
+              moves the button according to t$<BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">set</SPAN>"&nbsp;&nbsp;&nbsp;
+              : set button as pressed or un-pressed according to
+              t$="1" or "0"<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> = text
+            to be changed or move coordinates <SMALL>(provide an
+            empty string if unused)<BR>
+            <BR></SMALL>
+
+            <DIV style="margin-left: 40px;">
+              for move: coordinates = "x,y".&nbsp; eg. "100,50"
+              &nbsp; eg. "+100, -50"<BR>
+              if preceeded by "-" or "+", then the movement is
+              relative, otherwise it is absolute.<BR>
+            </DIV><SMALL><BR></SMALL>
+
+            <DIV style="margin-left: 40px;">
+              for set: "1"=set to pressed. "0"=set to
+              un-pressed.<BR>
+            </DIV><SMALL><BR></SMALL><BR>
+            <SPAN style="color: rgb(0, 102, 0);">wg</SPAN> = the
+            widget bundle<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code
+            :</SPAN> none.<BR>
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="console"
+          id="btimer"></A><A href=
+          "source/console.bas"><BIG>console.bas</BIG></A></SPAN><BR>
+
+
+          <DIV style="margin-left: 40px;">
+            Uses txtscroll to simulate a text console.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">requires:</SPAN>
+          <SPAN style="color: rgb(0, 0, 153);">txtscroll.bas<BR>
+          <BR></SPAN> <SPAN style=
+          "color: rgb(153, 0, 0);">constructor</SPAN>:&nbsp;
+          console_make ( <SPAN style="color: rgb(0, 102, 0);">aux$,
+          bsize, x,y, ww, wh</SPAN> )<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">aux$</SPAN> =
+            auxiliary<BR>
+
+            <DIV style="margin-left: 40px;">
+              Normally empty ('")<BR>
+              used to pass extra data to txtscroll (see
+              txtscroll.bas)<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">bsize</SPAN> =
+            buffer size&nbsp;&nbsp;&nbsp; (lines of text)<BR>
+            <SPAN style="color: rgb(0, 102, 0);">x,y</SPAN> =
+            position of widget (top left corner)<BR>
+            <SPAN style="color: rgb(0, 102, 0);">ww, wh</SPAN> =
+            width, height of widget<BR>
+            <SPAN style="color: rgb(0, 0, 153);"><BR>
+            return code :</SPAN> the widget bundle. (this will be
+            the txtscroll widget bundle)<BR>
+          </DIV><BR>
+          <SPAN style=
+          "color: rgb(153, 0, 0);">callbacks</SPAN>:<BR>
+
+          <DIV style="margin-left: 80px;">
+            console ( <SPAN style="color: rgb(0, 102, 0);">cmd$,
+            t$, wg</SPAN> )<BR>
+            console_bulk ( <SPAN style=
+            "color: rgb(0, 102, 0);">blist, wg</SPAN> )&nbsp; for
+            bulk printing of many lines<BR>
+
+            <DIV style="margin-left: 40px;"></DIV>
+          </DIV>where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+          </DIV>
+
+          <DIV style="margin-left: 80px;">
+            "<SPAN style="color: rgb(102, 51, 0);">print</SPAN>" :
+            adds and prints a new line <SPAN style=
+            "color: rgb(0, 102, 0);">t$</SPAN> to the end of the
+            console<BR>
+
+            <DIV style="margin-left: 40px;">
+              The console will be scrolled if needed.<BR>
+            </DIV><BR>
+          </DIV>
+
+          <DIV style="margin-left: 120px;"></DIV>
+
+          <DIV style="margin-left: 80px;">
+            "<SPAN style="color: rgb(102, 51, 0);">touch</SPAN>"
+            :&nbsp; passes the touch cmd to txtscroll.<BR>
+            "<SPAN style="color: rgb(102, 51, 0);">tag</SPAN>" :
+            appends t$ to the last line without adding a
+            newline.<BR>
+            "<SPAN style="color: rgb(102, 51, 0);">clear</SPAN>" :
+            clears the console<BR>
+            "<SPAN style="color: rgb(102, 51, 0);">raw</SPAN>" :
+            set raw mode to t$.<BR>
+
+            <DIV style="margin-left: 40px;">
+              "0" =&nbsp; off<BR>
+              "1" = on<BR>
+              raw mode will tell txtscroll to ignore embedded
+              commands after a '|' symbol.<BR>
+            </DIV>
+          </DIV><BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> = text
+            to print<BR>
+
+            <DIV style="margin-left: 40px;">
+              if <SPAN style="color: rgb(0, 102, 0);">t$</SPAN>
+              contains newlines ("\n"), then it will be split into
+              seperate lines.<BR>
+            </DIV>
+          </DIV><BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">blist</SPAN> =
+            list to print<BR>
+
+            <DIV style="margin-left: 40px;">
+              Printing a list is much faster than printing
+              individual lines<BR>
+            </DIV>
+          </DIV><BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">wg</SPAN> = the
+            widget bundle<BR>
+          </DIV><BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">return code
+            :</SPAN> none.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="gformfill"
+          id="botmenu"></A><BIG>gformfill.bas<BR>
+          <BR></BIG></SPAN>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">
+                  Can be used as a form filler or list picker, it
+                  gets input from the user.<BR>
+                  It is the graphic equivalent of formfill.bas.<BR>
+                  <BR>
+                  Each row can have a title, label, menu, checkbox,
+                  radio, ..etc.<BR>
+                  <BR>
+                  Menu items will close the form and the row number
+                  returned.<BR>
+                  <BR>
+                  The values that are passed are <SPAN style=
+                  "text-decoration: underline;">always</SPAN>
+                  updated. If a 'quit' option is needed, send a
+                  temporay value list to gformfill_make.<BR>
+                  <BR>
+                  <SPAN style="text-decoration: underline;">New
+                  features (v3.0+)</SPAN><BR>
+
+                  <UL>
+                    <LI>The 'new' gformfill can be windowed and
+                    positioned.</LI>
+
+                    <LI>Row limit lifted (unlimited rows).<BR></LI>
+
+                    <LI>Slide transition effects from any of the 4
+                    sides.</LI>
+
+                    <LI>Themed with themes.bas</LI>
+                  </UL><SPAN style=
+                  "text-decoration: underline;">Future
+                  Plans</SPAN><BR>
+                  gformfill is currently modal (closes when it
+                  quits). A planned upgrade of gformfill is to have
+                  it modeless (interact with event.bas). A 'stay'
+                  mode will be implemented (similar to keyinp).
+                  Because of that, the 3 lists you pass will be to
+                  the constructor gfromfill_make, even though we
+                  don't currently need to.<BR>
+                  If you want to change the 3-list-set using the
+                  same gformfill, then you have to physically copy
+                  (list.add.list) any new set to the original
+                  lists. The alternative is to just create another
+                  gformfill.<BR>
+                  <BR>
+                </TD>
+
+                <TD style="vertical-align: top; width: 20%;">
+                <IMG style="width: 200px; height: 224px;" alt=""
+                src="pics/gform_a.jpg"></TD>
+              </TR>
+            </TBODY>
+          </TABLE><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG><BR></BIG></SPAN>
+          <SPAN style="color: rgb(153, 0, 0);">constructor</SPAN> :
+          gformfill_make ( <SPAN style="color: rgb(0, 102, 0);">x,
+          y, ww, wh,&nbsp; itmtyp, itmlab, itmval</SPAN>
+          )<SPAN style=
+          "color: rgb(0, 102, 0);"><BR></SPAN>where:<SPAN style=
+          "color: rgb(0, 102, 0);"><BR></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">x, y</SPAN> =
+            position (top left corner) of window<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">ww, wh</SPAN> =
+            width and height of window<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">itmtyp, itmlab,
+            itmval</SPAN> = 3 string <SPAN style=
+            "color: rgb(153, 0, 0);">lists</SPAN> containing each
+            row's <SPAN style="color: rgb(0, 0, 153);">type</SPAN>,
+            <SPAN style="color: rgb(0, 0, 153);">label</SPAN> and
+            <SPAN style="color: rgb(0, 0, 153);">value</SPAN><BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              Types of items<BR>
+
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "text-decoration: underline; color: rgb(0, 102, 0);">
+                itmtyp</SPAN><SPAN style=
+                "color: rgb(102, 51, 0);"><BR>
+                "title"</SPAN> :&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Displays text
+                with a title background.<BR>
+
+                <DIV style="margin-left: 40px;">
+                  <SPAN style=
+                  "text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</SPAN><BR>
+                </DIV>
+
+                <DIV style="margin-left: 40px;">
+                  "C"&nbsp;&nbsp;&nbsp; - center the text in
+                  <SPAN style=
+                  "color: rgb(0, 102, 0);">itmlab</SPAN><BR>
+                  "R"&nbsp;&nbsp;&nbsp; - right justify the text in
+                  <SPAN style=
+                  "color: rgb(0, 102, 0);">itmlab</SPAN><BR>
+                  "|B"&nbsp;&nbsp; - a bar (' | ') B will border
+                  the title.&nbsp; e.g <SPAN style=
+                  "color: rgb(102, 51, 0);">"|B",</SPAN> or
+                  <SPAN style=
+                  "color: rgb(102, 51, 0);">"C|B"</SPAN> or
+                  <SPAN style="color: rgb(102, 51, 0);">"R|B"<BR>
+                  <BR></SPAN> default is 'left' justify with no
+                  border.<SPAN style=
+                  "color: rgb(102, 51, 0);"><BR></SPAN>
+                </DIV><BR>
+                <SPAN style="color: rgb(102, 51, 0);">"menu"</SPAN>
+                :&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; A menu item will
+                close the form and return the row pressed.<BR>
+
+                <DIV style="margin-left: 40px;">
+                  <SPAN style=
+                  "text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</SPAN><BR>
+                </DIV>
+
+                <DIV style="margin-left: 40px;">
+                  "C"&nbsp;&nbsp;&nbsp; - center the text in
+                  <SPAN style=
+                  "color: rgb(0, 102, 0);">itmlab</SPAN><BR>
+                  "R"&nbsp;&nbsp;&nbsp; - right justify the text in
+                  <SPAN style=
+                  "color: rgb(0, 102, 0);">itmlab</SPAN>
+                </DIV><BR>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">"checkbox"</SPAN>:&nbsp;
+                Checkbox item.&nbsp;&nbsp; <IMG src=
+                "pics/gformfill_check.png" alt="" style=
+                "width: 30px; height: 29px;"><BR>
+
+                <DIV style="margin-left: 40px;">
+                  <SPAN style=
+                  "text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</SPAN><BR>
+                </DIV>
+
+                <DIV style="margin-left: 40px;">
+                  "0"&nbsp;&nbsp;&nbsp; =&nbsp; checkbox ON<BR>
+                  "1"&nbsp;&nbsp;&nbsp; =&nbsp; checkbox OFF
+                </DIV><BR>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">"radio"</SPAN>
+                :&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Radio item.
+                <IMG style="width: 30px; height: 28px;" alt="" src=
+                "pics/gformfill_radio.png"><BR>
+
+                <DIV style="margin-left: 40px;">
+                  <SPAN style=
+                  "text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</SPAN><BR>
+                </DIV>
+
+                <DIV style="margin-left: 40px;">
+                  "0"&nbsp;&nbsp;&nbsp; =&nbsp; radio ON<BR>
+                  "1"&nbsp;&nbsp;&nbsp; =&nbsp; radio OFF<BR>
+                  There must be at least 2 radio items. When one
+                  radio item is selected, all the others are turned
+                  off.<BR>
+                </DIV><BR>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">"counter"</SPAN>
+                :&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Counter
+                item&nbsp;&nbsp; (number spinner)&nbsp;&nbsp;
+                <IMG style="width: 153px; height: 30px;" alt=""
+                src="pics/gformfill_counter.png"><BR>
+
+                <DIV style="margin-left: 40px;">
+                  <SPAN style=
+                  "text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</SPAN><BR>
+                </DIV>
+
+                <DIV style="margin-left: 40px;">
+                  e.g "32"&nbsp;&nbsp;&nbsp; =&nbsp; the value of
+                  the counter is 32.&nbsp; <SMALL>The minimum is 1
+                  and maximum is 99.</SMALL><BR>
+                  e.g "32|59"&nbsp;&nbsp;&nbsp; =&nbsp; the value
+                  of the counter is 32, <SMALL>the minimum is 1 and
+                  <BIG>the maximum 59.</BIG></SMALL><BR>
+                  <BR>
+                  The minimum is always 1. If not defined, the
+                  maximum is 99.<BR>
+                  The maximum can be defined after a bar (' |
+                  ').<BR>
+                  If the maximum is defined e.g "32|59" then the
+                  maximum&nbsp; "|59" is also <SPAN style=
+                  "text-decoration: underline;">returned</SPAN><BR>
+                  with the result e.g "45|59".<BR>
+                  Tapping inside the inner borders of the counter
+                  will decrease and increase the value<BR>
+                  by -10 and +10.<BR>
+                  <BR>
+                </DIV><BR>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">"text_in"</SPAN>:&nbsp;
+                Text Input.&nbsp;&nbsp; <IMG style=
+                "width: 295px; height: 30px;" alt="" src=
+                "pics/gformfill_tin.png"><BR>
+
+                <DIV style="margin-left: 40px;">
+                  <SPAN style=
+                  "text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</SPAN><BR>
+                </DIV>
+
+                <DIV style="margin-left: 40px;">
+                  "a line of text"<BR>
+                  Tapping on the text calls the standard basic!
+                  text input dialog.<BR>
+                </DIV><BR>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">&lt;other&gt;</SPAN>
+                :&nbsp; Label<BR>
+
+                <DIV style="margin-left: 40px;">
+                  Any type not recognised is considered a
+                  label.<BR>
+                  A label is just text and cannot be justified like
+                  a title.<BR>
+                  <BR>
+                  <SPAN style=
+                  "text-decoration: underline;">subtext</SPAN><BR>
+                  All <SPAN style=
+                  "color: rgb(0, 102, 0);">itmlab</SPAN>'s can have
+                  subtext (a line of smaller text below) by
+                  appending a bar (' | ').<BR>
+                  e.g <SPAN style=
+                  "color: rgb(102, 51, 0);">list.add <SPAN style=
+                  "color: rgb(0, 102, 0);">itmlab</SPAN>, "Pick
+                  Option", "Red", "Blue", "Green<SPAN style=
+                  "color: black;">|</SPAN>(this is apple
+                  green)"<BR>
+                  <BR></SPAN> <SPAN style=
+                  "text-decoration: underline;">no
+                  separator</SPAN><BR>
+                  All <SPAN style=
+                  "color: rgb(0, 102, 0);">itmlab</SPAN>'s can
+                  prepend a tilde (' ~ ') to suppress the next
+                  separator line.<BR>
+                  <SMALL style=
+                  "color: rgb(102, 51, 0);"><SPAN style=
+                  "font-family: monospace;">e.g list.add itmlab,
+                  "Pick Option", "Red", "Blue", "<SPAN style=
+                  "color: black;">~</SPAN>Special Sale",
+                  "Green"</SPAN><BR style=
+                  "font-family: monospace;">
+                  <SPAN style=
+                  "font-family: monospace;">&nbsp;&nbsp;&nbsp;
+                  list.add itmtyp,
+                  "title",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  "menu, "menu", "label",&nbsp; &nbsp; &nbsp;
+                  &nbsp;&nbsp; "menu"</SPAN><BR style=
+                  "font-family: monospace;"></SMALL>
+                </DIV><BR>
+              </DIV><BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code
+            :</SPAN> the widget bundle.<BR>
+          </DIV><BR>
+          <BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          gformfill <SPAN style="color: rgb(0, 102, 0);">(cmd$,
+          data$, wg)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);">"input"</SPAN>
+              : activate the widget and get input. - A selected
+              menu item will close the form.
+
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "color: rgb(0, 102, 0); text-decoration: underline;">
+                <BR>
+                data$</SPAN> contains a transition effect. if empty
+                or unrecognised, default will be center.<BR>
+                <BR>
+                <SPAN style="color: rgb(102, 51, 0);">"left"</SPAN>
+                = slide in from the left<BR>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">"right"</SPAN> = slide in
+                from the right<BR>
+                <SPAN style="color: rgb(102, 51, 0);">"top"</SPAN>
+                = slide in from the top<BR>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">"bottom"</SPAN> = slide
+                in from the bottom<BR>
+              </DIV>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">data$</SPAN>&nbsp;
+            :&nbsp; (see cmd$)<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">wg</SPAN> = the
+            widget bundle<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            : the item number selected (1..maxitem) or 0 for
+            quit/bakkey.<BR>
+          </DIV><BR>
+          Unlike it's html equivalent (FormFill), there is no type
+          called 'submit'. Instead use type <SPAN style=
+          "color: rgb(102, 51, 0);">"menu"</SPAN> which will exit
+          the form, <SPAN style=
+          "text-decoration: underline;">always</SPAN> with
+          <SPAN style="color: rgb(0, 102, 0);">itmval</SPAN>
+          updated, so If you wish to implement a 'Cancel'
+          operation, then pass a temporary <SPAN style=
+          "color: rgb(0, 102, 0);">itmval</SPAN> list to
+          gformfill_make instead of the real one.<BR>
+          <BR>
+          Usage summary:<BR>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 10%;">
+                <BR></TD>
+
+                <TD style="vertical-align: top; width: 20%;">
+                checkbox, radio</TD>
+
+                <TD style="vertical-align: top;">itmlab : label
+                text<BR>
+                itmval : "1"=ON , "0"=OFF<BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;">text_in</TD>
+
+                <TD style="vertical-align: top;">itmlab : label
+                text<BR>
+                itmval :&nbsp; input text<BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;">menu, title</TD>
+
+                <TD style="vertical-align: top;">
+                  itmlab&nbsp; : label text<BR>
+                  itmval = justify : "C"enter&nbsp; or
+                  "R"ight&nbsp; (default is left justify)<BR>
+
+                  <DIV style="margin-left: 120px;">
+                    append"|B" for title border<BR>
+                  </DIV>
+                </TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;">counter<BR></TD>
+
+                <TD style="vertical-align: top;">itmval : initial
+                and returned value<BR>
+                <BR>
+                <SMALL>append "|55" will limit the maximum value to
+                55 otherwise the default max value will be 99.<BR>
+                The minimum value is always 1.</SMALL><BR></TD>
+              </TR>
+
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+
+                <TD style="vertical-align: top;">&lt;all
+                labels&gt;<BR></TD>
+
+                <TD style="vertical-align: top;">itmlab :
+                "main|<SMALL>sub text</SMALL> "<SMALL><BR>
+                <BR>
+                append "|some subtext" will append additional text
+                using a smaller font beneath the main text.<BR>
+                <BR></SMALL> itmlab : "~Some text, then no
+                separator line after"<BR>
+                <SMALL><BR>
+                prepend a tilde "~" before the text will suppress
+                the next separator line.<BR></SMALL></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="gnumpad"
+          id="botmenu"></A><BIG>gnumpad.bas<BR>
+          <BR></BIG></SPAN>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">A slide up numeric
+                pad for number input.<BR>
+                <BR>
+                The widget slides up from the bottom.<BR>
+                The number/result must be passed by reference, so
+                must be already declared.<BR>
+                Some buttons can be disabled.<BR>
+                Optional command to re-direct the output to a
+                basic! text object.<BR>
+                <BR></TD>
+
+                <TD style="vertical-align: bottom; width: 20%;">
+                <IMG src="pics/gnumpad_b.png" alt="" style=
+                "width: 200px; height: 170px;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG><BR></BIG></SPAN>
+          <SPAN style="color: rgb(153, 0, 0);">constructor</SPAN> :
+          gnumpad_make <SPAN style=
+          "color: rgb(0, 102, 0);">()</SPAN>
+
+          <DIV style="margin-left: 40px;">
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              Only call this once.<BR>
+              There is only one gnumpad. It's bundle will be saved
+              in global bundle "1".<BR>
+            </DIV>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          gnumpad <SPAN style="color: rgb(0, 102, 0);">(cmd$,
+          &amp;num)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">input</SPAN>"
+              = opens widget, gets input<BR>
+
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(0, 102, 0);">num</SPAN> =
+                value typed by user<BR>
+                <BR>
+                <SPAN style="color: rgb(0, 102, 0);">num</SPAN>
+                must be called by reference <SMALL>e.g gnumpad
+                ("input",&amp;num)</SMALL> to get the result.<BR>
+                <SMALL>This means <SPAN style=
+                "color: rgb(0, 102, 0);">num</SPAN> must be
+                previsouly declared or an error message will occur
+                during the call.</SMALL><BR>
+                <BR>
+                <SPAN style="color: rgb(0, 102, 0);">num</SPAN>
+                <SPAN style="text-decoration: underline;">is always
+                changed</SPAN> even if the user quit. Use return
+                code to determine if quit.<BR>
+              </DIV><BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">decimal</SPAN>" = setting
+              for decimal point button.<BR>
+
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "color: rgb(0, 102, 0); text-decoration: underline;">
+                num<BR></SPAN> 0 = disable<BR>
+                1 = enable<BR>
+              </DIV><BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">negator</SPAN>" = setting
+              for negator button.
+
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "color: rgb(0, 102, 0); text-decoration: underline;">
+                num<BR></SPAN>0 = disable<BR>
+                1 = enable<BR>
+              </DIV><BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">maxwidth</SPAN>" = set
+              maximum characters for input to <SPAN style=
+              "color: rgb(0, 102, 0);">num.</SPAN>
+
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(0, 102, 0);">num</SPAN> =
+                number of characters allowed including decimal
+                point but not (' - ').<BR>
+                <BR>
+                The default is the number of chars that will fit
+                into the default output box.<BR>
+              </DIV><BR>
+              "<SPAN style="color: rgb(102, 51, 0);">txtobj</SPAN>"
+              = override the output text with your own basic! text
+              object.
+
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(0, 102, 0);">num</SPAN> =
+                text object id&nbsp;&nbsp; <SMALL>(native basic!
+                text object)<BR></SMALL><BR>
+                Note that you must supply your own basic! graphic
+                text object id from gr.text.draw<BR>
+                (not a hew bundle id)<BR>
+                <BR>
+                The typed output will then appear on the replaced
+                text object. Only the text is changed,<BR>
+                You must previously have formatted the object
+                yourself e.g align, size..etc.<BR>
+                <BR>
+                If <SPAN style="color: rgb(0, 102, 0);">num</SPAN>
+                is 0 then the widget will go back to using it's own
+                text output, which is the default.<BR>
+              </DIV><BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">num</SPAN> =
+            numeric parameter (see cmd$)<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            :<BR>
+
+            <DIV style="margin-left: 40px;">
+              0 = OK was pressed (num is updated if returning a
+              number)<BR>
+              <BR>
+              1 = quit or BackKey pressed.&nbsp; Any touch above
+              the widget will quit.<BR>
+
+              <DIV style="margin-left: 40px;">
+                (num is not updated)<BR>
+              </DIV>
+            </DIV><BR>
+            e.g<BR>
+
+            <DIV style="margin-left: 40px;">
+              gnumpad_make()<BR>
+              rc = gnumpad (<SPAN style=
+              "color: rgb(102, 51, 0);">"input"</SPAN> ,
+              <SPAN style=
+              "color: rgb(51, 0, 153);">"&amp;num"</SPAN>)<BR>
+              <BR>
+              if rc=0 then print "num=";num else print
+              "cancelled"<BR>
+            </DIV><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="gselect"
+          id="botmenu"></A><BIG>gselect.bas<BR>
+          <BR></BIG></SPAN>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">gselect is a quick
+                select list for short lists with transition
+                effects.<BR>
+                <BR>
+                You can slide it in from any of the four screen
+                edges. The default transition is centre with no
+                transition effect.<BR>
+                <BR>
+                There is no 'make'. gselect is modal. The selection
+                row number is returned.<BR>
+                <BR>
+                Do not give long lists because it uses a single
+                bitmap too store all the rows.<BR>
+                If the bitmap is too tall, the result is
+                unpredicable.<BR>
+                <BR>
+                The colors can be changed either from themes.bas or
+                themes.ini.<BR>
+                <BR>
+                gselect automatically takes care of the list height
+                and positioning. If you need more control, use the
+                new gformfill instead.<BR></TD>
+
+                <TD style="vertical-align: top; width: 20%;">
+                <IMG style="width: 200px; height: 278px;" alt=""
+                src="pics/gselect.png"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG><BR></BIG></SPAN>
+          <SPAN style="color: rgb(153, 0, 0);">constructor</SPAN> :
+          (none)<SPAN style="color: rgb(0, 102, 0);"><BR></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          gselect ( <SPAN style="color: rgb(0, 102, 0);">effect$,
+          label$</SPAN> )<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">effect$</SPAN> =
+            transition type<BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">left</SPAN>" =
+              slide in from the left<BR>
+              "<SPAN style="color: rgb(102, 51, 0);">right</SPAN>"
+              = slide in from the right<BR>
+              "<SPAN style="color: rgb(102, 51, 0);">top</SPAN>" =
+              slide in from the top<BR>
+              "<SPAN style="color: rgb(102, 51, 0);">bottom</SPAN>"
+              = slide in from the bottom<BR>
+              if <SPAN style=
+              "color: rgb(0, 102, 0);">effect$</SPAN> is anything
+              else, the default is 'no transistion' and centerd in
+              the middle of the screen.<BR>
+              <BR>
+              An embedded command can be entered after a bar (' |
+              ').<BR>
+              e.g "<SPAN style=
+              "color: rgb(102, 51, 0);">left</SPAN>|<SPAN style=
+              "color: rgb(102, 0, 0);">R</SPAN>"<BR>
+              "<SPAN style="color: rgb(102, 0, 0);">R</SPAN>" =
+              justify label to the right<BR>
+              "<SPAN style="color: rgb(102, 0, 0);">L</SPAN>" =
+              justify label to the left<BR>
+              The default is justify centre.<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">label$</SPAN> = A
+            string of&nbsp; labels<BR>
+
+            <DIV style="margin-left: 40px;">
+              Labels for each row is separated with bars (' |
+              ').<BR>
+              The first label is always the Title and will not be
+              selected if touched. The next label will be selected
+              as item number one.<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            : the item number selected (1..n) or 0 for
+            quit/bakkey.<BR>
+            <BR>
+            e.g<BR>
+
+            <DIV style="margin-left: 40px;">
+              rc = gselect (<SPAN style=
+              "color: rgb(102, 51, 0);">"left"</SPAN> ,
+              <SPAN style="color: rgb(51, 0, 153);">"Pick A
+              Color|Red|Green|Blue|Yellow"</SPAN>)<BR>
+              <BR>
+              <SMALL>Tip: you can match the return code with the
+              picked label like this;</SMALL><BR>
+
+              <DIV style="margin-left: 40px;">
+                <SMALL>rc = gselect ("<SPAN style=
+                "color: rgb(102, 51, 0);">left</SPAN>"</SMALL>
+                <SMALL>, <SPAN style=
+                "color: rgb(0, 102, 0);">label$</SPAN>)<BR>
+                if rc then picked$ = word$(<SPAN style=
+                "color: rgb(0, 102, 0);">label$</SPAN>,rc+1,"\\|")<BR>
+                </SMALL>
+              </DIV>
+            </DIV><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="keyinp" id=
+          "keyinp"></A><BIG>keyinp.bas<BR>
+          <BR></BIG></SPAN>
+
+          <TABLE style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 80%;">
+                  This is a push-out keyboard input for a line of
+                  text.<BR>
+                  The input field is always at the top of the
+                  screen.<BR>
+                  <BR>
+                  <SMALL>Warning: key code translation does not
+                  work for all types of keyboards, but you should
+                  see some results with the standard Android
+                  keyboard. Your mileage may vary.<BR></SMALL><BR>
+                  There are two modes of operation. "once" or
+                  "stay".<BR>
+                  <BR>
+
+                  <DIV style="margin-left: 40px;">
+                    <SPAN style=
+                    "color: rgb(102, 51, 0);">once</SPAN> : will
+                    show the keyboard for input and hide it
+                    after.<BR>
+                    <BR>
+                    <SPAN style=
+                    "color: rgb(102, 51, 0);">stay</SPAN> :&nbsp;
+                    will leave the keyboard on the screen after
+                    input, although it will not be responsive until
+                    another "input" call.<BR>
+                  </DIV>
+                </TD>
+
+                <TD style="vertical-align: top; width: 20%;">
+                <IMG style="width: 200px; height: 300px;" alt=""
+                src="pics/keyinp.png"></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <SPAN style="color: rgb(153, 0, 0);">constructor</SPAN>
+          :&nbsp; keyinp_make ()<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            entry nothing. There is only one keyboard widget and it
+            will be saved in global bundle "1'.<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            :&nbsp; nothing<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          keyinp ( <SPAN style="color: rgb(0, 102, 0);">cmd$,
+          dat$</SPAN> )<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">input</SPAN>"
+              : get a line of text from user into <SPAN style=
+              "color: rgb(0, 102, 0);">dat$</SPAN><BR>
+              <BR>
+
+              <DIV style="margin-left: 80px;">
+                Input will be appended to any text already in
+                dat$.<BR>
+              </DIV><BR>
+
+              <DIV style="margin-left: 80px;">
+                <SMALL>The keyboard will be brought up if in 'once'
+                mode, and brought down after input.</SMALL><BR>
+                <SMALL>The keybaord will be left on if in 'stay'
+                mode.<BR>
+                <BR>
+                If BackKey was pressed in mode 'once' the return
+                code will be 1<BR></SMALL> <SMALL>If BackKey was
+                pressed in mode 'stay' the return code will be
+                2.</SMALL><BR>
+                <SMALL><BR>
+                If 2 is returned, the mode will automatically be
+                put into mode 'once', this is because<BR>
+                most keyboards hide the keyboard if the backkey is
+                pressed.<BR></SMALL>
+              </DIV><BR>
+              "<SPAN style="color: rgb(102, 51, 0);">put</SPAN>" :
+              overwrite current text with <SPAN style=
+              "color: rgb(0, 102, 0);">dat$</SPAN><BR>
+              <SMALL><BR></SMALL> "<SPAN style=
+              "color: rgb(102, 51, 0);">label</SPAN>" : change the
+              label to <SPAN style=
+              "color: rgb(0, 102, 0);">dat$.</SPAN><BR>
+
+              <DIV style="margin-left: 80px;">
+                The only embedded command is "|I" (bar I) which
+                will italic the text.<BR>
+              </DIV><BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">setmode</SPAN>" : set the
+              operating mode to <SPAN style=
+              "color: rgb(0, 102, 0);">dat$</SPAN>.&nbsp; The mode
+              can either be "once' or "stay".<BR>
+              <BR>
+
+              <DIV style="margin-left: 80px;">
+                "<SPAN style="color: rgb(102, 51, 0);">once</SPAN>"
+                :&nbsp; Put in Once-mode and hide it if previously
+                shown.<BR>
+                "<SPAN style=
+                "color: rgb(102, 51, 0);">stay</SPAN>"&nbsp;
+                :&nbsp; Put in Stay-mode and show it if previously
+                hidden.<BR>
+              </DIV><BR>
+              <BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">getmode</SPAN>" : get the
+              current mode and return the numeric value<BR>
+
+              <DIV style="margin-left: 80px;">
+                returns 1 = once,&nbsp; 2 = stay<BR>
+              </DIV><BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">dat$</SPAN> = data
+            for commands<BR>
+
+            <DIV style="margin-left: 40px;">
+              (see commands)<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            :<BR>
+
+            <DIV style="margin-left: 40px;">
+              for command "<SPAN style=
+              "color: rgb(102, 51, 0);">input</SPAN>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              : 0 = okay,&nbsp;&nbsp; else the backkey code (see
+              <SPAN style="color: rgb(102, 51, 0);">input</SPAN>
+              command).<BR>
+              for command "<SPAN style=
+              "color: rgb(102, 51, 0);">getmode</SPAN>" : the mode.
+              (see <SPAN style=
+              "color: rgb(102, 51, 0);">getmode</SPAN> command)<BR>
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><BR>
+          <A style="text-decoration: line-through;" name="link" id=
+          "link"></A><BIG><SPAN style=
+          "text-decoration: line-through;">link.bas</SPAN><BR></BIG></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            The link widget has been deprecated in favour of using
+            a borderless button instead.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="msg_ok" id=
+          "msg_ok"></A><BIG>msg_ok.bas<BR></BIG></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            Displays a message in a box with an OK button.<BR>
+            <BR>
+            <SMALL>This is a modal dialog and manipulates the
+            global bundle 'widgets' list variable before using
+            event.bas.</SMALL><BR>
+          </DIV><SPAN style="color: rgb(153, 0, 0);"><BR></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(153, 0, 0);"><IMG style=
+            "width: 149px; height: 91px;" alt="" src=
+            "demos/dialog_demo/pics/small_ok.png"></SPAN><BR>
+          </DIV><SPAN style=
+          "color: rgb(153, 0, 0);">requires:</SPAN> <SPAN style=
+          "color: rgb(0, 0, 153);">button.bas</SPAN><BR>
+          <SPAN style="color: rgb(153, 0, 0);"><BR>
+          constructor</SPAN> :&nbsp; msg_ok_make <SPAN style=
+          "color: rgb(0, 102, 0);">(style)<BR></SPAN> where
+          :<SPAN style="color: rgb(0, 102, 0);"><BR></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">style</SPAN> = the
+            button style (inside) <SMALL>(according to
+            button.bas)</SMALL><BR>
+          </DIV><SPAN style="font-style: italic;"><BR>
+          (since there is only one ask_yn widget, this widget will
+          save itself into the global bundle '1' for the
+          callback)</SPAN><SMALL><SPAN style=
+          "font-style: italic;"><BR>
+          <BR></SPAN></SMALL> <SPAN style=
+          "color: rgb(153, 0, 0);">callback</SPAN> : msg_ok
+          <SPAN style="color: rgb(0, 102, 0);">(t$)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> = the
+            message<BR>
+
+            <DIV style="margin-left: 40px;">
+              lines can be separated with the character
+              '|'.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g "line
+              1|line2"<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            : none<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><BIG><A name=
+          "progress" id=
+          "progress"></A>progress.bas<BR></BIG></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            <DIV style="text-align: right;">
+              <IMG style="width: 147px; height: 25px;" alt="" src=
+              "pics/progress.png"><BR>
+            </DIV>(modeless) The Progress bar widget displays a bar
+            as an indicator 0..100%.<BR>
+          </DIV><SPAN style="color: rgb(153, 0, 0);"><BR>
+          constructor</SPAN> :&nbsp; progress_make <SPAN style=
+          "color: rgb(0, 102, 0);">()</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><BR>
+            return code</SPAN> :&nbsp; the widget bundle.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          progress (<SPAN style="color: rgb(0, 102, 0);">cmd$, num,
+          wg</SPAN>)<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">show</SPAN>" :
+              show the widget.<BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">hide</SPAN>"&nbsp; :&nbsp;
+              hide the widget.<BR>
+              <BR>
+              "<SPAN style="color: rgb(102, 51, 0);">inc</SPAN>"
+              :&nbsp; increase the bar by a dot step<BR>
+
+              <DIV style="margin-left: 40px;">
+                <SMALL>the total number dots depends on the device,
+                the widget bundle variable <SPAN style=
+                "color: rgb(0, 102, 0);">maxdot$</SPAN> will have
+                the longest string of dots.<BR>
+                Only use this if you don't know the current
+                percentage of progress.<BR></SMALL>
+              </DIV><BR>
+              "<SPAN style="color: rgb(102, 51, 0);">set</SPAN>" :
+              set the progress percentage <SPAN style=
+              "color: rgb(0, 102, 0);">num</SPAN> of the full
+              bar.<BR>
+
+              <DIV style="margin-left: 40px;">
+                where fraction <SPAN style=
+                "color: rgb(0, 102, 0);">num</SPAN> = 0..1
+                indicating zero to 100%<BR>
+                <SMALL>normally you should use this to set the
+                progress value rather than the 'inc'
+                method.</SMALL><BR>
+              </DIV>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">num</SPAN> =
+            percentage change for cmd$=set.&nbsp;&nbsp; else
+            ignored.<SMALL><BR></SMALL> <SMALL><BR></SMALL>
+            <SPAN style="color: rgb(0, 102, 0);">wg</SPAN> = the
+            widget bundle<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            : none
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="text" id=
+          "text"></A><BIG>text.bas<BR></BIG></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            A text widget displays a line of text.<BR>
+            <BR>
+            The font size will follow gr.text.size.<BR>
+          </DIV><SPAN style="color: rgb(153, 0, 0);"><BR>
+          constructor</SPAN> :&nbsp; text_make <SPAN style=
+          "color: rgb(0, 102, 0);">(aux$, t$, x, y)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">aux$</SPAN> =
+            formatting<BR>
+            <BR>
+
+            <DIV style="margin-left: 40px;">
+              aux$ should be normally an empty string but can
+              contain these embedded commands;<BR>
+            </DIV><BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">C</SPAN>" =
+              align center<BR>
+              "<SPAN style="color: rgb(102, 51, 0);">R</SPAN>" =
+              align right<BR>
+            </DIV><SPAN style="color: rgb(0, 102, 0);"><BR>
+            t$</SPAN> = text displayed<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">x,y</SPAN> =
+            position of widget (top left corner)<BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            :&nbsp; the widget bundle.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          <SPAN style="color: rgb(0, 102, 0);">text_do (cmd$, t$,
+          wg)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">flash</SPAN>"
+              : flash the text momentarily<BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">text</SPAN>"&nbsp; :&nbsp;
+              change the text inside the button<BR>
+              "<SPAN style="color: rgb(102, 51, 0);">hide</SPAN>"
+              :&nbsp; hide the object<BR>
+              "<SPAN style="color: rgb(102, 51, 0);">show</SPAN>" :
+              show the object<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">t$</SPAN> = text
+            to be changed <SMALL>(provide an empty string if
+            unused)<BR></SMALL>
+
+            <DIV style="margin-left: 40px;">
+              For cmd$="flash" If t$ is non-empty e.g "3", the
+              flash will flash that many times, otherwise it will
+              flash once.<BR>
+            </DIV><SMALL><BR></SMALL> <SPAN style=
+            "color: rgb(0, 102, 0);">wg</SPAN> = the widget
+            bundle<BR>
+            return code : none<BR>
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><BIG><A name=
+          "textin" id="textin"></A>textin.bas<BR></BIG></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            A text input box.<BR>
+            <BR>
+            You can have any size box and update the text with
+            strings containing newlines ("\n").<BR>
+            <SMALL>The font size will follow
+            gr.text.size.</SMALL><BR>
+          </DIV><SPAN style="color: rgb(153, 0, 0);"><BR>
+          constructor</SPAN> :&nbsp; textin_make ( <SPAN style=
+          "color: rgb(0, 102, 0);">ask$, x, y, ww, wh</SPAN> )<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">ask$</SPAN> =
+            label prompt on top of the box<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">x,y</SPAN> =
+            position of widget (top left corner)<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">ww,wh</SPAN> =
+            window width and height<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            :&nbsp; the widget bundle.<BR>
+          </DIV><BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          textin ( <SPAN style="color: rgb(0, 102, 0);">cmd$,
+          data$, wg</SPAN> )<BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">cmd$</SPAN> =
+            command<BR>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">input</SPAN>"
+              : calls the BASIC! input dialog to get the text<BR>
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">get</SPAN>"&nbsp; :&nbsp;
+              get the current text into data$<BR>
+              "<SPAN style="color: rgb(102, 51, 0);">put</SPAN>"
+              :&nbsp; overwrite the current text from data$<BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">data$</SPAN> =
+            text 'get or 'put' <SMALL>(provide an empty string if
+            unused)<BR></SMALL>
+
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV><SMALL><BR></SMALL> <SPAN style=
+            "color: rgb(0, 102, 0);">wg</SPAN> = the widget
+            bundle<BR>
+            <BR>
+            return code : none
+          </DIV>
+        </TD>
+      </TR>
+
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="txtscroll"
+          id="txtscroll"></A><BIG>txtscroll.bas<BR></BIG></SPAN>
+
+          <DIV style="margin-left: 40px;">
+            Vertically scrollable text pane.<BR>
+          </DIV><SPAN style="color: rgb(153, 0, 0);"><BR></SPAN>
+
+          <DIV style="text-align: right;">
+            <SMALL>examples</SMALL><SPAN style=
+            "color: rgb(153, 0, 0);"><IMG style=
+            "width: 309px; height: 200px;" alt="" src=
+            "demos/txtscroll_demo/pics/tsdemo_b.png"></SPAN><BR>
+          </DIV><SPAN style=
+          "color: rgb(153, 0, 0);">constructor</SPAN> :&nbsp;
+          txtscroll_make <SPAN style="color: rgb(0, 102, 0);">(
+          aux$, tlist,&nbsp; x,y ,w,h )</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">aux$</SPAN> =
+            extra data<BR>
+
+            <DIV style="margin-left: 40px;">
+              <SMALL>Normally this should an emtpy string but can
+              contain the following;<BR>
+              <BR></SMALL>
+            </DIV>
+
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(102, 51, 0);">N</SPAN>" : No
+              Border&nbsp; <SMALL>remove the border surrounding the
+              widget</SMALL><BR>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">tlist</SPAN> =
+            list containing lines of text <SMALL>(there is no limit
+            to the number of lines)<BR></SMALL>
+
+            <DIV style="margin-left: 40px;">
+              <SMALL>If RAW mode is OFF then embedded commands
+              after a bar character '|' can format the
+              text.</SMALL><BR>
+              <SMALL>Embedded commands are;</SMALL><BR>
+
+              <DIV style="margin-left: 40px;">
+                <SMALL>"<SPAN style=
+                "color: rgb(102, 51, 0);">C</SPAN>" : center text
+                and color it</SMALL><BR>
+                <SMALL>"<SPAN style=
+                "color: rgb(102, 51, 0);">R</SPAN>" : right justify
+                text</SMALL> <SMALL>and color it</SMALL><BR>
+                <SMALL>"<SPAN style=
+                "color: rgb(102, 51, 0);">I</SPAN>"&nbsp; :
+                Italize</SMALL> <SMALL>text and color
+                it</SMALL><BR>
+              </DIV>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 102, 0);">x,y</SPAN> =
+            position of text pane (top left corner)&nbsp; -&nbsp;
+            (not including the border )<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">w,h</SPAN> = width
+            and height of the text pane -&nbsp; (not including the
+            border )<BR>
+
+            <DIV style="margin-left: 40px;">
+              <SMALL>The width and height might be adjusted to fit
+              inside the screen. The height in particular will be
+              adjusted to a multiple number of text height). If set
+              to full screen, then the borders might not be
+              visible.</SMALL><BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline;">notes</SPAN><BR>
+
+            <DIV style="margin-left: 40px;">
+              <SMALL>The text size depends on gr.text.size. (which
+              may be modified to correct rounding errors)<BR>
+              Scrolling will be snapped to text height.<BR></SMALL>
+            </DIV><BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            :&nbsp; the widget bundle.<BR>
+          </DIV><BR>
+          <BR>
+          <SPAN style="color: rgb(153, 0, 0);">callback</SPAN> :
+          <SPAN style="color: rgb(0, 102, 0);">txtscroll (cmd$, n,
+          wg)</SPAN><BR>
+          where :<BR>
+
+          <DIV style="margin-left: 40px;">
+            cmd$ = command<BR>
+
+            <DIV style="margin-left: 40px;">
+              "touch" : enter touch mode.&nbsp;&nbsp;&nbsp; finger
+              will scroll the text until finger is lifted.<BR>
+
+              <DIV style="margin-left: 40px;">
+                <SMALL>A slow slide will slide the text by
+                pixel.<BR>
+                A quick fling will scroll a large number of lines
+                depending on the touch velocity.<BR>
+                A slide may also trigger a fling depending on the
+                velocity.</SMALL><BR>
+              </DIV><BR>
+              "scroll" : remote scroll mode.&nbsp; will scroll the
+              text by <SPAN style="color: rgb(0, 102, 0);">n</SPAN>
+              lines.<BR>
+
+              <DIV style="margin-left: 40px;">
+                n &lt; 0 <SMALL>the text will scroll up (the window
+                moves down towards bottom of list)</SMALL><BR>
+                n &gt; 0 <SMALL>the text will scroll down (the
+                window will move up towards top of
+                list)</SMALL><BR>
+              </DIV><BR>
+              "goto" : goto line <SPAN style=
+              "color: rgb(0, 102, 0);">n</SPAN><BR>
+              <BR>
+              "hide" : hide the widget and take it off the detect
+              list.<BR>
+              <BR>
+              "show" : show the widget and insert it at the head of
+              the detect list.<BR>
+              <BR>
+              "raw"&nbsp; : set raw mode. raw mode ignores embedded
+              commands after a bar '|' character.<BR>
+
+              <DIV style="margin-left: 40px;">
+                0 = <SMALL>raw off (default)</SMALL><BR>
+                1 = <SMALL>raw on</SMALL><BR>
+              </DIV><BR>
+            </DIV><SMALL><BR></SMALL> wg = the widget bundle<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">return code</SPAN>
+            : the number of lines scrolled.<BR>
+          </DIV>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR style="font-family: Helvetica,Arial,sans-serif;">
+  <BR>
+  <BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<BR>
+  <A href="../../donate.html">Donate via BitCoin</A>.<BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "http://humpty.drivehq.com/main_index.js">
+</SCRIPT>
+</BODY>
+</HTML>

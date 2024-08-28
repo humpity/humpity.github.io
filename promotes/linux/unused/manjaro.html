@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content=
+"HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org"
+name="generator">
+<meta http-equiv="content-type" content=
+"text/html; charset=us-ascii">
+<title>Linux</title>
+
+<style type="text/css">
+body {
+  border: 2px solid #666666;
+  color: #000000;
+  font-family: sans-serif,Helvetica,Arial;
+  width: 800px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+}
+table {
+  border-width: 1px;
+  text-align: left;
+  width: 800px;
+  font-family: Arial,Helvetica,sans-serif;
+}
+td {
+    padding: 10px;
+}
+
+</style>
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><small><small>
+humpty promotes -
+Linux</small></small><br></small></big></big></big><span style=
+"font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 40%; white-space: nowrap;">
+<big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Linux</small></big></big></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span></td>
+<td style="vertical-align: top;"><span style=
+"font-family: Helvetica,Arial,sans-serif;">(last update : June
+2015)</span><br>
+<span style="font-family: Helvetica,Arial,sans-serif;"><br>
+<br>
+<br></span></td>
+</tr>
+</tbody>
+</table>
+<br>
+For <big style="color: rgb(0, 0, 153);">Lubuntu</big> related tips
+<a href="lubuntu.html"><span style=
+"color: rgb(102, 0, 204); text-decoration: underline;">Click
+Here</span></a>.<br>
+<br>
+<big><big>Moving to <a href=
+"http://distrowatch.com/table.php?distribution=manjaro">Manjaro
+Linux</a></big></big> - June 2015.<br>
+<br>
+I am starting to migrate from Lubuntu to Manjaro which is based on
+Arch Linux.<br>
+The migration may take a long time since I am already heavily
+invested into Lubuntu.<br>
+<br>
+The reason being is that the <a href=
+"https://en.wikipedia.org/wiki/Systemd#History_and_controversy"><big style="color: rgb(102, 0, 0);">
+systemd</big></a> controversy is still going on since 2012.<br>
+<br>
+"systemd" is a startup system designed to replace 'init' and an
+alarming number of other utilities into one blob.<br>
+<br>
+The fear is that the systemd "..design is contrary to the Unix
+philosophy of interconnected utilities" ."[<a href=
+"http://www.linuxquestions.org/questions/interviews-28/interview-with-patrick-volkerding-of-slackware-949029/">66</a>]
+and that "other components ..are <span style=
+"text-decoration: underline; color: rgb(153, 0, 0);">forced</span>
+to be used due to a network of <span style=
+"color: rgb(102, 0, 0);">interlocking dependencies</span>"
+[<a href="http://www.zdnet.com/article/linus-torvalds-and-others-on-linuxs-systemd/">7</a>]
+and may eventually lead to bloat.<br>
+<br>
+After trying out a boatload of non-systemd distros, I have finally
+found one that is easy to install and compatible with most of
+things I use with Lubuntu. Manjaro is also one of the rare distros
+that let's you boot with ExtLinux instead of Grub.<br>
+<br>
+Aside from my own installation experience below, there is also a
+<a href=
+"http://distrowatch.com/weekly.php?issue=20150601">DistroWatch
+article here</a>.<br>
+<br>
+<big style=
+"color: rgb(0, 0, 153); text-decoration: underline;"><big>Installing
+Manjaro</big></big><br>
+<br>
+Manjaro's default distro is systemd, but the community maintains an
+<a href=
+"https://forum.manjaro.org/index.php?board=50.0"><span style=
+"color: rgb(0, 0, 153);">OpenRC</span></a> version.<br>
+The <span style="color: rgb(0, 102, 0);">OpenRC</span><small style=
+"color: rgb(0, 102, 0);">+</small><span style=
+"color: rgb(0, 102, 0);">XFCE</span><small style=
+"color: rgb(0, 102, 0);">+</small><span style=
+"color: rgb(0, 102, 0);">OpenBox</span> ISO CD image can be
+downloaded from SourceForge <a href=
+"http://sourceforge.net/projects/manjaro-openrc/files/0.8.13/xfce-openbox/">
+HERE</a>.<br>
+<br>
+<small><span style="font-style: italic;">&lt;only click on the
+links with '<big style="font-weight: bold;">open-rc</big>' !!&nbsp;
+(sourceforge is littered with random 'latest version'
+links&gt;</span></small><br>
+<br>
+Main directory <a href=
+"http://sourceforge.net/projects/manjaro-openrc/files/">HERE</a>.<br>
+
+Some links for manjaro-openrc <a href=
+"http://sourceforge.net/projects/manjaro-openrc/">HERE</a>.<br>
+<br>
+Steps.<br>
+1. Download the <a href=
+"http://sourceforge.net/projects/manjaro-openrc/files/0.8.13/xfce-openbox/">
+ISO</a><br>
+2. Write it to USB thumbdrive using <a href=
+"http://unetbootin.sourceforge.net/">UNetbootin</a>.<br>
+3. Boot the thumbdrive into the live CD. (select 'start' instead of
+'default')<br>
+4. Insert your target partition (can be another USB drive or a
+hardrive) and make sure it's unmounted.<br>
+5. run 'gparted' to find your target partition and format it as
+EXT4. Also add the 'boot' flag.<br>
+&nbsp;&nbsp;&nbsp; note the name of your target partition e.g
+sdb.<br>
+<br>
+6. Click the Install icon on the desktop. It will open a terminal
+to run the text based installer.<br>
+7. Set date/time.<br>
+8. Disk Preparation - Jump straight to: Set Mountpoints and choose
+your target partition (e.g sdb).<br>
+&nbsp;&nbsp;&nbsp; 'create filesystem'? = NO.<br>
+&nbsp;&nbsp;&nbsp; 'additional filesystem' = NO.<br>
+&nbsp;&nbsp;&nbsp; e.g /dev/sdb1:
+ext4:no:&lt;label&gt;:NONE...&nbsp; OK.<br>
+&nbsp;&nbsp;&nbsp; use FSUUID as device name scheme.<br>
+9. Install System.<br>
+10. Configure:<br>
+&nbsp;&nbsp;&nbsp; should &lt;user&gt; get suso rights? = YES.<br>
+&nbsp;&nbsp;&nbsp; Locale - SKIP<br>
+&nbsp;&nbsp;&nbsp; Keyboard map - SKIP.<br>
+&nbsp;&nbsp;&nbsp; Config system - SKIP.<br>
+&nbsp;&nbsp;&nbsp; &lt;..configuring locales..&gt;<br>
+&nbsp;&nbsp;&nbsp; &lt;..building initramfs..&gt;<br>
+11. Install Bootloader.<br>
+&nbsp;&nbsp;&nbsp; e.g<br>
+<div style="margin-left: 40px;">&nbsp;&nbsp;&nbsp; BIOS<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; SYSLINUX_BIOS SYSLINUX/EXTLINUX<br>
+&nbsp;&nbsp;&nbsp; Select boot device<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; /dev/sdb/&nbsp;&nbsp; &nbsp;&nbsp;
+&nbsp;&nbsp; (this will install into the MBR)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; /dev/sdb1/&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; (this will install into the VBR of the partition
+- if you already have an MBR Manager)<br>
+<br>
+Generally it is safer to install into the VBR, since most PCs will
+boot the VBR anyway if there is no manager in the MBR and the VBR
+is marked with the 'boot' flag.<br>
+<br>
+&nbsp;&nbsp;&nbsp; 'extlinux editor' - CTRL-X to exit.<br></div>
+<br>
+12. Quit.<br>
+<br>
+** That's it ! **.<br>
+<hr style="width: 100%; height: 2px;">
+<br>
+<br>
+<br>
+<big style=
+"color: rgb(0, 0, 153); text-decoration: underline;"><big><a name=
+"manjaro-passed"></a>[Manjaro-Passed]</big></big><br>
+<br>
+<span style="font-family: Helvetica,Arial,sans-serif;">Scripts and
+Tips on this site that pass for Manjaro as well as Lubuntu will
+have the '[Manjaro-Passed]' stamp.</span><br>
+<br>
+<br>
+<table style="border-color: black; text-align: left; width: 100%;"
+border="1" cellpadding="0" cellspacing="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 20%;"><br></td>
+<td style="vertical-align: top; width: 40%;"><br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script style="font-family: Helvetica,Arial,sans-serif;" type=
+"text/javascript" src="http://humpty.drivehq.com/main_index.js">
+</script>
+</body>
+</html>

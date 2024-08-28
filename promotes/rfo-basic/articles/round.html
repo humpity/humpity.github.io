@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Round</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <A href="http://humpty.drivehq.com/home.htm">Humpty Promotes</A>
+  &gt; <A href=
+  "http://humpty.drivehq.com/promotes/rfo-basic/rfo.html">Rfo-Basic</A>
+  &gt; <BIG style=
+  "font-family: Helvetica,Arial,sans-serif;"><SMALL><A href=
+  "articles.html">Project Articles</A>
+  &gt;</SMALL><SMALL><BR></SMALL></BIG><BR>
+  <TABLE style="text-align: left; width: 100%;" cellspacing="2"
+  cellpadding="2" border="0">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top; class: noborder;">
+          <SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BIG><BIG><SPAN style="color: rgb(0, 0, 153);">
+          To Round or not to round
+          ?</SPAN></BIG></BIG></SPAN><SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;">&nbsp;</SPAN>
+          <SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><SMALL>(Aug
+          2015)</SMALL></SPAN><SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BIG><BIG><BR>
+
+          <BR></BIG></BIG></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Along my
+            bouts of hobbyist programming, I often forget that
+            computers are essentially binary devices.</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">i.e They
+            are reliant on base 2.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Consider
+            the following basic program.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            a=2.3</SPAN></SPAN><BR style="color: rgb(102, 51, 0);">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            print a</SPAN></SPAN><BR style=
+            "color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">---</SPAN><BR style="color: rgb(0, 102, 0);">
+
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 102, 0);">
+            2.3</SPAN></SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Now look
+            what happens if we do this.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            a=2.3</SPAN></SPAN><BR style="color: rgb(102, 51, 0);">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            b=10</SPAN></SPAN><BR style="color: rgb(102, 51, 0);">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            print a/b</SPAN></SPAN><BR style=
+            "color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">---</SPAN><BR style="color: rgb(0, 102, 0);">
+
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 102, 0);">
+            0.22999999999999998</SPAN></SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Human
+            beings are primarily base 10 creatures. By intuition,
+            we 'know' that the result should be exactly</SPAN>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">
+            0.23</SPAN></SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">.</SPAN><BR>
+
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">At first
+            glance, this particular basic interpreter seems to
+            print the result without rounding.</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">The truth
+            in fact is the opposite. But there is also something
+            else going on.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">To explain
+            this, let's see how this result is stored.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Most
+            computers store real numbers as</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">
+            64-bit IEEE 754 binary</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">format
+            also known as '</SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">binary64</SPAN></SPAN><SPAN style="font-family: Helvetica, Arial, sans-serif;">'.</SPAN><BR>
+          </DIV><SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+          <SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BIG style=
+          "text-decoration: underline; color: rgb(0, 0, 153);">Storage
+          is Finite.</BIG></SPAN><SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+          <SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">In
+            binary,</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            some numbers cannot be exactly</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">represented,
+            much the same way as</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(51, 0, 153);">
+            1/3</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">cannot be
+            exactly represented in decimal</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(51, 0, 153);">
+            base</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(51, 0, 153);">
+            10</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">floating
+            point</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SMALL>(<SPAN style="color: rgb(0, 0, 153);">0.3333..</SPAN>)</SMALL></SPAN><BR>
+
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">In
+            addition, there will be other numbers that also</SPAN>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            need more digits than is available</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">to
+            accurately represent it's value.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">So these
+            numbers have to be</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            approximated</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">with
+            either one of the neighboring (exact) numbers on it's
+            number line. i.e it is rounded up or down to a value
+            slightly greater or less than it's true
+            value.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">In the
+            example, a candidate that fits this description (for
+            binary), is variable assignment&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            a=2.3</SPAN></SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">
+            2.3</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">in
+            binary64 representation is</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">
+            2.2999999999999998</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">(17
+            significant digits)</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">This value
+            is how 2.3 is stored internally as double-precision
+            floating point binary. It is the closest value that
+            64-bit IEEE 754</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">
+            base 2</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">can get to
+            2.3 given the limited number of bits. It has also been
+            rounded after being truncated to the last digit that
+            fits in it's storage size.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">When</SPAN>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            print</SPAN></SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">ing back
+            this number, this version of basic happens to use java,
+            which in-turn uses</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="font-style: italic;">
+            Double.toString,</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">which
+            will</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="font-style: italic;">
+            try to find the least number of digits that can
+            'represent' the same value</SPAN></SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">.</SPAN><BR>
+
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Effectively,
+            it rounds back up and finds the representative
+            "2.3".</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">So</SPAN>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">
+            if you "<SPAN style="color: rgb(102, 51, 0);">print
+            a</SPAN>" you will see "<SPAN style=
+            "color: rgb(0, 102, 0);">2.3</SPAN>"</SPAN></SPAN><SPAN style="font-family: Helvetica, Arial, sans-serif;">.</SPAN><BR>
+
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">The
+            storage hasn't changed value (still</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">
+            2.2999999999999998</SPAN></SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">), but the
+            printed output has.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">The same
+            is</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            not</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">true
+            for</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            a/b</SPAN></SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">.</SPAN><BR>
+
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">After the
+            arithmetic calculation of</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            a/b</SPAN></SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">, of
+            which</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            a</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">is already
+            internally inexact,</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">the result
+            amplifies the</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            precision error,</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">which when
+            printed, does</SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            not</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">find
+            "</SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 0, 153);">0.23</SPAN></SPAN><SPAN style="font-family: Helvetica, Arial, sans-serif;">"
+            to be a representative,</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">and ends
+            up printing the full 17 (significant) digit decimal
+            "</SPAN><SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 102, 0);">0.22999999999999998</SPAN></SPAN><SPAN style="font-family: Helvetica, Arial, sans-serif;">".</SPAN><BR>
+
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Such
+            results happen for other types of arithmetic, even
+            simple ones;</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            a=5.6</SPAN></SPAN><BR style="color: rgb(102, 51, 0);">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            b=5.8</SPAN></SPAN><BR style="color: rgb(102, 51, 0);">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+            print a+b</SPAN></SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">---</SPAN><BR>
+
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 102, 0);">
+            11.399999999999999</SPAN></SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Again,
+            either one or both operands, stored as inexact values
+            have been involved in a calculation which has
+            emphasized the precision error to something
+            unrecoverable by the print process.</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">This is
+            just one simple calculation, imagine what happens if
+            you are crunching many numbers in a loop ?</SPAN><BR>
+          </DIV><SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+          <SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BIG style=
+          "text-decoration: underline;"><SPAN style=
+          "color: rgb(0, 0, 153);">Solutions</SPAN></BIG></SPAN><SPAN style="font-family: Helvetica, Arial, sans-serif;"><BR>
+          </SPAN> <SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            Rounding</SPAN></SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">For both
+              examples, a solution is to just Round the result to
+              produce a 'correct' answer.</SPAN><BR>
+              <BR>
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">But what
+              if we don't know anything about</SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+              a</SPAN></SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">and</SPAN>
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+              b</SPAN></SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">? i.e
+              Perhaps there</SPAN><BR>
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">will be
+              an</SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+              a</SPAN></SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">and</SPAN>
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+              b</SPAN></SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">that
+              'should' produce</SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 102, 0);">
+              0.22999999999999998</SPAN></SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">or</SPAN>
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(0, 102, 0);">
+              11.399999999999999</SPAN></SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">?</SPAN><BR>
+            </DIV><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="text-decoration: underline;">
+            Converting</SPAN></SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">In Java
+              there are types like</SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 51, 0);">
+              BigDecimal</SPAN></SPAN> <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">which
+              give control over representation and
+              rounding.</SPAN><BR>
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">Another
+              way is to convert to integer, align precision,
+              calculate, and then convert back to real.</SPAN><BR>
+              <SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">These
+              types of solutions could prove expensive or
+              cumbersome.</SPAN><BR>
+            </DIV><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Like it or
+            not, floating point numbers in devices today use base 2
+            storage.</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">What you
+            see may be what you get, but might not be what is
+            there.</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">Arithmetic
+            can amplify errors.</SPAN><BR>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">And you
+            might end up counting on your fingers after
+            all.</SPAN><BR>
+          </DIV><SPAN style=
+          "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <HR style="width: 100%; height: 2px;">
+  Sources and Acknowledgements:<BR>
+  <BR>
+  <SMALL>http://www.coderanch.com/t/529831/java/java/Double-toString-return-exact<BR>
+
+  http://programmers.stackexchange.com/questions/167147/why-dont-computers-store-decimal-numbers-as-a-second-whole-number<BR>
+
+  http://www.exploringbinary.com/why-0-point-1-does-not-exist-in-floating-point/<BR>
+
+  http://stackoverflow.com/questions/13542944/how-many-significant-digits-have-floats-and-doubles-in-java<BR>
+
+  http://stackoverflow.com/questions/322749/retain-precision-with-doubles-in-java<BR>
+
+  http://stackoverflow.com/a/12684082<BR>
+  http://docs.oracle.com/javase/1.5.0/docs/api/java/math/BigDecimal.html</SMALL><BR>
+
+  <BR>
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<BR>
+  <A href=
+  "http://humpty.drivehq.com/payments/payment.html">Donate</A><BR style="font-family: Helvetica,Arial,sans-serif;">
+
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "http://humpty.drivehq.com/main_index.js"></SCRIPT>
+</BODY>
+</HTML>

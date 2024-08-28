@@ -1,0 +1,14 @@
+changelog:
+
+v1.0
+	beta
+v1.1	removed extra gr.orientation
+v1.2   	removed screen density correction
+v1.3  	fixed gr.get.bmpixel quirk
+v1.4	user can't keep finger down to buy time
+v1.5    hew widget framework 
+v2.0	add landscape mode
+
+
+HEW widgets: (http://humpty.drivehq.com/promotes/rfo-basic/hew/hew.html)
+%--------

@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>lubuntu-autostart</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">How to autostart X
+apps<br></span></big></big><br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 800px; font-family: Helvetica,Arial,sans-serif; height: 812px;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<big><big><big>L<small><small>XDE</small></small></big>
+<small>provides</small></big></big> an easy way to auto run an
+x-windows program. You will need to do this if the app requires
+that x-windows be already up and running before the app starts.
+<span style="font-style: italic;">(many other start-up places do
+not wait for X to startup, so the app will fail).</span><br>
+<br>
+<big><span style="color: rgb(0, 0, 153);">Simple</span></big><br>
+<br>
+To execute something everytime you login, just after x-window
+starts;<br>
+<br>
+1. Create a shortcut called <span style=
+"color: rgb(0, 0, 153);">MyStarts.Desktop</span> inside
+/home/&lt;user&gt;/.config/autostart<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 102);"><span style=
+"color: rgb(102, 0, 0);">&gt;cd
+~/.config/autostart</span></span><br style=
+"color: rgb(102, 0, 0);">
+<span style="color: rgb(0, 0, 102);"><span style=
+"color: rgb(102, 0, 0);">&gt;leafpad <span style=
+"color: rgb(0, 0, 153);">MyStarts.desktop<br>
+<br></span></span></span> and add these lines;<br>
+<br>
+<small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);">[Desktop
+Entry]</span></small><br style=
+"font-family: monospace; color: rgb(0, 0, 153);">
+<small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);">Type=Application</span></small><br style="font-family: monospace; color: rgb(0, 0, 153);">
+
+<small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);">Name=MyStarts</span></small><br style="font-family: monospace; color: rgb(0, 0, 153);">
+
+<small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);">Comment=my
+commands after X startup</span></small><br style=
+"font-family: monospace; color: rgb(0, 0, 153);">
+<small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);">Exec=<span style=
+"color: rgb(153, 0, 0);"><span style=
+"color: rgb(102, 0, 0);">mystarts.sh</span><br></span></span></small></div>
+<br>
+2. Create a <span style="color: rgb(102, 0, 0);">mystarts.sh</span>
+script inside your home directory, and put in any commands you wish
+to execute;<br>
+<br style="color: rgb(0, 0, 153); font-family: monospace;">
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 102);"><span style=
+"color: rgb(102, 0, 0);">&gt;cd ~</span></span><br style=
+"color: rgb(102, 0, 0);">
+<span style="color: rgb(0, 0, 102);"><span style=
+"color: rgb(102, 0, 0);">&gt;leafpad .xstartup<br>
+<br></span></span> e.g, run a mouse script;<br>
+<small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);"><br>
+$HOME/fixmouse.sh</span><br></small> <small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);"><br>
+touch $HOME/_MSG_mystarts_done</span></small><br></div>
+<br>
+Note that "<small><span style=
+"font-family: monospace; color: rgb(0, 0, 153);">touch
+$HOME/_MSG_mystarts_done</span></small>" will create an empty msg
+file each time. You can look at it's time stamp to check when
+mystarts.sh was run (<span style="color: rgb(102, 0, 0);">ls
+-l</span>).<br>
+<br>
+Now, everytime X is started, mystarts.sh will be run !<br>
+<small style="font-style: italic;"><br></small>
+<hr style="width: 100%; height: 2px; font-style: italic;">
+End.<br>
+<br>
+<br>
+Notes :<br>
+<div style="margin-left: 40px;"><small style=
+"font-style: italic;">In Lubuntu 12.04, <span style=
+"color: rgb(0, 102, 0);">~/.config/</span><span style=
+"color: rgb(102, 51, 0);">autostart</span></small> <small style=
+"font-style: italic;">will run <span style=
+"text-decoration: underline;">after</span> lxsession
+<small>(</small> <span style=
+"color: rgb(0, 102, 0);">/home/&lt;user&gt;/.config/lxsession/Lubuntu/</span><span style="color: rgb(102, 51, 0);">desktop.conf</span>
+), this means it will override the affects of
+lxsession.<br></small> <small style="font-style: italic;">However,
+this might not be true for your linux distro.<br>
+<br></small></div>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><a href="lubuntu.html">More
+Lubuntu Tips</a></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

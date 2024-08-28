@@ -1,0 +1,23 @@
+The sdcard. Probably one of the most confusing topics with Android.
+
+What do we mean by sdcard?
+The one you can pop-out from the side of your phone?
+The one that's behind the battery that you can slide in?
+or The one that's emulated in internal flash storage?
+
+If your phone has no physical area where you can push or slide in a piece of plastic  that is called a memory card, then internal memory is all you have. Android then 'emulates' an sdcard here.
+This is true for most modern phones which seem to be phasing out that portable plastic chip behind your battery.
+
+For most older phones, /sdcard is usually on that piece of physical plastic.
+But be careful here. By in large, It all depends how your phone manfacturer assigns where /sdcard will go, or even if they choose it to be named 'sdcard'.
+
+There is a java library call for an app to get the directory for Primary External Shared Storage;
+Environment.getExternalStorageDirectory()
+e.g /mnt/sdcard or /sdcard
+
+This is an area where apps can store and share data.
+Files exist permanently here even if the app is uninstalled. It is also a nice place to be so that other apps can also have access (if they have correct permissions). It is emulated on some phones (in internal memory) for backward compatibility but is still considered as 'External' for historical reasons.
+
+The other type of 'External' storage is usually the plastic that is easily accessible, e.g the slot on the side of your phone. This is (usually) 'Secondary' storage. Kitkat put some restrictive rules to where you can access it.
+
+This map explains a lot.

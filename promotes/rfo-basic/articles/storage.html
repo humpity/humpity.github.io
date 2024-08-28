@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Storage</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="http://humpty.drivehq.com/home.htm">Humpty Promotes</A>
+  &gt; <A href=
+  "http://humpty.drivehq.com/promotes/rfo-basic/rfo.html">Rfo-Basic</A>&gt;
+  <BIG style=
+  "font-family: Helvetica,Arial,sans-serif;"><SMALL><A href=
+  "articles.html">Project Articles</A> &gt;Android Storage
+  Map</SMALL><SMALL><BR></SMALL></BIG><BR>
+  <BR>
+  <SPAN style=
+  "font-family: Helvetica, Arial, sans-serif;"><BIG><BIG><SPAN style="color: rgb(0, 0, 153);">
+  Android Storage Map</SPAN></BIG></BIG></SPAN><SPAN style=
+  "font-family: Helvetica, Arial, sans-serif;">&nbsp;</SPAN>
+  <SPAN style=
+  "font-family: Helvetica, Arial, sans-serif;"><SMALL>(Apr 2015).
+  &nbsp;&nbsp; updated (Dec
+  2020).</SMALL></SPAN><BIG><BIG><SPAN style=
+  "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN><BR></BIG></BIG>
+  <SPAN style="font-family: Helvetica, Arial, sans-serif;">This is
+  an outline of the different storage locations used in the Android
+  apps environment.</SPAN><SPAN style=
+  "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+  <SPAN style="font-family: Helvetica, Arial, sans-serif;">It might
+  also clear up some confusion over external storage restrictions
+  when Google introduced</SPAN><SPAN style=
+  "font-family: Helvetica, Arial, sans-serif;"><BR></SPAN>
+  <SPAN style="font-family: Helvetica, Arial, sans-serif;">KitKat
+  (4.4).</SPAN><BR>
+  <BR>
+  <BR>
+  <TABLE style="text-align: left; width: 100%;" cellspacing="2"
+  cellpadding="2" border="0">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;"><SPAN style=
+        "font-family: Courier New, Courier, monospace;"><SMALL><BIG style="color: rgb(0, 0, 153);">
+        Internal Storage</BIG><BR>
+        <BR>
+        <BR>
+        case-sensitive</SMALL></SPAN> <SPAN style=
+        "font-family: Courier New, Courier, monospace;"><SMALL><BR>
+        with linux attributes.<BR></SMALL></SPAN> <SPAN style=
+        "font-family: Courier New, Courier, monospace;"><SMALL>e.g</SMALL></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+        </SPAN> <SMALL><SPAN style=
+        "font-family: Courier New, Courier, monospace;">ext,ext2-ext4</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+        </SPAN> <SPAN style="font-family: monospace;"><BR>
+        </SPAN></SMALL></TD>
+        <TD style="vertical-align: top; white-space: nowrap;">
+          <TABLE style="text-align: left; width: 100%;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: top; width: 50%; color: rgb(0, 0, 153); white-space: nowrap;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL>
+                <BIG>Primary Internal<BR>
+                <BR></BIG></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">
+                Example:<BR>
+                Internal memory<BR>
+                1st partition<BR></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL>
+                <SPAN style=
+                "color: rgb(102, 51, 0);">/</SPAN></SMALL></SPAN><BR>
+                </TD>
+                <TD style="vertical-align: top;">
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                  PI Private Storage</SPAN><SMALL><SPAN style=
+                  "color: rgb(0, 0, 153);"><BR>
+                  <BR></SPAN> e.g <SPAN style=
+                  "color: rgb(102, 51, 0);">/data/data/&lt;PACKAGE_NAME&gt;/<BR>
+                  </SPAN></SMALL></SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SMALL>
+                  e.g <SPAN style=
+                  "color: rgb(102, 51, 0);">/data/data/&lt;PACKAGE_NAME&gt;/files/</SPAN></SMALL></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN>
+                  <UL>
+                    <LI><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SMALL>private to app.</SMALL></SPAN></LI>
+                    <LI><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SMALL>app has full access permissions on this
+                    level and below.</SMALL></SPAN></LI>
+                    <LI><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SMALL>cleared upon
+                    app-uninstall.</SMALL></SPAN></LI>
+                    <LI style="color: rgb(0, 102, 0);"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SMALL>Context.getFilesDir()</SMALL></SPAN></LI>
+                  </UL>
+                </TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; color: rgb(0, 0, 153);">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL>
+                <BIG>Secondary Internal</BIG></SMALL></SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><SMALL><BIG><SPAN style=
+                "font-family: monospace;">&nbsp; <FONT size=
+                "+1">??</FONT></SPAN></BIG></SMALL></SPAN></TD>
+              </TR>
+            </TBODY>
+          </TABLE><SMALL><BIG><SPAN style=
+          "font-family: monospace;"><BR></SPAN></BIG></SMALL>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><SPAN style=
+        "font-family: Courier New, Courier, monospace;"><SMALL><BIG style="color: rgb(0, 0, 153);">
+        External Storage</BIG><BR>
+        <BR>
+        <BR>
+        case-insensitive<BR></SMALL></SPAN> <SPAN style=
+        "font-family: Courier New, Courier, monospace;"><SMALL>without
+        linux attributes.<BR></SMALL></SPAN> <SPAN style=
+        "font-family: Courier New, Courier, monospace;"><SMALL>e.g</SMALL></SPAN>
+        <SPAN style=
+        "font-family: Courier New, Courier, monospace;"><SMALL><BR>
+        fat,fat32,or other</SMALL></SPAN><SPAN style=
+        "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+        <SMALL><SPAN style="font-family: monospace;"><BR>
+        </SPAN></SMALL></TD>
+        <TD style="vertical-align: top; white-space: nowrap;">
+          <TABLE style="text-align: left; width: 100%;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 50%;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL>
+                <BIG><SPAN style="color: rgb(0, 0, 153);">Primary
+                External</SPAN><BR></BIG></SMALL></SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL>
+                <BR>
+                All APIs prior to KITKAT reference<BR>
+                here for <SPAN style=
+                "text-decoration: underline;">external</SPAN>
+                storage.<BR></SMALL></SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL>
+                Examples:<BR>
+                Removable card inside of phone<BR>
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/mnt/sdcard/&lt;&gt;</SPAN><BR>
+
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/SDCARD/&lt;&gt;</SPAN><BR>
+
+                <BR>
+                Internal memory,<BR>
+                2nd partition<BR>
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/storage/sdcard0/&lt;&gt;</SPAN><BR>
+
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/sdcard/</SPAN><BR>
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/mnt/sdcard0/&lt;&gt;</SPAN><BR>
+
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/mnt/emmc/&lt;&gt;</SPAN><BR>
+
+                <BR>
+                Internal memory pretending to be<BR>
+                sdcard (emulated)<BR>
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/storage/emulated/0/&lt;&gt;</SPAN></SMALL></SPAN></TD>
+                <TD style="vertical-align: top;">
+                  <TABLE style="text-align: left; width: 100%;"
+                  cellspacing="2" cellpadding="2" border="0">
+                    <TBODY>
+                      <TR>
+                        <TD style="vertical-align: top;">
+                          <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SPAN style="color: rgb(0, 0, 153);">PE
+                          Private
+                          Storage</SPAN></SPAN><SMALL><FONT size=
+                          "-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);"><BR>
+
+                          <BR></SPAN></SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                          <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SPAN style=
+                          "color: rgb(102, 51, 0);">&lt;&gt;/Android/data/&lt;PACKAGE_NAME&gt;</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT></SMALL> <FONT size=
+                          "-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          e.g <SPAN style=
+                          "color: rgb(102, 51, 0);">/mnt/sdcard/Android/data/&lt;PACKAGE_NAME&gt;</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT>
+                          <UL>
+                            <LI><FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            no sandboxing restrictions before
+                            Android 11.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT></LI>
+                            <LI><FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            treated as 'private' but available
+                            publicly due to media being
+                            external.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT></LI>
+                            <LI><FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            cleared upon
+                            app-uninstall.</SPAN></FONT></LI>
+                            <LI style="color: rgb(0, 102, 0);">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            getExternalStorageDirectory
+                            ()</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT> <FONT size=
+                            "-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SPAN style=
+                            "color: rgb(153, 0, 0);">(deprecated
+                            since API 29 Android
+                            Q)</SPAN></SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT></LI>
+                            <LI style="color: rgb(0, 102, 0);">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            Context.getExternalFilesDir(null)</SPAN></FONT></LI>
+                          </UL><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;">Before
+                          KITKAT:<BR></SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - No permissions needed for read
+                            access.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT> <FONT size=
+                            "-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - WRITE_EXTERNAL_STORAGE needed for
+                            write access, even if app is
+                            owner.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT>
+                          </DIV><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+
+                          KITKAT and after:<BR></SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - Owner app gets full access without
+                            needing permissions.<BR></SPAN></FONT>
+                          </DIV><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          Android-11 and after:</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - Sandboxed as private for owner app
+                            with full access.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - Not available publicly. Even SAF
+                            cannot access it.</SPAN></FONT><BR>
+                          </DIV>
+                        </TD>
+                      </TR>
+                      <TR>
+                        <TD style="vertical-align: top;">
+                          <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SPAN style="color: rgb(0, 0, 153);">PE
+                          Shared
+                          Storage</SPAN></SPAN><SMALL><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></SMALL>
+                          <UL>
+                            <LI><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>no sandboxing
+                            restrictions.</SMALL></SPAN></LI>
+                            <LI><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>not cleared upon
+                            app-uninstall.</SMALL></SPAN></LI>
+                            <LI><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL><SPAN style=
+                            "color: rgb(0, 102, 0);">Environment.<BR>
+
+                            getExternalStoragePublicDirectory(type)<BR>
+                            </SPAN></SMALL></SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>e.g <SPAN style=
+                            "color: rgb(102, 51, 0);">/mnt/sdcard/Movies</SPAN></SMALL></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SMALL><BR>
+
+                            <SPAN style=
+                            "color: rgb(153, 0, 0);">(deprecated
+                            since API 29 Android Q)<BR>
+                            <BR></SPAN></SMALL></SPAN></LI>
+                            <LI><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL style=
+                            "color: rgb(0, 102, 0);">Context.getExternalFilesDir(type)<BR>
+                            </SMALL></SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL><SPAN style=
+                            "color: rgb(102, 51, 0);">/mnt/sdcard/Android/data/<BR>
+
+                            &lt;PACKAGE_NAME&gt;/Movies</SPAN></SMALL></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></LI>
+                          </UL><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;">Before
+                          KITKAT:</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - No permissions needed for read
+                            access.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT> <FONT size=
+                            "-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - WRITE_EXTERNAL_STORAGE needed for
+                            write access.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT>
+                          </DIV><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          KITKAT and after:</SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - READ_EXTERNAL_STORAGE needed for read
+                            access.</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT> <FONT size=
+                            "-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - WRITE_EXTERNAL_STORAGE grants
+                            read,write</SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            on same</SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            volume</SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">.</SPAN></FONT>
+                          </DIV><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          Android-11 and after:</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - Access restricted to SAF or
+                            MediaStore for all apps, even the owner
+                            app.</SPAN></FONT><BR>
+                          </DIV>
+                        </TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE>
+                </TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: rgb(0, 0, 153);">
+                <BIG>Secondary</BIG></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL>
+                <BIG><SPAN style=
+                "color: rgb(0, 0, 153);">External</SPAN><BR>
+                <BR></BIG></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">
+                <SPAN style="color: rgb(153, 0, 0);">(new sandbox
+                restrictions being enforced here since
+                KITKAT)</SPAN><BR>
+                <BR></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">
+                Examples:<BR></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">
+                Removable card inside of phone.<BR></SMALL></SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/storage/external_SD/&lt;&gt;<BR>
+                </SPAN></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/mnt/external_SD/&lt;&gt;<BR>
+                </SPAN></SMALL></SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">
+                Removable card on outside slot of phone.<BR>
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/extsd/&lt;&gt;</SPAN><BR>
+
+                e.g <SPAN style=
+                "color: rgb(102, 51, 0);">/extSdcard/&lt;&gt;<BR></SPAN></SMALL></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SMALL style="color: black;">e.g
+                <SPAN style=
+                "color: rgb(102, 51, 0);">/storage/1234-ABCD/&lt;&gt;</SPAN></SMALL></SPAN><BR>
+                </TD>
+                <TD style="vertical-align: top;">
+                  <TABLE style="text-align: left; width: 100%;"
+                  cellspacing="2" cellpadding="2" border="0">
+                    <TBODY>
+                      <TR>
+                        <TD style="vertical-align: top;">
+                          <SMALL><SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SPAN style="color: rgb(0, 0, 153);">SE
+                          Private Storage<BR>
+                          <BR></SPAN></SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SMALL>
+                          <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SMALL style=
+                          "color: rgb(102, 51, 0);">&lt;&gt;/Android/data/&lt;PACKAGE_NAME&gt;<BR>
+                          </SMALL></SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SMALL>e.g</SMALL></SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SMALL style=
+                          "color: rgb(102, 51, 0);">/extsd/Android/data/&lt;PACKAGE_NAME&gt;</SMALL></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN>
+                          <UL>
+                            <LI><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>app is sandboxed
+                            here.</SMALL></SPAN></LI>
+                            <LI><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>cleared upon
+                            app-uninstall</SMALL></SPAN></LI>
+                            <LI style="color: rgb(0, 102, 0);">
+                            <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>Context.getExternalFilesDirs()<BR>
+
+                            - as additional
+                            item.</SMALL></SPAN></LI>
+                          </UL><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><SMALL>Before
+                          KITKAT:<BR></SMALL></SPAN>
+                          <DIV style="margin-left: 40px;">
+                            <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>- WRITE_EXTERNAL_STORAGE needed
+                            for write.</SMALL></SPAN><SPAN style=
+                            "font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN>
+                          </DIV><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><SMALL><BR>
+
+                          KITKAT and after:<BR></SMALL></SPAN>
+                          <DIV style="margin-left: 40px;">
+                            <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <SMALL>- Owner app gets full access
+                            without needing
+                            permissions.</SMALL></SPAN><BR>
+                          </DIV>
+                        </TD>
+                      </TR>
+                      <TR>
+                        <TD style="vertical-align: top;">
+                          <SMALL><SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <SPAN style="color: rgb(0, 0, 153);">SE
+                          Shared Storage</SPAN></SPAN><SPAN style=
+                          "font-family: monospace; color: rgb(0, 0, 153);"><BR>
+
+                          <FONT size="-2"><BR>
+                          </FONT></SPAN></SMALL> <FONT size=
+                          "-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          - READ_EXTERNAL_STORAGE needed for read
+                          access after KITKAT.</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <BR></SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          - WRITE_EXTERNAL_STORAGE does NOT grant
+                          sdcard_rw membership on this
+                          volume.</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          <BR></SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          In KitKat:</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <A href=
+                            "https://developer.android.com/guide/topics/providers/document-provider.html">
+                            SAF</A></SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            API needed to r/w</SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            outside application-specific
+                            directories on secondary storage for
+                            specific
+                            directories.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT>
+                          </DIV><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          In Lollipop:</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            <A href=
+                            "https://developer.android.com/guide/topics/providers/document-provider.html">
+                            SAF</A></SPAN> <SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            API extension removes the restriction
+                            to app-specific directories with
+                            ACTION_OPEN_DOCUMENT_TREE.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                            </SPAN></FONT>
+                          </DIV><FONT size="-1"><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN> <SPAN style=
+                          "font-family: Courier New, Courier, monospace;">
+                          After Android-11:</SPAN><SPAN style=
+                          "font-family: Courier New, Courier, monospace;"><BR>
+                          </SPAN></FONT>
+                          <DIV style="margin-left: 40px;">
+                            <FONT size="-1"><SPAN style=
+                            "font-family: Courier New, Courier, monospace;">
+                            - Access restricted to SAF or
+                            MediaStore for all apps, even the owner
+                            app.</SPAN></FONT>
+                          </DIV>
+                        </TD>
+                      </TR>
+                    </TBODY>
+                  </TABLE>
+                </TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+        <TD style="vertical-align: top;"><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR style="width: 100%; height: 2px;">
+  <BR>
+  Sources and Acknowledgements:<BR>
+  <BR>
+  <SMALL>http://android.stackexchange.com/questions/46926/android-folder-hierarchy/46934#46934<BR>
+
+  http://stackoverflow.com/questions/23625104/storage-emulated-legacy-vs-storage-emulated-0-vs-data-data-myapp<BR>
+
+  http://commonsware.com/blog/2014/04/08/storage-situation-external-storage.html</SMALL><BR>
+
+  <SMALL>http://commonsware.com/blog/2014/04/07/storage-situation-internal-storage.html<BR>
+
+  http://www.doubleencore.com/2014/03/android-external-storage/<BR>
+  https://groups.google.com/forum/#!topic/android-platform/14VUiIgwUjY%5B1-25-false%5D<BR>
+
+  http://stackoverflow.com/questions/22414417/saving-data-to-externalsdcard-android-data-app-package-name-in-kitkat</SMALL><BR>
+
+  <SMALL>http://www.techtimes.com/articles/19510/20141106/android-5-0-lollipop-comes-with-better-sd-card-support-hoorah-google.htm</SMALL><BR>
+
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<BR>
+  <A href=
+  "http://humpty.drivehq.com/payments/payment.html">Donate</A><BR style="font-family: Helvetica,Arial,sans-serif;">
+
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "http://humpty.drivehq.com/main_index.js"></SCRIPT>
+</BODY>
+</HTML>

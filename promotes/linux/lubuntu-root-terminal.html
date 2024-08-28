@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>lubuntu-root-terminal</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html"></a><big style="font-family: Helvetica,Arial,sans-serif;"><big><big><small><br>
+</small></big></big></big> <span style=
+"font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big><br>
+<big><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Root
+Terminal<br></span></big></big></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><br>
+One of the most annoying things about linux is not being the 'root'
+user all of the time meaning you have to find ways around it like
+having to enter passwords (<a href=
+"lubuntu-no-sudo-passwd.html">fixed here</a> ), having to use
+chmod, chown..etc so that you can have the privilage to do simple
+things when you shouldn't have to at all.<br>
+<br>
+One such work around is to open a root-shell or root-terminal.<br>
+<br>
+A sure fire way to get root privalege is to open a <span style=
+"color: rgb(0, 0, 153);">normal terminal</span> (shortcut in the
+lubuntu menus). This opens lxterminal. To become root, enter;<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">sudo bash</span><br></div>
+<br>
+It would be more convenient to create a tailor made shortcut that
+automatically opens as root.<br>
+To create a shortcut, create an <span style=
+"color: rgb(0, 0, 153);">STerminal.desktop</span> file in the
+directory;&nbsp;&nbsp; <span style=
+"color: rgb(0, 102, 0);">~/.local/share/applications</span><br>
+<br>
+<span style=
+"color: rgb(0, 102, 0);">~/.local/share/applications</span>/<span style="color: rgb(102, 51, 0);">STerminal.desktop</span><br>
+
+<br>
+<div style="margin-left: 40px;">[Desktop Entry]<br>
+Encoding=UTF-8<br>
+Name=STerminal<br>
+Comment=root cmdline<br>
+<br>
+Exec=<span style="color: rgb(0, 0, 153);">sudo
+lxterminal</span><br>
+<br>
+Icon=gksu-root-terminal<br>
+Type=Application<br>
+Categories=Utility<br>
+NoDisplay=false<br></div>
+<br>
+The shortcut should turn up under 'Accessories' in the lxpanel
+menu. To create a launch button;<br>
+right-click lxpanel &gt; <span style="color: rgb(0, 102, 0);">panel
+settings</span> &gt; <span style="color: rgb(0, 102, 0);">panel
+applets</span> &gt; <span style=
+"color: rgb(0, 102, 0);">application launch bar</span> &gt;
+<span style="color: rgb(0, 102, 0);">edit</span> &gt;<br>
+and find the shortcut under 'accessories'.<br>
+<br>
+<big style="text-decoration: underline;">Problems with
+PATH</big><br>
+<span style="color: rgb(0, 0, 153);"><br></span> Sometimes
+<span style="color: rgb(0, 0, 153);">sudo lxterminal</span> opens
+as root with problems finding the PATH environment variable causing
+some programs not being found. This problem can be compounded if
+the <span style="color: rgb(84, 42, 84);">kernel was compiled with
+a 'secure PATH'</span>, i.e editing root's .profile or .bashrc has
+no effect in changing it's PATH.<br>
+<br>
+There are various ways to 'go around' this;<br>
+<br>
+<div style="margin-left: 40px;">1.) edit ~/.bashrc to add
+<span style="color: rgb(0, 0, 153);">alias sudo='sudo env
+PATH=$PATH'<br></span> This passes the current PATH to any sudo
+command.<br></div>
+or<br>
+<div style="margin-left: 40px;">2.) editing root's .profile or
+.bashrc and forcing a login-shell<br>
+(add your paths to PATH=)<br>
+create the shortcut&nbsp; as before : <span style=
+"color: rgb(0, 0, 153);">sudo lxterminal -l</span><br></div>
+or<br>
+<div style="margin-left: 40px;">3.) forcing lxterminal to execute a
+bash shell<br>
+create the shortcut&nbsp; as before : <span style=
+"color: rgb(0, 0, 153);">sudo lxterminal -e bash</span><br></div>
+or<br>
+<div style="margin-left: 40px;">4.) a combination of 1, 2 and 3<br>
+<span style="color: rgb(0, 0, 153);">sudo lxterminal -l -e
+bash</span><br></div>
+<br>
+Method 4 works well for me ;<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 102, 0);">i</span>.e in <span style=
+"color: rgb(102, 51, 0);">STerminal.desktop</span>, use
+Exec=<span style="color: rgb(0, 0, 153);">sudo lxterminal -l -e
+bash<br>
+<br></span></div>
+<br>
+/End.<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<hr style="width: 100%; height: 2px; font-style: italic;">
+<small>Advertisement<br></small><br>
+<a href="lubuntu.html">[ More Lubuntu Tips,&nbsp;</a> <a href=
+"http://humpty.drivehq.com/home.htm">Home ]</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

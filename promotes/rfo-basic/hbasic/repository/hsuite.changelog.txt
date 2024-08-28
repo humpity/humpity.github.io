@@ -1,0 +1,179 @@
+hSuite changelog
+
+Date		Summary of Versions
+--------------- -------------------------------------------
+2024-05-02 v3.22
+		hmaster v2.26
+		hpatcher v3.16
+			Delete temp files on entry
+
+2024-01-03	v3.21
+		hmaster v2.25
+		hpatcher v3.15
+			Cosmetic changes.
+
+2023-11-30	v3.20
+		hmaster v2.24
+		hpatcher v3.14
+			Default keystore input focus to password
+			Fix file loading msg, (blank = no change)
+
+2023-10-13	v3.19
+		hmaster v2.23
+		hpatcher v3.13
+			Fix standalone shortcut code
+			Fix hcodes sometimes not showing in linux gui
+
+2023-08-23 v3.18
+		hmaster v2.22
+		hpatcher v3.12
+			Added permission ACCESS_BLUETOOTH_SCAN
+			Added permission ACCESS_BLUETOOTH_CONNECT
+
+2023-06-27 v3.17
+		hmaster v2.21
+		
+2023-06-21 v3.16
+		hmaster v2.20
+		hpatcher v3.11
+			Cosmetic change - right justify icon_file name
+			Added permission ACCESS_NETWORK_STATE as option
+
+2023-03-04 v3.15
+		hmaster v2.19
+		hpatcher v3.10
+			Fix encryption error for missing temp dir
+			Fix gui forgetting last app icon resolution
+			Added permission POST_NOTIFICATIONS
+
+2022-12-17	v3.14
+		hMaster v2.18
+		hPatcher v3.09
+			Speed up *.bas encryption
+	        Removed defunct shortcut permissions
+
+2022-11-19	v3.13
+		hMaster v2.17
+		hPatcher v3.08
+			ESC key will not exit window
+			Add option: Run After compile
+
+2022-08-31	v3.12
+		hMaster v2.16
+
+2022-08-15	v3.11
+		hMaster v2.15
+		hPatcher v3.07
+			Fix icon file not remembered
+			More support for native libs
+			Tidy up debug modes
+
+2022-07-01	v3.10
+		hMaster v2.14
+		hPatcher v3.06
+			Default to no permissions instead of all
+			Can create new keystores
+			Fix find api platform (if multi-platform)
+			Infrastructure for native libs
+		hPatcher v3.05
+			Fix internal command shell not reporting errors
+
+2022-04-07	v3.09
+		hMaster v2.13
+		hPatcher v3.04
+			Add option permissions ACCESS_BACKGROUND_LOCATION
+
+2022-02-28	v3.08
+		hMaster v2.12
+
+2022-02-16	v3.07
+		hMaster v2.11
+
+2021-12-24	v3.06
+		hMaster v2.10
+
+2021-12-12	v3.05
+		hMaster v2.09
+		HFTPS updated (support basic commands)
+
+2021-10-30	v3.04
+		hMaster v2.08
+
+2021-10-18	v3.03
+		hMaster v2.07
+		hPatcher v3.03
+			Fix permissions bug that screwed up if no permissions set.
+2021-09-19	v3.02
+		hMaster v2.06
+		hPatcher v3.02
+			Minor cosmetic output changes.
+		HFTPS updated (support rename)
+
+2021-08-23	v3.01
+		hMaster v2.05
+			Merged H0250
+		hPatcher v3.01
+			Correct typo "Building signed bundle" (if not signing).
+			Minor cosmetic output changes.
+		H03012	added (BACKSPACE) and PRINT ";" mod
+
+2021-07-21	v3.00
+		hMaster v2.04
+		hPatcher v3.00
+			Add BundleTool to create AAB as well as APK.
+			Add support for PKCS12 keys for signing.
+			Removed option for using other JDK and ADT.
+			Removed ANT
+			Removed tee/wintee dependency.
+			Fix right-click menu on console.
+			Add custom log viewer cmd.
+2021-04-06	v2.03
+		hMaster v2.03
+			Merged H0303,H0304,H0305,H0306
+		hPatcher v2.03
+			Update permissions for API 30.
+			Font change for hpatcher
+	
+2021-02-14	v2.02
+		hMaster v2.02
+			Targets API-30
+		hPatcher v2.02
+			Fix WAKE_LOCK typo in permissions.
+
+		HFPTS replaces H0301 (hFTP server)
+			Default port changed from 1025 to 2345		
+		H0303	added (fix GR.MODIFY group list)
+		H0304	added (fix GR.OPEN status bar for Android 11+)
+
+2020-12-08	v2.01
+		hMaster v2.01
+			K0001 merged and removed
+			H0301 added (ftp server)
+		hPatcher v2.01
+			Fixed app_version field rounding to 2dp
+			MsgBox font change
+2020-07-19	v2.0
+		hMaster v2.0 Scoped Storage
+			Most patches were merged and removed
+			Trial patch K0001
+		hpatcher v2.0 64bit
+			Fixed bluetooth permissions typo BLUETOOTH_ADMIN
+			cosmetic changes
+		hpatch v1.0 64bit
+		wintee v1.0.1(32bit) replaces busybox tee
+		Java OpenJDK (Zulu) 64bit 11.0.6 (lin) [custom]
+		Java OpenJDK (Zulu) 64bit 11.0.6 (win) [custom]
+
+2020-03-03	v1.10
+		hMaster v1.60
+		Update for API 29
+
+2020-03-03	v1.00
+		hMaster v1.52
+		Java OpenJDK (Zulu) 32bit 1.8.0_222
+		Ant 1.10.5(win) 1.10.6(lin)
+
+-------------------------------------------------------
+For more info on master and patches, see hbasic.changelog.txt.
+
+

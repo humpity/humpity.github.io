@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>lubuntu-bluetooth</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><br>
+
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips<br></small></big></big></big><big><small style=
+"font-family: monospace;"><small>(2015-2020)</small></small><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Setting Up Bluetooth
+Audio with Alsa<br></span></big></big>Installing Bluetooth
+Headphones or Speakers</td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 800px; font-family: Helvetica,Arial,sans-serif; height: 812px;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<big><big><big>B</big><small>luetooth</small></big></big> probably
+already came installed on your Ubuntu-like distro, but just incase
+:<br>
+<ul>
+<li>It didn't,</li>
+<li>You uninstalled by mistake,</li>
+<li>You can't get pulse-audio working,</li>
+</ul>
+Then here is a way to get your headset or speakers working with
+Alsa alone.<br>
+<br>
+1. <span style="color: rgb(0, 0, 153);">Install<br></span>
+<div style="margin-left: 40px;">blueman<br>
+bluez-asla<br></div>
+<br>
+That's right (!), that's <span style=
+"text-decoration: underline;">all</span> you need !<br>
+<br>
+2. <span style="color: rgb(0, 0, 153);">Edit Config file</span><br>
+<div style="margin-left: 40px;">The alsa config file is searched
+for in many places;<br>
+<div style="margin-left: 40px; color: rgb(0, 102, 0);">
+/etc/alsa.conf<br>
+/usr/share/alsa/alsa.conf<br>
+/etc/bluetooth/audio.conf<br>
+<span style=
+"color: rgb(0, 51, 0);">/usr/share/alsa/alsa.conf.d/70-btspeakers.conf</span><br>
+</div>
+I recommend creating and editing the last one. It begins with a
+priority number (70) it can be any number and the system reads the
+files in order of this number. That's not interesting, what is
+interesting is the content;<br>
+<span style="color: rgb(0, 51, 0);"><br>
+/usr/share/alsa/alsa.conf.d/70-btspeakers.conf</span><small style=
+"color: rgb(0, 0, 153);"><br></small>
+<div style="margin-left: 40px;"><small style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">pcm<span style=
+"color: black;">.btspeakers</span> {</span></small><br style=
+"font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp; type
+plug</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp; slave
+{</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pcm
+{</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+type bluetooth</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+device <span style=
+"color: rgb(0, 51, 0);">FC:58:FA:C3:03:96</span></span></small><br style="font-family: monospace;">
+
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+profile "auto"</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+}</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp; }</span></small><br style=
+"font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp; hint
+{</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; show
+on</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+description "<span style="color: black;">BT
+Speakers</span>"</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp;&nbsp; }</span></small><br style=
+"font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">}</span></small><br style=
+"font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">ctl<span style=
+"color: black;">.btspeakers</span> {</span></small><br style=
+"font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">&nbsp; type
+bluetooth</span></small><br style="font-family: monospace;">
+<small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">}</span></small><br style=
+"font-family: monospace;"></div>
+<br>
+The <span style="color: rgb(0, 51, 0);">HEX values</span> specify
+the device ID. You get it by this command..<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 0, 0); font-family: monospace;"><br>
+hcitool scan</span><br style="font-family: monospace;">
+<span style=
+"color: rgb(0, 0, 153); font-family: monospace;">Scanning
+...</span><br style=
+"color: rgb(0, 0, 153); font-family: monospace;">
+<span style=
+"color: rgb(0, 0, 153); font-family: monospace;">&nbsp;&nbsp;&nbsp;
+<span style=
+"color: rgb(0, 51, 0);">FC:58:FA:C3:03:96</span>&nbsp;&nbsp;&nbsp;
+DOSS hurricane3</span><br style=
+"color: rgb(0, 0, 153); font-family: monospace;"></div>
+<br>
+Make up your own <span style=
+"text-decoration: underline;">name</span> e.g <span style=
+"color: black;">btspeakers, btheadset</span>..,, etc&nbsp; and give
+it a <span style="text-decoration: underline;">description</span>
+e.g "BT Speakers"<br></div>
+<small style="font-style: italic;"><br>
+<br></small> 3. <span style="color: rgb(0, 0, 153);">Restart
+Bluetooth</span><br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 0, 0);">sudo service bluetooth
+restart<br></span></div>
+<span style="color: rgb(102, 0, 0);"><br></span> 4. <span style=
+"color: rgb(0, 0, 153);">Pair and Connect</span><br>
+<span style="color: rgb(102, 0, 0);"><br></span>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 51, 0);">Preferences &gt; Bluetooth
+Manager</span><br style="color: rgb(102, 51, 0);">
+<br style="color: rgb(102, 51, 0);">
+<span style="color: rgb(102, 51, 0);">Adapter &gt;
+Search</span><br style="color: rgb(0, 0, 153);">
+<br style="color: rgb(0, 0, 153);">
+Search and pair the headphones or speakers...<br style=
+"color: rgb(0, 0, 153);">
+Connect and pair to "<span style="color: rgb(0, 102, 0);">Audio
+Sink</span>"<br style="color: rgb(0, 0, 153);"></div>
+<span style="color: rgb(102, 0, 0);"><br></span> 5. <span style=
+"color: rgb(0, 0, 153);">Play<br>
+<br></span>
+<div style="margin-left: 40px;">Audacious : <span style=
+"color: rgb(102, 51, 0);">File &gt; Preferences &gt; Audio &gt;
+Output Settings &gt;</span><br style="color: rgb(102, 51, 0);">
+<span style="color: rgb(102, 51, 0);">ALSA-Preferences &gt; PCM
+device:</span> btspeakers<br></div>
+<span style="color: rgb(0, 0, 153);"><br></span> <span style=
+"color: rgb(0, 0, 153);"><br></span>
+<div style="margin-left: 40px;">Mplayer : <span style=
+"color: rgb(102, 0, 0);">-ao
+alsa:device=btspeakers</span><br style="color: rgb(102, 51, 0);">
+<br>
+(for SMplayer, paste <span style=
+"color: rgb(102, 0, 0);"><small>alsa:device=btspeakers</small></span>
+into the <small style="color: rgb(0, 51, 0);"><span style=
+"font-family: monospace;">"output driver&gt;user
+defined</span></small>" box<br></div>
+<br>
+<br>
+That's it!<br>
+<hr style="width: 100%; height: 2px;">
+<br>
+Extras<br>
+<big><big><span style="color: rgb(0, 0, 153);">How to set the
+<span style="font-weight: bold;">default</span> ALSA pcm
+device.</span></big></big><br>
+<br>
+Step 5 (above) can be a real pain everytime you want to switch
+device.<br>
+<br>
+To <big><span style="text-decoration: underline;">get Alsa to
+select your</span> <span style=
+"color: rgb(0, 0, 153); text-decoration: underline;">device by
+default</span></big> no matter which player you are using,<br>
+<br>
+Create a "<span style="color: rgb(0, 102, 0);">.<span style=
+"text-decoration: underline;">asoundrc</span></span><span style=
+"text-decoration: underline;">"</span>&nbsp; file in your home
+directory like this;<br>
+<br>
+<span style="color: rgb(0, 102, 0);">~/.asoundrc</span><br>
+<div style="margin-left: 40px;"><small style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">pcm.<span style=
+"font-weight: bold;">softvol_for_btspeakers</span></span><br style=
+"font-family: monospace;">
+<span style="font-family: monospace;">{</span><br style=
+"font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp; type
+softvol</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp; slave.pcm
+"btspeakers"</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp; control.name
+"<span style=
+"color: rgb(0, 102, 0);">Bluetooth</span>"</span><br style=
+"font-family: monospace;">
+<span style="font-family: monospace;">&nbsp;&nbsp; control.card
+0</span><br style="font-family: monospace;">
+<span style="font-family: monospace;">}</span><br style=
+"font-family: monospace;">
+<br style="font-family: monospace;">
+<span style="font-family: monospace;">#pcm.!default front
+<span style="color: black;"># main (use aplay -L to get this
+name)</span></span><br style="font-family: monospace;">
+<span style="font-family: monospace;">#pcm.!default btspeakers
+<span style="color: black;"># bluetooth speakers WITHOUT software
+vol ctrl</span></span><br style="font-family: monospace;">
+<span style="font-family: monospace;">pcm.!default <span style=
+"font-weight: bold;">softvol_for_btspeakers</span> <span style=
+"color: black;"># bluetooth speakers WITH software volume
+control</span></span></small><br style="color: black;"></div>
+<br>
+<div style="margin-left: 40px;">The top part enables the device to
+be controlled with compatible software volume control (e.g
+smplayer, audacious..etc). It is not needed, but <span style=
+"text-decoration: underline;">it's nice to have</span>.<br>
+<br>
+The bottom line is the <span style=
+"text-decoration: underline;">important</span> part.
+<small>Un-comment the line that you want as the default device and
+comment out the other ones.</small><br>
+<br>
+There is <span style="text-decoration: underline;">no need</span>
+to '<span style="color: rgb(102, 0, 0);">bluetooth restart'</span>
+<small>(unless you just added a new device)</small>, just close and
+re-open your player.<br>
+<br>
+<br>
+To get a list of device names type : &gt; <span style=
+"color: rgb(102, 0, 0);">aplay -L<br>
+<br></span>
+<div style="margin-left: 40px;">The main card is something
+like;<br>
+<br></div>
+<div style="margin-left: 40px;">
+<div style="margin-left: 40px;"><span style=
+"color: rgb(0, 0, 153);">front</span>:CARD=<span style=
+"color: rgb(0, 0, 153);">Intel</span>,DEV=0<br>
+which is used as <small style="color: rgb(0, 0, 153);"><span style=
+"font-family: monospace;">pcm.!default <span style=
+"font-weight: bold;">front</span></span></small><br></div>
+</div>
+<br>
+<div style="margin-left: 40px;">( you only really need this to find
+out the name of your main speakers)<br></div>
+<br>
+Tip:<br>
+<div style="margin-left: 40px;">The main (base) volume can be set
+by using the command line tool: <span style=
+"color: rgb(102, 0, 0);">alsamixer</span>.<br>
+There will be a column which you can tab to called <span style=
+"color: rgb(0, 102, 0);">Bluetooth</span>.<br></div>
+<br>
+Switching default devices.<br>
+<div style="margin-left: 40px;">Now you can switch between devices
+by either<br>
+a) Editing .asoundrc<br></div>
+or<br>
+<div style="margin-left: 40px;">b) Create multiple copies of
+<span style="color: rgb(0, 102, 0);">asoundrc</span> e.g one for
+main-speakers, one for btspeakers, ..etc.<br>
+and just copy over the one you need to use.<br>
+e.g&nbsp;&nbsp;&nbsp; cp ./options/<span style=
+"color: rgb(0, 102, 0);">asoundrc.3</span> &nbsp; ~/<span style=
+"color: rgb(0, 102, 0);">.asoundrc</span><br></div>
+<br></div>
+<br>
+/End.<small style="font-style: italic;"><br></small><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<hr style="width: 100%; height: 2px; font-style: italic;">
+<small>Advertisement<br></small><br>
+<a href="lubuntu.html">More Lubuntu Tips</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>

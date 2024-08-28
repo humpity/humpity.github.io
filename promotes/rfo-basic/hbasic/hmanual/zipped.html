@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Zipped Manual</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <A href="../../../../home.htm">Humpty Promotes</A> &gt; <A href=
+  "../../rfo.html">Rfo-Basic</A> &gt; <A href=
+  "../hbasic.html">hBasic</A> &gt; <A href="index.html">hManual</A>
+  &gt; Zipped Manual
+  <DIV style="text-align: right;">
+    <BR>
+  </DIV>
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG>
+          </DIV>&nbsp;<BIG><BIG style=
+          "color: rgb(0, 0, 153);">About the Zipped
+          Manual</BIG></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            A zipped version of the hBasic Manual is also found in
+            the <A href=
+            "https://humpty.firstcloudit.com/promotes/rfo-basic/hbasic/repository/index.html">
+            repository.</A><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="text-decoration: underline;"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">How to View the
+          Zipped Manual</SPAN></FONT><BR>
+          <BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            First, download the manual to your PC or Android
+            device.<BR>
+            Extract the zip file using a zip program or
+            file-manager.<BR>
+            There should be a directory called <SPAN style=
+            "color: rgb(0, 0, 153);">hmanual</SPAN>. The first page
+            is <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 0, 0);">index.html.</SPAN></SPAN>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">Reading on a
+            PC</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            To read this manual on a PC with a web browser, open
+            this page;<BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">file://&lt;</SPAN>your_path<SPAN style="color: rgb(0, 0, 153);">&gt;hmanual/<SPAN style="color: rgb(102, 0, 0);">index.html</SPAN></SPAN>
+            inside the browser.<BR>
+            <SPAN style="text-decoration: underline;"><BR>
+            Reading on an Android Device</SPAN><BR>
+            To read this manual on an Android device, you must open
+            it from inside hBasic with a small program;<BR>
+            <BR>
+            Move the <SPAN style=
+            "color: rgb(0, 0, 153);">hmanual</SPAN> directory to
+            inside the hBasic <SPAN style=
+            "color: rgb(0, 0, 153);">data/</SPAN> directory,<BR>
+            <DIV style="margin-left: 40px;">
+              e.g <SPAN style=
+              "color: rgb(102, 51, 0);">/storage/emulated/0/Android/data/com.rfo.hbasic/rfo-basic/data/</SPAN><SPAN style="color: rgb(0, 0, 153);">hmanual</SPAN><BR>
+
+              <BR>
+            </DIV>You can do this with a capable file-manager e.g
+            Total-Commander (only works for Android 13 and
+            lower).<BR>
+            Or you can copy the directory using <A href=
+            "system.html#ftp_server">hBasic's buitl-in ftp
+            server</A>.<BR>
+            <BR>
+            Then run this program to view the manual;<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">html.open</SPAN></FONT><BR>
+
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">html.load.url
+              "<SPAN style=
+              "color: rgb(0, 0, 153);">hmanual</SPAN>/<SPAN style=
+              "color: rgb(102, 0, 0);">index.html</SPAN>"</SPAN></FONT><BR>
+
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">DO</SPAN></FONT><BR>
+
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              DO : HTML.GET.DATALINK data$ : UNTIL data$ &lt;&gt;
+              ""</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              type$ = LEFT$(data$, 4)&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; % get type</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              data$ = MID$(data$,5) &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; % get data</SPAN></FONT><BR>
+              <BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              sw.begin type$</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              sw.case "LNK:"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; % link
+              tapped</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; html.load.url
+              data$&nbsp;&nbsp;&nbsp;&nbsp; % load the new
+              URL</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; d_u.continue</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              sw.case "ERR:"</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; ? "Error ";
+              data$</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; d_u.break</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              sw.case "BAK:"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; % backKey
+              0=first page</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; if data$="0" then d_u.break else
+              HTML.go.back</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; sw.break</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              sw.end</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              % ignore other types..</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">UNTIL
+              0</SPAN></FONT><BR>
+              <FONT size="-1"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">END</SPAN></FONT><BR>
+            </DIV><BR>
+            The above is a simple viewer that uses webview to
+            browse the manual.<BR>
+            <BR>
+            The program is needed because since Android 11+,
+            outside apps are not able to view files inside another
+            apps' <A href="package.html#scoped">scoped
+            storage</A>.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpty.drivehq.com/counter.js"></SCRIPT>
+</BODY>
+</HTML>

@@ -1,0 +1,2078 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+  <meta content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" name="generator">
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>hew manual</title>
+
+  
+  <link rel="stylesheet" href="main.css" type="text/css"></head><body alink="#000099" link="#000099" vlink="#990099">
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <big style="font-family: Helvetica,Arial,sans-serif;">Humpty
+  Promotes <small><br></small></big><br style="font-family: Helvetica,Arial,sans-serif;">
+
+  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellpadding="8" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="vertical-align: top;"><big><big><small>HEW
+        <a href="hew.html"><small><span style="color: rgb(0, 0, 153);">Humpty's</span> <span style="color: rgb(0, 0, 153);">Easy</span></small></a></small></big>
+        <a href="hew.html"><big><small><span style="color: rgb(0, 0, 153);"><small>Widgets</small></span></small></big></a><small><span style="color: rgb(0, 0, 153);">&nbsp;</span>&nbsp;&nbsp;</small>
+        <small>A GUI Framework</small> <small><small>using
+        RFO-Basic APP development for
+        Android.</small></small><big style="font-weight: bold;"><br></big></big><br>
+        <big>HEW Reference Manual v2.1<br></big></td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <div style="text-align: right;"></div>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top; white-space: nowrap;">
+                  <div style="text-align: right;">
+                    <a href="manual.html#themes">Themes</a><br>
+                    <a href="manual.html#event"><span style="text-decoration: underline; color: rgb(0, 0, 153);">
+                    Event Loop</span></a><br>
+                    <span style="text-decoration: underline; color: rgb(0, 0, 153);">
+                    <a href="manual.html#init">Init</a></span><br>
+                    <a href="manual.html#isr">ISR</a><br>
+                    <br>
+                    <a href="#ask_yn">Ask_YN</a>&nbsp;<br>
+                    <a href="manual.html#botmenu">Bottom
+                    Menu</a>&nbsp; <a href="manual.html#btimer">bTimer</a>&nbsp;&nbsp;
+                    <a href="manual.html#button">Button</a><br>
+                    <a href="manual.html#console">Console</a><br>
+                    <a href="../apps/formfill/v4_readme.txt">FormFill</a><br>
+
+                    <a href="manual.html#gformfill">gFormFill</a><br>
+                    <a href="manual.html#gnumpad">gNumPad</a><br>
+                    <a href="manual.html#gselect">gSelect</a><br>
+                    <a href="manual.html#keyinp">KeyInp</a><br>
+                    <a href="manual.html#link">Link</a><br>
+                    <a href="#msg_ok">M<span style="text-decoration: underline;">sg_OK</span></a><br>
+
+                    <a href="manual.html#progress">Progress</a><br>
+                    <a href="manual.html#text">Text</a> &nbsp;
+                    <a href="#textin">TextIn</a>&nbsp;&nbsp;
+                    <a href="manual.html#txtscroll">TxtScroll</a><br>
+                  </div><br>
+                  (todo)<br>
+                  Grid selectors<br>
+                  Select List<br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="width: 50%;">
+          <a name="init" id="init"></a><big style="color: rgb(0, 0, 153);">Init.bas<br></big> <span style="color: black;">This section mainly initiates the
+          graphics screen and sets global variables.<br>
+          <br></span> <span style="text-decoration: underline; color: rgb(0, 0, 153);">Screen
+          Initialisation<br></span> Everything, if possible happens
+          in graphics mode using graphics objects.<br>
+          The exception is if the built-in WebView is needed to
+          display an html page (e.g formfill).<br>
+          <br>
+          There are three problems that stand when designing HEW
+          apps to run on different sized phones.<br>
+          a) Different screen sizes.<br>
+          b) Different aspect ratios.<br>
+          c) Different pixel densities.<br>
+          <br>
+          <span style="text-decoration: underline; color: rgb(0, 0, 153);">Development
+          Device Size</span><br>
+          At the start, <span style="color: rgb(0, 102, 0);">dev_w</span> and <span style="color: rgb(0, 102, 0);">dev_h</span> are your
+          development device width and height in pixels.<br>
+          These must be defined whether you use scaling or not. It
+          let's HEW know about the aspect ratio.<br>
+          <br>
+          Init.bas gives you the choice of whether to use
+          scaling/or not.<br>
+          It sets up <span style="color: rgb(0, 102, 0);">scr_w</span> and <span style="color: rgb(0, 102, 0);">scr_h</span> to be used by the
+          rest of your app.<br>
+          (This bit of compact code took a lot of trial and error
+          to make perfect.)<br>
+          <br>
+          <span style="text-decoration: underline; color: rgb(0, 0, 153);">Scaling<br>
+          </span> If you don't need scaling then set <span style="color: rgb(0, 102, 0);">scaling=0</span> <span style="color: rgb(0, 0, 153);">.</span><span style="text-decoration: underline; color: rgb(0, 0, 153);"><br></span><br>
+
+          <span style="color: rgb(0, 102, 0);">scaling=1</span><br>
+          For certain things like bitmaps, scaling is neccessary.
+          As a result, all widgets <span style="color: rgb(102, 0, 0);">that do their own touch
+          detection</span> (e.g gr.touch x,y) will also re-scale
+          according to <span style="color: rgb(0, 102, 0);">scale_x</span> and <span style="color: rgb(0, 102, 0);">scale_y</span> which are read
+          from the global bundle (1).<br>
+          <br>
+          Init.bas scales <span style="text-decoration: underline;">both</span> width and
+          height to the smallest found ratio (act(w|h) /
+          dev(w|h).<br>
+          This means everything will<br>
+          a) <span style="color: rgb(102, 0, 0);">fit inside the
+          screen,</span> and<br>
+          b) <span style="color: rgb(102, 0, 0);">be squarely
+          proportioned</span> (i.e circles will be circle and
+          squares will be square after scaling)<br>
+          <br>
+          Therefore it is advisable to develop on device with a
+          shorter height (e.g h/w ratio 1.5) compared with longer
+          height devices (&gt;1.5). This way, when the apps are run
+          on taller devices, the bottom will be unused to preserve
+          the aspect ratio. Scaling by one-side-only prevents
+          widgets looking distorted.<br>
+          <br>
+          <span style="color: rgb(102, 0, 0);">All HEW widgets
+          avoid actual pixel coordinates</span> and instead are
+          relative according to the screen width|height and/or the
+          current <span style="color: rgb(0, 102, 0);">gr.text.size</span>. The
+          dependency is as follows ;<br>
+          gr.text.size &lt;- tx_height &lt;- row_height &lt;- srows
+          &lt;- scr_h / (30 pixels at reference density of 160)<br>
+          <br>
+          <span style="color: rgb(0, 0, 153);">If you choose to use
+          scaling</span> (scaling=1),<span style="color: rgb(0, 0, 153);">&nbsp;</span> then <span style="color: rgb(0, 102, 0);">scr_w,scr_h</span> are set the
+          same as <span style="color: rgb(0, 102, 0);">dev_w,
+          dev_h</span>. And you must treat your coordinates as if
+          using the development machine sizes. All the graphics
+          code is then scaled up/down automatically when the app is
+          run on a different machine by BASIC's gr.scale
+          command.<br>
+          <br>
+          The advantage of scaling is that you can use absolute
+          (dev) coordinates&nbsp; without worry.<br>
+          The dis-advantage is that widgets will look fat and
+          bloaty on machines with large screens.<br>
+          <br>
+          <span style="color: rgb(0, 0, 153);">If you choose not to
+          use scaling</span> (scaling=0),&nbsp; then widgets are
+          sized by relative density. So for the same density (160),
+          larger screens will have more rows.<br>
+          <br>
+          The advantage is that widgets will look the same size on
+          any screen-size. And you can have more rows for larger
+          screens with same density.<br>
+          The dis-advantage is that you can't use absolute
+          coordinates and sizes in your app. Instead all values
+          have to be relative to either <span style="color: rgb(0, 102, 0);">scr_h, scr_w</span> and
+          <span style="color: rgb(0, 102, 0);">srows</span>. These
+          three values are setup and globalised by init.bas, as
+          well as <span style="color: rgb(0, 102, 0);">scale_x</span> and <span style="color: rgb(0, 102, 0);">scale_y</span>.<br>
+          <br>
+          <span style="text-decoration: underline; color: rgb(0, 0, 153);">Colors</span><br>
+
+          init.bas will call <span style="color: rgb(0, 102, 0);">theme_init()</span> to load
+          default colors for all widget creation.<br>
+          <br>
+          <hr style="width: 100%; height: 2px;">
+          <big><span style="color: rgb(102, 0, 204);">Pre-Requisites</span></big><br>
+
+          <br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(102, 0, 204); font-style: italic;">Requires&nbsp;&nbsp;</span>
+            (include)<br>
+            <br>
+            All apps must include <span style="color: rgb(0, 0, 153);">themes.bas,</span>
+            <span style="color: rgb(0, 0, 153);">event.bas</span>
+            and <span style="color: rgb(0, 0, 153);">init.bas</span>, and
+            <span style="text-decoration: underline;">in that
+            order</span>. This is the minimum requirement. (isr.bas
+            at the end of the app is also encouraged)<br>
+            <br>
+            All widgets are assumed to require <span style="color: rgb(0, 0, 153);">themes.bas,</span>
+            <span style="color: rgb(0, 0, 153);">event.bas</span>
+            and <span style="color: rgb(0, 0, 153);">init.bas</span>.<br>
+            Additional requirements will be stated.<br>
+            <br>
+            <span style="font-style: italic; color: rgb(102, 0, 204);">Visual
+            updates</span><br>
+            Most widget commands do not provide <span style="color: rgb(102, 51, 0);">gr.render</span> unless it is
+            needed. So you need to add this in your own code. This
+            is because some apps don't want the user to see the
+            change until a later time.<br>
+            <br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <a name="event" id="event"></a><big><span style="color: rgb(0, 0, 153);">Event.bas</span></big><br>
+          <br>
+          The main event loop <span style="color: rgb(0, 102, 0);">event_get ()</span>&nbsp; waits
+          for user input (touches) and figures out which widget was
+          touched.<br>
+          <br>
+          It also handles BakKey detection, and tests if app was
+          put in the background.<br>
+          <br>
+          To do this, all detectable widgets are put in a list so
+          that the control loop can query their locations.<br>
+          The widget detection list (widgets) is central to HEW and
+          is built up at the start of your program.<br>
+          'widgets' is also saved in the global bundle '1'.
+          <small>Some widgets can borrow the event loop by 'taking
+          over' the widget list.</small><br>
+          <br>
+          If a widget was touched it will return the widget bundle.
+          If Bakkey was pressed, it will return 0.<br>
+          Your program should figure out what to do with the return
+          code.<br>
+          <br>
+          Event.bas does not wait for an 'off-touch', this means
+          your program code has the option to furthur process a
+          'hold-down' touch <small><span style="font-style: italic;">(infact some HEW widgets rely on
+          this mechanism).</span></small><br>
+          <hr style="width: 100%; height: 2px;">
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="themes" id="isr"></a><big>Theme.bas</big></span><br>
+          <br>
+          Defines the colors used to paint widgets.<br>
+          Widgets will call <span style="color: rgb(0, 102, 0);">theme_color()</span> instead of
+          <span style="color: rgb(0, 102, 0);">gr.color()</span>.<br>
+          <br>
+          If you don't want <span style="color: rgb(0, 0, 153);">themes.bas</span>, you must
+          replace all the <span style="color: rgb(0, 102, 0);">theme_color</span> calls with
+          your own <span style="color: rgb(0, 102, 0);">gr.color</span> and remove
+          <span style="color: rgb(0, 102, 0);">theme_init()</span>
+          from init.bas.<br>
+          <br>
+          To change the default colors, modify the entry in
+          <span style="color: rgb(0, 0, 153);">themes.bas</span>
+          inside <span style="color: rgb(0, 102, 0);">theme_init()</span>.<br>
+          <br>
+          <span style="text-decoration: underline; color: rgb(0, 0, 153);">Themes.INI</span><br>
+
+          If you want additional themes, you must create
+          data/<span style="color: rgb(0, 0, 153);">themes.ini</span>. If this file
+          does not exist, the default colors inside <span style="color: rgb(0, 102, 0);"><span style="color: rgb(0, 0, 153);">themes.bas</span></span> &gt;
+          <span style="color: rgb(0, 102, 0);">themes_init()</span>
+          will be used instead. Therefore you do not need
+          <span style="color: rgb(0, 0, 153);">themes.ini</span> if
+          you don't change themes.<br>
+          <br>
+          This is what themes.ini looks like;<br>
+
+          <div style="margin-left: 40px;">
+            <small style="color: black;"><span style="font-family: monospace;">use_theme =
+            Dark</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+            <br style="font-family: monospace; color: rgb(51, 51, 255);">
+            <small style="color: rgb(51, 51, 255);"><span style="font-family: monospace;">[default]</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <br style="font-family: monospace; color: rgb(51, 51, 255);">
+            <small style="color: rgb(51, 51, 255);"><span style="font-family: monospace;">[Dark]</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <small style="color: black;"><span style="font-family: monospace;">p_background=&nbsp;&nbsp;&nbsp;
+            255,0,0,0,1<br>
+            p_title=&nbsp;&nbsp;&nbsp; 255,230,140,30,0<br>
+            p_link=&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            255,230,140,30,0<br>
+            p_text=&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            255,157,218,112,0</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+            <small style="color: rgb(51, 51, 255);"><span style="font-family: monospace;">.</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+            <small style="color: rgb(51, 51, 255);"><span style="font-family: monospace;">..etcd</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <small style="color: rgb(51, 51, 255);"><span style="font-family: monospace;">[Fancy]</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+
+            <small style="color: black;"><span style="font-family: monospace;">p_background=&nbsp;&nbsp;&nbsp;
+            255,255,255,255,1</span></small><br style="font-family: monospace; color: black;">
+            <small style="color: black;"><span style="font-family: monospace;">p_title=&nbsp;&nbsp;&nbsp;
+            255,200,140,250,0</span></small><br style="font-family: monospace; color: rgb(51, 51, 255);">
+            <small style="color: rgb(51, 51, 255);"><span style="font-family: monospace;">..etc</span></small><br>
+          </div>
+
+          <div style="margin-left: 40px; text-align: right;">
+            <small>(download a sample file <a href="source/themes.ini">here</a>)<br></small>
+          </div><br>
+          In this example, there are <span style="text-decoration: underline;">blank entries</span> under
+          the first theme <span style="color: rgb(51, 51, 255);">[default]</span> and some
+          entries under themes <span style="color: rgb(51, 51, 255);">[Dark]</span> and <span style="color: rgb(51, 51, 255);">[Fancy]</span>.<br>
+          <br>
+          If there are blank entries under <span style="color: rgb(51, 51, 255);">[default]</span> then the
+          code-default colors in <span style="color: rgb(0, 102, 0);">theme_init()</span> will be used
+          instead. Otherwise the colors defined here will override
+          the default theme 'default'.<br>
+          <br>
+          For any [theme], if there are blank color entries for any
+          specific color name, then the code-default color in
+          <span style="color: rgb(0, 102, 0);">theme_init()</span>
+          for that color will be used instead.<br>
+          <br>
+          <span style="color: rgb(51, 51, 255);">[use theme]</span>
+          will be the theme that <span style="color: rgb(0, 102, 0);">theme_init()</span> will
+          load.<br>
+          <span style="color: rgb(0, 102, 0);"><br>
+          theme_set()</span> will set the next <span style="color: rgb(51, 51, 255);">[use theme]</span> inside
+          themes.ini.<br>
+          <br>
+          Here are the calls you are likely to use;<br>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top; width: 25%; white-space: nowrap; color: rgb(0, 102, 0);">
+                theme_color (name$)<br>
+                theme_init ()<br>
+                theme_list (tlist)<br>
+                theme_set (theme$)</td>
+
+                <td style="vertical-align: top; width: 5%;">
+                &nbsp;<br></td>
+
+                <td style="vertical-align: top; white-space: nowrap;">set the
+                current color to the color name<br>
+                load default colors <span style="color: rgb(102, 0, 0);">(called from
+                init.bas)</span> and load <span style="color: rgb(0, 0, 153);">themes.ini</span>, if
+                exists<span style="color: rgb(102, 0, 0);">.</span><br>
+                returns a list of themes found in themes.ini<br>
+                sets the next used theme by changing <span style="color: rgb(51, 51, 255);">[use theme]</span>
+                inside themes.ini<br></td>
+              </tr>
+            </tbody>
+          </table><br>
+          A new theme is loaded using <span style="color: rgb(0, 102, 0);">theme_init()</span> to
+          load&nbsp; colors from data/<span style="color: rgb(0, 0, 153);">themes.ini</span>.<br>
+          The <span style="color: rgb(0, 102, 0);">theme.init()</span> manager also
+          updates colors in formfill.css (if it exists), although
+          any css file can be updated by changing the filename. The
+          css file must support themes by having embedded color
+          markers (see formfill.css).<br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="isr" id="isr"></a><big>ISR.bas</big></span><br>
+          When an interrupt occurs, e.g BakKey is pressed, timer is
+          called, or an error occurs, this area catches<br>
+          the interrupt and decides what to do.<br>
+          <br>
+          <a name="backkey" id="backkey"></a> OnBackKey<br>
+          Some functions or code may need to know if the backkey
+          was pressed (e.g inside a loop).<br>
+          When the backkey is pressed BASIC! first checks in the
+          main namespace, if the variable is undefined, then it
+          will work it's way down the calls looking for the
+          variable until the last function (where the interrupt
+          occurred). Unfortunately there is no way you can identify
+          this last level function <small>(whether by using a
+          commonly named variable or uncommonly named
+          variable)</small>.<br>
+          <br>
+          Therefore a system of using a global bundle variable
+          "<span style="color: rgb(0, 102, 0);">isr$</span>" is
+          used to identify the interrupted scope. This interrupt
+          status flag is defined at the end of <span style="color: rgb(0, 0, 153);">init.bas</span> together with
+          functions<br>
+          <span style="color: rgb(0, 102, 0);">isr_set(
+          <small>state$</small> )</span> and <span style="color: rgb(0, 102, 0);">bk_pressed()<br></span><br>
+          Any function/code wanting to identify itself as the
+          current scope can call <span style="color: rgb(0, 102, 0);">isr_set ("a_name")</span> for
+          debugging purposes. This will also clear the flag for
+          backkey. <small style="color: rgb(102, 0, 0);">(do
+          <big>not</big> start the 'name' with an <big><span style="text-decoration: underline;">Underscore</span></big>
+          since this indicates backkey pressed).</small><br>
+          <br>
+          Any function/code can query <span style="color: rgb(0, 102, 0);">bk_pressed()</span> to see if
+          the backkey was pressed.<br>
+          To force (trick) a backkey pressed, access the bundle
+          variable <span style="color: rgb(0, 102, 0);">isr$</span>
+          directly and start it with an underscore.<br>
+          <br>
+          <hr style="width: 100%; height: 2px;">
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="ask_yn" id="ask_yn"></a><big>ask_yn.bas<br></big></span>
+
+          <div style="margin-left: 40px;">
+            Displays a message in a box with a "yes" and
+            "no"button.<br>
+            <br>
+            <small>This is a modal dialog and manipulates the
+            global bundle 'widgets' list variable before using
+            event.bas.</small><br>
+          </div>
+
+          <div style="margin-left: 40px;">
+            <img style="width: 150px; height: 107px;" alt="" src="demos/dialog_demo/pics/small_ask.png"><br>
+          </div><span style="color: rgb(153, 0, 0);">requires:</span> <span style="color: rgb(0, 0, 153);">button.bas</span><br>
+          <span style="color: rgb(153, 0, 0);"><br>
+          constructor</span> :&nbsp; ask_yn_make <span style="color: rgb(0, 102, 0);">(style)<br></span> where
+          :<span style="color: rgb(0, 102, 0);"><br></span>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">style</span> = the
+            buttons style <small>(according to button.bas)<br>
+            <br></small> return code : the widget bundle<br>
+          </div><small><span style="font-style: italic;"><br></span></small><span style="font-style: italic;">(since there is only one ask_yn
+          widget, this widget will save itself into the global
+          bundle '1' for the callback)</span><small><span style="font-style: italic;"><br>
+          <br></span></small> <span style="color: rgb(153, 0, 0);">callback</span> : ask_yn
+          <span style="color: rgb(0, 102, 0);">(t$)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">t$</span> = the
+            question<br>
+
+            <div style="margin-left: 40px;">
+              lines can be seperated with the character
+              '|'.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g "line
+              1|line2"<br>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);">return code
+            :</span> 0=backkey,&nbsp; 1=yes,&nbsp; 2=no<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><big><a name="botmenu" id="botmenu"></a>botmenu.bas</big></span><br>
+
+          <div style="margin-left: 40px;">
+            Bottom menu widget. This is a six panel popup menu
+            which slides up from the bottom of the screen.<br>
+          </div><br>
+
+          <div style="text-align: right;">
+            <small>example</small> <img src="demos/btm_demo/pics/btm_demo2.png" alt="" style="width: 200px; height: 190px;"><br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">constructor</span> :
+          botmenu_make ( <span style="color: rgb(0, 102, 0);">itms</span> )<span style="color: rgb(0, 102, 0);"><br></span> where :<br>
+
+          <div style="margin-left: 40px;">
+            &nbsp;itms = list of items (1..6)<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            :&nbsp; the widget bundle.<br>
+          </div><br>
+          <br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          botmenu ( <span style="color: rgb(0, 102, 0);">wg</span>
+          )<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">wg</span> = the
+            widget bundle<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            : the item number selected (1..6) or 0 for quit.<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="btimer" id="btimer"></a><big>btimer.bas</big></span><br>
+
+          <div style="margin-left: 40px;">
+            bTimer is a countdown timer inside a button.<br>
+            <br>
+            <span style="color: red;">warning</span>: btimer.bas
+            appends the Basic! <span style="color: rgb(102, 0, 204);">OnTimer</span> keyword and
+            segment at the end of the file.<br>
+            This means you cannot use OnTimer anywhere else in your
+            code if you include btimer).<br>
+            <small>(a goto-skip is used, so you can include
+            btimer.bas at the start of your files)</small><br>
+            <br>
+            <small>Btimer is a Hew example of simulating a
+            'subclass' in Basic!<br>
+            The timer creates a button, replaces the text with
+            mm:ss. And adds a few more commands.<br>
+            It also inserts an OnTimer code segment to handle the
+            timer interrupt every second.<br>
+            <br>
+            Other than that, it behaves like any other button. i.e
+            OnTimer will pass on any button command to it's
+            'parent' (button). Alternatively you may just call the
+            parent 'button' fuction directly.</small> <small><br>
+            </small>
+          </div>
+
+          <div style="text-align: right;">
+            <small>example</small> <a href="btimer_demo/btimer_demo.zip">btimer_demo.zip</a><img src="demos/btimer_demo/pics/1.png" alt="" style="width: 200px; height: 200px;"><br>
+          </div><span style="color: rgb(153, 0, 0);">requires:</span> <span style="color: rgb(0, 0, 153);">button.bas<br>
+          <br></span> <span style="color: rgb(153, 0, 0);">constructor</span>:&nbsp;
+          btimer_make ( <span style="color: rgb(0, 102, 0);">aux$,
+          style, x, y</span> <span style="color: rgb(0, 102, 0);">)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">aux$</span> = any
+            auxiliary data passed to button.bas<br>
+
+            <div style="margin-left: 40px;">
+              <small>This should normally be empty ("") but can be
+              used to pass data to button.bas e.g
+              "C"enter..etc.<br>
+              (see button.bas)<br></small>
+            </div><br>
+            x,y = position of widget (top left corner)<br>
+            style = (same as button)<br>
+            <span style="color: rgb(0, 0, 153);"><br>
+            return code :</span> the widget bundle.<br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span>:
+          btimer ( <span style="color: rgb(0, 102, 0);">cmd$, t$,
+          wg</span> )<span style="color: rgb(0, 102, 0);"><br></span> where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+          </div>
+
+          <div style="margin-left: 40px;">
+            <div style="margin-left: 40px;">
+              "reset" : stops and resets the timer to the total
+              time.<br>
+            </div>
+
+            <div style="margin-left: 120px;">
+              if <span style="color: rgb(0, 102, 0);">t$</span> is
+              a time e.g "25:29" then the timer will take on this
+              new total. Otherwise the last total is used.<br>
+            </div>
+
+            <div style="margin-left: 40px;">
+              "stop" :&nbsp; stops the countdown<br>
+              "start" : starts the timer countdown<br>
+            </div><br>
+
+            <div style="margin-left: 40px;">
+              The rest of the commands are the same as
+              button.bas<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">t$</span> = the
+            time "mm:ss" for 'reset' command.<br>
+
+            <div style="margin-left: 40px;">
+              otherwise same use as button.bas.<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">wg</span> = the
+            widget bundle<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code
+            :</span> none.<br>
+          </div><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="button" id="button"></a><big>button.bas</big></span><br>
+
+          <div style="margin-left: 40px;">
+            Button widget.<br>
+          </div><span style="color: rgb(153, 0, 0);"><br>
+          constructor</span>:&nbsp; button_make ( <span style="color: rgb(0, 102, 0);">aux$, t$, style, x, y</span>
+          )<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">aux$</span> =
+            auxiliary data<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              <span style="color: rgb(102, 51, 0);">"C"</span> =
+              centre the button at the x coordinate<br>
+              <span style="color: rgb(102, 51, 0);">"R"</span> =
+              right justify the button at the x coordinate<br>
+              e.g <span style="color: rgb(0, 102, 0);">button_make
+              (</span> "C", "press me", 4, 200,200 <span style="color: rgb(0, 102, 0);">)<br>
+              <br></span> <span style="color: rgb(102, 51, 0);">"|.."</span> = filename
+              prefix<br>
+
+              <div style="margin-left: 40px;">
+                If aux$ <span style="text-decoration: underline;">contains a bar ' |
+                '</span> then this indicates a file prefix is
+                appended for a background bitmap for type 5 (see
+                below).<br>
+                e.g <span style="color: rgb(0, 102, 0);">button_make (</span>
+                "|mybitmap", "press me", 4, 200,200 <span style="color: rgb(0, 102, 0);">)</span><br>
+                (see style type 5 below)<br>
+                <br>
+              </div>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">x,y</span> =
+            position of widget (top left corner)<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">t$</span> = text
+            inside button <small>(will be centered inside) (The
+            font size will follow gr.text.size.)</small><br>
+            <small><br></small>
+
+            <div style="margin-left: 40px;">
+              The amount of text will determine the size (width,
+              height) of the button.<br>
+              The size does not change. If you want all your
+              buttons to be the same size, then initialize them all
+              with the same text and then change the text with the
+              "text" command.<br>
+              <br>
+              Multi-Line text can be separated with bars
+              '|'<img style="width: 80px; height: 60px;" alt="" src="pics/multi-line.png" align="top"> e.g
+              "Multi|line|&nbsp; button! "<br>
+              Spaces can be used to increase horizontal width.<br>
+              Blank lines at the start of the text e.g "|||foobar"
+              can be used to increase the vertical height of the
+              button and the remaining text lines will be centered
+              vertically.<br>
+              e.g "two|lines " vs "|two|lines "&nbsp; <img style="width: 65px; height: 43px;" alt="" src="pics/twolines_a.jpg"> =&gt; <img style="width: 69px; height: 60px;" alt="" src="pics/twolines_b.jpg"><br>
+              If you don't want the effect of vertical blank line
+              spacing, then use a spaces at the begining instead of
+              empty strings (e.g "&nbsp; |&nbsp; |&nbsp;
+              |tall|button|&nbsp; |&nbsp; |&nbsp; |").<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">style</span> =
+            1,2,3,4 or 5<br>
+
+            <div style="margin-left: 40px;">
+              0 = no border (just text)&nbsp;&nbsp; <small>(
+              previously <span style="text-decoration: line-through;">type
+              5</span></small> )<br>
+              1 = rectangle<br>
+              2 = oval<br>
+              3 = rounded corners<br>
+              4 = rounded
+              2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <small>( previously <span style="text-decoration: line-through;">simple brackets e.g
+              [ click ]</span></small> )<br>
+              <br>
+              <a name="bitbutton" id="bitbutton"></a>5 = bitmap
+              background button<br>
+
+              <div style="text-align: center;">
+                <small>example</small> <img style="width: 80px; height: 27px;" alt="" src="pics/bitbutton.png"><br>
+              </div>
+
+              <div style="margin-left: 40px;">
+                A <span style="color: rgb(102, 51, 0);">bitmap
+                prefix</span> is appended after an excalmation ' !
+                ' in <span style="color: rgb(0, 102, 0);">aux$</span> (see
+                above)<br>
+                <br>
+                e.g&nbsp;<span style="color: rgb(0, 51, 0);">button_make
+                (</span>"<span style="color: rgb(51, 0, 153);">myname!bitname</span>"<span style="color: rgb(0, 51, 0);">,
+                "BitButton", 5, 100,100)</span><br>
+                <br>
+                "myname" is the button name<br>
+                "bitname" is the bitmap filename prefix<br>
+
+                <div style="text-align: right;">
+                  <small>(no spaces are allowed around the "|")<br>
+                  (The ' ! ' and prefix will be removed from the
+                  widget name)<br></small>
+                </div><br>
+                The widget will then expect to find filenames
+                <span style="color: rgb(51, 0, 153);">"bitname_on.png"</span>
+                and "<span style="color: rgb(51, 0, 153);">bitname_off.png</span>"
+                in the<br>
+                default directory
+                &lt;base&gt;/data.&nbsp;&nbsp;&nbsp;&nbsp;
+                <small>(you <span style="font-weight: bold;">must</span> make available
+                these images if you use this button
+                type)</small><br>
+                <br>
+                The filename prefix will override the <span style="color: rgb(102, 51, 0);">default prefix</span>
+                "button" ( <span style="color: rgb(102, 51, 0);">button<span style="color: rgb(51, 51, 153);">_on</span>.png</span>,
+                <span style="color: rgb(102, 51, 0);">button<span style="color: rgb(51, 51, 153);">_off</span>.png</span>
+                ).<br>
+                If no prefix is given, the default prefix is
+                used.<br>
+                <br>
+                &lt;name&gt;<span style="color: rgb(51, 0, 153);">_on</span> will be the
+                image when the button is pressed.<br>
+                &lt;name&gt;_<span style="color: rgb(51, 0, 153);">off</span> will be the
+                image when the button is released.<br>
+                The action will happen when a "<span style="color: rgb(0, 102, 0);">flash</span>" command is
+                called.<br>
+                <br>
+                Note that images are rectangle, only rectangle
+                buttons work well with this type. If you have a
+                round image, it's background will also show, so you
+                must match the display background with it.<br>
+              </div><br>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);">return code
+            :</span> the widget bundle.<br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span>:
+          button ( <span style="color: rgb(0, 102, 0);">cmd$, t$,
+          wg</span> )<span style="color: rgb(0, 102, 0);"><br></span> where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">flash</span>"
+              : flash the button momentarily<br>
+              &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; <small>depending on the button style,
+              either the border/background flashes or bitmap
+              changed momentarily.</small><br>
+              "<span style="color: rgb(102, 51, 0);">text</span>"&nbsp; :&nbsp;
+              change the text inside the button<br>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; &nbsp; <small style="color: rgb(153, 0, 0);">note: The button size does
+              not change. Be sure to create a size (using spaces)
+              that can surround future text)</small><br>
+              "<span style="color: rgb(102, 51, 0);">show</span>" :
+              shows the widget <small>and enabled in touch
+              detection list</small><br>
+              "<span style="color: rgb(102, 51, 0);">hide</span>"&nbsp; : hides
+              the widget <small>and disabled in touch detection
+              list</small><br>
+              "<span style="color: rgb(102, 51, 0);">move</span>":
+              moves the button according to t$<br>
+              "<span style="color: rgb(102, 51, 0);">set</span>"&nbsp;&nbsp;&nbsp;
+              : set button as pressed or un-pressed according to
+              t$="1" or "0"<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">t$</span> = text
+            to be changed or move coordinates <small>(provide an
+            empty string if unused)<br>
+            <br></small>
+
+            <div style="margin-left: 40px;">
+              for move: coordinates = "x,y".&nbsp; eg. "100,50"
+              &nbsp; eg. "+100, -50"<br>
+              if preceeded by "-" or "+", then the movement is
+              relative, otherwise it is absolute.<br>
+            </div><small><br></small>
+
+            <div style="margin-left: 40px;">
+              for set: "1"=set to pressed. "0"=set to
+              un-pressed.<br>
+            </div><small><br></small><br>
+            <span style="color: rgb(0, 102, 0);">wg</span> = the
+            widget bundle<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code
+            :</span> none.<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="console" id="btimer"></a><a href="source/console.bas"><big>console.bas</big></a><br>
+          <br></span>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="10" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top; width: 90%;">Uses
+                txtscroll to simulate a text console.<br>
+                The widget ID returned is the actual txtscroll
+                widget it uses.<br>
+                <br>
+                Each text line added with "print" will be added to
+                the end of the txtscroll box. If the box is full,
+                it will scroll up 1 line.<br>
+                <br>
+                Can be used for display-only or you can add it the
+                the detection-list (widgets) to respond to a
+                touch.<br>
+                <br>
+                If you make it detectable and it's touched, then
+                you must either pass a "touch" cmd to itself i.e
+                <span style="color: rgb(0, 0, 153);">con</span>
+                ("<span style="color: rgb(102, 51, 0);">touch</span>", "",wg)<br>
+                or alternatlively call txtscroll directly e.g call
+                <span style="color: rgb(0, 0, 153);">txtscroll</span>
+                ("<span style="color: rgb(102, 51, 0);">touch</span>", 0,wg)</td>
+
+                <td style="vertical-align: top; width: 10%;">
+                <img style="width: 200px; height: 84px;" alt="" src="pics/con.png"><br>
+                <br>
+                <small>consoles are useful for displaying constant
+                text output and for debugging programs in graphics
+                mode.</small><br></td>
+              </tr>
+            </tbody>
+          </table><span style="color: rgb(0, 0, 153);"><br></span>
+          <span style="color: rgb(153, 0, 0);">requires:</span>
+          <span style="color: rgb(0, 0, 153);">txtscroll.bas<br>
+          <br></span> <span style="color: rgb(153, 0, 0);">constructor</span>:&nbsp;
+          con_make ( <span style="color: rgb(0, 102, 0);">aux$,
+          bsize, x,y, ww, wh</span> )<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">aux$</span> =
+            auxiliary<br>
+
+            <div style="margin-left: 40px;">
+              Normally empty ('")<br>
+              used to pass extra data to txtscroll (see
+              txtscroll.bas)<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">bsize</span> =
+            buffer size&nbsp;&nbsp;&nbsp; (lines of text)<br>
+            <span style="color: rgb(0, 102, 0);">x,y</span> =
+            position of widget (top left corner)<br>
+            <span style="color: rgb(0, 102, 0);">ww, wh</span> =
+            width, height of widget<br>
+            <span style="color: rgb(0, 0, 153);"><br>
+            return code :</span> the widget bundle. (this will be
+            the txtscroll widget bundle)<br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callbacks</span>:<br>
+
+          <div style="margin-left: 80px;">
+            con ( <span style="color: rgb(0, 102, 0);">cmd$, t$,
+            wg</span> )<br>
+            con_bulk ( <span style="color: rgb(0, 102, 0);">blist,
+            wg</span> )&nbsp; for bulk printing of many lines<br>
+
+            <div style="margin-left: 40px;"></div>
+          </div>where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+          </div>
+
+          <div style="margin-left: 80px;">
+            "<span style="color: rgb(102, 51, 0);">print</span>" :
+            adds and prints a new line <span style="color: rgb(0, 102, 0);">t$</span> to the end of the
+            console<br>
+
+            <div style="margin-left: 40px;">
+              The console will be scrolled if needed.<br>
+            </div><br>
+          </div>
+
+          <div style="margin-left: 120px;"></div>
+
+          <div style="margin-left: 80px;">
+            "<span style="color: rgb(102, 51, 0);">touch</span>"
+            :&nbsp; passes the touch cmd to txtscroll.<br>
+            "<span style="color: rgb(102, 51, 0);">tag</span>" :
+            appends t$ to the last line without adding a
+            newline.<br>
+            "<span style="color: rgb(102, 51, 0);">clear</span>" :
+            clears the console<br>
+            "<span style="color: rgb(102, 51, 0);">raw</span>" :
+            set raw mode to t$.<br>
+
+            <div style="margin-left: 40px;">
+              "0" =&nbsp; off<br>
+              "1" = on<br>
+              raw mode will tell txtscroll to ignore embedded
+              commands after a '|' symbol.<br>
+            </div>
+          </div><br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">t$</span> = text
+            to print<br>
+
+            <div style="margin-left: 40px;">
+              if <span style="color: rgb(0, 102, 0);">t$</span>
+              contains newlines ("\n"), then it will be split into
+              seperate lines.<br>
+              Empty ("") if unused.<br>
+            </div>
+          </div><br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">blist</span> =
+            list to print<br>
+
+            <div style="margin-left: 40px;">
+              Printing a list is much faster than printing
+              individual lines<br>
+            </div>
+          </div><br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">wg</span> = the
+            widget bundle<br>
+          </div><br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);">return code
+            :</span> none.<br>
+          </div><br>
+
+          <div style="margin-left: 40px;">
+            example<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              <small>include txtscroll.bas<br>
+              include console.bas<br>
+              include themes.bas<br>
+              include event.bas<br>
+              include init.bas&nbsp;&nbsp;&nbsp;</small><br>
+              <br>
+              wg_con=con_make ("", 10,
+              scr_w*0.25,scr_h*0.8,scr_w*0.7,scr_h*0.2)<br>
+              con ("print","hello world",wg_con)<br>
+            </div><br>
+          </div><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="gformfill" id="botmenu"></a><big>gformfill.bas<br>
+          <br></big></span>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">
+                  Can be used as a form filler or list picker, it
+                  gets input from the user.<br>
+                  It is the graphic equivalent of formfill.bas.<br>
+                  <br>
+                  Each row can have a title, label, menu, checkbox,
+                  radio, ..etc.<br>
+                  <br>
+                  Menu items will close the form and the row number
+                  returned.<br>
+                  <br>
+                  The values that are passed are <span style="text-decoration: underline;">always</span>
+                  updated. If a 'quit' option is needed, send a
+                  temporay value list to gformfill_make.<br>
+                  <br>
+                  <span style="text-decoration: underline;">New
+                  features (v3.0+)</span><br>
+
+                  <ul>
+                    <li>The 'new' gformfill can be windowed and
+                    positioned.</li>
+
+                    <li>Row limit lifted (unlimited rows).<br></li>
+
+                    <li>Slide transition effects from any of the 4
+                    sides.</li>
+
+                    <li>Themed with themes.bas</li>
+                  </ul><span style="text-decoration: underline;">Future
+                  Plans</span><br>
+                  gformfill is currently modal (closes when it
+                  quits). A planned upgrade of gformfill is to have
+                  it modeless (interact with event.bas). A 'stay'
+                  mode will be implemented (similar to keyinp).
+                  Because of that, the 3 lists you pass will be to
+                  the constructor gfromfill_make, even though we
+                  don't currently need to.<br>
+                  If you want to change the 3-list-set using the
+                  same gformfill, then you have to physically copy
+                  (list.add.list) any new set to the original
+                  lists. The alternative is to just create another
+                  gformfill.<br>
+                  <br>
+                </td>
+
+                <td style="vertical-align: top; width: 20%;">
+                <img style="width: 200px; height: 224px;" alt="" src="pics/gform_a.jpg"></td>
+              </tr>
+            </tbody>
+          </table><span style="color: rgb(0, 0, 153);"><big><br></big></span>
+          <span style="color: rgb(153, 0, 0);">constructor</span> :
+          gformfill_make ( <span style="color: rgb(0, 102, 0);">x,
+          y, ww, wh,&nbsp; itmtyp, itmlab, itmval</span>
+          )<span style="color: rgb(0, 102, 0);"><br></span>where:<span style="color: rgb(0, 102, 0);"><br></span>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">x, y</span> =
+            position (top left corner) of window<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">ww, wh</span> =
+            width and height of window<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">itmtyp, itmlab,
+            itmval</span> = 3 string <span style="color: rgb(153, 0, 0);">lists</span> containing each
+            row's <span style="color: rgb(0, 0, 153);">type</span>,
+            <span style="color: rgb(0, 0, 153);">label</span> and
+            <span style="color: rgb(0, 0, 153);">value</span><br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              Types of items<br>
+
+              <div style="margin-left: 40px;">
+                <span style="text-decoration: underline; color: rgb(0, 102, 0);">
+                itmtyp</span><span style="color: rgb(102, 51, 0);"><br>
+                "title"</span> :&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Displays text
+                with a title background.<br>
+
+                <div style="margin-left: 40px;">
+                  <span style="text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</span><br>
+                </div>
+
+                <div style="margin-left: 40px;">
+                  "C"&nbsp;&nbsp;&nbsp; - center the text in
+                  <span style="color: rgb(0, 102, 0);">itmlab</span><br>
+                  "R"&nbsp;&nbsp;&nbsp; - right justify the text in
+                  <span style="color: rgb(0, 102, 0);">itmlab</span><br>
+                  "|B"&nbsp;&nbsp; - a bar (' | ') B will border
+                  the title.&nbsp; e.g <span style="color: rgb(102, 51, 0);">"|B",</span> or
+                  <span style="color: rgb(102, 51, 0);">"C|B"</span> or
+                  <span style="color: rgb(102, 51, 0);">"R|B"<br>
+                  <br></span> default is 'left' justify with no
+                  border.<span style="color: rgb(102, 51, 0);"><br></span>
+                </div><br>
+                <span style="color: rgb(102, 51, 0);">"menu"</span>
+                :&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; A menu item will
+                close the form and return the row pressed.<br>
+
+                <div style="margin-left: 40px;">
+                  <span style="text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</span><br>
+                </div>
+
+                <div style="margin-left: 40px;">
+                  "C"&nbsp;&nbsp;&nbsp; - center the text in
+                  <span style="color: rgb(0, 102, 0);">itmlab</span><br>
+                  "R"&nbsp;&nbsp;&nbsp; - right justify the text in
+                  <span style="color: rgb(0, 102, 0);">itmlab</span>
+                </div><br>
+                <span style="color: rgb(102, 51, 0);">"checkbox"</span>:&nbsp;
+                Checkbox item.&nbsp;&nbsp; <img src="pics/gformfill_check.png" alt="" style="width: 30px; height: 29px;"><br>
+
+                <div style="margin-left: 40px;">
+                  <span style="text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</span><br>
+                </div>
+
+                <div style="margin-left: 40px;">
+                  "0"&nbsp;&nbsp;&nbsp; =&nbsp; checkbox ON<br>
+                  "1"&nbsp;&nbsp;&nbsp; =&nbsp; checkbox OFF
+                </div><br>
+                <span style="color: rgb(102, 51, 0);">"radio"</span>
+                :&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Radio item.
+                <img style="width: 30px; height: 28px;" alt="" src="pics/gformfill_radio.png"><br>
+
+                <div style="margin-left: 40px;">
+                  <span style="text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</span><br>
+                </div>
+
+                <div style="margin-left: 40px;">
+                  "0"&nbsp;&nbsp;&nbsp; =&nbsp; radio ON<br>
+                  "1"&nbsp;&nbsp;&nbsp; =&nbsp; radio OFF<br>
+                  There must be at least 2 radio items. When one
+                  radio item is selected, all the others are turned
+                  off.<br>
+                </div><br>
+                <span style="color: rgb(102, 51, 0);">"counter"</span>
+                :&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Counter
+                item&nbsp;&nbsp; (number spinner)&nbsp;&nbsp;
+                <img style="width: 153px; height: 30px;" alt="" src="pics/gformfill_counter.png"><br>
+
+                <div style="margin-left: 40px;">
+                  <span style="text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</span><br>
+                </div>
+
+                <div style="margin-left: 40px;">
+                  e.g "32"&nbsp;&nbsp;&nbsp; =&nbsp; the value of
+                  the counter is 32.&nbsp; <small>The minimum is 1
+                  and maximum is 99.</small><br>
+                  e.g "32|59"&nbsp;&nbsp;&nbsp; =&nbsp; the value
+                  of the counter is 32, <small>the minimum is 1 and
+                  <big>the maximum 59.</big></small><br>
+                  <br>
+                  The minimum is always 1. If not defined, the
+                  maximum is 99.<br>
+                  The maximum can be defined after a bar (' |
+                  ').<br>
+                  If the maximum is defined e.g "32|59" then the
+                  maximum&nbsp; "|59" is also <span style="text-decoration: underline;">returned</span><br>
+                  with the result e.g "45|59".<br>
+                  Tapping inside the inner borders of the counter
+                  will decrease and increase the value<br>
+                  by -10 and +10.<br>
+                  <br>
+                </div><br>
+                <span style="color: rgb(102, 51, 0);">"text_in"</span>:&nbsp;
+                Text Input.&nbsp;&nbsp; <img style="width: 295px; height: 30px;" alt="" src="pics/gformfill_tin.png"><br>
+
+                <div style="margin-left: 40px;">
+                  <span style="text-decoration: underline; color: rgb(0, 102, 0);">
+                  itmval</span><br>
+                </div>
+
+                <div style="margin-left: 40px;">
+                  "a line of text"<br>
+                  Tapping on the text calls the standard basic!
+                  text input dialog.<br>
+                </div><br>
+                <span style="color: rgb(102, 51, 0);">&lt;other&gt;</span>
+                :&nbsp; Label<br>
+
+                <div style="margin-left: 40px;">
+                  Any type not recognised is considered a
+                  label.<br>
+                  A label is just text and cannot be justified like
+                  a title.<br>
+                  <br>
+                  <span style="text-decoration: underline;">subtext</span><br>
+                  All <span style="color: rgb(0, 102, 0);">itmlab</span>'s can have
+                  subtext (a line of smaller text below) by
+                  appending a bar (' | ').<br>
+                  e.g <span style="color: rgb(102, 51, 0);">list.add <span style="color: rgb(0, 102, 0);">itmlab</span>, "Pick
+                  Option", "Red", "Blue", "Green<span style="color: black;">|</span>(this is apple
+                  green)"<br>
+                  <br></span> <span style="text-decoration: underline;">no
+                  separator</span><br>
+                  All <span style="color: rgb(0, 102, 0);">itmlab</span>'s can
+                  prepend a tilde (' ~ ') to suppress the next
+                  separator line.<br>
+                  <small style="color: rgb(102, 51, 0);"><span style="font-family: monospace;">e.g list.add itmlab,
+                  "Pick Option", "Red", "Blue", "<span style="color: black;">~</span>Special Sale",
+                  "Green"</span><br style="font-family: monospace;">
+                  <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
+                  list.add itmtyp,
+                  "title",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  "menu, "menu", "label",&nbsp; &nbsp; &nbsp;
+                  &nbsp;&nbsp; "menu"</span><br style="font-family: monospace;"></small>
+                </div><br>
+              </div><br>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);">return code
+            :</span> the widget bundle.<br>
+          </div><br>
+          <br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          gformfill <span style="color: rgb(0, 102, 0);">(cmd$,
+          data$, wg)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              <span style="color: rgb(102, 51, 0);">"input"</span>
+              : activate the widget and get input. - A selected
+              menu item will close the form.
+
+              <div style="margin-left: 40px;">
+                <span style="color: rgb(0, 102, 0); text-decoration: underline;">
+                <br>
+                data$</span> contains a transition effect. if empty
+                or unrecognised, default will be center.<br>
+                <br>
+                <span style="color: rgb(102, 51, 0);">"left"</span>
+                = slide in from the left<br>
+                <span style="color: rgb(102, 51, 0);">"right"</span> = slide in
+                from the right<br>
+                <span style="color: rgb(102, 51, 0);">"top"</span>
+                = slide in from the top<br>
+                <span style="color: rgb(102, 51, 0);">"bottom"</span> = slide
+                in from the bottom<br>
+              </div>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">data$</span>&nbsp;
+            :&nbsp; (see cmd$)<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">wg</span> = the
+            widget bundle<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            : the item number selected (1..maxitem) or 0 for
+            quit/bakkey.<br>
+          </div><br>
+          Unlike it's html equivalent (FormFill), there is no type
+          called 'submit'. Instead use type <span style="color: rgb(102, 51, 0);">"menu"</span> which will exit
+          the form, <span style="text-decoration: underline;">always</span> with
+          <span style="color: rgb(0, 102, 0);">itmval</span>
+          updated, so If you wish to implement a 'Cancel'
+          operation, then pass a temporary <span style="color: rgb(0, 102, 0);">itmval</span> list to
+          gformfill_make instead of the real one.<br>
+          <br>
+          Usage summary:<br>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top; width: 10%;">
+                <br></td>
+
+                <td style="vertical-align: top; width: 20%;">
+                checkbox, radio</td>
+
+                <td style="vertical-align: top;">itmlab : label
+                text<br>
+                itmval : "1"=ON , "0"=OFF<br></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: top;"><br></td>
+
+                <td style="vertical-align: top;">text_in</td>
+
+                <td style="vertical-align: top;">itmlab : label
+                text<br>
+                itmval :&nbsp; input text<br></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: top;"><br></td>
+
+                <td style="vertical-align: top;">menu, title</td>
+
+                <td style="vertical-align: top;">
+                  itmlab&nbsp; : label text<br>
+                  itmval = justify : "C"enter&nbsp; or
+                  "R"ight&nbsp; (default is left justify)<br>
+
+                  <div style="margin-left: 120px;">
+                    append"|B" for title border<br>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: top;"><br></td>
+
+                <td style="vertical-align: top;">counter<br></td>
+
+                <td style="vertical-align: top;">itmval : initial
+                and returned value<br>
+                <br>
+                <small>append "|55" will limit the maximum value to
+                55 otherwise the default max value will be 99.<br>
+                The minimum value is always 1.</small><br></td>
+              </tr>
+
+              <tr>
+                <td style="vertical-align: top;"><br></td>
+
+                <td style="vertical-align: top;">&lt;all
+                labels&gt;<br></td>
+
+                <td style="vertical-align: top;">itmlab :
+                "main|<small>sub text</small> "<small><br>
+                <br>
+                append "|some subtext" will append additional text
+                using a smaller font beneath the main text.<br>
+                <br></small> itmlab : "~Some text, then no
+                separator line after"<br>
+                <small><br>
+                prepend a tilde "~" before the text will suppress
+                the next separator line.<br></small></td>
+              </tr>
+            </tbody>
+          </table><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="gnumpad" id="botmenu"></a><big>gnumpad.bas<br>
+          <br></big></span>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">A slide up numeric
+                pad for number input.<br>
+                <br>
+                The widget slides up from the bottom.<br>
+                The number/result must be passed by reference, so
+                must be already declared.<br>
+                Some buttons can be disabled.<br>
+                Optional command to re-direct the output to a
+                basic! text object.<br>
+                <br></td>
+
+                <td style="vertical-align: bottom; width: 20%;">
+                <img src="pics/gnumpad_b.png" alt="" style="width: 200px; height: 170px;"><br></td>
+              </tr>
+            </tbody>
+          </table><span style="color: rgb(0, 0, 153);"><big><br></big></span>
+          <span style="color: rgb(153, 0, 0);">constructor</span> :
+          gnumpad_make <span style="color: rgb(0, 102, 0);">()</span>
+
+          <div style="margin-left: 40px;">
+            <br>
+
+            <div style="margin-left: 40px;">
+              Only call this once.<br>
+              There is only one gnumpad. It's bundle will be saved
+              in global bundle "1".<br>
+            </div>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          gnumpad <span style="color: rgb(0, 102, 0);">(cmd$,
+          &amp;num)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">input</span>"
+              = opens widget, gets input<br>
+
+              <div style="margin-left: 40px;">
+                <span style="color: rgb(0, 102, 0);">num</span> =
+                value typed by user<br>
+                <br>
+                <span style="color: rgb(0, 102, 0);">num</span>
+                must be called by reference <small>e.g gnumpad
+                ("input",&amp;num)</small> to get the result.<br>
+                <small>This means <span style="color: rgb(0, 102, 0);">num</span> must be
+                previsouly declared or an error message will occur
+                during the call.</small><br>
+                <br>
+                <span style="color: rgb(0, 102, 0);">num</span>
+                <span style="text-decoration: underline;">is always
+                changed</span> even if the user quit. Use return
+                code to determine if quit.<br>
+              </div><br>
+              "<span style="color: rgb(102, 51, 0);">decimal</span>" = setting
+              for decimal point button.<br>
+
+              <div style="margin-left: 40px;">
+                <span style="color: rgb(0, 102, 0); text-decoration: underline;">
+                num<br></span> 0 = disable<br>
+                1 = enable<br>
+              </div><br>
+              "<span style="color: rgb(102, 51, 0);">negator</span>" = setting
+              for negator button.
+
+              <div style="margin-left: 40px;">
+                <span style="color: rgb(0, 102, 0); text-decoration: underline;">
+                num<br></span>0 = disable<br>
+                1 = enable<br>
+              </div><br>
+              "<span style="color: rgb(102, 51, 0);">maxwidth</span>" = set
+              maximum characters for input to <span style="color: rgb(0, 102, 0);">num.</span>
+
+              <div style="margin-left: 40px;">
+                <span style="color: rgb(0, 102, 0);">num</span> =
+                number of characters allowed including decimal
+                point but not (' - ').<br>
+                <br>
+                The default is the number of chars that will fit
+                into the default output box.<br>
+              </div><br>
+              "<span style="color: rgb(102, 51, 0);">txtobj</span>"
+              = override the output text with your own basic! text
+              object.
+
+              <div style="margin-left: 40px;">
+                <span style="color: rgb(0, 102, 0);">num</span> =
+                text object id&nbsp;&nbsp; <small>(native basic!
+                text object)<br></small><br>
+                Note that you must supply your own basic! graphic
+                text object id from gr.text.draw<br>
+                (not a hew bundle id)<br>
+                <br>
+                The typed output will then appear on the replaced
+                text object. Only the text is changed,<br>
+                You must previously have formatted the object
+                yourself e.g align, size..etc.<br>
+                <br>
+                If <span style="color: rgb(0, 102, 0);">num</span>
+                is 0 then the widget will go back to using it's own
+                text output, which is the default.<br>
+              </div><br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">num</span> =
+            numeric parameter (see cmd$)<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            :<br>
+
+            <div style="margin-left: 40px;">
+              0 = OK was pressed (num is updated if returning a
+              number)<br>
+              <br>
+              1 = quit or BackKey pressed.&nbsp; Any touch above
+              the widget will quit.<br>
+
+              <div style="margin-left: 40px;">
+                (num is not updated)<br>
+              </div>
+            </div><br>
+            example<br>
+
+            <div style="margin-left: 40px;">
+              gnumpad_make()<br>
+              rc = gnumpad (<span style="color: rgb(102, 51, 0);">"input"</span> ,
+              <span style="color: rgb(51, 0, 153);">"&amp;num"</span>)<br>
+              <br>
+              if rc=0 then print "num=";num else print
+              "cancelled"<br>
+            </div><br>
+          </div><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="gselect" id="botmenu"></a><big>gselect.bas<br>
+          <br></big></span>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">gselect is a quick
+                select list for short lists with transition
+                effects.<br>
+                <br>
+                You can slide it in from any of the four screen
+                edges. The default transition is centre with no
+                transition effect.<br>
+                <br>
+                There is no 'make'. gselect is modal. The selection
+                row number is returned.<br>
+                <br>
+                Do not give long lists because it uses a single
+                bitmap too store all the rows.<br>
+                If the bitmap is too tall, the result is
+                unpredicable.<br>
+                <br>
+                The colors can be changed either from themes.bas or
+                themes.ini.<br>
+                <br>
+                gselect automatically takes care of the list height
+                and positioning. If you need more control, use the
+                new gformfill instead.<br></td>
+
+                <td style="vertical-align: top; width: 20%;">
+                <img style="width: 200px; height: 278px;" alt="" src="pics/gselect.png"><br></td>
+              </tr>
+            </tbody>
+          </table><span style="color: rgb(0, 0, 153);"><big><br></big></span>
+          <span style="color: rgb(153, 0, 0);">constructor</span> :
+          (none)<span style="color: rgb(0, 102, 0);"><br></span>
+
+          <div style="margin-left: 40px;">
+            <br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          gselect ( <span style="color: rgb(0, 102, 0);">effect$,
+          label$</span> )<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">effect$</span> =
+            transition type<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">left</span>" =
+              slide in from the left<br>
+              "<span style="color: rgb(102, 51, 0);">right</span>"
+              = slide in from the right<br>
+              "<span style="color: rgb(102, 51, 0);">top</span>" =
+              slide in from the top<br>
+              "<span style="color: rgb(102, 51, 0);">bottom</span>"
+              = slide in from the bottom<br>
+              if <span style="color: rgb(0, 102, 0);">effect$</span> is anything
+              else, the default is 'no transistion' and centerd in
+              the middle of the screen.<br>
+              <br>
+              An embedded command can be entered after a bar (' |
+              ').<br>
+              e.g "<span style="color: rgb(102, 51, 0);">left</span>|<span style="color: rgb(102, 0, 0);">R</span>"<br>
+              "<span style="color: rgb(102, 0, 0);">R</span>" =
+              justify label to the right<br>
+              "<span style="color: rgb(102, 0, 0);">L</span>" =
+              justify label to the left<br>
+              The default is justify centre.<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">label$</span> = A
+            string of&nbsp; labels<br>
+
+            <div style="margin-left: 40px;">
+              Labels for each row is separated with bars (' |
+              ').<br>
+              The first label is always the Title and will not be
+              selected if touched. The next label will be selected
+              as item number one.<br>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            : the item number selected (1..n) or 0 for
+            quit/bakkey.<br>
+            <br>
+            e.g<br>
+
+            <div style="margin-left: 40px;">
+              rc = gselect (<span style="color: rgb(102, 51, 0);">"left"</span> ,
+              <span style="color: rgb(51, 0, 153);">"Pick A
+              Color|Red|Green|Blue|Yellow"</span>)<br>
+              <br>
+              <small>Tip: you can match the return code with the
+              picked label like this;</small><br>
+
+              <div style="margin-left: 40px;">
+                <small>rc = gselect ("<span style="color: rgb(102, 51, 0);">left</span>"</small>
+                <small>, <span style="color: rgb(0, 102, 0);">label$</span>)<br>
+                if rc then picked$ = word$(<span style="color: rgb(0, 102, 0);">label$</span>,rc+1,"\\|")<br>
+                </small>
+              </div>
+            </div><br>
+          </div><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="keyinp" id="keyinp"></a><big>keyinp.bas<br>
+          <br></big></span>
+
+          <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top; width: 80%;">
+                  This is a push-out keyboard input for a line of
+                  text.<br>
+                  The input field is always at the top of the
+                  screen.<br>
+                  <br>
+                  <small>Warning: key code translation does not
+                  work for all types of keyboards, but you should
+                  see some results with the standard Android
+                  keyboard. Your mileage may vary.<br></small><br>
+                  There are two modes of operation. "once" or
+                  "stay".<br>
+                  <br>
+
+                  <div style="margin-left: 40px;">
+                    <span style="color: rgb(102, 51, 0);">once</span> : will
+                    show the keyboard for input and hide it
+                    after.<br>
+                    <br>
+                    <span style="color: rgb(102, 51, 0);">stay</span> :&nbsp;
+                    will leave the keyboard on the screen after
+                    input, although it will not be responsive until
+                    another "input" call.<br>
+                  </div>
+                </td>
+
+                <td style="vertical-align: top; width: 20%;">
+                <img style="width: 200px; height: 300px;" alt="" src="pics/keyinp.png"></td>
+              </tr>
+            </tbody>
+          </table><br>
+          <span style="color: rgb(153, 0, 0);">constructor</span>
+          :&nbsp; keyinp_make ()<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            entry nothing. There is only one keyboard widget and it
+            will be saved in global bundle "1'.<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            :&nbsp; nothing<br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          keyinp ( <span style="color: rgb(0, 102, 0);">cmd$,
+          dat$</span> )<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">input</span>"
+              : get a line of text from user into <span style="color: rgb(0, 102, 0);">dat$</span><br>
+              <br>
+
+              <div style="margin-left: 80px;">
+                Input will be appended to any text already in
+                dat$.<br>
+              </div><br>
+
+              <div style="margin-left: 80px;">
+                <small>The keyboard will be brought up if in 'once'
+                mode, and brought down after input.</small><br>
+                <small>The keybaord will be left on if in 'stay'
+                mode.<br>
+                <br>
+                If BackKey was pressed in mode 'once' the return
+                code will be 1<br></small> <small>If BackKey was
+                pressed in mode 'stay' the return code will be
+                2.</small><br>
+                <small><br>
+                If 2 is returned, the mode will automatically be
+                put into mode 'once', this is because<br>
+                most keyboards hide the keyboard if the backkey is
+                pressed.<br></small>
+              </div><br>
+              "<span style="color: rgb(102, 51, 0);">put</span>" :
+              overwrite current text with <span style="color: rgb(0, 102, 0);">dat$</span><br>
+              <small><br></small> "<span style="color: rgb(102, 51, 0);">label</span>" : change the
+              label to <span style="color: rgb(0, 102, 0);">dat$.</span><br>
+
+              <div style="margin-left: 80px;">
+                The only embedded command is "|I" (bar I) which
+                will italic the text.<br>
+              </div><br>
+              "<span style="color: rgb(102, 51, 0);">setmode</span>" : set the
+              operating mode to <span style="color: rgb(0, 102, 0);">dat$</span>.&nbsp; The mode
+              can either be "once' or "stay".<br>
+              <br>
+
+              <div style="margin-left: 80px;">
+                "<span style="color: rgb(102, 51, 0);">once</span>"
+                :&nbsp; Put in Once-mode and hide it if previously
+                shown.<br>
+                "<span style="color: rgb(102, 51, 0);">stay</span>"&nbsp;
+                :&nbsp; Put in Stay-mode and show it if previously
+                hidden.<br>
+              </div><br>
+              <br>
+              "<span style="color: rgb(102, 51, 0);">getmode</span>" : get the
+              current mode and return the numeric value<br>
+
+              <div style="margin-left: 80px;">
+                returns 1 = once,&nbsp; 2 = stay<br>
+              </div><br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">dat$</span> = data
+            for commands<br>
+
+            <div style="margin-left: 40px;">
+              (see commands)<br>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            :<br>
+
+            <div style="margin-left: 40px;">
+              for command "<span style="color: rgb(102, 51, 0);">input</span>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              : 0 = okay,&nbsp;&nbsp; else the backkey code (see
+              <span style="color: rgb(102, 51, 0);">input</span>
+              command).<br>
+              for command "<span style="color: rgb(102, 51, 0);">getmode</span>" : the mode.
+              (see <span style="color: rgb(102, 51, 0);">getmode</span> command)<br>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><br>
+          <a style="text-decoration: line-through;" name="link" id="link"></a><big><span style="text-decoration: line-through;">link.bas</span><br></big></span>
+
+          <div style="margin-left: 40px;">
+            The link widget has been deprecated in favour of using
+            a borderless button instead.<br>
+          </div><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="msg_ok" id="msg_ok"></a><big>msg_ok.bas<br></big></span>
+
+          <div style="margin-left: 40px;">
+            Displays a message in a box with an OK button.<br>
+            <br>
+            <small>This is a modal dialog and manipulates the
+            global bundle 'widgets' list variable before using
+            event.bas.</small><br>
+          </div><span style="color: rgb(153, 0, 0);"><br></span>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(153, 0, 0);"><img style="width: 149px; height: 91px;" alt="" src="demos/dialog_demo/pics/small_ok.png"></span><br>
+          </div><span style="color: rgb(153, 0, 0);">requires:</span> <span style="color: rgb(0, 0, 153);">button.bas</span><br>
+          <span style="color: rgb(153, 0, 0);"><br>
+          constructor</span> :&nbsp; msg_ok_make <span style="color: rgb(0, 102, 0);">(style)<br></span> where
+          :<span style="color: rgb(0, 102, 0);"><br></span>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">style</span> = the
+            button style (inside) <small>(according to
+            button.bas)</small><br>
+          </div><span style="font-style: italic;"><br>
+          (since there is only one ask_yn widget, this widget will
+          save itself into the global bundle '1' for the
+          callback)</span><small><span style="font-style: italic;"><br>
+          <br></span></small> <span style="color: rgb(153, 0, 0);">callback</span> : msg_ok
+          <span style="color: rgb(0, 102, 0);">(t$)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">t$</span> = the
+            message<br>
+
+            <div style="margin-left: 40px;">
+              lines can be separated with the character
+              '|'.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e.g "line
+              1|line2"<br>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            : none<br>
+          </div><br>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><big><a name="progress" id="progress"></a>progress.bas<br></big></span>
+
+          <div style="margin-left: 40px;">
+            <div style="text-align: right;">
+              <img style="width: 147px; height: 25px;" alt="" src="pics/progress.png"><br>
+            </div>(modeless) The Progress bar widget displays a bar
+            as an indicator 0..100%.<br>
+          </div><span style="color: rgb(153, 0, 0);"><br>
+          constructor</span> :&nbsp; progress_make <span style="color: rgb(0, 102, 0);">()</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><br>
+            return code</span> :&nbsp; the widget bundle.<br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          progress (<span style="color: rgb(0, 102, 0);">cmd$, num,
+          wg</span>)<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">show</span>" :
+              show the widget.<br>
+              "<span style="color: rgb(102, 51, 0);">hide</span>"&nbsp; :&nbsp;
+              hide the widget.<br>
+              <br>
+              "<span style="color: rgb(102, 51, 0);">inc</span>"
+              :&nbsp; increase the bar by a dot step<br>
+
+              <div style="margin-left: 40px;">
+                <small>the total number dots depends on the device,
+                the widget bundle variable <span style="color: rgb(0, 102, 0);">maxdot$</span> will have
+                the longest string of dots.<br>
+                Only use this if you don't know the current
+                percentage of progress.<br></small>
+              </div><br>
+              "<span style="color: rgb(102, 51, 0);">set</span>" :
+              set the progress percentage <span style="color: rgb(0, 102, 0);">num</span> of the full
+              bar.<br>
+
+              <div style="margin-left: 40px;">
+                where fraction <span style="color: rgb(0, 102, 0);">num</span> = 0..1
+                indicating zero to 100%<br>
+                <small>normally you should use this to set the
+                progress value rather than the 'inc'
+                method.</small><br>
+              </div>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">num</span> =
+            percentage change for cmd$=set.&nbsp;&nbsp; else
+            ignored.<small><br></small> <small><br></small>
+            <span style="color: rgb(0, 102, 0);">wg</span> = the
+            widget bundle<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            : none
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="text" id="text"></a><big>text.bas<br></big></span>
+
+          <div style="margin-left: 40px;">
+            A text widget displays a line of text.<br>
+            <br>
+            The font size will follow gr.text.size.<br>
+          </div><span style="color: rgb(153, 0, 0);"><br>
+          constructor</span> :&nbsp; text_make <span style="color: rgb(0, 102, 0);">(aux$, t$, x, y)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">aux$</span> =
+            formatting<br>
+            <br>
+
+            <div style="margin-left: 40px;">
+              aux$ should be normally an empty string but can
+              contain these embedded commands;<br>
+            </div><br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">C</span>" =
+              align center<br>
+              "<span style="color: rgb(102, 51, 0);">R</span>" =
+              align right<br>
+            </div><span style="color: rgb(0, 102, 0);"><br>
+            t$</span> = text displayed<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">x,y</span> =
+            position of widget (top left corner)<br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            :&nbsp; the widget bundle.<br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          <span style="color: rgb(0, 102, 0);">text_do (cmd$, t$,
+          wg)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">flash</span>"
+              : flash the text momentarily<br>
+              "<span style="color: rgb(102, 51, 0);">text</span>"&nbsp; :&nbsp;
+              change the text inside the button<br>
+              "<span style="color: rgb(102, 51, 0);">hide</span>"
+              :&nbsp; hide the object<br>
+              "<span style="color: rgb(102, 51, 0);">show</span>" :
+              show the object<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">t$</span> = text
+            to be changed <small>(provide an empty string if
+            unused)<br></small>
+
+            <div style="margin-left: 40px;">
+              For cmd$="flash" If t$ is non-empty e.g "3", the
+              flash will flash that many times, otherwise it will
+              flash once.<br>
+            </div><small><br></small> <span style="color: rgb(0, 102, 0);">wg</span> = the widget
+            bundle<br>
+            return code : none<br>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><big><a name="textin" id="textin"></a>textin.bas<br></big></span>
+
+          <div style="margin-left: 40px;">
+            A text input box.<br>
+            <br>
+            You can have any size box and update the text with
+            strings containing newlines ("\n").<br>
+            <small>The font size will follow
+            gr.text.size.</small><br>
+          </div><span style="color: rgb(153, 0, 0);"><br>
+          constructor</span> :&nbsp; textin_make ( <span style="color: rgb(0, 102, 0);">ask$, x, y, ww, wh</span> )<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">ask$</span> =
+            label prompt on top of the box<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">x,y</span> =
+            position of widget (top left corner)<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">ww,wh</span> =
+            window width and height<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            :&nbsp; the widget bundle.<br>
+          </div><br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          textin ( <span style="color: rgb(0, 102, 0);">cmd$,
+          data$, wg</span> )<br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">cmd$</span> =
+            command<br>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">input</span>"
+              : calls the BASIC! input dialog to get the text<br>
+              "<span style="color: rgb(102, 51, 0);">get</span>"&nbsp; :&nbsp;
+              get the current text into data$<br>
+              "<span style="color: rgb(102, 51, 0);">put</span>"
+              :&nbsp; overwrite the current text from data$<br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">data$</span> =
+            text 'get or 'put' <small>(provide an empty string if
+            unused)<br></small>
+
+            <div style="margin-left: 40px;">
+              <br>
+            </div><small><br></small> <span style="color: rgb(0, 102, 0);">wg</span> = the widget
+            bundle<br>
+            <br>
+            return code : none
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="vertical-align: top;">
+          <span style="color: rgb(0, 0, 153);"><a name="txtscroll" id="txtscroll"></a><big>txtscroll.bas<br></big></span>
+
+          <div style="margin-left: 40px;">
+            Vertically scrollable text pane.<br>
+          </div><span style="color: rgb(153, 0, 0);"><br></span>
+
+          <div style="text-align: right;">
+            <small>examples</small><span style="color: rgb(153, 0, 0);"><img style="width: 309px; height: 200px;" alt="" src="demos/txtscroll_demo/pics/tsdemo_b.png"></span><br>
+          </div><span style="color: rgb(153, 0, 0);">constructor</span> :&nbsp;
+          txtscroll_make <span style="color: rgb(0, 102, 0);">(
+          aux$, tlist,&nbsp; x,y ,w,h )</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 102, 0);">aux$</span> =
+            extra data<br>
+
+            <div style="margin-left: 40px;">
+              <small>Normally this should an emtpy string but can
+              contain the following;<br>
+              <br></small>
+            </div>
+
+            <div style="margin-left: 40px;">
+              "<span style="color: rgb(102, 51, 0);">N</span>" : No
+              Border&nbsp; <small>remove the border surrounding the
+              widget</small><br>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">tlist</span> =
+            list containing lines of text <small>(there is no limit
+            to the number of lines)<br></small>
+
+            <div style="margin-left: 40px;">
+              <small>If RAW mode is OFF then embedded commands
+              after a bar character '|' can format the
+              text.</small><br>
+              <small>Embedded commands are;</small><br>
+
+              <div style="margin-left: 40px;">
+                <small>"<span style="color: rgb(102, 51, 0);">C</span>" : center text
+                and color it</small><br>
+                <small>"<span style="color: rgb(102, 51, 0);">R</span>" : right justify
+                text</small> <small>and color it</small><br>
+                <small>"<span style="color: rgb(102, 51, 0);">I</span>"&nbsp; :
+                Italize</small> <small>text and color
+                it</small><br>
+              </div>
+            </div><br>
+            <span style="color: rgb(0, 102, 0);">x,y</span> =
+            position of text pane (top left corner)&nbsp; -&nbsp;
+            (not including the border )<br>
+            <br>
+            <span style="color: rgb(0, 102, 0);">w,h</span> = width
+            and height of the text pane -&nbsp; (not including the
+            border )<br>
+
+            <div style="margin-left: 40px;">
+              <small>The width and height might be adjusted to fit
+              inside the screen. The height in particular will be
+              adjusted to a multiple number of text height). If set
+              to full screen, then the borders might not be
+              visible.</small><br>
+            </div><br>
+            <span style="text-decoration: underline;">notes</span><br>
+
+            <div style="margin-left: 40px;">
+              <small>The text size depends on gr.text.size. (which
+              may be modified to correct rounding errors)<br>
+              Scrolling will be snapped to text height.<br></small>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            :&nbsp; the widget bundle.<br>
+          </div><br>
+          <br>
+          <span style="color: rgb(153, 0, 0);">callback</span> :
+          <span style="color: rgb(0, 102, 0);">txtscroll (cmd$, n,
+          wg)</span><br>
+          where :<br>
+
+          <div style="margin-left: 40px;">
+            cmd$ = command<br>
+
+            <div style="margin-left: 40px;">
+              "touch" : enter touch mode.&nbsp;&nbsp;&nbsp; finger
+              will scroll the text until finger is lifted.<br>
+
+              <div style="margin-left: 40px;">
+                <small>A slow slide will slide the text by
+                pixel.<br>
+                A quick fling will scroll a large number of lines
+                depending on the touch velocity.<br>
+                A slide may also trigger a fling depending on the
+                velocity.</small><br>
+              </div><br>
+              "scroll" : remote scroll mode.&nbsp; will scroll the
+              text by <span style="color: rgb(0, 102, 0);">n</span>
+              lines.<br>
+
+              <div style="margin-left: 40px;">
+                n &lt; 0 <small>the text will scroll up (the window
+                moves down towards bottom of list)</small><br>
+                n &gt; 0 <small>the text will scroll down (the
+                window will move up towards top of
+                list)</small><br>
+              </div><br>
+              "goto" : goto line <span style="color: rgb(0, 102, 0);">n</span><br>
+              <br>
+              "hide" : hide the widget and take it off the detect
+              list.<br>
+              <br>
+              "show" : show the widget and insert it at the head of
+              the detect list.<br>
+              <br>
+              "raw"&nbsp; : set raw mode. raw mode ignores embedded
+              commands after a bar '|' character.<br>
+
+              <div style="margin-left: 40px;">
+                0 = <small>raw off (default)</small><br>
+                1 = <small>raw on</small><br>
+              </div><br>
+            </div><small><br></small> wg = the widget bundle<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">return code</span>
+            : the number of lines scrolled.<br>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table><br style="font-family: Helvetica,Arial,sans-serif;">
+  <br>
+  <br>
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<br>
+  <a href="../../donate.html">Donate via BitCoin</a>.<br style="font-family: Helvetica,Arial,sans-serif;">
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <br>
+  <script type="text/javascript" src="http://humpty.drivehq.com/main_index.js">
+</script>
+</body></html>

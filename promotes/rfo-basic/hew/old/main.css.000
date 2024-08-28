@@ -1,0 +1,22 @@
+body {
+  padding-left: 30px;
+  padding-right: 10px;
+  width: 800px;
+  font-family: Arial,Helvetica,sans-serif;
+}
+p {
+  width: 400px;
+}
+/*********************
+.bordered_cell {
+  border: 1px solid black;
+  border-collapse: separate;
+  border-spacing: 10px;
+  width: 100%;
+  text-align: left;
+}
+**********************/
+td {
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}

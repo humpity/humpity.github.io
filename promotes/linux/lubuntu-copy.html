@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Copy your system</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
+"#000099" link="#000099" vlink="#990099">
+<a href="http://humpty.drivehq.com/">humpty</a> &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/linux.html">promotes
+Linux</a>&nbsp; &gt; <a href=
+"http://humpty.drivehq.com/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
+</span>
+<table style="text-align: left; width: 100%;" border="0"
+cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%; white-space: nowrap;">
+<big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips</small></big></big></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">How to Clone your system
+to a backup drive</span></big></big><br style=
+"font-family: Helvetica,Arial,sans-serif;">
+<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+border="0" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><span style=
+"font-weight: bold;">Clone your root partition to a backup
+stick.<br>
+Make it bootable.<br>
+Use it as a backup image.<br>
+Use it as a recovery stick.<br>
+or Use it as an alternative system version</span> (e.g for a
+different family member)<span style=
+"font-weight: bold;">.<br></span> <small><br style=
+"font-weight: bold;"></small> Linux is basically a file system that
+starts from 'root' i.e '/'.<br>
+You can backup your whole root partition by copying all the files
+to another drive and making it bootable.<br>
+But you have to avoid problems like special attributes, permissions
+and folders you don't need.<br>
+The basic command is 'rsync', which copies files that are different
+and deletes those that no longer exist.<br>
+<br>
+First you need to install a simple boot loader "extlinux" using
+your regular package manager (e.g synaptic).<br>
+An example extlinux config file is found at the end of this
+article. Put extlinux.conf in the directory
+/boot/extlinux/extlinux.conf.<br>
+<br>
+Below are two scripts, one to do the copying, and the other to make
+the backup drive bootable.<br>
+<br>
+You do need one more file, the <span style=
+"color: rgb(0, 102, 0);">excludes.txt,</span> containing a list of
+temporary directories that <span style=
+"color: rgb(102, 0, 0);">copy-root</span> ignores.<br>
+<br>
+<span style="color: rgb(0, 102, 0);">excludes.txt<br></span>
+<div style="margin-left: 40px;"><small><span style=
+"color: rgb(0, 0, 153);">/mnt/*<br>
+/media/*<br>
+/dev/*<br>
+/proc/*<br>
+/sys/*<br>
+/run/*<br>
+/tmp/*<br>
+/etc/fstab<br>
+/lost+found<br>
+/home/*/.gvfs<br>
+/boot/extlinux/*<br>
+/home/*/Downloads/*<br>
+/home/*/Videos/*<br>
+/home/*/Pictures/*</span></small><br></div>
+<div style="margin-left: 40px;"><br>
+Whether you want the last three lines to be ignored is up to you.
+Generally I don't need to backup unneccesary large files.<br></div>
+<span style="color: rgb(102, 0, 0);"><br>
+./copy-root</span><br>
+<div style="margin-left: 40px;"><small><span style=
+"color: rgb(0, 0, 153);">#!/bin/bash<br>
+# Makes a copy of the root partition files excluding all temporary
+directories<br>
+# copy-root &lt;to_partition&gt; e.g copy-root sda1<br>
+<br>
+if [ "$1" == "" ]; then<br>
+&nbsp;echo please specify device e.g sdb1; exit;<br>
+fi<br>
+if [ `whoami` != root ]; then<br>
+&nbsp;&nbsp;&nbsp; echo Please run as root or sudo; exit<br>
+fi<br>
+mkdir /mnt/$1<br>
+umount /dev/$1<br>
+mount /dev/$1 /mnt/$1<br>
+sync<br>
+<br>
+START=$(date +%s)<br>
+rsync -vaAxX /* /mnt/$1/ --delete&nbsp;
+--exclude-from=excludes.txt<br>
+FINISH=$(date +%s)<br>
+sync<br>
+echo "took $(( ($FINISH-$START) / 60 )) min:$(( ($FINISH-$START) %
+60 )) sec."</span><span style=
+"color: rgb(0, 0, 153);"><br></span></small></div>
+<br>
+<div style="margin-left: 40px;">Make sure you know the target
+device name eg. sdc1. You can find out by typing '<span style=
+"color: rgb(0, 0, 153);">mount</span>'.<br>
+<br>
+Depending on how fast your drive is, the <span style=
+"text-decoration: underline;">first copy</span> should take between
+<span style="text-decoration: underline;">5 to 30 mins</span>.<br>
+<br>
+The first time you use it will be longer. <span style=
+"text-decoration: underline;">subsequent times will be much
+quicker</span> because rsync won't need to copy files already
+there. This can be a<span style="text-decoration: underline;">s
+fast as 30 secs</span>.<br>
+<br></div>
+<br>
+Use the <span style="color: rgb(102, 0, 0);">prime-boot</span>
+script if you intend to boot the backup drive&nbsp; (which you will
+do if you want a complete restore) and only if you have installed
+<a href="lubuntu-extlinux.html">extlinux</a> (usually already
+installed in Lubuntu).<br>
+<span style="color: rgb(102, 0, 0);"><br></span> <span style=
+"color: rgb(102, 0, 0);"><a name="prime-boot" id=
+"prime-boot"></a>./prime-boot</span><br>
+<div style="margin-left: 40px;"><small><span style=
+"color: rgb(0, 0, 153);">#<span style=
+"color: rgb(102, 102, 102);">!/bin/bash</span><br style=
+"color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># prime-boot
+&lt;to_partition&gt; e.g prime-boot sda1</span><br style=
+"color: rgb(102, 102, 102);">
+<br style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># Readies a partition for
+booting</span><br style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># 1. priming
+attributes</span><br style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># 2. copying over a valid
+mbr (optional)</span><br style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># 3. copying /etc/fstab
+and opening to edit</span><br style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># 4. copying
+/boot/extlinux and opening to edit extlinux.conf</span><br style=
+"color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># 5. displaying the disk
+uuid</span><br style="color: rgb(102, 102, 102);">
+<span style="color: rgb(102, 102, 102);"># 6. displaying
+instructions to run extlinux</span><br>
+<br>
+if [ "$1" == "" ]; then<br>
+&nbsp;echo please specify device e.g sdb1; exit;<br>
+fi<br>
+if [ `whoami` != root ]; then<br>
+&nbsp;&nbsp;&nbsp; echo Please run as root or sudo; exit<br>
+fi<br>
+mkdir /mnt/$1 2&gt;/dev/null<br>
+umount /dev/$1 2&gt;/dev/null<br>
+mount /dev/$1 /mnt/$1<br>
+sync<br>
+chmod 755 /mnt/$1<br>
+chown 999:999 /mnt/$1<br>
+echo not modifying MBR..<br>
+<span style="color: rgb(102, 102, 102);">#cat mbr.bin &gt;
+/dev/sdx</span><br>
+sync<br>
+<br>
+cp -f --parents /etc/fstab /mnt/$1/<br>
+sync<br>
+<br>
+chattr -i /mnt/$1/boot/extlinux/ldlinux.sys 2&gt;/dev/null<br>
+rm -r /mnt/$1/boot/extlinux/* 2&gt;/dev/null<br>
+cp -f --parents /boot/extlinux/* /mnt/$1/<br>
+sync<br>
+<br>
+<span style="color: rgb(102, 102, 102);">#----- ls -l
+/dev/disk/by-uuid | grep $1 | cut -d\&nbsp; -f9-12</span><br>
+blkid | grep $1 | cut -d\&nbsp; -f1-2<br>
+<br>
+<span style="color: rgb(102, 102, 102);"># featherpad is an editor
+- you may want to change it to something else</span><br>
+featherpad /mnt/$1/etc/fstab &amp;<br>
+featherpad /mnt/$1/boot/extlinux/extlinux.conf &amp;<br>
+<br>
+cd /mnt/$1/boot/extlinux<br>
+<br>
+<span style=
+"color: rgb(102, 102, 102);">#----------------------------</span><br>
+
+echo if no MBR, e.g "cat mbr.bin &gt; /dev/sdb"<br>
+echo edit fstab and extlinux.conf,&nbsp; change the uuid as
+above.<br>
+echo then cd /mnt/$1/boot/extlinux and&nbsp; do extlinux -i .<br>
+<br>
+<span style="color: rgb(102, 102, 102);"># to remove ldlinux.sys ,
+first chattr -i ldlinux.sys</span><br></span></small></div>
+<br>
+<div style="margin-left: 40px;">Most drives will usually already
+have an MBR so that part is commented out.<br>
+<br>
+(If you installed extlinux into the wrong directory and need to
+delete ldlinux.sys, first chattr -i ldlinux.sys.)<br>
+<br>
+After changing the UUIDs in <span style=
+"color: rgb(102, 51, 51);"><span style=
+"color: rgb(102, 0, 0);">/etc/<span style=
+"color: rgb(0, 0, 153);">fstab</span></span></span> and
+<span style="color: rgb(102, 51, 51);"><span style=
+"color: rgb(102, 0, 0);">/mnt/&lt;dev&gt;/boot/<span style=
+"color: rgb(0, 0, 153);">extlinux.conf</span></span></span>, you
+can update EXTlinux; i.e<br>
+<span style="color: rgb(0, 0, 153); font-family: monospace;"><br>
+cd /mnt/sdb1/boot/extlinux</span><br style=
+"color: rgb(0, 0, 153); font-family: monospace;">
+<span style=
+"color: rgb(0, 0, 153); font-family: monospace;">extlinux -i
+.</span><br style="color: rgb(0, 0, 153); font-family: monospace;">
+don't forget the <span style="font-family: monospace;">'.'</span>
+at the end.<br>
+<br>
+(see installing <a href="lubuntu-extlinux.html">extlinux</a>)</div>
+<br>
+<br>
+<br>
+Example Output<br>
+<table style="text-align: left; width: 80%;" cellpadding="2"
+cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><img style=
+"width: 549px; height: 260px;" alt="" src="pics/copyeg.png"></td>
+<td style="vertical-align: top; width: 30%; white-space: nowrap;">
+Backup to empty card.<br>
+<br>
+Toshiba 8G microSD in<br>
+Buffalo stick-type card reader.<br>
+<br>
+Format:<br>
+&nbsp;&nbsp;&nbsp;&nbsp; mkfs.ext4 -L "" /dev/sdd1<br>
+<br>
+./copy-root sdd1</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table style="text-align: left; width: 80%;" cellpadding="2"
+cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><img style=
+"width: 507px; height: 246px;" alt="" src="pics/copyeg2.png"></td>
+<td style="vertical-align: top; width: 30%; white-space: nowrap;">
+Upon 2nd copy, it has little to do<br>
+and takes just 22 secs.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table style="text-align: left; width: 80%;" cellpadding="2"
+cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><img style=
+"width: 508px; height: 213px;" alt="" src="pics/dd.png"></td>
+<td style="vertical-align: top; width: 30%; white-space: nowrap;">
+sdd1 has used up less than 3G<br>
+&nbsp;for the backup.</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table style="text-align: left; width: 80%;" cellpadding="2"
+cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 70%;"><img style=
+"width: 472px; height: 130px;" alt="" src=
+"pics/primeboot.png"><br></td>
+<td style="vertical-align: top;">./prime-boot&nbsp; sdd1<br>
+<br>
+<br>
+<small style="font-style: italic;">(using blkid cmd to get
+uuid)</small><br></td>
+</tr>
+</tbody>
+</table>
+<br>
+<table style="text-align: left; width: 80%;" cellpadding="2"
+cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 70%;"><img style=
+"width: 452px; height: 75px;" alt="" src=
+"pics/extlinux.png"><br></td>
+<td style="vertical-align: top;">[ extlinux -i . ]<br>
+updates the VBR<br>
+<br></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<br>
+Example fstab<br>
+<br>
+<div style="margin-left: 40px;"><small style=
+"color: rgb(0, 0, 153);"># /etc/fstab: static file system
+information.</small><br>
+<small style="color: rgb(0, 0, 153);">#</small><br>
+<small style="color: rgb(0, 0, 153);"># Use 'blkid' to print the
+universally unique identifier for a</small><br>
+<small style="color: rgb(0, 0, 153);"># device; this may be used
+with UUID= as a more robust way to name devices</small><br>
+<small style="color: rgb(0, 0, 153);"># that works even if disks
+are added and removed. See fstab(5).</small><br>
+<small style="color: rgb(0, 0, 153);">#</small><br>
+<small style="color: rgb(0, 0, 153);"># &lt;file system&gt;
+&lt;mount point&gt;&nbsp;&nbsp; &lt;type&gt;&nbsp;
+&lt;options&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;dump&gt;&nbsp; &lt;pass&gt;</small><br>
+<small style=
+"color: rgb(0, 0, 153);">proc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+/proc&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+proc&nbsp;&nbsp;&nbsp; nodev,noexec,nosuid
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0</small><br>
+<small style="color: rgb(0, 0, 153);"># / was on /dev/sda3 during
+installation</small><br>
+<small style=
+"color: rgb(0, 0, 153);">UUID=92c948c4-fcf7-4a98-86cb-a752678c5a40
+/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ext4&nbsp;&nbsp;&nbsp; errors=remount-ro
+0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1</small><br></div>
+<br>
+<br>
+Example extlinux.conf<br>
+<br>
+<div style="margin-left: 40px;"><small style=
+"color: rgb(0, 0, 153);">DEFAULT linux</small><br>
+<small style="color: rgb(0, 0, 153);">LABEL linux</small><br>
+<small style="color: rgb(0, 0, 153);">&nbsp; SAY Now booting the
+kernel using EXTLINUX...</small><br>
+<small style="color: rgb(0, 0, 153);">&nbsp; KERNEL
+/boot/vmlinuz-3.2.0-23-generic-pae</small><br>
+<small style="color: rgb(0, 0, 153);">&nbsp; APPEND ro
+root=UUID=92c948c4-fcf7-4a98-86cb-a752678c5a40
+initrd=/boot/initrd.img-3.2.0-23-generic-pae</small><br></div>
+<br>
+<br>
+<br>
+After a while you may want <a href="lubuntu-ziproot.html">archive
+your backup disks.</a><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br>
+<a href="lubuntu.html">More Lubuntu Tips</a><br>
+<br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpty.drivehq.com/counter.js"></script>
+</body>
+</html>
