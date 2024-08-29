@@ -12,16 +12,16 @@ document.write ('<html><head>\
     <tbody>\
       <tr>\
         <td style=" border: 0pt none ; padding: 1pt 3pt 1pt 1pt; vertical-align: top; white-space: nowrap;">\
-        <a href="http://humpty.drivehq.com/home.htm">Humpty<br>\
+        <a href="http://humpity.github.io/home.htm">Humpty<br>\
         Promotes</a></td>\
         <td style=" border: 0pt none ; padding: 1pt; vertical-align: top; white-space: nowrap;">\
-        <a href="http://humpty.drivehq.com/promotes/linux/lubuntu.html">Linux</a><br>\
+        <a href="http://humpity.github.io/promotes/linux/lubuntu.html">Linux</a><br>\
         <br></td>\
         <td style="border: 0pt none ; padding: 1pt; vertical-align: top; white-space: nowrap;">\
         <br></td>\
         <td style=" border: 0pt none ; padding: 1pt; vertical-align: top; white-space: nowrap;">\
         Android<br>\
-        <a href="http://humpty.drivehq.com/promotes/rfo-basic/rfo.html">RFO-Basic</a></td>\
+        <a href="http://humpity.github.io/promotes/rfo-basic/rfo.html">RFO-Basic</a></td>\
         <td style=" border: 0pt none ; padding: 1pt; vertical-align: top; white-space: nowrap;">\
         <br></td>\
         <td style=" border: 0pt none; padding: 1pt; white-space: nowrap; vertical-align: bottom;">\
