@@ -1,6 +1,0 @@
-
-% stabilise short press jitter
-% in expense of delayed response on swipe
-
-     if time()-t0>100 then gosub gf_move
-
