@@ -1,1529 +1,1092 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<HTML>
-<HEAD>
-  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
-  "generator">
-  <META http-equiv="content-type" content=
-  "text/html; charset=utf-8">
-  <META name="viewport" content=
-  "width=device-width, initial-scale=1.0">
-  <TITLE>Graphics</TITLE>
-  <LINK rel="stylesheet" href="main.css" type="text/css">
-</HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
-  <A href="../hbasic.html">hBasic</A> &gt; <A href=
-  "index.html">hManual</A> &gt;&nbsp;<A href=
-  "commands.html">Commands</A> &gt; Graphics<BR>
-  <BR style="font-family: Helvetica,Arial,sans-serif;">
-  <TABLE style=
-  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
-  cellspacing="2" cellpadding="8">
-    <TBODY>
-      <TR>
-        <TD style="vertical-align: top;">
-          <DIV style="text-align: right;">
-            <BIG>hBasic Manual</BIG><BR>
-          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Graphics
-          command changes</BIG></BIG><BR>
-          <BIG><BIG style="color: rgb(0, 0, 153);"><BR></BIG></BIG>
-          <TABLE style="text-align: left; width: 90%;" cellspacing=
-          "2" cellpadding="2" border="0">
-            <TBODY>
-              <TR>
-                <TD style="vertical-align: top;">Screen</TD>
-                <TD style="vertical-align: top;"><A href=
-                "commands.html#decors">GR.OPEN</A><BR>
-                <A href="#gr_screen_size">GR.SCREEN</A><BR>
-                <A href=
-                "commands.html#color_strings">GR.OPEN/GR.COLOR</A><BR>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graphics</title>
+  <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body link="#000099" vlink="#990099" alink="#000099">
+  <a href="../hbasic.html">hBasic</a> &gt; <a href="index.html">hManual</a> &gt;&nbsp;<a href="commands.html">Commands</a> &gt; Graphics<br>
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellspacing="2" cellpadding="8">
+    <tbody>
+      <tr>
+        <td style="vertical-align: top;">
+          <div style="text-align: right;">
+            <big>hBasic Manual</big><br>
+          </div><big><big style="color: rgb(0, 0, 153);">Graphics
+          command changes</big></big><br>
+          <big><big style="color: rgb(0, 0, 153);"><br></big></big>
+          <table style="text-align: left; width: 90%;" cellspacing="2" cellpadding="2" border="0">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">Screen</td>
+                <td style="vertical-align: top;"><a href="commands.html#decors">GR.OPEN</a><br>
+                <a href="#gr_screen_size">GR.SCREEN</a><br>
+                <a href="commands.html#color_strings">GR.OPEN/GR.COLOR</a><br>
 
-                <A href=
-                "commands.html#actionbar_title">GR.TITLE</A> ,
-                <A href=
-                "commands.html#actionbar_subtitle">GR.SUBTITLE</A><BR>
+                <a href="commands.html#actionbar_title">GR.TITLE</a> ,
+                <a href="commands.html#actionbar_subtitle">GR.SUBTITLE</a><br>
 
-                <A href="#setacc">GR.SETACC</A><BR>
-                <A href="#gr_touch">GR.TOUCH / 2</A><BR>
-                <A href="#gr_bounded_touch">GR.BOUNDED.TOUCH /
-                2</A><BR></TD>
-                <TD style="vertical-align: top;">Decors Flag<BR>
-                Size of View<BR>
-                Accept a color string<BR>
-                Title, Subtitle and Colors<BR>
-                Set acceleration<BR>
-                unscaling flag<BR>
-                scaling flag<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">Bitmaps</TD>
-                <TD style="vertical-align: top;"><A href=
-                "#gr_bitmap_clr">GR.BITMAP.CLR</A><BR>
-                <A href="#gr_bitmap_blot">GR.BITMAP.BLOT</A><BR>
-                <A href="#gr_bitmap_scaf">GR.BITMAP.SCAF</A></TD>
-                <TD style="vertical-align: top; width: 50%;">Clear
-                a bitmap with transparency<BR>
-                Clear a bitmap section with transparency<BR>
-                Scale by factor<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">Clipping<BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "#gr_clip">GR.CLIP.<SPAN style=
-                "color: rgb(0, 0, 153);">START /
-                END</SPAN></A></TD>
-                <TD style="vertical-align: top;">Replacement for
-                GR.CLIP</TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">Objects</TD>
-                <TD style="vertical-align: top;"><A href=
-                "#multi_input">GR.HIDE / GR.SHOW</A><BR>
-                <BR>
-                <A href="#gr_get_params">GR.GET.PARAMS</A><BR>
-                <A href="#gr_get_value">GR.GET.VALUE</A><BR>
-                <A href="#gr_modify">GR.MODIFY</A></TD>
-                <TD style="vertical-align: top;">Accept Multiple
-                Input<BR>
-                <BR>
-                Added common and read-only parameters<BR>
-                Added common parameters<BR>
-                Option to modify objects in an array</TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><A href=
-                "#display_list_commands">Display LIst</A><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "#gr_dl_getz">GR.DL.GETZ</A><BR>
-                <A href="#gr_dl_move">GR.DL.MOVE</A><BR>
-                <A href="#gr.dl.remove">GR.DL.REMOVE</A></TD>
-                <TD style="vertical-align: top;">Get z-index<BR>
-                Move object within display list<BR>
-                Remove object from display list<BR></TD>
-              </TR>
-              <TR>
-                <TD valign="top"><A href=
-                "#sprites">Sprites</A><BR></TD>
-                <TD valign="top"><A href=
-                "#gr_sprite_draw">GR.SPRITE.DRAW</A></TD>
-                <TD style="vertical-align: top;">Create a
-                sprite</TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><A href=
-                "#animation">Animation</A><BR>
-                <BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "#gr_anim_load">GR.ANIM.LOAD</A><BR>
-                <A href="#gr_anim_scale">GR.ANIM.SCAF</A><BR>
-                <A href="#gr_anim_getf">GR.ANIM.GETF</A><BR>
-                <A href="#gr_anim_putf">GR.ANIM.PUTF</A></TD>
-                <TD style="vertical-align: top;">Load an
-                animation<BR>
-                Scale by factor<BR>
-                Get anmation frame<BR>
-                Put animation frame<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">Motion<BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "#gr_motion">GR.MOTION</A><BR>
-                <A href=
-                "#gr_motion_mark">GR.MOTION.MARK</A><BR></TD>
-                <TD style="vertical-align: top;">Update motion
-                vectors<BR>
-                Reset motion timing<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><A href=
-                "functions.html#graphics">( Graphics functions
-                )</A><BR>
-                ( <A href="graphics-system.html">Graphics
-                System</A> )<BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-              </TR>
-            </TBODY>
-          </TABLE><BR>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <A name="gr_screen_size" id=
-          "multi_input"></A><SPAN style="color: rgb(0, 0, 153);"><BIG>GR.SCREEN</BIG></SPAN>
-          <SPAN style=
-          "font-weight: bold;">width</SPAN><SMALL><SPAN style=
-          "color: rgb(0, 0, 153);"><BIG><SPAN style=
-          "color: rgb(102, 51, 0);"><SPAN style=
-          "font-weight: bold;">_</SPAN>nvar,</SPAN></BIG></SPAN></SMALL>
-          <SPAN style=
-          "font-weight: bold;">height</SPAN><SMALL><SPAN style=
-          "color: rgb(0, 0, 153);"><BIG><SPAN style=
-          "color: rgb(102, 51, 0);">_nvar
-          {,</SPAN></BIG></SPAN></SMALL> <SPAN style=
-          "font-weight: bold;">density_DP</SPAN><SMALL><SPAN style=
-          "color: rgb(0, 0, 153);"><BIG><SPAN style=
-          "color: rgb(102, 51, 0);">_nvar}
-          {,</SPAN></BIG></SPAN></SMALL> <SPAN style=
-          "font-weight: bold;">density_SP</SPAN><SPAN style=
-          "color: rgb(0, 0, 153);"><SPAN style=
-          "color: rgb(102, 51, 0);">_nvar}</SPAN><BIG style=
-          "font-family: monospace;"><SPAN style=
-          "color: rgb(102, 51, 0);"><BR>
-          <BIG><BR></BIG></SPAN></BIG></SPAN>
-          <DIV style="margin-left: 40px;">
-            Gets the <SPAN style="font-weight: bold;">width</SPAN>
-            and <SPAN style="font-weight: bold;">height</SPAN> of
-            the <SPAN style=
-            "text-decoration: underline;">VIew</SPAN> Size instead
-            of the device size.<BR>
-          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
-          <DIV style="margin-left: 40px;">
+                <a href="#setacc">GR.SETACC</a><br>
+                <a href="#gr_touch">GR.TOUCH / 2</a><br>
+                <a href="#gr_bounded_touch">GR.BOUNDED.TOUCH /
+                2</a><br></td>
+                <td style="vertical-align: top;">Decors Flag<br>
+                Size of View<br>
+                Accept a color string<br>
+                Title, Subtitle and Colors<br>
+                Set acceleration<br>
+                unscaling flag<br>
+                scaling flag<br></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Bitmaps</td>
+                <td style="vertical-align: top;"><a href="#gr_bitmap_clr">GR.BITMAP.CLR</a><br>
+                <a href="#gr_bitmap_blot">GR.BITMAP.BLOT</a><br>
+                <a href="#gr_bitmap_scaf">GR.BITMAP.SCAF</a></td>
+                <td style="vertical-align: top; width: 50%;">Clear
+                a bitmap with transparency<br>
+                Clear a bitmap section with transparency<br>
+                Scale by factor<br></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Clipping<br></td>
+                <td style="vertical-align: top;"><a href="#gr_clip">GR.CLIP.<span style="color: rgb(0, 0, 153);">START /
+                END</span></a></td>
+                <td style="vertical-align: top;">Replacement for
+                GR.CLIP</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Objects</td>
+                <td style="vertical-align: top;"><a href="#multi_input">GR.HIDE / GR.SHOW</a><br>
+                <br>
+                <a href="#gr_get_params">GR.GET.PARAMS</a><br>
+                <a href="#gr_get_value">GR.GET.VALUE</a><br>
+                <a href="#gr_modify">GR.MODIFY</a></td>
+                <td style="vertical-align: top;">Accept Multiple
+                Input<br>
+                <br>
+                Added common and read-only parameters<br>
+                Added common parameters<br>
+                Option to modify objects in an array</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><a href="#display_list_commands">Display LIst</a><br></td>
+                <td style="vertical-align: top;"><a href="#gr_dl_getz">GR.DL.GETZ</a><br>
+                <a href="#gr_dl_move" moz-do-not-send="true">GR.DL.MOVE</a><br>
+                <a href="#gr_dl_remove" moz-do-not-send="true">GR.DL.REMOVE</a></td>
+                <td style="vertical-align: top;">Get z-index<br>
+                Move object within display list<br>
+                Remove object from display list<br></td>
+              </tr>
+              <tr>
+                <td valign="top"><a href="#sprites">Sprites</a><br></td>
+                <td valign="top"><a href="#gr_sprite_draw">GR.SPRITE.DRAW</a></td>
+                <td style="vertical-align: top;">Create a
+                sprite</td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><a href="#animation">Animation</a><br>
+                <br></td>
+                <td style="vertical-align: top;"><a href="#gr_anim_load">GR.ANIM.LOAD</a><br>
+                <a href="#gr_anim_scale">GR.ANIM.SCAF</a><br>
+                <a href="#gr_anim_getf">GR.ANIM.GETF</a><br>
+                <a href="#gr_anim_putf">GR.ANIM.PUTF</a></td>
+                <td style="vertical-align: top;">Load an
+                animation<br>
+                Scale by factor<br>
+                Get anmation frame<br>
+                Put animation frame<br></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;">Motion<br></td>
+                <td style="vertical-align: top;"><a href="#gr_motion">GR.MOTION</a><br>
+                <a href="#gr_motion_mark">GR.MOTION.MARK</a><br></td>
+                <td style="vertical-align: top;">Update motion
+                vectors<br>
+                Reset motion timing<br></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><br></td>
+                <td style="vertical-align: top;"><br></td>
+                <td style="vertical-align: top;"><br></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><a href="functions.html#graphics">( Graphics functions
+                )</a><br>
+                ( <a href="graphics-system.html">Graphics
+                System</a> )<br></td>
+                <td style="vertical-align: top;"><br></td>
+                <td style="vertical-align: top;"><br></td>
+              </tr>
+            </tbody>
+          </table><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <a name="gr_screen_size" id="multi_input"></a><span style="color: rgb(0, 0, 153);"><big>GR.SCREEN</big></span>
+          <span style="font-weight: bold;">width</span><small><span style="color: rgb(0, 0, 153);"><big><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_</span>nvar,</span></big></span></small>
+          <span style="font-weight: bold;">height</span><small><span style="color: rgb(0, 0, 153);"><big><span style="color: rgb(102, 51, 0);">_nvar
+          {,</span></big></span></small> <span style="font-weight: bold;">density_DP</span><small><span style="color: rgb(0, 0, 153);"><big><span style="color: rgb(102, 51, 0);">_nvar}
+          {,</span></big></span></small> <span style="font-weight: bold;">density_SP</span><span style="color: rgb(0, 0, 153);"><span style="color: rgb(102, 51, 0);">_nvar}</span><big style="font-family: monospace;"><span style="color: rgb(102, 51, 0);"><br>
+          <big><br></big></span></big></span>
+          <div style="margin-left: 40px;">
+            Gets the <span style="font-weight: bold;">width</span>
+            and <span style="font-weight: bold;">height</span> of
+            the <span style="text-decoration: underline;">VIew</span> Size instead
+            of the device size.<br>
+          </div><span style="color: rgb(0, 0, 153);"><br></span>
+          <div style="margin-left: 40px;">
             The width and height returned from GR.SCREEN has been
-            modified to always return<BR>
+            modified to always return<br>
             the current canvas size (the draw view). This is the
-            area in which you can draw.<BR>
-            <BR>
+            area in which you can draw.<br>
+            <br>
             This size may change if you hide or show either the
-            status, navigation or action bars.<BR>
-            <BR>
-            <SPAN style="font-weight: bold;">density_DP</SPAN> is
+            status, navigation or action bars.<br>
+            <br>
+            <span style="font-weight: bold;">density_DP</span> is
             the density as pixels per inch .eg 160 on a 160 dpi
-            display.<BR>
-            <BR>
-            <SPAN style="font-weight: bold;">density_SP</SPAN> is
-            the density as scaled pixels per inch.<BR>
-            <DIV style="text-align: left; margin-left: 80px;">
+            display.<br>
+            <br>
+            <span style="font-weight: bold;">density_SP</span> is
+            the density as scaled pixels per inch.<br>
+            <div style="text-align: left; margin-left: 80px;">
               e.g returns 320 on a 160 dpi display with user
-              preference scale of 2X in settings<BR>
-            </DIV><BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="setacc" id=
-          "setacc"></A>GR.SETACC</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">GR.SETACC</SPAN>
-            <SPAN style=
-            "font-weight: bold;">level</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp&nbsp;&nbsp;&nbsp;
+              preference scale of 2X in settings<br>
+            </div><br>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="setacc" id="setacc"></a>GR.SETACC</span></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);">GR.SETACC</span>
+            <span style="font-weight: bold;">level</span><span style="color: rgb(102, 51, 0);">_nexp&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; % default is
-            2</SPAN><BR>
-          </DIV>
-          <BLOCKQUOTE>
-            &nbsp;&nbsp;&nbsp; where <SPAN style=
-            "font-weight: bold;">level</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> is;<BR>
-            <BR>
+            2</span><br>
+          </div>
+          <blockquote>
+            &nbsp;&nbsp;&nbsp; where <span style="font-weight: bold;">level</span><span style="color: rgb(102, 51, 0);">_nexp</span> is;<br>
+            <br>
             &nbsp;&nbsp;&nbsp; 1 = Hardware overlay layer OFF&nbsp;
-            - &nbsp; i.e direct GPU rendering<BR>
+            - &nbsp; i.e direct GPU rendering<br>
             &nbsp;&nbsp;&nbsp; 2 = Hardware overlay layer
             ON&nbsp;&nbsp;&nbsp; -&nbsp; i.e dedicated HW buffer
-            rendering<BR>
-            <BR>
+            rendering<br>
+            <br>
             This does the same as Editor &gt; Preferences &gt;
-            Graphic acceleration.<BR>
-            <BR>
+            Graphic acceleration.<br>
+            <br>
             The default value is 2 (at app install) or whatever
-            value you set before in the Editor.<BR>
+            value you set before in the Editor.<br>
             Any other value is an error. (0 is reserved for future
-            use).<BR>
-            <BR>
-            To take effect, it <FONT color="#000099">must be
-            executed before GR.OPEN.</FONT><BR>
+            use).<br>
+            <br>
+            To take effect, it <font color="#000099">must be
+            executed before GR.OPEN.</font><br>
             Note that the setting sticks, even after you exit the
-            program, or even the app.<BR>
-            <BR>
+            program, or even the app.<br>
+            <br>
             Hardware overlay layer ON uses less power than direct
-            GPU rendering<BR>
+            GPU rendering<br>
             at the expense of causing lag in some animations. But
-            in most cases it is faster.<BR>
-          </BLOCKQUOTE>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="gr_touch" id=
-          "setacc"></A>GR.TOUCH</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">GR.TOUCH</SPAN>
-            <SPAN style=
-            "font-weight: bold;">touched</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_lvar</SPAN> <SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">x</SPAN><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">nvar</SPAN><SPAN style=
-            "font-weight: bold;">, y</SPAN><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">nvar</SPAN>
-            {,&nbsp;&nbsp;<SPAN style=
-            "font-weight: bold;">unscale</SPAN><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">lexp</SPAN>
-            }&nbsp;&nbsp;&nbsp; % first touch<BR>
-            <SPAN style="color: rgb(0, 0, 153);">GR.TOUCH</SPAN>2
-            <SPAN style=
-            "font-weight: bold;">touched</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_lvar</SPAN> <SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">x</SPAN><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">nvar</SPAN><SPAN style=
-            "font-weight: bold;">, y</SPAN><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">nvar</SPAN>
-            {,&nbsp;&nbsp;<SPAN style=
-            "font-weight: bold;">unscale</SPAN><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">lexp</SPAN> }&nbsp;&nbsp; %
-            second touch<BR>
-            <BR>
-            <SPAN style="font-weight: bold;">touched</SPAN> returns
-            true if the screen was touched.<BR>
-            If the screen was touched, <SPAN style=
-            "font-weight: bold;">x,y</SPAN> are the returned touch
+            in most cases it is faster.<br>
+          </blockquote>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="gr_touch" id="setacc"></a>GR.TOUCH</span></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);">GR.TOUCH</span>
+            <span style="font-weight: bold;">touched</span><span style="color: rgb(102, 51, 0);">_lvar</span> <span style="font-weight: bold;">,</span> <span style="font-weight: bold;">x</span><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span><span style="color: rgb(102, 51, 0);">nvar</span><span style="font-weight: bold;">, y</span><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span><span style="color: rgb(102, 51, 0);">nvar</span>
+            {,&nbsp;&nbsp;<span style="font-weight: bold;">unscale</span><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span><span style="color: rgb(102, 51, 0);">lexp</span>
+            }&nbsp;&nbsp;&nbsp; % first touch<br>
+            <span style="color: rgb(0, 0, 153);">GR.TOUCH</span>2
+            <span style="font-weight: bold;">touched</span><span style="color: rgb(102, 51, 0);">_lvar</span> <span style="font-weight: bold;">,</span> <span style="font-weight: bold;">x</span><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span><span style="color: rgb(102, 51, 0);">nvar</span><span style="font-weight: bold;">, y</span><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span><span style="color: rgb(102, 51, 0);">nvar</span>
+            {,&nbsp;&nbsp;<span style="font-weight: bold;">unscale</span><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span><span style="color: rgb(102, 51, 0);">lexp</span> }&nbsp;&nbsp; %
+            second touch<br>
+            <br>
+            <span style="font-weight: bold;">touched</span> returns
+            true if the screen was touched.<br>
+            If the screen was touched, <span style="font-weight: bold;">x,y</span> are the returned touch
             coordinates. By default, these are the scaled device
-            coordinates.<BR>
+            coordinates.<br>
             The scale is set by set by GR.SCALE. If you do not use
-            GR.SCALE, the default scale is 1.0.<BR>
-            <BR>
-            An optional <SPAN style=
-            "font-weight: bold;">unscale</SPAN> flag was added and
-            is by default <SPAN style=
-            "text-decoration: underline;">false</SPAN> if
-            ommited.<BR>
-            <SPAN style="text-decoration: underline;">If</SPAN>
-            <SPAN style="font-weight: bold;">unscale</SPAN> is
+            GR.SCALE, the default scale is 1.0.<br>
+            <br>
+            An optional <span style="font-weight: bold;">unscale</span> flag was added and
+            is by default <span style="text-decoration: underline;">false</span> if
+            ommited.<br>
+            <span style="text-decoration: underline;">If</span>
+            <span style="font-weight: bold;">unscale</span> is
             given and is true (non-zero), the scaled x,y
             coordinates are unscaled according to the current
             screen scale (set by GR.SCALE). This will give you back
-            coordinates in the range of your development size.<BR>
-            <BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="gr_bounded_touch" id=
-          "setacc"></A>GR.BOUNDED.TOUCH</SPAN></FONT><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "color: rgb(0, 0, 153);"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(204, 0, 0);">** These two
+            coordinates in the range of your development size.<br>
+            <br>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="gr_bounded_touch" id="setacc"></a>GR.BOUNDED.TOUCH</span></font><br>
+          <div style="margin-left: 40px;">
+            <span style="text-decoration: line-through;"><span style="color: rgb(0, 0, 153);"><br></span></span>
+            <span style="color: rgb(204, 0, 0);">** These two
             commands currently have a bug with the scale
-            flag.</SPAN> <SPAN style=
-            "color: rgb(204, 0, 0);">**<BR></SPAN> <SPAN style=
-            "color: rgb(204, 0, 0);">** Please wait for the next
-            hBasic version ! **</SPAN><BR>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "color: rgb(0, 0, 153);"><BR>
-            GR.BOUNDED.TOUCH</SPAN></SPAN> <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">touched</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "color: rgb(102, 51, 0);">_lvar</SPAN></SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">,</SPAN></SPAN> <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">left</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="font-weight: bold;">,
-            top</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="font-weight: bold;">,</SPAN></SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">right</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="font-weight: bold;">,
-            bottom</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN>
-            <SPAN style="text-decoration: line-through;">{,</SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">scale</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">lexp</SPAN></SPAN>
-            <SPAN style=
-            "text-decoration: line-through;">}</SPAN><SPAN style=
-            "text-decoration: line-through;"><BR></SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "color: rgb(0, 0, 153);">GR.BOUNDED.TOUCH</SPAN></SPAN><SPAN style="text-decoration: line-through;">2</SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">touched</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "color: rgb(102, 51, 0);">_lvar</SPAN></SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">,</SPAN></SPAN> <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">left</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="font-weight: bold;">,
-            top</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="font-weight: bold;">,</SPAN></SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">right</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="font-weight: bold;">,
-            bottom</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN></SPAN>
-            <SPAN style="text-decoration: line-through;">{,</SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">scale</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;"><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN></SPAN></SPAN><SPAN style="text-decoration: line-through;"><SPAN style="color: rgb(102, 51, 0);">lexp</SPAN></SPAN>
-            <SPAN style=
-            "text-decoration: line-through;">}</SPAN><SPAN style=
-            "text-decoration: line-through;"><BR></SPAN>
-            <SPAN style="text-decoration: line-through;"><BR>
-            </SPAN> <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">touched</SPAN></SPAN> <SPAN style=
-            "text-decoration: line-through;">returns true if the
+            flag.</span> <span style="color: rgb(204, 0, 0);">**<br></span> <span style="color: rgb(204, 0, 0);">** Please wait for the next
+            hBasic version ! **</span><br>
+            <span style="text-decoration: line-through;"><span style="color: rgb(0, 0, 153);"><br>
+            GR.BOUNDED.TOUCH</span></span> <span style="text-decoration: line-through;"><span style="font-weight: bold;">touched</span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">_lvar</span></span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">,</span></span> <span style="text-decoration: line-through;"><span style="font-weight: bold;">left</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;">,
+            top</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;">,</span></span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">right</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;">,
+            bottom</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span>
+            <span style="text-decoration: line-through;">{,</span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">scale</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">lexp</span></span>
+            <span style="text-decoration: line-through;">}</span><span style="text-decoration: line-through;"><br></span>
+            <span style="text-decoration: line-through;"><span style="color: rgb(0, 0, 153);">GR.BOUNDED.TOUCH</span></span><span style="text-decoration: line-through;">2</span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">touched</span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">_lvar</span></span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">,</span></span> <span style="text-decoration: line-through;"><span style="font-weight: bold;">left</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;">,
+            top</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;">,</span></span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">right</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;">,
+            bottom</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">nexp</span></span>
+            <span style="text-decoration: line-through;">{,</span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">scale</span></span><span style="text-decoration: line-through;"><span style="font-weight: bold;"><span style="color: rgb(102, 51, 0);">_</span></span></span><span style="text-decoration: line-through;"><span style="color: rgb(102, 51, 0);">lexp</span></span>
+            <span style="text-decoration: line-through;">}</span><span style="text-decoration: line-through;"><br></span>
+            <span style="text-decoration: line-through;"><br>
+            </span> <span style="text-decoration: line-through;"><span style="font-weight: bold;">touched</span></span> <span style="text-decoration: line-through;">returns true if the
             screen was touched within the bounds of the
-            rectangle</SPAN> <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">left, right, top,
-            bottom</SPAN></SPAN><SPAN style=
-            "text-decoration: line-through;">.</SPAN><SPAN style=
-            "text-decoration: line-through;"><BR></SPAN>
-            <SPAN style="text-decoration: line-through;">By
+            rectangle</span> <span style="text-decoration: line-through;"><span style="font-weight: bold;">left, right, top,
+            bottom</span></span><span style="text-decoration: line-through;">.</span><span style="text-decoration: line-through;"><br></span>
+            <span style="text-decoration: line-through;">By
             default, the rectangle is expected to be already scaled
-            ( relative to GR.SCALE).</SPAN><SPAN style=
-            "text-decoration: line-through;"><BR></SPAN>
-            <SPAN style="text-decoration: line-through;"><BR>
-            </SPAN> <SPAN style="text-decoration: line-through;">An
-            optional</SPAN> <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">scale</SPAN></SPAN> <SPAN style=
-            "text-decoration: line-through;">flag was added and is
-            by default</SPAN> <SPAN style=
-            "text-decoration: line-through;">false</SPAN>
-            <SPAN style="text-decoration: line-through;">if
-            ommited.</SPAN><SPAN style=
-            "text-decoration: line-through;"><BR></SPAN>
-            <SPAN style="text-decoration: line-through;">If</SPAN>
-            <SPAN style=
-            "text-decoration: line-through;"><SPAN style=
-            "font-weight: bold;">scale</SPAN></SPAN> <SPAN style=
-            "text-decoration: line-through;">is given and is true,
-            the</SPAN> <SPAN style=
-            "text-decoration: line-through;">rectangle
-            coordinates</SPAN> <SPAN style=
-            "text-decoration: line-through;">are scaled the same as
+            ( relative to GR.SCALE).</span><span style="text-decoration: line-through;"><br></span>
+            <span style="text-decoration: line-through;"><br>
+            </span> <span style="text-decoration: line-through;">An
+            optional</span> <span style="text-decoration: line-through;"><span style="font-weight: bold;">scale</span></span> <span style="text-decoration: line-through;">flag was added and is
+            by default</span> <span style="text-decoration: line-through;">false</span>
+            <span style="text-decoration: line-through;">if
+            ommited.</span><span style="text-decoration: line-through;"><br></span>
+            <span style="text-decoration: line-through;">If</span>
+            <span style="text-decoration: line-through;"><span style="font-weight: bold;">scale</span></span> <span style="text-decoration: line-through;">is given and is true,
+            the</span> <span style="text-decoration: line-through;">rectangle
+            coordinates</span> <span style="text-decoration: line-through;">are scaled the same as
             the current screen scale (set by GR.SCALE). This will
             test the rectangle according to your development
-            range.</SPAN><SPAN style=
-            "text-decoration: line-through;"><BR></SPAN>
-            <SPAN style="text-decoration: line-through;"><BR>
-            </SPAN> <SPAN style=
-            "text-decoration: line-through;">Note that the
+            range.</span><span style="text-decoration: line-through;"><br></span>
+            <span style="text-decoration: line-through;"><br>
+            </span> <span style="text-decoration: line-through;">Note that the
             rectangle is treated with right,bottom as exclusive
-            (not part of the rectangle).</SPAN><SPAN style=
-            "text-decoration: line-through;"><BR></SPAN><BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);">Clear a bitmap area with
-          transparency</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_bitmap_clr" id=
-            "gr_bitmap_clr"></A>GR.BITMAP.CLR</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">bitmap_ptr</SPAN>_nexp
-            {, <SPAN style=
-            "color: black; font-weight: bold;">paint</SPAN>_nexp}</SPAN><BR>
+            (not part of the rectangle).</span><span style="text-decoration: line-through;"><br></span><br>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><span style="color: rgb(0, 0, 153);">Clear a bitmap area with
+          transparency</span></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_bitmap_clr" id="gr_bitmap_clr"></a>GR.BITMAP.CLR</span> <span style="color: rgb(102, 51, 0);"><span style="color: black; font-weight: bold;">bitmap_ptr</span>_nexp
+            {, <span style="color: black; font-weight: bold;">paint</span>_nexp}</span><br>
 
-            <BR>
+            <br>
             Fills a bitmap with transparency without destroying
-            it.<BR>
+            it.<br>
             Anything already on the bitmap is cleared. There is no
-            alpha blending.<BR>
-            An optional <SPAN style=
-            "color: rgb(102, 51, 0);">paint</SPAN> object can be
+            alpha blending.<br>
+            An optional <span style="color: rgb(102, 51, 0);">paint</span> object can be
             supplied for a fill otherwise it will be
-            transparent.<SPAN style=
-            "font-style: italic;"><BR></SPAN>
-            <DIV style="text-align: right;">
-              <SPAN style="font-style: italic;">This is
+            transparent.<span style="font-style: italic;"><br></span>
+            <div style="text-align: right;">
+              <span style="font-style: italic;">This is
               approximately 10x faster than deleting and
-              re-creating a bitmap.</SPAN><BR>
-            </DIV><BR>
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_bitmap_blot" id=
-            "gr_bitmap_clr"></A>GR.BITMAP.BLOT</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">bitmap_ptr</SPAN>_nexp</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">, <SPAN style=
-            "color: black; font-weight: bold;">x</SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">,</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">y</SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN><SPAN style="color: rgb(102, 51, 0);">,</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">width</SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN><SPAN style="color: rgb(102, 51, 0);">,</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">height</SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">{,</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">paint</SPAN>_nexp</SPAN><SPAN style="color: rgb(102, 51, 0);">}</SPAN><BR>
+              re-creating a bitmap.</span><br>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);"><a name="gr_bitmap_blot" id="gr_bitmap_clr"></a>GR.BITMAP.BLOT</span> <span style="color: rgb(102, 51, 0);"><span style="color: black; font-weight: bold;">bitmap_ptr</span>_nexp</span>
+            <span style="color: rgb(102, 51, 0);">, <span style="color: black; font-weight: bold;">x</span></span><span style="color: rgb(102, 51, 0);">_nexp</span>
+            <span style="color: rgb(102, 51, 0);">,</span>
+            <span style="color: rgb(102, 51, 0);"><span style="color: black; font-weight: bold;">y</span></span><span style="color: rgb(102, 51, 0);">_nexp</span><span style="color: rgb(102, 51, 0);">,</span>
+            <span style="color: rgb(102, 51, 0);"><span style="color: black; font-weight: bold;">width</span></span><span style="color: rgb(102, 51, 0);">_nexp</span><span style="color: rgb(102, 51, 0);">,</span>
+            <span style="color: rgb(102, 51, 0);"><span style="color: black; font-weight: bold;">height</span></span><span style="color: rgb(102, 51, 0);">_nexp</span>
+            <span style="color: rgb(102, 51, 0);">{,</span>
+            <span style="color: rgb(102, 51, 0);"><span style="color: black; font-weight: bold;">paint</span>_nexp</span><span style="color: rgb(102, 51, 0);">}</span><br>
 
-            <BR>
+            <br>
             Same as gr.bitmap.clr but fills a rectangle within the
-            bitmap.<BR>
-            <DIV style="text-align: right;">
-              <SPAN style="font-style: italic;">This is slower than
+            bitmap.<br>
+            <div style="text-align: right;">
+              <span style="font-style: italic;">This is slower than
               delete+create but faster for small areas less than a
-              half the area of the whole bitmap.</SPAN><BR>
-            </DIV>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <A name="gr_bitmap_scaf" id=
-          "gr_bitmap_clr"></A><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);">GR.BITMAP.SCAF</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">GR.BITMAP.SCAF</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">bitmap_ptr</SPAN>_nvar</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">, <SPAN style=
-            "color: black; font-weight: bold;">scale</SPAN>_nexp</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">{, <SPAN style=
-            "color: black; font-weight: bold;">smooth</SPAN>_lexp}</SPAN><BR>
-          </DIV><SPAN style="color: rgb(102, 51, 0);"><BR></SPAN>
-          <DIV style="margin-left: 40px;">
+              half the area of the whole bitmap.</span><br>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <a name="gr_bitmap_scaf" id="gr_bitmap_clr"></a><font size="+1"><span style="color: rgb(0, 0, 153);">GR.BITMAP.SCAF</span></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);">GR.BITMAP.SCAF</span>
+            <span style="color: rgb(102, 51, 0);"><span style="color: black;">bitmap_ptr</span>_nvar</span>
+            <span style="color: rgb(102, 51, 0);">, <span style="color: black; font-weight: bold;">scale</span>_nexp</span>
+            <span style="color: rgb(102, 51, 0);">{, <span style="color: black; font-weight: bold;">smooth</span>_lexp}</span><br>
+          </div><span style="color: rgb(102, 51, 0);"><br></span>
+          <div style="margin-left: 40px;">
             Scale a bitmap by a scale factor in both directions
-            with optional smoothing.<BR>
-            <DIV style="margin-left: 40px;">
-              The bitmap is replaced by the new image.<BR>
+            with optional smoothing.<br>
+            <div style="margin-left: 40px;">
+              The bitmap is replaced by the new image.<br>
               The bitmap is made writable (for
               Gr.bitmap.drawinto.start).
-            </DIV>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="font-weight: bold;">scale</SPAN><BR>
-            <DIV style="margin-left: 40px;">
+            </div>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="font-weight: bold;">scale</span><br>
+            <div style="margin-left: 40px;">
               e.g 2 will enlarge the bitmap to twice the original
-              dimensions.<BR>
-              e.g 0.5 will reduce the dimensions to half.<BR>
-              a negative value inverts the image<BR>
-            </DIV>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="font-weight: bold;">smooth</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              true - smoothing is applied to <SPAN style=
-              "font-weight: bold;">scale</SPAN><BR>
-              false - no smoothing<BR>
-              default is <SPAN style=
-              "font-weight: bold;">false.</SPAN><BR>
-              If <SPAN style="font-weight: bold;">scale</SPAN> is
-              1.0,&nbsp; the smoothing has no effect.<BR>
-            </DIV>
-          </DIV><BR>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <A name="gr_clip" id="multi_input"></A><BIG><SPAN style=
-          "color: rgb(0, 0, 153);">GR.CLIP.START and</SPAN>
-          <SPAN style=
-          "color: rgb(0, 0, 153);">GR.CLIP.END</SPAN></BIG><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">GR.CLIP.START</SPAN>
-            <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">left</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">top</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">right</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">bottom</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp{,&nbsp;</SPAN><BR style="color: rgb(102, 51, 0);">
+              dimensions.<br>
+              e.g 0.5 will reduce the dimensions to half.<br>
+              a negative value inverts the image<br>
+            </div>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="font-weight: bold;">smooth</span><br>
+            <div style="margin-left: 40px;">
+              true - smoothing is applied to <span style="font-weight: bold;">scale</span><br>
+              false - no smoothing<br>
+              default is <span style="font-weight: bold;">false.</span><br>
+              If <span style="font-weight: bold;">scale</span> is
+              1.0,&nbsp; the smoothing has no effect.<br>
+            </div>
+          </div><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <a name="gr_clip" id="multi_input"></a><big><span style="color: rgb(0, 0, 153);">GR.CLIP.START and</span>
+          <span style="color: rgb(0, 0, 153);">GR.CLIP.END</span></big><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);">GR.CLIP.START</span>
+            <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">left</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">top</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">right</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">bottom</span><span style="color: rgb(102, 51, 0);">_nexp{,&nbsp;</span><br style="color: rgb(102, 51, 0);">
 
-            <SPAN style="font-weight: bold;">RO</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp}</SPAN><BR>
-            <BR>
-            <SPAN style="color: rgb(0, 0, 153);">GR.CLIP.END</SPAN>
-            <SPAN style=
-            "color: rgb(102, 51, 0);">{</SPAN><SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp}</SPAN><BR>
-            <SPAN style="color: rgb(0, 102, 0);"><BR></SPAN>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            GR.CLIP.START <SPAN style=
-            "text-decoration: underline;">replaces</SPAN> the
-            legacy GR.CLIP<BR>
-            <BR>
+            <span style="font-weight: bold;">RO</span><span style="color: rgb(102, 51, 0);">_nexp}</span><br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">GR.CLIP.END</span>
+            <span style="color: rgb(102, 51, 0);">{</span><span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp}</span><br>
+            <span style="color: rgb(0, 102, 0);"><br></span>
+          </div>
+          <div style="margin-left: 40px;">
+            GR.CLIP.START <span style="text-decoration: underline;">replaces</span> the
+            legacy GR.CLIP<br>
+            <br>
             Google does not allow for a clip region to expand since
-            Android Pie (API-28). Because of that<BR>
+            Android Pie (API-28). Because of that<br>
             4 out of the original 6 Region Operators are not
-            supported;<BR>
-            <BR>
-            <BR>
-            <TABLE style=
-            "text-align: left; width: 359px; height: 152px;"
-            cellspacing="0" cellpadding="2" border="0">
-              <TBODY>
-                <TR>
-                  <TD style="vertical-align: top;">Region
-                  OP<BR></TD>
-                  <TD style="vertical-align: top;">Allowed<BR></TD>
-                </TR>
-                <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap; width: 50%; color: rgb(0, 0, 153);">
-                  0 Intersect<BR></TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap; color: rgb(0, 0, 153);">
-                  yes</TD>
-                </TR>
-                <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap; color: rgb(0, 0, 153);">
-                  1 Difference&nbsp;<BR></TD>
-                  <TD style=
-                  "vertical-align: top; color: rgb(0, 0, 153);">
-                  yes</TD>
-                </TR>
-                <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">2
-                  Replace<BR></TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">no -
-                  runtime error<BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;">3 Reverse
-                  Difference<BR></TD>
-                  <TD style="vertical-align: top;">no - runtime
-                  error</TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;">4
-                  Union&nbsp;&nbsp;</TD>
-                  <TD style="vertical-align: top;">no - runtime
-                  error</TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;">5 XOR<BR></TD>
-                  <TD style="vertical-align: top;">no - runtime
-                  error</TD>
-                </TR>
-              </TBODY>
-            </TABLE><BR>
-            thus <SPAN style=
-            "color: rgb(0, 0, 153);">GR.CLIP.START</SPAN> only
-            accepts 0 or 1 for the region code.<BR>
-            <BR>
-            <SPAN style="color: rgb(0, 0, 153);">GR.CLIP.END</SPAN>
+            supported;<br>
+            <br>
+            <br>
+            <table style="text-align: left; width: 359px; height: 152px;" cellspacing="0" cellpadding="2" border="0">
+              <tbody>
+                <tr>
+                  <td style="vertical-align: top;">Region
+                  OP<br></td>
+                  <td style="vertical-align: top;">Allowed<br></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top; white-space: nowrap; width: 50%; color: rgb(0, 0, 153);">
+                  0 Intersect<br></td>
+                  <td style="vertical-align: top; white-space: nowrap; color: rgb(0, 0, 153);">
+                  yes</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top; white-space: nowrap; color: rgb(0, 0, 153);">
+                  1 Difference&nbsp;<br></td>
+                  <td style="vertical-align: top; color: rgb(0, 0, 153);">
+                  yes</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top; white-space: nowrap;">2
+                  Replace<br></td>
+                  <td style="vertical-align: top; white-space: nowrap;">no -
+                  runtime error<br></td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">3 Reverse
+                  Difference<br></td>
+                  <td style="vertical-align: top;">no - runtime
+                  error</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">4
+                  Union&nbsp;&nbsp;</td>
+                  <td style="vertical-align: top;">no - runtime
+                  error</td>
+                </tr>
+                <tr>
+                  <td style="vertical-align: top;">5 XOR<br></td>
+                  <td style="vertical-align: top;">no - runtime
+                  error</td>
+                </tr>
+              </tbody>
+            </table><br>
+            thus <span style="color: rgb(0, 0, 153);">GR.CLIP.START</span> only
+            accepts 0 or 1 for the region code.<br>
+            <br>
+            <span style="color: rgb(0, 0, 153);">GR.CLIP.END</span>
             restores the canvas to the state (and region size)
-            before the last clip.<BR>
-            It is <SPAN style=
-            "text-decoration: underline;">strongly advised</SPAN>
-            to use GR.CLIP.END after your objects are clipped.<BR>
+            before the last clip.<br>
+            It is <span style="text-decoration: underline;">strongly advised</span>
+            to use GR.CLIP.END after your objects are clipped.<br>
             Previously this was achievable with Region Op 2, but
             since API 28, GR.CLIP.END is the only way to restore
-            the canvas size.<BR>
-            <BR>
-            <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> is the marker
+            the canvas size.<br>
+            <br>
+            <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp</span> is the marker
             object returned of either the clip START object&nbsp;
             or the (optional) clip END object. These are useful for
-            display list manipulation <SMALL>( similar to
-            GR.ROTATE).<BR></SMALL><BR>
+            display list manipulation <small>( similar to
+            GR.ROTATE).<br></small><br>
             You may nest clips as long as each block is properly
-            <SPAN style=
-            "color: rgb(0, 0, 153);">GR.CLIP.END</SPAN>ed.<BR>
-            <BR>
+            <span style="color: rgb(0, 0, 153);">GR.CLIP.END</span>ed.<br>
+            <br>
             These commands use the same canvas stack as
             GR.ROTATE.{start / end}. You may nest both types but
             you cannot interwine CLIP STARTs with ROTATE ENDs (and
-            vice versa).<BR>
-            <BR>
+            vice versa).<br>
+            <br>
             i.e, Always match the correct END type with the last
-            used START.<BR>
-            e.g <SMALL><SPAN style=
-            "color: rgb(0, 0, 153);">GR.CLIP.START</SPAN>...&nbsp;
-            <SPAN style=
-            "color: rgb(153, 0, 0);">GR.ROTATE.START</SPAN>....</SMALL>
-            <SMALL><SPAN style=
-            "color: rgb(0, 0, 153);">GR.CLIP.START</SPAN>...</SMALL>
-            <SMALL><SPAN style=
-            "color: rgb(0, 0, 153);">GR.CLIP.END</SPAN>...</SMALL><SMALL><SPAN style="color: rgb(153, 0, 0);">GR.ROTATE.END</SPAN>..&nbsp;</SMALL>
-            <SMALL><SPAN style=
-            "color: rgb(0, 0, 153);">GR.CLIP.END</SPAN></SMALL><BR>
-            <BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <A name="multi_input" id="multi_input"></A><FONT size=
-          "+1">Accept Multiple Input</FONT><SPAN style=
-          "color: rgb(0, 0, 153);"><BR>
-          <BR></SPAN>
-          <DIV style="margin-left: 40px;">
-            These are enhancements made to <SPAN style=
-            "color: rgb(0, 0, 153);">accept multiple input
-            parameters</SPAN> instead of just one with the same
-            command.<BR style="color: rgb(0, 0, 153);">
-          </DIV><BR style="color: rgb(0, 0, 153);">
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);"><A name="gr_show" id=
-            "gr_show"></A>GR.SHOW</SPAN> <SPAN style=
-            "font-weight: bold;">object_number</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp {,&nbsp;</SPAN>
-            <SPAN style="font-weight: bold;">...</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">}</SPAN></FONT><BR>
+            used START.<br>
+            e.g <small><span style="color: rgb(0, 0, 153);">GR.CLIP.START</span>...&nbsp;
+            <span style="color: rgb(153, 0, 0);">GR.ROTATE.START</span>....</small>
+            <small><span style="color: rgb(0, 0, 153);">GR.CLIP.START</span>...</small>
+            <small><span style="color: rgb(0, 0, 153);">GR.CLIP.END</span>...</small><small><span style="color: rgb(153, 0, 0);">GR.ROTATE.END</span>..&nbsp;</small>
+            <small><span style="color: rgb(0, 0, 153);">GR.CLIP.END</span></small><br>
+            <br>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <a name="multi_input" id="multi_input"></a><font size="+1">Accept Multiple Input</font><span style="color: rgb(0, 0, 153);"><br>
+          <br></span>
+          <div style="margin-left: 40px;">
+            These are enhancements made to <span style="color: rgb(0, 0, 153);">accept multiple input
+            parameters</span> instead of just one with the same
+            command.<br style="color: rgb(0, 0, 153);">
+          </div><br style="color: rgb(0, 0, 153);">
+          <div style="margin-left: 40px;">
+            <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="gr_show" id="gr_show"></a>GR.SHOW</span> <span style="font-weight: bold;">object_number</span><span style="color: rgb(102, 51, 0);">_nexp {,&nbsp;</span>
+            <span style="font-weight: bold;">...</span>
+            <span style="color: rgb(102, 51, 0);">}</span></font><br>
 
-            &nbsp;shows one <SPAN style=
-            "text-decoration: underline;">or more</SPAN>
-            objects.<BR>
-            <FONT size="+1"><BR>
-            <SPAN style="color: rgb(0, 0, 153);"><A name="gr_hide"
-            id="gr_hide"></A>GR.HIDE</SPAN> <SPAN style=
-            "font-weight: bold;">object_number</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp {,</SPAN> <SPAN style=
-            "font-weight: bold;">...</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);">}</SPAN></FONT><BR>
-            hides one <SPAN style="text-decoration: underline;">or
-            more</SPAN> objects.<BR>
-            <BR>
-            e.g<BR>
-            <DIV style="margin-left: 40px;">
-              GR.HIDE cat, dog, mouse<BR>
-            </DIV>
-          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><FONT size="+1">Object Properties<BR>
-          <BR></FONT></FONT>
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);"><A name="gr_get_params" id=
-            "gr_get_params"></A>GR.GET.PARAMS</SPAN> <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> , <SPAN style=
-            "font-weight: bold;">param</SPAN>_</FONT><SPAN style=
-            "color: rgb(102, 51, 0);"><FONT size=
-            "+1">array$[]</FONT><BR>
-            <BR></SPAN>
-            <DIV style="margin-left: 40px;">
+            &nbsp;shows one <span style="text-decoration: underline;">or more</span>
+            objects.<br>
+            <font size="+1"><br>
+            <span style="color: rgb(0, 0, 153);"><a name="gr_hide" id="gr_hide"></a>GR.HIDE</span> <span style="font-weight: bold;">object_number</span><span style="color: rgb(102, 51, 0);">_nexp {,</span> <span style="font-weight: bold;">...</span> <span style="color: rgb(102, 51, 0);">}</span></font><br>
+            hides one <span style="text-decoration: underline;">or
+            more</span> objects.<br>
+            <br>
+            e.g<br>
+            <div style="margin-left: 40px;">
+              GR.HIDE cat, dog, mouse<br>
+            </div>
+          </div><span style="color: rgb(0, 0, 153);"><br></span>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><font size="+1">Object Properties<br>
+          <br></font></font>
+          <div style="margin-left: 40px;">
+            <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="gr_get_params" id="gr_get_params"></a>GR.GET.PARAMS</span> <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp</span> , <span style="font-weight: bold;">param</span>_</font><span style="color: rgb(102, 51, 0);"><font size="+1">array$[]</font><br>
+            <br></span>
+            <div style="margin-left: 40px;">
               In legacy Basic, this command gets the modifiable
-              parameters of the display list <SPAN style=
-              "font-weight: bold;">object_ptr</SPAN> into the
-              <SPAN style="font-weight: bold;">param</SPAN> string
-              array.<BR>
-              <BR>
-              In hBasic this command also returns&nbsp; <A href=
-              "graphics-system.html#graphics_gp">General
-              Purpose&nbsp; parameters</A> at the end of the array.
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+              parameters of the display list <span style="font-weight: bold;">object_ptr</span> into the
+              <span style="font-weight: bold;">param</span> string
+              array.<br>
+              <br>
+              In hBasic this command also returns&nbsp; <a href="graphics-system.html#graphics_gp">General
+              Purpose&nbsp; parameters</a> at the end of the array.
+            </div>
+          </div>
+          <div style="margin-left: 80px;">
             In addition, the general purpose parameters have been
-            extended with "<SPAN style=
-            "color: rgb(0, 0, 153);">x</SPAN>","<SPAN style=
-            "color: rgb(0, 0, 153);">y</SPAN>","<SPAN style=
-            "color: rgb(0, 0, 153);">paint</SPAN>","<SPAN style=
-            "color: rgb(0, 0, 153);">alpha</SPAN>", "<SPAN style=
-            "color: rgb(0, 0, 153);">speed</SPAN>" and
-            "<SPAN style="color: rgb(0, 0, 153);">dir</SPAN>" for
-            all objects.<BR>
-          </DIV><BR>
-          <FONT size="+1">Object Property Values<BR>
-          <BR></FONT>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: underline;">Read-Only
-            Values</SPAN><BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            extended with "<span style="color: rgb(0, 0, 153);">x</span>","<span style="color: rgb(0, 0, 153);">y</span>","<span style="color: rgb(0, 0, 153);">paint</span>","<span style="color: rgb(0, 0, 153);">alpha</span>", "<span style="color: rgb(0, 0, 153);">speed</span>" and
+            "<span style="color: rgb(0, 0, 153);">dir</span>" for
+            all objects.<br>
+          </div><br>
+          <font size="+1">Object Property Values<br>
+          <br></font>
+          <div style="margin-left: 40px;">
+            <span style="text-decoration: underline;">Read-Only
+            Values</span><br>
+          </div>
+          <div style="margin-left: 80px;">
             In hBasic, for GR.GET.VALUE and GR.MODIFY, all
-            parameters are 'get'-able, but <SPAN style=
-            "font-weight: bold;">not</SPAN> all parameters are
+            parameters are 'get'-able, but <span style="font-weight: bold;">not</span> all parameters are
             'mod'-ifiable. An example would be the "width" value of
-            a <A href="graphics.html#sprites">Sprite</A> object
+            a <a href="graphics.html#sprites">Sprite</a> object
             which is read-only. The updated Object Table is found
-            <A href=
-            "graphics-system.html#object_table">here.</A><BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);"><A name="gr_get_value" id=
-            "gr_get_value"></A></SPAN></FONT><SPAN style=
-            "color: rgb(0, 0, 153);">GR.GET.VALUE</SPAN>
-            <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> <SPAN style=
-            "font-weight: bold;">{,</SPAN> <SPAN style=
-            "font-weight: bold;">tag</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN> , <SPAN style=
-            "font-weight: bold;">value</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN> | <SPAN style=
-            "color: rgb(102, 51, 0);">svar</SPAN> <SPAN style=
-            "font-weight: bold;">} ...</SPAN><BR>
-          </DIV><BR>
-          <DIV style="margin-left: 80px;">
+            <a href="graphics-system.html#object_table">here.</a><br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="gr_get_value" id="gr_get_value"></a></span></font><span style="color: rgb(0, 0, 153);">GR.GET.VALUE</span>
+            <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp</span> <span style="font-weight: bold;">{,</span> <span style="font-weight: bold;">tag</span><span style="color: rgb(102, 51, 0);">_sexp</span> , <span style="font-weight: bold;">value</span><span style="color: rgb(102, 51, 0);">_nvar</span> | <span style="color: rgb(102, 51, 0);">svar</span> <span style="font-weight: bold;">} ...</span><br>
+          </div><br>
+          <div style="margin-left: 80px;">
             There is no change to this command, except that all the
-            newly added <A href=
-            "graphics-system.html#graphics_gp">general purpose
-            parameters</A> are also available to get.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_modify" id="gr_modify"></A>GR.MODIFY</SPAN>
-            <SPAN style=
-            "font-weight: bold;">object_pt</SPAN><SPAN style=
-            "font-weight: bold;">r</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> | <SPAN style=
-            "color: rgb(102, 0, 0);"><SPAN style=
-            "font-weight: bold;">array[ ]</SPAN></SPAN>&nbsp;
-            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
-            "font-weight: bold;">tag</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>, <SPAN style=
-            "font-weight: bold;">value</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">nexp</SPAN> | <SPAN style=
-            "color: rgb(102, 51, 0);">sexp</SPAN>&gt; <SPAN style=
-            "font-weight: bold;">} ...</SPAN>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            <SPAN style="text-decoration: underline;">Added Array
-            option</SPAN><BR>
-          </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
-          <DIV style="margin-left: 80px;">
-            <DIV style="margin-left: 40px;">
+            newly added <a href="graphics-system.html#graphics_gp">general purpose
+            parameters</a> are also available to get.<br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_modify" id="gr_modify"></a>GR.MODIFY</span>
+            <span style="font-weight: bold;">object_pt</span><span style="font-weight: bold;">r</span><span style="color: rgb(102, 51, 0);">_nexp</span> | <span style="color: rgb(102, 0, 0);"><span style="font-weight: bold;">array[ ]</span></span>&nbsp;
+            <span style="font-weight: bold;">{,</span> <span style="font-weight: bold;">tag</span><span style="color: rgb(102, 51, 0);">_sexp</span>, <span style="font-weight: bold;">value</span><span style="color: rgb(102, 51, 0);">_</span><span style="color: rgb(102, 51, 0);">nexp</span> | <span style="color: rgb(102, 51, 0);">sexp</span>&gt; <span style="font-weight: bold;">} ...</span>
+          </div>
+          <div style="margin-left: 40px;">
+            <br>
+          </div>
+          <div style="margin-left: 80px;">
+            <span style="text-decoration: underline;">Added Array
+            option</span><br>
+          </div>
+          <div style="margin-left: 40px;"></div>
+          <div style="margin-left: 80px;">
+            <div style="margin-left: 40px;">
               As well as a single object, GR.MODIFY now accepts an
-              array pointer in place of the object.<BR>
+              array pointer in place of the object.<br>
               The modification is applied to all objects contained
-              in the array.<BR>
-              <BR>
+              in the array.<br>
+              <br>
               Any tag not belonging to any of the objects in the
               array will result in a run-time-error. So make sure
-              all objects have the tags you want to modify.<BR>
-              <BR>
-              The array must be <SPAN style=
-              "text-decoration: underline;">one-dimensional</SPAN>.
+              all objects have the tags you want to modify.<br>
+              <br>
+              The array must be <span style="text-decoration: underline;">one-dimensional</span>.
               (If you call it with a multi-dimensional array, the
-              results are unpredictable.)<BR>
-              <BR>
+              results are unpredictable.)<br>
+              <br>
               If any one of the objects is a group object, each
               object in the group will also be modified (see
-              below).<BR>
-            </DIV><BR>
-            <SPAN style="text-decoration: underline;">Group Object
-            behaviour</SPAN><BR>
-            <DIV style="margin-left: 40px;">
+              below).<br>
+            </div><br>
+            <span style="text-decoration: underline;">Group Object
+            behaviour</span><br>
+            <div style="margin-left: 40px;">
               An alternative to an array is to use a group object.
-              <SPAN style=
-              "text-decoration: underline;">However,</SPAN> groups
-              objects will only change <A href=
-              "graphics-sytem.html#graphics_gp">general purpose
-              parameters</A> of each object in it's list , non-gp
+              <span style="text-decoration: underline;">However,</span> groups
+              objects will only change <a href="graphics-sytem.html#graphics_gp">general purpose
+              parameters</a> of each object in it's list , non-gp
               parameters will only apply to the group object itself
-              (not the objects in the list).<BR>
-              If you modify the "<SPAN style=
-              "font-weight: bold;">x</SPAN>" or "<SPAN style=
-              "font-weight: bold;">y</SPAN>" of a group object, the
-              objects in it's list also gets changed (see <A href=
-              "graphics-system.html#whole">whole object
-              positioning</A>).<BR>
+              (not the objects in the list).<br>
+              If you modify the "<span style="font-weight: bold;">x</span>" or "<span style="font-weight: bold;">y</span>" of a group object, the
+              objects in it's list also gets changed (see <a href="graphics-system.html#whole">whole object
+              positioning</a>).<br>
               Group objects will only be modified to one group
               level. If a group object contains another group
               object, the second level of objects will no be
-              modified.<BR>
-              <BR>
-            </DIV><SPAN style="text-decoration: underline;">X,Y
-            behaviour</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              Modifying the "<SPAN style=
-              "font-weight: bold;">x</SPAN>" and "<SPAN style=
-              "font-weight: bold;">y</SPAN>" parameters will move
-              the whole object (see <A href=
-              "graphics-system.html#whole">whole object
-              positioning</A>).<BR>
-              <BR>
-            </DIV><SPAN style="text-decoration: underline;">Illegal
-            object numbers</SPAN><BR>
-            <DIV style="margin-left: 40px;">
+              modified.<br>
+              <br>
+            </div><span style="text-decoration: underline;">X,Y
+            behaviour</span><br>
+            <div style="margin-left: 40px;">
+              Modifying the "<span style="font-weight: bold;">x</span>" and "<span style="font-weight: bold;">y</span>" parameters will move
+              the whole object (see <a href="graphics-system.html#whole">whole object
+              positioning</a>).<br>
+              <br>
+            </div><span style="text-decoration: underline;">Illegal
+            object numbers</span><br>
+            <div style="margin-left: 40px;">
               Internally , object zero is reserved and unused. It
               is always in the objects list for historical
-              reasons.<BR>
+              reasons.<br>
               In legacy Basic, object zero is modifiable but will
               not be rendered and will give no error if
-              attempted.<BR>
+              attempted.<br>
               In hBasic, object number zero is considered illegal
-              and will run time error if given for GR.MODIFY.<BR>
+              and will run time error if given for GR.MODIFY.<br>
               The legal range of object numbers is 1 to
-              last_object.<BR>
-            </DIV>
-            <DIV style="margin-left: 40px;"></DIV><BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <A name="display_list_commands" id=
-          "display_list_commands"></A><FONT size="+1">Display List
-          Commands</FONT><BR>
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><FONT size="+1"><BR>
-          </FONT></SPAN></FONT>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: underline;">Display List
-            Ordering</SPAN><BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            See <A href=
-            "graphics-system.html#display_list_ordering">here</A>
-            for an explanation of <A href=
-            "graphics-system.html#display_list_ordering">display
-            list ordering</A>.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_dl_getz" id="gr_dl_getz"></A>GR.DL.GETZ</SPAN>
-            &lt;<SPAN style=
-            "font-weight: bold;">index</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN> , <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN>&gt; <SPAN style=
-            "font-weight: bold;">{, ...}</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><FONT size="+1"><BR>
-            <BR></FONT></SPAN>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            Gets the z-index of an object <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN> into
-            <SPAN style="font-weight: bold;">index</SPAN>.<BR>
-            Returns a value of -1 if not on display list.<BR>
-            <BR>
+              last_object.<br>
+            </div>
+            <div style="margin-left: 40px;"></div><br>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <a name="display_list_commands" id="display_list_commands"></a><font size="+1">Display List
+          Commands</font><br>
+          <font size="+1"><span style="color: rgb(0, 0, 153);"><font size="+1"><br>
+          </font></span></font>
+          <div style="margin-left: 40px;">
+            <span style="text-decoration: underline;">Display List
+            Ordering</span><br>
+          </div>
+          <div style="margin-left: 80px;">
+            See <a href="graphics-system.html#display_list_ordering">here</a>
+            for an explanation of <a href="graphics-system.html#display_list_ordering">display
+            list ordering</a>.<br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_dl_getz" id="gr_dl_getz"></a>GR.DL.GETZ</span>
+            &lt;<span style="font-weight: bold;">index</span><span style="color: rgb(102, 51, 0);">_nvar</span> , <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nvar</span>&gt; <span style="font-weight: bold;">{, ...}</span><span style="color: rgb(102, 51, 0);"><font size="+1"><br>
+            <br></font></span>
+          </div>
+          <div style="margin-left: 80px;">
+            Gets the z-index of an object <span style="font-weight: bold;">object_ptr</span> into
+            <span style="font-weight: bold;">index</span>.<br>
+            Returns a value of -1 if not on display list.<br>
+            <br>
             Note that this can potentially return position 0 even
-            though the reserved object 0 cannot be moved.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: underline;">Display List
-            Moving</SPAN><BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_dl_move" id="gr_dl_move"></A>GR.DL.MOVE</SPAN>
-            <SPAN style="font-weight: bold;">pos</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> , &lt;
-            <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> <SPAN style=
-            "font-weight: bold;">|</SPAN> <SPAN style=
-            "font-weight: bold;">arr[]</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;
-            <SPAN style="font-weight: bold;">{,
-            ...}</SPAN><FONT size="+1"><BR></FONT>
-          </DIV><BR>
-          <DIV style="margin-left: 80px;">
+            though the reserved object 0 cannot be moved.<br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="text-decoration: underline;">Display List
+            Moving</span><br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_dl_move" id="gr_dl_move"></a>GR.DL.MOVE</span>
+            <span style="font-weight: bold;">pos</span><span style="color: rgb(102, 51, 0);">_nexp</span> , &lt;
+            <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp</span> <span style="font-weight: bold;">|</span> <span style="font-weight: bold;">arr[]</span><span style="color: rgb(102, 51, 0);">_array[]</span> &gt;
+            <span style="font-weight: bold;">{,
+            ...}</span><font size="+1"><br></font>
+          </div><br>
+          <div style="margin-left: 80px;">
             GR.DL.MOVE will move the object(s) 'after' the z-index
-            <SPAN style="font-weight: bold;">pos</SPAN>.<BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            You can give multiple objects or arrays.<BR>
+            <span style="font-weight: bold;">pos</span>.<br>
+          </div>
+          <div style="margin-left: 80px;">
+            You can give multiple objects or arrays.<br>
             If it's an array, each object in the array is
-            moved.<BR>
-            An object may also be a group object (see below).<BR>
+            moved.<br>
+            An object may also be a group object (see below).<br>
             The object(s) does not have to already be on the
-            display list.<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            display list.<br>
+          </div>
+          <div style="margin-left: 40px;">
+            <br>
+          </div>
+          <div style="margin-left: 80px;">
             If an object does not exist (not in the object list),
-            there will be an error.<BR>
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            there will be an error.<br>
+            <br>
+          </div>
+          <div style="margin-left: 80px;">
             Current objects will be shifted to the right to make
-            room.<BR>
-            The first object will be moved 'after' <SPAN style=
-            "font-weight: bold;">pos</SPAN>, i.e (pos+1).<BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            room.<br>
+            The first object will be moved 'after' <span style="font-weight: bold;">pos</span>, i.e (pos+1).<br>
+          </div>
+          <div style="margin-left: 80px;">
             Each successive object is moved 'after' the last moved
-            object.<BR>
+            object.<br>
             The last object moved will be nearest the end of the
-            display list (screen front).<BR>
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            display list (screen front).<br>
+            <br>
+          </div>
+          <div style="margin-left: 80px;">
             Any holes left behind are filled by shifting objects
-            from the right to the left.<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            <SPAN style="text-decoration: underline;">Move to
-            Back</SPAN><BR>
-            To specify a move to position 1, set <SPAN style=
-            "font-weight: bold;">pos</SPAN> to 0. The object will
+            from the right to the left.<br>
+          </div>
+          <div style="margin-left: 40px;">
+            <br>
+          </div>
+          <div style="margin-left: 80px;">
+            <span style="text-decoration: underline;">Move to
+            Back</span><br>
+            To specify a move to position 1, set <span style="font-weight: bold;">pos</span> to 0. The object will
             be moved after position 0 and will render as the first
-            item in the display list (back of screen).<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-            <DIV style="margin-left: 40px;">
-              <SPAN style="text-decoration: underline;">Move to
-              Front</SPAN>
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            item in the display list (back of screen).<br>
+          </div>
+          <div style="margin-left: 40px;">
+            <br>
+            <div style="margin-left: 40px;">
+              <span style="text-decoration: underline;">Move to
+              Front</span>
+            </div>
+          </div>
+          <div style="margin-left: 80px;">
             To specify a move to the last position, set
-            <SPAN style="font-weight: bold;">pos</SPAN> to the last
+            <span style="font-weight: bold;">pos</span> to the last
             position or alternatively to a negative number. This
             will be rendered last in the display list (front of
-            screen).<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <DIV style="margin-left: 40px;">
-              Also, If <SPAN style="font-weight: bold;">pos</SPAN>
+            screen).<br>
+          </div>
+          <div style="margin-left: 40px;">
+            <div style="margin-left: 40px;">
+              Also, If <span style="font-weight: bold;">pos</span>
               is greater than the last position, then the object is
-              also moved to the last position.<BR>
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            <BR>
-            <SPAN style="text-decoration: underline;">Special
-            Moves</SPAN><BR>
+              also moved to the last position.<br>
+            </div>
+          </div>
+          <div style="margin-left: 80px;">
+            <br>
+            <span style="text-decoration: underline;">Special
+            Moves</span><br>
             If the object is not on the display list, it
-            <SPAN style="text-decoration: underline;">will still be
-            put on the display list</SPAN> (if it exists on the
-            object list).<BR>
+            <span style="text-decoration: underline;">will still be
+            put on the display list</span> (if it exists on the
+            object list).<br>
             This is one way to move objects back onto the display
-            list.<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            list.<br>
+          </div>
+          <div style="margin-left: 40px;">
+            <br>
+          </div>
+          <div style="margin-left: 80px;">
             If the object to move is a group object, the group
             object itself is not moved. But each object in it's
             list is moved in turn (even if the group object itself
-            is not on the display list).<BR>
+            is not on the display list).<br>
             The last group item will be nearest the end of the
-            list. &nbsp;&nbsp;&nbsp;<BR>
+            list. &nbsp;&nbsp;&nbsp;<br>
             Any group within a group is ignored.
-            &nbsp;&nbsp;&nbsp;<BR>
+            &nbsp;&nbsp;&nbsp;<br>
             If any object does not exist (not in the object list),
-            there will be an error.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 80px;">
+            there will be an error.<br>
+          </div><br>
+          <div style="margin-left: 80px;">
             Note that the object at index 0 is never shifted. This
-            object is a reserved object and is never moved.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: underline;">Display List
-            Removing</SPAN><BR>
-          </DIV><BR>
-          <DIV style="margin-left: 80px;">
+            object is a reserved object and is never moved.<br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="text-decoration: underline;">Display List
+            Removing</span><br>
+          </div><br>
+          <div style="margin-left: 80px;">
             An object not on the display list never gets
-            rendered.<BR>
+            rendered.<br>
             Removing an object from the display list does not
-            remove it from the object list.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_dl_remove" id=
-            "gr_dl_remove"></A>GR.DL.REMOVE</SPAN> &lt;
-            <SPAN style="font-weight: bold;">object_ptr</SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN>
-            | <SPAN style=
-            "font-weight: bold;">arr[]</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;
-            <SPAN style="font-weight: bold;">{, ...}</SPAN><BR>
-            <BR>
-            <DIV style="margin-left: 40px;">
-              Remove an <SPAN style=
-              "font-weight: bold;">object_ptr</SPAN>(s) from the
-              display list.<BR>
-              If you specify an array <SPAN style=
-              "font-weight: bold;">arr[]</SPAN> instead of an
-              <SPAN style="font-weight: bold;">object_ptr</SPAN>,
-              each object in the array is removed in turn.<BR>
+            remove it from the object list.<br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_dl_remove" id="gr_dl_remove"></a>GR.DL.REMOVE</span> &lt;
+            <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp</span>
+            | <span style="font-weight: bold;">arr[]</span><span style="color: rgb(102, 51, 0);">_array[]</span> &gt;
+            <span style="font-weight: bold;">{, ...}</span><br>
+            <br>
+            <div style="margin-left: 40px;">
+              Remove an <span style="font-weight: bold;">object_ptr</span>(s) from the
+              display list.<br>
+              If you specify an array <span style="font-weight: bold;">arr[]</span> instead of an
+              <span style="font-weight: bold;">object_ptr</span>,
+              each object in the array is removed in turn.<br>
               You may specify any number of objects or arrays by
-              separating with commas.<BR>
-              <BR>
+              separating with commas.<br>
+              <br>
               If an object is not on the display list, there is no
-              error and no action is taken.<BR>
+              error and no action is taken.<br>
               If an object does not exist (not on object list),
-              there will be an error.<BR>
+              there will be an error.<br>
               You cannot remove object 0 (there will be an
-              error).<BR>
-              <BR>
+              error).<br>
+              <br>
               If the object is a group object, after the group
               object is removed. The objects in the group's list
-              are also removed from the display list.<BR>
+              are also removed from the display list.<br>
               (Note that group objects do not have to be present on
               the display list, but the objects in their lists do,
-              in order to be rendered).<BR>
-            </DIV>
-          </DIV><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><BR></SPAN></FONT>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="sprites" id=
-          "setacc"></A>Sprites</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            See <A href=
-            "graphics-system.html#sprites_and_animation">Sprites
-            and Animation</A> for an overview of these items.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
+              in order to be rendered).<br>
+            </div>
+          </div><font size="+1"><span style="color: rgb(0, 0, 153);"><br></span></font>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="sprites" id="setacc"></a>Sprites</span></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            See <a href="graphics-system.html#sprites_and_animation">Sprites
+            and Animation</a> for an overview of these items.<br>
+          </div><br>
+          <div style="margin-left: 40px;">
             A Sprite display list object is similar to a Bitmap
             display list object but with the addition of an
-            optional animation.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            As well as the <A href=
-            "graphics-system.html#graphics_gp">general purpose</A>
-            properties (including speed and dir) <A href=
-            "graphics-system.html#object_sprite">sprites</A> also
-            offer the following<BR>
-            for GR.GET.VALUE<BR>
-            <DIV style="margin-left: 40px;">
+            optional animation.<br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            As well as the <a href="graphics-system.html#graphics_gp">general purpose</a>
+            properties (including speed and dir) <a href="graphics-system.html#object_sprite">sprites</a> also
+            offer the following<br>
+            for GR.GET.VALUE<br>
+            <div style="margin-left: 40px;">
               "bitmap" , "anim" , "arate" , "aframe" , "aloop" ,
-              "width" and "height"<BR>
-            </DIV>and for GR.MODIFY,<BR>
-            <DIV style="margin-left: 40px;">
-              "bitmap" , "anim" , "arate" , "aframe" , "aloop"<BR>
-              <BR>
-            </DIV>see <A href=
-            "graphics-system.html#sprite-props">Sprite
-            Properties</A> for more information.<BR>
-          </DIV><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_sprite_draw" id=
-            "gr_sprite_draw"></A>GR.SPRITE.DRAW</SPAN> <SPAN style=
-            "font-weight: bold;">spr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar,</SPAN> <SPAN style=
-            "font-weight: bold;">x</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">y</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">bmpPtr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp {,</SPAN> <SPAN style=
-            "font-weight: bold;">animation</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp}<BR></SPAN><BR>
+              "width" and "height"<br>
+            </div>and for GR.MODIFY,<br>
+            <div style="margin-left: 40px;">
+              "bitmap" , "anim" , "arate" , "aframe" , "aloop"<br>
+              <br>
+            </div>see <a href="graphics-system.html#sprite-props">Sprite
+            Properties</a> for more information.<br>
+          </div><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_sprite_draw" id="gr_sprite_draw"></a>GR.SPRITE.DRAW</span> <span style="font-weight: bold;">spr</span><span style="color: rgb(102, 51, 0);">_nvar,</span> <span style="font-weight: bold;">x</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">y</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">bmpPtr</span><span style="color: rgb(102, 51, 0);">_nexp {,</span> <span style="font-weight: bold;">animation</span><span style="color: rgb(102, 51, 0);">_nexp}<br></span><br>
             Creates a Sprite object which is returned in
-            <SPAN style="font-weight: bold;">spr</SPAN> and adds it
-            to the display list.<BR>
-            <BR>
-            A Sprite <SPAN style=
-            "text-decoration: underline;">must</SPAN> have a
-            <SPAN style="font-weight: bold;">bmpPtr</SPAN> called a
+            <span style="font-weight: bold;">spr</span> and adds it
+            to the display list.<br>
+            <br>
+            A Sprite <span style="text-decoration: underline;">must</span> have a
+            <span style="font-weight: bold;">bmpPtr</span> called a
             Standing bitmap. This is displayed if the sprite has no
-            animation.<BR>
+            animation.<br>
             The bmpPtr and it's bitmap must be created in
-            advance.<BR>
-            <BR>
-            The command can have an optional <SPAN style=
-            "font-weight: bold;">animation</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(0, 0, 0);">. If you use this parameter, you
+            advance.<br>
+            <br>
+            The command can have an optional <span style="font-weight: bold;">animation</span><span style="color: rgb(102, 51, 0);"><span style="color: rgb(0, 0, 0);">. If you use this parameter, you
             must create the animation in advance . If not, you can
-            omit this parameter and attach an animation later.<BR>
-            <BR>
+            omit this parameter and attach an animation later.<br>
+            <br>
             By default a sprite's animation is 0 (no
-            animation).<BR>
-            <BR>
-            Example</SPAN></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(0, 0, 0);"><BR></SPAN></SPAN>
-            <DIV style="margin-left: 40px;">
-              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-              "color: rgb(0, 0, 0);">GR.BITMAP.LOAD <SPAN style=
-              "color: rgb(0, 0, 153);">bmp</SPAN>,
-              "h-stand.png"</SPAN></SPAN><BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              GR.SPRITE.DRAW s0, 100, 100, <SPAN style=
-              "color: rgb(102, 51, 0);"><SPAN style=
-              "color: rgb(0, 0, 0);"><SPAN style=
-              "color: rgb(102, 102, 102);"><SPAN style=
-              "color: rgb(0, 0, 153);">bmp&nbsp;&nbsp;&nbsp;&nbsp;
-              <SPAN style="color: rgb(51, 51, 51);">% a sprite with
-              no animation</SPAN></SPAN></SPAN></SPAN></SPAN><BR>
-            </DIV>
-          </DIV><BR>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="animation" id=
-          "setacc"></A>Animation</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            See <A href=
-            "graphics-system#sprites_and_animation">Sprites and
-            Animation</A> for an overview of these items.<BR>
-            <BR>
-            Animations are <SPAN style=
-            "text-decoration: underline;">not</SPAN> display list
-            objects but can be attached to them.<BR>
-            Animations can only be attached to <A href=
-            "#sprites">Sprites.</A><BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
+            animation).<br>
+            <br>
+            Example</span></span><span style="color: rgb(102, 51, 0);"><span style="color: rgb(0, 0, 0);"><br></span></span>
+            <div style="margin-left: 40px;">
+              <span style="color: rgb(102, 51, 0);"><span style="color: rgb(0, 0, 0);">GR.BITMAP.LOAD <span style="color: rgb(0, 0, 153);">bmp</span>,
+              "h-stand.png"</span></span><br>
+            </div>
+            <div style="margin-left: 40px;">
+              GR.SPRITE.DRAW s0, 100, 100, <span style="color: rgb(102, 51, 0);"><span style="color: rgb(0, 0, 0);"><span style="color: rgb(102, 102, 102);"><span style="color: rgb(0, 0, 153);">bmp&nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="color: rgb(51, 51, 51);">% a sprite with
+              no animation</span></span></span></span></span><br>
+            </div>
+          </div><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="animation" id="setacc"></a>Animation</span></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            See <a href="graphics-system#sprites_and_animation">Sprites and
+            Animation</a> for an overview of these items.<br>
+            <br>
+            Animations are <span style="text-decoration: underline;">not</span> display list
+            objects but can be attached to them.<br>
+            Animations can only be attached to <a href="#sprites">Sprites.</a><br>
+          </div><br>
+          <div style="margin-left: 40px;">
             A sprite controls it's animation with it's&nbsp;
-            <A href="graphics-system.html#sprite-props">sprite
-            properties</A>;<BR>
-            <BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_anim_load" id=
-            "gr_anim_load"></A>GR.ANIM.LOAD</SPAN> <SPAN style=
-            "font-weight: bold;">ani</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">fileName</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN><SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">w</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN><SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">h</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN><SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">nFrames</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp {</SPAN><SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">skip</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN>}
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-            <DIV style="margin-left: 40px;">
+            <a href="graphics-system.html#sprite-props">sprite
+            properties</a>;<br>
+            <br>
+          </div><br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_anim_load" id="gr_anim_load"></a>GR.ANIM.LOAD</span> <span style="font-weight: bold;">ani</span><span style="color: rgb(102, 51, 0);">_nvar</span><span style="font-weight: bold;">,</span> <span style="font-weight: bold;">fileName</span><span style="color: rgb(102, 51, 0);">_sexp</span><span style="font-weight: bold;">,</span> <span style="font-weight: bold;">w</span><span style="color: rgb(102, 51, 0);">_nexp</span><span style="font-weight: bold;">,</span> <span style="font-weight: bold;">h</span><span style="color: rgb(102, 51, 0);">_nexp</span><span style="font-weight: bold;">,</span> <span style="font-weight: bold;">nFrames</span><span style="color: rgb(102, 51, 0);">_nexp {</span><span style="font-weight: bold;">,</span> <span style="font-weight: bold;">skip</span><span style="color: rgb(102, 51, 0);">_nexp</span>}
+          </div>
+          <div style="margin-left: 40px;">
+            <br>
+            <div style="margin-left: 40px;">
               Loads an animation from a file. The animation pointer
-              is returned in <SPAN style=
-              "font-weight: bold;">ani</SPAN><BR>
-              <BR>
-              The <SPAN style="font-weight: bold;">fileName</SPAN>
-              is not optional but can be an empty string.<BR>
+              is returned in <span style="font-weight: bold;">ani</span><br>
+              <br>
+              The <span style="font-weight: bold;">fileName</span>
+              is not optional but can be an empty string.<br>
               If fileName is an empty string, an empty animation is
-              created from empty bitmaps.<BR>
-              <BR>
-              <SPAN style="font-weight: bold;">w&nbsp;</SPAN> and
-              <SPAN style="font-weight: bold;">h</SPAN> are the
-              width and height of a frame in pixels.<BR>
-              <SPAN style="font-weight: bold;">nFrames</SPAN> is
+              created from empty bitmaps.<br>
+              <br>
+              <span style="font-weight: bold;">w&nbsp;</span> and
+              <span style="font-weight: bold;">h</span> are the
+              width and height of a frame in pixels.<br>
+              <span style="font-weight: bold;">nFrames</span> is
               the number of frames to load and is the length of the
-              animation.<BR>
-              <SPAN style="font-weight: bold;">skip</SPAN> is the
+              animation.<br>
+              <span style="font-weight: bold;">skip</span> is the
               optional number of frames to skip before loading, i.e
-              the offset frame.<BR>
-              <BR>
-              <SPAN style="text-decoration: underline;">Sprite
-              Sheets</SPAN><BR>
-              If <SPAN style="font-weight: bold;">fileName</SPAN>
+              the offset frame.<br>
+              <br>
+              <span style="text-decoration: underline;">Sprite
+              Sheets</span><br>
+              If <span style="font-weight: bold;">fileName</span>
               is not an empty string, it must be a sprite sheet
-              file.<BR>
+              file.<br>
               This is simply an image file containing frames of
-              smaller images of fixed frame size (<SPAN style=
-              "font-weight: bold;">w</SPAN>,<SPAN style=
-              "font-weight: bold;">h</SPAN>).<BR>
-              <BR>
+              smaller images of fixed frame size (<span style="font-weight: bold;">w</span>,<span style="font-weight: bold;">h</span>).<br>
+              <br>
               Below is a 256x132 sprite sheet containing 32 frames.
-              Each frame is&nbsp; 32x33.<BR>
-              <IMG src="pics/h-animate.png" alt="" style=
-              "width: 256px; height: 132px;">&nbsp;&nbsp;&nbsp;&nbsp;
-              <FONT size="-1">by Hapiel CC-BY 3.0 (<A href=
-              "https://opengameart.org/content/running-caveman">opengameart</A>)<BR>
+              Each frame is&nbsp; 32x33.<br>
+              <img src="pics/h-animate.png" alt="" style="width: 256px; height: 132px;">&nbsp;&nbsp;&nbsp;&nbsp;
+              <font size="-1">by Hapiel CC-BY 3.0 (<a href="https://opengameart.org/content/running-caveman">opengameart</a>)<br>
 
-              <BR></FONT> You can load any number of frames per
-              animation.<BR>
+              <br></font> You can load any number of frames per
+              animation.<br>
               e.g You could load two animations of 16 frames each,
               one animation for 'left', and the other for
-              'right'.<BR>
-              <BR>
-              The number of rows, or columns <SPAN style=
-              "text-decoration: underline;">does not matter,</SPAN>
+              'right'.<br>
+              <br>
+              The number of rows, or columns <span style="text-decoration: underline;">does not matter,</span>
               the command will try to read the image from left to
               right and top to bottom for any frames. If there are
               not enough frames, you will get empty frames or cut
-              frames.<BR>
-              Accepted formats are <SPAN style=
-              "font-family: Courier New,Courier,monospace;">jpg,
-              png, bmp, gif</SPAN>.<BR>
-              <BR>
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_anim_scale" id=
-            "gr_anim_scale"></A>GR.ANIM.SCAF</SPAN> <SPAN style=
-            "font-weight: bold;">ani</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar,</SPAN> <SPAN style=
-            "font-weight: bold;">scale</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp {,</SPAN> <SPAN style=
-            "font-weight: bold;">smooth</SPAN>_<SPAN style=
-            "color: rgb(102, 51, 0);">nexp}<BR></SPAN><BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <DIV style="margin-left: 40px;">
-              Scales each frame of an animation <SPAN style=
-              "font-weight: bold;">ani</SPAN>&nbsp; by a factor of
-              <SPAN style="font-weight: bold;">scale</SPAN> in both
-              directions.<BR>
-            </DIV><BR>
-            <DIV style="margin-left: 40px;">
-              <SPAN style="font-weight: bold;">scale</SPAN><BR>
-              <DIV style="margin-left: 40px;">
+              frames.<br>
+              Accepted formats are <span style="font-family: Courier New,Courier,monospace;">jpg,
+              png, bmp, gif</span>.<br>
+              <br>
+            </div>
+          </div>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);"><a name="gr_anim_scale" id="gr_anim_scale"></a>GR.ANIM.SCAF</span> <span style="font-weight: bold;">ani</span><span style="color: rgb(102, 51, 0);">_nvar,</span> <span style="font-weight: bold;">scale</span><span style="color: rgb(102, 51, 0);">_nexp {,</span> <span style="font-weight: bold;">smooth</span>_<span style="color: rgb(102, 51, 0);">nexp}<br></span><br>
+          </div>
+          <div style="margin-left: 40px;">
+            <div style="margin-left: 40px;">
+              Scales each frame of an animation <span style="font-weight: bold;">ani</span>&nbsp; by a factor of
+              <span style="font-weight: bold;">scale</span> in both
+              directions.<br>
+            </div><br>
+            <div style="margin-left: 40px;">
+              <span style="font-weight: bold;">scale</span><br>
+              <div style="margin-left: 40px;">
                 e.g 2 will enlarge the bitmap to twice the original
-                dimensions.<BR>
-                e.g 0.5 will reduce the dimensions to half.<BR>
-                a negative value inverts the image<BR>
-              </DIV>
-            </DIV><BR>
-            <DIV style="margin-left: 40px;">
-              <SPAN style="font-weight: bold;">smooth</SPAN><BR>
-              <DIV style="margin-left: 40px;">
-                true - smoothing is applied to <SPAN style=
-                "font-weight: bold;">scale</SPAN><BR>
-                false - no smoothing<BR>
-                default is <SPAN style=
-                "font-weight: bold;">false.</SPAN><BR>
-                If <SPAN style="font-weight: bold;">scale</SPAN> is
-                1.0,&nbsp; the smoothing has no effect.<BR>
-              </DIV>
-            </DIV><BR>
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_anim_getf" id=
-            "gr_anim_getf"></A>GR.ANIM.GET</SPAN>F <SPAN style=
-            "font-weight: bold;">ani</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">bmp_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">frame</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp<BR>
-            <BR></SPAN>
-            <DIV style="margin-left: 40px;">
-              Copies a <SPAN style=
-              "font-weight: bold;">frame</SPAN> from an animation
-              <SPAN style="font-weight: bold;">ani</SPAN>, into a
-              bitmap given by <SPAN style=
-              "font-weight: bold;">bmp_ptr</SPAN><BR>
-              <BR>
+                dimensions.<br>
+                e.g 0.5 will reduce the dimensions to half.<br>
+                a negative value inverts the image<br>
+              </div>
+            </div><br>
+            <div style="margin-left: 40px;">
+              <span style="font-weight: bold;">smooth</span><br>
+              <div style="margin-left: 40px;">
+                true - smoothing is applied to <span style="font-weight: bold;">scale</span><br>
+                false - no smoothing<br>
+                default is <span style="font-weight: bold;">false.</span><br>
+                If <span style="font-weight: bold;">scale</span> is
+                1.0,&nbsp; the smoothing has no effect.<br>
+              </div>
+            </div><br>
+            <span style="color: rgb(0, 0, 153);"><a name="gr_anim_getf" id="gr_anim_getf"></a>GR.ANIM.GET</span>F <span style="font-weight: bold;">ani</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">bmp_ptr</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">frame</span><span style="color: rgb(102, 51, 0);">_nexp<br>
+            <br></span>
+            <div style="margin-left: 40px;">
+              Copies a <span style="font-weight: bold;">frame</span> from an animation
+              <span style="font-weight: bold;">ani</span>, into a
+              bitmap given by <span style="font-weight: bold;">bmp_ptr</span><br>
+              <br>
               Both the animation and bitmap pointer must already
-              exist.<BR>
-              This overwrites any old bitmap of <SPAN style=
-              "font-weight: bold;">bmp_ptr</SPAN>.<BR>
+              exist.<br>
+              This overwrites any old bitmap of <span style="font-weight: bold;">bmp_ptr</span>.<br>
               Even if the bitmap was previously deleted, it will
-              use this <SPAN style=
-              "font-weight: bold;">bmp_ptr</SPAN> for the new
-              bitmap.<SPAN style=
-              "color: rgb(102, 51, 0);"><BR></SPAN> Frame numbers
-              are zero based (0 is the first frame).<BR>
-              <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN>
-            </DIV><SPAN style="color: rgb(0, 0, 153);"><A name=
-            "gr_anim_putf" id=
-            "gr_anim_putf"></A></SPAN><SPAN style="color: rgb(0, 0, 153);">GR.ANIM.PUTF</SPAN>
-            <SPAN style="font-weight: bold;">ani</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">bmp_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
-            "font-weight: bold;">frame</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><BR>
-            <BR></SPAN>
-            <DIV style="margin-left: 40px;">
-              Copies a&nbsp; a bitmap given by <SPAN style=
-              "font-weight: bold;">bmp_ptr</SPAN> into a
-              <SPAN style="font-weight: bold;">frame</SPAN> of an
-              animation <SPAN style=
-              "font-weight: bold;">ani</SPAN><BR>
-              <BR>
-              This overwrites any old bitmap of the <SPAN style=
-              "font-weight: bold;">frame</SPAN> in <SPAN style=
-              "font-weight: bold;">ani</SPAN>.<BR>
-              Both the animation and bitmap must already exist.<BR>
+              use this <span style="font-weight: bold;">bmp_ptr</span> for the new
+              bitmap.<span style="color: rgb(102, 51, 0);"><br></span> Frame numbers
+              are zero based (0 is the first frame).<br>
+              <span style="color: rgb(102, 51, 0);"><br></span>
+            </div><span style="color: rgb(0, 0, 153);"><a name="gr_anim_putf" id="gr_anim_putf"></a></span><span style="color: rgb(0, 0, 153);">GR.ANIM.PUTF</span>
+            <span style="font-weight: bold;">ani</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">bmp_ptr</span><span style="color: rgb(102, 51, 0);">_nexp,</span> <span style="font-weight: bold;">frame</span><span style="color: rgb(102, 51, 0);">_nexp</span><span style="color: rgb(102, 51, 0);"><br>
+            <br></span>
+            <div style="margin-left: 40px;">
+              Copies a&nbsp; a bitmap given by <span style="font-weight: bold;">bmp_ptr</span> into a
+              <span style="font-weight: bold;">frame</span> of an
+              animation <span style="font-weight: bold;">ani</span><br>
+              <br>
+              This overwrites any old bitmap of the <span style="font-weight: bold;">frame</span> in <span style="font-weight: bold;">ani</span>.<br>
+              Both the animation and bitmap must already exist.<br>
               Frame numbers are zero based (0 is the first
-              frame).<BR>
-            </DIV>
-          </DIV><BR>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="gr_motion" id=
-          "setacc"></A>GR.MOTION</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">GR.MOTION<BR></SPAN>
-            <SPAN style=
-            "color: rgb(0, 0, 153);">GR.MOTION</SPAN>&nbsp; &lt;
-            <SPAN style=
-            "font-weight: bold;">object_ptr</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN> <SPAN style=
-            "font-weight: bold;">|</SPAN> <SPAN style=
-            "font-weight: bold;">arr[]</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;
-            <SPAN style="font-weight: bold;">{,
-            ...}</SPAN><FONT size="+1"><BR></FONT><BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
+              frame).<br>
+            </div>
+          </div><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="gr_motion" id="setacc"></a>GR.MOTION</span></font><br>
+          <br>
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(0, 0, 153);">GR.MOTION<br></span>
+            <span style="color: rgb(0, 0, 153);">GR.MOTION</span>&nbsp; &lt;
+            <span style="font-weight: bold;">object_ptr</span><span style="color: rgb(102, 51, 0);">_nexp</span> <span style="font-weight: bold;">|</span> <span style="font-weight: bold;">arr[]</span><span style="color: rgb(102, 51, 0);">_array[]</span> &gt;
+            <span style="font-weight: bold;">{,
+            ...}</span><font size="+1"><br></font><br>
+          </div>
+          <div style="margin-left: 40px;">
             Updates all viewable objects to new positions based on
-            their speed and direction.<BR>
+            their speed and direction.<br>
             Updates all animations (for sprites) based on their
-            animation rates.<BR>
-            <BR>
+            animation rates.<br>
+            <br>
             Normally you would use the first form (without
             parameters) in which all objects are moved, even if
             they are not on the display list and even if they are
-            hidden.<BR>
+            hidden.<br>
             The second form is for advanced usage, where only
             selected objects are moved. You may specify individual
-            objects or an array of objects in any order.<BR>
-            <BR>
-            Objects that have zero speed will not be moved.<BR>
+            objects or an array of objects in any order.<br>
+            <br>
+            Objects that have zero speed will not be moved.<br>
             Sprites that have zero animation rates will not be
-            animated.<BR>
-            Group objects are ignored.<BR>
-            <BR>
+            animated.<br>
+            Group objects are ignored.<br>
+            <br>
             An object movement is timed relative to the previous
-            GR.MOTION or GR.MOTION.MARK time <A href=
-            "graphics-system.html#gr_motion_objects">(explained
-            here</A>).<BR>
-            Animations are timed the same way as motion.<BR>
-            <BR>
+            GR.MOTION or GR.MOTION.MARK time <a href="graphics-system.html#gr_motion_objects">(explained
+            here</a>).<br>
+            Animations are timed the same way as motion.<br>
+            <br>
             Movement for an animation is immediate. It is the
             responsibility of the coder to display the first
             position and/or frame before entering a GR.MOTION
-            loop.<BR>
-            <BR>
+            loop.<br>
+            <br>
             The results are not displayed until the next GR.RENDER.
             This gives you an opportunity to do collision testing
-            or to detect the end of an animation.<BR>
-            <BR>
+            or to detect the end of an animation.<br>
+            <br>
             If there are long periods between GR.MOTIONs, the time
             gap will still be calculated and the object might be
             placed at a large distance ahead. If this is not
-            desired, you can call <A href=
-            "#gr_motion_mark">GR.MOTION.MARK</A> to reset the start
+            desired, you can call <a href="#gr_motion_mark">GR.MOTION.MARK</a> to reset the start
             reference for the next GR.MOTION. This will ensure that
             the next GR.MOTION does not move the object relative to
-            the previous call.<BR>
-            <BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <A name="gr_motion_mark" id=
-          "gr_motion_mark"></A><SPAN style=
-          "color: rgb(0, 0, 153);">GR.MOTION.MARK</SPAN><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
+            the previous call.<br>
+            <br>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;">
+          <a name="gr_motion_mark" id="gr_motion_mark"></a><span style="color: rgb(0, 0, 153);">GR.MOTION.MARK</span><br>
+          <br>
+          <div style="margin-left: 40px;">
             Marks the current time from which the next gr.motion
             will position relative to this time. Otherwise each
             gr.motion positions an object relative to the last
-            gr.motion time.<BR>
-            <BR>
-            This command does not move objects.<BR>
-            <BR>
-            You would need this command,<BR>
-            <DIV style="margin-left: 40px;">
+            gr.motion time.<br>
+            <br>
+            This command does not move objects.<br>
+            <br>
+            You would need this command,<br>
+            <div style="margin-left: 40px;">
               A) Before you enter a motion loop for the first
-              time.<BR>
-              or<BR>
+              time.<br>
+              or<br>
               B) If you have come out of a GR.MOTION loop , have
               waited for a long time. And want to continue where
-              you left off.<BR>
-            </DIV><BR>
+              you left off.<br>
+            </div><br>
             This command resets the calculation, so that the
             objects can continue where they left off for future
-            GR.MOTIONs.<BR>
-            <BR>
+            GR.MOTIONs.<br>
+            <br>
             Without this command, each GR.MOTION bases motion on
             the previous GR.MOTION reference. By this time the
-            objects may have moved a long distance.<BR>
-            <BR>
-            <BR>
-          </DIV>
-        </TD>
-      </TR>
-    </TBODY>
-  </TABLE><BR>
-  <HR>
-  <SCRIPT type="text/javascript" src=
-  "https://humpity.github.io/counter.js"></SCRIPT>
-</BODY>
-</HTML>
+            objects may have moved a long distance.<br>
+            <br>
+            <br>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table><br>
+  <hr>
+  <script type="text/javascript" src="https://humpity.github.io/counter.js"></script>
+
+
+</body></html>
