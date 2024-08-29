@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+
+
+
+  <meta content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" name="generator">
+  <meta http-equiv="content-type" content="text/html; charset=us-ascii">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>xqa</title>
+
+  
+  <link rel="stylesheet" href="main.css" type="text/css"></head><body alink="#000099" link="#000099" vlink="#990099">
+  <big style="font-family: Helvetica,Arial,sans-serif;">Humpty
+  Promotes XQA<br></big><br style="font-family: Helvetica,Arial,sans-serif;">
+
+  <table cellpadding="8" cellspacing="2">
+    <tbody>
+      <tr>
+        <td style="width: 50%;">
+          <big><big style="color: rgb(0, 0, 153);">How to make
+          rfo-Basic APK packages using XQA in Linux (lubuntu)<br>
+          <a href="http://stefanopalmeri.altervista.org/xab/"><small>X-Quick-APK</small></a></big></big>
+          is an APK builder created by <a href="http://rfobasic.freeforums.org/apk-builder-gui-for-gnu-linux-released-t2000.html">
+          Stefano</a> to package <a href="http://humpty.drivehq.com/promotes/rfo-basic/rfo.html">RFO-BASIC!</a>
+          apps as standalone APKs.<br>
+          <br>
+          XQA is an alternative to XAB, it does away with ADT-sdk
+          and ANT.<br>
+Dependencies are <span style="color: rgb(153, 0, 0);">gambas3</span> and <span style="color: rgb(153, 0, 0);">JDK</span> (java).<br>
+          <br>
+          Instructions<br>
+          <br>
+          Install <span style="color: rgb(0, 0, 153);">Java</span><br>
+
+          <div style="margin-left: 40px;">
+            sudo apt-get install <span style="color: rgb(0, 0, 153);">openjdk-7</span><br>
+          </div><br>
+          <br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(102, 51, 102);">Alternatively</span>, you
+            can install the Oracle JDK version.<br>
+            <small>If you have both Oracle (Sun) JDK and OpenJDK
+            installed please validate either STUDIO_JDK, JDK_HOME,
+            or JAVA_HOME environment variable points to valid
+            Oracle (Sun) JDK installation.</small><br>
+          </div><br>
+          Install <span style="color: rgb(0, 0, 153);">Gambas</span><br>
+
+          <div style="margin-left: 40px;">
+            # <span style="text-decoration: line-through;">sudo
+            add-apt-repository ppa:nemh/gambas3</span> (old - not
+            working)<br>
+            <br>
+            sudo add-apt-repository ppa:gambas-team/gambas3<br>
+            sudo apt-get update<br>
+            sudo apt-get install gambas3<br>
+          </div><br>
+
+          <div style="margin-left: 40px;">
+            <span style="color: rgb(102, 51, 102);">Alternatively</span>, If
+            you don't want the whole gambas3 package, you can
+            individually install these packages;<br>
+            <br>
+            <small>sudo apt-get install &lt;package name&gt;<br>
+            <br></small> 1019 k&nbsp; &nbsp;&nbsp;&nbsp;
+            gambas3-runtime<br>
+            93 k &nbsp;&nbsp;&nbsp; gambas3-gb-image<br>
+            633 k&nbsp;&nbsp;&nbsp; gambas3-gb-qt4<br>
+            &nbsp; 207 k&nbsp;&nbsp;&nbsp; gambas3-gb-qt4-ext
+            (includes 2 below)<br>
+            8526k&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            libqt4-designer<br>
+            3658 k&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            libqt4-qt3support<br>
+            820 k&nbsp;&nbsp;&nbsp; gambas3-gb-form<br>
+            55 k&nbsp;&nbsp;&nbsp; gambas3-gb-form-dialog<br>
+            4046 k&nbsp;&nbsp;&nbsp; gambas3-gb-form-stock<br>
+            49 k&nbsp;&nbsp;&nbsp; gambas3-gb-settings<br>
+            266k gambas3-dev<br>
+            ------<br>
+            &nbsp; 19.4Mb<br>
+          </div><br>
+          Install <span style="color: rgb(0, 0, 153);">OpenSSL</span><br>
+          <br>
+
+          <div style="margin-left: 40px;">
+            This is usually already installed, but if it isn't
+            ;<br>
+            <br>
+            sudo apt-get install openssl<br>
+          </div><br>
+          Download XQA<br>
+          <br>
+
+          <div style="margin-left: 40px;">
+            Get the source from <a href="http://stefanopalmeri.altervista.org/xqa/">X-quick-APK</a>
+            page.<span style="text-decoration: line-through;"><br>
+            </span>or the laughton repository <a href="http://laughton.com/basic/programs/tools/x-quickapk">x-quickapk</a>.<span style="text-decoration: line-through;"><br></span><span style="color: rgb(102, 0, 0); text-decoration: line-through;"></span><br>
+unzip the file<br>
+          </div><br>
+          Make the builder executable<br>
+          <br>
+
+          <div style="margin-left: 40px;">
+            cd xqa<br>
+            chmod 755 build.sh<br>
+          </div><br>
+          Build the binary<br>
+          <br>
+
+          <div style="margin-left: 40px;">
+            ./build.sh<br>
+          </div><br>
+          <br>
+          Run it<br>
+
+          <div style="margin-left: 40px;">
+            ./<span style="color: rgb(102, 0, 0);">x-quickapk</span><br>
+          </div><br>
+
+          <table style="text-align: left; width: 95%; margin-left: 40px;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">
+                <small><br></small></td>
+
+                <td style="vertical-align: top; text-align: right;">
+                <img style="width: 568px; height: 353px;" alt="" src="pics/0.png" align="top"></td>
+              </tr>
+            </tbody>
+          </table><br>
+
+          <table style="text-align: left; width: 95%; margin-left: 40px;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+              <tr>
+                <td style="vertical-align: top;">Fill in the
+                requirements ;</td>
+
+                <td style="vertical-align: top; text-align: right;">
+                <img style="width: 400px; height: 317px;" alt="" src="pics/1.png" align="top"></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="margin-left: 40px;">
+            and you will have to create a keystore for signing your
+            app.<br>
+          </div><br>
+          <br>
+          Your BASIC! source files <span style="text-decoration: underline;">must</span> have at least 3
+          directories;<br>
+
+          <div style="margin-left: 40px;">
+            source<br>
+            data<br>
+            databases<br>
+            <small><span style="font-style: italic;">(even if you
+            don't use them)</span></small><br>
+          </div><br>
+          <br>
+          End.<br>
+        </td>
+      </tr>
+    </tbody>
+  </table><br>
+  <br>
+  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<br>
+  <a href="../../donate.html">Donate via BitCoin</a>.<br style="font-family: Helvetica,Arial,sans-serif;">
+  <span style="font-family: Helvetica,Arial,sans-serif;">End.</span><br style="font-family: Helvetica,Arial,sans-serif;">
+  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <br>
+  <script type="text/javascript" src="http://humpty.drivehq.com/main_index.js">
+</script><br>
+</body></html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+<HEAD>
+  <META content=
+  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org"
+  name="generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=us-ascii">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+
+  <TITLE>xab</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+
+<BODY alink="#000099" link="#000099" vlink="#990099">
+  <BIG style="font-family: Helvetica,Arial,sans-serif;">Humpty
+  Promotes XAB<BR></BIG><BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+
+  <TABLE cellpadding="8" cellspacing="2">
+    <TBODY>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG><BIG style="color: rgb(0, 0, 153);"><SPAN style=
+          "color: black;">(</SPAN> <SMALL style=
+          "color: black;">skip to</SMALL> <SPAN style=
+          "color: black;"><A href=
+          "http://stefanopalmeri.altervista.org/xqa/">XQA</A>,</SPAN>
+          <SMALL style="color: black;">the new
+          x-quick-apk-builder</SMALL></BIG></BIG> (has fewer
+          dependencies) <BIG><BIG style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: black;">)</SPAN></BIG></BIG><BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR>
+          <BR>
+          How to make rfo-Basic APK packages using XAB in Linux
+          (lubuntu)<BR>
+          <A href=
+          "http://stefanopalmeri.altervista.org/xab/"><SMALL>X-APK-Builder</SMALL></A></BIG></BIG>
+          is an APK builder created by <A href=
+          "http://rfobasic.freeforums.org/apk-builder-gui-for-gnu-linux-released-t2000.html">
+          Stefano</A> to package <A href=
+          "http://humpty.drivehq.com/promotes/rfo-basic/rfo.html">RFO-BASIC!</A>
+          apps as standalone APKs.<BR>
+          <BR>
+          Instructions<BR>
+          <BR>
+          Download android <SPAN style=
+          "color: rgb(0, 0, 153);">ADT-sdk</SPAN> tools<BR>
+
+          <DIV style="margin-left: 40px;">
+            Go to <A href=
+            "https://developer.android.com/sdk/index.html">developer.android.com</A>
+            and download the ADT-sdk kit. I recommend the default
+            bundle which<BR>
+            includes Eclipse, ADT-sdk and platform tools.<BR>
+            <BR>
+            Unpack the files to a directory of your choice e.g
+            /somewhere/adt<BR>
+            There should be some directories under <SPAN style=
+            "color: rgb(102, 0, 0);">adt/sdk</SPAN>,<BR>
+
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+              adt/sdk/eclipse<BR>
+              adt/sdk/tools<BR>
+            </DIV><SMALL>( Eclipse is an IDE, although you don't
+            need it it is useful to have around )</SMALL>
+          </DIV><BR>
+          Download <SPAN style=
+          "color: rgb(0, 0, 153);">ANT</SPAN><BR>
+
+          <DIV style="margin-left: 40px;">
+            Get the binary distro from <A href=
+            "http://ant.apache.org/bindownload.cgi">Apache</A> and
+            unzip the files to a directory of your choice e.g
+            /somewhere/apache/<BR>
+          </DIV>
+
+          <DIV style="margin-left: 40px;">
+            <SMALL>( ANT is a java build tool )</SMALL><BR>
+          </DIV><BR>
+          So now you have something like<BR>
+          <BR>
+
+          <DIV style="margin-left: 40px;">
+            /mnt/sda4/dev/<SPAN style=
+            "color: rgb(0, 102, 0);">apache</SPAN>/<BR>
+            /mnt/sda4/dev/<SPAN style=
+            "color: rgb(0, 102, 0);">adt</SPAN>/<BR>
+          </DIV><BR>
+          Install <SPAN style=
+          "color: rgb(0, 0, 153);">Java</SPAN><BR>
+
+          <DIV style="margin-left: 40px;">
+            sudo apt-get install <SPAN style=
+            "color: rgb(0, 0, 153);">openjdk-6</SPAN><BR>
+          </DIV><BR>
+          <BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(102, 51, 102);">Alternatively</SPAN>, you
+            can install the Oracle JDK version.<BR>
+            <SMALL>If you have both Oracle (Sun) JDK and OpenJDK
+            installed please validate either STUDIO_JDK, JDK_HOME,
+            or JAVA_HOME environment variable points to valid
+            Oracle (Sun) JDK installation.</SMALL><BR>
+          </DIV><BR>
+          Install <SPAN style=
+          "color: rgb(0, 0, 153);">Gambas</SPAN><BR>
+
+          <DIV style="margin-left: 40px;">
+            # <SPAN style="text-decoration: line-through;">sudo
+            add-apt-repository ppa:nemh/gambas3</SPAN> (old - not
+            working)<BR>
+            <BR>
+            sudo add-apt-repository ppa:gambas-team/gambas3<BR>
+            sudo apt-get update<BR>
+            sudo apt-get install gambas3<BR>
+          </DIV><BR>
+
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(102, 51, 102);">Alternatively</SPAN>, If
+            you don't want the whole gambas3 package, you can
+            individually install these packages;<BR>
+            <BR>
+            <SMALL>sudo apt-get install &lt;package name&gt;<BR>
+            <BR></SMALL> 1019 k&nbsp; &nbsp;&nbsp;&nbsp;
+            gambas3-runtime<BR>
+            93 k &nbsp;&nbsp;&nbsp; gambas3-gb-image<BR>
+            633 k&nbsp;&nbsp;&nbsp; gambas3-gb-qt4<BR>
+            &nbsp; 207 k&nbsp;&nbsp;&nbsp; gambas3-gb-qt4-ext
+            <SPAN style="font-style: italic;">(<SMALL>includes 2
+            below</SMALL>)</SPAN><BR>
+            8526k&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            libqt4-designer<BR>
+            3658 k&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            libqt4-qt3support<BR>
+            820 k&nbsp;&nbsp;&nbsp; gambas3-gb-form<BR>
+            55 k&nbsp;&nbsp;&nbsp; gambas3-gb-form-dialog<BR>
+            4046 k&nbsp;&nbsp;&nbsp; gambas3-gb-form-stock<BR>
+            49 k&nbsp;&nbsp;&nbsp; gambas3-gb-settings<BR>
+            266k gambas3-dev <SPAN style="font-style: italic;">(
+            <SMALL>the compiler is needed to build an executable if
+            source is downloaded instead of
+            binary</SMALL>)</SPAN><BR>
+            ------<BR>
+            &nbsp; ~ 19.4Mb<BR>
+          </DIV><BR>
+          Install <SPAN style=
+          "color: rgb(0, 0, 153);">OpenSSL</SPAN><BR>
+          <BR>
+
+          <DIV style="margin-left: 40px;">
+            This is usually already installed, but if it isn't
+            ;<BR>
+            <BR>
+            sudo apt-get install openssl<BR>
+          </DIV><BR>
+          Download XAB<BR>
+          <BR>
+
+          <DIV style="margin-left: 40px;">
+            Get <BIG style="color: rgb(0, 0, 153);"><A href=
+            "http://stefanopalmeri.altervista.org/xab/"><SMALL>X-APK-Builder</SMALL></A></BIG>
+            binary and unzip it for the gambas program (one file)
+            <SPAN style=
+            "color: rgb(102, 0, 0);">x-apk-builder.gambas<BR>
+            <BR></SPAN> If the binary is unavailable, get the
+            source e.g x-apk-builder.tar.gz<BR>
+
+            <DIV style="margin-left: 40px;">
+              and build it;<BR>
+
+              <DIV style="margin-left: 40px;">
+                sh build.sh<BR>
+                <BR>
+                <SMALL><SPAN style=
+                "text-decoration: line-through;">tar xvzf
+                x-apk-builder.tar.gz</SPAN><BR style=
+                "text-decoration: line-through;">
+                <SPAN style="text-decoration: line-through;">cd
+                x-apk-builder</SPAN><BR style=
+                "text-decoration: line-through;">
+                <SPAN style="text-decoration: line-through;">rm -f
+                gpl-3.0.txt</SPAN><BR style=
+                "text-decoration: line-through;">
+                <SPAN style="text-decoration: line-through;">gbc3
+                -a -p &amp;&amp; gba3</SPAN></SMALL><BR>
+              </DIV>
+            </DIV><BR>
+            <SMALL><SPAN style=
+            "text-decoration: line-through;">Make it
+            Executable<BR></SPAN></SMALL>
+
+            <DIV style="margin-left: 40px;">
+              <SMALL><SPAN style=
+              "text-decoration: line-through;">chmod 755</SPAN>
+              <SPAN style=
+              "color: rgb(102, 0, 0); text-decoration: line-through;">
+              x-apkbuilder</SPAN></SMALL><BR>
+            </DIV>
+          </DIV><BR>
+          Run it<BR>
+
+          <DIV style="margin-left: 40px;">
+            ./<SPAN style=
+            "color: rgb(102, 0, 0);">x-apk-builder</SPAN><BR>
+          </DIV><BR>
+
+          <TABLE style=
+          "text-align: left; width: 95%; margin-left: 40px;"
+          border="0" cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><SMALL>You can
+                also rename it to something shorter e.g 'xab' , but
+                be aware your configuration will be
+                reset.</SMALL></TD>
+
+                <TD style=
+                "vertical-align: top; text-align: right;">
+                <IMG style="width: 568px; height: 353px;" alt=""
+                src="pics/0.png" align="top"></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+
+          <TABLE style=
+          "text-align: left; width: 95%; margin-left: 40px;"
+          border="0" cellpadding="2" cellspacing="2">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Fill in the
+                requirements ;</TD>
+
+                <TD style=
+                "vertical-align: top; text-align: right;">
+                <IMG style="width: 400px; height: 317px;" alt=""
+                src="pics/1.png" align="top"></TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+
+          <DIV style="margin-left: 40px;">
+            and you will have to create a keystore for signing your
+            app.<BR>
+          </DIV><BR>
+          <BR>
+          Your BASIC! source files <SPAN style=
+          "text-decoration: underline;">must</SPAN> have at least 3
+          directories;<BR>
+
+          <DIV style="margin-left: 40px;">
+            source<BR>
+            data<BR>
+            databases<BR>
+            <SMALL><SPAN style="font-style: italic;">(even if you
+            don't use them)</SPAN></SMALL><BR>
+          </DIV><BR>
+          <BR>
+          End.<BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  Support my projects!<BR>
+  <A href="../../donate.html">Donate via BitCoin</A>.<BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+  <SPAN style=
+  "font-family: Helvetica,Arial,sans-serif;">End.</SPAN><BR style=
+  "font-family: Helvetica,Arial,sans-serif;">
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "http://humpty.drivehq.com/main_index.js">
+</SCRIPT><BR>
+</BODY>
+</HTML>

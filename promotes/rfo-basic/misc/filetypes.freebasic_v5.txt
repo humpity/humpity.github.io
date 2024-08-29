@@ -1,0 +1,83 @@
+# For complete documentation of this file, please see Geany's main documentation
+
+[styling]
+# foreground;background;bold;italic
+default=0x000000;0xffffff;false;false;
+comment=0x808080;0xffffff;false;false;
+number=0x007f00;0xffffff;false;false;
+word=0x00007f;0xffffff;true;false;
+string=0xB76816;0xffffff;false;false;
+preprocessor=0x007f7f;0xffffff;false;false;
+operator=0x301010;0xffffff;false;false;
+identifier=0x000000;0xffffff;false;false;
+date=0x1a6500;0xffffff;false;false;
+stringeol=0x000000;0xe0c0e0;false;false;
+word2=0x007f7f;0xffffff;true;false;
+word3=0x991111;0xffffff;false;false;
+word4=0x0000d0;0xffffff;false;false;
+constant=0x007f7f;0xffffff;false;false;
+# asm is still unused
+asm=0x105090;0xffffff;false;false;
+label=0x007f7f;0xffffff;false;false;
+error=0xd00000;0xffffff;false;false;
+hexnumber=0x007f00;0xffffff;false;false;
+binnumber=0x007f00;0xffffff;false;false;
+
+[keywords]
+keywords=abs accuracy acos add align all altitude antialias arc array ascii asin atan atan2 audio autoshoot average back background band bearing begin bin bitmap bmpixel bold bor bounded break brightness browse bt buffer bundle bxor byte bytes cache call camera case cbrt cd ceil chr circle clear client clipboard clock close cls color connect console contain continue copy cos cosh create crop current data datalink debug decrypt def default delete device dim dir disconnect do draw drawinto drop_table d_u dump echo else elseif email encrypt end endif ends_with exec exists exit exp file fill floor fn f_n for format forward from front ftp get getdl geterror go gosub gps gr grabfile graburl gr_collision headhex hex hide history home html http hypot if include init inkey insert int ip isdone isempty is_in join kb key keys latitude left len length let line list listen load log longitude loop lower ltrim manualshoot max menukey mid min mkdir mod modify move myphonenumber newdl new_table next notify oct off on onbackkey onbtread onconsole onerror onkeypress onmenukey onread open orientation oval paint pause peek phone pi pixel pixels play point poly pop popup position post pow print program provider push put query randomize rawquery rcv read readln ready reconnect record rect release rem remove rename render repeat replace results resume return reverse right rmdir rnd root rotate round rtn rtrim run save scalars scale screen search seek select sensors server set setpriority setrate setvolume shift shoot show shuffle sin sinh size skew sms socket soundpool speed split sql sqr stack start starts_with status statusbar stddev step stop str strike string stroke stt su sum sw swap system tan text textbounds then time timer timezone title to toarray todegrees toggle tone toradians touch trim tts type typeface ucode under undim unsplit until update upper url using uuid val value variance version vibrate volume wakelock watch while width w_r write writeln
+
+preprocessor=include
+
+[settings]
+# default extension used when saving files
+extension=bas
+
+# the following characters are these which a "word" can contains, see documentation
+#wordchars=_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789
+
+# single comments, like # in this file
+comment_single=%
+# multiline comments
+comment_open=!!_
+comment_close=_!!
+
+# set to false if a comment character/string should start at column 0 of a line, true uses any
+# indentation of the line, e.g. setting to true causes the following on pressing CTRL+d
+	#command_example();
+# setting to false would generate this
+#	command_example();
+# This setting works only for single line comments
+comment_use_indent=false
+
+# context action command (please see Geany's main documentation for details)
+context_action_cmd=
+
+[indentation]
+#width=4
+# 0 is spaces, 1 is tabs, 2 is tab & spaces
+#type=1
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=cp "%f" /mnt/batman7/rfo-basic/source/try.bas
+run_cmd="./%e"
+
+[build-menu]
+FT_00_LB=_Compile
+FT_00_CM=cp "%f" /mnt/batman9/rfo-basic/source/main.bas
+FT_00_WD=
+FT_02_LB=
+FT_02_CM=
+FT_02_WD=
+
+FT_01_LB=Send
+FT_01_CM=cp "%f" /mnt/batman9/rfo-basic/source/%f
+FT_01_WD=
+EX_00_LB=_Execute
+EX_00_CM="./%e"
+EX_00_WD=
+EX_01_LB=
+EX_01_CM=
+EX_01_WD=
