@@ -13,6 +13,7 @@ document.write ('<HTML>\
 	var sc_project=3241309; \
         var sc_invisible=0; \
         var sc_security="4e868b2d"; \
+		var scJsHost = "https://"; \
 </SCRIPT>\
 <SCRIPT type="text/javascript" src=\
           "https://www.statcounter.com/counter/counter.js">\
