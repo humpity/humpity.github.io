@@ -1,7 +1,0 @@
-
-
-v2.1	Settings will save gen-type.
-
-v1.2	
-	Landscape view.
-
