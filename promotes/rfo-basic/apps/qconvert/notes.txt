@@ -1,3 +1,0 @@
-
-For source files, rename the .apk to .zip and then extract,
-then look inside the assets folder.
