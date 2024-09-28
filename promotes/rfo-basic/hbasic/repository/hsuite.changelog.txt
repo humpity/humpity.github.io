@@ -2,6 +2,11 @@ hSuite changelog
 
 Date		Summary of Versions
 --------------- -------------------------------------------
+2024-09-29 v3.23
+		hmaster v2.27
+		hpatcher 3.17
+			Fix app_version precision
+
 2024-05-02 v3.22
 		hmaster v2.26
 		hpatcher v3.16

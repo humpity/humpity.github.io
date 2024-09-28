@@ -11,7 +11,7 @@
   <TITLE>Commands</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hManual</A> &gt; Commands<BR>
   <BR style="font-family: Helvetica,Arial,sans-serif;">
@@ -274,6 +274,13 @@
                 "commands.html#input">INPUT</A></TD>
                 <TD style="vertical-align: top;">Restrict INPUT to
                 a single row</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#list_create">LIST.CREATE</A><BR></TD>
+                <TD style="vertical-align: top;">New creation
+                modes<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -1064,11 +1071,11 @@
             <SPAN style=
             "font-weight: bold; color: rgb(0, 0, 153);">}</SPAN></SPAN><BR>
 
-            <SPAN style="color: rgb(0, 0, 153);">puts tags</SPAN>
-            "v1", "v2$", "v3"&nbsp; and loads the bundle with
+            <SPAN style="color: rgb(0, 0, 153);">puts into the
+            bundle using tags</SPAN> "v1", "v2$", "v3"&nbsp; with
             content <SPAN style=
-            "color: rgb(0, 0, 153);">from</SPAN> variables
-            v1,v2$,v3<BR>
+            "color: rgb(0, 0, 153);">from</SPAN> variables v1, v2$,
+            v3<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 102, 0);">BUNDLE.GET</SPAN>
@@ -1082,8 +1089,8 @@
             "color: rgb(0, 0, 153);">gets</SPAN> <SPAN style=
             "color: rgb(0, 0, 153);">content from bundle using
             tags</SPAN> "v1","v2$","v3" <SPAN style=
-            "color: rgb(0, 0, 153);">into</SPAN> variables
-            v1,v2$,v3
+            "color: rgb(0, 0, 153);">into</SPAN> variables v1, v2$,
+            v3
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             '<SPAN style="color: rgb(0, 0, 153);">auto'</SPAN> mode
@@ -1108,7 +1115,8 @@
           <A name="color_strings" id=
           "color_strings"></A><SPAN style=
           "color: rgb(0, 0, 153);"><FONT size="+1">Accept a Color
-          String</FONT><BR>
+          String</FONT></SPAN><SPAN style=
+          "color: rgb(0, 0, 153);"><BR>
           <BR></SPAN>
           <DIV style="margin-left: 40px;">
             For these existing commands, a color string
@@ -1116,15 +1124,24 @@
             console.set)</SPAN> may be used in place of the 4
             decimal colors at the front of the command.<BR>
             <BR>
-            <SPAN style="color: rgb(0, 0, 153);">GR.OPEN</SPAN> { {
-            {alpha}{, red}{, green}{, blue} | {<SPAN style=
-            "color: rgb(102, 0, 0);">color</SPAN>_sexp} } {,
-            &lt;statusBar_lexp&gt;}{,
+            <SPAN style=
+            "color: rgb(0, 0, 153);">GR.OPEN</SPAN>&nbsp;&nbsp;&nbsp;
+            { { {alpha}{, red}{, green} {, blue} <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN> <SPAN style=
+            "font-weight: bold;">color</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN>&nbsp; }&nbsp; {,
+            &lt;decors_flag_nexp&gt;}{,
             &lt;orientation_nexp&gt;}}<BR>
             <SPAN style="color: rgb(0, 0, 153);">GR.COLOR</SPAN> {
-            { {alpha}{, red}{, green}{, blue} | {<SPAN style=
-            "color: rgb(102, 0, 0);">color</SPAN>_sexp} } {,
-            style}{, paint}}<BR>
+            { {alpha}{, red}{, green} {, blue} <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN> <SPAN style=
+            "font-weight: bold;">color</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN>&nbsp; }&nbsp; {, style}{,
+            paint}}<BR>
             <BR>
             e.g<BR>
             <DIV style="margin-left: 40px;">
@@ -1154,7 +1171,9 @@
             &nbsp; &nbsp; &nbsp; ..</SPAN>
           </DIV><BR style="color: rgb(0, 0, 153);">
           <DIV style="margin-left: 40px;">
-            <A href="colors.html">Color Strings</A> may be
+            <A href="colors.html">Color Strings</A> <SPAN style=
+            "font-weight: bold;">color</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> may be
             either<BR>
             <BR>
             <DIV style="margin-left: 40px;">
@@ -1202,10 +1221,9 @@
             <DIV style="margin-left: 40px;">
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">GR.OPEN
-              "blue.200", 0&nbsp;&nbsp;&nbsp; <SPAN style=
-              "color: rgb(0, 102, 0);"><FONT size="-1">% do not
-              show status bar, default to
-              landscape</FONT></SPAN></SPAN><BR>
+              "blue.200", 1 &nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(51, 51, 51);">% (<A href="#decors">decors
+              flag</A> 1, default to landscape)</SPAN><BR>
             </DIV><BR>
             <BR>
             Color names are <A href=
@@ -1823,11 +1841,11 @@
       <TR>
         <TD valign="top">
           <A name="debug_dump_fn" id=
-          "debug_dump_fn"></A><FONT size="+1" color=
-          "#000099">DEBUG.DUMP.FN</FONT><BR>
+          "debug_dump_fn"></A><FONT color="#000099" size=
+          "+1">DEBUG.DUMP.FN</FONT><BR>
           <BR>
           <BLOCKQUOTE>
-            <FONT size="+1" color="#000099">DEBUG.DUMP.FN</FONT>
+            <FONT color="#000099" size="+1">DEBUG.DUMP.FN</FONT>
             {level<SPAN style=
             "color: rgb(102, 51, 0);">_nexp</SPAN>}<BR>
           </BLOCKQUOTE>
@@ -1985,8 +2003,8 @@
           <BLOCKQUOTE>
             If the NOTIFY command is used with a 'wait'
             flag&nbsp;&nbsp; e.g <FONT color=
-            "#000099">NOTIFY</FONT> t$, s$, a$,<FONT size="+1"
-            color="#990000">1</FONT><BR>
+            "#000099">NOTIFY</FONT> t$, s$, a$,<FONT color=
+            "#990000" size="+1">1</FONT><BR>
             the program waits until the notification is tapped,
             dismissed or system continued&nbsp; (e.g backKey).<BR>
             <BR>
@@ -2004,8 +2022,8 @@
             </BLOCKQUOTE><FONT color="#000099">NOTIFY.CANCEL</FONT>
             will remove the notification.<BR>
             <BR>
-            e.g<FONT color="#000099" face=
-            "Courier New, Courier, monospace"><BR></FONT>
+            e.g<FONT face="Courier New, Courier, monospace" color=
+            "#000099"><BR></FONT>
             <BLOCKQUOTE>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">NOTIFY
@@ -2097,6 +2115,99 @@
             You may test this flag with the sample program
             <SPAN style=
             "color: rgb(102, 51, 0);">h13_animations.bas</SPAN>.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="list_create" id=
+          "list_create"></A>LIST.CREATE<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <FONT color="#000099">LIST.CREATE</FONT>&nbsp;
+            N<SPAN style="font-weight: bold;">|</SPAN>S
+            <SPAN style="font-weight: bold;">{</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">pointer</SPAN><FONT color=
+            "#663300">_nvar</FONT> <SPAN style=
+            "font-weight: bold;">{ ,</SPAN> <SPAN style=
+            "font-weight: bold;">pointer</SPAN><FONT color=
+            "#663300">_nvar</FONT> <SPAN style=
+            "font-weight: bold;">| data</SPAN><FONT color=
+            "#663300"><FONT color=
+            "#663300">_nexp</FONT></FONT><SPAN style=
+            "font-weight: bold;">|</SPAN><FONT color=
+            "#663300"><FONT color="#663300">sexp</FONT></FONT>
+            <SPAN style="font-weight: bold;">...</SPAN>
+            <SPAN style="font-weight: bold;">}</SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Added optional creation modes <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> or <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> or omitted.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Omitted mode behaves exactly like legacy Basic.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              N, nlist</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              S, slist</SPAN><BR>
+              There is no multiple creation nor any data
+              loading.<BR>
+            </DIV><BR>
+            Multiple mode <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> creates one or more
+            empty lists.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              N</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">M</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              nlist1<SPAN style=
+              "font-weight: bold;">,</SPAN>nlist2..</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              S</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">M</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              slist1<SPAN style=
+              "font-weight: bold;">,</SPAN>slist2..</SPAN><BR>
+            </DIV>&nbsp;&nbsp;&nbsp;<BR>
+            Loading mode&nbsp; <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> creates one list with
+            data loading.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              N</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">L</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              nlist<SPAN style="font-weight: bold;">,</SPAN>
+              <SPAN style=
+              "color: rgb(102, 51, 0);">1,2,3</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              S</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">L</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              slist<SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN>
+              "apple","orange","pear"</SPAN></SPAN><BR>
+            </DIV><BR>
+            Creation modes {&lt;omitted&gt; <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> } are mutually
+            exclusive, i.e you can only use one of them.<BR>
           </DIV><BR>
         </TD>
       </TR>

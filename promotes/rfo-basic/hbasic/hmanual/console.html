@@ -11,7 +11,7 @@
   <TITLE>Console</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hManual</A> &gt; <A href=
   "commands.html">Commands</A> &gt; Console<BR>
@@ -21,22 +21,21 @@
   cellspacing="2" cellpadding="8">
     <TBODY>
       <TR>
-        <TD style="vertical-align: top;">
+        <TD style="vertical-align: top; width: 80%;">
           <DIV style="text-align: right;">
             <BIG>hBasic Manual</BIG><BR>
           </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Console
           command changes</BIG></BIG><BR>
           <BR>
           <BR>
-          <TABLE style=
-          "text-align: left; width: 742px; height: 150px; margin-left: 40px;"
-          cellspacing="2" cellpadding="2" border="0">
+          <TABLE style="text-align: left; width: 90%;" cellspacing=
+          "2" cellpadding="2" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;"><A href=
                 "#backspace">BACKSPACE</A><BR></TD>
-                <TD style="vertical-align: top;">Delete character
-                of last row<BR></TD>
+                <TD style="vertical-align: top; width: 70%;">Delete
+                character of last row<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -120,13 +119,13 @@
               </TR>
               <TR>
                 <TD valign="top"><A href=
-                "#tapped">CONSOLE.TAPPED</A></TD>
+                "#console_tapped">CONSOLE.TAPPED</A></TD>
                 <TD valign="top">Return information about a
                 tap<BR></TD>
               </TR>
               <TR>
                 <TD valign="top"><A href=
-                "#orient">CONSOLE.ORIENT</A></TD>
+                "#console_orient">CONSOLE.ORIENT</A></TD>
                 <TD valign="top">Change orientation and
                 preference<BR></TD>
               </TR>
@@ -156,20 +155,20 @@
       <TR>
         <TD style="width: 50%;">
           <BIG style="color: rgb(0, 0, 153);"><A name="backspace"
-          id="fn_import"></A>BACKSPACE</BIG><BR>
+          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BACKSPACE</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            <BIG><SPAN style=
-            "color: rgb(0, 0, 153);">BACKSPACE</SPAN></BIG>&nbsp;
-            <BIG><SPAN style="color: rgb(102, 51, 0);">{
-            &lt;<SPAN style=
-            "color: black; font-weight: bold;">count</SPAN>_nexp&gt;
-            }</SPAN></BIG><BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BACKSPACE</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);">{
+            &lt;<SPAN style="color: black; font-weight: bold;">count</SPAN>_nexp&gt;
+            }</SPAN><BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            <BIG>Deletes the last character(s) of the last console
-            row <SPAN style="color: rgb(0, 0, 153);">and puts PRINT
-            into append mode</SPAN>.</BIG><BR>
+            Deletes the last character(s) of the last console row
+            <SPAN style="color: rgb(0, 0, 153);">and puts PRINT
+            into append mode</SPAN>.<BR>
             <BR>
             Rules;<BR style=
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
@@ -216,26 +215,33 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="printat" id=
-          "printat"></A>PRINT.AT<BR>
+          "printat"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">PRINT.AT</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+
           <BR></BIG>
           <DIV style="margin-left: 40px;">
-            <BIG><SPAN style=
-            "color: rgb(0, 0, 153);">PRINT.AT</SPAN>&nbsp;</BIG>
-            <BIG>&lt;line_nexp&gt; ,
-            &lt;column_nexp&gt;<SPAN style="font-weight: bold;">;</SPAN>
-            {&lt;exp&gt; {, | ;}}</BIG><BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">PRINT.AT</SPAN>&nbsp;
+            &lt;<SPAN style=
+            "font-weight: bold;">line</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN>&gt; ,
+            &lt;<SPAN style=
+            "font-weight: bold;">column</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN>&gt;<SPAN style=
+            "font-weight: bold;">;</SPAN> {&lt;<SPAN style=
+            "font-weight: bold;">exp</SPAN>&gt; {, | ;}}<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            <BIG>Print at screen location Line,Column;</BIG><BR>
+            Print at screen location Line,Column;<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
-            <BIG>Rules</BIG><BR style=
+            Rules<BR style=
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             <BR>
-            1. &lt;exp&gt; is the same as the regular PRINT
-            command.<BR>
+            1. &lt;<SPAN style="font-weight: bold;">exp</SPAN>&gt;
+            is the same as the regular PRINT command.<BR>
             2. line and column coordinates start from 1 <SMALL>(not
             0)</SMALL>.&nbsp; Line 1 is at the top and Column 1 is
             at the left.<BR>
@@ -325,8 +331,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="printimg"
-          id="printat"></A>PRINT.IMG<BR></BIG> <BIG style=
-          "color: rgb(0, 0, 153);"><BR></BIG>
+          id="printat"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">PRINT.IMG</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG> <BIG style="color: rgb(0, 0, 153);"><BR></BIG>
           <DIV style="margin-left: 40px;">
             <SPAN style=
             "color: rgb(0, 0, 153);">PRINT.IMG</SPAN><SMALL>&nbsp;</SMALL>
@@ -356,8 +363,11 @@
             </DIV><BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <BIG>Print an image at the screen location Line,Column
-            with a tag.</BIG><BR>
+            Print an image at the screen location&nbsp;
+            <SPAN style="font-weight: bold;">line</SPAN>
+            <SPAN style="font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;">column</SPAN>&nbsp; with a
+            <SPAN style="font-weight: bold;">tag</SPAN>.<BR>
           </DIV>
           <BLOCKQUOTE>
             The purpose of this command is to be able to print
@@ -510,16 +520,17 @@
               Becareful with this parameter, as values too large
               may crash the program.<BR>
             </DIV><BR>
-            <BR>
-            <BIG><SPAN style="text-decoration: underline;">Tap
-            detection<BR>
-            <BR></SPAN></BIG>
+            <SPAN style="text-decoration: underline;">Tap
+            detection</SPAN><BR>
             <DIV style="margin-left: 40px;">
               When used in conjunction with <A href=
               "console.html#tapped"><FONT color=
               "#000099">CONSOLE.TAPPED</FONT></A>, and the image is
-              tapped, the word in the invisible tag string under
-              the image will be returned.<BR>
+              tapped, the word in the invisible <SPAN style=
+              "font-weight: bold;">tag</SPAN> string under the
+              image will be returned.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
               If this tag is not separated from other words, all
               words stuck to it will be returned as one.<BR>
             </DIV>
@@ -530,8 +541,8 @@
           <DIV style="margin-left: 80px;">
             <SPAN style=
             "font-family: Courier New,Courier,monospace;">PRINT
-            <SPAN style=
-            "color: rgb(102, 51, 0);">"Cartman"</SPAN></SPAN><BR style="font-family: Courier New,Courier,monospace;">
+            <SPAN style="color: rgb(102, 51, 0);">"<SPAN style=
+            "color: rgb(102, 0, 0);">Cartman</SPAN>"</SPAN></SPAN><BR style="font-family: Courier New,Courier,monospace;">
 
             <SPAN style=
             "font-family: Courier New,Courier,monospace;"><SPAN style="color: rgb(0, 0, 153);">
@@ -566,20 +577,25 @@
           </DIV><BR>
           <DIV style="margin-left: 80px;">
             A tap on the image returns the word under the image
-            which is "CartmanTagged"<BR>
+            which is "<SPAN style=
+            "color: rgb(102, 0, 0);">CartmanTagged</SPAN>"<BR>
             <BR>
             Use a <SPAN style=
             "text-decoration: underline;">space</SPAN> if you wish
-            to separate "Cartman" from "Tagged";<BR>
+            to separate "<SPAN style=
+            "color: rgb(102, 0, 0);">Cartman</SPAN>" from
+            "<SPAN style=
+            "color: rgb(102, 0, 0);">Tagged</SPAN>";<BR>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
             "font-family: Courier New,Courier,monospace;">PRINT
-            <SPAN style="color: rgb(102, 51, 0);">"Cartman
-            "</SPAN></SPAN><BR>
-            <BR>
-          </DIV><BR>
+            <SPAN style="color: rgb(102, 51, 0);">"<SPAN style=
+            "color: rgb(102, 0, 0);">Cartman</SPAN> "<BR>
+            <BR></SPAN></SPAN>
+          </DIV>
           <DIV style="margin-left: 40px;">
-            <BIG style="text-decoration: underline;">About Tags<BR>
-            <BR></BIG>
+            <SPAN style="text-decoration: underline;">About
+            Tags</SPAN><BIG style=
+            "text-decoration: underline;"><BR></BIG>
             <DIV style="margin-left: 40px;">
               Be wary when re-printing over a tag , as the tag
               length and it's columns are still valid.<BR>
@@ -623,15 +639,17 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="backimg" id=
-          "fn_import"></A>CONSOLE.BACKIMG</BIG><BR>
+          "fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">CONSOLE.BACKIMG</SPAN></FONT><BR>
+
           <SPAN style=
           "font-family: Courier New, Courier, monospace;"><BR>
           </SPAN>
           <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-            CONSOLE.BACKIMG</SPAN></SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">CONSOLE.BACKIMG</SPAN></SPAN></SPAN><FONT size="+1"><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
             <SPAN style="font-weight: bold;"><SPAN style=
@@ -640,8 +658,7 @@
             "font-weight: bold;"><SPAN style=
             "font-family: Courier New, Courier, monospace;">fit_type</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nexp}</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">{</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,<SPAN style="font-weight: bold;">smooth</SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_lexp}</SPAN></SPAN></SPAN></SPAN><BR>
 
-            <FONT size="+1">Sets a background image for the
-            console</FONT><BR>
+            Sets a background image for the console<BR>
             <BR>
             <DIV style="margin-left: 40px;">
               The image <SPAN style=
@@ -846,7 +863,9 @@
       <TR>
         <TD style="width: 50%;">
           <BIG style="color: rgb(0, 0, 153);"><A name=
-          "console_goto" id="fn_import"></A>CONSOLE.GOTO</BIG><BR>
+          "console_goto" id="fn_import"></A></BIG><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">CONSOLE.GOTO</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             <SPAN style=
@@ -857,10 +876,10 @@
             <BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <BIG>Position a row of the console given by
-            <SPAN style="color: rgb(102, 51, 0);">&lt;<SPAN style=
+            Position a row of the console given by <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;<SPAN style=
             "color: black; font-weight: bold;">line</SPAN>_nexp&gt;</SPAN>
-            into visible view.</BIG><BR>
+            into visible view.<BR>
             <BR>
             <DIV style="margin-left: 40px;">
               This is only useful if the <SPAN style=
@@ -916,7 +935,8 @@
       <TR>
         <TD style="width: 50%;">
           <BIG style="color: rgb(0, 0, 153);"><A name="console_set"
-          id="fn_import"></A>CONSOLE.SET</BIG><BR>
+          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             <SPAN style=
@@ -960,54 +980,69 @@
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            <BIG>Sets console attributes.</BIG><BR>
-            <BR>
+            <BIG><A name="console_styling" id=
+            "console_styling"></A>Sets console attributes for
+            styling.</BIG><BR>
+            <DIV style="margin-left: 40px;">
+              These attributes may apply to either the whole
+              console or for future printing.<BR>
+              <BR>
+            </DIV>
             <DIV style="margin-left: 40px;">
               The Keyword Value Pairs accepted are;<BR>
               <BR>
               <BIG><SPAN style="font-family: monospace;"><A name=
-              "textcolor" id="textcolor"></A>"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
+              "textcolor" id=
+              "textcolor"></A></SPAN></BIG><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
               <SPAN style=
-              "font-family: monospace;">&lt;color&gt;"&nbsp; e.g
-              "</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
-              <SPAN style="font-family: monospace;">#FF112233"
-              <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+              e.g "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">#FF112233"</SPAN>
+              <BIG><SPAN style=
+              "font-family: monospace;"><SMALL>%</SMALL></SPAN>
+              <SMALL><SPAN style=
               "color: rgb(0, 0, 153);">Text</SPAN></SMALL><BR style="font-family: monospace;">
 
-              <A name="backcolor" id="backcolor"></A><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">BACKCOLOR</SPAN>
+              <A name="backcolor" id=
+              "backcolor"></A></BIG><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">BACKCOLOR</SPAN></SPAN>
               <SPAN style=
-              "font-family: monospace;">&lt;color&gt;"&nbsp; e.g
-              "</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">BACKCOLOR</SPAN><SPAN style="font-family: monospace;">=#112233"&nbsp;&nbsp;
+              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+              e.g "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">BACKCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">=#112233"</SPAN><BIG><SPAN style="font-family: monospace;">&nbsp;&nbsp;
               <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
               "color: rgb(0, 0, 153);">Text
               Background</SPAN></SMALL><BR>
               <BR>
               <SPAN style="font-family: monospace;"><A name=
-              "linecolor" id="linecolor"></A>"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">LINECOLOR</SPAN>
+              "linecolor" id=
+              "linecolor"></A></SPAN></BIG><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">LINECOLOR</SPAN></SPAN>
               <SPAN style=
-              "font-family: monospace;">&lt;color&gt;"&nbsp; e.g
-              "</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">LINECOLOR</SPAN>
+              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+              e.g "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">LINECOLOR</SPAN></SPAN>
               <SPAN style=
-              "font-family: monospace;">=Aqua"&nbsp;&nbsp; &nbsp;
-              <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
+              "font-family: Courier New, Courier, monospace;">=Aqua"</SPAN><BIG><SPAN style="font-family: monospace;">&nbsp;&nbsp;
+              &nbsp; <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
               "color: rgb(0, 0, 153);">Divider
               Line</SPAN></SMALL><BR>
               <SPAN style=
               "color: rgb(102, 0, 0); font-family: monospace;"><A name="voidcolor"
-              id="void"></A>"VOIDCOLOR</SPAN> <SPAN style=
-              "font-family: monospace;">&lt;color&gt;"&nbsp; e.g
-              "</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">VOIDCOLOR</SPAN><SPAN style="font-family: monospace;">&nbsp;
-              #000000"&nbsp; <SMALL>%</SMALL></SPAN>
-              <SMALL><SPAN style="color: rgb(0, 0, 153);">Empty
-              Console Area</SPAN></SMALL></BIG><BR>
+              id="void"></A></SPAN></BIG><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">"VOIDCOLOR</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+              e.g "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
+              #000000"</SPAN><BIG><SPAN style=
+              "font-family: monospace;">&nbsp;
+              <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
+              "color: rgb(0, 0, 153);">Empty Console
+              Area</SPAN></SMALL></BIG><BR>
               <BR>
             </DIV>
             <DIV style="margin-left: 240px;">
@@ -1107,14 +1142,16 @@
                 </DIV><BR>
               </DIV><BR>
               <BIG><SPAN style="font-family: monospace;"><A name=
-              "spacing" id="spacing"></A>"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">SPACING</SPAN>
-              <SPAN style="font-family: monospace;">=
+              "spacing" id="spacing"></A>"</SPAN></BIG><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">=
               &lt;number&gt;" &nbsp;&nbsp;&nbsp; e.g CONSOLE.SET
               "</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">SPACING</SPAN>
-              <SPAN style="font-family: monospace;">=
-              8"</SPAN></BIG><BR>
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">=
+              8"</SPAN><BR>
               <DIV style="margin-left: 200px;">
                 <SPAN style="color: rgb(0, 0, 153);">Line
                 Spacing</SPAN><BR>
@@ -1130,16 +1167,17 @@
                 "font-weight: bold;">future</SPAN> printing.<BR>
               </DIV><BR>
               <BIG><SPAN style="font-family: monospace;"><A name=
-              "wrap" id="wrap"></A>"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">WRAP</SPAN>&nbsp;&nbsp;
-              <SPAN style="font-family: monospace;">&lt;on |
-              off&gt;"&nbsp; e.g</SPAN></BIG> <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
-              <BIG><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;"><SPAN style="font-family: Helvetica,Arial,sans-serif;">WRAP</SPAN></SPAN>&nbsp;</BIG>
+              "wrap" id="wrap"></A></SPAN></BIG><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WRAP</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
               <SPAN style=
-              "font-family: monospace;"><BIG>off"</BIG><BR></SPAN>
+              "font-family: Courier New, Courier, monospace;">&lt;on
+              | off&gt;"&nbsp; e.g</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">WRAP</SPAN>&nbsp;</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">off"</SPAN><SPAN style="font-family: monospace;"><BR>
+              </SPAN>
               <DIV style="margin-left: 200px;">
                 <SPAN style="color: rgb(0, 0, 153);">Set whether
                 text on one line should wrap if there's not enough
@@ -1154,18 +1192,19 @@
               </DIV><BR>
               <BR style="font-family: monospace;">
               <BIG><SPAN style="font-family: monospace;"><A name=
-              "textsize" id="textsize"></A>"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">TEXTSIZE</SPAN>&nbsp;&nbsp;
+              "textsize" id=
+              "textsize"></A></SPAN></BIG><SPAN style="font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
               <SPAN style=
-              "font-family: monospace;">&lt;number&gt;"&nbsp;
-              e.g</SPAN></BIG> <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
-              <BIG><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">TEXTSIZE</SPAN>
-              <SPAN style="font-family: monospace;">=
-              16"&nbsp;&nbsp;&nbsp; <SMALL>%(16 point
-              dp)</SMALL></SPAN></BIG><BR>
+              "font-family: Courier New, Courier, monospace;">&lt;number&gt;"&nbsp;
+              e.g</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">=
+              16"&nbsp;&nbsp;</SPAN><BIG><SPAN style=
+              "font-family: monospace;">&nbsp;</SPAN></BIG> %(16
+              point dp)<BR>
               <DIV style="margin-left: 200px;">
                 <SPAN style="color: rgb(0, 0, 153);">Set the font
                 size of the text<BR>
@@ -1182,20 +1221,24 @@
                 "font-weight: bold;">future</SPAN> printing.<BR>
               </DIV><BR>
               <SPAN style="font-family: monospace;"><A name=
-              "setfont" id=
-              "setfont"></A><BIG>"</BIG></SPAN><BIG><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">FONT</SPAN>
-              <SPAN style=
-              "font-family: monospace;">&lt;number|family&gt;"</SPAN>
-              <SPAN style="font-family: monospace;">e.g CONSOLE.SET
-              "<SPAN style="color: rgb(102, 51, 0);">FONT =
-              2</SPAN>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % use loaded font 2</SPAN></BIG><BR>
+              "setfont" id="setfont"></A></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">FONT</SPAN>
+              &lt;number|family&gt;" e.g CONSOLE.SET "<SPAN style=
+              "color: rgb(102, 51, 0);">FONT = 2</SPAN>" &nbsp;
+              &nbsp; &nbsp; &nbsp;&nbsp; % use loaded font
+              2</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
               <DIV style="margin-left: 200px;">
-                <BIG><SPAN style="font-family: monospace;">e.g
-                CONSOLE.SET "<SPAN style=
-                "color: rgb(102, 51, 0);">FONT = sans-serif</SPAN>"
-                % use family font<BR></SPAN></BIG><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">e.g
+                CONSOLE.SET "</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">FONT
+                = sans-serif</SPAN></SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;">" %
+                use family font</SPAN><BIG><SPAN style=
+                "font-family: monospace;"><BR></SPAN></BIG><BR>
                 Use a loaded font or font-family-style<SPAN style=
                 "color: rgb(0, 0, 153);"><BR>
                 where<BR>
@@ -1240,16 +1283,15 @@
               </DIV><SPAN style=
               "font-family: monospace;"><BR></SPAN><SPAN style=
               "font-family: monospace;"><A name="antialias" id=
-              "wrap"></A><BIG>"</BIG></SPAN><BIG><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">ANTIALIAS</SPAN>
-              &nbsp; <SPAN style="font-family: monospace;">&lt;on |
-              off&gt;"&nbsp; e.g</SPAN></BIG> <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
-              <BIG><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">AntiAlias</SPAN><SPAN style="font-family: monospace;">&nbsp;</SPAN></BIG>
-              <SPAN style="font-family: monospace;"><BIG style=
-              "font-family: monospace;">off"</BIG><BR></SPAN>
+              "wrap"></A></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">ANTIALIAS</SPAN>
+              &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN>
+              <SPAN style="font-family: Courier New, Courier, monospace;">
+              CONSOLE.SET</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">AntiAlias</SPAN>&nbsp;</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">off"</SPAN><SPAN style="font-family: monospace;"><BR>
+              </SPAN>
               <DIV style="margin-left: 40px;">
                 <DIV style="margin-left: 160px;">
                   <SPAN style="color: rgb(0, 0, 153);">Set
@@ -1265,15 +1307,13 @@
               </DIV><SPAN style=
               "font-family: monospace;"><BR></SPAN> <SPAN style=
               "font-family: monospace;"><A name="underline" id=
-              "wrap"></A><BIG>"</BIG></SPAN><BIG><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;"><SPAN style="font-family: Helvetica,Arial,sans-serif;">UNDERLINE</SPAN></SPAN>
-              &nbsp; <SPAN style="font-family: monospace;">&lt;on |
-              off&gt;"&nbsp; e.g</SPAN></BIG> <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
-              <BIG><SPAN style=
-              "font-family: monospace;">"<SPAN style=
-              "color: rgb(102, 0, 0);">UnderLine</SPAN>&nbsp;
-              on"</SPAN></BIG><SPAN style=
+              "wrap"></A></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">UNDERLINE</SPAN>
+              &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN>
+              <SPAN style="font-family: Courier New, Courier, monospace;">
+              CONSOLE.SET</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">UnderLine</SPAN>&nbsp;
+              on"</SPAN><SPAN style=
               "font-family: monospace;"><BR></SPAN>
               <DIV style="margin-left: 40px;">
                 <DIV style="margin-left: 160px;">
@@ -1287,15 +1327,13 @@
               </DIV><SPAN style=
               "font-family: monospace;"><BR></SPAN> <SPAN style=
               "font-family: monospace;"><A name="strikethrough" id=
-              "wrap"></A><BIG>"</BIG></SPAN><BIG><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;"><SPAN style="font-family: Helvetica,Arial,sans-serif;">STRIKE</SPAN></SPAN>
-              &nbsp; <SPAN style="font-family: monospace;">&lt;on |
-              off&gt;"&nbsp; e.g</SPAN></BIG> <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
-              <BIG><SPAN style=
-              "font-family: monospace;">"<SPAN style=
-              "color: rgb(102, 0, 0);">Strike</SPAN>&nbsp;
-              ON"</SPAN></BIG><SPAN style=
+              "wrap"></A></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STRIKE</SPAN>
+              &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN>
+              <SPAN style="font-family: Courier New, Courier, monospace;">
+              CONSOLE.SET</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">Strike</SPAN>&nbsp;
+              ON"</SPAN><SPAN style=
               "font-family: monospace;"><BR></SPAN>
               <DIV style="margin-left: 40px;">
                 <DIV style="margin-left: 160px;">
@@ -1309,16 +1347,14 @@
               </DIV><SPAN style=
               "font-family: monospace;"><BR></SPAN><SPAN style=
               "font-family: monospace;"><A name="dividers" id=
-              "dividers"></A><BIG>"</BIG></SPAN><BIG><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">DIVIDERS</SPAN><SPAN style="font-family: monospace;">&nbsp;
-              &lt;on | off&gt;"&nbsp;&nbsp; e.g</SPAN></BIG>
-              <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
-              <BIG><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">DIVIDERS</SPAN>
+              "dividers"></A></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN>&nbsp;
+              &lt;on | off&gt;"&nbsp;&nbsp; e.g</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
               <SPAN style=
-              "font-family: monospace;">off"&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></BIG>&nbsp;<BR>
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN>
+              off"&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN><BR>
 
               <DIV style="margin-left: 200px;">
                 <SPAN style="color: rgb(0, 0, 153);">turns ON or
@@ -1326,22 +1362,16 @@
                 <BR></SPAN> Applies to the <SPAN style=
                 "font-weight: bold;">whole</SPAN> console.<BR>
               </DIV><SPAN style="font-family: monospace;"><BR>
-              <A name="scroll" id=
-              "scroll"></A></SPAN><BIG><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">SCROLL</SPAN>&nbsp;
-              &lt;</BIG><SPAN style=
-              "font-family: monospace;"><BIG>FASTON |
-              FASTOFF"&nbsp;&nbsp; <SPAN style=
-              "font-family: monospace;">e.g</SPAN></BIG></SPAN>
-              <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
+              <A name="scroll" id="scroll"></A></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>&nbsp;
+              &lt;</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">FASTON
+              | FASTOFF"&nbsp;&nbsp; e.g</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
               <SPAN style=
-              "font-family: monospace;"><BIG><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">SCROLL</SPAN>
-              <SPAN style=
-              "font-family: monospace;">Faston"</SPAN></BIG><BR>
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>
+              Faston"</SPAN><SPAN style=
+              "font-family: monospace;"><BR>
               <BR></SPAN>
               <DIV style="margin-left: 200px;">
                 <SPAN style="color: rgb(0, 0, 153);">Set scroll
@@ -1356,20 +1386,16 @@
                 "font-weight: bold;">whole</SPAN> console.<BR>
               </DIV><BR>
               <SPAN style="font-family: monospace;"><A name="stack"
-              id="stack"></A><BIG>"</BIG></SPAN><BIG><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">STACK</SPAN>&nbsp;
-              &lt;<SPAN style="font-family: monospace;">FROMBASE |
-              FROMTOP"&nbsp;&nbsp;</SPAN></BIG> <SPAN style=
-              "font-family: monospace;"><BIG><SPAN style=
-              "font-family: monospace;">e.g</SPAN></BIG></SPAN>
-              <BIG><SPAN style=
-              "font-family: monospace;">CONSOLE.SET</SPAN></BIG>
+              id="stack"></A></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STACK</SPAN>&nbsp;
+              &lt;FROMBASE | FROMTOP"&nbsp;&nbsp;</SPAN>
               <SPAN style=
-              "font-family: monospace;"><BIG><SPAN style=
-              "font-family: monospace;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;">Stack</SPAN>
+              "font-family: Courier New, Courier, monospace;">e.g</SPAN>
               <SPAN style=
-              "font-family: monospace;">FromTop"</SPAN></BIG></SPAN>
+              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">Stack</SPAN>
+              FromTop"</SPAN>
               <DIV style="margin-left: 200px;">
                 <SPAN style="color: rgb(0, 0, 153);">Set stack
                 attributes.<BR>
@@ -1489,29 +1515,59 @@
             &nbsp;&nbsp;&nbsp;&nbsp; 5. All strings are
             case-insensitive.<BR>
           </DIV><BR>
-          Examples<BR>
           <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>
-            "<SPAN style=
-            "color: rgb(102, 0, 0);">BACKCOLOR</SPAN>=BLUE"<BR>
+            Examples<BR>
             <BR>
-            <SPAN style="color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>
-            "<SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN>
-            LIGHTGREY, LINECOLOR = YELLOW",<SPAN style=
-            "font-weight: bold;">~</SPAN><BR>
-            "<SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN>
-            0", "<SPAN style=
-            "color: rgb(102, 0, 0);">DIVIDERS</SPAN>=OFF" +
-            ",<SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN>
-            -30"<BR>
-            <BR>
-            MyStyle$ = "<SPAN style=
-            "color: rgb(102, 0, 0);">SPACING</SPAN> 10,
-            <SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN>=ON"
-            + ",<SPAN style=
-            "color: rgb(102, 0, 0);">TEXTSIZE</SPAN> 16"<BR>
-            <SPAN style="color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>
-            MyStyle$<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CONSOLE.SET</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">BACKCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">=BLUE"</SPAN><BR>
+
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CONSOLE.SET</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIGHTGREY,
+              LINECOLOR = YELLOW",</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">~</SPAN></SPAN><BR>
+
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">0",
+              "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">=OFF"
+              + ",</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">-30"</SPAN><BR>
+
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">MyStyle$
+              = "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">10,</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+              DIVIDERS</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">=ON"
+              + ",</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">16"</SPAN><BR>
+
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CONSOLE.SET</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">MyStyle$</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             <SPAN style="font-family: monospace;"><BR></SPAN>
           </DIV>
         </TD>
@@ -1519,7 +1575,10 @@
       <TR>
         <TD valign="top">
           <BIG style="color: rgb(0, 0, 153);"><A name="cs_shortcut"
-          id="fn_import"></A>dot CS Shortcut<BR></BIG><BR>
+          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">dot CS
+          Shortcut</SPAN></FONT><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG><BR>
           <DIV style="margin-left: 40px;">
             <SPAN style=
             "color: rgb(0, 0, 153); font-weight: bold;">.CS&nbsp;</SPAN>
@@ -1544,7 +1603,9 @@
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name=
           "console_screen" id=
-          "console_screen"></A>CONSOLE.SCREEN<BR>
+          "console_screen"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">CONSOLE.SCREEN</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+
           <BR></BIG>
           <DIV style="margin-left: 40px;">
             <SPAN style=
@@ -1568,14 +1629,15 @@
             <BR>
             Note that the returned values may have a fractional
             part, .eg 32.2<BR>
-            <BR>
           </DIV><BIG style="color: rgb(0, 0, 153);"><BR></BIG>
         </TD>
       </TR>
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="tapped" id=
-          "tapped"></A>CONSOLE.TAPPED<BR></BIG>
+          "tapped"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">CONSOLE.TAPPED</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG>
           <BLOCKQUOTE>
             <FONT color="#000099">CONSOLE.TAPPED</FONT>
             <FONT color="#663300"><FONT style="color: black;"
@@ -1624,7 +1686,7 @@
             "font-weight: bold;">word</SPAN>$</FONT>&nbsp;&nbsp;&nbsp;
             This is the word under the tap.<BR>
             <BLOCKQUOTE>
-              If there is no word found, a an empty string is
+              If there is no word found, an empty string is
               returned.<BR>
             </BLOCKQUOTE><FONT style=
             "color: black; font-weight: bold;" color=
@@ -1632,19 +1694,18 @@
             was a normal tap. 1 if the tap was a long tap.<BR>
             <BR>
             This command only works well if the line does not wrap.
-            You can ensure non-wrapping with<BR>
-            <DIV style="margin-left: 40px;">
-              <A href="#cs_shortcut"><SPAN style=
-              "color: rgb(0, 0, 153);">.CS</SPAN></A> "WRAP
-              OFF"<BR>
-            </DIV>
+            You can ensure non-wrapping with <A href=
+            "#cs_shortcut"><SPAN style=
+            "color: rgb(0, 0, 153);">.CS</SPAN></A> "WRAP OFF".<BR>
           </BLOCKQUOTE><BR>
         </TD>
       </TR>
       <TR>
         <TD valign="top">
-          <BIG style=
-          "color: rgb(0, 0, 153);">CONSOLE.ORIENT<BR></BIG>
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="console_orient" id=
+          "console_orient"></A>CONSOLE.ORIENT</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG>
           <BLOCKQUOTE>
             <FONT color="#000099">CONSOLE.ORIENT</FONT>
             <FONT color="#663300"><B style=
@@ -1653,14 +1714,17 @@
           <BLOCKQUOTE>
             Sets the Screen Orientation of the console.<BR>
             <BR>
-            Where <BIG><FONT color="#663300"><B style=
-            "color: black;">orientation</B></FONT></BIG> is<BR>
-            <BR>
-            -1 = Orientation depends upon the sensors.<BR>
-            0 = Orientation is forced to Landscape.<BR>
-            1 = Orientation is forced to Portrait.<BR>
-            2 = Orientation is forced to Reverse Landscape.<BR>
-            3 = Orientation is forced to Reverse Portrait.<BR>
+            Where <FONT color="#663300"><B style=
+            "color: black;">orientation</B></FONT> is<BR>
+            <DIV style="margin-left: 40px;">
+              -1 = Orientation depends upon the sensors.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              0 = Orientation is forced to Landscape.<BR>
+              1 = Orientation is forced to Portrait.<BR>
+              2 = Orientation is forced to Reverse Landscape.<BR>
+              3 = Orientation is forced to Reverse Portrait.<BR>
+            </DIV>
           </BLOCKQUOTE>
           <BLOCKQUOTE>
             The new orientation is effective immediately.<BR>
@@ -1683,11 +1747,15 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name=
-          "console_exit" id="tapped"></A>CONSOLE.EXIT<BR></BIG><BR>
+          "console_exit" id="tapped"></A></BIG><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">CONSOLE.EXIT</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR>
           <DIV style="margin-left: 40px;">
             <FONT color="#000099">CONSOLE.EXIT<BR>
             <BR></FONT> Exits the console without exiting the
-            Editor.<BR>
+            Editor. (This is different to EXIT which exits the
+            app).<BR>
             This is an immediate exit. The console screen will not
             be held.<BR>
             For Standard mode, it will exit to the Editor.<BR>
@@ -1699,7 +1767,8 @@
       <TR>
         <TD style="width: 50%;">
           <BIG style="color: rgb(0, 0, 153);"><A name="tget" id=
-          "fn_import"></A>TGET</BIG><BR>
+          "fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">TGET</SPAN></FONT><BR>
           <FONT size="+1"><BR></FONT>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);">TGET</SPAN>&nbsp;
@@ -1744,10 +1813,12 @@
             console menu, in which case 'Stopped by user' is
             printed instead, and the program execution is stopped
             or exited.<BR>
-            <BR>
           </DIV><BR>
-          Examples<BR>
           <DIV style="margin-left: 40px;">
+            Examples<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
             <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
             "color: rgb(0, 0, 153);">TGET</SPAN></SPAN>
             r$<SPAN style="color: rgb(0, 102, 0);"><SPAN style=
@@ -1774,55 +1845,80 @@
             demo of a terminal emulator)<BR>
           </DIV><BR>
           <BIG style="color: rgb(0, 0, 153);"><A name="tget_sub"
-          id="fn_import"></A>TGET Sub commands</BIG><BR>
+          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">TGET Sub
+          commands</SPAN></FONT><BR>
           <BLOCKQUOTE>
             These sub-commnds are designed to quickly get input
             without obscuring the console.<BR>
             Typically, they are used on the last page of the screen
             because TGET is always on the last row.<BR>
-          </BLOCKQUOTE>
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN>.<B>S</B></FONT>
-            <BIG><SPAN style=
-            "color: rgb(102, 51, 0); font-family: monospace;"><B>result</B><B>$</B>_svar,
-            {,<B>prompt$</B>_sexp} {,<B>title$</B>_sexp}</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "font-family: monospace;">{,<B>backKey</B>_nvar}</SPAN></SPAN></BIG><SPAN style="color: rgb(102, 51, 0);"><BR>
-            </SPAN>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN>.<B>N</B></FONT>
-            <BIG><SPAN style=
-            "color: rgb(102, 51, 0); font-family: monospace;"><B>result</B><B>$</B>_svar,
-            {,<B>prompt$</B>_sexp} {,<B>title$</B>_sexp}</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "font-family: monospace;">{,<B>backKey</B>_nvar}</SPAN></SPAN></BIG><SPAN style="color: rgb(102, 51, 0);"><BR>
-            </SPAN>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN>.<B>I</B>&nbsp;</FONT>
-            <BIG><SPAN style=
-            "color: rgb(102, 51, 0); font-family: monospace;"><B>result</B><B>$</B>_svar,
-            {,<B>prompt$</B>_sexp} {,<B>title$</B>_sexp}</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "font-family: monospace;">{,<B>backKey</B>_nvar}</SPAN></SPAN></BIG><BR>
-
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "font-family: monospace;"><FONT size="+1"><FONT face=
-            "Helvetica, Arial, sans-serif"><SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN>.</FONT></FONT></SPAN></SPAN><B>P</B>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "font-family: monospace;"><BIG><SPAN style=
-            "color: rgb(102, 51, 0); font-family: monospace;"><B>result</B><B>$</B>_svar,
-            {,<B>prompt$</B>_sexp} {,<B>title$</B>_sexp}</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "font-family: monospace;">{,<B>backKey</B>_nvar}</SPAN></SPAN></BIG><SPAN style="color: rgb(102, 51, 0);"><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><FONT size="+1">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TGET.S</SPAN></FONT>
+            result_<SPAN style=
+            "color: rgb(102, 51, 0);">svar</SPAN>,
+            {,prompt<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN>}
+            {,title</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
+            {,backKey<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            <FONT size="+1">TGET.N</FONT></SPAN>
+            result</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">_<SPAN style="color: rgb(102, 51, 0);">svar</SPAN></SPAN>,
+            {,prompt_</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">sexp</SPAN></SPAN>}
+            {,title</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
+            {,backKey</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><FONT size="+1">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TGET.I</SPAN></FONT>
+            result</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">_<SPAN style="color: rgb(102, 51, 0);">svar</SPAN></SPAN>,
+            {,prompt</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
+            {,title</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
+            {,backKey</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><FONT size="+1">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TGET.P</SPAN></FONT>
+            result</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">_<SPAN style="color: rgb(102, 51, 0);">svar</SPAN></SPAN>,
+            {,prompt</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
+            {,title</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
+            {,backKey</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: monospace;"><SPAN style="color: rgb(102, 51, 0);"><BR>
             </SPAN></SPAN></SPAN>
-          </DIV><BR>
+          </BLOCKQUOTE>
           <BLOCKQUOTE>
+            Like TGET, they get input into <SPAN style=
+            "font-family: Courier New, Courier, monospace;">result</SPAN>
+            with optional <SPAN style=
+            "font-family: Courier New, Courier, monospace;">prompt</SPAN>
+            and <SPAN style=
+            "font-family: Courier New, Courier, monospace;">title.<BR>
+
+            The</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            title</SPAN></SPAN> (if used) temporarily replaces the
+            console title. To prevent this, omit the title.<BR>
+            The <SPAN style=
+            "font-family: Courier New, Courier, monospace;">backKey</SPAN>
+            variable returns if user had tapped the back key.<BR>
+            <BR>
             The main differences between TGET and the new
             subcommands are that ;<BR>
             <BR>
@@ -1834,22 +1930,31 @@
             input unless the prompt is empty or omitted.<BR>
             The prompt (if shown) will be in reverse colors.<BR>
             <BR>
-            TGET.<B>S</B>&nbsp;&nbsp;&nbsp; Same as TGET except
-            that it will not print out the result.<BR>
-            TGET.<B>N</B>&nbsp;&nbsp;&nbsp; Brings up a NUMERIC
-            keyboard - restricts input as a real <B>number.</B><BR>
-            TGET.<B>I</B>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Brings up a
-            NUMERIC keyboard - restricts input as an
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.<SPAN style="font-weight: bold;">S</SPAN></SPAN></FONT>&nbsp;&nbsp;&nbsp;
+            Same as TGET except that it will not print out the
+            result.<BR>
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>N</B></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
+            Brings up a NUMERIC keyboard - restricts input as a
+            real <B>number.</B><BR>
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>I</B></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
+            Brings up a NUMERIC keyboard - restricts input as an
             <B>integer.</B><BR>
-            TGET.<B>P</B>&nbsp;&nbsp;&nbsp; Same as TGET.S except
-            that it hides the input like a <B>password.</B><BR>
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>P</B></SPAN></FONT>&nbsp;&nbsp;&nbsp;
+            Same as TGET.S except that it hides the input like a
+            <B>password.</B><BR>
             <BR>
             Both <B>N</B> and <B>I</B> subcommands will still
             accept a negative number.<BR>
             Both <B>N</B> and <B>I</B> subcommands will still
             return a number as a string.<BR>
             Both <B>N</B> and <B>I</B> subcommands have no error
-            checking.<BR>
+            checking on the default <SPAN style=
+            "font-family: Courier New, Courier, monospace;">result</SPAN><BR>
+
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             i.e you can default the input with a string, but the
             keyboard will only let you type a number.<BR>
@@ -1859,7 +1964,8 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="clr" id=
-          "clr"></A>CLR<BR></BIG><BR>
+          "clr"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">CLR</SPAN></FONT><BR>
           <BLOCKQUOTE>
             <BIG><FONT color="#000099">CLR</FONT> <SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
@@ -1874,10 +1980,11 @@
             &nbsp;&nbsp;&nbsp; The row itself is not deleted, even
             if empty.<BR>
             <BR>
-            If the row becomes completely empty, the row's
-            <FONT color="#000099">default styling</FONT> is
-            replaced with the current console style (this is useful
-            for padding Print.ATs at a later stage).<BR>
+            If the row becomes completely empty, the row's <A href=
+            "#console_styling"><FONT color="#000099">default
+            styling</FONT></A> is replaced with the current console
+            style (this is useful for padding Print.ATs at a later
+            stage).<BR>
             <BR>
             <FONT style="color: black; font-weight: bold;" color=
             "#663300">row</FONT> &nbsp;&nbsp; The row to clear
