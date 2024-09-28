@@ -1,222 +1,307 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Files</title>
-  <link rel="stylesheet" href="main.css" type="text/css">
-</head>
-<body link="#000099" vlink="#990099" alink="#000099">
-  <br>
-  <a href="../hbasic.html">hBasic</a> &gt; <a href="index.html">hSuite</a> &gt; Keystores<br>
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellspacing="2" cellpadding="8">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top;">
-          <div style="text-align: right;">
-            <big>hSuite</big><br>
-          </div><big><big style="color: rgb(0, 0, 153);">File Locations</big></big><br>
-<div style="margin-left: 120px;"><font size="+1">for hSuite Standalone Compilation</font><br>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Files</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY link="#000099" vlink="#990099" alink="#000099">
+  <BR>
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hSuite</A> &gt; Keystores<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hSuite</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">File
+          Locations</BIG></BIG><BR>
+          <DIV style="margin-left: 120px;">
+            <FONT size="+1">for hSuite Standalone
+            Compilation</FONT><BR>
+          </DIV>
+          <BLOCKQUOTE>
+            <TABLE style=
+            "text-align: left; width: 696px; height: 153px;"
+            border="0">
+              <TBODY>
+                <TR>
+                  <TD><BIG><A href="#keys">About
+                  Assets</A></BIG><BR></TD>
+                  <TD style="height: 1px;">Why the keys ?</TD>
+                </TR>
+                <TR>
+                  <TD height="1"><BIG><A href="#keystores">App
+                  Created Files</A></BIG></TD>
+                  <TD style="height: 1px;">Where we put the
+                  keys</TD>
+                </TR>
+                <TR>
+                  <TD height="1"><A href=
+                  "#creation"><BIG>Creation</BIG><BR></A></TD>
+                  <TD height="1">Keystore and Key Creation</TD>
+                </TR>
+                <TR>
+                  <TD height="1"><BIG><A href="#twokeys">Why two
+                  keys ?<BR></A></BIG></TD>
+                  <TD height="1">Upload Key vs Distribution
+                  Key.</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "#recommend">Recommendation</A><BR></TD>
+                  <TD style="vertical-align: top;">Let's just keep
+                  it simple<BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </BLOCKQUOTE>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1" color="#000099"><A name="assets" id=
+            "keys"></A>About Assets</FONT><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <BR>
+            All files that you need to exists 'before' you start
+            your app must be under<BR>
+            <SPAN style="color: rgb(102, 51, 0);">[source]</SPAN> ,
+            <SPAN style="color: rgb(102, 51, 0);">[data]</SPAN> ,
+            or&nbsp; <SPAN style=
+            "color: rgb(102, 51, 0);">[databases]</SPAN> of you
+            project base. These are called 'supported'
+            directories.<BR>
+            <BR>
+            <SPAN style=
+            "color: rgb(102, 51, 0);">[data]</SPAN>&nbsp; and&nbsp;
+            <SPAN style=
+            "color: rgb(102, 51, 0);">[databases]</SPAN>&nbsp; must
+            be indicated via hSuite options.<BR>
+            All the above files are known as <SPAN style=
+            "font-weight: bold;">Assets</SPAN> files. They are
+            <SPAN style="color: rgb(153, 0, 0);"><SPAN style=
+            "text-decoration: underline;">read-only</SPAN></SPAN><BR>
 
-          </div>
-<blockquote>
-            <table style="text-align: left; width: 696px; height: 153px;" border="0">
-              <tbody>
-                <tr>
-                  <td><big><a href="#keys">About Assets</a></big><br></td>
-                  <td style="height: 1px;">Why the keys ?</td>
-                </tr>
-                <tr>
-                  <td height="1"><big><a href="#keystores">App Created Files</a></big></td>
-                  <td style="height: 1px;">Where we put the
-                  keys</td>
-                </tr>
-                <tr>
-                  <td height="1"><a href="#creation"><big>Creation</big><br></a></td>
-                  <td height="1">Keystore and Key Creation</td>
-                </tr>
-                <tr>
-                  <td height="1"><big><a href="#twokeys">Why two
-                  keys ?<br></a></big></td>
-                  <td height="1">Upload Key vs Distribution
-                  Key.</td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><a href="#recommend">Recommendation</a><br></td>
-                  <td style="vertical-align: top;">Let's just keep
-                  it simple<br></td>
-                </tr>
-              </tbody>
-            </table>
-          </blockquote>
-          <div style="margin-left: 40px;">
-            <font size="+1" color="#000099"><a name="assets" id="keys"></a>About Assets</font><br>
-          </div>
-          <div style="margin-left: 80px;"><br>
-All files that you need to exists 'before' you start your app must be under <br>
-<span style="color: rgb(102, 51, 0);">[source]</span> , <span style="color: rgb(102, 51, 0);">[data]</span> , or&nbsp; <span style="color: rgb(102, 51, 0);">[databases]</span> of you project base. These are called 'supported' directories.<br>
-<br>
-<span style="color: rgb(102, 51, 0);">[data]</span>&nbsp; and&nbsp; <span style="color: rgb(102, 51, 0);">[databases]</span>&nbsp; must be indicated via hSuite options.<br>
-All the above files are known as <span style="font-weight: bold;">Assets</span> files. They are <span style="color: rgb(153, 0, 0);"><span style="text-decoration: underline;">read-only</span></span><br>
-and are embedded into the package as a virtual file-system.<br>
-<br>
-Files outside these supported directories will not get copied to assets, so will not exist before your app runs.<br>
-However, files outside supported directories can be created 'after' your app runs by your app code.<br>
-<br>
-</div>
-<div style="margin-left: 40px;"><a name="app-created" id="keystores"></a> <font size="+1" color="#000099">App Created Files</font><br>
-</div>
-<div style="margin-left: 80px;">Files can be created by your app code e.g using the TEXT and BYTE commands.<br>
-  <br>
-App created files are more flexible. They are <span style="color: rgb(0, 51, 0);"><span style="text-decoration: underline;">writable</span></span> and can be put anywhere under the <br>
-  <a moz-do-not-send="true" href="../other/transfer.html#app_path">[app_path]</a> directory. This is the directory just above <span style="color: rgb(102, 51, 0);">[source],</span> <span style="color: rgb(102, 51, 0);">[data]</span> and <span style="color: rgb(102, 51, 0);">[databases].</span><br>
-( In fact, you even have write-access to <span style="color: rgb(0, 0, 153);">[app_path]</span>'s parent [com.rfo.myApp] ) which is the start of <a moz-do-not-send="true" href="../hmanual/package.html/scoped">scoped-storage</a>.<br>
-  <br>
-</div>
-<div style="margin-left: 40px;"><a name="app-created" id="keystores"></a> <font size="+1" color="#000099">Unsupported Features<br>
-    <br>
-  </font></div>
-<div style="margin-left: 80px;"><span style="text-decoration: underline;">Files to load at startup</span></div>
-<div style="margin-left: 80px;">Legacy Basic and perhaps other apk 
-makers have a feature that supports copying files to to assets during 
-apk creation. These files can be outside of the 'supported' directories,
- and in addition they will be copied to external storage (sdcard) at <span style="text-decoration: underline;">every program startup</span>, overwriting any changes.<br>
-</div>
-<div style="margin-left: 40px;"><br>
-  <div style="margin-left: 40px;">hBasic does <span style="font-weight: bold;">not</span> support this feature, due to the confusion it creates.<br>
-  </div>
-  <div style="margin-left: 40px;">If you need files that need copying from assets to external storage (sdcard), then the program must do this itself using<br>
-  </div>
-</div>
-<div style="margin-left: 80px;">
-  <div style="margin-left: 40px;"><br>
-  </div>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; file.exists e, 
-"settings.dat"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; % looks only on 
-sdcard/data<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if !e then&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp; 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- % if not exist on sdcard/data<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; byte.open r,fv, "settings.dat"&nbsp; % get it from assets<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; if fv&lt;&gt;-1 then 
-byte.copy fv,"settings.dat"&nbsp;&nbsp;% copy it to sdcard/data<br>
-&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; endif<br>
-  <br>
-This is much clearer and user-controllable.<br>
-  <br>
-File.Exists only looks in file system. Does not look into /assets/
-  <br>
-File.Type first looks in the file system, if not found then looks in /assets/<br>
-  <br>
-file.exists e, paths$&nbsp;&nbsp;&nbsp;% look only in the file system.<br>
-if e then<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "file is on sdcard"<br>
-else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-% not in file system<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; File.type typ$, path$<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if type$="x" then<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print "file does not exist anywhere"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print "file is in assets"<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endif<br>
-endif<br>
-  <br>
-  <br>
-  <br>
-<br>
-          </div>
+            and are embedded into the package as a virtual
+            file-system.<BR>
+            <BR>
+            Files outside these supported directories will not get
+            copied to assets, so will not exist before your app
+            runs.<BR>
+            However, files outside supported directories can be
+            created 'after' your app runs by your app code.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <A name="app-created" id="keystores"></A> <FONT size=
+            "+1" color="#000099">App Created Files</FONT><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Files can be created by your app code e.g using the
+            TEXT and BYTE commands.<BR>
+            <BR>
+            App created files are more flexible. They are
+            <SPAN style="color: rgb(0, 51, 0);"><SPAN style=
+            "text-decoration: underline;">writable</SPAN></SPAN>
+            and can be put anywhere under the<BR>
+            <A href=
+            "../other/transfer.html#app_path">[app_path]</A>
+            directory. This is the directory just above
+            <SPAN style="color: rgb(102, 51, 0);">[source],</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);">[data]</SPAN> and
+            <SPAN style=
+            "color: rgb(102, 51, 0);">[databases].</SPAN><BR>
+            ( In fact, you even have write-access to <SPAN style=
+            "color: rgb(0, 0, 153);">[app_path]</SPAN>'s parent
+            [com.rfo.myApp] ) which is the start of <A href=
+            "../hmanual/package.html/scoped">scoped-storage</A>.<BR>
 
-          <div style="margin-left: 40px;">
-            <br>
-            <br>
-            <div style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <A name="app-created" id="keystores"></A> <FONT size=
+            "+1" color="#000099">Unsupported Features<BR>
+            <BR></FONT>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="text-decoration: underline;">Files to load
+            at startup</SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Legacy Basic and perhaps other apk makers have a
+            feature that supports copying files to to assets during
+            apk creation. These files can be outside of the
+            'supported' directories, and in addition they will be
+            copied to external storage (sdcard) at <SPAN style=
+            "text-decoration: underline;">every program
+            startup</SPAN>, overwriting any changes.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <DIV style="margin-left: 40px;">
+              hBasic does <SPAN style=
+              "font-weight: bold;">not</SPAN> support this feature,
+              due to the confusion it creates.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              If you need files that need copying from assets to
+              external storage (sdcard), then the program must do
+              this itself using<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; file.exists
+            e, "settings.dat"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            % looks only on sdcard/data<BR>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if !e
+            then&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            % if not exist on sdcard /data<BR>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; byte.open
+            r,fv, "settings.dat"&nbsp; % get it from assets<BR>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; if
+            fv&lt;&gt;-1 then byte.copy
+            fv,"settings.dat"&nbsp;&nbsp; % copy it to
+            sdcard/data<BR>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; endif<BR>
+            <BR>
+            This is much clearer and user-controllable.<BR>
+            <BR>
+            File.Exists only looks in file system. Does not look
+            into /assets/<BR>
+            File.Type first looks in the file system, if not found
+            then looks in /assets/<BR>
+            <BR>
+            file.exists e, paths$&nbsp;&nbsp;&nbsp; % look only in
+            the file system.<BR>
+            if e then<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "file is on
+            sdcard"<BR>
+            else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            % not in file system<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; File.type
+            typ$, path$<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if type$="x"
+            then<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            print "file does not exist anywhere"<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            print "file is in assets"<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; endif<BR>
+            endif<BR>
+            <BR>
+            <BR>
+            <BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
               Keys are kept inside keystores. Each key has an alias
-              (to identify it).<br>
+              (to identify it).<BR>
               You can keep both keys inside the same keystore, or
               you can have one key per keystore&nbsp;
-              (recommended).<br>
-            </div><br>
-            <a name="creation" id="creation"></a> <font size="+1" color="#000099">Keystore Creation</font><br>
-            <div style="margin-left: 40px;">
+              (recommended).<BR>
+            </DIV><BR>
+            <A name="creation" id="creation"></A> <FONT size="+1"
+            color="#000099">Keystore Creation</FONT><BR>
+            <DIV style="margin-left: 40px;">
               hSuite accepts JKS or PKCS12 keystores from other
-              apps or created by hSuite.<br>
+              apps or created by hSuite.<BR>
               JKS is the old type (recommended) and PKCS12 is the
-              one Oracle is pushing. (Oracle owns java).<br>
-              Google accepts both types.<br>
-            </div><br>
-            <div style="margin-left: 40px;">
+              one Oracle is pushing. (Oracle owns java).<BR>
+              Google accepts both types.<BR>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
               hSuite is able to create new keystores since v3.10
-              (Utils &gt; New Keystore).<br>
+              (Utils &gt; New Keystore).<BR>
               Each new keystore will last almost a thousand years.
               After creating a keystore keep it safe and never
-              forget your password.<br>
-            </div><br>
-            <div style="margin-left: 40px;">
+              forget your password.<BR>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
               A keystore must have a password. So must each key
-              inside the keystore.<br>
+              inside the keystore.<BR>
               For PKCS12, the passwords must be the same. JKS can
-              have differing passwords.<br>
-              hSuite recommends to choose JKS with the <span style="text-decoration: underline;">same</span> password
-              for keystore and keys.<br>
-            </div><br>
-            <a name="twokeys" id="twokeys"></a><font size="+1" color="#000099">Upload Key vs Distribution
-            Key.</font><br>
-            <br>
-            <u>Upload Key</u><br>
-            <div style="margin-left: 40px;">
+              have differing passwords.<BR>
+              hSuite recommends to choose JKS with the <SPAN style=
+              "text-decoration: underline;">same</SPAN> password
+              for keystore and keys.<BR>
+            </DIV><BR>
+            <A name="twokeys" id="twokeys"></A><FONT size="+1"
+            color="#000099">Upload Key vs Distribution
+            Key.</FONT><BR>
+            <BR>
+            <U>Upload Key</U><BR>
+            <DIV style="margin-left: 40px;">
               The Upload key is the key you normally input when
               building your app. At the end of an hSuite
               compilation your app is signed with the upload key.
-              You upload your signed app and that's it.<br>
-            </div><br>
-            <div style="margin-left: 40px;">
+              You upload your signed app and that's it.<BR>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
               Google advises that you sign your bundles for upload
               with a different key than the distribution key. I
-              previously recommended this too. <span style="text-decoration: underline;">But</span> actually it
+              previously recommended this too. <SPAN style=
+              "text-decoration: underline;">But</SPAN> actually it
               is a lot simpler to use the same key (which Google
-              also allows) and this is my new recommendation.<br>
-            </div><br>
-            <u>Distribution Key</u><br>
-            <div style="margin-left: 40px;">
+              also allows) and this is my new recommendation.<BR>
+            </DIV><BR>
+            <U>Distribution Key</U><BR>
+            <DIV style="margin-left: 40px;">
               When it's time to release your app, Play Console will
-              ask you for your distribution key.<br>
-              <br>
+              ask you for your distribution key.<BR>
+              <BR>
               A) If it's the same as your upload key, just say so
-              and continue.<br>
-              or<br>
+              and continue.<BR>
+              or<BR>
               B) If it's not, you will have to download Google's
-              <a href="https://miro.medium.com/v2/resize:fit:786/0*2vlDlctJOKNCR1k0">
-              PEPK</a> Tool by following Play Console's
+              <A href=
+              "https://miro.medium.com/v2/resize:fit:786/0*2vlDlctJOKNCR1k0">
+              PEPK</A> Tool by following Play Console's
               instructions to encrypt and upload your key for
               Google to manage. Since I've never done this, hSuite
-              has no support here.<br>
-            </div><br>
-            <a name="recommend" id="twokeys"></a><font size="+1" color="#000099">hSuite Recommendation.<br></font>
+              has no support here.<BR>
+            </DIV><BR>
+            <A name="recommend" id="twokeys"></A><FONT size="+1"
+            color="#000099">hSuite Recommendation.<BR></FONT>
             Keystore organisation is quite important because it
             will affect all your app access on Play Console for the
             future. Although the final decision is up to you; To
-            Keep things simple here are my recommendations;<br>
-            <br>
-            <div style="margin-left: 40px;">
-              Choose JKS<br>
-              Use the same password for keystore and key<br>
-              Have only one key per keystore<br>
+            Keep things simple here are my recommendations;<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              Choose JKS<BR>
+              Use the same password for keystore and key<BR>
+              Have only one key per keystore<BR>
               Use only one keystore for both Upload and
-              Distribution.<br>
-            </div><font size="+1" color="#000099"><br></font>
-          </div>
-          <div style="margin-left: 40px;"></div>
-        </td>
-      </tr>
-      <tr>
-        <td style="width: 50%;">-End.<br></td>
-      </tr>
-    </tbody>
-  </table><br>
-  <script type="text/javascript" src="https://humpity.github.io/counter.js"></script>
-
-
-</body></html>
+              Distribution.<BR>
+            </DIV><FONT size="+1" color="#000099"><BR></FONT>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">-End.<BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>

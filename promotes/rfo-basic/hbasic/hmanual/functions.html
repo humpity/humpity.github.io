@@ -11,7 +11,7 @@
   <TITLE>Functions</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY vlink="#990099" alink="#000099" link="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hManual</A> &gt; Functions<BR>
   <BR style="font-family: Helvetica,Arial,sans-serif;">
@@ -23,13 +23,13 @@
         <TD style="vertical-align: top;">
           <DIV style="text-align: right;">
             <BIG>hBasic Manual</BIG><BR>
-          </DIV><FONT size="+2" color="#000099">Function
+          </DIV><FONT color="#000099" size="+2">Function
           changes</FONT><BIG><BIG style=
           "color: rgb(0, 0, 153);"><BR>
           <BR></BIG></BIG>
           <TABLE style=
-          "text-align: left; width: 742px; height: 150px" border=
-          "0" cellspacing="2" cellpadding="2">
+          "text-align: left; width: 742px; height: 150px"
+          cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;">Convert</TD>
@@ -96,9 +96,14 @@
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "#gr_contains">GR_CONTAINS ( .. )</A><BR></TD>
+                "#gr_contains">GR_CONTAINS ( .. )</A><BR>
+                <A href="#gr_tweens"><SPAN style=
+                "color: rgb(0, 0, 238);"><SPAN style=
+                "text-decoration: underline;">GR_TWEENS
+                (..)</SPAN></SPAN></A><BR></TD>
                 <TD style="vertical-align: top;">Does object
-                contain a coordinate ?<BR></TD>
+                contain a coordinate ?<BR>
+                return number of active tweens<BR></TD>
               </TR>
             </TBODY>
           </TABLE><BR>
@@ -181,13 +186,13 @@
               "#663300">en_US</FONT>"
             </BLOCKQUOTE>The allowed keys are;
             <BLOCKQUOTE>
-              <TABLE style="text-align: left; width: 90%;" border=
-              "0" cellspacing="0" cellpadding="2">
+              <TABLE style="text-align: left; width: 90%;"
+              cellspacing="0" cellpadding="2" border="0">
                 <TBODY>
                   <TR>
-                    <TD valign="top" align="center"><FONT color=
+                    <TD align="center" valign="top"><FONT color=
                     "#666666">Key</FONT></TD>
-                    <TD valign="top" align="center"><FONT color=
+                    <TD align="center" valign="top"><FONT color=
                     "#666666">example<BR></FONT></TD>
                     <TD style="vertical-align: top;"><FONT color=
                     "#666666">comment</FONT><BR></TD>
@@ -223,7 +228,7 @@
                   <TR>
                     <TD valign="top">"BATT_PERCENT"</TD>
                     <TD valign="top">"73"</TD>
-                    <TD width="30%" valign="top" nowrap="nowrap">
+                    <TD width="30%" nowrap="nowrap" valign="top">
                     battery level as percentage left.</TD>
                   </TR>
                   <TR>
@@ -272,7 +277,7 @@
           <BR></SPAN>
           <TABLE style=
           "text-align: left; width: 100px; margin-left: 40px;"
-          border="0" cellspacing="0" cellpadding="2">
+          cellspacing="0" cellpadding="2" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;"><SPAN style=
@@ -410,7 +415,9 @@
           <A name="gr_contains" id="round"></A><FONT size=
           "+1"><SPAN style="color: rgb(0, 0, 153);">GR_CONTAINS
           (..)</SPAN></FONT><BR>
-          <BR>
+          <DIV style="text-align: left; margin-left: 40px;">
+            <BR>
+          </DIV>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);">GR_CONTAINS</SPAN>
             (<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
@@ -424,18 +431,144 @@
             "color: black; font-weight: bold;">y</SPAN>_nexp</SPAN></SPAN>)<BR>
 
             <BR>
+            Does object contain X,Y ?<BR>
             Returns true if object given by object number
             <SPAN style="font-weight: bold;">objPtr</SPAN> contains
             coordinate <SPAN style="font-weight: bold;">x,y</SPAN>.
             Otherwise returns false.<BR>
             e.g this can be used after GR.TOUCH to test if an
-            object was touched.<BR style=
-            "font-family: Liberation Sans;">
-            <BR>
+            object was touched.<BR>
             <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
             "font-family: Liberation Sans;"><BR></SPAN></SPAN>
           </DIV>
         </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="gr_tweens" id=
+          "gr_tweens"></A>GR_TWEENS (..)</SPAN></FONT><BR>
+          <DIV style="text-align: left;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">GR_TWEENS
+            ()<BR></SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">GR_TWEENS</SPAN></SPAN> (
+            <SPAN style="font-weight: bold;">{</SPAN> &lt;
+            <SPAN style="font-weight: bold;">obj</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN> <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "font-weight: bold;">arr</SPAN>[]<SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN> &gt;
+            <SPAN style="font-weight: bold;">} {,</SPAN>
+            <SPAN style=
+            "font-weight: bold;">parameter</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> ) <SPAN style=
+            "font-weight: bold;">{, all</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN> )<BR>
+            <BR>
+            Counts the number of <A href=
+            "graphics.html#tweens">Tweens</A> (that have not
+            expired).<BR>
+            The function is useful for determining if a tweens have
+            expired (or not). Expired tween are always removed.<BR>
+            <BR>
+            The first form returns the total number of tweens of
+            all objects in the display list.<BR>
+            Objects not on the display list are ignored.<BR>
+            <BR>
+            The second form&nbsp; returns the number of tweens
+            matching the <SPAN style=
+            "font-weight: bold;">object</SPAN> , <SPAN style=
+            "font-weight: bold;">parameter</SPAN> pair.<BR>
+            If either the <SPAN style=
+            "font-weight: bold;">obj</SPAN> or <SPAN style=
+            "font-weight: bold;">parameter</SPAN> are omitted, then
+            it is treated as a wildcard.<BR>
+            Both <SPAN style="font-weight: bold;">obj</SPAN> and
+            <SPAN style="font-weight: bold;">parameter</SPAN> are
+            optional. A comma is needed for <SPAN style=
+            "font-weight: bold;">parameter</SPAN>.<BR>
+            <BR>
+            The <SPAN style="font-weight: bold;">all</SPAN>
+            argument is for advanced usage where the user has
+            manipulated the display list.<BR>
+            If the optional argument <SPAN style=
+            "font-weight: bold;">all</SPAN> is omitted or false
+            (default), then only the tweens in the display list are
+            counted.<BR>
+            If the <SPAN style="font-weight: bold;">all</SPAN>
+            argument is true, then all objects in the objects list
+            are counted.<BR>
+            <BR>
+            <A href="graphics.html#tween_rules">The</A> <A href=
+            "graphics.html#tween_rules">rules</A> for&nbsp; arrarys
+            and groups are the same as <A href=
+            "graphics.html#gr_tween_add">GR.TWEEN.ADD</A>.
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">Examples<BR>
+            <BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">PRINT
+            GR_TWEENS()&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;</SPAN>&nbsp; <SPAN style=
+            "color: rgb(51, 51, 51);">% number of tweens on
+            display</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            PRINT GR_TWEENS(,,1)&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN> <SPAN style=
+            "color: rgb(51, 51, 51);">% all tweens, even if not on
+            display list</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN></SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">PRINT
+            GR_TWEENS(oCircle)
+            &nbsp;&nbsp;&nbsp;</SPAN></SPAN></SPAN> <SPAN style=
+            "color: rgb(51, 51, 51);">% number of tweens for object
+            circle</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            PRINT GR_TWEENS(,"alpha")
+            &nbsp;&nbsp;</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+            <SPAN style="color: rgb(51, 51, 51);">%</SPAN>
+            <SPAN style="color: rgb(51, 51, 51);">all alpha
+            tweens</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            PRINT
+            GR_TWEENS(,"alpha",1)&nbsp;</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+            <SPAN style="color: rgb(51, 51, 51);">% all alpha
+            tweens, even if not on display</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
       </TR>
     </TBODY>
   </TABLE><BR>

@@ -2,6 +2,20 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2024-09-29 v5.04
+		Fix GR.BOUNDED.TOUCH/2 scale (0501)
+		LIST.CREATE new modes (0502) (-Spike)
+		Add to graphics engine mkII (0503)
+			GR.ADD
+			GR.PUSH
+			GR.TWEEN.ADD
+			GR.TWEEN.PUSH
+			GR.TWEEN.CLR
+			GR_TWEENS()
+		Enhance object selections (0504)
+			GR.MOVE an array
+			GR.MOTION.ALL
+
 2024-05-02 v5.00
 		Consistent search/replace dialog (0494)
 		Add smoothing flag to CONSOLE.BACKIMG  (0495)
@@ -9,7 +23,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Fix ENCODE$ not parsing comma	 (-dkal) (0497)
 		Added asyncPrep flag to AUDIO.PLAY (0498)
 		hFtp Preferences update (0499)
-		Upgrade graphics engine (0500)
+		Upgrade graphics engine to mkII (0500)
 		- Floating point coordinates
 		- Motion for objects. GR.MOTION/.MARK
 		- Sprite objects and animations GR.SPRITE/ANIM
@@ -391,7 +405,7 @@ v3.01	v2.01	K0001 merged to master and some minor internal changes with Editor u
 v3.04	v2.02	Targets API 30
 		Fix WAKE_LOCK typo in manifest.
 v3.06	v2.03	'About' screen changes.
-		Merged 0303 - 0306
+				Merged 0303 - 0306
 v3.09	v2.04	Merged 0307-0309
 v3.13	v2.05	Merged 0250,0310 TGET overhaul
 v3.21	v2.06	Merged 0315-0320
@@ -414,7 +428,8 @@ v4.78	v2.22	Merged 0140 + 0469-0478
 v4.84	v2.23	Merged 0479-0484
 v4.91	v2.24	Merged 0485-0491 Targets API 34
 v4.93	v2.25	Merged 0492-0493
-v5.00	v2.26	Merged 0494-0500 Graphics upgrade 
+v5.00	v2.26	Merged 0494-0500 Graphics upgrade (mkII engine)
+v5.04	v2.27	Merged 0501-0504
 ============================================================================
 Patches that were created.
 	O = optional S = suspended (do not use)	D = defunct U=Upgraded
@@ -438,7 +453,7 @@ H0240	M	0240	Array Functions
 		M	0242    gr.modify error_msg mod
 		M	0243	Fix "&=" pre-assign op
 H0250	M	0250	SQL.PING
-H-SMS	S	+SMS	put back SMS commands (for future use only)
+H-SMS	S	+SMS	puts back SMS commands (for future use only)
 H0261	M	0261	replace GR.CLIP with GR.CLIP.START and GR.CLIP.END
 H0270	O	0270 + 0271 + 0273
 			FILE.SAF commands

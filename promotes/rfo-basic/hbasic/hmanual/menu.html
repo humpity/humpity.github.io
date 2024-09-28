@@ -11,7 +11,7 @@
   <TITLE>Menu</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hManual</A> &gt; <A href=
   "commands.html">Commands</A> &gt; Menu<BR>
@@ -45,8 +45,9 @@
                 <A href="#show">MENU.SHOW</A><BR>
                 <A href="#get">MENU.GET</A><BR>
                 <BR>
-                <A href="#tap"></A><A href="#intr">OnMenuTap:<BR>
-                MenuTap.Resume</A><BR></TD>
+                <A href="#onmenutap">OnMenuTap:</A><BR>
+                <A href=
+                "#menutap_resume">MenuTap.Resume</A><BR></TD>
                 <TD style="vertical-align: top;">Menu related
                 changes<BR>
                 <BR>
@@ -367,8 +368,9 @@
             "font-family: monospace;"><BR></SPAN></SPAN>
           </DIV><BIG><BR></BIG>
           <DIV style="margin-left: 40px;">
-            <BIG><SPAN style=
-            "color: rgb(0, 0, 153);">OnMenuTap</SPAN></BIG><BR>
+            <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+            "onmenutap" id=
+            "onmenutap"></A>OnMenuTap</SPAN></BIG><BR>
             <DIV style="margin-left: 40px;">
               Start of interrupt -&nbsp; is run whenever the user
               taps an item in the menu.<BR>
@@ -379,9 +381,9 @@
               string as the label and zero as the index.<BR>
               <BR>
             </DIV><BR>
-            <BIG><SPAN style=
-            "color: rgb(0, 0, 153);">MenuTap.Resume</SPAN></BIG><BR>
-
+            <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+            "menutap_resume" id=
+            "menutap_resume"></A>MenuTap.Resume</SPAN></BIG><BR>
             <DIV style="margin-left: 40px;">
               End of interrupt routine - will return to the point
               that the program got interrupted.<BR>
