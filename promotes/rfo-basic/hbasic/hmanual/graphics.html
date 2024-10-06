@@ -192,8 +192,8 @@
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);"><BIG><SPAN style=
             "color: rgb(102, 51, 0);"><FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">GR.SCREEN</SPAN>
-            </FONT></SPAN></BIG></SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">GR.SCREEN</SPAN></FONT></SPAN></BIG></SPAN>
+            <SPAN style=
             "font-weight: bold;">width</SPAN><SMALL><SPAN style=
             "color: rgb(0, 0, 153);"><BIG><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
@@ -728,22 +728,23 @@
           <DIV style="margin-left: 40px;">
             <FONT size="+1"><SPAN style=
             "color: rgb(0, 0, 153);"><A name="gr_show" id=
-            "gr_show"></A>GR.SHOW</SPAN> <SPAN style=
+            "gr_show"></A></SPAN></FONT><SPAN style=
+            "color: rgb(0, 0, 153);">GR.SHOW</SPAN> <SPAN style=
             "font-weight: bold;">object_number</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nexp {,&nbsp;</SPAN>
             <SPAN style="font-weight: bold;">...</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">}</SPAN></FONT><BR>
-
+            <SPAN style="color: rgb(102, 51, 0);">}</SPAN><BR>
             &nbsp;shows one <SPAN style=
             "text-decoration: underline;">or more</SPAN>
             objects.<BR>
             <FONT size="+1"><BR>
             <SPAN style="color: rgb(0, 0, 153);"><A name="gr_hide"
-            id="gr_hide"></A>GR.HIDE</SPAN> <SPAN style=
+            id="gr_hide"></A></SPAN></FONT><SPAN style=
+            "color: rgb(0, 0, 153);">GR.HIDE</SPAN> <SPAN style=
             "font-weight: bold;">object_number</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nexp {,</SPAN> <SPAN style=
             "font-weight: bold;">...</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);">}</SPAN></FONT><BR>
+            "color: rgb(102, 51, 0);">}</SPAN><BR>
             hides one <SPAN style="text-decoration: underline;">or
             more</SPAN> objects.<BR>
             <BR>
@@ -867,56 +868,10 @@
               Any tag not belonging to any of the objects in the
               array will result in a run-time-error. So make sure
               all objects have the tags you want to modify.<BR>
-              <DIV style="margin-left: 40px;">
-                <SPAN style="color: rgb(0, 0, 153);"><A name=
-                "gr_modify" id="gr_modify"></A>GR.MODIFY</SPAN>
-                <SPAN style=
-                "font-weight: bold;">object_pt</SPAN><SPAN style=
-                "font-weight: bold;">r</SPAN><SPAN style=
-                "color: rgb(102, 51, 0);">_nexp</SPAN> |
-                <SPAN style="color: rgb(102, 0, 0);"><SPAN style=
-                "font-weight: bold;">array[ ]</SPAN></SPAN>&nbsp;
-                <SPAN style="font-weight: bold;">{,</SPAN>
-                <SPAN style=
-                "font-weight: bold;">tag</SPAN><SPAN style=
-                "color: rgb(102, 51, 0);">_sexp</SPAN>,
-                <SPAN style="font-weight: bold;">value</SPAN><SPAN style="color: rgb(102, 51, 0);">_</SPAN><SPAN style="color: rgb(102, 51, 0);">nexp</SPAN>
-                | <SPAN style=
-                "color: rgb(102, 51, 0);">sexp</SPAN>&gt;
-                <SPAN style="font-weight: bold;">} ...</SPAN>
-              </DIV>
-              <DIV style="margin-left: 40px;">
-                <BR>
-              </DIV>
-              <DIV style="margin-left: 80px;">
-                <SPAN style="text-decoration: underline;">Added
-                Array option</SPAN><BR>
-              </DIV>
-              <DIV style="margin-left: 40px;">
-                As well as a single object, GR.MODIFY now accepts
-                an array pointer in place of the object.<BR>
-                The modification is applied to all objects
-                contained in the array.<BR>
-                <BR>
-                Any tag not belonging to any of the objects in the
-                array will result in a run-time-error. So make sure
-                all objects have the tags you want to modify.<BR>
-                <BR>
-                The array must be <SPAN style=
-                "text-decoration: underline;">one-dimensional</SPAN>.
-                (If you call it with a multi-dimensional array, the
-                results are unpredictable.)<BR>
-                <BR>
-                If any one of the objects is a group object, each
-                object in the group will also be modified (see
-                below).<BR>
-              </DIV><BR>
-              <BR>
               The array must be <SPAN style=
               "text-decoration: underline;">one-dimensional</SPAN>.
               (If you call it with a multi-dimensional array, the
               results are unpredictable.)<BR>
-              <BR>
               If any one of the objects is a group object, each
               object in the group will also be modified (see
               below).<BR>
@@ -1856,8 +1811,8 @@
             "tweens"></A>Tweens</SPAN></FONT><BR>
           </DIV>
           <DIV style="margin-left: 80px;">
-            A Tween is a change of an object's property over a
-            period of time.<BR>
+            A Tween is a change of an object's property at a rate
+            over a period of time.<BR>
             Tweens are triggered by <A href=
             "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/gr_motion">
             GR.MOTION</A>. They are removed after their duration
@@ -1929,9 +1884,10 @@
             <SPAN style="font-weight: bold;">parameter</SPAN>.<BR>
             <DIV style="margin-left: 40px;">
               e.g the rate&nbsp; for parameters "x" and "y" are in
-              pixels/sec. For "angle"&nbsp; it will be degrees. For
-              "speed"&nbsp; it will be
-              pixels/sec<SUP>2</SUP>...etc<BR>
+              pixels/sec. For "angle"&nbsp; it will be degrees.
+              ..eg<BR>
+              For "speed"&nbsp; it will be pixels/sec<SUP>2</SUP>
+              (change in speed).<BR>
             </DIV><A name="tween_rules" id="tween_rules"></A><BR>
             <SPAN style="font-weight: bold;">duration</SPAN> is in
             milliseconds. (1 second = 1000 miliseconds).<BR>
@@ -2000,8 +1956,9 @@
               inner group object and it's list is ignored, thus
               objects in a group are only tweened to one level.
               Group objects themselves are not tweened.<BR>
-              <SPAN style=
-              "text-decoration: underline;">Acceleration</SPAN><BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Acceleration</SPAN><BR>
+            <DIV style="margin-left: 40px;">
               Tweening the "speed" of an object will apply
               acceleration. This will only be applied for it's
               current direction.<BR>
@@ -2016,8 +1973,8 @@
               "x","y","aframe",.. etc, as doing so can cause
               conflicts.<BR>
               To turn off motion, set "speed" to 0.<BR>
-              To turn of motion animation, set "arate" to 0 or
-              remove the animation (anim=0).<BR>
+              To turn off animation, set "arate" to 0 or remove the
+              animation ("anim" to 0).<BR>
               <BR>
             </DIV>
           </DIV>
@@ -2031,9 +1988,9 @@
             "font-weight: bold;">|</SPAN> <SPAN style=
             "font-weight: bold;">arr[]</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;&nbsp;
-            <SPAN style="font-weight: bold;">,</SPAN> "<SPAN style=
+            <SPAN style="font-weight: bold;">,</SPAN> <SPAN style=
             "font-weight: bold;">direction</SPAN>_<SPAN style=
-            "color: rgb(102, 51, 0);">nexp</SPAN>" <SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
             "font-weight: bold;">,</SPAN> <SPAN style=
             "font-weight: bold;">acc</SPAN>_<SPAN style=
             "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
@@ -2047,7 +2004,8 @@
             direction upon the object.<BR>
             This adds a vector upon the object's current vector
             with each cycle of the tween.<BR>
-            It is the same as GR.PUSH over a period of time.<BR>
+            It is the same as <A href="#gr_push">GR.PUSH</A> at a
+            rate over a period of time.<BR>
             It will affect the parameters <A href=
             "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics-system.html#graphics_gp">
             <SPAN style="color: rgb(0, 0, 153);">"speed"</SPAN> and
@@ -2076,11 +2034,11 @@
             <SPAN style=
             "font-family: Courier New, Courier, monospace;"><A href="file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics.html#gr_tween_clr">
             GR.TWEEN.CLR</A> obj, "push"</SPAN><BR>
-            as with all tweens, you can only have one push tween
-            per object.<BR>
+            as with all tweens, you can only have one tween with a
+            "push" type per object.<BR>
             <BR>
             The <A href="#tween_rules">rules</A> for&nbsp;
-            duration, ararys and groups are the same as <A href=
+            duration, arrays and groups are the same as <A href=
             "#gr_tween_add">GR.TWEEN.ADD</A>.<BR>
             See also <A href="#gr_push">GR.PUSH</A>.<BR>
           </DIV><BR>
@@ -2114,7 +2072,8 @@
           <DIV style="margin-left: 80px;">
             Removes tween(s), whether or not they are on the
             display list.<BR>
-            In the first form, all tweens are removed.<BR>
+            In the first form, all tweens are removed from the
+            system.<BR>
             <BR>
             In the second form, only tweens with matching
             <SPAN style="font-weight: bold;">object</SPAN>s and/or
@@ -2152,10 +2111,10 @@
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">GR.TWEEN.CLR
               squares[]&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <SPAN style=
-              "color: rgb(51, 51, 51);">% remove any using an
-              array</SPAN></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">of
-              objects<BR></SPAN> <SPAN style=
+              "color: rgb(51, 51, 51);">% remove any tweens from
+              objects in an array</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
               "font-family: Courier New, Courier, monospace;">GR.TWEEN.CLR
               ,"y"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp; <SPAN style=
