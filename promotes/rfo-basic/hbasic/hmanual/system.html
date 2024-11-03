@@ -11,7 +11,7 @@
   <TITLE>System</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href=
   "http://humpity.github.io/promotes/rfo-basic/hbasic/hbasic.html">hBasic</A>
   &gt; <A href=
@@ -163,16 +163,8 @@
               </TR>
               <TR>
                 <TD valign="top"><A href=
-                "l#bundle_expr"><FONT size="+1"><STRIKE>Bundle
-                Expressions</STRIKE></FONT><BR></A></TD>
-                <TD valign="top"><SPAN style=
-                "text-decoration: line-through;">Accept</SPAN>
-                <SPAN style=
-                "color: rgb(0, 102, 0); text-decoration: line-through;">
-                bundle.key</SPAN> <SPAN style=
-                "text-decoration: line-through;">expressions</SPAN>
-                <SMALL>( ** <BIG>On Hold</BIG>&nbsp;&nbsp; ---
-                awaiting bug fix --- ** )</SMALL></TD>
+                "l#bundle_expr"><BR></A></TD>
+                <TD valign="top"><BR></TD>
               </TR>
               <TR>
                 <TD valign="top"><A href=
@@ -203,29 +195,33 @@
             There are mainly two types of scopes which a basic
             program is running in.<BR>
             <BR>
-            1. The <SPAN style="color: rgb(0, 0, 153);">main
-            scope</SPAN> i.e<BR>
+            <DIV style="margin-left: 40px;">
+              1. The <SPAN style="color: rgb(0, 0, 153);">main
+              scope</SPAN> i.e<BR>
+            </DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
-            <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 80px;">
               the <SPAN style="color: rgb(51, 51, 255);">main
               program</SPAN> or<BR>
             </DIV>
-            <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;"></DIV>
+            <DIV style="margin-left: 80px;">
               the <SPAN style="color: rgb(51, 51, 255);">main block
               of an interrupt</SPAN> <SPAN style=
               "color: rgb(51, 51, 51);">e.g OnBackKey<BR></SPAN>
             </DIV>
           </DIV>
           <DIV style="margin-left: 40px;">
-            or<BR>
+            OR<BR>
           </DIV>
           <DIV style="margin-left: 80px;"></DIV>
-          <DIV style="margin-left: 40px;">
+          <DIV style="margin-left: 80px;">
             2. A <SPAN style="color: rgb(0, 0, 153);">local
             scope</SPAN> i.e<BR>
           </DIV>
-          <DIV style="margin-left: 120px;">
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 160px;">
             <SPAN style="color: rgb(51, 51, 255);">inside a
             function</SPAN><BR>
           </DIV>
@@ -233,53 +229,61 @@
             <BR>
             An interrupt could happen in the middle of a
             function.<BR>
-            In 01.91,&nbsp; Basic would detect this and change the
-            scope (from local) to the 'global' list which starts at
-            the main program list. If the variable is not found, it
-            would keep searching through the list of the first
-            function that was called, then the next function, and
-            so on until it reached the end of the last called
-            function (the function that was interrupted).<BR>
+            In Legacy v01.91,&nbsp; Basic would detect this and
+            change the scope (from local) to the 'global' list
+            which starts at the main program list. If the variable
+            is not found, it would keep searching through the list
+            of the first function that was called, then the next
+            function, and so on until it reached the end of the
+            last called function (the function that was
+            interrupted).<BR>
             This normally works fine if the variable exists in the
             main list. Many uses of Interrupts rely on finding a
             variable in a convenient 'global' area such as the main
             list.<BR>
             <BR>
             There are two problems with this design;<BR>
-            <SPAN style="color: rgb(0, 0, 153);">a)</SPAN> If the
-            variable does not exist in the main list. Then it might
-            (un-intentionally) be found in one of the other lists.
-            This can lead to errors which could be difficult to
-            trace.<BR>
-            and<BR>
-            <SPAN style="color: rgb(0, 0, 153);">b)</SPAN> If a
-            function is called inside an interrupt's main
-            block,<BR>
-            <BR>
-            e.g<BR>
             <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 0, 153);">A)</SPAN> If the
+              variable does not exist in the main list. Then it
+              might (un-intentionally) be found in one of the other
+              lists. This can lead to errors which could be
+              difficult to trace.<BR>
+            </DIV>and<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 0, 153);">B)</SPAN> If a
+              function is called inside an interrupt's main
+              block,<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
               OnBackKey:<BR>
             </DIV>
+            <DIV style="margin-left: 40px;"></DIV>
           </DIV>
-          <DIV style="margin-left: 120px;">
+          <DIV style="margin-left: 160px;">
             myfunc ()<BR>
           </DIV>
-          <DIV style="margin-left: 80px;">
-            Back.resume<BR>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 120px;">
+            Back.Resume<BR>
           </DIV>
           <DIV style="margin-left: 120px;">
             <BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            basic still thinks it's inside an interrupt (which it
-            is) and uses the 'global' scope. This means any local
-            variable inside the function would be searched starting
-            from 'main'. Only if the variable does not exist in
-            main or any other preceeding function call, would the
-            correct list be finally searched.<BR>
-            <BR>
-            In 01.91, Functions called by an interrupt block were
-            getting wrong scope.<BR>
+            <DIV style="margin-left: 40px;">
+              Basic still thinks it's inside an interrupt (which it
+              is) and uses the 'global' scope. This means any local
+              variable inside the function would be searched
+              starting from 'main'. Only if the variable does not
+              exist in main or any other preceeding function call,
+              would the correct list be finally searched.<BR>
+            </DIV><BR>
+            In Legacy v01.91, Functions called by an interrupt
+            block were getting wrong scope.<BR>
             This is clearly undesirable, and is a side-effect of an
             interrupt handling system not intended to call
             functions.<BR>
@@ -289,53 +293,51 @@
             <BIG><SPAN style=
             "text-decoration: underline; color: rgb(0, 0, 153);">Fixed
             scope during an interrupt.</SPAN><BR></BIG><BR>
-            <SPAN style="color: rgb(0, 0, 153);">a)</SPAN> Variable
-            searches inside the main-block or an
-            interrupt-main-block will search <SPAN style=
-            "color: rgb(0, 0, 153);">only the main</SPAN> list and
-            nothing but the main list.<BR>
-            <BR>
-            else<BR>
-            <SPAN style="color: rgb(0, 0, 153);">b)</SPAN> Variable
-            searches inside a function-block (no matter when they
-            are called) will only search the function's local
-            variable list.<BR>
-            <BR>
-            All that is needed is a flag to indicate which scope (a
-            or b) the code is running in. This flag is implemented
-            in this fix and is updated for each interrupt or
-            function call and restored upon interrupt resumes and
-            function exits.<BR>
-            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 0, 153);">Fixed Case
+              A)</SPAN> Variable searches inside the main-block or
+              an interrupt-main-block will search <SPAN style=
+              "color: rgb(0, 0, 153);">only the main</SPAN> list
+              and nothing but the main list.<BR>
+              <BR>
+              <SPAN style="color: rgb(0, 0, 153);">Fixed Case
+              B)</SPAN> Variable searches inside a function-block
+              (no matter when they are called) will only search the
+              function's local variable list.<BR>
+            </DIV><BR>
             <BIG style=
-            "text-decoration: underline; color: rgb(0, 0, 153);">Fix
+            "text-decoration: underline; color: rgb(0, 0, 153);">Fixed
             scope for new variables created during an
             interrupt<BR></BIG> <SPAN style=
-            "text-decoration: underline;"><BR></SPAN> Make sure new
-            variables in main-block and interrupt-main-block are
-            always created in main scope.<BR>
-            Make sure new variables in function-block are always
-            created in local scope.<BR>
-            <BR>
-            This is a similar fix using the new scope flag for
-            newly created variables.<BR>
-          </DIV><BIG><BR></BIG>
+            "text-decoration: underline;"><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              Made sure new variables in main-block and
+              interrupt-main-block are always created in main
+              scope.<BR>
+              Made sure new variables in function-block are always
+              created in local scope.<BR>
+            </DIV><BR>
+          </DIV>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style=
             "color: rgb(0, 0, 153); text-decoration: underline;">Exceptions</SPAN></BIG><BR>
 
             <BR>
             The only exception to these fixes is code run inside an
-            ONERROR block.<BR>
-            ONERROR is treated differently than other interrupts
-            and it's behaviour (regarding scope) has been left
-            alone. That is, it's scope is the scope that was
-            interrupted. e,g If an error occurred in a function,
-            then the scope of the ONERROR block is that of the
-            function. The rationale behind being that it is
+            <SPAN style="color: rgb(0, 0, 153);">OnError</SPAN>
+            block.<BR>
+            <SPAN style="color: rgb(0, 0, 153);">OnError</SPAN> is
+            treated differently than other interrupts and it's
+            behaviour (regarding scope) has been left alone. That
+            is, it's scope is the scope that was interrupted. e,g
+            If an error occurred in a function, then the scope of
+            the&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">OnError</SPAN> block is that
+            of the function. The rationale behind being that it is
             sometimes useful to return to the error point with a
-            GOTO, in which a flag or variable (in the same scope)
-            is neccessary to transfer meaning.<BR>
+            <SPAN style="color: rgb(0, 0, 153);">GOTO</SPAN>, in
+            which a flag or variable (in the same scope) is
+            neccessary to transfer meaning.<BR>
           </DIV><BR>
         </TD>
       </TR>
@@ -372,10 +374,10 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;">
-              <SPAN style="font-style: italic;">(Basic 01.91 writes
-              this output one low byte at a time, each time
-              ignoring the high byte ( each character is two
-              bytes).) which is rather slow.</SPAN><BR>
+              <SPAN style="font-style: italic;">(Legacy Basic
+              v01.91 writes this output one low byte at a time,
+              each time ignoring the high byte ( each character is
+              two bytes).) which is rather slow.</SPAN><BR>
             </DIV><BR>
             This enhancement converts the string to a byte array
             and writes the whole array at once.<BR>
@@ -398,682 +400,6 @@
             &gt;255) then a question mark glyph (3F) is used to
             mark unknown data because it can't find anything to map
             to.<BR>
-            <BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <SPAN style="color: rgb(0, 0, 153);"><STRIKE><A name=
-          "bundle_expr" id=
-          "bundle_expr"></A></STRIKE><STRIKE><BIG>Bundle
-          Expressions</BIG></STRIKE><STRIKE><BR></STRIKE>
-          <STRIKE><BR></STRIKE> <STRIKE>**</STRIKE>
-          <STRIKE><SPAN style="color: rgb(153, 0, 0);">Bundle
-          Expressions have been removed due to a bug. Below is for
-          reference only</SPAN></STRIKE> <STRIKE>**</STRIKE><BR>
-          <BR></SPAN>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: line-through;">The
-            interpreter will now accept bundle expressions of the
-            forms;</SPAN><BR style=
-            "text-decoration: line-through;">
-            <BR style="text-decoration: line-through;">
-            <SPAN style=
-            "text-decoration: underline line-through;">Syntax</SPAN><BR style="text-decoration: line-through;">
-
-            <BR style="text-decoration: line-through;">
-            <TABLE style=
-            "text-align: left; width: 50%; height: 58px; margin-left: 40px; text-decoration: line-through;"
-            cellspacing="2" cellpadding="2" border="0">
-              <TBODY>
-                <TR>
-                  <TD style="vertical-align: top; width: 50%;">
-                  &lt;nvar&gt;.<SPAN style=
-                  "color: rgb(102, 51, 0);">&lt;
-                  key&gt;</SPAN></TD>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "color: rgb(0, 0, 153);">simple
-                  key</SPAN><BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;">or<BR></TD>
-                  <TD style="vertical-align: top;"><BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;">
-                  &lt;nvar&gt;."<SPAN style=
-                  "color: rgb(102, 51, 0);">&lt;key&gt;</SPAN>"</TD>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "color: rgb(0, 102, 0);">quoted
-                  key</SPAN><BR></TD>
-                </TR>
-              </TBODY>
-            </TABLE><BR style="text-decoration: line-through;">
-            <SPAN style=
-            "text-decoration: line-through;">e.g</SPAN><BR style=
-            "text-decoration: line-through;">
-            <DIV style=
-            "margin-left: 40px; text-decoration: line-through;">
-              mybundle.<SPAN style=
-              "color: rgb(0, 0, 153);">key1</SPAN><BR>
-              mybundle.<SPAN style="color: rgb(0, 102, 0);">"Key
-              1"</SPAN><BR>
-            </DIV><BR style="text-decoration: line-through;">
-            <SPAN style="text-decoration: line-through;">The</SPAN>
-            <SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">
-            first form</SPAN> <SPAN style=
-            "text-decoration: line-through;">has no quotes
-            surrounding the key and conforms to rules simiar to
-            variable names;</SPAN><BR style=
-            "text-decoration: line-through;">
-            <DIV style=
-            "margin-left: 40px; text-decoration: line-through;">
-              Will be converted to lowercase,<BR>
-              Cannot have spaces<BR>
-              Must begin with a letter, but can have numbers.<BR>
-              The only allowable special characters are : "_"&nbsp;
-              or "@" or '#"<BR>
-            </DIV><BR style="text-decoration: line-through;">
-            <SPAN style="text-decoration: line-through;">The</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            second form</SPAN> <SPAN style=
-            "text-decoration: line-through;">has quotes and the key
-            can be any string similar to</SPAN> <SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">
-            bundle.put,</SPAN><BR style=
-            "text-decoration: line-through;">
-            <DIV style=
-            "margin-left: 40px; text-decoration: line-through;">
-              Is case sensitive,<BR>
-              Is fully compatible with bundle.put<BR>
-            </DIV><BR style="text-decoration: line-through;">
-            <SPAN style=
-            "text-decoration: underline line-through;">Expression
-            Rules</SPAN><BR style="text-decoration: line-through;">
-            <BR style="text-decoration: line-through;">
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;- A
-            bundle.key will&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">evaluate
-            to a value</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;similar to:
-            bundle.get</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;e.g</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;bundle.create mybundle</SPAN><BR style=
-            "color: rgb(0, 102, 0); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;bundle.put mybundle, "key1",
-            99&nbsp;&nbsp;</SPAN> <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;</SPAN><SPAN style="color: rgb(0, 102, 0); text-decoration: line-through;">&nbsp;&nbsp;bundle.get
-            mybundle, "key1", n&nbsp;&nbsp;</SPAN> <SPAN style=
-            "text-decoration: line-through;">&nbsp;% old
-            way</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">n
-            = mybundle.key1&nbsp;</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;% new way</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp; &nbsp;- A
-            bundle.key can also be the destination of
-            an&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">assignment</SPAN><BR style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;e.g</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">&nbsp;bundle.create
-            mybundle</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            bundle.put mybundle, "key1", 98&nbsp;&nbsp;</SPAN>
-            <SPAN style="text-decoration: line-through;">% old
-            way</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            mybundle.key1 = 99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style="text-decoration: line-through;">% new
-            way</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp; &nbsp;- A
-            bundle.key&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">value</SPAN><SPAN style="text-decoration: line-through;">&nbsp;can
-            either be a&nbsp;number or a string</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;e.g</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">&nbsp;&nbsp;&nbsp;&nbsp;bundle.create
-            mybundle</SPAN><BR style=
-            "color: rgb(0, 102, 0); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;mybundle.key1 = 99</SPAN><BR style=
-            "color: rgb(0, 102, 0); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;mybundle.key2 = "red"</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;n = mybundle.key1</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;% value at key1 must exist and
-            is a number</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">s$=
-            mybundle.key2&nbsp;</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;% value at key2 must exist and
-            is a string</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp; If the index or key does not exist, you
-            will get an error.</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp; &nbsp;- A
-            bundle.key&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">assignment</SPAN><SPAN style="text-decoration: line-through;">&nbsp;can
-            either be a&nbsp;number or a string</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;</SPAN><SPAN style=
-            "text-decoration: underline line-through;">and can also
-            change the value type</SPAN><SPAN style=
-            "text-decoration: line-through;">.</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;bundle.create mybundle</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">&nbsp;mybundle.key1&nbsp;=
-            n&nbsp;</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;% value is a
-            number</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;mybundle.key1&nbsp;=
-            "wow"&nbsp;</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;% value is no longer a
-            number</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp; &nbsp;- A
-            bundle.key will&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">auto-create
-            the key</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;if the key is
-            not found.</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">bundle.create
-            mybundle</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">mybundle.newkey3
-            = "first value"</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp; &nbsp;- A
-            bundle.key&nbsp;will</SPAN> <SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: underline line-through;">
-            NOT</SPAN> <SPAN style=
-            "text-decoration: line-through;">auto-create a new
-            bundle&nbsp;if the</SPAN> <SPAN style=
-            "text-decoration: underline line-through; color: rgb(0, 0, 153);">
-            index</SPAN> <SPAN style=
-            "text-decoration: line-through;">is not
-            found.</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;The bundle (i.e it's
-            index)</SPAN> <SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: underline line-through;">
-            MUST</SPAN> <SPAN style=
-            "text-decoration: line-through;">exist either by
-            creating the bundle with</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;bundle.create or bundle.put.
-            Otherwise an error occurs.</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;(note: this is different to
-            the normal bundle.put behaviour)</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;e.g</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">bundle.create
-            mybundle</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;% mandatory</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">mybundle.key2
-            = "red"&nbsp;&nbsp;</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;% assignment auto-creates key2</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;print mybundle.key2&nbsp;</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;% red</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(153, 0, 0); text-decoration: line-through;"><SPAN style="color: rgb(0, 102, 0);">print</SPAN>
-            your_bundle.key2</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;% ERROR</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp; &nbsp;- A
-            numeric bundle.key can be used
-            with&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">pre/post
-            inc/dec</SPAN> <SPAN style=
-            "text-decoration: line-through;">operators&nbsp;similar
-            to</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;variables.</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;e.g</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">bundle.create
-            mybundle</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">&nbsp;&nbsp;&nbsp;mybundle.key1
-            = 99</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;</SPAN><SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">n
-            = mybundle.key1++&nbsp;&nbsp;</SPAN> <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;&nbsp;
-            &nbsp;% n=99</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;a = mybundle.key1&nbsp;</SPAN><SPAN style=
-            "text-decoration: line-through;">&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;% a=100</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;These operators will update
-            the bundle value pointed to by
-            bundle.key,</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;in which the value&nbsp;must
-            be numeric.</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;&nbsp; - A
-            bundle.key can have</SPAN> <SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: line-through;">
-            embedded keys</SPAN> <SPAN style=
-            "text-decoration: line-through;">i.e bundle indexes
-            inside bundle keys (bundles within bundles). This is of
-            the form</SPAN><BR style=
-            "text-decoration: line-through;">
-            <BR style="text-decoration: line-through;">
-            <DIV style=
-            "margin-left: 40px; text-decoration: line-through;">
-              <SPAN style=
-              "color: rgb(0, 0, 153);">bundle</SPAN>.<SPAN style=
-              "color: rgb(102, 51, 0);">key1.key2.key3..</SPAN><BR>
-            </DIV><SPAN style=
-            "color: rgb(102, 51, 0); text-decoration: line-through;"><BR>
-            </SPAN>
-            <DIV style=
-            "margin-left: 40px; text-decoration: line-through;">
-              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-              "color: rgb(0, 0, 153);">bundle</SPAN></SPAN> is an
-              &lt;nvar&gt; and it's value is the bundle index of
-              <SPAN style=
-              "color: rgb(102, 51, 0);">key1</SPAN>.<BR>
-              <SPAN style="color: rgb(102, 51, 0);">key1</SPAN>'s
-              value is the bundle index of <SPAN style=
-              "color: rgb(102, 51, 0);">key2.</SPAN><BR>
-              <SPAN style="color: rgb(102, 51, 0);">key2</SPAN>'s
-              value is the bundle index of <SPAN style=
-              "color: rgb(102, 51, 0);">key3</SPAN>.<BR>
-              <BR>
-              <SPAN style="color: rgb(102, 51, 0);">key3</SPAN>'s
-              value will be the value of the whole expression and
-              any update will be to the value at <SPAN style=
-              "color: rgb(102, 51, 0);">key3</SPAN>.<BR>
-              Only the <SPAN style=
-              "text-decoration: underline;">last</SPAN> key
-              (<SPAN style="color: rgb(102, 51, 0);">key3</SPAN> in
-              this case) can be auto-created (if it doesn't
-              exist).<BR>
-              <BR>
-              Note that <SPAN style=
-              "text-decoration: underline;">all</SPAN> keys must be
-              literal, they cannot be expressions.<BR>
-            </DIV><BR style="text-decoration: line-through;">
-            <SPAN style=
-            "text-decoration: line-through;">&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp; e.g</SPAN><BR style=
-            "text-decoration: line-through;">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0); text-decoration: line-through;">
-            &nbsp;&nbsp;&nbsp; &nbsp; <SMALL>bundle.create
-            location</SMALL></SPAN><SMALL style=
-            "text-decoration: line-through;"><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; location.area =
-            "Westminster"</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; location.city =
-            "London"</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; bundle.create
-            contact</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; contact.name =
-            "John"</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; contact.phone =
-            55556666</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(102, 0, 204);">contact.assigned =
-            location</SPAN></SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; bundle.create work</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(102, 0, 204);">work.sales =
-            contact</SPAN></SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; !work.dog = humpty</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; ? work.sales.name;</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 0, 153);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; ? " will cover ";</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 0, 153);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; ?
-            work.sales.assigned.area&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; % embedded keys</SPAN><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <BR style=
-            "font-family: monospace; color: rgb(0, 102, 0);">
-            <SPAN style=
-            "font-family: monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(0, 0, 153);">! John will cover
-            Westminster</SPAN></SPAN></SMALL><BR style=
-            "font-family: monospace; color: rgb(0, 102, 0); text-decoration: line-through;">
-
-            <BR style="text-decoration: line-through;">
-            <SPAN style=
-            "text-decoration: underline line-through;">Known
-            quirks</SPAN><BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255); text-decoration: line-through;">
-
-            <SPAN style="text-decoration: line-through;">If both
-            the index and key are bad, you might get 2 errors
-            reported.</SPAN><BR>
             <BR>
           </DIV>
         </TD>
@@ -1299,7 +625,7 @@
             is clean. The string can be any text and can have
             spaces, e.g "Dark Theme".<BR>
             <BR>
-            <FONT size="+1" color="#000099"><A name=
+            <FONT color="#000099" size="+1"><A name=
             "shortcut_fixes" id="shortcut_fixes"></A>Shortcut fixes
             since v4.49.</FONT><BR>
             <BR>
@@ -1312,7 +638,7 @@
               From now on, the interpreter will let any new program
               take over, even if there's a old one still
               running.<BR>
-            </BLOCKQUOTE><FONT size="+1" color="#000099"><A name=
+            </BLOCKQUOTE><FONT color="#000099" size="+1"><A name=
             "fileshare_fixes" id="fileshare_fixes"></A>File-Share
             fixes since v4.49.<BR>
             <BR></FONT> Standard (i.e with editor)<BR>
@@ -1595,8 +921,8 @@
             ?</SPAN><BR>
             &nbsp;&nbsp;&nbsp; The root of the server starts at (
             <SPAN style=
-            "font-family: monospace; color: rgb(102, 51, 0);">/Android/data/com.rfo.hbasic</SPAN>
-            ).<BR>
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
+            /Android/data/com.rfo.hbasic</SPAN></SPAN> ).<BR>
             <DIV style="margin-left: 40px;">
               This is known as the <SPAN style=
               "color: rgb(0, 0, 153);">base_drive</SPAN>&nbsp;
@@ -1633,8 +959,9 @@
             </DIV>&nbsp;&nbsp;&nbsp; c) android removes it in the
             background.<BR>
             <BR>
-            &nbsp;&nbsp;&nbsp; If hBasic is 'Exit'd, either via
-            Editor menu or Basic command, the server is still
+            &nbsp;&nbsp;&nbsp; If hBasic is 'Exit' ed, either via
+            Editor menu or Basic command, the server is
+            <SPAN style="text-decoration: underline;">still</SPAN>
             running.<BR>
             &nbsp;&nbsp;&nbsp; You will have to re-enter the hBasic
             app in order to stop it.<BR>

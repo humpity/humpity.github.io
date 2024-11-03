@@ -2,12 +2,17 @@ hSuite changelog
 
 Date		Summary of Versions
 --------------- -------------------------------------------
-2024-09-29 v3.23
+2024-11-02	v3.24
+		hmaster v2.28
+		hpatcher 3.18
+			Internal tidyup
+
+2024-09-29	v3.23
 		hmaster v2.27
 		hpatcher 3.17
 			Fix app_version precision
 
-2024-05-02 v3.22
+2024-05-02	v3.22
 		hmaster v2.26
 		hpatcher v3.16
 			Delete temp files on entry
@@ -19,6 +24,7 @@ Date		Summary of Versions
 
 2023-11-30	v3.20
 		hmaster v2.24
+			API-34
 		hpatcher v3.14
 			Default keystore input focus to password
 			Fix file loading msg, (blank = no change)
@@ -29,23 +35,24 @@ Date		Summary of Versions
 			Fix standalone shortcut code
 			Fix hcodes sometimes not showing in linux gui
 
-2023-08-23 v3.18
+2023-08-23	v3.18
 		hmaster v2.22
 		hpatcher v3.12
 			Added permission ACCESS_BLUETOOTH_SCAN
 			Added permission ACCESS_BLUETOOTH_CONNECT
 
-2023-06-27 v3.17
+2023-06-27	v3.17
 		hmaster v2.21
 		
-2023-06-21 v3.16
+2023-06-21	v3.16
 		hmaster v2.20
 		hpatcher v3.11
 			Cosmetic change - right justify icon_file name
 			Added permission ACCESS_NETWORK_STATE as option
 
-2023-03-04 v3.15
+2023-03-04	v3.15
 		hmaster v2.19
+			API-33
 		hpatcher v3.10
 			Fix encryption error for missing temp dir
 			Fix gui forgetting last app icon resolution
@@ -75,6 +82,7 @@ Date		Summary of Versions
 
 2022-07-01	v3.10
 		hMaster v2.14
+			API-31
 		hPatcher v3.06
 			Default to no permissions instead of all
 			Can create new keystores
@@ -141,7 +149,7 @@ Date		Summary of Versions
 	
 2021-02-14	v2.02
 		hMaster v2.02
-			Targets API-30
+			API-30
 		hPatcher v2.02
 			Fix WAKE_LOCK typo in permissions.
 
@@ -159,6 +167,7 @@ Date		Summary of Versions
 			MsgBox font change
 2020-07-19	v2.0
 		hMaster v2.0 Scoped Storage
+			minSdkVersion API 19
 			Most patches were merged and removed
 			Trial patch K0001
 		hpatcher v2.0 64bit

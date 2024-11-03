@@ -55,8 +55,7 @@
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
                 "#int">INT$&nbsp; ( nexp | sexp</A> <A href=
-                "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/functions.html#version">
-                )</A></TD>
+                "#version">)</A></TD>
                 <TD style="vertical-align: top;">accepts a
                 string</TD>
               </TR>
@@ -184,8 +183,9 @@
               "#000099">DEVICE$</FONT>("locale")&nbsp;&nbsp;&nbsp;
               %</FONT> will return e.g "<FONT color=
               "#663300">en_US</FONT>"
-            </BLOCKQUOTE>The allowed keys are;
+            </BLOCKQUOTE>The supported keys are;
             <BLOCKQUOTE>
+              battery level as percentage left.
               <TABLE style="text-align: left; width: 90%;"
               cellspacing="0" cellpadding="2" border="0">
                 <TBODY>
@@ -193,9 +193,11 @@
                     <TD align="center" valign="top"><FONT color=
                     "#666666">Key</FONT></TD>
                     <TD align="center" valign="top"><FONT color=
-                    "#666666">example<BR></FONT></TD>
-                    <TD style="vertical-align: top;"><FONT color=
-                    "#666666">comment</FONT><BR></TD>
+                    "#666666">example output<BR></FONT></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: left;">
+                    <FONT color="#666666">Comments and
+                    samples</FONT><BR></TD>
                   </TR>
                   <TR>
                     <TD style=
@@ -228,34 +230,83 @@
                   <TR>
                     <TD valign="top">"BATT_PERCENT"</TD>
                     <TD valign="top">"73"</TD>
-                    <TD width="30%" nowrap="nowrap" valign="top">
-                    battery level as percentage left.</TD>
+                    <TD style="vertical-align: top;">Percentage of
+                    battery remaining<BR></TD>
                   </TR>
                   <TR>
                     <TD valign="top">"BATT_STATUS"</TD>
                     <TD valign="top">"Discharging"</TD>
-                    <TD valign="top">"Charging", "Not Charging",
-                    "Discharging", "Full","Unknown"<BR></TD>
+                    <TD valign="top">
+                      <SPAN style="color: rgb(0, 0, 153);">Battery
+                      Charging status</SPAN><SPAN style=
+                      "text-decoration: underline;"><BR></SPAN>
+                      <DIV style="margin-left: 40px;">
+                        "Charging", "Not Charging", "Discharging",
+                        "Full", "Unknown"<BR>
+                      </DIV>
+                    </TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">
+                    "BATT_TEMP"</TD>
+                    <TD style="vertical-align: top;">"28.1"</TD>
+                    <TD style="vertical-align: top;"><SPAN style=
+                    "color: rgb(0, 0, 153);">Battery
+                    Temperature</SPAN><BR>
+                    In degrees celsius.<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">
+                    "BATT_PLUGGED"<BR></TD>
+                    <TD style="vertical-align: top;">
+                    "Battery"<BR></TD>
+                    <TD style="vertical-align: top;">
+                      <SPAN style=
+                      "color: rgb(0, 0, 153);">Plugged-in
+                      Status</SPAN><SPAN style=
+                      "text-decoration: underline;"><BR></SPAN>
+                      <DIV style="margin-left: 40px;">
+                        "Battery",&nbsp;&nbsp;&nbsp; <SPAN style=
+                        "color: rgb(102, 102, 102);">( means not
+                        plugged in )</SPAN><BR>
+                        "AC", "Docked", "USB", "Wireless"<BR>
+                      </DIV>
+                    </TD>
                   </TR>
                   <TR>
                     <TD style="vertical-align: top;">
                     "ORIENT_SIMPLE"<BR></TD>
                     <TD style="vertical-align: top;">
                     "Portrait"<BR></TD>
-                    <TD style="vertical-align: top;">"Portrait",
-                    "Lansdscape"<BR></TD>
+                    <TD style="vertical-align: top;">
+                      <SPAN style=
+                      "color: rgb(0, 0, 153);">Orientation</SPAN><SPAN style="text-decoration: underline;"><BR>
+                      </SPAN>
+                      <DIV style="margin-left: 40px;">
+                        "Portrait", "Lansdscape"<BR>
+                      </DIV>
+                    </TD>
                   </TR>
                 </TBODY>
               </TABLE>
             </BLOCKQUOTE>All keys are case-insensitive.<BR>
             <BR>
-            Notes: Returned value is a string. You may have to use
-            IS_NUMBER and VAL to parse it for a number.<BR>
-            (This function is similar /but not the same/ as the
-            legacy DEVICE and&nbsp; sub commands).<BR>
-            Some items are not part of the legacy DEVICE command
-            and will not show up in it's bundles or strings.<BR>
-            <BR>
+            Notes:<BR>
+            <DIV style="margin-left: 40px;">
+              Returned value is a string. You may have to use
+              IS_NUMBER and VAL to parse it for a number.<BR>
+              (This function is similar /but not the same/ as the
+              legacy DEVICE and&nbsp; sub commands).<BR>
+              <BR>
+              Depending on the hardware manufacturer,&nbsp; some
+              items may not be accurate,<BR>
+              e.g getting "AC"&nbsp; instead of "USB" for
+              plugged-in status or getting a fake temperature for
+              the battery.<BR>
+              <BR>
+              Some items are not part of the legacy DEVICE command
+              and will not show up in it's bundles or strings.<BR>
+            </DIV><BR>
             ORIENT_SIMPLE<BR>
             <DIV style="margin-left: 40px;">
               Returns the last view orientation as simply
