@@ -487,6 +487,13 @@
             <SPAN style="font-weight: bold;">objPtr</SPAN> contains
             coordinate <SPAN style="font-weight: bold;">x,y</SPAN>.
             Otherwise returns false.<BR>
+            <SPAN style="font-weight: bold;">x,y</SPAN> is expected
+            to be <SPAN style=
+            "text-decoration: underline;">unscaled</SPAN> real
+            device coordinates.<BR>
+            If x,y have been scaled, you must unscale them yourself
+            before calling this function.<BR>
+            <BR>
             e.g this can be used after GR.TOUCH to test if an
             object was touched.<BR>
             <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
