@@ -234,12 +234,9 @@
                 "#bundle">BUNDLE<BR>
                 Enhancements</A></TD>
                 <TD style="vertical-align: top;"><A href=
-                "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/commands.html#bundle_multi">
-                Accept Multiple Input</A>.<BR>
-                <A href=
-                "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/commands.html#bundle_auto">
-                Bundle 'auto' Mode</A>. (convenience loading for
-                tags and variables)</TD>
+                "#bundle_multi">Accept Multiple Input</A>.<BR>
+                <A href="#bundle_auto">Bundle 'auto' Mode</A>.
+                (convenience loading for tags and variables)</TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -462,6 +459,9 @@
             there was an <B>error.</B> Further information may be
             contained in <FONT color=
             "#000099">getERROR$()</FONT>.<BR>
+            <BR>
+            Note that if you don't use this flag (omitted), then
+            it's following comma (if any) is ignored.<BR>
           </DIV>
         </TD>
       </TR>
@@ -1239,8 +1239,11 @@
           GR.OPEN and HTML.OPEN</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            <BIG><SPAN style="color: rgb(0, 0, 153);">GR.OPEN
-            &nbsp; &nbsp;&nbsp;</SPAN></BIG> {&lt;<A href=
+            <FONT size="+1"><SPAN style=
+            "color: rgb(0, 0, 153);">GR.OPEN &nbsp;</SPAN></FONT>
+            <BIG><SPAN style=
+            "color: rgb(0, 0, 153);">&nbsp;&nbsp;</SPAN></BIG>
+            {&lt;<A href=
             "commands.html#color_strings">color</A>&gt;}
             <SPAN style=
             "color: rgb(102, 51, 0);">{</SPAN>,&lt;<SPAN style=
@@ -1250,14 +1253,13 @@
             "color: rgb(102, 51, 0);">_nexp</SPAN>&gt;<SPAN style=
             "color: rgb(102, 51, 0);">}</SPAN><BR>
             <BR>
-            <BIG><SPAN style=
-            "color: rgb(0, 0, 153);">HTML.OPEN</SPAN></BIG>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <FONT size="+1"><SPAN style=
+            "color: rgb(0, 0, 153);">HTML.OPEN&nbsp;&nbsp;&nbsp;</SPAN></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <SPAN style="color: rgb(102, 51, 0);">{&lt;<SPAN style=
             "color: black; font-weight: bold;">decors_flags</SPAN>_nexp&gt;
             {, &lt;<SPAN style=
             "color: black;">orientation</SPAN>_nexp&gt;}}</SPAN><BR>
           </DIV><BR>
-          <BR>
           <DIV style="margin-left: 40px;">
             <BIG>The <SMALL><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
@@ -1337,7 +1339,6 @@
             the navbar color for Android 11+ using new APIs (see
             later).<BR>
             <BR>
-            <BR>
             Some examples;<BR>
             <BR>
             <DIV style="margin-left: 40px;">
@@ -1407,7 +1408,7 @@
               <SPAN style="font-family: monospace;"><SPAN style=
               "color: rgb(0, 0, 153);">GR.OPEN</SPAN> "blue",
               <SPAN style="color: rgb(153, 0, 0);">(!nav)</SPAN>*4
-              + act*2 + sta*1, 1<BR></SPAN></BIG><BR>
+              + act*2 + sta*1, 1</SPAN></BIG><BR>
               <SPAN style="font-family: monospace;"><BR></SPAN>
             </DIV><BR>
             <BIG style="text-decoration: underline;">Hidden

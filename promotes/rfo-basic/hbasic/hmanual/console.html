@@ -101,9 +101,16 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
+                "#screen_size">SCREEN.SIZE</A><BR></TD>
+                <TD style="vertical-align: top;">Will only return
+                console viewsize<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
                 "#console_screen">CONSOLE.SCREEN</A></TD>
                 <TD style="vertical-align: top;">Get width or/and
-                height as characters<BR></TD>
+                height as <SPAN style=
+                "font-weight: bold;">characters</SPAN><BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;">CONSOLE.TITLE<BR>
@@ -680,10 +687,9 @@
               <SPAN style=
               "text-decoration: underline;">Images</SPAN><BR>
               The loaded image always replaces the console <A href=
-              "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/console.html#voidcolor">
-              VOIDCOLOR</A>. So you will not not see the void color
-              while the image is on. Also images with transparency
-              do not work.<BR>
+              "#voidcolor">VOIDCOLOR</A>. So you will not not see
+              the void color while the image is on. Also images
+              with transparency do not work.<BR>
               <BR>
               <SPAN style=
               "text-decoration: underline;">Fitting</SPAN><BR>
@@ -1230,7 +1236,7 @@
               "font-family: Courier New, Courier, monospace;"><BR></SPAN>
               <DIV style="margin-left: 200px;">
                 <SPAN style=
-                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;&nbsp;
                 <SPAN style=
                 "font-family: Courier New, Courier, monospace;">e.g
                 CONSOLE.SET "</SPAN><SPAN style=
@@ -1597,6 +1603,70 @@
             CONSOLE.SET.<SPAN style=
             "color: rgb(102, 51, 0); font-family: monospace;"><BR></SPAN>
           </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="screen_size" id="screen_size"></A><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">SCREEN.SIZE</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+
+          <BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">SCREEN.SIZE</SPAN>&nbsp;
+            <SPAN style=
+            "font-weight: bold;">size</SPAN>[]<SPAN style=
+            "color: rgb(102, 51, 0);">_array[]</SPAN>, <SPAN style=
+            "font-weight: bold;">realsize</SPAN>[]<SPAN style=
+            "color: rgb(102, 51, 0);">_array[]</SPAN>, <SPAN style=
+            "font-weight: bold;">density_DP</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;">density_SP</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            In legacy Basic, this gets information for both the
+            console and graphics screen.<BR>
+            In hBasic, this gets information for the <SPAN style=
+            "text-decoration: underline;">console</SPAN> screen
+            <SPAN style="font-weight: bold;">only</SPAN>.<BR>
+            <BR>
+            The size[] and realsize[] arrays will have width and
+            height values returned in elements [1] and [2].<BR>
+            In hBasic, <SPAN style=
+            "font-weight: bold;">size</SPAN>[] refers to the
+            console view size <SPAN style=
+            "font-weight: bold;">only</SPAN> (without
+            decorations).<BR>
+            In hBasic, <SPAN style=
+            "font-weight: bold;">realsize</SPAN>[] refers to the
+            whole device screen (with decorations).<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">density_DP</SPAN> Gets
+            the screen <SPAN style=
+            "text-decoration: underline;">density</SPAN> as pixels
+            per inch.&nbsp; eg. 160 on a 160 dpi display.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">density_SP</SPAN> Gets
+            the screen <SPAN style=
+            "text-decoration: underline;">density</SPAN> as pixels
+            per scaled inch.<BR>
+            e.g returns 320 on a 160 dpi display with a user
+            preference scale of 2X in settings.<BR>
+            <BR>
+            It is important to have the console being displayed (in
+            front) when executing this command.<BR>
+            You may need to use a PAUSE before executing this
+            command, especially if you have just come back to the
+            console or if the console is just begining to be
+            displayed. Recommended is 50ms or more.<BR>
+            <BR>
+            If you need information for the graphics screen, please
+            use <A href=
+            "graphics.html#gr_screen_size">GR.SCREEN</A>.<BR>
+          </DIV><BR>
         </TD>
       </TR>
       <TR>

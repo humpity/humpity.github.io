@@ -2,6 +2,14 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2024-11-02 v5.10
+		More stuff for DEVICE$()	(0505)
+		Add Tween delays			(0506)
+		Add GR.TWEEN.GOAL.		(0507)
+		Crop for GR.SCREEN.TO_BITMAP  (0508) (-Cassiope34)
+		Graphics object table update.	(0509)
+		Internal tidyup			(0510)
+
 2024-09-29 v5.04
 		Fix GR.BOUNDED.TOUCH/2 scale (0501)
 		LIST.CREATE new modes (0502) (-Spike)
@@ -405,7 +413,7 @@ v3.01	v2.01	K0001 merged to master and some minor internal changes with Editor u
 v3.04	v2.02	Targets API 30
 		Fix WAKE_LOCK typo in manifest.
 v3.06	v2.03	'About' screen changes.
-				Merged 0303 - 0306
+				Merged 0303-0306
 v3.09	v2.04	Merged 0307-0309
 v3.13	v2.05	Merged 0250,0310 TGET overhaul
 v3.21	v2.06	Merged 0315-0320
@@ -422,8 +430,8 @@ v4.39	v2.16	Merged 0439	 Installable on Android 12
 v4.48	v2.17	Merged 0440-0448
 v4.49   v2.18   Merged 0449
 v4.60	v2.19   Merged 0450-0460 Targets API 33
-v4.67	v2.20	Merged 0280-0281 + 0461-0467 Gnss
-v4.68	v2.21	Merged 0468 	 EXIT bug
+v4.67	v2.20	Merged 0280-0281 + 0461-0467 Gnss upgrade
+v4.68	v2.21	Merged 0468 	 EXIT bug fix
 v4.78	v2.22	Merged 0140 + 0469-0478
 v4.84	v2.23	Merged 0479-0484
 v4.91	v2.24	Merged 0485-0491 Targets API 34

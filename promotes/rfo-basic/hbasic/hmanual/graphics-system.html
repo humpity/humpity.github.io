@@ -43,9 +43,8 @@
                 display list<BR></TD>
               </TR>
               <TR>
-                <TD><A href="#graphics_parms">Graphics
-                Parameters<BR></A></TD>
-                <TD>New parameters for objects.<BR></TD>
+                <TD><A href="#graphics_parms"><BR></A></TD>
+                <TD><BR></TD>
               </TR>
               <TR>
                 <TD><A href="#object_motion">Object
@@ -62,6 +61,12 @@
                 Animation<BR></A></TD>
                 <TD style="vertical-align: top;">Added the Sprite
                 graphics object</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#graphics_parms">Graphics Parameters</A></TD>
+                <TD style="vertical-align: top;">New parameters for
+                objects.</TD>
               </TR>
               <TR>
                 <TD><A href="#object_table">Updated Object
@@ -115,10 +120,9 @@
           <BR>
           <DIV style="margin-left: 40px;">
             <A href=
-            "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/graphics.html#display_list_commands">
-            Additional commands</A> were added to manage the
-            display list without having to resort to GR.GETDL and
-            GR.NEWDL.<BR>
+            "graphics.html#display_list_commands">Additional
+            commands</A> were added to manage the display list
+            without having to resort to GR.GETDL and GR.NEWDL.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <SPAN style="text-decoration: underline;"><A name=
@@ -156,8 +160,10 @@
               longer added</SPAN> to the <SPAN style=
               "text-decoration: underline;">display list</SPAN>
               upon creation. (since v5.00)<BR>
-              Group objects need to be on the object list but don't
-              serve any purpose on the display list.<BR>
+              Group objects need to be on the <SPAN style=
+              "font-weight: bold;">object list</SPAN> but don't
+              serve any purpose on the <SPAN style=
+              "font-weight: bold;">display list</SPAN>.<BR>
               Therefore they are no longer added to the display
               list for the GR.GROUP.. commands.<BR>
               <BR>
@@ -168,11 +174,471 @@
               <A href="graphics.html#gr_dl_remove">GR.DL.REMOVE</A>
               <SPAN style="text-decoration: underline;">will</SPAN>
               remove group objects (if they are on the display
-              list), along with the objects in their lists. For
-              some commands, you are encouraged to use an array
-              instead of a group.<BR>
+              list), along with the objects in their lists.<BR>
             </DIV>
           </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="object_motion" id=
+          "gr_bitmap_clr"></A><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">Object
+          Motion</SPAN></FONT><SPAN style=
+          "color: rgb(0, 0, 153);"><BR>
+          <BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">All viewable
+            objects</SPAN> now have "<SPAN style=
+            "color: rgb(0, 0, 153);">speed</SPAN>" and
+            "<SPAN style="color: rgb(0, 0, 153);">dir</SPAN>"
+            properties via GR.GET.VALUE or GR.MODIFY
+            parameters.<BR>
+            These are properties for a velocity vector of motion.
+            It allows an object to move upon <SPAN style=
+            "text-decoration: underline;"><A href=
+            "graphics.html#gr_motion">GR.MOTION</A></SPAN>.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "gr_motion_objects" id=
+            "gr_motion_objects"></A>GR.MOTION and object
+            properties</SPAN><BR>
+            <BR>
+            In general, when GR.MOTION is called, it updates the
+            positions on all objects in the display list.<BR>
+            For more advanced usage see <A href=
+            "graphics.html#gr_motion">GR.MOTION</A> and <A href=
+            "graphics.html#gr_motion_tweens">motion with
+            tweens</A>.<BR>
+            <BR>
+            An object is moved relative to the previous GR.MOTION
+            or GR.MOTION.MARK time, whichever was called
+            before.<BR>
+            If both had not been called before, the reference time
+            is the start of the graphics screen.<BR>
+            <BR>
+            The object is moved according to it's speed and
+            direction parameters;<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">Speed</SPAN>
+            ("speed")<BR>
+            <DIV style="margin-left: 40px;">
+              This is given as <SPAN style=
+              "color: rgb(102, 51, 0);">pixels per
+              second</SPAN>.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              If the speed is <SPAN style=
+              "text-decoration: underline;">zero</SPAN>, the object
+              will not move.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              If the speed is <SPAN style=
+              "text-decoration: underline;">non-zero</SPAN> and
+              positive, the object will move.<BR>
+              If the speed is <SPAN style=
+              "text-decoration: underline;">negative</SPAN>, the
+              object will move oposite to it's direction
+              ("dir").<BR>
+              <DIV style="margin-left: 40px;">
+                In physics, a speed cannot be negative but it is
+                allowed here for convenience.<BR>
+              </DIV>The default speed for all objects is zero (no
+              movement).<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              You may express the speed with a fractional part for
+              accuracy.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              To stop an object (no movement), set the speed to
+              zero (default).<BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline;">Direction</SPAN>
+            ("dir")<BR>
+            <DIV style="margin-left: 40px;">
+              This is given as an <SPAN style=
+              "color: rgb(102, 51, 0);">angle in
+              degrees</SPAN>.<BR>
+              The default direction for all objects is zero, which
+              is pointing to the right (<SPAN style=
+              "text-decoration: underline;">east</SPAN>).<BR>
+              Direction angles move <SPAN style=
+              "text-decoration: underline;">clockwise,</SPAN> so 90
+              degrees is pointing down (south).<BR>
+              <BR>
+              You may express the direction with a fractional part
+              for accuracy.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Manual
+            Movement</SPAN><BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              If you never use GR.MOTION (e.g legacy programs),
+              then objects will not be moved by it.<BR>
+              <BR>
+              If you don't want objects affected by GR.MOTION, set
+              their speeds to zero.<BR>
+              You can still manually move them in the usual way by
+              using GR.MODIFY.<BR>
+              <BR>
+              e.g<BR>
+              GR.MODIFY object, "speed",0&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; % will not be moved by
+              GR.MOTION<BR>
+              GR.MOTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              % for other objects and animation<BR>
+              GR.RENDER<BR>
+              <BR>
+              e.g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              % manual positioning<BR>
+              GR.MODIFY object, "<SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">x</SPAN></SPAN>",x,&nbsp;
+              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">y</SPAN></SPAN>",y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              % (see <A href="#whole">whole object
+              positioning</A>)<BR>
+              <BR>
+              GR.MOTION does not move objects with zero "speed" nor
+              animate sprites with zero "arate".<BR>
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="tweens" id=
+          "tweens"></A>Tweens<BR></SPAN></FONT><BR>
+          <DIV style="margin-left: 40px;">
+            Tweens are explained under Motion and <A href=
+            "graphics.html#tweens">Tweens</A>.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="sprites_and_animation"
+          id="setacc"></A>Sprites and
+          Animation<BR></SPAN></FONT><BR>
+          <DIV style="margin-left: 40px;">
+            The Sprite object has been added to the graphics
+            engine.<BR>
+            A Sprite is similar to a bitmap but with the added
+            feature of Animation.<BR>
+            <BR>
+            (See also, <A href="graphics.html#sprites">Sprites</A>
+            and <A href="graphics.html#animation">Animation</A>
+            commands)<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "sprite-props" id="sprite-props"></A>Sprite
+            Properties</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              As well as the <A href=
+              "graphics-system.html#graphics_gp">general purpose
+              properties</A> (including speed and dir) <A href=
+              "#object_sprite">sprite object</A>s also have the
+              following parameters.<BR>
+              <BR>
+              for GR.GET.VALUE<BR>
+              <DIV style="margin-left: 40px;">
+                "<SPAN style="font-weight: bold;">bitmap</SPAN>" ,
+                "<SPAN style="font-weight: bold;">anim</SPAN>" ,
+                "<SPAN style="font-weight: bold;">arate</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aframe</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aloop</SPAN>" ,
+                "<SPAN style="font-weight: bold;">width</SPAN>" and
+                "<SPAN style=
+                "font-weight: bold;">height</SPAN>"<BR>
+              </DIV><BR>
+              and for GR.MODIFY,<BR>
+              <DIV style="margin-left: 40px;">
+                "<SPAN style="font-weight: bold;">bitmap</SPAN>" ,
+                "<SPAN style="font-weight: bold;">anim</SPAN>" ,
+                "<SPAN style="font-weight: bold;">arate</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aframe</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aloop</SPAN>"<BR>
+              </DIV><BR>
+              where<BR>
+              <TABLE style="text-align: left; width: 80%;"
+              cellspacing="1" cellpadding="1" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    Parameter property<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Description<BR></TD>
+                    <TD style="vertical-align: top;">
+                    default<BR></TD>
+                    <TD style="vertical-align: top;">special
+                    remarks<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    bitmap<BR></TD>
+                    <TD style="vertical-align: top;">Standing
+                    bitmap pointer<BR></TD>
+                    <TD style="vertical-align: top;">*<BR></TD>
+                    <TD style="vertical-align: top;">used if no
+                    animation<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    anim<BR></TD>
+                    <TD style="vertical-align: top;">Animation
+                    Index pointer<BR></TD>
+                    <TD style="vertical-align: top;">0<BR></TD>
+                    <TD style="vertical-align: top;">0 = no
+                    animation<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    arate<BR></TD>
+                    <TD style="vertical-align: top;">Animation
+                    Rate<BR></TD>
+                    <TD style="vertical-align: top;">10<BR></TD>
+                    <TD style="vertical-align: top;">frames per
+                    second<BR>
+                    0 = freeze frame<BR>
+                    &lt;0 = reverse animation<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    aframe<BR></TD>
+                    <TD style="vertical-align: top;">Current
+                    animation frame<BR></TD>
+                    <TD style="vertical-align: top;">0<BR></TD>
+                    <TD style="vertical-align: top;">0 to max&nbsp;
+                    (zero based)<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    aloop<BR></TD>
+                    <TD style="vertical-align: top;">Animation
+                    Looping or not<BR></TD>
+                    <TD style="vertical-align: top;">1<BR></TD>
+                    <TD style="vertical-align: top;">0 = no
+                    looping<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    width<BR></TD>
+                    <TD style="vertical-align: top;">width of
+                    standing bitmap<BR></TD>
+                    <TD style="vertical-align: top;">*<BR></TD>
+                    <TD style="vertical-align: top;">
+                    read-only<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    height<BR></TD>
+                    <TD style="vertical-align: top;">height of
+                    standing bitmap</TD>
+                    <TD style="vertical-align: top;">*<BR></TD>
+                    <TD style="vertical-align: top;">read-only</TD>
+                  </TR>
+                </TBODY>
+              </TABLE>(* filled upon creation)<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Standing
+            bitmap</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Before you create a sprite, you must have at least a
+              bitmap. This is the called the 'standing' bitmap.<BR>
+              GR.BITMAP.LOAD <SPAN style=
+              "color: rgb(0, 0, 153);">bmp</SPAN>,
+              "h-stand.png"<BR>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              To create a Sprite with no animation,<BR>
+              <A href=
+              "graphics.html#gr_sprite_draw">GR.SPRITE.DRAW</A> s0,
+              100, 100, <SPAN style=
+              "color: rgb(0, 0, 153);">bmp</SPAN> &nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% spr_obj, x
+              , y , bitmap_ptr</SPAN><BR>
+              <BR>
+              This creates a sprite object on the <SPAN style=
+              "text-decoration: underline;">object list</SPAN> and
+              also adds it onto the <SPAN style=
+              "text-decoration: underline;">display
+              list</SPAN>.<BR>
+              The standing bitmap&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);">bmp</SPAN> is used when a
+              sprite is not animating (anim=0).<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Changing a standing
+            bitmap</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The standing bitmap can be changed with parameter
+              "bitmap", which is a bitmap index.<BR>
+              GR.MODIFY s1, "bitmap", <SPAN style=
+              "color: rgb(0, 0, 153);">bmp2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              %</SPAN> bitmap <SPAN style=
+              "color: rgb(0, 0, 153);">bmp2</SPAN> <SPAN style=
+              "text-decoration: underline;">must already
+              exist</SPAN><BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline;">Animation</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              An animation is a sequence of bitmaps. Similar to
+              bitmaps, there is an internal list of Animations.<BR>
+              This list is indexed the same way as bitmaps, it
+              starts with 1 and grows as more animations are
+              added.<BR>
+              When you create an animation, you get back an
+              animation index (pointer).<BR>
+              You can attach this animation to a sprite using this
+              index.<BR>
+              Animations are <SPAN style=
+              "text-decoration: underline;">not</SPAN> graphic
+              objects, similar to bitmaps, they are attached to
+              sprites.<BR>
+              <BR>
+              To create a new Animation, you can load it from a
+              file<BR>
+              e.g GR.ANIM.LOAD <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN>,
+              "h-animate.png",32,33,16<BR>
+              <BR>
+              See <A href=
+              "graphics.html#gr_anim_load">GR.ANIM.LOAD</A> for
+              more information.<BR>
+              <BR>
+              Animations may be created before or after sprite
+              object creation.<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Animation to new
+            Sprite</SPAN>
+            <DIV style="margin-left: 40px;">
+              To create a new sprite with animation,<BR>
+              First create and load an animation.<BR>
+              GR.ANIM.LOAD <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN>,"h-animate.png",32,33,16<BR>
+
+              <BR>
+              Then create the new Sprite and attach the
+              animation;<BR>
+              GR.SPRITE.DRAW s1,100,100,bmp,<SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN> &nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% obj, x , y
+              , bitmap, animation<BR>
+              <BR></SPAN> Note that you still need to specify the
+              standing bitmap.<BR>
+              <BR>
+              The default animation rate for a new sprite is 10
+              frames per second (fps) and will animate with each
+              GR.MOTION.<BR>
+              The animation is based on times between each <A href=
+              "#object_motion">motion</A> (see below).<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "text-decoration: underline;">Animation to existing
+            Sprite</SPAN><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              To attach or change an Animation to an existing
+              Sprite, use GR.MODIFY<BR>
+              <BR>
+              GR.MODIFY s0, <SPAN style=
+              "color: rgb(102, 0, 0);">"anim"</SPAN>, <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN><BR>
+              where s0 is the sprite object number and <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN> is the animation
+              index (pointer).<BR>
+              The animation must already exist. The exception is 0
+              = no animation.<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              To stop animating, remove the animation by setting
+              the sprite's animation pointer to zero.<BR>
+              GR.MODIFY s1, <SPAN style=
+              "color: rgb(102, 0, 0);">"anim"</SPAN>, 0<BR>
+              This means the sprite has <SPAN style=
+              "text-decoration: underline;">no animation</SPAN> and
+              defaults to it's <SPAN style=
+              "text-decoration: underline;">standing
+              bitmap</SPAN>.<BR>
+              Alternatively, you can freeze the frame by setting
+              the animation rate <SPAN style=
+              "color: rgb(102, 0, 0);">"arate"</SPAN> to zero (see
+              bleow).<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Movement and Animation
+            Rates</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              As with all objects, you can use the built-in motion
+              vectors to move the sprite with GR.MOTION<BR>
+              or you can manually set the position of a sprite with
+              GR.MODIFY s1, "x", X, "y", Y<BR>
+              (see the section on <A href="#object_motion">Object
+              Motion</A>).<BR>
+              <BR>
+              If you opt to move sprites manually, set their speed
+              to zero to avoid being moved by GR.MOTION.<BR>
+              <BR>
+              In addition to movement, <SPAN style=
+              "font-weight: bold;">GR.MOTION also updates a
+              sprite's animation</SPAN> according to it's animation
+              rate ("arate"), see <A href=
+              "graphics.html#gr_motion">GR.MOTION</A> for the
+              effects of entering a motion loop. Therefore, if you
+              are using animation or tweens, you must also use
+              GR.MOTION.<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              The animation rate <SPAN style=
+              "font-weight: bold;">arate</SPAN> is given as frames
+              per second. The default for a new sprite is 10.<BR>
+              <BR>
+              <SPAN style="text-decoration: underline;">Zero</SPAN>
+              aRate<BR>
+              <DIV style="margin-left: 40px;">
+                If a sprite has animation (anim non-zero) but the
+                arate is zero, then the frame is not updated, it
+                stays on the current frame i.e <SPAN style=
+                "text-decoration: underline;">freeze frame</SPAN>.
+                It does not revert to it's standing bitmap because
+                there is still a valid animation (anim
+                non-zero).<BR>
+                <SPAN style="text-decoration: underline;">If you
+                are manually changing the current frame</SPAN>
+                (aframe), or if you are using a Tween, then you
+                should set the aRate to zero (so that arate does
+                not interefere with you manual rate).<BR>
+              </DIV><BR>
+              <SPAN style=
+              "text-decoration: underline;">Negative</SPAN>
+              aRate<BR>
+              <DIV style="margin-left: 40px;">
+                If a sprite has animation (anim non-zero) but the
+                arate is negative, the animation is reversed
+                (frames <SPAN style=
+                "text-decoration: underline;">played
+                backwards</SPAN>) at the negative rate.<BR>
+              </DIV>
+            </DIV><BR>
+          </DIV>
         </TD>
       </TR>
       <TR>
@@ -200,9 +666,9 @@
               "color: rgb(0, 0, 153);">dir</SPAN>".<BR>
             </DIV>
             <DIV style="margin-left: 40px;">
-              These parameters are availble to <A href=
-              "#object_table">all viewable</A> display list
-              objects.<BR>
+              These parameters are available to all display list
+              objects&nbsp; (<A href="#object_table">updated object
+              table</A>).<BR>
             </DIV><BR>
           </DIV>
           <TABLE style=
@@ -376,455 +842,6 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
-          <A name="object_motion" id=
-          "gr_bitmap_clr"></A><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);">Object
-          Motion</SPAN></FONT><SPAN style=
-          "color: rgb(0, 0, 153);"><BR>
-          <BR></SPAN>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: underline;">All viewable
-            objects</SPAN> now have "<SPAN style=
-            "color: rgb(0, 0, 153);">speed</SPAN>" and
-            "<SPAN style="color: rgb(0, 0, 153);">dir</SPAN>"
-            properties via GR.GET.VALUE or GR.MODIFY
-            parameters.<BR>
-            These are properties for a velocity vector of motion.
-            It allows an object to move upon <SPAN style=
-            "text-decoration: underline;"><A href=
-            "graphics.html#gr_motion">GR.MOTION</A></SPAN>.<BR>
-            <BR>
-            <SPAN style="text-decoration: underline;"><A name=
-            "gr_motion_objects" id=
-            "gr_motion_objects"></A>GR.MOTION and object
-            properties</SPAN><BR>
-            <BR>
-            In general, when GR.MOTION is called, it updates the
-            positions on all objects in the objects list.<BR>
-            For more advanced usage see <A href=
-            "graphics.html#gr_motion">GR.MOTION</A> and <A href=
-            "graphics.html#gr_motion_tweens">motion with
-            tweens</A>.<BR>
-            <BR>
-            An object is moved relative to the previous GR.MOTION
-            or GR.MOTION.MARK time, whichever was called
-            before.<BR>
-            If both had not been called before, the reference time
-            is the start of the graphics screen.<BR>
-            <BR>
-            The object is moved according to it's speed and
-            direction parameters;<BR>
-            <BR>
-            <SPAN style="text-decoration: underline;">Speed</SPAN>
-            ("speed")<BR>
-            <DIV style="margin-left: 40px;">
-              This is given as <SPAN style=
-              "color: rgb(102, 51, 0);">pixels per
-              second</SPAN>.<BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              If the speed is <SPAN style=
-              "text-decoration: underline;">zero</SPAN>, the object
-              will not move.<BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              If the speed is <SPAN style=
-              "text-decoration: underline;">non-zero</SPAN> and
-              positive, the object will move.<BR>
-              If the speed is <SPAN style=
-              "text-decoration: underline;">negative</SPAN>, the
-              object will move oposite to it's direction
-              ("dir").<BR>
-              <DIV style="margin-left: 40px;">
-                In physics, a speed cannot be negative but it is
-                allowed here for convenience.<BR>
-              </DIV>The default speed for all objects is zero (no
-              movement).<BR>
-              <BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              You may express the speed with a fractional part for
-              accuracy.<BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              To stop an object (no movement), set the speed to
-              zero (default).<BR>
-            </DIV><BR>
-            <SPAN style=
-            "text-decoration: underline;">Direction</SPAN>
-            ("dir")<BR>
-            <DIV style="margin-left: 40px;">
-              This is given as an <SPAN style=
-              "color: rgb(102, 51, 0);">angle in
-              degrees</SPAN>.<BR>
-              The default direction for all objects is zero, which
-              is pointing to the right (<SPAN style=
-              "text-decoration: underline;">east</SPAN>).<BR>
-              Direction angles move <SPAN style=
-              "text-decoration: underline;">clockwise,</SPAN> so 90
-              degrees is pointing down (south).<BR>
-              <BR>
-              You may express the direction with a fractional part
-              for accuracy.<BR>
-            </DIV><BR>
-            <SPAN style="text-decoration: underline;">Manual
-            Movement</SPAN><BR>
-            <BR>
-            <DIV style="margin-left: 40px;">
-              If you never use GR.MOTION (e.g legacy programs),
-              then objects will not be moved by it.<BR>
-              <BR>
-              If you don't want objects affected by GR.MOTION, set
-              their speeds to zero.<BR>
-              You can still manually move them in the usual way by
-              using GR.MODIFY.<BR>
-              <BR>
-              e.g<BR>
-              GR.MODIFY object, "speed",0&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp; % will not be moved by
-              GR.MOTION<BR>
-              GR.MOTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % for other objects and animation<BR>
-              GR.RENDER<BR>
-              <BR>
-              e.g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % manual positioning<BR>
-              GR.MODIFY object, "<SPAN style=
-              "color: rgb(0, 0, 153);"><SPAN style=
-              "font-weight: bold;">x</SPAN></SPAN>",x,&nbsp;
-              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
-              "font-weight: bold;">y</SPAN></SPAN>",y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % (see <A href=
-              "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/graphics-system.html#whole">
-              whole object positioning</A>)<BR>
-              <BR>
-              GR.MOTION does not move objects with zero "speed" nor
-              animate sprites with zero "arate".<BR>
-            </DIV><BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="tweens" id=
-          "tweens"></A>Tweens<BR></SPAN></FONT><BR>
-          <DIV style="margin-left: 40px;">
-            Tweens are explained under Motion and <A href=
-            "graphics.html#tweens">Tweens</A>.<BR>
-          </DIV><BR>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="sprites_and_animation"
-          id="setacc"></A>Sprites and
-          Animation<BR></SPAN></FONT><BR>
-          <DIV style="margin-left: 40px;">
-            The Sprite object has been added to the graphics
-            engine.<BR>
-            A Sprite is similar to a bitmap but with the added
-            feature of Animation.<BR>
-            <BR>
-            (See also, <A href="graphics.html#sprites">Sprites</A>
-            and <A href="graphics.html#animation">Animation</A>
-            commands)<BR>
-            <BR>
-            <SPAN style="text-decoration: underline;"><A name=
-            "sprite-props" id="sprite-props"></A>Sprite
-            Properties</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              As well as the <A href=
-              "graphics-system.html#graphics_gp">general purpose
-              properties</A> (including speed and dir) <A href=
-              "#object_sprite">sprite object</A>s also have the
-              following parameters.<BR>
-              <BR>
-              for GR.GET.VALUE<BR>
-              <DIV style="margin-left: 40px;">
-                "<SPAN style="font-weight: bold;">bitmap</SPAN>" ,
-                "<SPAN style="font-weight: bold;">anim</SPAN>" ,
-                "<SPAN style="font-weight: bold;">arate</SPAN>" ,
-                "<SPAN style="font-weight: bold;">aframe</SPAN>" ,
-                "<SPAN style="font-weight: bold;">aloop</SPAN>" ,
-                "<SPAN style="font-weight: bold;">width</SPAN>" and
-                "<SPAN style=
-                "font-weight: bold;">height</SPAN>"<BR>
-              </DIV><BR>
-              and for GR.MODIFY,<BR>
-              <DIV style="margin-left: 40px;">
-                "<SPAN style="font-weight: bold;">bitmap</SPAN>" ,
-                "<SPAN style="font-weight: bold;">anim</SPAN>" ,
-                "<SPAN style="font-weight: bold;">arate</SPAN>" ,
-                "<SPAN style="font-weight: bold;">aframe</SPAN>" ,
-                "<SPAN style="font-weight: bold;">aloop</SPAN>"<BR>
-              </DIV><BR>
-              where<BR>
-              <TABLE style="text-align: left; width: 80%;"
-              cellspacing="1" cellpadding="1" border="0">
-                <TBODY>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    Parameter property<BR></TD>
-                    <TD style="vertical-align: top;">
-                    Description<BR></TD>
-                    <TD style="vertical-align: top;">
-                    default<BR></TD>
-                    <TD style="vertical-align: top;">special
-                    remarks<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    bitmap<BR></TD>
-                    <TD style="vertical-align: top;">Standing
-                    bitmap pointer<BR></TD>
-                    <TD style="vertical-align: top;">*<BR></TD>
-                    <TD style="vertical-align: top;">used if no
-                    animation<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    anim<BR></TD>
-                    <TD style="vertical-align: top;">Animation
-                    Index pointer<BR></TD>
-                    <TD style="vertical-align: top;">0<BR></TD>
-                    <TD style="vertical-align: top;">0 = no
-                    animation<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    arate<BR></TD>
-                    <TD style="vertical-align: top;">Animation
-                    Rate<BR></TD>
-                    <TD style="vertical-align: top;">10<BR></TD>
-                    <TD style="vertical-align: top;">frames per
-                    second<BR>
-                    0 = freeze frame<BR>
-                    &lt;0 = reverse animation<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    aframe<BR></TD>
-                    <TD style="vertical-align: top;">Current
-                    animation frame<BR></TD>
-                    <TD style="vertical-align: top;">0<BR></TD>
-                    <TD style="vertical-align: top;">0 to max&nbsp;
-                    (zero based)<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    aloop<BR></TD>
-                    <TD style="vertical-align: top;">Animation
-                    Looping or not<BR></TD>
-                    <TD style="vertical-align: top;">1<BR></TD>
-                    <TD style="vertical-align: top;">0 = no
-                    looping<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    width<BR></TD>
-                    <TD style="vertical-align: top;">width of
-                    standing bitmap<BR></TD>
-                    <TD style="vertical-align: top;">*<BR></TD>
-                    <TD style="vertical-align: top;">
-                    read-only<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; text-align: center;">
-                    height<BR></TD>
-                    <TD style="vertical-align: top;">height of
-                    standing bitmap</TD>
-                    <TD style="vertical-align: top;">*<BR></TD>
-                    <TD style="vertical-align: top;">read-only</TD>
-                  </TR>
-                </TBODY>
-              </TABLE>(* filled upon creation)<BR>
-              <BR>
-            </DIV><SPAN style=
-            "text-decoration: underline;">Standing
-            bitmap</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              Before you create a sprite, you must have at least a
-              bitmap. This is the called the 'standing' bitmap.<BR>
-              GR.BITMAP.LOAD <SPAN style=
-              "color: rgb(0, 0, 153);">bmp</SPAN>,
-              "h-stand.png"<BR>
-            </DIV><BR>
-            <DIV style="margin-left: 40px;">
-              To create a Sprite with no animation,<BR>
-              <A href=
-              "graphics.html#gr_sprite_draw">GR.SPRITE.DRAW</A> s0,
-              100, 100, <SPAN style=
-              "color: rgb(0, 0, 153);">bmp</SPAN> &nbsp;&nbsp;
-              <SPAN style="color: rgb(102, 102, 102);">% spr_obj, x
-              , y , bitmap_ptr</SPAN><BR>
-              <BR>
-              This creates a sprite object on the object list and
-              also adds it onto the display list.<BR>
-              The standing bitmap&nbsp; <SPAN style=
-              "color: rgb(0, 0, 153);">bmp</SPAN> is used when a
-              sprite is not animating.<BR>
-              <BR>
-            </DIV><SPAN style=
-            "text-decoration: underline;">Changing a standing
-            bitmap</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              The standing bitmap can be changed with parameter
-              "bitmap", which is a bitmap index.<BR>
-              GR.MODIFY s1, "bitmap", <SPAN style=
-              "color: rgb(0, 0, 153);">bmp2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              %</SPAN> bitmap <SPAN style=
-              "color: rgb(0, 0, 153);">bmp2</SPAN> <SPAN style=
-              "text-decoration: underline;">must already
-              exist</SPAN><BR>
-            </DIV><BR>
-            <SPAN style=
-            "text-decoration: underline;">Animation</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              An animation is a sequence of bitmaps. Similar to
-              bitmaps, there is an internal list of Animations.<BR>
-              This list is indexed the same way as bitmaps, it
-              starts with 1 and grows as more animations are
-              added.<BR>
-              When you create an animation, you get back an
-              animation index (pointer).<BR>
-              You can attach this animation to a sprite using this
-              index.<BR>
-              Animations are <SPAN style=
-              "text-decoration: underline;">not</SPAN> graphic
-              objects, similar to bitmaps, they are attached to
-              sprites.<BR>
-              <BR>
-              To create a new Animation, you can load it from a
-              file<BR>
-              GR.ANIM.LOAD <SPAN style=
-              "color: rgb(0, 0, 153);">ani</SPAN>,
-              "h-animate.png",32,33,16<BR>
-              <BR>
-              See <A href=
-              "graphics.html#gr_anim_load">GR.ANIM.LOAD</A> for
-              more information.<BR>
-              <BR>
-              Animations may be created before or after sprite
-              object creation.<BR>
-              <BR>
-            </DIV><SPAN style=
-            "text-decoration: underline;">Animation to new
-            Sprite</SPAN>
-            <DIV style="margin-left: 40px;">
-              To create a new sprite with animation,<BR>
-              First create and load an animation.<BR>
-              GR.ANIM.LOAD <SPAN style=
-              "color: rgb(0, 0, 153);">ani</SPAN>,"h-animate.png",32,33,16<BR>
-
-              <BR>
-              Then create the new Sprite and attach the
-              animation;<BR>
-              GR.SPRITE.DRAW s1,100,100,bmp,<SPAN style=
-              "color: rgb(0, 0, 153);">ani</SPAN> &nbsp;&nbsp;
-              <SPAN style="color: rgb(102, 102, 102);">% obj, x , y
-              , bitmap, animation<BR>
-              <BR></SPAN> Note that you still need to specify the
-              standing bitmap.<BR>
-              <BR>
-              The default animation rate for a new sprite is 10
-              frames per second (fps) and will animate with each
-              GR.RENDER. The animation is based on times between
-              each render.<BR>
-            </DIV><BR>
-            <SPAN style="text-decoration: underline;"><SPAN style=
-            "text-decoration: underline;">Animation to existing
-            Sprite</SPAN><BR></SPAN>
-            <DIV style="margin-left: 40px;">
-              To attach or change an Animation to an existing
-              Sprite, use GR.MODIFY<BR>
-              <BR>
-              GR.MODIFY s0, <SPAN style=
-              "color: rgb(102, 0, 0);">"anim"</SPAN>, <SPAN style=
-              "color: rgb(0, 0, 153);">ani</SPAN><BR>
-              where s0 is the sprite object number and <SPAN style=
-              "color: rgb(0, 0, 153);">ani</SPAN> is the animation
-              index (pointer).<BR>
-              The animation must already exist. The exception is 0
-              = no animation.<BR>
-              <BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              To stop animating, remove the animation by setting
-              the sprite's animation pointer to zero.<BR>
-              GR.MODIFY s1, <SPAN style=
-              "color: rgb(102, 0, 0);">"anim"</SPAN>, 0<BR>
-              This means the sprite has <SPAN style=
-              "text-decoration: underline;">no animation</SPAN> and
-              defaults to it's <SPAN style=
-              "text-decoration: underline;">standing
-              bitmap</SPAN>.<BR>
-              Alternatively, you can freeze the frame by setting
-              the animation rate <SPAN style=
-              "color: rgb(102, 0, 0);">"arate"</SPAN> to zero (see
-              bleow).<BR>
-              <BR>
-            </DIV><SPAN style=
-            "text-decoration: underline;">Movement and Animation
-            Rates</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              As with all objects, you can use the built-in motion
-              vectors to move the sprite with GR.MOTION<BR>
-              or you can manually set the position of a sprite with
-              GR.MODIFY s1, "x", X, "y", Y<BR>
-              (see the section on <A href="#object_motion">Object
-              Motion</A>).<BR>
-              <BR>
-              If you opt to move sprites manually, set their speed
-              to zero to avoid being moved by GR.MOTION.<BR>
-              <BR>
-              In addition to movement, GR.MOTION also updates a
-              sprite's animation according to it's animation rate
-              ("arate"), see <A href=
-              "graphics.html#gr_motion">GR.MOTION</A> for the
-              effects of entering a motion loop. Therefore, if you
-              are using animation, you must also use GR.MOTION.<BR>
-              <BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              The animation rate <SPAN style=
-              "font-weight: bold;">arate</SPAN> is given as frames
-              per second. The default for a new sprite is 10.<BR>
-              <BR>
-              Zero aRate<BR>
-              <DIV style="margin-left: 40px;">
-                If a sprite has animation (anim non-zero) but the
-                arate is zero, then the frame is not updated, it
-                stays on the current frame i.e <SPAN style=
-                "text-decoration: underline;">freeze frame</SPAN>.
-                It does not revert to it's standing bitmap because
-                there is still a valid animation (anim
-                non-zero).<BR>
-              </DIV><BR>
-              Negative aRate<BR>
-              <DIV style="margin-left: 40px;">
-                If a sprite has animation (anim non-zero) but the
-                arate is negative, the animation is reversed
-                (frames <SPAN style=
-                "text-decoration: underline;">played
-                backwards</SPAN>) at the negative rate.<BR>
-              </DIV>
-            </DIV><BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
           <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="object_table" id=
           "setacc"></A>Updated Object Table</SPAN></FONT><BR>
@@ -894,7 +911,11 @@
                 <TD style="vertical-align: top;">y<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;">bitmap<BR></TD>
+                <TD style="vertical-align: top;">bitmap<BR>
+                <SPAN style="color: rgb(0, 0, 153);">width</SPAN>
+                (read-only)<SPAN style=
+                "color: rgb(0, 0, 153);"><BR>
+                height</SPAN> (read-only)<BR></TD>
                 <TD style="vertical-align: top;">paint</TD>
                 <TD style="vertical-align: top;">alpha</TD>
                 <TD style="vertical-align: top;"><SPAN style=
@@ -1118,12 +1139,12 @@
             </TBODY>
           </TABLE><BR>
           <DIV style="margin-left: 40px;">
-            x,y is used for&nbsp; <A href=
-            "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/graphics-system.html#whole">
-            whole object positioning</A><BR>
+            x,y is used for&nbsp; <A href="#whole">whole object
+            positioning</A><BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             ( common ) means General Purpose.<BR>
+            (read-only) will error if used with GR.MODIFY<BR>
           </DIV><BR>
         </TD>
       </TR>

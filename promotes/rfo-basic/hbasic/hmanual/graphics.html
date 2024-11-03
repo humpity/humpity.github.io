@@ -36,6 +36,8 @@
                 "commands.html#decors">GR.OPEN</A><BR>
                 <A href="#gr_screen_size">GR.SCREEN</A><BR>
                 <A href=
+                "#gr_screen_tobitmap">GR.SCREEN.TO_BITMAP</A><BR>
+                <A href=
                 "commands.html#color_strings">GR.OPEN/GR.COLOR</A><BR>
 
                 <A href=
@@ -49,6 +51,7 @@
                 2</A><BR></TD>
                 <TD style="vertical-align: top;">Decors Flag<BR>
                 Size of View<BR>
+                optional crop area<BR>
                 Accept a color string<BR>
                 Title, Subtitle and Colors<BR>
                 Set acceleration<BR>
@@ -144,13 +147,16 @@
                 <A href="#gr_motion_all">GR.MOTION.ALL</A><BR>
                 <BR>
                 <A href="#gr_tween_add">GR.TWEEN.ADD</A><BR>
+                <A href="#gr_tween_goal">GR.TWEEN.GOAL</A><BR>
                 <A href="#gr_tween_push">GR.TWEEN.PUSH</A><BR>
                 <A href="#gr_tween_clr">GR.TWEEN.CLR</A><BR></TD>
                 <TD style="vertical-align: top;">Update motion
                 vectors<BR>
                 Reset motion timing<BR>
                 <BR>
+                <BR>
                 Adds a tween<BR>
+                Adds a goal tween to target add amount<BR>
                 Adds a vector tween with acceleration<BR>
                 Removes tween(s) or specific tweens<BR></TD>
               </TR>
@@ -184,11 +190,15 @@
       <TR>
         <TD style="vertical-align: top;">
           <A name="gr_screen_size" id=
-          "multi_input"></A><SPAN style="color: rgb(0, 0, 153);"><BIG>GR.SCREEN</BIG></SPAN>
+          "multi_input"></A><SPAN style="color: rgb(0, 0, 153);"><FONT size="+1">GR.SCREEN</FONT></SPAN>
           <SPAN style="color: rgb(0, 0, 153);"><BIG style=
           "font-family: monospace;"><SPAN style=
+          "color: rgb(102, 51, 0);"><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG style=
+          "font-family: monospace;"><SPAN style=
           "color: rgb(102, 51, 0);"><BR>
-          <BR></SPAN></BIG></SPAN>
+          </SPAN></BIG></SPAN></BIG></SPAN><BR></SPAN></BIG></SPAN>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);"><BIG><SPAN style=
             "color: rgb(102, 51, 0);"><FONT size="+1"><SPAN style=
@@ -228,6 +238,7 @@
             modified to always return<BR>
             the current canvas size (the draw view). This is the
             area in which you can draw.<BR>
+            (Legacy basic returns the device size).<BR>
             <BR>
             This size may change if you hide or show either the
             status, navigation or action bars.<BR>
@@ -247,18 +258,168 @@
               <BR>
             </DIV>
             <DIV style="text-align: left;">
-              Notes<BR>
+              It is important to have the graphics view being
+              displayed (in front) when executing this command.<BR>
+              You may need to use a PAUSE before executing this
+              command, especially if you have just come back to the
+              graphics screen or if the screen is just begining to
+              be displayed. Recommended is 50ms or more.<BR>
+              <BR>
             </DIV>
             <DIV style="text-align: left;">
-              To get the full size of the device, consider using
-              the legacy SCREEN.SIZE, size[], <SPAN style=
+              Notes<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              To get the <SPAN style=
+              "text-decoration: underline;">full size</SPAN> of the
+              <SPAN style="font-weight: bold;">device</SPAN>,
+              consider using the legacy SCREEN.SIZE, size[],
+              <SPAN style=
               "font-weight: bold;">realsize[]</SPAN><BR>
-              Compared with SCREEN.SIZE, <SPAN style=
-              "font-weight: bold;">size[]</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;
-              GR.SCREEN will give a more accurate size of the
-              drawable area in graphics mode.<BR>
+            </DIV>
+            <DIV style="text-align: left;">
+              <DIV style="margin-left: 40px;">
+                <BR>
+                In hBasic, <A href=
+                "console.html#screen_size">SCREEN.SIZE</A>,
+                <SPAN style=
+                "font-weight: bold;">size[]</SPAN>&nbsp; will only
+                give back the console view size (not the graphics
+                view size).<BR>
+              </DIV>
             </DIV>
             <DIV style="text-align: left; margin-left: 80px;">
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="gr_screen_tobitmap" id=
+          "multi_input"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">GR.SCREEN.TO_BITMAP</FONT></SPAN><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG style=
+          "font-family: monospace;"><SPAN style=
+          "color: rgb(102, 51, 0);"><BR>
+          <BR></SPAN></BIG></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">GR.SCREEN._TO_BITMAP</SPAN>
+            <SPAN style=
+            "font-weight: bold;">bitmap</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_</SPAN>nvar</SPAN></BIG></SPAN></SMALL>
+            <SMALL><BIG><SPAN style=
+            "font-weight: bold;">{</SPAN></BIG> <SPAN style=
+            "font-weight: bold;"><BIG>,</BIG></SPAN></SMALL>
+            <SPAN style=
+            "font-weight: bold;">x</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL>
+            <SMALL><SPAN style=
+            "font-weight: bold;"><BIG>,</BIG></SPAN></SMALL>
+            <SPAN style=
+            "font-weight: bold;">y</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL><SMALL><SPAN style="font-weight: bold;"><BIG>,</BIG></SPAN></SMALL>
+            <SPAN style=
+            "font-weight: bold;">w</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL><SMALL><SPAN style="font-weight: bold;"><BIG>,</BIG></SPAN></SMALL>
+            <SPAN style=
+            "font-weight: bold;">h</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL><SPAN style="font-weight: bold;">&nbsp;&nbsp;&nbsp;
+            {,scale</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN></BIG></SPAN></SMALL><SPAN style="font-weight: bold;">}
+            }</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG style="font-family: monospace;"><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN></BIG></SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Added new optional crop parameters.<BR>
+            If crop parameters are given, the returned <SPAN style=
+            "font-weight: bold;">bitmap</SPAN> will be created as
+            the crop area defined by offset <SPAN style=
+            "font-weight: bold;">x,y</SPAN> and width,height
+            <SPAN style="font-weight: bold;">w,h</SPAN>.<BR>
+            Cropping is optional, but if used, all of <SPAN style=
+            "font-weight: bold;">x,y,w,h</SPAN> is needed.<BR>
+            <BR>
+            If the crop parameters are omitted, the area is by
+            <SPAN style=
+            "text-decoration: underline;">default</SPAN> the whole
+            drawable graphics area which is the unscaled size of
+            the the real screen graphics view.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">width</SPAN> and
+            <SPAN style="font-weight: bold;">height</SPAN> must be
+            greater than zero.<BR>
+            By default, <SPAN style=
+            "font-weight: bold;">x,</SPAN><SPAN style=
+            "font-weight: bold;">y,width,height</SPAN> are expected
+            to be unscaled real screen values.<BR>
+            <BR>
+            If you have scaled the screen with GR.SCALE and are
+            working with virtual development coordinates, and you
+            want to crop with virtual coordinates, then either;<BR>
+            <DIV style="margin-left: 40px;">
+              a) add the optional <SPAN style=
+              "font-weight: bold;">scale</SPAN> flag (set it to
+              1);<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              If scale flag is 1, then x,y,w,h will be scaled by
+              the scales set by GR.SCALE.<BR>
+              If scale flag is 0 (default), then x,y,w,h will be
+              taken as unscaled real screen coordinates.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;"></DIV>
+            <DIV style="margin-left: 80px;">
+              Any other value is taken as 1.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;"></DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            or<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            b) Scale the values of x,y,w,h <SPAN style=
+            "text-decoration: underline;">yourself</SPAN> before
+            calling the command without scaling.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            Internally, the result of x, y (after any scaling) must
+            be within the <SPAN style=
+            "text-decoration: underline;">real screen area</SPAN>
+            or you will get an error (see below).<BR>
+            (You can get the real screen size with GR.SCREEN
+            rW,rH)<BR>
+            <BR>
+            <SPAN style=
+            "text-decoration: underline;">Errors</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Any errors <SPAN style=
+              "text-decoration: underline;">will not</SPAN>
+              RunTImeError. Instead the bitmap index returned will
+              be -1.<BR>
+              You can get the error message (if any) with
+              getErrror$(),<BR>
+              e.g<BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">GR.SCREEN.TO_BITMAP
+                bmp, 100,100,200,300</SPAN><BR>
+              </DIV>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">IF
+              bmp &lt; 0 THEN PRINT getError$() : END</SPAN><BR>
             </DIV><BR>
           </DIV>
         </TD>
@@ -274,8 +435,9 @@
             <SPAN style=
             "font-weight: bold;">level</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nexp&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; % default is
-            2</SPAN><BR>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(51, 51, 51);">% default is
+            2</SPAN></SPAN><BR>
           </DIV>
           <BLOCKQUOTE>
             &nbsp;&nbsp;&nbsp; where <SPAN style=
@@ -1067,8 +1229,8 @@
               "color: rgb(0, 0, 153);">x</SPAN>" and "<SPAN style=
               "color: rgb(0, 0, 153);">y</SPAN>" parameters will
               move the whole object (see <A href=
-              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics-system.html#whole">
-              whole object positioning</A>).<BR>
+              "graphics-system.html#whole">whole object
+              positioning</A>).<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 80px;">
@@ -1365,7 +1527,7 @@
         <TD style="vertical-align: top;">
           <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="sprites" id=
-          "setacc"></A>Sprites</SPAN></FONT><BR>
+          "setacc"></A></SPAN>Sprites</FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             See <A href=
@@ -1456,7 +1618,7 @@
         <TD style="vertical-align: top;">
           <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="animation" id=
-          "setacc"></A>Animation</SPAN></FONT><BR>
+          "setacc"></A></SPAN>Animation</FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             See <A href=
@@ -1653,7 +1815,8 @@
         <TD style="vertical-align: top;">
           <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="motion" id=
-          "motion"></A>Motion and Tweens<BR>
+          "motion"></A></SPAN>Motion and Tweens<SPAN style=
+          "color: rgb(0, 0, 153);"><BR>
           <BR></SPAN></FONT>
           <DIV style="margin-left: 40px;">
             <A name="gr_motion" id="gr_motion"></A><SPAN style=
@@ -1810,12 +1973,11 @@
             "tweens"></A>Tweens</SPAN></FONT><BR>
           </DIV>
           <DIV style="margin-left: 80px;">
-            A Tween is a change of an object's property at a rate
-            over a period of time.<BR>
+            A Tween is a change of an object's property over a
+            period of time.<BR>
             Tweens are triggered by <A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/gr_motion">
-            GR.MOTION</A>. They are removed after their duration
-            expires.<BR>
+            "#gr_motion">GR.MOTION</A>. They are removed after
+            their duration expires.<BR>
             (see also <A href=
             "functions.html#gr_tweens">GR_TWEENS</A>())<BR>
           </DIV>
@@ -1833,14 +1995,23 @@
             "font-weight: bold;">arr[]</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;&nbsp;
             <SPAN style="font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">parameter</SPAN>_<SPAN style=
-            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">rate</SPAN>_<SPAN style=
-            "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">duration</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN><BR>
+            "font-weight: bold;"><BR></SPAN>
+            <DIV style="margin-left: 160px;">
+              <SPAN style=
+              "font-weight: bold;">parameter</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "font-weight: bold;">rate</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "font-weight: bold;">duration</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">_nexp&nbsp;</SPAN>
+              <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "font-weight: bold;">delay</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">nexp</SPAN><SPAN style=
+              "font-weight: bold;">}</SPAN>
+            </DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
             <SPAN style="font-weight: bold;"><BR></SPAN> Adds a
@@ -1863,13 +2034,14 @@
             "font-weight: bold;">object</SPAN>'s&nbsp; <SPAN style=
             "font-weight: bold;">parameter</SPAN> at a <SPAN style=
             "font-weight: bold;">rate</SPAN> for a <SPAN style=
-            "font-weight: bold;">duration</SPAN>.<BR>
+            "font-weight: bold;">duration</SPAN> with an optional
+            delay.<BR>
             A change is triggered for each <A href=
             "gr_motion">GR.MOTION</A> according to the time past
             since the last GR.MOTION or<BR>
             GR.MOTION.MARK. Tweens are executed before any <A href=
             "graphics-system.html#object_motion">motion</A>.<BR>
-            <BR>
+            <A name="tween_rules" id="tween_rules"></A><BR>
             <SPAN style="font-weight: bold;">object</SPAN> must
             have the given <SPAN style=
             "font-weight: bold;">parameter</SPAN> or there will be
@@ -1887,7 +2059,7 @@
               ..eg<BR>
               For "speed"&nbsp; it will be pixels/sec<SUP>2</SUP>
               (change in speed).<BR>
-            </DIV><A name="tween_rules" id="tween_rules"></A><BR>
+            </DIV><BR>
             <SPAN style="font-weight: bold;">duration</SPAN> is in
             milliseconds. (1 second = 1000 miliseconds).<BR>
             <DIV style="margin-left: 40px;">
@@ -1906,11 +2078,22 @@
               "text-decoration: underline;">perpetual.</SPAN> The
               tween does not expire. The only way to remove such a
               tween is to use <A href=
-              "#gr_tween_clr">GR.TWEEN.CLR</A>.
+              "#gr_tween_clr">GR.TWEEN.CLR</A>.<BR>
+              <BR>
             </DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
-            <BR>
+            <SPAN style="font-weight: bold;">delay</SPAN>
+            (optional) is in milliseconds. (1 second = 1000
+            miliseconds).<BR>
+            <DIV style="margin-left: 40px;">
+              Adds a delay before the tween executes. The delay
+              diminishes with each GR.MOTION.<BR>
+              When the duration reaches zero, the tween will start
+              with the next GR.MOTION.<BR>
+              The default delay is zero (no delay). A negative
+              delay is forced to zero.<BR>
+            </DIV><BR>
             <SPAN style=
             "text-decoration: underline;">Objects</SPAN><BR>
             <DIV style="margin-left: 40px;">
@@ -1978,38 +2161,167 @@
             </DIV>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <A name="gr_tween_push" id=
-            "gr_motion_mark"></A><SPAN style=
-            "color: rgb(0, 0, 153);">GR.TWEEN.PUSH &lt;</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "gr_tween_goal" id=
+            "gr_tween_goal"></A>GR.TWEEN.GOAL&nbsp;</SPAN> &lt;
             <SPAN style=
             "font-weight: bold;">object</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nexp</SPAN> <SPAN style=
             "font-weight: bold;">|</SPAN> <SPAN style=
             "font-weight: bold;">arr[]</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;&nbsp;
-            <SPAN style="font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">direction</SPAN>_<SPAN style=
-            "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
+            <SPAN style="font-weight: bold;">,</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style=
+            "font-weight: bold;">parameter</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
             "font-weight: bold;">,</SPAN> <SPAN style=
-            "font-weight: bold;">acc</SPAN>_<SPAN style=
+            "font-weight: bold;">amount</SPAN>_<SPAN style=
             "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
             "font-weight: bold;">,</SPAN> <SPAN style=
             "font-weight: bold;">duration</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN><BR>
+            "color: rgb(102, 51, 0);">_nexp&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;">delay</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="font-weight: bold;"><BR></SPAN>Adds a
+            special <A href="#tweens">tween</A> that gradually adds
+            to the <SPAN style=
+            "font-weight: bold;">parameter</SPAN> during the course
+            of the <SPAN style=
+            "font-weight: bold;">duration</SPAN>.<BR>
+            Instead of specifying the rate, you specify the final
+            <SPAN style="font-weight: bold;">amount</SPAN> to be
+            added.<BR>
+            The optional <SPAN style=
+            "font-weight: bold;">delay</SPAN> is by default 0.<BR>
+            <BR>
+            At the end of the duration, the parameter will have a
+            goal value&nbsp; of<BR>
+            <DIV style="margin-left: 40px;">
+              goal =&nbsp; (initial value) + (<SPAN style=
+              "font-weight: bold;">amount</SPAN>).<BR>
+            </DIV>The (initial value) is taken as the value of the
+            <SPAN style="font-weight: bold;">parameter</SPAN> at
+            the time of the command.<BR>
+            <BR>
+            This is an alternative to <A href=
+            "#gr_tween_add">GR.TWEEN.ADD</A> where the final
+            <SPAN style="text-decoration: underline;">added
+            amount</SPAN> is already known.<BR>
+            <BR>
+            e.g&nbsp;&nbsp; <SPAN style=
+            "font-family: Courier New, Courier, monospace;">GR.TWEEN.GOAL
+            oText,"x",<SPAN style=
+            "font-weight: bold;">200</SPAN>,500<BR></SPAN>
+            <DIV style="text-align: right;">
+              <DIV style="text-align: center;">
+                <SPAN style="color: rgb(51, 51, 51);">% adds a
+                tween to move text</SPAN> <SPAN style=
+                "color: rgb(51, 51, 51);"><SPAN style=
+                "font-weight: bold;">200</SPAN> pixels to the right
+                in half a second.<BR></SPAN>
+                <DIV style="text-align: left;">
+                  <BR>
+                </DIV>
+              </DIV>
+            </DIV>The change <SPAN style=
+            "text-decoration: underline;">rate</SPAN> is linear and
+            is managed internally.<BR>
+            (see <A href="#gr_tween_add">GR.TWEEN.ADD</A> for tween
+            mechanism with GR.MOTION).<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">amount</SPAN> is the
+            amount to be added. It's unit depends on the type of
+            <SPAN style="font-weight: bold;">parameter</SPAN>.<BR>
+            <DIV style="margin-left: 40px;">
+              e.g the amount&nbsp; for parameters "x" and "y" are
+              in pixels. For "angle"&nbsp; it will be degrees.
+              ..eg<BR>
+              For "speed"&nbsp; it will be pixels/sec...etc.<BR>
+            </DIV><A name="tween_rules" id="tween_rules"></A><BR>
+            <SPAN style="font-weight: bold;">duration</SPAN> is in
+            milliseconds. (1 second = 1000 miliseconds).<BR>
+            <DIV style="margin-left: 40px;">
+              The duration diminishes with each GR.MOTION and the
+              parameter will get closer to it's goal.<BR>
+              When the duration reaches zero, <SPAN style=
+              "text-decoration: underline;">the tween meets it's
+              goal</SPAN> and is removed.<BR>
+              <BR>
+              <SPAN style="text-decoration: underline;">Negative
+              or</SPAN> <SPAN style=
+              "text-decoration: underline;">Zero</SPAN> durations
+              are ignored, and the tween will not be added (no
+              error).<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <DIV style="margin-left: 40px;">
+              The <A href="#tween_rules">rules</A> for <SPAN style=
+              "font-weight: bold;">delay</SPAN>, objects, arrays
+              and groups are the same as for <A href=
+              "#gr_tween_add">GR.TWEEN.ADD</A>.
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <A name="gr_tween_push" id=
+            "gr_motion_mark"></A><SPAN style=
+            "color: rgb(0, 0, 153);">GR.TWEEN.PUSH &lt;</SPAN>
+            <SPAN style=
+            "font-weight: bold;">object</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN>&nbsp;
+            <SPAN style="font-weight: bold;">|&nbsp;</SPAN>
+            <SPAN style=
+            "font-weight: bold;">arr[]</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;&nbsp;
+            <SPAN style="font-weight: bold;">,</SPAN><BR>
+            <DIV style="margin-left: 160px;">
+              <SPAN style=
+              "font-weight: bold;">direction</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">nexp</SPAN>&nbsp;
+              <SPAN style="font-weight: bold;">,&nbsp;</SPAN>
+              <SPAN style=
+              "font-weight: bold;">acc</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "font-weight: bold;">duration</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">_nexp</SPAN>&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "font-weight: bold;">delay</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">nexp</SPAN><SPAN style=
+              "font-weight: bold;">}</SPAN>
+            </DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
             <BR>
             Adds a special tween that accelerates an object with a
-            direction upon the object.<BR>
+            direction upon the object for<BR>
+            a duration and optional delay.<BR>
+            (see <A href="#gr_tween_add">GR.TWEEN.ADD</A> for tween
+            mechanism with GR.MOTION).<BR>
+            <BR>
             This adds a vector upon the object's current vector
             with each cycle of the tween.<BR>
             It is the same as <A href="#gr_push">GR.PUSH</A> at a
             rate over a period of time.<BR>
             It will affect the parameters <A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics-system.html#graphics_gp">
-            <SPAN style="color: rgb(0, 0, 153);">"speed"</SPAN> and
-            <SPAN style=
-            "color: rgb(0, 0, 153);">"dir"</SPAN></A>.<BR>
+            "graphics-system.html#graphics_gp"><SPAN style=
+            "color: rgb(0, 0, 153);">"speed"</SPAN> and
+            <SPAN style="color: rgb(0, 0, 153);">"dir"</SPAN></A>.<BR>
+
             <BR>
             The vector is added with a <SPAN style=
             "font-weight: bold;">direction</SPAN> (degrees) and
@@ -2030,14 +2342,18 @@
             The added tween has a special parameter called
             "push".<BR>
             To delete a push tween, you can use&nbsp;&nbsp;&nbsp;
+            <A href="#gr_tween_clr"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">GR.TWEEN.CLR</SPAN></A>
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><A href="file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics.html#gr_tween_clr">
-            GR.TWEEN.CLR</A> obj, "push"</SPAN><BR>
+            "font-family: Courier New, Courier, monospace;">obj,
+            "push"</SPAN><BR>
             as with all tweens, you can only have one tween with a
             "push" type per object.<BR>
             <BR>
             The <A href="#tween_rules">rules</A> for&nbsp;
-            duration, arrays and groups are the same as <A href=
+            <SPAN style="font-weight: bold;">duration</SPAN>,
+            <SPAN style="font-weight: bold;">delay</SPAN>, objects,
+            arrays and groups are the same as <A href=
             "#gr_tween_add">GR.TWEEN.ADD</A>.<BR>
             See also <A href="#gr_push">GR.PUSH</A>.<BR>
           </DIV><BR>
@@ -2118,9 +2434,13 @@
               ,"y"&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp; <SPAN style=
               "color: rgb(51, 51, 51);">% remove all tweens with
-              parameter "y"</SPAN></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              <BR></SPAN>
+              parameter "y"</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              GR.TWEEN.CLR squares[],"y"&nbsp;&nbsp; <SPAN style=
+              "color: rgb(51, 51, 51);">% remove y tweens from
+              objects in an array<BR>
+              <BR></SPAN></SPAN></SPAN>
             </DIV>The <A href="graphics.html#tween_rules">rules</A>
             for&nbsp; arrarys and groups are the same as <A href=
             "graphics.html#gr_tween_add">GR.TWEEN.ADD</A>.
@@ -2139,7 +2459,7 @@
       <TR>
         <TD style="vertical-align: top;">
           <DIV style="margin-left: 40px;">
-            <BR>
+            -End<BR>
           </DIV>
         </TD>
       </TR>
