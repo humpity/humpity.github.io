@@ -11,7 +11,7 @@
   <TITLE>SAF Commands</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hManual</A> &gt; <A href=
   "commands.html">Commands</A> &gt; SAF Commands<BR>
@@ -40,8 +40,9 @@
             (will not runtime-error). <SMALL>You can check for a
             phone's android version with Basic's DEVICE command
             (which requires the "make and manage phone calls "
-            permission OR hBasic's DEVICE.OS command which does not
-            require any permissions.</SMALL><BR>
+            permission OR hBasic's DEVICE.OS command or DEVICE$()
+            function which do not require any
+            permissions.</SMALL><BR>
             <BR>
             For any failed or unsuccessful command, there might be
             (or not) additional information in GetError$().<BR>
@@ -70,8 +71,8 @@
         <TD style="vertical-align: top;">
           <BR>
           <DIV style="margin-left: 40px;"></DIV>
-          <TABLE style="text-align: left; width: 100%;"
-          cellspacing="2" cellpadding="2" border="0">
+          <TABLE style="text-align: left; width: 90%;" cellspacing=
+          "2" cellpadding="2" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: bottom;" align="right">
@@ -144,7 +145,7 @@
                 "#FILE.SAF_DIR"><SPAN style=
                 "color: rgb(0, 0, 153);">FILE.SAF.DIR</SPAN></A></TD>
                 <TD style=
-                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                "vertical-align: top; white-space; color: rgb(102, 51, 0);">
                 path$, Array$[]&nbsp; {,dirmark$}</TD>
                 <TD style="vertical-align: top;">get a directory
                 list<BR></TD>
@@ -154,7 +155,7 @@
                 "#FILE.SAF_MKDIR"><SPAN style=
                 "color: rgb(0, 0, 153);">FILE.SAF.MKDIR</SPAN></A></TD>
                 <TD style=
-                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                "vertical-align: top; white-space; color: rgb(102, 51, 0);">
                 rc, path$<BR></TD>
                 <TD style="vertical-align: top;">create a
                 directory<BR></TD>
@@ -164,7 +165,7 @@
                 "color: rgb(0, 0, 153);"><A href=
                 "#FILE.SAF_RENAME">FILE.SAF.RENAME</A><BR></SPAN></TD>
                 <TD style=
-                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                "vertical-align: top; white-space; color: rgb(102, 51, 0);">
                 rc, oldPath$, newName$</TD>
                 <TD style="vertical-align: top;">rename a
                 file<BR></TD>
@@ -194,7 +195,7 @@
                 "#FILE.SAF_OPEN"><SPAN style=
                 "color: rgb(0, 0, 153);">FILE.SAF.OPEN</SPAN></A></TD>
                 <TD style=
-                "vertical-align: top; white-space: nowrap; color: rgb(102, 51, 0);">
+                "vertical-align: top; white-space; color: rgb(102, 51, 0);">
                 mode{t b r w a}, fileNum, SAF.path$<BR></TD>
                 <TD style="vertical-align: top;">open a file for
                 basic<BR></TD>
@@ -239,7 +240,6 @@
           <SPAN style="color: rgb(102, 51, 0);">Uri$</SPAN> will be
           the empty string.<BR>
           <BR>
-          <BR>
           <A name="FILE.SAF_REVOKE" id=
           "FILE.SAF_REVOKE"></A><SPAN style=
           "color: rgb(0, 0, 153);">FILE.SAF.REVOKE</SPAN>&nbsp;&nbsp;&nbsp;
@@ -262,7 +262,6 @@
           means you have to re-grant the drive on the next access.
           Uninstalling the app automatically revokes any previous
           grant.<BR>
-          <BR>
           <BR>
           <A name="FILE.SAF_CHECK" id=
           "FILE.SAF_CHECK"></A><SPAN style=
@@ -289,7 +288,6 @@
           3 =&gt; no permission and no persistence<BR>
           4 =&gt; bad uri<BR>
           5 =&gt; not supported<BR>
-          <BR>
           <BR>
           <A name="FILE.SAF_SET" id="FILE.SAF_SET"></A><SPAN style=
           "color: rgb(0, 0, 153);">FILE.SAF.SET</SPAN>&nbsp;&nbsp;&nbsp;
@@ -319,8 +317,7 @@
           identifier),&nbsp; into <SPAN style=
           "color: rgb(102, 51, 0);">Uri$.<BR></SPAN> Optionally,
           also get the directory name into name$.<SPAN style=
-          "color: rgb(102, 51, 0);"><BR>
-          <BR></SPAN><BR>
+          "color: rgb(102, 51, 0);"><BR></SPAN><BR>
           <A name="FILE.SAF_DIR" id="FILE.SAF_DIR"></A><SPAN style=
           "color: rgb(0, 0, 153);">FILE.SAF.DIR</SPAN>&nbsp;&nbsp;&nbsp;
           <SPAN style="color: rgb(102, 51, 0);">path$, Array$[]
@@ -361,7 +358,6 @@
           is not given. the default is directory marker is
           "<SPAN style="color: rgb(0, 102, 0);">(d)</SPAN>" .<BR>
           <BR>
-          <BR>
           <A name="FILE.SAF_MKDIR" id=
           "FILE.SAF_DIR"></A><SPAN style=
           "color: rgb(0, 0, 153);">FILE.SAF.MKDIR</SPAN>&nbsp;&nbsp;&nbsp;
@@ -396,8 +392,6 @@
           as success).<BR>
           For any unsucessful return code, there may be additional
           info in GetError$().<BR>
-          <BR>
-          <BR>
           <BR>
           <A name="FILE.SAF_RENAME" id=
           "FILE.SAF_RENAME"></A><SPAN style=
@@ -460,14 +454,12 @@
           5 =&gt; not supported<BR>
           9 =&gt; other<BR>
           <BR>
-          <BR>
           <A name="FILE.SAF_EXISTS" id=
           "FILE.SAF_EXISTS"></A><SPAN style=
           "color: rgb(0, 0, 153);">FILE.SAF.EXISTS</SPAN>&nbsp;&nbsp;&nbsp;
           <SPAN style="color: rgb(102, 51, 0);">rc,
           path$</SPAN>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp; saf version of file.exists<BR>
-          <BR>
           <BR>
           Check if a file or directory exists given it's
           <SPAN style="color: rgb(102, 51, 0);">path$</SPAN>.<BR>
@@ -492,7 +484,6 @@
           any failure during the call will result as 0.<BR>
           It is therefore recommended to check you have a valid saf
           base and path before usage.<BR>
-          <BR>
           <BR>
           <A name="FILE.SAF_OPEN" id=
           "FILE.SAF_OPEN"></A><SPAN style=
@@ -567,7 +558,8 @@
             <SPAN style="color: rgb(0, 0, 153);">text.close</SPAN>
             or <SPAN style=
             "color: rgb(0, 0, 153);">byte.close</SPAN>.<BR>
-          </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;"></DIV>
         </TD>
       </TR>
       <TR>

@@ -30,7 +30,7 @@
           changes<BR>
           <BR></BIG></BIG>
           <TABLE style=
-          "text-align: left; width: 742px; height: 150px; margin-left: 40px;"
+          "text-align: left; width: 90%; margin-left: 40px;"
           cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
@@ -323,26 +323,28 @@
             "color: rgb(0, 0, 153); text-decoration: underline;">Exceptions</SPAN></BIG><BR>
 
             <BR>
-            The only exception to these fixes is code run inside an
-            <SPAN style="color: rgb(0, 0, 153);">OnError</SPAN>
-            block.<BR>
-            <SPAN style="color: rgb(0, 0, 153);">OnError</SPAN> is
-            treated differently than other interrupts and it's
-            behaviour (regarding scope) has been left alone. That
-            is, it's scope is the scope that was interrupted. e,g
-            If an error occurred in a function, then the scope of
-            the&nbsp; <SPAN style=
-            "color: rgb(0, 0, 153);">OnError</SPAN> block is that
-            of the function. The rationale behind being that it is
-            sometimes useful to return to the error point with a
-            <SPAN style="color: rgb(0, 0, 153);">GOTO</SPAN>, in
-            which a flag or variable (in the same scope) is
-            neccessary to transfer meaning.<BR>
+            <DIV style="margin-left: 40px;">
+              The only exception to these fixes is code run inside
+              an <SPAN style=
+              "color: rgb(0, 0, 153);">OnError</SPAN> block.<BR>
+              <SPAN style="color: rgb(0, 0, 153);">OnError</SPAN>
+              is treated differently than other interrupts and it's
+              behaviour (regarding scope) has been left alone. That
+              is, it's scope is the scope that was interrupted. e,g
+              If an error occurred in a function, then the scope of
+              the&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);">OnError</SPAN> block is that
+              of the function. The rationale behind being that it
+              is sometimes useful to return to the error point with
+              a <SPAN style="color: rgb(0, 0, 153);">GOTO</SPAN>,
+              in which a flag or variable (in the same scope) is
+              neccessary to transfer meaning.<BR>
+            </DIV>
           </DIV><BR>
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;">
+        <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="fix_volkeys"
           id="fix_volkeys"></A>Fix for volkeys at start of
           run</BIG><BR>
@@ -574,7 +576,7 @@
           "color: rgb(0, 0, 153);"><BIG>Shortcut and File-Share
           Support<BR>
           <SMALL><BR></SMALL></BIG></SPAN>
-          <BLOCKQUOTE>
+          <DIV style="margin-left: 40px;">
             First off, there is a difference between a shortcut and
             a fileshare.<BR>
             <BR>
@@ -585,14 +587,13 @@
             <BR>
             A <B>file-share</B> is a request (normally by a
             file-manger) to hBasic with a filename.<BR>
-          </BLOCKQUOTE>
-          <BLOCKQUOTE>
+            <BR>
             <FONT color="#000099">A</FONT>) Legacy Basic only has
             shortcut support for a filename &lt;something&gt;.bas
             which is passed to the <U>Standard</U> app (i.e with
             editor) for execution. This is the same for hBasic
             (Standard).<BR>
-          </BLOCKQUOTE>
+          </DIV><BR>
           <DIV style="margin-left: 40px;">
             <FONT color="#000099">B</FONT>) hBasic also has
             shortcut support for <U>StandAlone</U> (i.e without
@@ -627,44 +628,48 @@
             <BR>
             <FONT color="#000099" size="+1"><A name=
             "shortcut_fixes" id="shortcut_fixes"></A>Shortcut fixes
-            since v4.49.</FONT><BR>
+            since v4.49</FONT><BR>
             <BR>
-            Standard (i.e with editor)<BR>
-            <BLOCKQUOTE>
-              Shortcuts (and Standard fileshares) with a new
-              program request were being ignored if there was an
-              old instance of the interpreter still hanging
-              around.<BR>
-              From now on, the interpreter will let any new program
-              take over, even if there's a old one still
-              running.<BR>
-            </BLOCKQUOTE><FONT color="#000099" size="+1"><A name=
-            "fileshare_fixes" id="fileshare_fixes"></A>File-Share
-            fixes since v4.49.<BR>
-            <BR></FONT> Standard (i.e with editor)<BR>
-            <BLOCKQUOTE>
-              Because of scoped storage, newer file managers are
-              sending<BR>
-              a uri instead of a regular path to hBasic.<BR>
-              hBasic will now attempt to match these to it's source
-              directory.<BR>
-              If it can't be found, then you will get an error
-              comment in the Editor.<BR>
-            </BLOCKQUOTE>Standalone (apk)<BR>
-            <BLOCKQUOTE>
-              E.g ..a file manager sending a file to a Standalone
-              apk (fileshare);<BR>
-              If the file is within scoped storage, the apk will
-              receive a relative<BR>
-              path from /data.<BR>
-              If the file is outside of scoped storage, the apk
-              will receive a<BR>
-              full path (as best that hBasic can extract a path)
-              starting with a<BR>
-              slash "/".<BR>
-              This does not affect shortcuts to a Standalone apk,
-              which will always send the shortcut data cleanly.
-            </BLOCKQUOTE>
+            <DIV style="margin-left: 40px;">
+              Standard (i.e with editor)<BR>
+              <DIV style="margin-left: 40px;">
+                Shortcuts (and Standard fileshares) with a new
+                program request were being ignored if there was an
+                old instance of the interpreter still hanging
+                around.<BR>
+                From now on, the interpreter will let any new
+                program take over, even if there's a old one still
+                running.<BR>
+              </DIV>
+            </DIV><BR>
+            <A name="fileshare_fixes" id=
+            "fileshare_fixes"></A><SPAN style=
+            "color: rgb(0, 0, 153);"><FONT size="+1">File-Share
+            fixes since v4.49</FONT></SPAN><BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              Standard (i.e with editor)<BR>
+              <DIV style="margin-left: 40px;">
+                Because of scoped storage, newer file managers are
+                sending a uri instead of a regular path to
+                hBasic.<BR>
+                hBasic will now attempt to match these to it's
+                source directory.<BR>
+                If it can't be found, then you will get an error
+                comment in the Editor.<BR>
+              </DIV>Standalone (apk)<BR>
+              <DIV style="margin-left: 40px;">
+                E.g ..a file manager sending a file to a Standalone
+                apk (fileshare);<BR>
+                If the file is within scoped storage, the apk will
+                receive a relative path from /data.<BR>
+                If the file is outside of scoped storage, the apk
+                will receive a full path (as best that hBasic can
+                extract a path) starting with a slash "/".<BR>
+                This does not affect shortcuts to a Standalone apk,
+                which will always send the shortcut data cleanly.
+              </DIV>
+            </DIV>
           </DIV>
         </TD>
       </TR>
@@ -672,8 +677,7 @@
         <TD style="vertical-align: top;">
           <A name="device_fix" id="textbyte_open_onfailure"></A>
           <SPAN style="color: rgb(0, 0, 153);"><BIG>DEVICE
-          Fixes<BR>
-          <BR></BIG></SPAN>
+          Fixes<BR></BIG></SPAN>
           <DIV style="margin-left: 40px;">
             <DIV style="text-align: right;">
               <SPAN style="font-style: italic;">Ack: dkal - forum
@@ -1034,10 +1038,11 @@
           <DIV style="margin-left: 40px;">
             Legacy Basic remembers commands per line as a form of
             tokenisation to circumvent future command searches.
-            This happens only after the first execution.<BR>
+            This happens only after the first execution of that
+            command.<BR>
             <BR>
-            hBasic adds Pre-Loading so that all lines have commands
-            pre-loaded before a Run.<BR>
+            hBasic adds Pre-Loading by default, so that all lines
+            have commands pre-loaded before the program starts.<BR>
             This ensures that all commands start off without
             needing a search and with equal footing.<BR>
           </DIV><BR>
@@ -1064,8 +1069,8 @@
             cancel all inner loops/blocks automatically.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            <BIG><SPAN style="text-decoration: underline;">The
-            Rules</SPAN></BIG> are;<BR>
+            <SPAN style="text-decoration: underline;">The
+            Rules</SPAN> are;<BR>
             <BR>
             1. You can execute;<BR>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1074,18 +1079,19 @@
             W_R.continue, D_U.continue, F_N.continue<BR>
             &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp; RETURN<BR>
-            <BLOCKQUOTE>
+            <DIV style="margin-left: 80px;">
               ..inside of other loop types, GOSUBs and IF
               blocks.<BR>
               &nbsp; Any other different type in-between will be
               cleaned out.<BR>
               &nbsp; The nearest same type inner block will be
               matched.<BR>
-            </BLOCKQUOTE>&nbsp;&nbsp; 1.a You can execute;<BR>
+              <BR>
+            </DIV>&nbsp;&nbsp; 1.a You can execute;<BR>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; REPEAT, UNTIL,
             NEXT,&nbsp;&nbsp;&nbsp;<BR>
-            <BLOCKQUOTE>
+            <DIV style="margin-left: 80px;">
               ..inside of other loop types, GOSUBs and IF
               blocks.<BR>
               &nbsp;&nbsp; Any other different type in-between will
@@ -1093,11 +1099,10 @@
               &nbsp;&nbsp; All same type inner blocks will also be
               cleaned out. (loop bottoms can cancel same
               types).<BR>
-              Loop bottoms <SPAN style=
-              "text-decoration: underline;">must</SPAN> begin a
-              line by itself, they cannot be part of THEN
-              statements.<BR>
-            </BLOCKQUOTE>
+              <BR>
+            </DIV>Loop bottoms <SPAN style=
+            "text-decoration: underline;">must</SPAN> begin a line
+            by itself, they cannot be part of THEN statements.<BR>
             <HR style="width: 100%; height: 2px;">
             2. You cannot stagger an ELSE, ELSEIF or ENDIF to
             cancel a loop or gosub.<BR>
@@ -1174,12 +1179,10 @@
             <BR>
             <DIV style="margin-left: 40px;">
               You can only have one loop bottom per loop<BR>
-            </DIV>
-            <BLOCKQUOTE>
-              e.g&nbsp; you cannot do this;<BR>
-            </BLOCKQUOTE><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            </DIV>e.g&nbsp; you cannot do this;<BR>
             <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
             <SPAN style="color: rgb(0, 102, 0);">FOR a=1 TO
             5</SPAN></SPAN><SPAN style=
@@ -1353,29 +1356,25 @@
           id="file_abs"></A><FONT size="+1">FILE -&nbsp; Absolute
           Paths</FONT></BIG><BR>
           <BR>
-          <BLOCKQUOTE>
+          <DIV style="margin-left: 40px;">
             Originally, paths for FILE commands were designed for
-            relative paths. These paths are relative to the
-            <FONT color="#663300">data</FONT> directory at<BR>
-            <BLOCKQUOTE>
-              <BLOCKQUOTE>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<FONT color=
-                "#006600">BasePath</FONT>&gt;/<FONT color=
-                "#663300">App_Path</FONT>/data<BR>
-                <BR>
-                e.g &lt;<FONT color=
-                "#006600">BasePath</FONT>&gt;/<FONT color=
-                "#663300">rfo-basic</FONT>/data<BR>
-              </BLOCKQUOTE>
-            </BLOCKQUOTE>
-            <BLOCKQUOTE>
-              <BLOCKQUOTE>
-                e.g <FONT color=
-                "#006600">/storage/emulated/0/Android/data/com.rfo.hbasic</FONT>/<FONT color="#663300">rfo-basic</FONT>/data.<BR>
-              </BLOCKQUOTE>
-            </BLOCKQUOTE>This means to get to the root directory
-            you need a path like
-            <TT>"../../../../../../../.."</TT><BR>
+            relative paths.<BR>
+            These paths are relative to the <FONT color=
+            "#663300">data</FONT> directory at<BR>
+            <BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;<FONT color=
+            "#006600">BasePath</FONT>&gt;/<FONT color=
+            "#663300">App_Path</FONT>/data<BR>
+            <BR>
+            e.g &lt;<FONT color=
+            "#006600">BasePath</FONT>&gt;/<FONT color=
+            "#663300">rfo-basic</FONT>/data<BR>
+            e.g <FONT color=
+            "#006600">/storage/emulated/0/Android/data/com.rfo.hbasic</FONT>/<FONT color="#663300">rfo-basic</FONT>/data.<BR>
+
+            <BR>
+            This means to get to the root directory you need a path
+            like <TT>"../../../../../../../.."</TT><BR>
             &nbsp;and this is just to get to the root.<BR>
             <BR>
             Normally you would not need to navigate too far away
@@ -1396,55 +1395,64 @@
             "font-weight: bold;">/</SPAN>'</TT></FONT>.<BR>
             <BR>
             Examples<BR>
-            <BLOCKQUOTE>
+            <DIV style="margin-left: 40px;">
               <SPAN style=
-              "font-family: Courier New, Courier, monospace;">debug.on<BR>
+              "font-family: Courier New, Courier, monospace;">debug.on</SPAN><BR>
 
-              <FONT color="#000099">FILE.DIR</FONT> <FONT color=
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><FONT color="#000099">
+              FILE.DIR</FONT> <FONT color=
               "#663300">"/storage/emulated/0/DCIM/Camera"</FONT> ,
-              a$[]<BR>
-              debug.dump.array a$[]<BR>
+              a$[]</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">debug.dump.array
+              a$[]</SPAN><BR>
               <BR>
-              <FONT color="#000099">FILE.DIR</FONT> <FONT color=
-              "#663300">"/sdcard/Download"</FONT> , a$[]<BR>
-              debug.dump.array a$[]</SPAN><BR>
-            </BLOCKQUOTE>
-          </BLOCKQUOTE>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><FONT color="#000099">
+              FILE.DIR</FONT> <FONT color=
+              "#663300">"/sdcard/Download"</FONT> , a$[]</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">debug.dump.array
+              a$[]</SPAN><BR>
+            </DIV>
+          </DIV>
         </TD>
       </TR>
       <TR>
         <TD valign="top">
           <A name="acceleration" id="directives"></A><SPAN style=
-          "color: rgb(0, 0, 153);"><FONT size=
-          "+1">Acceleration</FONT><BR></SPAN>
-          <BLOCKQUOTE>
-            <U><FONT size="+1">Editor GPU
-            Acceleration.</FONT></U><BR>
+          "color: rgb(0, 0, 153);"><FONT size="+1">Acceleration<BR>
+          <BR></FONT></SPAN>
+          <DIV style="margin-left: 40px;">
+            <U>Editor GPU Acceleration.</U><BR>
             <BR>
-            The Editor and the rest of the Standard app now uses
-            GPU acceleration by default. This cannot be turned
-            off.<BR>
+            <DIV style="margin-left: 40px;">
+              The Editor and the rest of the Standard app now uses
+              GPU acceleration by default. This cannot be turned
+              off.<BR>
+            </DIV><BR>
+            <U>Graphics Hardware overlay layer.</U><BR>
             <BR>
-            <FONT size="+1"><U>Graphics Hardware overlay
-            layer.</U></FONT><BR>
-            <BR>
-            The setting in the <FONT color="#006600">Editor &gt;
-            Preferences</FONT> labeled "<FONT color=
-            "#663300">Graphic acceleration</FONT>"<BR>
-            has always (in legacy Basic) referred to Hardware
-            overlay layer (not GPU acceleration as above).<BR>
-            It further boosts performance for the graphics screen
-            (only).<BR>
-            <BR>
-            This preference setting is now ON by default.<BR>
-            It can be turned off either in <FONT color=
-            "#006600">Preferences</FONT> or programmatically with
-            the new command<BR>
-            <A href="graphics.html#setacc">GR.SETACC.</A> It uses
-            less power than direct GPU rendering at the expense of
-            causing lag in some animations. But in most cases it is
-            faster.<BR>
-          </BLOCKQUOTE>
+            <DIV style="margin-left: 40px;">
+              The setting in the <FONT color="#006600">Editor &gt;
+              Preferences</FONT> labeled "<FONT color=
+              "#663300">Graphic acceleration</FONT>"<BR>
+              has always (in legacy Basic) referred to Hardware
+              overlay layer (not GPU acceleration as above).<BR>
+              It further boosts performance for the graphics screen
+              (only).<BR>
+              <BR>
+              This preference setting is now ON by default.<BR>
+              It can be turned off either in <FONT color=
+              "#006600">Preferences</FONT> or programmatically with
+              the new command<BR>
+              <A href="graphics.html#setacc">GR.SETACC.</A> It uses
+              less power than direct GPU rendering at the expense
+              of causing lag in some animations. But in most cases
+              it is faster.<BR>
+            </DIV>
+          </DIV>
         </TD>
       </TR>
       <TR>
@@ -1452,14 +1460,15 @@
           <A name="directives" id="directives"></A> <SPAN style=
           "color: rgb(0, 0, 153);"><FONT size=
           "+1">Directives</FONT></SPAN> <SPAN style=
-          "color: rgb(0, 0, 153);"><FONT size=
-          "+1">@@<BR></FONT></SPAN>
+          "color: rgb(0, 0, 153);"><FONT size="+1">@@<BR>
+          <BR></FONT></SPAN>
           <DIV style="margin-left: 40px;">
             Directives are used to configure the intepreter.<BR>
             <BR>
             These directives should be put the before the start of
             a program on their own.<BR>
-            They all start with "@@".<BR>
+            They all start with "<SPAN style=
+            "color: rgb(0, 0, 153);">@@</SPAN>".<BR>
             <BR>
             <SPAN style=
             "color: rgb(0, 0, 153);">@@HIDE_ACTIONBAR</SPAN><BR>

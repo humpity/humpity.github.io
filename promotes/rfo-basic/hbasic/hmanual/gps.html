@@ -11,7 +11,7 @@
   <TITLE>GPS</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hManual</A> &gt; <A href=
   "commands.html">Commands</A> &gt; GPS<BR>
@@ -28,25 +28,20 @@
           command changes</BIG></BIG><BR>
           <BR>
           <BR>
-          <TABLE style="text-align: left; width: 742px;"
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
           cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
-                <TD class="noborder" style="vertical-align: top;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>
-                </TD>
-                <TD style="vertical-align: top;" width="35%">
+                <TD style="vertical-align: top; width: 30%;">
                 <A href="#prn"><FONT size="+1">PRN number
                 change</FONT></A></TD>
                 <TD style="vertical-align: top;">prn numbers
                 modified</TD>
               </TR>
               <TR>
-                <TD class="noborder" style="vertical-align: top;">
-                <BR></TD>
-                <TD style="vertical-align: top;" width="35%">
-                <A href="#open"><FONT size=
-                "+1">GPS.OPEN</FONT></A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#open"><FONT size="+1">GPS.OPEN</FONT></A></TD>
                 <TD style="vertical-align: top;">New parameters
                 useNET and useLast<BR></TD>
               </TR>
@@ -55,112 +50,102 @@
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;">
+        <TD>
           <BIG style="color: rgb(0, 0, 153);"><A name="upgrade" id=
-          "fn_import"></A>Upgrade to Gnss<BR></BIG>
-          <BLOCKQUOTE>
+          "fn_import"></A>Upgrade to Gnss<BR>
+          <BR></BIG>
+          <DIV style="margin-left: 40px;">
             Older devices less than Android N (7) will still use
             the deprecated GPS API.<BR>
             <BR>
             For newer devices of Android N or greater, the library
             calls will use the Gnss API (which also includes GPS)
             for greater coverage and accuracy.<BR>
-            <BR>
-            <BLOCKQUOTE>
-              <TABLE style="text-align: left; width: 50%;"
-              cellspacing="0" cellpadding="5" border="0">
-                <CAPTION>
-                  <A name="constellations" id=
-                  "constellations"></A>Gnss Constellations<BR>
-                  <BR>
-                </CAPTION>
-                <TBODY>
-                  <TR>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Type</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Name</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Nation</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle"><BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">1<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">
-                    GPS&nbsp;&nbsp;&nbsp;&nbsp;<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">US</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle"><BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">2<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">SBAS</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Global</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle"><BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">3<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">GLONASS</TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">Russia</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle"><BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">4<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">QZSS</TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">Japan</TD>
-                    <TD style=
-                    "vertical-align: top; width: 50%; white-space: nowrap;"
-                    valign="middle"><BR></TD>
-                  </TR>
-                  <TR>
-                    <TD valign="middle">5<BR></TD>
-                    <TD valign="middle">BEIDOU</TD>
-                    <TD valign="middle">China</TD>
-                    <TD valign="middle"><BR></TD>
-                  </TR>
-                  <TR>
-                    <TD valign="middle">6<BR></TD>
-                    <TD valign="middle">GALILEO</TD>
-                    <TD valign="middle">Europe</TD>
-                    <TD valign="middle"><BR></TD>
-                  </TR>
-                  <TR>
-                    <TD valign="middle">7<BR></TD>
-                    <TD valign="middle">IRNSS</TD>
-                    <TD valign="middle">India</TD>
-                    <TD valign="middle"><BR></TD>
-                  </TR>
-                </TBODY>
-              </TABLE>
-            </BLOCKQUOTE>
-          </BLOCKQUOTE>
-          <BLOCKQUOTE>
-            <U><BR>
-            <BIG>About Satellite Bundles and inview</BIG></U><BR>
-          </BLOCKQUOTE>
-          <BLOCKQUOTE>
+          </DIV><BR>
+          <TABLE style=
+          "text-align: left; width: 50%; margin-left: 40px;"
+          cellspacing="0" cellpadding="5" border="0">
+            <CAPTION>
+              <A name="constellations" id="constellations"></A>Gnss
+              Constellations<BR>
+              <BR>
+            </CAPTION>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;" valign="middle">
+                Type</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Name</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Nation</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                <BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">1<BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">
+                GPS&nbsp;&nbsp;&nbsp;&nbsp;<BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">US</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                <BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">2<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                SBAS</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Global</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                <BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">3<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                GLONASS</TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">Russia</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                <BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;" valign="middle">
+                4<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                QZSS</TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">Japan</TD>
+                <TD style=
+                "vertical-align: top; width: 50%; white-space;"
+                valign="middle"><BR></TD>
+              </TR>
+              <TR>
+                <TD valign="middle">5<BR></TD>
+                <TD valign="middle">BEIDOU</TD>
+                <TD valign="middle">China</TD>
+                <TD valign="middle"><BR></TD>
+              </TR>
+              <TR>
+                <TD valign="middle">6<BR></TD>
+                <TD valign="middle">GALILEO</TD>
+                <TD valign="middle">Europe</TD>
+                <TD valign="middle"><BR></TD>
+              </TR>
+              <TR>
+                <TD valign="middle">7<BR></TD>
+                <TD valign="middle">IRNSS</TD>
+                <TD valign="middle">India</TD>
+                <TD valign="middle"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><U><BR></U>
+          <DIV style="margin-left: 40px;">
+            <U><BIG>About Satellite Bundles and
+            inview</BIG></U><BR>
             Satellite bundles are used in the updated sample
             program <FONT color="#663300">f15_gps.bas</FONT>.<BR>
             <BR>
@@ -185,16 +170,14 @@
             size may or may not be the same as the last
             <FONT color="#000099">GPS.Status</FONT> inview
             count.<BR>
-            <U><BR>
-            <BIG>About infix</BIG></U><BR>
-          </BLOCKQUOTE>
-          <BLOCKQUOTE>
+            <BR>
+            <U><BIG>About infix</BIG></U><BR>
             This count can be obtained with either <FONT color=
             "#000099">GPS.Status</FONT>, <FONT color=
             "#000099">GPS.Location</FONT>&nbsp; or <FONT color=
-            "#000099">GPS.Satellites.<BR></FONT> These infix counts
-            are obtained from different libraries, so may not be in
-            sync with each other.<BR>
+            "#000099">GPS.Satellites.</FONT><BR>
+            These infix counts are obtained from different
+            libraries, so may not be in sync with each other.<BR>
             <BR>
             An infix count is the number of satellites that were in
             view and used for a fix. This does not neccessarily
@@ -202,7 +185,7 @@
             satellites before you get a fix for data. Satellites
             used for a fix will have their bundle key
             <I>"infix"</I> set to 1.<BR>
-          </BLOCKQUOTE>
+          </DIV>
         </TD>
       </TR>
       <TR>
@@ -238,11 +221,12 @@
           <BIG style="color: rgb(0, 0, 153);"><A name="open" id=
           "printat"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">GPS.OPEN</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
-          </BIG>
-          <BLOCKQUOTE>
-            Two new parameters were added.<FONT size=
-            "+1"><TT><FONT color="#000099"><BR>
-            <BR></FONT></TT></FONT> <SPAN style=
+
+          <BR></BIG>
+          <DIV style="margin-left: 40px;">
+            Two new parameters were added, useNET and useLAST.<BR>
+            <BR>
+            <SPAN style=
             "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
             <SPAN style=
             "font-family: Helvetica, Arial, sans-serif;"><FONT size="+1">
@@ -261,8 +245,7 @@
             "font-weight: bold;">,</SPAN>{<B><FONT color=
             "#000099">useLAST</FONT></B><SPAN style=
             "color: rgb(102, 51, 0);">_lexp</SPAN>,}<BR>
-          </BLOCKQUOTE>
-          <BLOCKQUOTE>
+            <BR>
             <SPAN style=
             "color: rgb(0, 0, 153);"><B>useNET</B></SPAN> sets
             whether the scans will use the network provider or
@@ -300,13 +283,14 @@
             &nbsp;&nbsp;&nbsp; other = default = 0 (unlike
             legacy)<BR>
             <BR>
-            <DIV style="margin-left: 40px;">
-              If you don't get any readings, the last known
-              location just sticks, until you get a valid reading,
-              which can be confusing or worse mis-leading for your
-              next GPS.OPEN.<BR>
-            </DIV>
-          </BLOCKQUOTE>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            If you don't get any readings, the last known location
+            just sticks, until you get a valid reading, which can
+            be confusing or worse mis-leading for your next
+            GPS.OPEN.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;"></DIV>
         </TD>
       </TR>
       <TR>

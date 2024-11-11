@@ -21,20 +21,21 @@
   cellspacing="2" cellpadding="8">
     <TBODY>
       <TR>
-        <TD style="vertical-align: top; width: 80%;">
+        <TD style="vertical-align: top; width: 90%;">
           <DIV style="text-align: right;">
             <BIG>hBasic Manual</BIG><BR>
           </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Console
           command changes</BIG></BIG><BR>
           <BR>
           <BR>
-          <TABLE style="text-align: left; width: 90%;" cellspacing=
-          "2" cellpadding="2" border="0">
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;"><A href=
                 "#backspace">BACKSPACE</A><BR></TD>
-                <TD style="vertical-align: top; width: 70%;">Delete
+                <TD style="vertical-align: top; width: 90%;">Delete
                 character of last row<BR></TD>
               </TR>
               <TR>
@@ -102,8 +103,9 @@
               <TR>
                 <TD style="vertical-align: top;"><A href=
                 "#screen_size">SCREEN.SIZE</A><BR></TD>
-                <TD style="vertical-align: top;">Will only return
-                console viewsize<BR></TD>
+                <TD style="vertical-align: top;">Will return
+                console viewsize (<SPAN style=
+                "font-weight: bold;">only</SPAN>)<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -160,9 +162,9 @@
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;">
+        <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="backspace"
-          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          id="backspace"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">BACKSPACE</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
@@ -177,22 +179,15 @@
             <SPAN style="color: rgb(0, 0, 153);">and puts PRINT
             into append mode</SPAN>.<BR>
             <BR>
-            Rules;<BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
-
+            Rules;<BR>
             &nbsp;&nbsp;&nbsp; 1. <SPAN style=
             "font-weight: bold;">count</SPAN> must be greater than
-            0. If count is not given, 1 character is
-            deleted.<BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
-
+            0. If count is not given, 1 character is deleted.<BR>
             &nbsp;&nbsp;&nbsp; 2. If count is greater than the
             length of the last line, all characters will be deleted
             leaving an empty line.<BR>
             &nbsp;&nbsp;&nbsp; 3. Any PRINT following BACKSPACE is
-            appended to the end of the line.<BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
-
+            appended to the end of the line.<BR>
             &nbsp;&nbsp;&nbsp;<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -203,18 +198,14 @@
               <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
               "color: rgb(0, 0, 153);">BACKSPACE&nbsp;</SPAN>
               &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</SPAN>
-              <SPAN style="color: rgb(0, 0, 153);">%</SPAN>&nbsp;
-              <SPAN style=
-              "color: rgb(0, 0, 153); font-style: italic;">deletes
-              1 character backward.</SPAN><BR style=
+              <SPAN style="color: rgb(102, 102, 102);">%&nbsp;
+              deletes 1 character backward</SPAN><BR style=
               "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
               <SPAN style="color: rgb(0, 0, 153);">BACKSPACE</SPAN>
               5&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              <SPAN style="color: rgb(0, 0, 153);">%</SPAN>&nbsp;
-              <SPAN style=
-              "color: rgb(0, 0, 153); font-style: italic;">deletes
-              5 characters backward.</SPAN><BR>
+              <SPAN style="color: rgb(102, 102, 102);">%&nbsp;
+              deletes 5 characters backward</SPAN><BR>
             </DIV><BR>
           </DIV>
         </TD>
@@ -432,8 +423,7 @@
               text.<BR>
             </DIV>
             <BLOCKQUOTE>
-              <TABLE style=
-              "text-align: left; width: 624px; height: 264px;"
+              <TABLE style="text-align: left; width: 90%;"
               cellspacing="0" cellpadding="5" border="0">
                 <TBODY>
                   <TR>
@@ -447,22 +437,18 @@
                     "middle"><BR></TD>
                   </TR>
                   <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
+                    <TD style="vertical-align: top; white-space;"
                     valign="middle">0<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
+                    <TD style="vertical-align: top; white-space;"
                     valign="middle">Bottom<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
+                    <TD style="vertical-align: top; white-space;"
                     valign="middle">Aligns image to the bottom of
                     text.<BR></TD>
                     <TD style="vertical-align: top;" valign=
                     "middle">default<BR></TD>
                   </TR>
                   <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
+                    <TD style="vertical-align: top; white-space;"
                     valign="middle"><SPAN style=
                     "font-weight: bold;">-</SPAN>1<BR></TD>
                     <TD style="vertical-align: top;" valign=
@@ -474,14 +460,12 @@
                     "middle"><BR></TD>
                   </TR>
                   <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
+                    <TD style="vertical-align: top; white-space;"
                     valign="middle"><SPAN style=
                     "font-weight: bold;">-</SPAN>2<BR></TD>
                     <TD style="vertical-align: top;" valign=
                     "middle">Mid<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
+                    <TD style="vertical-align: top; white-space;"
                     valign="middle">Aligns image between Bottom and
                     Baseline.<BR></TD>
                     <TD style="vertical-align: top;" valign=
@@ -489,8 +473,8 @@
                   </TR>
                   <TR>
                     <TD style=
-                    "vertical-align: middle; white-space: nowrap;">
-                    1 to 100<BR></TD>
+                    "vertical-align: middle; white-space;">1 to
+                    100<BR></TD>
                     <TD valign="middle">percent</TD>
                     <TD valign="middle">Aligns text to a percentage
                     of the image height.<BR></TD>
@@ -646,7 +630,7 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="backimg" id=
-          "fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "backimg"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">CONSOLE.BACKIMG</SPAN></FONT><BR>
 
           <SPAN style=
@@ -663,10 +647,12 @@
             "color: black;">file_name</SPAN></SPAN>_sexp
             {,</SPAN></SPAN><SPAN style=
             "font-weight: bold;"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">fit_type</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nexp}</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">{</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,<SPAN style="font-weight: bold;">smooth</SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_lexp}</SPAN></SPAN></SPAN></SPAN><BR>
+            "font-family: Courier New, Courier, monospace;">fit_type</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nexp}</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">{</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,<SPAN style="font-weight: bold;">smooth</SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_lexp}<BR>
 
-            Sets a background image for the console<BR>
-            <BR>
+            <BR></SPAN></SPAN></SPAN></SPAN>
+            <DIV style="margin-left: 40px;">
+              Sets a background image for the console<BR>
+            </DIV><BR>
             <DIV style="margin-left: 40px;">
               The image <SPAN style=
               "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
@@ -700,91 +686,79 @@
               "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN></SPAN>
               which is by default 0.<BR>
             </DIV>
-            <BLOCKQUOTE>
-              <TABLE style=
-              "text-align: left; width: 624px; height: 264px;"
-              cellspacing="0" cellpadding="5" border="0">
-                <TBODY>
-                  <TR>
-                    <TD style="vertical-align: top;" valign=
-                    "middle"><SPAN style=
-                    "font-weight: bold;">fit_type</SPAN><BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Name</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Description</TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Notes<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">0<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">Fill<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">Fills entire screen<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">default.<BR>
-                    scaled to either width or height, which ever
-                    will fill the screen.<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">1<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Width<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Fit to width of screen<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">possible hole at bottom.<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">2<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">Height<BR></TD>
-                    <TD style=
-                    "vertical-align: top; white-space: nowrap;"
-                    valign="middle">Fit to height of
-                    screen<BR></TD>
-                    <TD style="vertical-align: top;" valign=
-                    "middle">possible hole&nbsp; at right.<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style=
-                    "vertical-align: middle; white-space: nowrap;">
-                    3<BR></TD>
-                    <TD valign="middle">Shortest</TD>
-                    <TD valign="middle">Fit to the shortest side of
-                    screen<BR></TD>
-                    <TD valign="middle">possible hole.<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">4<BR></TD>
-                    <TD style="vertical-align: top;">
-                    Longest<BR></TD>
-                    <TD style="vertical-align: top;">Fit to the
-                    longest side of screen</TD>
-                    <TD style="vertical-align: top;">possible
-                    hole.</TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">5<BR></TD>
-                    <TD style="vertical-align: top;">Paste<BR></TD>
-                    <TD style="vertical-align: top;">Just paste at
-                    0,0<BR></TD>
-                    <TD style="vertical-align: top;">no
-                    scaling.<BR>
-                    possible holes.<BR></TD>
-                  </TR>
-                </TBODY>
-              </TABLE>
-            </BLOCKQUOTE>
+            <TABLE style=
+            "text-align: left; width: 90%; margin-left: 40px;"
+            cellspacing="0" cellpadding="5" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top;" valign="middle">
+                  <SPAN style=
+                  "font-weight: bold;">fit_type</SPAN><BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Name</TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Description</TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Notes<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">0<BR></TD>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">Fill<BR></TD>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">Fills entire screen<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  default.<BR>
+                  scaled to either width or height, which ever will
+                  fill the screen.<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">1<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Width<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Fit to width of screen<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  possible hole at bottom.<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">2<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Height<BR></TD>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">Fit to height of screen<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  possible hole&nbsp; at right.<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: middle; white-space;">
+                  3<BR></TD>
+                  <TD valign="middle">Shortest</TD>
+                  <TD valign="middle">Fit to the shortest side of
+                  screen<BR></TD>
+                  <TD valign="middle">possible hole.<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;">4<BR></TD>
+                  <TD style="vertical-align: top;">Longest<BR></TD>
+                  <TD style="vertical-align: top;">Fit to the
+                  longest side of screen</TD>
+                  <TD style="vertical-align: top;">possible
+                  hole.</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;">5<BR></TD>
+                  <TD style="vertical-align: top;">Paste<BR></TD>
+                  <TD style="vertical-align: top;">Just paste at
+                  0,0<BR></TD>
+                  <TD style="vertical-align: top;">no scaling.<BR>
+                  possible holes.<BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
             <DIV style="margin-left: 40px;">
               If the fit scales the image larger than the screen on
               any side, then the image is cropped.<BR>
@@ -867,9 +841,9 @@
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;">
+        <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name=
-          "console_goto" id="fn_import"></A></BIG><FONT size=
+          "console_goto" id="console_goto"></A></BIG><FONT size=
           "+1"><SPAN style=
           "color: rgb(0, 0, 153);">CONSOLE.GOTO</SPAN></FONT><BR>
           <BR>
@@ -919,29 +893,47 @@
             "color: rgb(102, 51, 0);">line</SPAN> &gt; last_line
             then it will goto to the last_line.<BR>
             &nbsp;
-          </DIV>Example<BR>
+          </DIV>
           <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "color: rgb(0, 0, 153);">FOR</SPAN></SPAN> i = 1
-            <SPAN style="color: rgb(0, 0, 153);">TO</SPAN> 500<BR>
-            &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(0, 0, 153);">PRINT</SPAN> i<BR>
-            <SPAN style="color: rgb(0, 0, 153);">NEXT</SPAN><BR>
-            <BR>
-            <SPAN style=
-            "color: rgb(0, 0, 153);">CONSOLE.GOTO</SPAN> 200 &nbsp;
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(0, 0, 153);">%</SPAN>&nbsp; <SPAN style=
-            "font-style: italic;">positions line 200 into
-            view</SPAN><BR>
+            Example<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">FOR</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">i =
+              1</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">TO</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">500</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">i</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">NEXT</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">CONSOLE.GOTO</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">200</SPAN>
+              &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);">%</SPAN>&nbsp; <SPAN style=
+              "font-style: italic;">positions line 200 into
+              view</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             <BR>
           </DIV>
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;">
+        <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="console_set"
-          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          id="console_set"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
@@ -953,11 +945,13 @@
             <BR></SPAN>
             <DIV style="margin-left: 120px;">
               e.g <SPAN style=
-              "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>
-              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
-              "color: rgb(102, 0, 0);">TEXTCOLOR</SPAN>
-              #FF112233<SPAN style=
-              "font-weight: bold; font-family: monospace;">"</SPAN><BR>
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CONSOLE.SET</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
+              "</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">#FF112233</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">"</SPAN></SPAN><BR>
             </DIV>
             <DIV style="text-align: left; margin-left: 120px;">
               <SPAN style=
@@ -973,10 +967,12 @@
             "font-weight: bold;">"</SPAN><BR>
             <DIV style="text-align: center;">
               <DIV style="text-align: right;">
-                &nbsp;&nbsp; note :&nbsp; the <SPAN style=
-                "font-weight: bold;">pair</SPAN> is a <SPAN style=
-                "text-decoration: underline;">string
-                expression</SPAN>.<BR>
+                <DIV style="text-align: center;">
+                  &nbsp;&nbsp; note :&nbsp; the <SPAN style=
+                  "font-weight: bold;">pair</SPAN> is a
+                  <SPAN style="text-decoration: underline;">string
+                  expression</SPAN>.<BR>
+                </DIV>
                 <DIV style="text-align: left;">
                   (the '<SPAN style="font-weight: bold;">=</SPAN>'
                   is optional but there must be a space if it is
@@ -991,432 +987,416 @@
             styling.</BIG><BR>
             <DIV style="margin-left: 40px;">
               These attributes may apply to either the whole
-              console or for future printing.<BR>
+              console or only for future printing.<BR>
               <BR>
+            </DIV>The Keyword Value Pairs accepted are;<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV><BIG><SPAN style=
+            "font-family: monospace;"><A name="textcolor" id=
+            "textcolor"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+            e.g "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">#FF112233"</SPAN>
+            <BIG><SPAN style=
+            "font-family: monospace;"><SMALL>%</SMALL></SPAN>
+            <SMALL><SPAN style=
+            "color: rgb(0, 0, 153);">Text</SPAN></SMALL></BIG><BR style="font-family: monospace;">
+
+            <BIG><A name="backcolor" id=
+            "backcolor"></A></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">BACKCOLOR</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+            e.g "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">BACKCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">=#112233"</SPAN><BIG><SPAN style="font-family: monospace;">&nbsp;&nbsp;
+            <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
+            "color: rgb(0, 0, 153);">Text
+            Background</SPAN></SMALL></BIG><BR>
+            <BR>
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "linecolor" id=
+            "linecolor"></A></SPAN></BIG><SPAN style="font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">LINECOLOR</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+            e.g "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">LINECOLOR</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=Aqua"</SPAN><BIG><SPAN style="font-family: monospace;">&nbsp;&nbsp;
+            &nbsp; <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
+            "color: rgb(0, 0, 153);">Divider
+            Line</SPAN></SMALL></BIG><BR>
+            <BIG><SPAN style=
+            "color: rgb(102, 0, 0); font-family: monospace;"><A name="voidcolor"
+            id="void"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">"VOIDCOLOR</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+            e.g "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
+            #000000"</SPAN><BIG><SPAN style=
+            "font-family: monospace;">&nbsp;
+            <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
+            "color: rgb(0, 0, 153);">Empty Console
+            Area</SPAN></SMALL></BIG><BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 200px;">
+            <SPAN style="color: rgb(0, 0, 153);">Sets the color of
+            various attributes.</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 200px;">
+            <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN> The
+            VOIDCOLOR is the area where there is no
+            text.<SPAN style=
+            "color: rgb(0, 0, 153);"><BR></SPAN><BR>
+            VOIDCOLOR and LINECOLOR apply to the <SPAN style=
+            "font-weight: bold;">whole</SPAN> console.<BR>
+            TEXTCOLOR and BACKCOLOR apply for <SPAN style=
+            "font-weight: bold;">future</SPAN> printing.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "colors" id="colors"></A>Colors</SPAN><BR>
+            &lt;color&gt; may either be<BR>
+            <DIV style="margin-left: 40px;">
+              hex #<SPAN style=
+              "color: rgb(102, 102, 102);">AA</SPAN><SPAN style=
+              "color: rgb(153, 0, 0);">RR</SPAN><SPAN style=
+              "color: rgb(0, 102, 0);">GG</SPAN><SPAN style=
+              "color: rgb(0, 0, 153);">BB</SPAN> as alpha, red,
+              green, blue<BR>
+              or<BR>
+              hex #<SPAN style=
+              "color: rgb(153, 0, 0);">RR</SPAN><SPAN style=
+              "color: rgb(0, 102, 0);">GG</SPAN><SPAN style=
+              "color: rgb(0, 0, 153);">BB</SPAN> as red, green,
+              blue (alpha assumed to be solid)<BR>
+              <BR>
+              or<BR>
+              any one of the 564 <SPAN style=
+              "color: rgb(0, 0, 153);">HTML colors</SPAN> <A href=
+              "https://www.computerhope.com/htmcolor.htm#color-codes">
+              </A>listed&nbsp; <A href="colors.html">here</A> or
+              original website <A href=
+              "https://www.computerhope.com/htmcolor.htm#color-codes">
+              here</A>.<BR>
+              <BR>
+              <SMALL style="font-style: italic;">Any color string
+              starting with an underscore ( ' _' ) will have that
+              underscore ignored.<BR>
+              (this is to accomodate underscored names from other
+              environments).</SMALL><BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Alpha
+            channels</SPAN> for color Names<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              A color name can be post-fixed with an alpha-channel
+              value e.g<BR>
             </DIV>
             <DIV style="margin-left: 40px;">
-              The Keyword Value Pairs accepted are;<BR>
-              <BR>
-              <BIG><SPAN style="font-family: monospace;"><A name=
-              "textcolor" id=
-              "textcolor"></A></SPAN></BIG><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
-              e.g "</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTCOLOR</SPAN></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">#FF112233"</SPAN>
               <BIG><SPAN style=
-              "font-family: monospace;"><SMALL>%</SMALL></SPAN>
-              <SMALL><SPAN style=
-              "color: rgb(0, 0, 153);">Text</SPAN></SMALL><BR style="font-family: monospace;">
+              "color: rgb(0, 0, 153); font-family: monospace;">CONSOLE.SET</SPAN>
+              <SPAN style=
+              "font-weight: bold; font-family: monospace;">"</SPAN><SPAN style="color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
+              <SPAN style="font-family: monospace;"><SPAN style=
+              "color: rgb(59, 47, 47);">darkcoffee</SPAN>.16<SPAN style="color: rgb(0, 0, 153);">9</SPAN><SPAN style="font-family: Helvetica,Arial,sans-serif;">"</SPAN></SPAN></BIG><BR>
 
-              <A name="backcolor" id=
-              "backcolor"></A></BIG><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">BACKCOLOR</SPAN></SPAN>
+              <BIG><SMALL>is the same
+              as<BR></SMALL></BIG><BIG><SPAN style=
+              "color: rgb(0, 0, 153); font-family: monospace;">CONSOLE.SET</SPAN>
               <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
-              e.g "</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">BACKCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">=#112233"</SPAN><BIG><SPAN style="font-family: monospace;">&nbsp;&nbsp;
-              <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
-              "color: rgb(0, 0, 153);">Text
-              Background</SPAN></SMALL><BR>
+              "font-weight: bold; font-family: monospace;">"</SPAN><SPAN style="color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
+              <SPAN style="font-family: monospace;"><SPAN style=
+              "color: rgb(59, 47, 47);">darkcoffee</SPAN>#<SPAN style="color: rgb(0, 0, 153);">A9</SPAN><SPAN style="font-family: Helvetica,Arial,sans-serif;">"</SPAN></SPAN></BIG><BR>
+
+              <BIG><SMALL>is the same as</SMALL><BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153); font-family: monospace;">CONSOLE.SET</SPAN>
+              <SPAN style=
+              "font-weight: bold; font-family: monospace;">"</SPAN><SPAN style="color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
+              <SPAN style="font-family: monospace;">#<SPAN style=
+              "font-family: Helvetica,Arial,sans-serif;"><SPAN style="color: rgb(0, 0, 153);">A9</SPAN><SPAN style="color: rgb(59, 47, 47);">3B2F2F</SPAN></SPAN></SPAN></BIG>
+              "<BR>
               <BR>
-              <SPAN style="font-family: monospace;"><A name=
-              "linecolor" id=
-              "linecolor"></A></SPAN></BIG><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">LINECOLOR</SPAN></SPAN>
+              #hh&nbsp;&nbsp;&nbsp; A 'H'ash ( # ) begins the
               <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
-              e.g "</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">LINECOLOR</SPAN></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">=Aqua"</SPAN><BIG><SPAN style="font-family: monospace;">&nbsp;&nbsp;
-              &nbsp; <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
-              "color: rgb(0, 0, 153);">Divider
-              Line</SPAN></SMALL><BR>
-              <SPAN style=
-              "color: rgb(102, 0, 0); font-family: monospace;"><A name="voidcolor"
-              id="void"></A></SPAN></BIG><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">"VOIDCOLOR</SPAN></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
-              e.g "</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
-              #000000"</SPAN><BIG><SPAN style=
-              "font-family: monospace;">&nbsp;
-              <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
-              "color: rgb(0, 0, 153);">Empty Console
-              Area</SPAN></SMALL></BIG><BR>
+              "text-decoration: underline;">alpha</SPAN> value as
+              Hex.<BR>
+              .ddd&nbsp;&nbsp; A 'dot'&nbsp;&nbsp;&nbsp;&nbsp; (
+              '.' ) begins the <SPAN style=
+              "text-decoration: underline;">alpha</SPAN> value as
+              Decimal.<BR>
+            </DIV><BR>
+            <BR>
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "spacing" id="spacing"></A>"</SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=
+            &lt;number&gt;" &nbsp;&nbsp;&nbsp; e.g CONSOLE.SET
+            "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=
+            8"</SPAN><BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Line
+              Spacing</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            (padding above &amp; below text measured as dp)<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN> size
+              will use Basic's default size (5dp)<BR>
               <BR>
-            </DIV>
-            <DIV style="margin-left: 240px;">
-              <SPAN style="color: rgb(0, 0, 153);">Sets the color
-              of various attributes.</SPAN><BR>
-            </DIV>
-            <DIV style="margin-left: 200px;"></DIV>
-            <DIV style="margin-left: 240px;">
-              <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN> The
-              VOIDCOLOR is the area where there is no
-              text.<SPAN style=
-              "color: rgb(0, 0, 153);"><BR></SPAN><BR>
-              VOIDCOLOR and LINECOLOR apply to the <SPAN style=
-              "font-weight: bold;">whole</SPAN> console.<BR>
-              TEXTCOLOR and BACKCOLOR apply for <SPAN style=
+              Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
+            </DIV><BR>
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "wrap" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WRAP</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;on
+            | off&gt;"&nbsp; e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">WRAP</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">off"</SPAN><BR>
+
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set whether text
+              on one line should wrap if there's not enough room to
+              display.</SPAN><BR>
             </DIV>
+            <DIV style="margin-left: 160px;">
+              <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+            </DIV>
+            <DIV style="margin-left: 120px;">
+              Note that wrapped text still sits on 'one' line, even
+              though it looks likes there are two or more. Set the
+              dividers 'on' to see which line the text sits on.<BR>
+              <BR>
+              Applies for <SPAN style=
+              "font-weight: bold;">future</SPAN> printing.
+            </DIV><BR style="font-family: monospace;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "textsize" id="textsize"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;number&gt;"&nbsp;
+            e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=
+            16"&nbsp;&nbsp;</SPAN><BIG><SPAN style=
+            "font-family: monospace;">&nbsp;</SPAN></BIG> %(16
+            point dp)<BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the font
+              size of the text<BR>
+              <BR>
+              +ve</SPAN> size means dp (device independent
+              pixels)<BR>
+              <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN> size
+              means sp (scaled pixels, <SPAN style=
+              "font-style: italic;">adhering to android user
+              prefs</SPAN>)<BR>
+              0 size will default to Basic's preferences.<BR>
+              <BR>
+              Applies for <SPAN style=
+              "font-weight: bold;">future</SPAN> printing.<BR>
+            </DIV><BR>
+            <SPAN style="font-family: monospace;"><A name="setfont"
+            id="setfont"></A></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">FONT</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;number|family&gt;"</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">e.g
+            CONSOLE.SET "<SPAN style="color: rgb(102, 51, 0);">FONT
+            = 2</SPAN>"&nbsp; % use loaded font 2</SPAN><BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;&nbsp;
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">e.g
+              CONSOLE.SET "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">FONT
+              = sans-serif</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">" %
+              use family font</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Use a loaded
+              font or font-family-style</SPAN><BR>
+              where<BR>
+              &lt;number&gt; uses a loaded font from the FONT.LOAD
+              command<BR>
+              or<BR>
+              &lt;family&gt; <SPAN style=
+              "color: rgb(0, 0, 153);">&nbsp;&nbsp;</SPAN> uses an
+              android <A href="fonts.html">family font</A><BR>
+              <BR>
+              This command is similar to Gr.text.setfont.<BR>
+              A font number or family name can be post-fixed with a
+              style after a dot '.'<BR>
+              Normal | Bold | Italic | Bold_Italic<BR>
+              <BR>
+              <BIG><SMALL>e.g</SMALL></BIG> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CONSOLE.SET</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">FONT</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
+              sans-serif</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">.</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">BOLD"</SPAN><BR>
+
+              <BIG><SMALL>e.g</SMALL></BIG> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CONSOLE.SET</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">FONT</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
+              3</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">.</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">BOLD"</SPAN><BR>
+
+              <BR>
+              (any unrecognised style will default to NORMAL).<BR>
+              <BR>
+              An example of loading a font is found <A href=
+              "samples.html">here</A>.<BR>
+              <BR>
+              Applies for <SPAN style=
+              "font-weight: bold;">future</SPAN> printing.<BR>
+            </DIV><BR>
+            <SPAN style="font-family: monospace;"><A name=
+            "antialias" id="wrap"></A></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">ANTIALIAS</SPAN>
+            &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">AntiAlias</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">off"</SPAN><BR>
+
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set Anti-Alias
+              for text rendering.</SPAN><BR>
+              The default setting is ON. It is recommended to leave
+              this on unless you are using unicode block graphic
+              characters and need to have adjacent lines to look
+              flush.<BR>
+              <BR>
+              Applies for <SPAN style=
+              "font-weight: bold;">future</SPAN> printing.<BR>
+            </DIV><BR>
+            <SPAN style="font-family: monospace;"><A name=
+            "underline" id="wrap"></A></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">UNDERLINE</SPAN>
+            &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">UnderLine</SPAN>&nbsp;
+            on"</SPAN><BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Underline
+              text</SPAN><BR>
+              The default setting is OFF.<BR>
+              <BR>
+              Applies for <SPAN style=
+              "font-weight: bold;">future</SPAN> printing.<BR>
+            </DIV><BR>
+            <SPAN style="font-family: monospace;"><A name=
+            "strikethrough" id="wrap"></A></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STRIKE</SPAN>
+            &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">Strike</SPAN>&nbsp;
+            ON"</SPAN><BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Apply
+              strike-through effect on text.</SPAN><BR>
+              The default setting is OFF.<BR>
+              <BR>
+              Applies for <SPAN style=
+              "font-weight: bold;">future</SPAN> printing.<BR>
+            </DIV><BR>
+            <SPAN style="font-family: monospace;"><A name=
+            "dividers" id="dividers"></A></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN>&nbsp;
+            &lt;on | off&gt;"&nbsp;&nbsp; e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN>
+            off"&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN><BR>
+
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">turns ON or OFF
+              line dividers<BR>
+              <BR></SPAN> Applies to the <SPAN style=
+              "font-weight: bold;">whole</SPAN> console.<BR>
+            </DIV><BR>
+            <SPAN style="font-family: monospace;"><A name="scroll"
+            id="scroll"></A></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>&nbsp;
+            &lt;</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">FASTON
+            | FASTOFF"&nbsp;&nbsp; e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>
+            Faston"</SPAN><BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set scroll
+              attributes.<BR>
+              <BR></SPAN> FastOn <SPAN style=
+              "color: rgb(0, 0, 153);">-&nbsp;</SPAN> fast scroll
+              scrollbar drag if list is 4x screenheight or
+              more.<BR>
+              FastOff - turns off fast scroll.<BR>
+              <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+              Applies to the <SPAN style=
+              "font-weight: bold;">whole</SPAN> console.<BR>
+            </DIV><BR>
+            <SPAN style="font-family: monospace;"><A name="stack"
+            id="stack"></A></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STACK</SPAN>&nbsp;
+            &lt;FROMBASE | FROMTOP"&nbsp;&nbsp;</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">e.g</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">Stack</SPAN>
+            FromTop"</SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;">
-              <DIV style="margin-left: 40px;">
-                <SPAN style="text-decoration: underline;"><A name=
-                "colors" id="colors"></A>Colors</SPAN><BR>
-                &lt;color&gt; may either be<BR>
-                <DIV style="margin-left: 40px;">
-                  hex #<SPAN style=
-                  "color: rgb(102, 102, 102);">AA</SPAN><SPAN style="color: rgb(153, 0, 0);">RR</SPAN><SPAN style="color: rgb(0, 102, 0);">GG</SPAN><SPAN style="color: rgb(0, 0, 153);">BB</SPAN>
-                  as alpha, red, green, blue<BR>
-                  or<BR>
-                  hex #<SPAN style=
-                  "color: rgb(153, 0, 0);">RR</SPAN><SPAN style=
-                  "color: rgb(0, 102, 0);">GG</SPAN><SPAN style=
-                  "color: rgb(0, 0, 153);">BB</SPAN> as red, green,
-                  blue (alpha assumed to be solid)<BR>
-                  <BR>
-                  or<BR>
-                  any one of the 564 <SPAN style=
-                  "color: rgb(0, 0, 153);">HTML colors</SPAN>
-                  <A href=
-                  "https://www.computerhope.com/htmcolor.htm#color-codes">
-                  </A>listed&nbsp; <A href="colors.html">here</A>
-                  or original website <A href=
-                  "https://www.computerhope.com/htmcolor.htm#color-codes">
-                  here</A>.<BR>
-                  <BR>
-                  <SMALL style="font-style: italic;">Any color
-                  string starting with an underscore ( ' _' ) will
-                  have that underscore ignored.<BR>
-                  (this is to accomodate underscored names from
-                  other environments).</SMALL><BR>
-                </DIV><BR>
-                <SPAN style="text-decoration: underline;">Alpha
-                channels</SPAN> for color Names<BR>
-                <BR>
-                <DIV style="margin-left: 40px;">
-                  A color name can be post-fixed with an
-                  alpha-channel value e.g<BR>
-                </DIV>
-                <DIV style="margin-left: 40px;">
-                  <BIG><SPAN style=
-                  "color: rgb(0, 0, 153); font-family: monospace;">CONSOLE.SET</SPAN>
-                  <SPAN style=
-                  "font-weight: bold; font-family: monospace;">"</SPAN><SPAN style="color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
-                  <SPAN style=
-                  "font-family: monospace;"><SPAN style="color: rgb(59, 47, 47);">
-                  darkcoffee</SPAN>.16<SPAN style=
-                  "color: rgb(0, 0, 153);">9</SPAN><SPAN style=
-                  "font-family: Helvetica,Arial,sans-serif;">"</SPAN></SPAN></BIG><BR>
-
-                  <BIG><SMALL>is the same
-                  as<BR></SMALL></BIG><BIG><SPAN style=
-                  "color: rgb(0, 0, 153); font-family: monospace;">CONSOLE.SET</SPAN>
-                  <SPAN style=
-                  "font-weight: bold; font-family: monospace;">"</SPAN><SPAN style="color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
-                  <SPAN style=
-                  "font-family: monospace;"><SPAN style="color: rgb(59, 47, 47);">
-                  darkcoffee</SPAN>#<SPAN style=
-                  "color: rgb(0, 0, 153);">A9</SPAN><SPAN style=
-                  "font-family: Helvetica,Arial,sans-serif;">"</SPAN></SPAN></BIG><BR>
-
-                  <BIG><SMALL>is the same as</SMALL><BR>
-                  <SPAN style=
-                  "color: rgb(0, 0, 153); font-family: monospace;">CONSOLE.SET</SPAN>
-                  <SPAN style=
-                  "font-weight: bold; font-family: monospace;">"</SPAN><SPAN style="color: rgb(102, 0, 0); font-family: monospace;">TEXTCOLOR</SPAN>
-                  <SPAN style=
-                  "font-family: monospace;">#<SPAN style=
-                  "font-family: Helvetica,Arial,sans-serif;"><SPAN style="color: rgb(0, 0, 153);">A9</SPAN><SPAN style="color: rgb(59, 47, 47);">3B2F2F</SPAN></SPAN></SPAN></BIG>
-                  "<BR>
-                  <BR>
-                  #hh&nbsp;&nbsp;&nbsp; A 'H'ash ( # ) begins the
-                  <SPAN style=
-                  "text-decoration: underline;">alpha</SPAN> value
-                  as Hex.<BR>
-                  .ddd&nbsp;&nbsp; A 'dot'&nbsp;&nbsp;&nbsp;&nbsp;
-                  ( '.' ) begins the <SPAN style=
-                  "text-decoration: underline;">alpha</SPAN> value
-                  as Decimal.<BR>
-                </DIV><BR>
-              </DIV><BR>
-              <BIG><SPAN style="font-family: monospace;"><A name=
-              "spacing" id="spacing"></A>"</SPAN></BIG><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">=
-              &lt;number&gt;" &nbsp;&nbsp;&nbsp; e.g CONSOLE.SET
-              "</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">=
-              8"</SPAN><BR>
-              <DIV style="margin-left: 200px;">
-                <SPAN style="color: rgb(0, 0, 153);">Line
-                Spacing</SPAN><BR>
-              </DIV>
-              <DIV style="margin-left: 200px;">
-                (padding above &amp; below text measured as dp)<BR>
-              </DIV>
-              <DIV style="margin-left: 200px;">
-                <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN>
-                size will use Basic's default size (5dp)<BR>
-                <BR>
-                Applies for <SPAN style=
-                "font-weight: bold;">future</SPAN> printing.<BR>
-              </DIV><BR>
-              <BIG><SPAN style="font-family: monospace;"><A name=
-              "wrap" id="wrap"></A></SPAN></BIG><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WRAP</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&lt;on
-              | off&gt;"&nbsp; e.g</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">WRAP</SPAN>&nbsp;</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">off"</SPAN><SPAN style="font-family: monospace;"><BR>
-              </SPAN>
-              <DIV style="margin-left: 200px;">
-                <SPAN style="color: rgb(0, 0, 153);">Set whether
-                text on one line should wrap if there's not enough
-                room to display.<BR>
-                <BR></SPAN> Note that wrapped text still sits on
-                'one' line, even though it looks likes there are
-                two or more. Set the dividers 'on' to see which
-                line the text sits on.<BR>
-                <BR>
-                Applies for <SPAN style=
-                "font-weight: bold;">future</SPAN> printing.
-              </DIV><BR>
-              <BR style="font-family: monospace;">
-              <BIG><SPAN style="font-family: monospace;"><A name=
-              "textsize" id=
-              "textsize"></A></SPAN></BIG><SPAN style="font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&lt;number&gt;"&nbsp;
-              e.g</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">=
-              16"&nbsp;&nbsp;</SPAN><BIG><SPAN style=
-              "font-family: monospace;">&nbsp;</SPAN></BIG> %(16
-              point dp)<BR>
-              <DIV style="margin-left: 200px;">
-                <SPAN style="color: rgb(0, 0, 153);">Set the font
-                size of the text<BR>
-                <BR>
-                +ve</SPAN> size means dp (device independent
-                pixels)<BR>
-                <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN>
-                size means sp (scaled pixels, <SPAN style=
-                "font-style: italic;">adhering to android user
-                prefs</SPAN>)<BR>
-                0 size will default to Basic's preferences.<BR>
-                <BR>
-                Applies for <SPAN style=
-                "font-weight: bold;">future</SPAN> printing.<BR>
-              </DIV><BR>
-              <SPAN style="font-family: monospace;"><A name=
-              "setfont" id="setfont"></A></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">FONT</SPAN>
-              &lt;number|family&gt;" e.g CONSOLE.SET "<SPAN style=
-              "color: rgb(102, 51, 0);">FONT = 2</SPAN>" &nbsp;
-              &nbsp; &nbsp; &nbsp;&nbsp; % use loaded font
-              2</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <DIV style="margin-left: 200px;">
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;&nbsp;
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;">e.g
-                CONSOLE.SET "</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">FONT
-                = sans-serif</SPAN></SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;">" %
-                use family font</SPAN><BIG><SPAN style=
-                "font-family: monospace;"><BR></SPAN></BIG><BR>
-                Use a loaded font or font-family-style<SPAN style=
-                "color: rgb(0, 0, 153);"><BR>
-                where<BR>
-                &lt;number&gt;</SPAN> uses a loaded font from the
-                FONT.LOAD command<BR>
-                or<BR>
-                <SPAN style="color: rgb(0, 0, 153);">&lt;family&gt;
-                &nbsp;&nbsp;</SPAN> uses an android <A href=
-                "fonts.html">family font</A><BR>
-                <BR>
-                This command is similar to Gr.text.setfont.<BR>
-                <BR>
-                A font number or family name can be post-fixed with
-                a style after a dot '.'<BR>
-                Normal | Bold | Italic | Bold_Italic<BR>
-                <BR>
-                <BIG><SMALL>e.g</SMALL> <SPAN style=
-                "font-family: monospace;"><SPAN style=
-                "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>
-                "</SPAN><SPAN style=
-                "color: rgb(102, 0, 0); font-family: monospace;">FONT</SPAN>
-                <SMALL><SPAN style=
-                "color: rgb(102, 51, 0);">sans-serif</SPAN></SMALL><SPAN style="font-weight: bold;">.</SPAN>BOLD"<BR>
-
-                <SMALL>e.g</SMALL> <SPAN style=
-                "font-family: monospace;"><SPAN style=
-                "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>
-                "</SPAN><SPAN style=
-                "color: rgb(102, 0, 0); font-family: monospace;">FONT</SPAN>
-                <SPAN style=
-                "color: rgb(102, 51, 0);">3</SPAN><SPAN style=
-                "font-weight: bold;">.</SPAN>BOLD"</BIG><BR>
-                <BR>
-                (any unrecognised style will default to
-                NORMAL).<BR>
-                <BR>
-                An example of loading a font is found <A href=
-                "samples.html">here</A>.<BR>
-                <BR>
-                Applies for <SPAN style=
-                "font-weight: bold;">future</SPAN> printing.<BR>
-              </DIV><SPAN style=
-              "font-family: monospace;"><BR></SPAN><SPAN style=
-              "font-family: monospace;"><A name="antialias" id=
-              "wrap"></A></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">ANTIALIAS</SPAN>
-              &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN>
-              <SPAN style="font-family: Courier New, Courier, monospace;">
-              CONSOLE.SET</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">AntiAlias</SPAN>&nbsp;</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">off"</SPAN><SPAN style="font-family: monospace;"><BR>
-              </SPAN>
-              <DIV style="margin-left: 40px;">
-                <DIV style="margin-left: 160px;">
-                  <SPAN style="color: rgb(0, 0, 153);">Set
-                  Anti-Alias for text rendering.</SPAN><BR>
-                  The default setting is ON. It is recommended to
-                  leave this on unless you are using unicode block
-                  graphic characters and need to have adjacent
-                  lines to look flush.<BR>
-                  <BR>
-                  Applies for <SPAN style=
-                  "font-weight: bold;">future</SPAN> printing.<BR>
-                </DIV>
-              </DIV><SPAN style=
-              "font-family: monospace;"><BR></SPAN> <SPAN style=
-              "font-family: monospace;"><A name="underline" id=
-              "wrap"></A></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">UNDERLINE</SPAN>
-              &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN>
-              <SPAN style="font-family: Courier New, Courier, monospace;">
-              CONSOLE.SET</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">UnderLine</SPAN>&nbsp;
-              on"</SPAN><SPAN style=
-              "font-family: monospace;"><BR></SPAN>
-              <DIV style="margin-left: 40px;">
-                <DIV style="margin-left: 160px;">
-                  <SPAN style="color: rgb(0, 0, 153);">Underline
-                  text</SPAN><BR>
-                  The default setting is OFF.<BR>
-                  <BR>
-                  Applies for <SPAN style=
-                  "font-weight: bold;">future</SPAN> printing.<BR>
-                </DIV>
-              </DIV><SPAN style=
-              "font-family: monospace;"><BR></SPAN> <SPAN style=
-              "font-family: monospace;"><A name="strikethrough" id=
-              "wrap"></A></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STRIKE</SPAN>
-              &nbsp; &lt;on | off&gt;"&nbsp; e.g</SPAN>
-              <SPAN style="font-family: Courier New, Courier, monospace;">
-              CONSOLE.SET</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">Strike</SPAN>&nbsp;
-              ON"</SPAN><SPAN style=
-              "font-family: monospace;"><BR></SPAN>
-              <DIV style="margin-left: 40px;">
-                <DIV style="margin-left: 160px;">
-                  <SPAN style="color: rgb(0, 0, 153);">Apply
-                  strike-through effect on text.</SPAN><BR>
-                  The default setting is OFF.<BR>
-                  <BR>
-                  Applies for <SPAN style=
-                  "font-weight: bold;">future</SPAN> printing.<BR>
-                </DIV>
-              </DIV><SPAN style=
-              "font-family: monospace;"><BR></SPAN><SPAN style=
-              "font-family: monospace;"><A name="dividers" id=
-              "dividers"></A></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN>&nbsp;
-              &lt;on | off&gt;"&nbsp;&nbsp; e.g</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">DIVIDERS</SPAN>
-              off"&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN><BR>
-
-              <DIV style="margin-left: 200px;">
-                <SPAN style="color: rgb(0, 0, 153);">turns ON or
-                OFF line dividers<BR>
-                <BR></SPAN> Applies to the <SPAN style=
-                "font-weight: bold;">whole</SPAN> console.<BR>
-              </DIV><SPAN style="font-family: monospace;"><BR>
-              <A name="scroll" id="scroll"></A></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>&nbsp;
-              &lt;</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">FASTON
-              | FASTOFF"&nbsp;&nbsp; e.g</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>
-              Faston"</SPAN><SPAN style=
-              "font-family: monospace;"><BR>
-              <BR></SPAN>
-              <DIV style="margin-left: 200px;">
-                <SPAN style="color: rgb(0, 0, 153);">Set scroll
-                attributes.<BR>
-                <BR>
-                FastOn -&nbsp;</SPAN> fast scroll scrollbar drag if
-                list is 4x screenheight or more.<BR>
-                <SPAN style="color: rgb(0, 0, 153);">FastOff</SPAN>
-                - turns off fast scroll.<BR>
-                <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
-                Applies to the <SPAN style=
-                "font-weight: bold;">whole</SPAN> console.<BR>
-              </DIV><BR>
-              <SPAN style="font-family: monospace;"><A name="stack"
-              id="stack"></A></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STACK</SPAN>&nbsp;
-              &lt;FROMBASE | FROMTOP"&nbsp;&nbsp;</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">e.g</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">Stack</SPAN>
-              FromTop"</SPAN>
-              <DIV style="margin-left: 200px;">
+              <DIV style="margin-left: 80px;">
                 <SPAN style="color: rgb(0, 0, 153);">Set stack
                 attributes.<BR>
-                <BR>
-                FromTop</SPAN>&nbsp;&nbsp;&nbsp; - stack new lines
-                from the top of screen (default).<BR>
-                <SPAN style=
-                "color: rgb(0, 0, 153);">FromBase</SPAN> - stack
-                new lines from the bottom of screen.<BR>
+                <BR></SPAN> FromTop&nbsp;&nbsp;&nbsp; - stack new
+                lines from the top of screen (default).<BR>
+                FromBase - stack new lines from the bottom of
+                screen.<BR>
                 <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
                 Applies to the <SPAN style=
                 "font-weight: bold;">whole</SPAN> console.<BR>
-              </DIV><BR>
-            </DIV><BR>
-            Rules;<BR style=
+              </DIV>
+            </DIV>Rules;<BR style=
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 1. A keyword value pair is a
@@ -1430,8 +1410,8 @@
             &nbsp;&nbsp;&nbsp; 2. "keyword value" pairs&nbsp;can be
             separated with commas <SPAN style=
             "font-style: italic; text-decoration: underline; color: rgb(0, 0, 153);">
-            within the string</SPAN><BR>
-            .<BR>
+            within the string</SPAN>.<BR>
+            <BR>
             <DIV style="margin-left: 80px;">
               e.g <SPAN style=
               "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
@@ -1452,8 +1432,8 @@
             <SPAN style="text-decoration: underline;">can
             also</SPAN> be separated with commas <SPAN style=
             "font-style: italic; text-decoration: underline; color: rgb(0, 0, 153);">
-            outside each string</SPAN><BR>
-            .<BR>
+            outside each string</SPAN>.<BR>
+            <BR>
             <DIV style="margin-left: 80px;">
               e.g <SPAN style=
               "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
@@ -1581,7 +1561,7 @@
       <TR>
         <TD valign="top">
           <BIG style="color: rgb(0, 0, 153);"><A name="cs_shortcut"
-          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          id="cs_shortcut"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">dot CS
           Shortcut</SPAN></FONT><BIG style=
           "color: rgb(0, 0, 153);"><BR></BIG><BR>
@@ -1646,8 +1626,9 @@
             <BR>
             <SPAN style="font-weight: bold;">density_DP</SPAN> Gets
             the screen <SPAN style=
-            "text-decoration: underline;">density</SPAN> as pixels
-            per inch.&nbsp; eg. 160 on a 160 dpi display.<BR>
+            "text-decoration: underline;">density</SPAN> as
+            (independent) pixels per inch.&nbsp; eg. 160 on a 160
+            dip display.<BR>
             <BR>
             <SPAN style="font-weight: bold;">density_SP</SPAN> Gets
             the screen <SPAN style=
@@ -1767,7 +1748,7 @@
             You can ensure non-wrapping with <A href=
             "#cs_shortcut"><SPAN style=
             "color: rgb(0, 0, 153);">.CS</SPAN></A> "WRAP OFF".<BR>
-          </BLOCKQUOTE><BR>
+          </BLOCKQUOTE>
         </TD>
       </TR>
       <TR>
@@ -1835,9 +1816,9 @@
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;">
+        <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="tget" id=
-          "fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "tget"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">TGET</SPAN></FONT><BR>
           <FONT size="+1"><BR></FONT>
           <DIV style="margin-left: 40px;">
@@ -1853,16 +1834,22 @@
           </DIV><BIG><BR></BIG>
           <DIV style="margin-left: 40px;">
             Get text Input from the last line of the console.<BR>
-          </DIV><BIG><BR></BIG>
+          </DIV>
           <DIV style="margin-left: 40px;">
             where<BR>
             <DIV style="margin-left: 40px;">
-              &lt;result$&gt; is the return string&nbsp;&nbsp; (
-              not optional)<BR>
-              &lt;prompt&gt; sets the prompt (optional)<BR>
-              &lt;title&gt; sets the window title (optional)<BR>
-              &lt;backKey&gt; is a variable to hold the backKey
-              flag (optional)<SMALL><BR>
+              <SPAN style="font-weight: bold;">result$</SPAN>
+              &nbsp;&nbsp; is the return string&nbsp;&nbsp; ( not
+              optional)<BR>
+              <SPAN style=
+              "font-weight: bold;">prompt</SPAN>&nbsp;&nbsp;&nbsp;
+              sets the prompt (optional)<BR>
+              <SPAN style="font-weight: bold;">title</SPAN> &nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sets the
+              window title (optional)<BR>
+              <SPAN style="font-weight: bold;">backKey</SPAN> is a
+              variable to hold the backKey flag
+              (optional)<SMALL><BR>
               <BR></SMALL>
               <DIV style="margin-left: 120px;">
                 0 =&gt; backKey was not pressed to exit TGET<BR>
@@ -1889,33 +1876,38 @@
             <BR>
           </DIV>
           <DIV style="margin-left: 80px;">
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN>
-            r$<SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "color: rgb(0, 0, 153);">, <SPAN style=
-            "color: rgb(102, 0, 0);">"cmd &gt;"</SPAN>,
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">r$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="color: rgb(0, 0, 153);">,
+            <SPAN style="color: rgb(102, 0, 0);">"cmd &gt;"</SPAN>,
             <SPAN style="color: rgb(102, 0, 0);">"Enter
-            Command"</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 0, 153); font-style: italic;"><BR>
-            <BR></SPAN> <SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN>
-            r$<SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "color: rgb(0, 0, 153);">, <SPAN style=
-            "color: rgb(102, 0, 0);">"Input your password
-            &gt;"</SPAN>, <SPAN style=
-            "color: rgb(102, 0, 0);">"Security
-            Check",</SPAN></SPAN></SPAN> bkey<BR style=
-            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            Command"</SPAN></SPAN></SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153); font-style: italic;"><BR>
 
-            IF bkey THEN PRINT "Do you want to Quit ?"<BR>
+            <BR></SPAN></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">r$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="color: rgb(0, 0, 153);">,
+            <SPAN style="color: rgb(102, 0, 0);">"Input your
+            password &gt;"</SPAN>, <SPAN style=
+            "color: rgb(102, 0, 0);">"Security
+            Check",</SPAN></SPAN></SPAN></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">bkey</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR style="color: rgb(51, 51, 51); font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">IF bkey
+            THEN PRINT "Do you want to Quit ?"</SPAN><BR>
             <BR>
             (see sample program <SPAN style=
             "color: rgb(0, 102, 0);">h05_shell.bas</SPAN> for a
             demo of a terminal emulator)<BR>
           </DIV><BR>
           <BIG style="color: rgb(0, 0, 153);"><A name="tget_sub"
-          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          id="tget_sub"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">TGET Sub
           commands</SPAN></FONT><BR>
           <BLOCKQUOTE>
@@ -1924,53 +1916,48 @@
             Typically, they are used on the last page of the screen
             because TGET is always on the last row.<BR>
             <BR>
+            <B>Al</B><B>l</B> subcommands <SPAN style=
+            "font-weight: bold;">do not print</SPAN> the
+            <SPAN style="font-weight: bold;">prompt+result</SPAN>
+            after they finish.<BR>
+            <BR>
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><FONT size="+1">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">TGET.S</SPAN></FONT>
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            TGET.S</SPAN> result_<SPAN style=
+            "color: rgb(102, 51, 0);">svar</SPAN>,
+            {,prompt<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN>}
+            {,title<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN>}
+            {,backKey<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN>}<BR>
+            <SPAN style="color: rgb(0, 0, 153);">TGET.N</SPAN>
+            result_<SPAN style=
+            "color: rgb(102, 51, 0);">svar</SPAN>,
+            {,prompt_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN>}
+            {,title<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN>}
+            {,backKey<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN>}<BR>
+            <SPAN style="color: rgb(0, 0, 153);">TGET.I</SPAN>
             result_<SPAN style=
             "color: rgb(102, 51, 0);">svar</SPAN>,
             {,prompt<SPAN style=
             "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,title</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
+            {,title<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN>}
             {,backKey<SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-            <FONT size="+1">TGET.N</FONT></SPAN>
-            result</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">_<SPAN style="color: rgb(102, 51, 0);">svar</SPAN></SPAN>,
-            {,prompt_</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">sexp</SPAN></SPAN>}
-            {,title</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
-            {,backKey</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><FONT size="+1">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">TGET.I</SPAN></FONT>
-            result</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">_<SPAN style="color: rgb(102, 51, 0);">svar</SPAN></SPAN>,
-            {,prompt</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
-            {,title</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
-            {,backKey</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><FONT size="+1">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">TGET.P</SPAN></FONT>
-            result</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">_<SPAN style="color: rgb(102, 51, 0);">svar</SPAN></SPAN>,
-            {,prompt</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
-            {,title</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}
-            {,backKey</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: monospace;"><SPAN style="color: rgb(102, 51, 0);"><BR>
+            "color: rgb(102, 51, 0);">_nvar</SPAN>}<BR>
+            <SPAN style="color: rgb(0, 0, 153);">TGET.P</SPAN>
+            result_<SPAN style=
+            "color: rgb(102, 51, 0);">svar</SPAN>,
+            {,prompt<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN>}
+            {,title<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN>}
+            {,backKey<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN>}</SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: monospace;"><SPAN style="color: rgb(102, 51, 0);"><BR>
             </SPAN></SPAN></SPAN>
           </BLOCKQUOTE>
           <BLOCKQUOTE>
@@ -1987,14 +1974,8 @@
             console title. To prevent this, omit the title.<BR>
             The <SPAN style=
             "font-family: Courier New, Courier, monospace;">backKey</SPAN>
-            variable returns if user had tapped the back key.<BR>
-            <BR>
-            The main differences between TGET and the new
-            subcommands are that ;<BR>
-            <BR>
-            <B>Al</B><B>l</B> subcommands <FONT color="#000099">do
-            not print the</FONT> prompt+result <FONT color=
-            "#000099">after they finish</FONT>.<BR>
+            variable (if used) returns 1 if user had tapped the
+            back key, otherwise 0.<BR>
             <BR>
             <B>Al</B><B>l</B> subcommands have the prompt above the
             input unless the prompt is empty or omitted.<BR>
@@ -2037,11 +2018,13 @@
           "clr"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">CLR</SPAN></FONT><BR>
           <BLOCKQUOTE>
-            <BIG><FONT color="#000099">CLR</FONT> <SPAN style=
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><FONT color="#000099">
+            CLR</FONT> <SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
             "color: black; font-weight: bold;">row</SPAN>_nexp
             {,<SPAN style=
-            "color: black; font-weight: bold;">column</SPAN>_nexp}</SPAN></BIG><BR>
+            "color: black; font-weight: bold;">column</SPAN>_nexp}</SPAN></SPAN><BR>
 
             <BR>
             Clears a console line by deleting characters,
