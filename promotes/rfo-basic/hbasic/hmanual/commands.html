@@ -1272,7 +1272,7 @@
             The first 3 bits control the visibilty of the system
             bars.<BR>
             <BR>
-            <TABLE style="text-align: left; width: 50%;"
+            <TABLE style="text-align: left; width: 90%;"
             cellspacing="0" cellpadding="2" border="0">
               <TBODY>
                 <TR>
@@ -1283,20 +1283,16 @@
                   <TD style="vertical-align: top;"><BR></TD>
                 </TR>
                 <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">Bit
+                  <TD style="vertical-align: top; white-space;">Bit
                   0<BR></TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">
+                  <TD style="vertical-align: top; white-space;">
                   statusbar_SHOW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">1 =
+                  <TD style="vertical-align: top; white-space;">1 =
                   show<BR></TD>
                   <TD style="vertical-align: top;"><BR></TD>
                 </TR>
                 <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">Bit
+                  <TD style="vertical-align: top; white-space;">Bit
                   1<BR></TD>
                   <TD style="vertical-align: top;">
                   actionbar_SHOW</TD>
@@ -1305,24 +1301,21 @@
                   <TD style="vertical-align: top;"><BR></TD>
                 </TR>
                 <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">Bit
+                  <TD style="vertical-align: top; white-space;">Bit
                   2<BR></TD>
                   <TD style="vertical-align: top;">navbar_HIDE</TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">0 =
+                  <TD style="vertical-align: top; white-space;">0 =
                   show<BR></TD>
                   <TD style="vertical-align: top;"><BR></TD>
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;">Bit 3<BR></TD>
                   <TD style="vertical-align: top;">dark_Text</TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">0 =
+                  <TD style="vertical-align: top; white-space;">0 =
                   light text<BR></TD>
                   <TD style=
-                  "vertical-align: top; width: 50%; white-space: nowrap;">
-                  ( only works for Android 11+ )<BR></TD>
+                  "vertical-align: top; width: 30%; white-space;">(
+                  only works for Android 11+ )<BR></TD>
                 </TR>
               </TBODY>
             </TABLE><BR>
@@ -1653,36 +1646,29 @@
             tables.<BR>
             <BR>
             e.g<BR>
-            <TABLE style="text-align: left; width: 100px;"
+            <TABLE style="text-align: left; width:90%;"
             cellspacing="0" cellpadding="2" border="0">
               <TBODY>
                 <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">A)
+                  <TD style="vertical-align: top; white-space;">A)
                   SQL.PING result, db</TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>
-                  </TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">%
+                  <TD style="vertical-align: top; white-space;">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<BR></TD>
+                  <TD style="vertical-align: top; white-space;">%
                   ping only the database</TD>
                 </TR>
                 <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">(B)
+                  <TD style="vertical-align: top; white-space;">(B)
                   SQL.PING result, db, "mytable"<BR></TD>
                   <TD style="vertical-align: top;"><BR></TD>
                   <TD style="vertical-align: top;">% ping a
                   table</TD>
                 </TR>
                 <TR>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">(C)
+                  <TD style="vertical-align: top; white-space;">(C)
                   SQL.PING result, db, "mytable", "col1"</TD>
                   <TD style="vertical-align: top;"><BR></TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">%
+                  <TD style="vertical-align: top; white-space;">%
                   ping a table and column</TD>
                 </TR>
               </TBODY>
@@ -1972,20 +1958,17 @@
             <BLOCKQUOTE style="font-family: monospace;">
               <BIG>PAUSE 100<BR>
               <FONT color="#000099">CLIPBOARD.GET</FONT>
-              s$&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp; <FONT color="#006600">% get data
-              from clipboard</FONT><BR>
+              s$&nbsp;&nbsp;&nbsp; &nbsp;<FONT color="#006600">%
+              get data from clipboard</FONT><BR>
               <BR>
               print "input&gt;";s$<BR>
-              r$=replace$(s$,"Hello","Goodbye")&nbsp;&nbsp;
-              <FONT color="#006600">% change it</FONT><BR>
+              r$=replace$(s$,"Hello","Goodbye")&nbsp; <FONT color=
+              "#006600">% change it</FONT><BR>
               print "output&gt;";r$<BR>
               <BR>
               if r$&lt;&gt;"" then <FONT color=
-              "#000099">CLIPBOARD.PUT</FONT>
-              r$&nbsp;&nbsp;&nbsp;&nbsp; <FONT color="#006600">%
-              put it back</FONT><BR></BIG>
+              "#000099">CLIPBOARD.PUT</FONT> r$&nbsp;&nbsp;
+              <FONT color="#006600">% put it back</FONT><BR></BIG>
             </BLOCKQUOTE>
           </BLOCKQUOTE>
         </TD>
