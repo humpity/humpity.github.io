@@ -4,7 +4,7 @@ Date		Summary of Versions
 --------------- -------------------------------------------
 2024-12-12	v3.25
 		hmaster v2.29
-		hpatcher 3.19
+		hpatcher v3.19
 			internal changes
 		adt:API-35
 
