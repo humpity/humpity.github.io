@@ -2,6 +2,12 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+
+2024-12-12 v5.20
+		Directives upgrade (0511)
+		Add window_bg for GR.OPEN & HTML.OPEN (0512)
+		Targets API-35 (0520)
+
 2024-11-02 v5.10
 		More stuff for DEVICE$()	(0505)
 		Add Tween delays			(0506)
@@ -56,7 +62,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Add onORIENT..ORIENT.Resume 		(0488)
 		Add DEVICE$ ("orient_simple")		(0489)
 		Add CONSOLE.BACKIMG	(-Joel_Zerpa) 	(0490)
-		Targets API 34				(0491)
+		Targets API-34				(0491)
 
 2023-10-13	v4.84
 		Cleanup entry appearence into standalone APK	(0479)
@@ -114,7 +120,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Fix Notifications for Android 12+		(0457)
 		Upgrade SENSORS					(0458)
 		Fix clipboard					(0459)
-		Targets API 33					(0460)
+		Targets API-33					(0460)
 
 2022-12-17	v4.49
 		Fix Shortcuts and fileshares not initiating new run -Spike (0449)
@@ -155,7 +161,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Add CONSOLE/GR/HTML.SUBTITLE			(0426)
 		Fix HTML.OPEN 					(0427)
 		Removed CONSOLE.SET "TITLE COLORS" 		(0428)
-		Targets API 31 (Android 12) and built with API 31. (0430)
+		Targets API-31 (Android 12) and built with API-31. (0430)
 
 2022-04-07	v4.21
 		Fix KB.SHOW for Android 9+ (0416)
@@ -261,7 +267,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Updated f01_commands.bas
 
 2021-02-14	v3.04
-		Targets API 30	(Android 11) and built with API 30.
+		Targets API-30	(Android 11) and built with API-30.
 		hFTPS server default port changed to 2345 (from 1025)
 		Fix typo for WAKE_LOCK permission (0302)
 		Fix Gr.Modify "list" (0303)
@@ -276,7 +282,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Scoped Storage
 			Base directory moved to Scoped Storage. 
 			Removed legacy storage access
-		minSdkVersion bumped up to API 19 (KitKat)
+		minSdkVersion bumped up to API-19 (KitKat)
 		Package name changed from com.rfo.basich to com.rfo.hbasic
 		Fix for Sensors (K0001)
 
@@ -287,7 +293,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Fix to suppress crash for DEVICE command for Android-10+
 
 2020-03-02	v2.92	(0292)
-		Targets API 29 with legacy storage mode.
+		Targets API-29 with legacy storage mode.
 
 2019-11-01	v2.91	(0290-0291)
 		Shortcut support for standalone APK. (only works if compiled with hSuite) (0290)
@@ -311,7 +317,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Added FILE.SAF commands
 
 2019-05-21	v2.61	(0261)
-		Replaced GR.CLIP with GR.CLIP.START/END (solution for API 28). (0261).
+		Replaced GR.CLIP with GR.CLIP.START/END (solution for API-28). (0261).
 
 2019-05-15	v2.60	(0260)
 		Support to android target api level 28. (min:14, target:28, compile:28)
@@ -403,14 +409,14 @@ v2.81	v1.51
 v2.91	v1.52	Title changes: Program Output,Console,SELECT,TEXT.INPUT,TGET.
 		Changed splash screen
 		Changed APK signature
-v2.92	v1.6	Targets API 29 with legacy storage mode.
+v2.92	v1.6	Targets API-29 with legacy storage mode.
 v2.93	v1.6	fixed DEVICE crash
 v2.94	v1.61	fixed bluetooth permission bug
-v3.00	v2.0	Base moved to Scoped Storage. minSdkVersion API 19 (KitKat)
+v3.00	v2.0	Base moved to Scoped Storage. minSdkVersion API-19 (KitKat)
 		Merged H0100, H0110, H0130, H0160, H0230, H0291, H0293
 		package name changed to com.rfo.hbasic (instead of com.rfo.basich)
 v3.01	v2.01	K0001 merged to master and some minor internal changes with Editor utils.
-v3.04	v2.02	Targets API 30
+v3.04	v2.02	Targets API-30
 		Fix WAKE_LOCK typo in manifest.
 v3.06	v2.03	'About' screen changes.
 				Merged 0303-0306
@@ -424,20 +430,22 @@ v4.03   v2.10	Merged 0401-0403
 v4.13	v2.11	Merged 0404-0413 menu, actionbar, gropen
 v4.15	v2.12	Merged 0413-0415 html.open
 v4.21	v2.13	Merged 0416-0421
-v4.30	v2.14	Merged 0422-0430 Targets API 31
+v4.30	v2.14	Merged 0422-0430 Targets API-31
 v4.36	v2.15	Merged 0431-0438
 v4.39	v2.16	Merged 0439	 Installable on Android 12
 v4.48	v2.17	Merged 0440-0448
 v4.49   v2.18   Merged 0449
-v4.60	v2.19   Merged 0450-0460 Targets API 33
+v4.60	v2.19   Merged 0450-0460 Targets API-33
 v4.67	v2.20	Merged 0280-0281 + 0461-0467 Gnss upgrade
 v4.68	v2.21	Merged 0468 	 EXIT bug fix
 v4.78	v2.22	Merged 0140 + 0469-0478
 v4.84	v2.23	Merged 0479-0484
-v4.91	v2.24	Merged 0485-0491 Targets API 34
+v4.91	v2.24	Merged 0485-0491 Targets API-34
 v4.93	v2.25	Merged 0492-0493
 v5.00	v2.26	Merged 0494-0500 Graphics upgrade (mkII engine)
 v5.04	v2.27	Merged 0501-0504
+v5.10	v2.28	Merged 0505-0510
+v5.20	v2.29	Merged 0511-0512 Targets API-35
 ============================================================================
 Patches that were created.
 	O = optional S = suspended (do not use)	D = defunct U=Upgraded

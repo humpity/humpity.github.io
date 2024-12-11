@@ -1,0 +1,578 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Decors</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href="system.html">System</A>
+  &gt; Decors<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual<BR></BIG>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+2">System Decors</FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            Changes to the system bars appearence and
+            behaviour.<BR>
+            <BR>
+          </DIV>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="#behave"><FONT size="+1">Behaviour and
+                Colors<BR></FONT></A></TD>
+                <TD style="vertical-align: top;">Behaviour and
+                appearence<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#decors"><FONT size="+1">Decors</FONT></A></TD>
+                <TD style="vertical-align: top;">Opening
+                parameters<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#action_bar">Action Bar</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#known">Known Issues</A><BR></TD>
+                <TD style="vertical-align: top;">Known behaviours
+                and glitches<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="behave" id=
+          "behave"></A>Behavour and Colors</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Changes to the system bars appearence and
+            behaviour.<BR>
+            <BR>
+            Since hBasic v5.20, the app targets Api 35+. The
+            following behaviour and appearences have changed as
+            indicated below.<BR>
+          </DIV>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: 40px;"
+          cellspacing="0" cellpadding="5" border="0">
+            <CAPTION>
+              <A name="behave_table" id="behave_table"></A>(hBasic
+              targets to Api 35+)<BR>
+              Decors behaviours<BR>
+              <BR>
+            </CAPTION>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style=
+                "vertical-align: top; text-align: center;" rowspan=
+                "1" colspan="2">Status Bar<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style=
+                "vertical-align: top; text-align: center;" rowspan=
+                "1" colspan="2">Navigation Bar<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;" rowspan="1"
+                colspan="2">Always transparent bg<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;" rowspan="1"
+                colspan="2">Always Translucent bg<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Running<BR>
+                Device Api</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Permanent<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Hidden (swipe down to show)<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Permanent</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Hidden (swipe up to show)<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">&nbsp; &lt; Api
+                30<BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">white text on window_bg</TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">white text on scrim<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">white icon on window_bg<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                white icon on window_bg<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">&gt;= Api
+                30<BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">(light/dark) text on
+                window_bg<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                white text on scrim<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                grey icons on window_bg<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                grey icons on translucent</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">&gt;= Api 35<BR>
+                actionbar_on<BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">(light/dark) text on <SPAN style=
+                "font-weight: bold;">actionbar</SPAN><SPAN style=
+                "font-weight: bold;">_bg</SPAN><BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                white text on scrim</TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">grey icons on window_bg</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                grey icons on translucent</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">&gt;= Api 35<BR>
+                actionbar_off<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                (light/dark) text on window_bg<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                (same as above)<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">(same as above)</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                (same as above)</TD>
+              </TR>
+            </TBODY>
+          </TABLE><U><BR></U>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1">window_bg</FONT> is the background
+            color of the window. It can be set with;<BR>
+            <DIV style="margin-left: 40px;">
+              for console&nbsp; <A href=
+              "system.html#window_bg">@@window_bg</A><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              for graphics <A href="decors">GR.OPEN</A> <FONT size=
+              "+1"><SPAN style=
+              "color: rgb(0, 0, 153);">&nbsp;</SPAN></FONT>&nbsp;<BIG><SPAN style="color: rgb(0, 0, 153);">&nbsp;</SPAN></BIG>
+              <SPAN style="font-weight: bold;">,</SPAN>
+              <SPAN style="font-weight: bold;">, , , ,</SPAN>
+              <SPAN style="font-weight: bold;">,</SPAN>
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "color: black; font-weight: bold;">{</SPAN></SPAN>
+              <SPAN style=
+              "font-weight: bold;">window_bg</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+              "font-weight: bold;">}</SPAN><BR>
+              for webview HTML.OPEN <SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "color: black; font-weight: bold;">{</SPAN></SPAN>
+              <SPAN style=
+              "font-weight: bold;">window_bg</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+              "font-weight: bold;">}</SPAN><BR>
+            </DIV><U><BIG><BR></BIG></U> <BIG><FONT size=
+            "+1">actionbar_bg</FONT></BIG> is the background color
+            of the actionbar. It can be set
+            with;<U><BIG><BR></BIG></U>
+            <DIV style="margin-left: 40px;">
+              for console&nbsp; <A href=
+              "commands.html#actionbar_title">CONSOLE.TITLE</A>
+              <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+              "font-weight: bold;">}</SPAN> <SPAN style=
+              "font-weight: bold;">{</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+              <SPAN style="font-weight: bold;">{,</SPAN>
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;"><SPAN style=
+              "color: black;">backcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+              </SPAN> for graphics <A href=
+              "commands.html#actionbar_title"><SPAN style=
+              "color: rgb(0, 0, 153);">GR.TITLE</SPAN></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp; &nbsp; <SPAN style=
+              "font-weight: bold;">{</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+              "font-weight: bold;">}</SPAN> <SPAN style=
+              "font-weight: bold;">{</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+              <SPAN style="font-weight: bold;">{,</SPAN>
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;"><SPAN style=
+              "color: black;">backcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
+
+              for webview <A href=
+              "commands.html#actionbar_title"><SPAN style=
+              "color: rgb(0, 0, 153);">HTML.TITLE</SPAN></A>&nbsp;<SPAN style="color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;</SPAN> <SPAN style=
+              "font-weight: bold;">{</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+              "font-weight: bold;">}</SPAN> <SPAN style=
+              "font-weight: bold;">{</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+              <SPAN style="font-weight: bold;">{,</SPAN>
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;"><SPAN style=
+              "color: black;">backcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
+
+              <SPAN style="font-weight: bold;"><BR></SPAN> Note
+              that for devices &gt;= Api 35, the statusbar bg will
+              show the actionbar_bg only if the actionbar is
+              on.<BR>
+              If the actionbar is off, the statusbar bg will revert
+              to the window_bg.<BR>
+              (see also <A href=
+              "#notch_hiding">notch_hiding</A>)<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 40px;">
+            The above behaviours and effects only apply for a
+            running program, i.e console, graphics and webview.<BR>
+            For Standard hBasic (i.e Editor, Search.. etc), the
+            system will follow the manufacturer's theme if
+            possible.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="decors" id="decors"></A> <FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">Decors for
+          GR.OPEN and HTML.OPEN</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <FONT size="+1"><SPAN style=
+            "color: rgb(0, 0, 153);">GR.OPEN &nbsp;</SPAN></FONT>
+            <BIG><SPAN style=
+            "color: rgb(0, 0, 153);">&nbsp;&nbsp;</SPAN></BIG>
+            {<A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/commands.html#color_strings">&lt;color</A>&gt;}
+            <SPAN style="font-weight: bold;">,{</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">decors_flags</SPAN>_nexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">,{</SPAN>
+            orientation<SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{, window_bg</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN><BR>
+            <BR>
+            <FONT size="+1"><SPAN style=
+            "color: rgb(0, 0, 153);">HTML.OPEN&nbsp;&nbsp;&nbsp;</SPAN></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <SPAN style="font-weight: bold;">{</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">decors_flags</SPAN>_nexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">, {</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">orientation</SPAN>_nexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,
+            window_bg</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">window_bg</SPAN> is an
+            optional <A href="colors.html">color string</A> which
+            sets the color of the background window (default
+            black).<BR>
+            The statusbar and navbar may show the window_bg color
+            <A href="#behave">depending</A> on if they are hidden
+            and the device's Api.<BR>
+            <BR>
+            <BIG>The <SMALL><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">legacy
+            statusbar_flag</SPAN>_lexp</SPAN></SMALL></BIG>
+            <SPAN style="text-decoration: underline;">has been
+            replaced</SPAN> with <BIG><SMALL><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">decors_flags</SPAN>_nexp</SPAN></SMALL></BIG>.<BR>
+
+            <BR>
+            The first 3 bits control the visibilty of the system
+            bars.<BR>
+            <TABLE style="text-align: left; width: 90%;"
+            cellspacing="0" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top;">Bit<BR></TD>
+                  <TD style="vertical-align: top;">Set to
+                  mean<BR></TD>
+                  <TD style="vertical-align: top;">Default<BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;">Bit
+                  0<BR></TD>
+                  <TD style="vertical-align: top; white-space;">
+                  statusbar_SHOW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
+                  <TD style="vertical-align: top; white-space;">1 =
+                  show<BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;">Bit
+                  1<BR></TD>
+                  <TD style="vertical-align: top;">
+                  actionbar_SHOW</TD>
+                  <TD style="vertical-align: top;">0 =
+                  hide<BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;">Bit
+                  2<BR></TD>
+                  <TD style="vertical-align: top;">navbar_HIDE</TD>
+                  <TD style="vertical-align: top; white-space;">0 =
+                  show<BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;">Bit 3<BR></TD>
+                  <TD style="vertical-align: top;">dark_Text</TD>
+                  <TD style="vertical-align: top; white-space;">0 =
+                  light text<BR></TD>
+                  <TD style=
+                  "vertical-align: top; width: 30%; white-space;">(
+                  only works for Android 11+ )<BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+            If you don't specify this flag (e.g ",,") the default
+            is <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">decors_flags</SPAN></SPAN>=1
+            or bin ("001").<BR>
+            This shows the statusbar and navbar but hides the
+            action bar.<BR>
+            <BR>
+            This is different from legacy Basic which hides the
+            statusbar by default ("000").<BR>
+            The reason being that a hidden statusbar may affect the
+            navbar color for Android 11+ for some devices.<BR>
+            <BR>
+            Some examples;<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <BIG><SPAN style="font-family: monospace;">actionbar
+              hidden only, e.g Decors = bin
+              ("001")&nbsp;&nbsp;&nbsp;&nbsp; % i.e 1
+              *</SPAN><BR style="font-family: monospace;">
+              <SPAN style="font-family: monospace;">statusbar
+              hidden only, e.g Decors = bin
+              ("010")&nbsp;&nbsp;&nbsp;&nbsp; % i.e
+              2</SPAN><BR style="font-family: monospace;">
+              <SPAN style=
+              "font-family: monospace;">navbar&nbsp;&nbsp;&nbsp;
+              hidden only, e.g Decors = bin ("111")
+              &nbsp;&nbsp;&nbsp; % i.e 7</SPAN><BR style=
+              "font-family: monospace;">
+              <SPAN style="font-family: monospace;">statusbar
+              shown&nbsp; only, e.g Decors = bin ("101")
+              &nbsp;&nbsp;&nbsp; % i.e 5</SPAN><BR style=
+              "font-family: monospace;">
+              <SPAN style=
+              "font-family: monospace;">navbar&nbsp;&nbsp;&nbsp;
+              shown&nbsp; only, e.g Decors = bin ("000")
+              &nbsp;&nbsp;&nbsp; % i.e 0 *</SPAN><BR style=
+              "font-family: monospace;">
+              <SPAN style="font-family: monospace;">show all
+              bars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              e.g Decors = bin ("011")&nbsp;&nbsp;&nbsp;&nbsp; %
+              i.e 3</SPAN><BR style="font-family: monospace;">
+              <SPAN style="font-family: monospace;">hide all
+              bars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; e.g
+              Decors = bin ("100") &nbsp;&nbsp;&nbsp; % i.e
+              4</SPAN></BIG><BR>
+            </DIV><BR>
+            * The scheme is compatible with legacy programs which
+            either sets the legacy flag to 0 or 1.<BR>
+            <BR>
+            Example<BR>
+            <DIV style="margin-left: 40px;">
+              <BIG><SPAN style="font-family: monospace;">Decors =
+              bin("011")&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(51, 51, 51);">% show
+              all</SPAN></SPAN><BR style="font-family: monospace;">
+              <SPAN style="font-family: monospace;"><SPAN style=
+              "color: rgb(0, 0, 153);">GR.OPEN</SPAN> "blue",
+              Decors, 1&nbsp;&nbsp; <SPAN style=
+              "color: rgb(51, 51, 51);">% last param is
+              portrait</SPAN></SPAN></BIG><BR>
+            </DIV><BR>
+            Alternatively<BR>
+            <DIV style="margin-left: 40px;">
+              <BIG><SPAN style="font-family: monospace;">nav=0 :
+              act=1 : sta=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(51, 51, 51);">% show
+              all</SPAN></SPAN><BR style="font-family: monospace;">
+              <SPAN style="font-family: monospace;"><SPAN style=
+              "color: rgb(0, 0, 153);">GR.OPEN</SPAN> "blue", nav*4
+              + act*2 + sta*1, 1<BR>
+              <BR>
+              or<BR></SPAN> <SPAN style=
+              "font-family: monospace;"><SPAN style=
+              "color: rgb(153, 0, 0);">nav=1</SPAN> : act=1 :
+              sta=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(153, 0, 0);">% nav to be
+              inverted to show</SPAN></SPAN><BR style=
+              "font-family: monospace;">
+              <SPAN style="font-family: monospace;"><SPAN style=
+              "color: rgb(0, 0, 153);">GR.OPEN</SPAN> "blue",
+              <SPAN style="color: rgb(153, 0, 0);">(!nav)</SPAN>*4
+              + act*2 + sta*1, 1</SPAN></BIG><BR>
+              <SPAN style="font-family: monospace;"><BR></SPAN>
+            </DIV><BIG style="text-decoration: underline;">Hidden
+            Bars</BIG><BR>
+            <BR>
+            If either the statusbar or navbar is hidden, then you
+            need a swipe from the top or bottom edge to show
+            it.<BR>
+            It disappears after 3 secs.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><A name="action_bar" id=
+          "action_bar"></A><SPAN style=
+          "color: rgb(0, 0, 153);">Action Bar</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            The actionbar is the bar on the screen containing the
+            Title and Menu. It is usually under the statusbar.<BR>
+            The Title, Subtitle and Colors can be changed with
+            <A href=
+            "commands.html#actionbar_title">CONSOLE.TITLE</A> and
+            <A href=
+            "commands.html#actionbar_subtitle">CONSOLE.SUBTITLE.</A><BR>
+
+            The Menu can be changed with <A href=
+            "menu.html">MENU</A> commands and is shared with
+            graphics and webview.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">Title
+            Background color</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The Title background is the actionbar background
+              color. It can be set with <A href=
+              "commands.html#actionbar_title">CONSOLE.TITLE</A>.<BR>
+
+              If you do not set this background color, then it will
+              default to the manufacturer's theme color.<BR>
+              This color is usually not pure black but a very dark
+              brown.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Hiding the
+            Action Bar<BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              The actionbar can be hidden before the program
+              starts.<BR>
+              To hide the actionbar, use the <A href=
+              "system.html#directives">directive</A>;<BR>
+              <A href=
+              "system.html#hide_actionbar">@@hide-actionbar</A><BR>
+              This can be useful to hide the image of the actionbar
+              if you are immediatley going into the graphics
+              screen.<BR>
+              To bring back the actionbar, use <A href=
+              "commands.html#actionbar_title">CONSOLE.TITLE</A>.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;">
+            Note: The Action Bar is the only bar that can be
+            brought back after hiding <SPAN style=
+            "text-decoration: underline;">for the console
+            only</SPAN>.<BR>
+            <DIV style="margin-left: 40px;">
+              If you have hidden the actionbar for graphics and
+              webview, it will not come back.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><A name="known" id=
+          "known"></A><SPAN style="color: rgb(0, 0, 153);">Known
+          Issues</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">Stuck
+            Navbar</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              On some older devices e.g Android 5, a hidden navbar
+              might not disappear after being swiped to show if a
+              dialog is up (e.g DIALOG.MESSAGE).<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "notch_hiding" id="notch_hiding"></A>Notch
+            Hiding</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              For devices that are able to hide the camera notch,
+              they may move the statusbar higher to cover the
+              notch.<BR>
+              In doing so, you will proboably get a black statusbar
+              bg instead of window_bg if the statusbar is
+              permanent.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>
