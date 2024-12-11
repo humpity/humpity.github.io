@@ -162,9 +162,14 @@
                 the intepreter<BR></TD>
               </TR>
               <TR>
-                <TD valign="top"><A href=
-                "l#bundle_expr"><BR></A></TD>
-                <TD valign="top"><BR></TD>
+                <TD valign="top"><A href="#decors.html"><FONT size=
+                "+1">System Decors</FONT><BR></A></TD>
+                <TD valign="top">System bars appearence and
+                behaviour<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
                 <TD valign="top"><A href=
@@ -827,7 +832,7 @@
             Upgraded and used new API.<BR>
             <BR>
             The status bar flag has been superceded with <A href=
-            "commands.html#decors">Decors Flag</A> since v4.13.<BR>
+            "decors.html#decors">Decors Flag</A> since v4.13.<BR>
           </DIV>
         </TD>
       </TR>
@@ -1463,27 +1468,91 @@
           "color: rgb(0, 0, 153);"><FONT size="+1">@@<BR>
           <BR></FONT></SPAN>
           <DIV style="margin-left: 40px;">
-            Directives are used to configure the intepreter.<BR>
+            Directives are used to configure the intepreter and the
+            console.<BR>
             <BR>
-            These directives should be put the before the start of
-            a program on their own.<BR>
+            These directives should be put the <SPAN style=
+            "text-decoration: underline;">before the start of a
+            program</SPAN> together on their own.<BR>
             They all start with "<SPAN style=
             "color: rgb(0, 0, 153);">@@</SPAN>".<BR>
+            Any line that isn't a directive or a comment will stop
+            directive processing and furthur directives will be
+            ignored.<BR>
+            <SMALL><BR>
+            (Note: Prior to v4.13, the directive prefixes used to
+            be a single"@". The change to "@@" is allow through
+            variables that start with a single "@")<BR>
+            <BR></SMALL> Directives are processed before the a
+            program is run. Therefore you cannot use any variables
+            for arguments.<BR>
             <BR>
-            <SPAN style=
-            "color: rgb(0, 0, 153);">@@HIDE_ACTIONBAR</SPAN><BR>
+            <TABLE style=
+            "text-align: left; width: 90%; margin-left: 40px;"
+            cellspacing="2" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top;">
+                  Directive<BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "#hide_actionbar">@@hide_actionbar</A><BR></TD>
+                  <TD style="vertical-align: top;">Hides the
+                  actionbar at startup<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "dark_statustxt">@@dark_statustxt</A><BR></TD>
+                  <TD style="vertical-align: top;">Prefer status
+                  text to be dark<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "void_color">@@void_color</A>
+                  "&lt;color&gt;"<BR></TD>
+                  <TD style="vertical-align: top;">Set the console
+                  background (void) color<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "window_bg">@@window_bg</A>
+                  "&lt;color&gt;"<BR></TD>
+                  <TD style="vertical-align: top;">Set the window
+                  background color<BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
             <DIV style="margin-left: 40px;">
+              <SPAN style="text-decoration: underline;">Deprecated
+              Directives</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              The following directives are no longer in use;<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;"></DIV>
+            <DIV style="margin-left: 120px;">
+              @@PRELOAD,&nbsp; @@LOCALSTACKS<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "hide_actionbar" id=
+            "hide_actionbar"></A>@@HIDE_ACTIONBAR</SPAN><BR>
+            <DIV style="margin-left: 80px;">
               This hides the console Action Bar at startup.<BR>
               <BR>
               The console actionbar default title is "Program
               Output".<BR>
-              You may want to avoid it's display when your program
-              starts up.<BR>
+              You may want to avoid displaying the actionbar when
+              your program starts up.<BR>
               <BR>
               The actionbar will remain hidden until the next
               <A href="commands.html#actionbar_title"><SPAN style=
               "color: rgb(0, 0, 153);">CONSOLE.TITLE</SPAN></A>.<BR>
 
+              CONSOLE.TITLE will always show the actionbar.<BR>
               <BR>
               Warning:<BR>
               &nbsp;&nbsp;&nbsp; If you choose not to restore the
@@ -1553,23 +1622,80 @@
               will&nbsp; be shown by default with the default title
               "Program Output".<BR>
             </DIV><BR>
-            <SPAN style="text-decoration: underline;">Deprecated
-            Directives</SPAN><BR>
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "dark_statustxt" id=
+            "dark_statustxt"></A>@@DARK_STATUSTXT<BR>
+            <BR></SPAN>
             <DIV style="margin-left: 40px;">
-              The following directives are no longer in use;<BR>
-            </DIV>
-            <DIV style="margin-left: 80px;">
-              @@PRELOAD,&nbsp; @@LOCALSTACKS<BR>
-            </DIV>
-            <DIV style="margin-left: 40px;"></DIV>
-          </DIV>
-          <DIV style="margin-left: 40px; font-style: italic;">
+              This directive will tell Android that we prefer the
+              console statusbar text to be dark rather than the
+              default light color.<BR>
+              <BR>
+              Depending on the device version (<A href=
+              "decors.html#behave_table">see this table</A>), the
+              color of the statusbar text can be made either light
+              or dark.<BR>
+              (since the statusbar is always on for the console,
+              then this is usually possible).<BR>
+              <BR>
+              You may want dark text if you know the statusbar
+              background will be light (see @@window_bg).<BR>
+              @@dark_statustxt has no effect for devices &lt; Api
+              30.<BR>
+              <BR>
+            </DIV><SPAN style="color: rgb(0, 0, 153);"><A name=
+            "void_color" id="void_color"></A>@@VOID_COLOR</SPAN>
+            "&lt;color&gt;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            e.g @@void_color "blue"<BR>
             <BR>
-            <SMALL>Note: Prior to v4.13, the directive prefixes
-            used to be a single"@". The change to "@@" is allow
-            through variables that start with a single
-            "@".<BR></SMALL>
-          </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              This directive sets the console background (void)
+              color. It is the color you see if there is no text on
+              top.<BR>
+              It is equivalent to CONSOLE.SET "voidcolor
+              &lt;color&gt;" but occurs before the console is
+              displayed.<BR>
+              <BR>
+              The color must be a string and is the same format as
+              the <A href="colors.html">color strings</A> for other
+              hBasic commands.<BR>
+              Because this is a directive, you cannot use a string
+              variable, it must be literal.<BR>
+              <BR>
+              You may want to use this directive if you don't want
+              a flash of the default void color (white) when
+              starting your program.<BR>
+              <BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "window_bg" id="window_bg"></A>@@WINDOW_BG</SPAN>
+            "&lt;color&gt;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            e.g @@window_bg "blue"<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              This directive sets the console window background
+              color. It is the color you see if the void color is
+              transparent.<BR>
+              It may also be the color you see behind the statusbar
+              and/or navbar depending on the <A href=
+              "decors.html#behave_table">configuration</A>.<BR>
+              <BR>
+              The color must be a string and is the same format as
+              the <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
+              color strings</A> for other hBasic commands.<BR>
+              Because this is a directive, you cannot use a string
+              variable, it must be literal.<BR>
+              <BR>
+              You may want to use this directive to set the
+              background color for the statusbar and/or navbar.<BR>
+            </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
         </TD>
       </TR>
       <TR>

@@ -68,7 +68,7 @@
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;">HTML.OPEN<BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "#decors">Decors Flag</A></TD>
+                "decors.html#decors">Decors Flag</A></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -171,7 +171,7 @@
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "#decors">Decors Flag</A></TD>
+                "decors.html#decors">Decors Flag</A></TD>
                 <TD style="vertical-align: top;">Window items
                 for&nbsp; Graphics and HTML views.<BR></TD>
               </TR>
@@ -1127,22 +1127,25 @@
             <BR>
             <SPAN style=
             "color: rgb(0, 0, 153);">GR.OPEN</SPAN>&nbsp;&nbsp;&nbsp;
-            { { {alpha}{, red}{, green} {, blue} <SPAN style=
-            "font-weight: bold;">|</SPAN> <SPAN style=
+            <SPAN style="font-weight: bold;">&lt;{</SPAN> {alpha},
+            {red}, { green},{ blue} <SPAN style=
+            "font-weight: bold;">}&nbsp; |</SPAN> <SPAN style=
             "font-weight: bold;">{</SPAN> <SPAN style=
             "font-weight: bold;">color</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
-            "font-weight: bold;">}</SPAN>&nbsp; }&nbsp; {,
-            &lt;decors_flag_nexp&gt;}{,
-            &lt;orientation_nexp&gt;}}<BR>
-            <SPAN style="color: rgb(0, 0, 153);">GR.COLOR</SPAN> {
-            { {alpha}{, red}{, green} {, blue} <SPAN style=
-            "font-weight: bold;">|</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN>&nbsp; &gt;&nbsp; {,
+            <A href="decors.html#decors">decors</A>_flag_nexp} {,
+            orientation_nexp}}<BR>
+            <SPAN style="color: rgb(0, 0, 153);">GR.COLOR</SPAN>
+            <SPAN style="font-weight: bold;">&lt;{</SPAN> {alpha},
+            {red}, { green},{ blue} <SPAN style=
+            "font-weight: bold;">}</SPAN><SPAN style=
+            "font-weight: bold;">&nbsp; |</SPAN> <SPAN style=
             "font-weight: bold;">{</SPAN> <SPAN style=
             "font-weight: bold;">color</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
-            "font-weight: bold;">}</SPAN>&nbsp; }&nbsp; {, style}{,
-            paint}}<BR>
+            "font-weight: bold;">}</SPAN>&nbsp; &gt;&nbsp; {,
+            style} {, paint}}<BR>
             <BR>
             e.g<BR>
             <DIV style="margin-left: 40px;">
@@ -1156,20 +1159,23 @@
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            Color strings may also be used with these commands<BR>
-            <BR>
-            <A href="#actionbar_title"><SPAN style=
-            "color: rgb(0, 0, 153);">GR.TITLE</SPAN></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
-            "color: black;">title</SPAN>_sexp} {,<SPAN style=
-            "color: black;">textcolor</SPAN>_sexp}, {,<SPAN style=
-            "color: black;">backcolor</SPAN>_sexp}</SPAN><BR>
-            <SPAN style=
-            "color: rgb(0, 0, 153);">CONSOLE.TITLE&nbsp;
-            ..</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><BR></SPAN> <SPAN style=
-            "color: rgb(0, 0, 153);">HTML.TITLE &nbsp; &nbsp;
-            &nbsp; &nbsp; &nbsp; ..</SPAN>
+            Color strings may also be used with various hBasic
+            commands eg;<BR>
+            <DIV style="margin-left: 40px;">
+              <A href="#actionbar_title"><SPAN style=
+              "color: rgb(0, 0, 153);">GR.TITLE</SPAN></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
+              "color: black;">title</SPAN>_sexp} {,<SPAN style=
+              "color: black;">textcolor</SPAN>_sexp},
+              {,<SPAN style="color: black;">backcolor</SPAN>_sexp}</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "color: rgb(0, 0, 153);">CONSOLE.TITLE&nbsp;
+              ..</SPAN><BR>
+              <SPAN style="color: rgb(0, 0, 153);">HTML.TITLE
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ..</SPAN>
+            </DIV>
           </DIV><BR style="color: rgb(0, 0, 153);">
           <DIV style="margin-left: 40px;">
             <A href="colors.html">Color Strings</A> <SPAN style=
@@ -1223,224 +1229,15 @@
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">GR.OPEN
               "blue.200", 1 &nbsp;&nbsp;</SPAN> <SPAN style=
-              "color: rgb(51, 51, 51);">% (<A href="#decors">decors
-              flag</A> 1, default to landscape)</SPAN><BR>
+              "color: rgb(51, 51, 51);">% (<A href=
+              "decors.html#decors">decors flag</A> 1, default to
+              landscape)</SPAN><BR>
             </DIV><BR>
             <BR>
             Color names are <A href=
             "https://www.computerhope.com/htmcolor.htm#color-codes">
             listed here</A> or <A href="colors.html">here</A>.<BR>
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <A name="decors" id="decors"></A> <FONT size=
-          "+1"><SPAN style="color: rgb(0, 0, 153);">Decors Flag for
-          GR.OPEN and HTML.OPEN</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">GR.OPEN &nbsp;</SPAN></FONT>
-            <BIG><SPAN style=
-            "color: rgb(0, 0, 153);">&nbsp;&nbsp;</SPAN></BIG>
-            {&lt;<A href=
-            "commands.html#color_strings">color</A>&gt;}
-            <SPAN style=
-            "color: rgb(102, 51, 0);">{</SPAN>,&lt;<SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">decors_flags</SPAN>_nexp</SPAN>&gt;<SPAN style="color: rgb(102, 51, 0);">}
-            {</SPAN>,&lt;orientation<SPAN style=
-            "color: rgb(102, 51, 0);">_nexp</SPAN>&gt;<SPAN style=
-            "color: rgb(102, 51, 0);">}</SPAN><BR>
-            <BR>
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">HTML.OPEN&nbsp;&nbsp;&nbsp;</SPAN></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);">{&lt;<SPAN style=
-            "color: black; font-weight: bold;">decors_flags</SPAN>_nexp&gt;
-            {, &lt;<SPAN style=
-            "color: black;">orientation</SPAN>_nexp&gt;}}</SPAN><BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <BIG>The <SMALL><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">statusbar_flag</SPAN>_lexp</SPAN></SMALL>
-            has been replaced with <SMALL><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">decors_flags</SPAN>_nexp</SPAN></SMALL></BIG>.<BR>
-
-            <BR>
-            The first 3 bits control the visibilty of the system
-            bars.<BR>
-            <BR>
-            <TABLE style="text-align: left; width: 90%;"
-            cellspacing="0" cellpadding="2" border="0">
-              <TBODY>
-                <TR>
-                  <TD style="vertical-align: top;">Bit<BR></TD>
-                  <TD style="vertical-align: top;">Set to
-                  mean<BR></TD>
-                  <TD style="vertical-align: top;">Default<BR></TD>
-                  <TD style="vertical-align: top;"><BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top; white-space;">Bit
-                  0<BR></TD>
-                  <TD style="vertical-align: top; white-space;">
-                  statusbar_SHOW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
-                  <TD style="vertical-align: top; white-space;">1 =
-                  show<BR></TD>
-                  <TD style="vertical-align: top;"><BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top; white-space;">Bit
-                  1<BR></TD>
-                  <TD style="vertical-align: top;">
-                  actionbar_SHOW</TD>
-                  <TD style="vertical-align: top;">0 =
-                  hide<BR></TD>
-                  <TD style="vertical-align: top;"><BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top; white-space;">Bit
-                  2<BR></TD>
-                  <TD style="vertical-align: top;">navbar_HIDE</TD>
-                  <TD style="vertical-align: top; white-space;">0 =
-                  show<BR></TD>
-                  <TD style="vertical-align: top;"><BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;">Bit 3<BR></TD>
-                  <TD style="vertical-align: top;">dark_Text</TD>
-                  <TD style="vertical-align: top; white-space;">0 =
-                  light text<BR></TD>
-                  <TD style=
-                  "vertical-align: top; width: 30%; white-space;">(
-                  only works for Android 11+ )<BR></TD>
-                </TR>
-              </TBODY>
-            </TABLE><BR>
-            If you don't specify this flag (",,") the default is
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">decors_flags</SPAN></SPAN>=1
-            or bin ("001").<BR>
-            This shows the statusbar and navbar but hides the
-            action bar.<BR>
-            <BR>
-            This is different from legacy Basic which hides the
-            statusbar by default.<BR>
-            The reason being that a hidden statusbar will affect
-            the navbar color for Android 11+ using new APIs (see
-            later).<BR>
-            <BR>
-            Some examples;<BR>
-            <BR>
-            <DIV style="margin-left: 40px;">
-              <BIG><SPAN style="font-family: monospace;">actionbar
-              hidden only, e.g Decors = bin
-              ("001")&nbsp;&nbsp;&nbsp;&nbsp; % i.e 1
-              *</SPAN><BR style="font-family: monospace;">
-              <SPAN style="font-family: monospace;">statusbar
-              hidden only, e.g Decors = bin
-              ("010")&nbsp;&nbsp;&nbsp;&nbsp; % i.e
-              2</SPAN><BR style="font-family: monospace;">
-              <SPAN style=
-              "font-family: monospace;">navbar&nbsp;&nbsp;&nbsp;
-              hidden only, e.g Decors = bin ("111")
-              &nbsp;&nbsp;&nbsp; % i.e 7</SPAN><BR style=
-              "font-family: monospace;">
-              <SPAN style="font-family: monospace;">statusbar
-              shown&nbsp; only, e.g Decors = bin ("101")
-              &nbsp;&nbsp;&nbsp; % i.e 5</SPAN><BR style=
-              "font-family: monospace;">
-              <SPAN style=
-              "font-family: monospace;">navbar&nbsp;&nbsp;&nbsp;
-              shown&nbsp; only, e.g Decors = bin ("000")
-              &nbsp;&nbsp;&nbsp; % i.e 0 *</SPAN><BR style=
-              "font-family: monospace;">
-              <SPAN style="font-family: monospace;">show all
-              bars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              e.g Decors = bin ("011")&nbsp;&nbsp;&nbsp;&nbsp; %
-              i.e 3</SPAN><BR style="font-family: monospace;">
-              <SPAN style="font-family: monospace;">hide all
-              bars&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; e.g
-              Decors = bin ("100") &nbsp;&nbsp;&nbsp; % i.e
-              4</SPAN></BIG><BR>
-            </DIV><BR>
-            * The scheme is compatible with legacy programs which
-            either sets the legacy flag to 0 or 1.<BR>
-            <BR>
-            Example<BR>
-            <DIV style="margin-left: 40px;">
-              <BIG><SPAN style="font-family: monospace;">Decors =
-              bin("011")&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              <SPAN style="color: rgb(51, 51, 51);">% show
-              all</SPAN></SPAN><BR style="font-family: monospace;">
-              <SPAN style="font-family: monospace;"><SPAN style=
-              "color: rgb(0, 0, 153);">GR.OPEN</SPAN> "blue",
-              Decors, 1&nbsp;&nbsp; <SPAN style=
-              "color: rgb(51, 51, 51);">% last param is
-              portrait</SPAN></SPAN></BIG><BR>
-            </DIV><BR>
-            Alternatively<BR>
-            <DIV style="margin-left: 40px;">
-              <BIG><SPAN style="font-family: monospace;">nav=0 :
-              act=1 : sta=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <SPAN style="color: rgb(51, 51, 51);">% show
-              all</SPAN></SPAN><BR style="font-family: monospace;">
-              <SPAN style="font-family: monospace;"><SPAN style=
-              "color: rgb(0, 0, 153);">GR.OPEN</SPAN> "blue", nav*4
-              + act*2 + sta*1, 1<BR>
-              <BR>
-              or<BR></SPAN> <SPAN style=
-              "font-family: monospace;"><SPAN style=
-              "color: rgb(153, 0, 0);">nav=1</SPAN> : act=1 :
-              sta=1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <SPAN style="color: rgb(153, 0, 0);">% nav to be
-              inverted to show</SPAN></SPAN><BR style=
-              "font-family: monospace;">
-              <SPAN style="font-family: monospace;"><SPAN style=
-              "color: rgb(0, 0, 153);">GR.OPEN</SPAN> "blue",
-              <SPAN style="color: rgb(153, 0, 0);">(!nav)</SPAN>*4
-              + act*2 + sta*1, 1</SPAN></BIG><BR>
-              <SPAN style="font-family: monospace;"><BR></SPAN>
-            </DIV><BR>
-            <BIG style="text-decoration: underline;">Hidden
-            Bars</BIG><BR>
-            <BR>
-            If either the statusbar or navbar is hidden, then you
-            need a swipe from the top or bottom edge to show it. It
-            disappears after 3 secs.<BR>
-            <BR>
-            <SPAN style="text-decoration: line-through;">During
-            this time, touches on the canvas will be blocked but
-            the first touch-down event will get
-            through.</SPAN><BR style=
-            "text-decoration: line-through;">
-            <SPAN style="text-decoration: line-through;">Therefore
-            it is advisable for programs to also wait for a
-            touch-up if waiting for a tap.</SPAN><BR style=
-            "text-decoration: line-through;">
-            Touches are not blocked during a swipe. Be sure to
-            compensate for these touches.<BR>
-            <BR>
-            <BIG><SPAN style="text-decoration: underline;">Android
-            11+ Considerations</SPAN></BIG><BR>
-            <BR>
-            For Android 11+, If either the statusbar or navbar is
-            hidden, their colors get tied to a hidden color which
-            may clash with other colors.<BR>
-            <BR>
-            Therefore if you need to hide either the statusbar or
-            navbar, then it suggested to hide both.<BR>
-            <BR>
-            The text color for a hidden status or navbar is light
-            by default. If your device has a hidden bar with a
-            light background, you may not be able to see the text.
-            You can set the text to be dark by setting the 4th bit
-            (Bit 3) of the decors flag.<BR>
-            <BR>
-          </DIV><BR>
         </TD>
       </TR>
       <TR>
@@ -1457,26 +1254,46 @@
           <DIV style="margin-left: 40px;">
             <SPAN style=
             "color: rgb(0, 0, 153);">GR.TITLE</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
-            "color: black;">title</SPAN>_sexp} {,<SPAN style=
-            "color: black;">textcolor</SPAN>_sexp}, {,<SPAN style=
-            "color: black;">backcolor</SPAN>_sexp}</SPAN><BR>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
+
             <BR>
             <SPAN style=
-            "color: rgb(0, 0, 153);">CONSOLE.TITLE</SPAN>
-            <SPAN style=
-            "color: rgb(102, 51, 0);">{</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">{<SPAN style=
-            "color: black;">title</SPAN>_sexp} {,<SPAN style=
-            "color: black;">textcolor</SPAN>_sexp}, {,<SPAN style=
-            "color: black;">backcolor</SPAN>_sexp}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            "color: rgb(0, 0, 153);">CONSOLE.TITLE</SPAN>&nbsp;
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
             </SPAN><BR>
             <SPAN style=
-            "color: rgb(0, 0, 153);">HTML.TITLE</SPAN>&nbsp;<SPAN style="color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            {<SPAN style="color: black;">title</SPAN>_sexp}
-            {,<SPAN style="color: black;">textcolor</SPAN>_sexp},
-            {,<SPAN style=
-            "color: black;">backcolor</SPAN>_sexp}</SPAN>
+            "color: rgb(0, 0, 153);">HTML.TITLE</SPAN>&nbsp;<SPAN style="color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
           <DIV style="margin-left: 40px;">
             <BIG>Sets the actionbar title, text color and
