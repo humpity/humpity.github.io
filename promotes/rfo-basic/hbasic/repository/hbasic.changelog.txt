@@ -3,6 +3,9 @@ hBasic changelog
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
 
+2024-12-17 v5.21
+		Fix console not waiting for dialogs (0521)
+
 2024-12-12 v5.20
 		Directives upgrade (0511)
 		Add window_bg for GR.OPEN & HTML.OPEN (0512)
