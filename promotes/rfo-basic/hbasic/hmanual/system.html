@@ -159,7 +159,7 @@
                 "+1"><A href=
                 "#directives">Directives</A><BR></FONT></TD>
                 <TD style="vertical-align: top;">used to configure
-                the intepreter<BR></TD>
+                the console and interpreter<BR></TD>
               </TR>
               <TR>
                 <TD valign="top"><A href="#decors.html"><FONT size=
@@ -1630,11 +1630,15 @@
               This directive will tell Android that we prefer the
               console statusbar text to be dark rather than the
               default light color.<BR>
+              It can also affect the navigation bar icon color to
+              be dark or light depending on the configuration.
+              Because of this, it can also affect the background
+              color of the navigation bar depending on the device
+              Api.<BR>
               <BR>
-              Depending on the device version (<A href=
-              "decors.html#behave_table">see this table</A>), the
-              color of the statusbar text can be made either light
-              or dark.<BR>
+              The colors are dependent on the device version
+              (<A href="decors.html#behave_table">see this
+              table</A>).<BR>
               (since the statusbar is always on for the console,
               then this is usually possible).<BR>
               <BR>
@@ -1677,8 +1681,9 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;">
-              This directive sets the console window background
-              color. It is the color you see if the void color is
+              This directive sets the console <A href=
+              "decors.html#window_bg">window background color</A>.
+              It is the color you see if the void color is
               transparent.<BR>
               It may also be the color you see behind the statusbar
               and/or navbar depending on the <A href=
