@@ -4,13 +4,9 @@ Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
 
 2025-01-01 v5.25
-		Fixed Menu.Show not displaying after Menu.Set (0522)
-		Added Console.Set "StatusTxt" and "NavBarTxt" (0523)
-		Various (0524)
-			Fix help-commands crash
-			Faster startup
-			tweaks for manufacturer themes.
-			Internal code refactoring.
+		Fix Menu.Show after Menu.Set(0522)
+		Fix help-commands keyboard (0523)
+		Added Console.Set "StatusTxt" and "NavBarTxt" (0524)
 		Legacy storage support (-Spike) (0525)
 
 2024-12-17 v5.21
