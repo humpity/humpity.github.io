@@ -1,752 +1,885 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transfer</title>
-  <link rel="stylesheet" href="main.css" type="text/css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&amp;family=Archivo+Black&amp;family=Coming+Soon&amp;family=David+Libre&amp;family=Noto+Sans:wght@100;300;400;500&amp;family=Noto+Serif&amp;family=Roboto+Condensed:wght@300;400&amp;family=Roboto+Mono&amp;family=Source+Sans+3&amp;display=swap" rel="stylesheet">
-  <style>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Transfer</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+  <LINK rel="preconnect" href="https://fonts.googleapis.com">
+  <LINK rel="preconnect" href="https://fonts.gstatic.com">
+  <LINK href=
+  "https://fonts.googleapis.com/css2?family=Alex+Brush&amp;family=Archivo+Black&amp;family=Coming+Soon&amp;family=David+Libre&amp;family=Noto+Sans:wght@100;300;400;500&amp;family=Noto+Serif&amp;family=Roboto+Condensed:wght@300;400&amp;family=Roboto+Mono&amp;family=Source+Sans+3&amp;display=swap"
+  rel="stylesheet">
+  <STYLE>
   @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo+Black&family=Coming+Soon&family=David+Libre&family=Noto+Sans:wght@100;300;400;500&family=Noto+Serif&family=Roboto+Condensed:wght@300;400&family=Roboto+Mono&family=Source+Sans+3&display=swap');
-  </style>
-</head>
-<body vlink="#990099" link="#000099" alink="#000099">
-  <font size="+1"><a href="../../rfo.html">Rfo-Basic</a> &gt;
-  <a href="../hbasic.html">hBasic</a> &gt;Transfer</font><br>
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <table style="border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: left; width: 100%; font-family: Helvetica, Arial, sans-serif;" width="100" cellspacing="2" cellpadding="8">
-    <tbody>
-      <tr>
-        <td style="width: 50%;">
-          <div style="text-align: right;">
-            <font size="+1">hBasic</font><br>
-          </div><font size="+2">Transfer of Files</font>
-          <blockquote>
-            <font size="+1">How to get your *.BAS files from your
-            PC to your target device.</font><br>
-            <br>
-            <table style="text-align: left; width: 80%;" cellspacing="2" cellpadding="2" border="0">
-              <tbody>
-                <tr>
-                  <td style="vertical-align: top; text-align: left; width: 30%;">
-                  <a href="#paths"><font size="+1"><span style="color: rgb(0, 0, 153);">Paths<br></span></font></a></td>
-                  <td style="vertical-align: top;"><br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; white-space: nowrap;">
-                  <a href="#problem"><font size="+1"><span style="color: rgb(0, 0, 153);">The problem with Scoped
-                  Storage</span></font></a><a href="file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/functions.html#version"><br>
-                  </a></td>
-                  <td style="vertical-align: top;"><br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; text-align: left; white-space: nowrap;">
-                    <a href="file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/samples.html#loadfont">
-                    </a><a href="#ways"><font size="+1">Ways to
-                    Transfer</font></a><br>
-                    <br>
-                    <div style="text-align: left; margin-left: 40px;">
-                      <a href="#method_a">Method A</a> PC
-                      Client<br>
-                      <a href="#method_b">Method B</a> Android
-                      Client<br>
-                      <a href="#method_c">Method C</a> ADB<br>
-                      <br>
-<br>
-                      <a href="#method_d">Method D</a> Shizuku<br>
-                    </div>
-                  </td>
-                  <td style="vertical-align: top;">
-                    <br>
-                    <br>
-                    <a href="#method_a">Android as
-                    server</a><font size="+1"><br></font> <a href="#method_b">PC as server</a><font size="+1"><br></font> <a href="#method_c">ADB</a> (
-                    client, server &amp; daemon)<font size="+1"><br></font>
-                    <div style="margin-left: 40px;">
-                      - <a href="#wifi-trick">The
-                      WiFi-Trick</a><br>
-<a moz-do-not-send="true" href="#scite">SciTE Integration</a><br>
-                    </div>Shizuku as a permissions broker<br>
-                    <div style="margin-left: 40px;"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; text-align: right;">
-                  <br></td>
-                  <td style="vertical-align: top;"><br></td>
-                </tr>
-              </tbody>
-            </table>
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big><span style="color: rgb(0, 0, 153);"><a name="paths" id="fontfam"></a></span></big><span style="color: rgb(0, 0, 153);"><font size="+1">Paths</font></span><big><span style="color: rgb(0, 0, 153);"><br></span></big><br>
-          <div style="margin-left: 40px;">
-            Base Drive (or Base Path)<br>
-          </div>
-          <div style="margin-left: 80px;">
-            The <font color="#990000">base_drive</font> or
-            <span style="color: rgb(0, 102, 0);"><span style="color: rgb(0, 0, 153);">BasePath</span></span> is the
-            start of scoped storage (see later).<br>
-            It is usually found at <span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">&lt;sdcard&gt;</span></span>/<span style="color: rgb(51, 0, 153);">Android</span>/<span style="color: rgb(51, 0, 153);">data</span>/<span style="color: rgb(51, 0, 153);">com.rfo.hbasic</span>.<br>
-          </div>
-          <div style="margin-left: 40px;"></div>
-          <div style="margin-left: 40px;" align="right">
-            <i>(note: legacy Basic's default base drive used to be
-            just</i> <i><span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">&lt;sdcard&gt;</span></span></i>/<i><span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">)</span></span></i><br>
-          </div>
-          <div style="margin-left: 40px;">
-            Base Directory<br>
-          </div>
-          <div style="margin-left: 80px;">
-            The <span style="color: rgb(153, 0, 0);">base_directory</span>&nbsp;
-            =&nbsp; <font color="#990000">base_drive</font>&nbsp; +
-            <span style="color: rgb(51, 0, 153);"><span style="color: rgb(153, 0, 0);">rfo-basic</span></span><br>
-            <div style="margin-left: 40px;">
-              e.g <span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">
-              &lt;sdcard&gt;</span>/Android/data/com.rfo.hbasic/<span style="color: rgb(153, 0, 0);">rfo-basic</span></span><br>
-            </div>
-            <div style="margin-left: 40px;">
-              e.g <span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">
-              /storage/emulated/0</span>/Android/data/com.rfo.hbasic/<span style="color: rgb(153, 0, 0);">rfo-basic</span></span><br>
-            </div>
-          </div>
-          <div style="margin-left: 80px;">
-            with <font color="#663300"><span style="color: rgb(0, 0, 153);">source,</span> <span style="color: rgb(0, 0, 153);">data</span></font> &amp;
-            <font color="#663300"><span style="color: rgb(0, 0, 153);">databases</span></font> under
-            this base.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <a name="app_path" id="app_path"></a>App Path<br>
-            <div style="margin-left: 40px;">
-              The <font color="#990000">App_Path</font> or app
-              directory is just the name e.g <font color="#990000">"rfo-basic"</font>&nbsp; (historically, it
-              has been mis-named).<br>
+  </STYLE>
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <FONT size="+1"><A href="../../rfo.html">Rfo-Basic</A> &gt;
+  <A href="../hbasic.html">hBasic</A> &gt;Transfer</FONT><BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: black; text-align: left; width: 100%; font-family: Helvetica, Arial, sans-serif;"
+  width="100" cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="width: 50%;">
+          <DIV style="text-align: right;">
+            <FONT size="+1">hBasic</FONT><BR>
+          </DIV><FONT size="+2">Transfer of Files</FONT>
+          <BLOCKQUOTE>
+            <FONT size="+1">How to get your *.BAS files from your
+            PC to your target device.</FONT><BR>
+            <BR>
+            <TABLE style="text-align: left; width: 80%;"
+            cellspacing="2" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; text-align: left; width: 30%;">
+                  <A href="#paths"><FONT size="+1"><SPAN style=
+                  "color: rgb(0, 0, 153);">Paths<BR></SPAN></FONT></A></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap;">
+                  <A href="#problem"><FONT size="+1"><SPAN style=
+                  "color: rgb(0, 0, 153);">The problem with Scoped
+                  Storage</SPAN></FONT></A><A href=
+                  "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/functions.html#version"><BR>
+                  </A></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; text-align: left; white-space: nowrap;">
+                    <A href=
+                    "file:///home/batman/upload/humpty/promotes/rfo-basic/hbasic/hmanual/samples.html#loadfont">
+                    </A><A href="#ways"><FONT size="+1">Ways to
+                    Transfer</FONT></A><BR>
+                    <BR>
+                    <DIV style=
+                    "text-align: left; margin-left: 40px;">
+                      <A href="#method_a">Method A</A> PC
+                      Client<BR>
+                      <A href="#method_b">Method B</A> Android
+                      Client<BR>
+                      <A href="#method_c">Method C</A> ADB<BR>
+                      <BR>
+                      <BR>
+                      <A href="#method_d">Method D</A> Shizuku<BR>
+                    </DIV>
+                  </TD>
+                  <TD style="vertical-align: top;">
+                    <BR>
+                    <BR>
+                    <A href="#method_a">Android as
+                    server</A><FONT size="+1"><BR></FONT> <A href=
+                    "#method_b">PC as server</A><FONT size=
+                    "+1"><BR></FONT> <A href="#method_c">ADB</A> (
+                    client, server &amp; daemon)<FONT size=
+                    "+1"><BR></FONT>
+                    <DIV style="margin-left: 40px;">
+                      - <A href="#wifi-trick">The
+                      WiFi-Trick</A><BR>
+                      <A href="#scite">SciTE Integration</A><BR>
+                    </DIV>Shizuku as a permissions broker<BR>
+                    <DIV style="margin-left: 40px;"></DIV>
+                  </TD>
+                </TR>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; text-align: right;">
+                  <BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name="paths"
+          id="fontfam"></A></SPAN></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">Paths</FONT></SPAN><BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><BR></SPAN></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            Base Drive (or Base Path)<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            The <FONT color="#990000">base_drive</FONT> or
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">BasePath</SPAN></SPAN> is the
+            start of scoped storage (see later).<BR>
+            It is usually found at <SPAN style=
+            "color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN></SPAN>/<SPAN style="color: rgb(51, 0, 153);">Android</SPAN>/<SPAN style="color: rgb(51, 0, 153);">data</SPAN>/<SPAN style="color: rgb(51, 0, 153);">com.rfo.hbasic</SPAN>.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 40px;" align="right">
+            <I>(note: legacy Basic's default base drive used to be
+            just</I> <I><SPAN style=
+            "color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN></SPAN></I>/<I><SPAN style="color: rgb(51, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">)</SPAN></SPAN></I><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Base Directory<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            The <SPAN style=
+            "color: rgb(153, 0, 0);">base_directory</SPAN>&nbsp;
+            =&nbsp; <FONT color="#990000">base_drive</FONT>&nbsp; +
+            <SPAN style="color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              e.g <SPAN style=
+              "color: rgb(51, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">
+              &lt;sdcard&gt;</SPAN>/Android/data/com.rfo.hbasic/<SPAN style="color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g <SPAN style=
+              "color: rgb(51, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">
+              /storage/emulated/0</SPAN>/Android/data/com.rfo.hbasic/<SPAN style="color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            with <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">source,</SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">data</SPAN></FONT> &amp;
+            <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">databases</SPAN></FONT> under
+            this base.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <A name="app_path" id="app_path"></A>App Path<BR>
+            <DIV style="margin-left: 40px;">
+              The <FONT color="#990000">App_Path</FONT> or app
+              directory is just the name e.g <FONT color=
+              "#990000">"rfo-basic"</FONT>&nbsp; (historically, it
+              has been mis-named).<BR>
               This will be different for custom (standalone)
-              apps.<br>
-            </div>
-          </div><br>
-          <div style="margin-left: 40px;">
-            hBasic source and data files have been put in <a href="package.html#scoped">Scoped Storage</a> since v3.00.
+              apps.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            hBasic source and data files have been put in <A href=
+            "package.html#scoped">Scoped Storage</A> since v3.00.
             This is because Google has been restricting storage
-            areas aggressively since Android 11.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big><span style="color: rgb(0, 0, 153);"><a name="problem" id="fontfam"></a></span></big><span style="color: rgb(0, 0, 153);"><font size="+1">The Problem with
-          Scoped Storage</font></span><big><span style="color: rgb(0, 0, 153);"><br>
-          <br></span></big>
-          <div style="margin-left: 40px;">
-            <a href="system.html#scoped">Scoped storage</a> is an
+            areas aggressively since Android 11.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "problem" id="fontfam"></A></SPAN></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">The Problem with
+          Scoped Storage</FONT></SPAN><BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><BR>
+          <BR></SPAN></BIG>
+          <DIV style="margin-left: 40px;">
+            <A href="system.html#scoped">Scoped storage</A> is an
             area where an individual app has complete access to but
-            other apps do not.<br>
-            It is a secure safe area. But this also hinders the developer.<br>
-It means that it
-            is difficult to transfer your files in and out of
-            hBasic.<br>
-            <br>
+            other apps do not.<BR>
+            It is a secure safe area. But this also hinders the
+            developer.<BR>
+            It means that it is difficult to transfer your files in
+            and out of hBasic.<BR>
+            <BR>
             To get around this, hBasic has a built-in ftp server
-            called hFTP.&nbsp;&nbsp; (ack: <a moz-do-not-send="true" href="https://github.com/pReya/ftpServer">Moritz Stückler</a>)<br>
-            Instructions to use it are <a href="system.html#ftp_server">here.</a><br>
-            But you don't neccessarly need to use it if you can use one of the other methods below.<span style="text-decoration: line-through;"></span><br>
-            <br></div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="ways" id="two_ways"></a><span style="color: rgb(0, 0, 153);"><font size="+1">Ways to
-          Transfer</font></span><br>
-          <div style="margin-left: 40px;">
-            <br>
+            called hFTP.&nbsp;&nbsp; (ack: <A href=
+            "https://github.com/pReya/ftpServer">Moritz
+            Stückler</A>)<BR>
+            Instructions to use it are <A href=
+            "system.html#ftp_server">here.</A><BR>
+            But you don't neccessarly need to use it if you can use
+            one of the other methods below.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="ways" id="two_ways"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">Ways to
+          Transfer</FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            <BR>
             On one side is the server. The other side is the
-            client.<br>
+            client.<BR>
             All the file operations must be done at the client
-            end.<br>
-            <br>
-            <table style="text-align: left; width: 80%;" cellspacing="2" cellpadding="2" border="0">
-              <tbody>
-                <tr>
-                  <td style="vertical-align: top; width: 15%;">
-                  Choice<br></td>
-                  <td style="vertical-align: top; width: 10%;">
-                  Server<br></td>
-                  <td style="vertical-align: top; width: 10%;">
-                  Client<br></td>
-                  <td style="vertical-align: top; width: 10%;">User
-                  Operations<br></td>
-                  <td style="vertical-align: top; width: 30%;">
-                  Remarks<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);"><font size="+1"><a href="#method_a">A</a>) hFTP<br>
-                  Device is server</font></span></td>
-                  <td style="vertical-align: top;">hFTP server
-                  inside hBasic on <span style="font-weight: bold;">device</span><br></td>
-                  <td style="vertical-align: top;">FTP (filezilla)
-                  client on <span style="font-weight: bold;">PC</span><br></td>
-                  <td style="vertical-align: top;">On PC
-                  client<br></td>
-                  <td style="vertical-align: top;">hBasic ftp
-                  server<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top;"><br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><font size="+1"><span style="color: rgb(0, 0, 153);"><a href="#method_b">B</a>)
-                  SMB<br>
-                  PC is server</span></font></td>
-                  <td style="vertical-align: top;">Windows shared
-                  folder (i.e SMB)<br>
-                  or<br>
-                  Linux (SAMBA)<br></td>
-                  <td style="vertical-align: top;">Total Commander
-                  client on <span style="font-weight: bold;">device</span><br>
-                  + LAN plugin.<br></td>
-                  <td style="vertical-align: top;">On Android
-                  client<br></td>
-                  <td style="vertical-align: top;"><span style="color: rgb(153, 0, 0);">** Does not work for
-                  Android 14+</span><br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><font size="+1"><span style="color: rgb(0, 0, 153);"><a href="#method_c">C</a>)
-                  ADB</span></font></td>
-                  <td style="vertical-align: top;">PC+Device
-                  daemon<br></td>
-                  <td style="vertical-align: top;">PC<br></td>
-                  <td style="vertical-align: top;">On PC
-                  client<br>
-command line or scripts.<br></td>
-                  <td style="vertical-align: top;">Other operations
-                  also available<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><font size="+1"><span style="color: rgb(0, 0, 153);"><a href="#method_d">D)</a>
-                  Shizuku</span></font><br></td>
-                  <td style="vertical-align: top;">ADB Device
-                  daemon<br></td>
-                  <td style="vertical-align: top;">Total
-                  Commander<br></td>
-                  <td style="vertical-align: top;">Total
-                  Commander<br></td>
-                  <td style="vertical-align: top;">Shizuku is a
-                  permissions broker.<br>
-                  <span style="color: rgb(0, 51, 0);">** works for
-                  Android 14+</span><br></td>
-                </tr>
-              </tbody>
-            </table>
-          </div><br>
-          <div style="margin-left: 40px;">
+            end.<BR>
+            <BR>
+            <TABLE style="text-align: left; width: 80%;"
+            cellspacing="2" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top; width: 15%;">
+                  Choice<BR></TD>
+                  <TD style="vertical-align: top; width: 10%;">
+                  Server<BR></TD>
+                  <TD style="vertical-align: top; width: 10%;">
+                  Client<BR></TD>
+                  <TD style="vertical-align: top; width: 10%;">User
+                  Operations<BR></TD>
+                  <TD style="vertical-align: top; width: 30%;">
+                  Remarks<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "color: rgb(0, 0, 153);"><FONT size="+1"><A href=
+                  "#method_a">A</A>) hFTP<BR>
+                  Device is server</FONT></SPAN></TD>
+                  <TD style="vertical-align: top;">hFTP server
+                  inside hBasic on <SPAN style=
+                  "font-weight: bold;">device</SPAN><BR></TD>
+                  <TD style="vertical-align: top;">FTP (filezilla)
+                  client on <SPAN style=
+                  "font-weight: bold;">PC</SPAN><BR></TD>
+                  <TD style="vertical-align: top;">On PC
+                  client<BR></TD>
+                  <TD style="vertical-align: top;">hBasic ftp
+                  server<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><FONT size=
+                  "+1"><SPAN style=
+                  "color: rgb(0, 0, 153);"><A href="#method_b">B</A>)
+                  SMB<BR>
+                  PC is server</SPAN></FONT></TD>
+                  <TD style="vertical-align: top;">Windows shared
+                  folder (i.e SMB)<BR>
+                  or<BR>
+                  Linux (SAMBA)<BR></TD>
+                  <TD style="vertical-align: top;">Total Commander
+                  client on <SPAN style=
+                  "font-weight: bold;">device</SPAN><BR>
+                  + LAN plugin.<BR></TD>
+                  <TD style="vertical-align: top;">On Android
+                  client<BR></TD>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "color: rgb(153, 0, 0);">** Does not work for
+                  Android 14+</SPAN><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><FONT size=
+                  "+1"><SPAN style=
+                  "color: rgb(0, 0, 153);"><A href="#method_c">C</A>)
+                  ADB</SPAN></FONT></TD>
+                  <TD style="vertical-align: top;">PC+Device
+                  daemon<BR></TD>
+                  <TD style="vertical-align: top;">PC<BR></TD>
+                  <TD style="vertical-align: top;">On PC client<BR>
+                  command line or scripts.<BR></TD>
+                  <TD style="vertical-align: top;">Other operations
+                  also available<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><FONT size=
+                  "+1"><SPAN style=
+                  "color: rgb(0, 0, 153);"><A href="#method_d">D)</A>
+                  Shizuku</SPAN></FONT><BR></TD>
+                  <TD style="vertical-align: top;">ADB Device
+                  daemon<BR></TD>
+                  <TD style="vertical-align: top;">Total
+                  Commander<BR></TD>
+                  <TD style="vertical-align: top;">Total
+                  Commander<BR></TD>
+                  <TD style="vertical-align: top;">Shizuku is a
+                  permissions broker.<BR>
+                  <SPAN style="color: rgb(0, 51, 0);">** works for
+                  Android 14+</SPAN><BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
             Since Android 14, Google enforces that no third party
-            app can access another app's scoped storage.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><a name="method_a" id="demo0413"></a><font size="+1">Method A - Android is
-          Server</font></span><br>
-          <div style="margin-left: 40px;">
-            <br>
+            app can access another app's scoped storage.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="method_a"
+          id="demo0413"></A><FONT size="+1">Method A - Android is
+          Server</FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            <BR>
             Make sure your phone has a wifi connection to your
             local router and that your PC is also connected to your
-            router.<br>
-            <br>
+            router.<BR>
+            <BR>
             For this method you must start hBasic's built-in FTP
             server and all file operations are done on the PC
-            client.<br>
-            <br>
+            client.<BR>
+            <BR>
             For the client on the PC, any FTP client can connect.
             Recommended is FileZilla. This can either be Windows or
-            Linux.<br>
-            <br>
-            The PC client setup is as follows;<br>
-            <div style="margin-left: 40px;">
-              <br>
-              <table style="text-align: left; width: 50%;" cellspacing="2" cellpadding="2" border="0">
-                <tbody>
-                  <tr>
-                    <td style="vertical-align: top;">default cmd
-                    port</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;"><span style="color: rgb(102, 0, 0);">2345</span></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">&nbsp; user
-                    Name<br></td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;"><span style="color: rgb(102, 0, 0);">hbasic</span></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">password</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;"><span style="color: rgb(102, 0, 0);">hbasic</span></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">mode</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">
-                    passive<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">type</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">unix</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">auth</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">plain
-                    text</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">host
-                    address</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">(see
-                    below)</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div><br>
-            <span style="text-decoration: underline;">Get the host
-            address of hFTP server</span><br>
+            Linux.<BR>
+            <BR>
+            The PC client setup is as follows;<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+              <TABLE style="text-align: left; width: 50%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top;">default cmd
+                    port</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;"><SPAN style=
+                    "color: rgb(102, 0, 0);">2345</SPAN></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">&nbsp; user
+                    Name<BR></TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;"><SPAN style=
+                    "color: rgb(102, 0, 0);">hbasic</SPAN></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">password</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;"><SPAN style=
+                    "color: rgb(102, 0, 0);">hbasic</SPAN></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">mode</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">
+                    passive<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">type</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">unix</TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">auth</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">plain
+                    text</TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">host
+                    address</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">(see
+                    below)</TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Get the host
+            address of hFTP server</SPAN><BR>
             Run the hFTP server in hBasic. It will display the LAN
-            IP address of that the server uses.<br>
-            e.g 192.168.XXX.YYY<br>
-            Enter this as the host address in your FTP client.<br>
-            <br>
+            IP address of that the server uses.<BR>
+            e.g 192.168.XXX.YYY<BR>
+            Enter this as the host address in your FTP client.<BR>
+            <BR>
             Start your PC's FTP client to connect. You should see
-            the listing at the root of the server<br>
-            e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="color: rgb(51, 0, 153);"><span style="color: rgb(153, 0, 0);">files</span></span><br>
-              <span style="color: rgb(51, 0, 153);"><span style="color: rgb(153, 0, 0);">rfo-basic</span></span><br>
-            </div>This is the Base Drive which is the start of
-            hBasic's scoped storage.<br>
+            the listing at the root of the server<BR>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(51, 0, 153);"><SPAN style=
+              "color: rgb(153, 0, 0);">files</SPAN></SPAN><BR>
+              <SPAN style="color: rgb(51, 0, 153);"><SPAN style=
+              "color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN><BR>
+            </DIV>This is the Base Drive which is the start of
+            hBasic's scoped storage.<BR>
             Navigate into rfo-basic, and you should see the
-            <font color="#663300"><span style="color: rgb(0, 0, 153);">source,</span> <span style="color: rgb(0, 0, 153);">data</span></font> &amp;
-            <font color="#663300"><span style="color: rgb(0, 0, 153);">databases</span></font>
-            directories.<br>
-            <br>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><a name="method_b" id="demo0413"></a><font size="+1">Method B - PC is
-          Server</font></span><br>
-          <br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(153, 0, 0);">** This method
-            only works for Android 13 or lower&nbsp; **</span><br>
-            <br>
-          </div>
-          <div style="margin-left: 40px;">
+            <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">source,</SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">data</SPAN></FONT> &amp;
+            <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">databases</SPAN></FONT>
+            directories.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="method_b"
+          id="demo0413"></A><FONT size="+1">Method B - PC is
+          Server</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(153, 0, 0);">** This method
+            only works for Android 13 or lower&nbsp; **</SPAN><BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             Make sure your phone has a wifi connection to your
             local router and that your PC is also connected to your
-            router.<br>
-            The hFTP server is not needed.<br>
-            <br>
+            router.<BR>
+            The hFTP server is not needed.<BR>
+            <BR>
             For this method you must setup a folder-share either on
             Windows or Linux. All file operations are done on the
-            Android client.<br>
-            <br>
+            Android client.<BR>
+            <BR>
             For the client on Android, any client that can connect
             to a SMB share will work. Recommended is Total
-            Commander+LAN plugin.<br>
-            <br>
-            <span style="text-decoration: underline;">The SMB
-            server setup</span> is as follows;<br>
-            <br>
-            <div style="margin-left: 40px;">
-              For Windows PC (folder share)<br>
-            </div>
-            <div style="margin-left: 80px;">
+            Commander+LAN plugin.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">The SMB
+            server setup</SPAN> is as follows;<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              For Windows PC (folder share)<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
               Explorer&gt; [right=click folder] &gt; Properties
-              &gt; Sharing &gt; Share &gt; [Share] &gt; Done<br>
-              <div style="text-align: right;">
-                (you MUST click the [Share] button)<br>
-              </div>This will show your share path<br>
-              e.g \\HOSTNAME\Users\userName\shared_dir<br>
-              Write this down.<br>
-              <br>
-              Convert path and slashes to<br>
-              <span style="font-weight: bold;">hostname/users/userName/<span style="color: rgb(0, 0, 153);">shared_dir</span></span>
+              &gt; Sharing &gt; Share &gt; [Share] &gt; Done<BR>
+              <DIV style="text-align: right;">
+                (you MUST click the [Share] button)<BR>
+              </DIV>This will show your share path<BR>
+              e.g \\HOSTNAME\Users\userName\shared_dir<BR>
+              Write this down.<BR>
+              <BR>
+              Convert path and slashes to<BR>
+              <SPAN style=
+              "font-weight: bold;">hostname/users/userName/<SPAN style="color: rgb(0, 0, 153);">shared_dir</SPAN></SPAN>
               &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; (lower case is
-              ok)<br>
-              You need this path to setup TC LAN plugin later.<br>
-              <br>
-              If you need to delete the share at any time,<br>
-              <div style="margin-left: 40px;">
+              ok)<BR>
+              You need this path to setup TC LAN plugin later.<BR>
+              <BR>
+              If you need to delete the share at any time,<BR>
+              <DIV style="margin-left: 40px;">
                 Computer Management &gt; System Tools&gt; Shared
                 Folders &gt; Shares &gt; [right-click folder] Stop
-                Sharing.<br>
-              </div>
-            </div>
-            <div style="margin-left: 40px;">
-              <br>
-              For Linux PC (samba share)<br>
-            </div>
-            <div style="margin-left: 80px;">
-              Make sure the <span style="color: rgb(0, 0, 153);">samba</span> package is
-              installed.<br>
-            </div>
-            <div style="margin-left: 80px;">
-              Copy the sample file from <span style="color: rgb(102, 51, 0);">/usr/share/samba/</span><span style="color: rgb(0, 0, 153);">smb.conf</span>
-              to <span style="color: rgb(102, 51, 0);">/etc/samba/</span><span style="color: rgb(0, 0, 153);">smb.conf</span>
-              and edit it.<br>
-              <br>
-              Add your shared directory to be served;<br>
-              <br>
-              <span style="font-family: Courier New, Courier, monospace;">[<span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">share_name</span></span>]</span><br>
+                Sharing.<BR>
+              </DIV>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <BR>
+              For Linux PC (samba share)<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              Make sure the <SPAN style=
+              "color: rgb(0, 0, 153);">samba</SPAN> package is
+              installed.<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              Copy the sample file from <SPAN style=
+              "color: rgb(102, 51, 0);">/usr/share/samba/</SPAN><SPAN style="color: rgb(0, 0, 153);">smb.conf</SPAN>
+              to <SPAN style=
+              "color: rgb(102, 51, 0);">/etc/samba/</SPAN><SPAN style="color: rgb(0, 0, 153);">smb.conf</SPAN>
+              and edit it.<BR>
+              <BR>
+              Add your shared directory to be served;<BR>
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">[<SPAN style="font-weight: bold;"><SPAN style="color: rgb(0, 0, 153);">share_name</SPAN></SPAN>]</SPAN><BR>
 
-              <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-              comment = myshare</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-              path =</span> <span style="font-weight: bold;">/home/your_user_name/</span><span style="color: rgb(0, 0, 153);">shared_dir</span><br>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              comment = myshare</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              path =</SPAN> <SPAN style=
+              "font-weight: bold;">/home/your_user_name/</SPAN><SPAN style="color: rgb(0, 0, 153);">shared_dir</SPAN><BR>
 
-              <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-              writeable = yes</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-              valid users = your_user_name</span><br>
-              <br>
-              Then reboot.<br>
-            </div><br>
-            <span style="text-decoration: underline;">The Android
-            client setup</span> is as follows e.g;<br>
-            <div style="margin-left: 40px;">
-              Total Commander<br>
-              LAN(Windows shares) &gt; New server &gt;<br>
-              <br>
-              <table style="text-align: left; width: 80%;" cellspacing="2" cellpadding="2" border="0">
-                <tbody>
-                  <tr>
-                    <td style="vertical-align: top; width: 30%;">
-                    Connection Name<br></td>
-                    <td style="vertical-align: top;">
-                    &nbsp;<br></td>
-                    <td style="vertical-align: top; width: 70%; white-space: nowrap;">
-                    anyName</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">Server
-                    name/directory</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top; white-space: nowrap;">
-                    <span style="font-weight: bold;">hostname/users/userName/<span style="color: rgb(0, 0, 153);">shared_dir<br>
-                    </span></span> or<span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);"><br></span>
-                    hostname<span style="color: rgb(0, 0, 153);">/share_name<br></span></span></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">User name</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">(same as PC
-                    username)</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">Password:</td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">(same as PC
-                    password) (CANNOT BE EMPTY)<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">server
-                    type<br></td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">SMB2 or
-                    SMB3</td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">other
-                    settings<br></td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;">all
-                    OFF<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top;">OK<br></td>
-                    <td style="vertical-align: top;"><br></td>
-                    <td style="vertical-align: top;"><br></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div><br>
-          </div>
-          <div style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              writeable = yes</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              valid users = your_user_name</SPAN><BR>
+              <BR>
+              Then reboot.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">The Android
+            client setup</SPAN> is as follows e.g;<BR>
+            <DIV style="margin-left: 40px;">
+              Total Commander<BR>
+              LAN(Windows shares) &gt; New server &gt;<BR>
+              <BR>
+              <TABLE style="text-align: left; width: 80%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top; width: 30%;">
+                    Connection Name<BR></TD>
+                    <TD style="vertical-align: top;">
+                    &nbsp;<BR></TD>
+                    <TD style=
+                    "vertical-align: top; width: 70%; white-space: nowrap;">
+                    anyName</TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">Server
+                    name/directory</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    <SPAN style=
+                    "font-weight: bold;">hostname/users/userName/<SPAN style="color: rgb(0, 0, 153);">shared_dir<BR>
+                    </SPAN></SPAN> or<SPAN style=
+                    "font-weight: bold;"><SPAN style=
+                    "color: rgb(0, 0, 153);"><BR></SPAN>
+                    hostname<SPAN style=
+                    "color: rgb(0, 0, 153);">/share_name<BR></SPAN></SPAN></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">User name</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">(same as PC
+                    username)</TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">Password:</TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">(same as PC
+                    password) (CANNOT BE EMPTY)<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">server
+                    type<BR></TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">SMB2 or
+                    SMB3</TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">other
+                    settings<BR></TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;">all
+                    OFF<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">OK<BR></TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             Start your Android SMB client to connect. You should
-            see the listing at the root of the folder<br>
-            e.g shared_dir.<br>
-            <br>
+            see the listing at the root of the folder<BR>
+            e.g shared_dir.<BR>
+            <BR>
             On the other pane of Total Commander, navigate to
-            Internal shared storage &gt;<br>
+            Internal shared storage &gt;<BR>
             (e.g /storage/emulated/0) &gt;
-            Android/data/com.rfo.hbasic/<br>
-            <div style="margin-left: 40px;">
-              <span style="color: rgb(51, 0, 153);"><span style="color: rgb(153, 0, 0);">files</span></span><br>
-              <span style="color: rgb(51, 0, 153);"><span style="color: rgb(153, 0, 0);">rfo-basic</span></span><br>
-            </div>This is the Base Drive which is the start of
-            hBasic's scoped storage.<br>
+            Android/data/com.rfo.hbasic/<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(51, 0, 153);"><SPAN style=
+              "color: rgb(153, 0, 0);">files</SPAN></SPAN><BR>
+              <SPAN style="color: rgb(51, 0, 153);"><SPAN style=
+              "color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN><BR>
+            </DIV>This is the Base Drive which is the start of
+            hBasic's scoped storage.<BR>
             Navigate into rfo-basic, and you should see the
-            <font color="#663300"><span style="color: rgb(0, 0, 153);">source,</span> <span style="color: rgb(0, 0, 153);">data</span></font> &amp;
-            <font color="#663300"><span style="color: rgb(0, 0, 153);">databases</span></font>
+            <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">source,</SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">data</SPAN></FONT> &amp;
+            <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">databases</SPAN></FONT>
             directories.
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><a name="method_c" id="demo0413"></a><font size="+1">Method C - Android
-          Debug Bridge<br></font></span><br>
-          <div style="margin-left: 40px;">
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="method_c"
+          id="demo0413"></A><FONT size="+1">Method C - Android
+          Debug Bridge<BR></FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
             I include this method, because sooner or later Method B
-            will not work for newer versions of Android 14+.<br>
+            will not work for newer versions of Android 14+.<BR>
             A lot of professional developers use this method, but
             don't let that put you off, you only need to know about
-            a few commands.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            The advantage of an ADB connection is<br>
-            <div style="margin-left: 40px;">
-              Storage Access (including scoped storage)<br>
-              App installation (streamed apk install)<br>
-              Custom scripts<br>
-              Faster overall work flow speed<br>
-            </div><br>
-          </div>
-          <div style="margin-left: 40px;">
+            a few commands.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            The advantage of an ADB connection is<BR>
+            <DIV style="margin-left: 40px;">
+              Storage Access (including scoped storage)<BR>
+              App installation (streamed apk install)<BR>
+              Custom scripts<BR>
+              Faster overall work flow speed<BR>
+            </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             In this setup, both client and server are running on
             the PC. The server communicates with a daemon on the
-            target device.<br>
-            <br>
-            <font size="+1"><span style="text-decoration: underline;">Setup
-            ADB</span></font><br>
-            <div style="margin-left: 40px;">
-              Install ADB on your PC using <a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">
-              this guide</a> found at xda-developers.com.<br>
+            target device.<BR>
+            <BR>
+            <FONT size="+1"><SPAN style=
+            "text-decoration: underline;">Setup
+            ADB</SPAN></FONT><BR>
+            <DIV style="margin-left: 40px;">
+              Install ADB on your PC using <A href=
+              "https://www.xda-developers.com/install-adb-windows-macos-linux/">
+              this guide</A> found at xda-developers.com.<BR>
               Do not be put off, as it is not complex. It is just a
               program that runs on your PC that connects with your
-              phone.<br>
+              phone.<BR>
               Once setup, adb does many more things than
-              transferring files.<br>
-              <br>
-            </div><font size="+1"><span style="text-decoration: underline;">Wired-Connection</span></font>
-            <div style="margin-left: 40px;"></div>To start off,
-            <a href="https://www.xda-developers.com/install-adb-windows-macos-linux/">
-            the xda guide</a> explains how to get a connection
-            between your PC and device using a <span style="color: rgb(102, 0, 0);">USB cable</span>.<br>
-            <br>
-            <font size="+1"><span style="text-decoration: underline;">WiFi-Connection</span></font><br>
+              transferring files.<BR>
+              <BR>
+            </DIV><FONT size="+1"><SPAN style=
+            "text-decoration: underline;">Wired-Connection</SPAN></FONT>
+            <DIV style="margin-left: 40px;"></DIV>To start off,
+            <A href=
+            "https://www.xda-developers.com/install-adb-windows-macos-linux/">
+            the xda guide</A> explains how to get a connection
+            between your PC and device using a <SPAN style=
+            "color: rgb(102, 0, 0);">USB cable</SPAN>.<BR>
+            <BR>
+            <FONT size="+1"><SPAN style=
+            "text-decoration: underline;">WiFi-Connection</SPAN></FONT><BR>
 
-            The xda guide also shows you how to get a <span style="color: rgb(102, 0, 0);">wifi connection</span> via
-            Developer settings (ADB via WiFi).<br>
-            Not all devices may support this.<br>
-            <br>
-            <span style="text-decoration: underline;"><a name="wifi-trick" id="wifi-trick"></a><font size="+1">WiFi-Trick</font></span><br>
+            The xda guide also shows you how to get a <SPAN style=
+            "color: rgb(102, 0, 0);">wifi connection</SPAN> via
+            Developer settings (ADB via WiFi).<BR>
+            Not all devices may support this.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "wifi-trick" id="wifi-trick"></A><FONT size=
+            "+1">WiFi-Trick</FONT></SPAN><BR>
             If your device does not support ADB via WiFi, you can
             use a trick that fixes the connection port to e.g 5555,
             however this method is per-session, so you may have to
-            do it for every session.<br>
-            <br>
-            <div style="margin-left: 40px;">
+            do it for every session.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
               1. Make sure you can connect and operate via a USB
-              cable.<br>
-            </div>
-            <div style="margin-left: 40px;">
-              <br>
-              2. <span style="color: rgb(102, 51, 0);"><span style="font-family: Courier New, Courier, monospace;">adb
-              tcpip 5555</span></span><br>
-              <div style="margin-left: 40px;">
+              cable.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <BR>
+              2. <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">adb
+              tcpip 5555</SPAN></SPAN><BR>
+              <DIV style="margin-left: 40px;">
                 This fixes the device to start listening for
-                connections on port 5555;<br>
-              </div>3. Disconnect the USB cable.<br>
-              <br>
+                connections on port 5555;<BR>
+              </DIV>3. Disconnect the USB cable.<BR>
+              <BR>
               4. Get the device IP&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (
-              <span style="color: rgb(0, 51, 0);">Settings &gt;
+              <SPAN style="color: rgb(0, 51, 0);">Settings &gt;
               About Phone &gt; Deailed &gt; Status &gt; IP
-              address</span> )<br>
-              5. Connect to the device<span style="color: rgb(102, 51, 0);"><span style="font-family: Courier New, Courier, monospace;"><br></span></span>
-              <div style="margin-left: 40px;">
-                <span style="color: rgb(102, 51, 0);"><span style="font-family: Courier New, Courier, monospace;">adb
-                connect &lt;device_ip_address&gt;</span></span><br>
-              </div>
-              <div style="margin-left: 40px;">
-                or<br>
-                <span style="color: rgb(102, 51, 0);"><span style="font-family: Courier New, Courier, monospace;">adb
+              address</SPAN> )<BR>
+              5. Connect to the device<SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">adb
+                connect &lt;device_ip_address&gt;</SPAN></SPAN><BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                or<BR>
+                <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">adb
                 connect
-                &lt;device_ip_address&gt;:5555</span></span><br>
-              </div>&nbsp;&nbsp;&nbsp; This connects to the device
-              via wifi.<br>
-              &nbsp; e.g<br>
-              <div style="margin-left: 40px;">
+                &lt;device_ip_address&gt;:5555</SPAN></SPAN><BR>
+              </DIV>&nbsp;&nbsp;&nbsp; This connects to the device
+              via wifi.<BR>
+              &nbsp; e.g<BR>
+              <DIV style="margin-left: 40px;">
                 adb connect 192.168.0.101&nbsp;&nbsp;&nbsp;
                 or&nbsp;&nbsp;&nbsp; adb connect
-                192.168.0.101:5555<br>
-              </div><br>
-              When your session has finished<br>
-              <div style="margin-left: 40px;">
-                <span style="color: rgb(102, 51, 0);"><span style="font-family: Courier New, Courier, monospace;">adb
-                disconnect &lt;device_ip_address&gt;</span></span>
-              </div>
-            </div><br>
+                192.168.0.101:5555<BR>
+              </DIV><BR>
+              When your session has finished<BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">adb
+                disconnect &lt;device_ip_address&gt;</SPAN></SPAN>
+              </DIV>
+            </DIV><BR>
             To switch out of wifi and go back to USB
-            mode,&nbsp;&nbsp; <span style="color: rgb(102, 51, 0);"><span style="font-family: Courier New, Courier, monospace;">adb
-            usb</span></span><br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;"><font size="+1">Useful adb commands</font></span><br>
-          </div>
-          <div style="margin-left: 80px;">
+            mode,&nbsp;&nbsp; <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">adb
+            usb</SPAN></SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><FONT size=
+            "+1">Useful adb commands</FONT></SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
             Here are some common commands. You can incorporate them
-            into your own scripts.<br>
-          </div><br>
-          <table style="text-align: left; width: 80%; margin-left: 40px;" cellspacing="2" cellpadding="2" border="0">
-            <tbody>
-              <tr>
-                <td style="vertical-align: top; width: 50px;">adb
-                devices<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top; width: 50%;">show
-                conected devices<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top; width: 30%;">adb
-                start-server</td>
-                <td style="vertical-align: top;">&nbsp;<br></td>
-                <td style="vertical-align: top; width: 70%; white-space: nowrap;">
-                start server<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top; width: 50%;">adb
-                kill-server</td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top; white-space: nowrap;">kill
-                server<span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);"><br></span></span></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">adb install
-                &lt;package&gt;</td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">install an
-                apk<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">adb <span style="font-weight: bold;">push</span> aFile.bas
-                /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/aFile.bas</td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">copy a file from
-                PC to device<br></td>
-              </tr>
-              <tr>
-  <td style="vertical-align: top;">adb <span style="font-weight: bold;">pull</span>                 /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/bFile.bas bFile.bas<br>
-  </td>
-  <td style="vertical-align: top;"><br>
-  </td>
-  <td style="vertical-align: top;">copy a file from device to PC<br>
-  </td>
-</tr>
-<tr>
-                <td style="vertical-align: top;">adb shell chmod
-                666 &lt;file-path&gt;<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">make a file
-                writeable<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">adb push myDir/*
-                /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/data/</td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">copy multiple
-                files from myDir to the data directory.<br></td>
-              </tr>
-            </tbody>
-          </table><br>
-          <div style="margin-left: 40px;">
+            into your own scripts.<BR>
+          </DIV><BR>
+          <TABLE style=
+          "text-align: left; width: 80%; margin-left: 40px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top; width: 50px;">adb
+                devices<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top; width: 50%;">show
+                conected devices<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 30%;">adb
+                start-server</TD>
+                <TD style="vertical-align: top;">&nbsp;<BR></TD>
+                <TD style=
+                "vertical-align: top; width: 70%; white-space: nowrap;">
+                start server<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 50%;">adb
+                kill-server</TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">kill
+                server<SPAN style="font-weight: bold;"><SPAN style=
+                "color: rgb(0, 0, 153);"><BR></SPAN></SPAN></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">adb install
+                &lt;package&gt;</TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">install an
+                apk<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">adb <SPAN style=
+                "font-weight: bold;">push</SPAN> aFile.bas
+                /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/aFile.bas</TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">copy a file from
+                PC to device<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">adb <SPAN style=
+                "font-weight: bold;">pull</SPAN>
+                /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/bFile.bas
+                bFile.bas<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">copy a file from
+                device to PC<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">adb shell chmod
+                666 &lt;file-path&gt;<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">make a file
+                writeable<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">adb push myDir/*
+                /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/data/</TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">copy multiple
+                files from myDir to the data directory.<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 40px;">
             Example : Copy a file into hBasic's source
-            directory.<br>
-            <br>
-            <div style="margin-left: 40px;">
+            directory.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
               adb push aFile.bas
-              /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/aFile.bas<br>
+              /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/aFile.bas<BR>
 
               adb shell chmod 666
-              /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/aFile.bas<br>
-            </div><br>
-            <div style="text-align: left;">
+              /sdcard/Android/data/com.rfo.hbasic/rfo-basic/source/aFile.bas<BR>
+            </DIV><BR>
+            <DIV style="text-align: left;">
               (obviously this is verbose, so you would be writing
-              your own scripts to simplify)<br>
-            </div><br>
+              your own scripts to simplify)<BR>
+            </DIV><BR>
             The second command is neccessary to fix permissions
             because you may later want to edit the file with
-            hBasic's Editor.<br>
-            ( <span style="font-style: italic;">When files are
+            hBasic's Editor.<BR>
+            ( <SPAN style="font-style: italic;">When files are
             copied this way, the copier (adb) is not the phone_user
-            and files can end up as read-only</span>. )<br>
-          </div><br>
-<div style="margin-left: 40px;"><span style="text-decoration: underline;"><a name="scite"></a>SciTE Integration</span><br>
-  <br>
-If you are using the SciTE text editor, you can add a shortcut to call your script for file transfer.<br>
-In the Language menu, use the 'FreeBasic configuration file.<br>
-Find the freebasic property file on you installation (usually /usr/share/scite/freebasic.properties).<br>
-Add these two lines at the bottom of the file;<br>
-  <br>
-</div>
-<div style="margin-left: 80px;">command.name.1.$(file.patterns.freebasic)=adb PUSH<br>
-command.1.$(file.patterns.freebasic)=/path-to-your-script/<span style="font-weight: bold;">your-script.sh</span> $(FileNameExt)<br>
-</div>
-<div style="margin-left: 40px;">This shortcut should turn up as Ctrl-1 in the Tools menu.<br>
-  <br>
-</div>
-
-          -End<span style="color: rgb(0, 0, 153);"><font size="+1"><br></font></span>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><a name="method_d" id="demo0413"></a><font size="+1">Method D -
-          Shizuku<br></font></span><br>
-          <div style="margin-left: 40px;">
-            Shizuku is a third-party app which acts as a permissions broker.<br>
-<br>
+            and files can end up as read-only</SPAN>. )<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "scite" id="scite"></A>SciTE Integration</SPAN><BR>
+            <BR>
+            If you are using the SciTE text editor, you can add a
+            shortcut to call your script for file transfer.<BR>
+            In the Language menu, use the 'FreeBasic configuration
+            file.<BR>
+            Find the freebasic property file on you installation
+            (usually /usr/share/scite/freebasic.properties).<BR>
+            Add these two lines at the bottom of the file;<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            command.name.1.$(file.patterns.freebasic)=adb PUSH<BR>
+            command.1.$(file.patterns.freebasic)=/path-to-your-script/<SPAN style="font-weight: bold;">your-script.sh</SPAN>
+            $(FileNameExt)<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            This shortcut should turn up as Ctrl-1 in the Tools
+            menu.<BR>
+            <BR>
+          </DIV>-End<SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><BR></FONT></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name="method_d"
+          id="demo0413"></A><FONT size="+1">Method D -
+          Shizuku<BR></FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            Shizuku is a third-party app which acts as a
+            permissions broker.<BR>
+            <BR>
             It grants permissions for an app, in particular it
             grants permissions for TotalCommander when using Method
-            B for Android 14+.<br>
+            B for Android 14+.<BR>
             This means that TotalCommander will be able to access
-            Android/data//com.rfo.hbasic/.<br>
-            <br>
+            Android/data//com.rfo.hbasic/.<BR>
+            <BR>
             The version of TotalCommander that works with Shizuku
-            was <a href="https://www.ghisler.ch/board/viewtopic.php?t=82510">announced
-            here</a>.<br>
-            <br>
-            For this to work, you must also install <a href="https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api">
-            Shizuku</a> on a device with Android 11 or above.<br>
-            <br>
+            was <A href=
+            "https://www.ghisler.ch/board/viewtopic.php?t=82510">announced
+            here</A>.<BR>
+            <BR>
+            For this to work, you must also install <A href=
+            "https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api">
+            Shizuku</A> on a device with Android 11 or above.<BR>
+            <BR>
             Internally, Shizuku uses method C, which means that a
-            number of steps need to be done before usage.<br>
-            To set this up, please refer to the <a href="https://shizuku.rikka.app/guide/setup/#start-via-wireless-debugging">
-            Shizuku Guide</a>.<br>
-          </div><br>
-        </td>
-      </tr>
-    </tbody>
-  </table><br>
-  <script type="text/javascript" src="https://humpity.github.io/counter.js"></script>
-
-
-</body></html>
+            number of steps need to be done before usage.<BR>
+            To set this up, please refer to the <A href=
+            "https://shizuku.rikka.app/guide/setup/#start-via-wireless-debugging">
+            Shizuku Guide</A>.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>
