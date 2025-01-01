@@ -3,6 +3,11 @@ hSuite changelog
 Date		Summary of Versions
 --------------- -------------------------------------------
 
+2025-01-01	v3.27
+		hmaster v2.31
+		hpatcher v3.20
+			legacy option for older devices
+
 2024-12-17	v3.26
 		hmaster v2.30
 

@@ -27,7 +27,6 @@
           </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Console
           command changes</BIG></BIG><BR>
           <BR>
-          <BR>
           <TABLE style=
           "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
           cellspacing="2" cellpadding="2" border="0">
@@ -77,18 +76,17 @@
                     <A href="#strikethrough">Strike</A><BR>
                   </DIV>Line Based<BR>
                   <DIV style="margin-left: 40px;">
-                    <A href="console.html#spacing">SPACING</A><BR>
-                    <A href="console.html#wrap">WRAP</A><BR>
+                    <A href="#spacing">SPACING</A><BR>
+                    <A href="#wrap">WRAP</A><BR>
                   </DIV>Console Based<BR>
                   <DIV style="margin-left: 40px;">
-                    <A href=
-                    "console.html#voidcolor">VOIDCOLOR</A><BR>
-                    <A href=
-                    "console.html#linecolor">LINECOLOR</A><BR>
-                    <A href=
-                    "console.html#dividers">DIVIDERS</A><BR>
+                    <A href="#voidcolor">VOIDCOLOR</A><BR>
+                    <A href="#linecolor">LINECOLOR</A><BR>
+                    <A href="#dividers">DIVIDERS</A><BR>
                     <A href="#scroll">SCROLL</A><BR>
-                    <A href="console.html#stack">STACK</A><BR>
+                    <A href="#stack">STACK</A><BR>
+                    <A href="#statustxt">STATUSTXT</A><BR>
+                    <A href="#navbartxt">NAVBARTXT</A><BR>
                     <A style="text-decoration: line-through;" href=
                     "#title">TITLE</A> (deprecated since v4.30)<BR>
                   </DIV>
@@ -156,6 +154,23 @@
                 "#clr">CLR</A><BR></TD>
                 <TD style="vertical-align: top;">Clear till end of
                 line<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Other<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; text-align: right;"><A href=
+                "system.html#directives">Directives</A><BR></TD>
+                <TD style="vertical-align: top;">Configure the
+                console before it opens<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; text-align: right;"><A href=
+                "functions.html">Functions</A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
               </TR>
             </TBODY>
           </TABLE><BR>
@@ -1157,7 +1172,6 @@
             <DIV style="margin-left: 120px;">
               <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN> size
               will use Basic's default size (5dp)<BR>
-              <BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
             </DIV><BR>
@@ -1185,7 +1199,6 @@
               Note that wrapped text still sits on 'one' line, even
               though it looks likes there are two or more. Set the
               dividers 'on' to see which line the text sits on.<BR>
-              <BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.
             </DIV><BR style="font-family: monospace;">
@@ -1214,7 +1227,6 @@
               "font-style: italic;">adhering to android user
               prefs</SPAN>)<BR>
               0 size will default to Basic's preferences.<BR>
-              <BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
             </DIV><BR>
@@ -1277,7 +1289,6 @@
               <BR>
               An example of loading a font is found <A href=
               "samples.html">here</A>.<BR>
-              <BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
             </DIV><BR>
@@ -1298,7 +1309,6 @@
               this on unless you are using unicode block graphic
               characters and need to have adjacent lines to look
               flush.<BR>
-              <BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
             </DIV><BR>
@@ -1314,7 +1324,6 @@
               <SPAN style="color: rgb(0, 0, 153);">Underline
               text</SPAN><BR>
               The default setting is OFF.<BR>
-              <BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
             </DIV><BR>
@@ -1330,7 +1339,6 @@
               <SPAN style="color: rgb(0, 0, 153);">Apply
               strike-through effect on text.</SPAN><BR>
               The default setting is OFF.<BR>
-              <BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
             </DIV><BR>
@@ -1346,8 +1354,7 @@
 
             <DIV style="margin-left: 120px;">
               <SPAN style="color: rgb(0, 0, 153);">turns ON or OFF
-              line dividers<BR>
-              <BR></SPAN> Applies to the <SPAN style=
+              line dividers<BR></SPAN> Applies to the <SPAN style=
               "font-weight: bold;">whole</SPAN> console.<BR>
             </DIV><BR>
             <SPAN style="font-family: monospace;"><A name="scroll"
@@ -1355,7 +1362,7 @@
             "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>&nbsp;
             &lt;</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;">FASTON
-            | FASTOFF"&nbsp;&nbsp; e.g</SPAN> <SPAN style=
+            | FASTOFF&gt;" &nbsp; e.g</SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">SCROLL</SPAN>
@@ -1368,14 +1375,13 @@
               scrollbar drag if list is 4x screenheight or
               more.<BR>
               FastOff - turns off fast scroll.<BR>
-              <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
               Applies to the <SPAN style=
               "font-weight: bold;">whole</SPAN> console.<BR>
             </DIV><BR>
             <SPAN style="font-family: monospace;"><A name="stack"
             id="stack"></A></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STACK</SPAN>&nbsp;
-            &lt;FROMBASE | FROMTOP"&nbsp;&nbsp;</SPAN> <SPAN style=
+            &lt;FROMBASE | FROMTOP&gt;" &nbsp;</SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">e.g</SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
@@ -1392,11 +1398,57 @@
                 lines from the top of screen (default).<BR>
                 FromBase - stack new lines from the bottom of
                 screen.<BR>
-                <SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
                 Applies to the <SPAN style=
                 "font-weight: bold;">whole</SPAN> console.<BR>
+                <BR>
               </DIV>
-            </DIV>Rules;<BR style=
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><A name="statustxt"
+            id="statustxt"></A>"</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STATUSTXT</SPAN>&nbsp;
+            &lt;LIGHT | DARK&gt;" &nbsp;</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">e.g</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">StatusTxt</SPAN>
+            light"</SPAN><BR>
+            <A name="navbartxt" id="navbartxt"></A><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">NAVBARTXT</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
+            &lt;LIGHT | DARK&gt;" &nbsp;</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">e.g</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">NavBarTxt</SPAN>
+            dark"</SPAN>
+            <DIV style="margin-left: 40px;">
+              <DIV style="margin-left: 80px;">
+                <SPAN style="color: rgb(0, 0, 153);">Set the status
+                bar text or navigation bar icons
+                shading.&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> (default is
+                light)<BR>
+                <BR>
+                STATUSTXT does not work for devices &lt; Api 23
+                (Android 6).<BR>
+                NAVBARTXT does not work for devices &lt; Api 26
+                (Android 8).<SPAN style=
+                "color: rgb(0, 0, 153);"><BR></SPAN> The colors are
+                dependent on the device version or if they are
+                hidden or not (<A href=
+                "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/decors.html#behave_table">see
+                this table</A>).<BR>
+                e.g You may want dark text if you know the
+                statusbar background will be light (see <A href=
+                "system.html#window_bg">@@window_bg</A>).<BR>
+                Applies to the <SPAN style=
+                "font-weight: bold;">whole</SPAN> console.<BR>
+                <BR>
+              </DIV>
+            </DIV>
+            <HR style="width: 100%; height: 2px;">
+            CONSOLE.SET Rules<BR>
+            <BR style=
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 1. A keyword value pair is a

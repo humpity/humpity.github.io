@@ -26,16 +26,43 @@
           </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Package
           changes<BR>
           <BR></BIG></BIG>
-          <DIV style="margin-left: 40px;">
-            <BIG><A href="#api">Support to android target api
-            level</A><BR></BIG>
-          </DIV><BIG><BR></BIG>
-          <DIV style="margin-left: 40px;">
-            <BIG><A href="#id">Identity Changes</A><BR></BIG>
-          </DIV><BIG><BR></BIG>
-          <DIV style="margin-left: 40px;">
-            <BIG><A href="#scoped">Scoped Storage</A></BIG><BR>
-          </DIV><BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#api">API levels</A></BIG></TD>
+                <TD style="vertical-align: top;">Support and
+                requirements<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#id">Identity Changes</A></BIG></TD>
+                <TD style="vertical-align: top;">App
+                identity<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#legacy">Legacy Storage</A></BIG></TD>
+                <TD style="vertical-align: top;">Support for older
+                devices<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#scoped">Scoped Storage</A></BIG></TD>
+                <TD style="vertical-align: top;">How Google screwed
+                up shared storage<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#permissions"><FONT size=
+                "+1">Permissions</FONT></A><BR></TD>
+                <TD style="vertical-align: top;">What to expect
+                during installation<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
         </TD>
       </TR>
       <TR>
@@ -46,7 +73,7 @@
           <DIV style="margin-left: 40px;">
             &nbsp;This release includes all mods and (most) patches
             from v1.61 with support to target <SPAN style=
-            "color: rgb(0, 0, 153);">API 34</SPAN>;<BR style=
+            "color: rgb(0, 0, 153);">API 35</SPAN>;<BR style=
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             <BR style=
@@ -70,7 +97,7 @@
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             <BR>
-            &nbsp; Note: hBasic will overwrite Sample_Programs if
+            &nbsp;Note: hBasic will overwrite Sample_Programs if
             another version of hBasic was run before).<BR>
             <BR>
             <SPAN style="text-decoration: underline;">About Android
@@ -81,7 +108,7 @@
           <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;">
               Google requires that by the end August of each year
-              (after a new Android version comes out),&nbsp; all
+              (or after a new Android version comes out),&nbsp; all
               Playstore apps and updates <SPAN style=
               "font-weight: bold;">must&nbsp;target&nbsp;a
               level&nbsp;no more than one year older than the
@@ -188,18 +215,69 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "legacy" id="legacy"></A>Legacy Storage</SPAN></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            hBasic's default storage base was moved to scoped
+            storage since <SPAN style=
+            "color: rgb(0, 0, 153);">v3.00</SPAN>.<BR>
+            However, devices <SPAN style=
+            "text-decoration: underline;">lower than</SPAN> Android
+            11 (&lt; Api 30) can choose legacy storage by selecting
+            the base Drive<BR>
+            in Preferences &gt; Base Drive as either<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "color: rgb(102, 51, 0);">/sdcard</SPAN><BR>
+            </DIV>or<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "color: rgb(102, 51, 0);">/storage/emulated/0</SPAN><BR>
+            </DIV>which effectively moves the base to legacy
+            storage (outside of scoped storage).<BR>
+            Devices for Android 11 and higher will not have this
+            option.<BR>
+            <BR>
+            For Standalone apks (made with hSuite/hPatcher), you
+            also need to add <A href="permissions">permission</A>
+            WRITE_EXTERNAL_STORAGE<BR>
+            and select Customise &gt; Legacy &gt; use Unscoped
+            Storage. You only need this option if the app was
+            developed using a legacy base.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
           "scoped" id="scoped"></A>Scoped Storage</SPAN></BIG><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            hBasic was moved to scoped storage since <SPAN style=
-            "color: rgb(0, 0, 153);">v3.00</SPAN>.<BR>
-            This means that the app is boxed into an
-            <U>External</U> storage area that it can read or write
-            to. Outside apps cannot normally access this private
-            area. This area is often <SPAN style=
+            hBasic was forced to move to scoped storage (since
+            <SPAN style="color: rgb(0, 0, 153);">v3.00</SPAN>) to
+            cater for devices running Android 11+ (Api 30+).<BR>
+            This means that the app is boxed into a storage area
+            that only itself can read or write to (by design).<BR>
+            Outside apps cannot normally access this private
+            area.<BR>
+            <BR>
+            Basic's legacy (unscoped) storage base is historically
+            on <SPAN style=
+            "text-decoration: underline;">External</SPAN> storage
+            at <SPAN style="color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;/sdcard&gt;</SPAN></SPAN>.<BR>
+
+            This area is often <SPAN style=
             "text-decoration: underline;">emulated</SPAN> with
             faster 'internal' storage but still classified as
-            'External' and often named 'sdcard'.<BR>
+            'External'.<BR>
+            On the other hand, hBasic's (scoped) storage base
+            starts furthur inside e.g <SPAN style=
+            "color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;/sdcard&gt;</SPAN></SPAN>/<SPAN style="color: rgb(51, 0, 153);">Android</SPAN>/<SPAN style="color: rgb(51, 0, 153);">data</SPAN>/<SPAN style="color: rgb(51, 0, 153);">com.rfo.hbasic</SPAN><BR>
+
             <BR>
             Base Drive (or Base Path)<BR>
           </DIV>
@@ -213,12 +291,12 @@
             "color: rgb(51, 0, 153);"><SPAN style=
             "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN></SPAN>/<SPAN style="color: rgb(51, 0, 153);">Android</SPAN>/<SPAN style="color: rgb(51, 0, 153);">data</SPAN>/<SPAN style="color: rgb(51, 0, 153);">com.rfo.hbasic</SPAN>.<BR>
           </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 40px;" align="right">
             <I>(note: legacy Basic's default base drive used to be
-            just</I> <I><SPAN style=
+            just</I> &lt;<SPAN style=
+            "font-weight: bold;"><I><SPAN style=
             "color: rgb(51, 0, 153);"><SPAN style=
-            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN></SPAN></I>/<I><SPAN style="color: rgb(51, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">)</SPAN></SPAN></I><BR>
+            "color: rgb(102, 51, 0);">/sdcard</SPAN></SPAN></I></SPAN>&gt;)<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             Base Directory<BR>
@@ -231,7 +309,6 @@
             "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN>/Android/data/com.rfo.hbasic/<SPAN style="color: rgb(153, 0, 0);">rfo-basic<BR>
             </SPAN></SPAN>
           </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 80px;">
             with <FONT color="#663300"><SPAN style=
             "color: rgb(0, 0, 153);">source,</SPAN> <SPAN style=
@@ -247,7 +324,7 @@
           <DIV style="margin-left: 80px;">
             Historically, the <FONT color="#990000">App_Path</FONT>
             or app directory is just the name of the base_directory
-            e.g <FONT color="#990000">"rfo-basic"</FONT>
+            e.g <FONT color="#990000">"rfo-basic"</FONT><BR>
             (ironically without the path).<BR>
             This will be different for custom (standalone)
             apps.<BR>
@@ -255,7 +332,7 @@
           <DIV style="margin-left: 40px;">
             <BR>
             The mount point of <SPAN style=
-            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN> is
+            "color: rgb(102, 51, 0);">&lt;/sdcard&gt;</SPAN> is
             something like <SPAN style=
             "color: rgb(102, 51, 0);">/storage/emulated/0</SPAN>
             depending on the device.<BR>
@@ -279,15 +356,133 @@
             "https://humpity.github.io/promotes/rfo-basic/hbasic/other/transfer.html">
             </A><BR>
             <BR>
-            All apps that have been compiled for Android 11 and
-            higher (Target API 30+) are forced to be scoped. They
-            can no longer access areas outside of their scoped
-            storage.<BR>
+            Being boxed inside scoped storage also means you can't
+            get out.<BR>
+            All apps that run on an Android 11 device and higher
+            (Api 30+) are forced to be scoped. i.e they can no
+            longer easily access areas outside of their own scoped
+            storage nor easily share their own files for other
+            apps.<BR>
             <BR>
+            However, all apps modified to use scoped storage can
+            <SPAN style="text-decoration: underline;">also</SPAN>
+            run on older devices (&lt;Api 30) (see <A href=
+            "#legacy">legacy</A>).<BR>
             Scoped storage is furthur discussed in <A href=
             "https://www.tapatalk.com/groups/rfobasic/viewtopic.php?p=47273#p47273">
-            this forum post</A>.<BR>
+            this forum post</A>. and is mapped in <A href=
+            "https://humpity.github.io/promotes/rfo-basic/hbasic/articles/storage.html">
+            this article</A>.<BR>
           </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "permissions" id=
+          "scoped"></A>Permissions<BR></SPAN></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            These are likely the permissions required by the user
+            to grant when the app is installed.<BR>
+            Standard hBasic will ask for all dangerous permssions
+            at the start of the program if not previously
+            granted.<BR>
+            If you don't want to grant any of the permssions and
+            don't want to be asked, select "Don't Ask Again".<BR>
+            <BR>
+            You can un-grant permissions via the devices' Settings
+            app, infact, newer Android versions may do this
+            automatically if the app is unused for a while. hBasic
+            will then prompt for permission the next time it
+            starts.<BR>
+            <BR>
+            StandAlone Apps (made via hSuite) can select which
+            permissions will be required.<BR>
+            Only the dangerous ones will be asked for, the others
+            are automatically granted.<BR>
+            <BR>
+            <TABLE style="text-align: left; width: 80%;"
+            cellspacing="0" cellpadding="5" border="0">
+              <CAPTION>
+                App Dangerous Permissions<BR>
+                <BR>
+              </CAPTION>
+              <TBODY>
+                <TR>
+                  <TD style=
+                  "vertical-align: middle; white-space: nowrap; width: 10%;">
+                  Device Api<BR></TD>
+                  <TD style="vertical-align: middle; width: 10%;">
+                  Codes<BR></TD>
+                  <TD style="vertical-align: middle; width: 80%;">
+                  Requested</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">&lt; Api 23<BR></TD>
+                  <TD style="vertical-align: middle;">&lt; 6(M)<BR>
+                  <BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  One screen requesting all permissions.<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">Api 23<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  6(M)<BR>
+                  <BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Media &amp; Files<BR>
+                  Device Location<BR>
+                  Record Video<BR>
+                  Record Audio<BR>
+                  Phone Calls<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">Api 30<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  11(R)<BR>
+                  <BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Record Video<BR>
+                  Device Location<BR>
+                  Record Audio<BR>
+                  Phone Calls<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;" valign="middle">
+                  &gt; Api 30<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  &gt; 11(R)<BR>
+                  <BR>
+                  <BR>
+                  <BR>
+                  &gt; 13(T)<BR></TD>
+                  <TD style=
+                  "vertical-align: top; width: 50%; white-space;"
+                  valign="middle">Record Video<BR>
+                  Device Location<BR>
+                  Record Audio<BR>
+                  Phone Calls<BR>
+                  Nearby Devices<BR>
+                  Notifications<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+            Older devices (&lt;Api 30) configured to run <A href=
+            "#legacy">legacy storage</A> (with base at root of
+            /sdcard) will need permission WRITE_EXTERNAL_STORAGE
+            (Media &amp; Files). This is not needed for <A href=
+            "#scoped">Scoped Storage</A>.<BR>
+            <BR>
+            -End<BR>
+          </DIV>
         </TD>
       </TR>
     </TBODY>

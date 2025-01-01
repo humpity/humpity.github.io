@@ -1481,7 +1481,7 @@
             ignored.<BR>
             <SMALL><BR>
             (Note: Prior to v4.13, the directive prefixes used to
-            be a single"@". The change to "@@" is allow through
+            be a single"@". The change to "@@" is to allow through
             variables that start with a single "@")<BR>
             <BR></SMALL> Directives are processed before the a
             program is run. Therefore you cannot use any variables
@@ -1503,10 +1503,13 @@
                   actionbar at startup<BR></TD>
                 </TR>
                 <TR>
-                  <TD style="vertical-align: top;"><A href=
-                  "dark_statustxt">@@dark_statustxt</A><BR></TD>
-                  <TD style="vertical-align: top;">Prefer status
-                  text to be dark<BR></TD>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "text-decoration: line-through;">@@dark_statustxt</SPAN><BR>
+                  </TD>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "font-style: italic;">( replaced with <A href=
+                  "console.html#statustxt">console.set
+                  statustxt</A> dark )</SPAN><BR></TD>
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;"><A href=
@@ -1533,7 +1536,7 @@
             </DIV>
             <DIV style="margin-left: 40px;"></DIV>
             <DIV style="margin-left: 120px;">
-              @@PRELOAD,&nbsp; @@LOCALSTACKS<BR>
+              @@PRELOAD,&nbsp; @@LOCALSTACKS, @@DARK_STATUSTXT<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -1623,31 +1626,6 @@
               "Program Output".<BR>
             </DIV><BR>
             <SPAN style="color: rgb(0, 0, 153);"><A name=
-            "dark_statustxt" id=
-            "dark_statustxt"></A>@@DARK_STATUSTXT<BR>
-            <BR></SPAN>
-            <DIV style="margin-left: 40px;">
-              This directive will tell Android that we prefer the
-              console statusbar text to be dark rather than the
-              default light color.<BR>
-              It can also affect the navigation bar icon color to
-              be dark or light depending on the configuration.
-              Because of this, it can also affect the background
-              color of the navigation bar depending on the device
-              Api.<BR>
-              <BR>
-              The colors are dependent on the device version
-              (<A href="decors.html#behave_table">see this
-              table</A>).<BR>
-              (since the statusbar is always on for the console,
-              then this is usually possible).<BR>
-              <BR>
-              You may want dark text if you know the statusbar
-              background will be light (see @@window_bg).<BR>
-              @@dark_statustxt has no effect for devices &lt; Api
-              30.<BR>
-              <BR>
-            </DIV><SPAN style="color: rgb(0, 0, 153);"><A name=
             "void_color" id="void_color"></A>@@VOID_COLOR</SPAN>
             "&lt;color&gt;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             e.g @@void_color "blue"<BR>
@@ -1656,7 +1634,8 @@
               This directive sets the console background (void)
               color. It is the color you see if there is no text on
               top.<BR>
-              It is equivalent to CONSOLE.SET "voidcolor
+              It is equivalent to <A href=
+              "console.html#voidcolor">CONSOLE.SET "voidcolor</A>
               &lt;color&gt;" but occurs before the console is
               displayed.<BR>
               <BR>

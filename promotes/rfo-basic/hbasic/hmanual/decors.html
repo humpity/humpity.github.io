@@ -52,7 +52,8 @@
               <TR>
                 <TD style="vertical-align: top;"><A href=
                 "#action_bar">Action Bar</A><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">i.e the Title
+                bar<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -104,7 +105,7 @@
                 colspan="2">Always transparent bg<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;" rowspan="1"
-                colspan="2">Always Translucent bg <SPAN style=
+                colspan="2">Always Translucent bg<SPAN style=
                 "font-weight: bold;">*</SPAN><BR></TD>
               </TR>
               <TR>
@@ -121,8 +122,8 @@
                 Hidden (swipe up to show)<BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;">&nbsp; &lt; Api
-                30<BR></TD>
+                <TD style="vertical-align: top;">&nbsp; &lt; Api 30
+                **<BR></TD>
                 <TD style="vertical-align: top; white-space;"
                 valign="middle">white text on window_bg</TD>
                 <TD style="vertical-align: top; white-space;"
@@ -143,7 +144,7 @@
                 white text on scrim<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;" valign="middle">
-                (light/dark) icons on window_bg or grey<BR></TD>
+                (light/dark) icons on window_bg or grey*<BR></TD>
                 <TD style="vertical-align: top;" valign="middle">
                 grey icons on translucent</TD>
               </TR>
@@ -178,10 +179,15 @@
             </TBODY>
           </TABLE>
           <DIV style="margin-left: 40px;">
-            <SPAN style="font-weight: bold;"><BR>
-            *</SPAN> note that some manufacturers may furthur color
-            the navigation bars according to their theme.<BR>
-            <SPAN style="text-decoration: underline;"><BR></SPAN>
+            <SPAN style="font-weight: bold;"><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              * Some manufacturers may furthur color the navigation
+              bars which may override your settings.<BR>
+              ** v5.25+ added support for older devices between Api
+              23-30 for <A href="#systembar_shading">System bar
+              text and icons</A>.<BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;"><BR></SPAN>
           </DIV>
           <DIV style="margin-left: 40px;">
             <FONT size="+1"><A name="window_bg" id=
@@ -282,6 +288,132 @@
               "#notch_hiding">notch_hiding</A>)<BR>
             </DIV>
           </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <A name="systembar_shading" id=
+            "systembar_shading"></A>System bar text and icons.<BR>
+            <DIV style="margin-left: 40px;">
+              Status bar text and Navigation bar icons can be made
+              light or dark if they a permanently on (depending on
+              the device Api), with;<BR>
+              CONSOLE.SET or the decors flags for GR.OPEN and
+              HTML.OPEN<BR>
+              Here is a sample program.<BR>
+              <BR>
+              <DIV style=
+              "margin-left: 40px; background-color: rgb(255, 255, 255);">
+                <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">@@hide_actionbar</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">@@window_bg
+                "lightgrey"</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><A href="console.html#statustxt">
+                CONSOLE.SET "StatusTxt
+                dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style="color: rgb(102, 102, 102);">% Api 23
+                and later</SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><A href="console.html#navbartxt">
+                CONSOLE.SET "NavBarTxt
+                dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style="color: rgb(102, 102, 102);">% Api 26
+                to Api 34 only</SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">?
+                "Console&gt; tap BackKey to
+                graphics"</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">bk=0:
+                do:pause 100: until bk</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">sdark=1:
+                ndark=1: nav=1: act=0: sta=1</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+                decors</SPAN> = ndark*16 + sdark*8 + (!nav)*4 +
+                act*2 + sta*1</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">winBG$&nbsp;
+                = "lightgrey"</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <A href="#decors"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">GR.OPEN
+                "grey", <SPAN style=
+                "color: rgb(102, 0, 0);">decors</SPAN> ,1,
+                winBG$</SPAN></A><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">gr.text.size
+                40 : gr.color "white"</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">gr.text.draw
+                oT,50,50,"Graphics&gt; tap BackKey to
+                web"</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">gr.render</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">bk=0:
+                do:pause 100: until bk</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">GR.CLOSE</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <A href="#decors"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">HTML.OPEN
+                <SPAN style="color: rgb(102, 0, 0);">decors</SPAN>,
+                1, winBG$</SPAN></A><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">html.load.string
+                "&lt;big&gt;Web&gt; tap BackKey to
+                End&lt;/big&gt;"</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+                do : html.get.datalink data$</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+                until starts_with ("BAK:",data$)</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">HTML.CLOSE</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">cls:
+                ? "Console&gt; Done."</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">END</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">OnBackKey:</SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;bk=1</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">Back.Resume</SPAN></FONT><BR>
+
+                <BR>
+              </DIV>Status bar text shading only works for Api 23
+              and later.<BR>
+              Navigation bar icon shading only works between Api 26
+              - Api 34.
+            </DIV>
+          </DIV><BR>
           <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 40px;">
             The above behaviours and effects only apply for a
@@ -359,7 +491,8 @@
                   <TD style="vertical-align: top;">Set to
                   mean<BR></TD>
                   <TD style="vertical-align: top;">Default<BR></TD>
-                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;">In
+                  general<BR></TD>
                 </TR>
                 <TR>
                   <TD style="vertical-align: top; white-space;">Bit
@@ -389,12 +522,22 @@
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;">Bit 3<BR></TD>
-                  <TD style="vertical-align: top;">dark_Text</TD>
+                  <TD style="vertical-align: top;">
+                  dark_StatusText</TD>
                   <TD style="vertical-align: top; white-space;">0 =
                   light text<BR></TD>
                   <TD style=
                   "vertical-align: top; width: 30%; white-space;">(
                   only works for Android 11+ )<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;">Bit 4<BR></TD>
+                  <TD style="vertical-align: top;">
+                  dark_NavBar_Icons<BR></TD>
+                  <TD style="vertical-align: top;">0 = light
+                  icons<BR></TD>
+                  <TD style="vertical-align: top;">( only works
+                  Android 8-14 )</TD>
                 </TR>
               </TBODY>
             </TABLE><BR>
@@ -481,14 +624,16 @@
               <SPAN style="color: rgb(153, 0, 0);">(!nav)</SPAN>*4
               + act*2 + sta*1, 1</SPAN></BIG><BR>
               <SPAN style="font-family: monospace;"><BR></SPAN>
-            </DIV><BIG style="text-decoration: underline;">Hidden
-            Bars</BIG><BR>
-            <BR>
-            If either the statusbar or navbar is hidden, then you
-            need a swipe from the top or bottom edge to show
-            it.<BR>
-            It disappears after 3 secs.<BR>
-            <BR>
+            </DIV><SPAN style="text-decoration: underline;">Hidden
+            Bars</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              If either the statusbar or navbar is hidden, then you
+              need a swipe from the top or bottom edge to show
+              it.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              It disappears after 3 secs.<BR>
+            </DIV><BR>
           </DIV>
         </TD>
       </TR>
@@ -544,9 +689,12 @@
             brought back after hiding <SPAN style=
             "text-decoration: underline;">for the console
             only</SPAN>.<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            It can only be hidden and brought back once.<BR>
             <DIV style="margin-left: 40px;">
-              If you have hidden the actionbar for graphics and
-              webview, it will not come back.<BR>
+              &nbsp;If you have hidden the actionbar for graphics
+              or webview with <A href="#decors">decors</A>, they
+              will not come back.<BR>
             </DIV>
           </DIV><BR>
         </TD>
@@ -564,8 +712,9 @@
           <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;">
               On some older devices e.g Android 5, a hidden navbar
-              might not disappear after being swiped to show if a
-              dialog is up (e.g DIALOG.MESSAGE).<BR>
+              might not disappear (after being swiped to show) if a
+              dialog is up at the same time (e.g
+              DIALOG.MESSAGE).<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
