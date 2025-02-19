@@ -35,7 +35,8 @@
                 <TD style="vertical-align: top;"><A href=
                 "#console_set">MENU</A><BR>
                 <BR></TD>
-                <TD style="vertical-align: top;"><BR>
+                <TD style="vertical-align: top;"><A href=
+                "#overview">Overview</A><BR>
                 <BR>
                 <A href="#stop">Stop / Editor / Exit</A><BR>
                 <BR>
@@ -70,6 +71,26 @@
             </TBODY>
           </TABLE><BR>
           <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="overview" id="overview"></A>Overview<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            The menu is part of the <A href=
+            "decors#actionbar">Actionbar</A> and the actionbar must
+            be showing in order to use the menu.<BR>
+            In hBasic, the menu is shared between the console,
+            graphics and webview.<BR>
+            <BR>
+            Items may be added and removed.<BR>
+            Be aware that if you remove all items, the menu
+            disappears.<BR>
+            <BR>
+            By default there is one system item showing as
+            explained below.<BR>
+          </DIV><BR>
         </TD>
       </TR>
       <TR>
@@ -112,7 +133,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="set" id=
-          "printat"></A>MENU.SET <SPAN style=
+          "printat"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">MENU.SET</SPAN></FONT>
+          <BIG style="color: rgb(0, 0, 153);"><SPAN style=
           "color: rgb(102, 51, 0);">&lt;itemList</SPAN>_<SPAN style="color: black;">sexp</SPAN></BIG><BIG style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">&gt;</SPAN><BR>
           </BIG><BR>
           <DIV style="margin-left: 40px;">
@@ -138,26 +161,29 @@
             <BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <BIG><SPAN style=
-            "text-decoration: underline;">Items</SPAN></BIG><BR>
-            Each supplied item label is entered into the menu in
-            that order starting with index 1.<BR>
-            In the example. the label "<SPAN style=
-            "font-family: Courier New,Courier,monospace;">Item
-            1</SPAN>" has index 1.<BR>
-            <BR>
-            Spaces before and after an item label count as part of
-            the label.<BR>
-            Comma is not allowed as part of an item.<BR>
-            Normally, an empty Item string is not allowed except to
-            mark an empty menu.<BR>
-            <BR>
-            <BIG><SPAN style="text-decoration: underline;">Empty
-            Menu<BR></SPAN></BIG> You can create an emtpy menu with
-            an emtpy Item <SPAN style=
-            "text-decoration: underline;">as the first
-            Item,</SPAN><BR>
-            <BR>
+            <SPAN style=
+            "text-decoration: underline;">Items</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Each supplied item label is entered into the menu in
+              that order starting with index 1.<BR>
+              In the example. the label "<SPAN style=
+              "font-family: Courier New,Courier,monospace;">Item
+              1</SPAN>" has index 1.<BR>
+              <BR>
+              Spaces before and after an item label count as part
+              of the label.<BR>
+              Comma is not allowed as part of an item.<BR>
+              Normally, an empty Item string is not allowed except
+              to mark an empty menu.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Empty
+            Menu</SPAN><BIG><SPAN style=
+            "text-decoration: underline;"><BR></SPAN></BIG>
+            <DIV style="margin-left: 40px;">
+              You can create an emtpy menu with an emtpy Item
+              <SPAN style="text-decoration: underline;">as the
+              first Item,</SPAN><BR>
+            </DIV><BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             Example<BR>
@@ -169,7 +195,7 @@
               <BR></SPAN>
             </DIV>
           </DIV>
-          <DIV style="margin-left: 40px;">
+          <DIV style="margin-left: 80px;">
             An empty menu <SPAN style=
             "text-decoration: underline;">will <SPAN style=
             "font-weight: bold;">not</SPAN> show the menu</SPAN> (3
@@ -183,35 +209,42 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
-            If you need a blank Item as part of a <SPAN style=
-            "text-decoration: underline;">non-empty</SPAN> menu,
-            then use space(s) instead of an empty string.<BR>
-            <BR>
-            <BIG><SPAN style="text-decoration: underline;">Disabled
-            Items</SPAN></BIG><BR>
-            By default, all items are enabled (not dimmed).<BR>
-            Items that start with a twiddle&nbsp; <BIG>'<FONT size=
-            "+2">~</FONT>'</BIG>&nbsp; will be disabled and
-            dimmed.<BR>
-            You can use disabled items as labels for menu headers
-            that don't respond to a touch.<BR>
-            You can also enable or disable items later on (see
-            menu.enable / menu.disable)<BR>
-            <BR>
-            <BIG><SPAN style="text-decoration: underline;">System
-            Item</SPAN></BIG><BR>
-            System items begin with a '$'.<BR>
-            Therefore do not begin your user items with a "$".<BR>
-            <BR>
-            There is only one system item and that is the Stop
-            item&nbsp; (Stop/Exit/Editor).<BR>
-            The default menu will already contain the system
-            item.<BR>
-            If you want the $stop system item in your custom menu,
-            use <SPAN style="color: rgb(0, 51, 0);">"$stop"</SPAN>
-            (case insensitive).<BR>
-            System items are always enabled (even though they maybe
-            hidden).<BR>
+            <DIV style="margin-left: 40px;">
+              If you need a blank Item as part of a <SPAN style=
+              "text-decoration: underline;">non-empty</SPAN> menu,
+              then use space(s) instead of an empty string.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Disabled
+            Items</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              By default, all items are enabled (not dimmed).<BR>
+              Items that start with a twiddle&nbsp;
+              <BIG>'<FONT size="+2">~</FONT>'</BIG>&nbsp; will be
+              disabled and dimmed.<BR>
+              You can use disabled items as labels for menu headers
+              that don't respond to a touch.<BR>
+              You can also enable or disable items later on (see
+              menu.enable / menu.disable)<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">System
+            Item</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              System items begin with a '$'.<BR>
+              Therefore do not begin your user items with a
+              "$".<BR>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              There is only one system item and that is the Stop
+              item&nbsp; (Stop/Exit/Editor).<BR>
+              The default menu will already contain the system
+              item.<BR>
+              If you want the $stop system item in your custom
+              menu, use <SPAN style=
+              "color: rgb(0, 51, 0);">"$stop"</SPAN> (case
+              insensitive).<BR>
+              System items are always enabled (even though they
+              maybe hidden).<BR>
+            </DIV>
           </DIV><BR>
         </TD>
       </TR>
@@ -219,16 +252,19 @@
         <TD style="width: 50%;">
           <BIG style="color: rgb(0, 0, 153);"><A style=
           "font-family: monospace;" name="enable" id=
-          "fn_import"></A>MENU.ENABLE <SMALL><SPAN style=
+          "fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">MENU.ENABLE</SPAN></FONT>
+          <BIG style="color: rgb(0, 0, 153);"><SMALL><SPAN style=
           "color: rgb(102, 51, 0);">&lt;itemList_<SPAN style=
           "color: black;">sexp</SPAN>&gt; | &lt;index<SPAN style=
           "color: black;">_nexp</SPAN>&gt; {,..}</SPAN><SPAN style=
           "color: rgb(102, 51, 0); font-family: monospace;"><BR>
           <BR></SPAN></SMALL></BIG> <BIG style=
           "color: rgb(0, 0, 153);"><A name="disable" id=
-          "fn_import"></A><SPAN style=
-          "color: rgb(0, 0, 153);">MENU.DISABLE</SPAN></BIG>
-          <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+          "fn_import"></A></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">MENU.DISABLE</FONT></SPAN> <SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
           "color: rgb(102, 51, 0);">&lt;itemList_<SPAN style=
           "color: black;">sexp</SPAN>&gt; | &lt;index_<SPAN style=
           "color: black;">nexp</SPAN>&gt; {,..}</SPAN></SPAN><BR>
@@ -280,9 +316,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="show" id=
-          "console_screen"></A><SPAN style=
-          "color: rgb(0, 0, 153);">MENU.SHOW</SPAN></BIG><BIG style="color: rgb(0, 0, 153);">&nbsp;</BIG><BR>
-
+          "console_screen"></A></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">MENU.SHOW&nbsp;</FONT></SPAN><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             <BIG>Opens the menu as if you had tapped it.</BIG><BR>
@@ -296,30 +332,43 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="get" id=
-          "console_screen"></A><SPAN style=
-          "color: rgb(0, 0, 153);">MENU.GET</SPAN></BIG>
-          <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+          "console_screen"></A></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">MENU.GET</FONT></SPAN> <SPAN style=
           "color: rgb(0, 0, 153);"><SPAN style=
-          "color: rgb(102, 51, 0);">{ &lt;label$_<SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(102, 51, 0);">{
+          &lt;</SPAN></SPAN></SPAN><SPAN style=
+          "font-weight: bold;">label</SPAN><SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(102, 51, 0);">$_<SPAN style=
           "color: black;">svar</SPAN>&gt;} {,
-          &lt;index_<SPAN style="color: black;">nvar</SPAN>&gt;
+          &lt;</SPAN></SPAN></SPAN><SPAN style=
+          "font-weight: bold;">index</SPAN><SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(102, 51, 0);">_<SPAN style=
+          "color: black;">nvar</SPAN>&gt;
           }</SPAN></SPAN></SPAN><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             <FONT size="+1">Get the last tap of a&nbsp;
             menu.</FONT><BR>
             <BR>
-            Either the label or/and the index variable must be
-            given.<BR>
+            Either the <SPAN style=
+            "font-weight: bold;">label</SPAN>$ or/and the
+            <SPAN style="font-weight: bold;">index</SPAN>
+            <SPAN style=
+            "text-decoration: underline;">variable</SPAN> must be
+            given to get the last tapped item.<BR>
             <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
             "color: rgb(0, 0, 153);"><SPAN style=
-            "color: rgb(102, 51, 0);">&lt;item_<SPAN style=
-            "color: black;">svar</SPAN>&gt;</SPAN></SPAN></SPAN>
+            "color: rgb(102, 51, 0);">&lt;</SPAN></SPAN></SPAN><SPAN style="font-weight: bold;">label</SPAN><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">$_<SPAN style="color: black;">svar</SPAN>&gt;</SPAN></SPAN></SPAN>
             will be the tapped label string<BR>
             <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
             "color: rgb(0, 0, 153);"><SPAN style=
-            "color: rgb(102, 51, 0);">&lt;index_<SPAN style=
-            "color: black;">nvar</SPAN>&gt;</SPAN></SPAN></SPAN>
+            "color: rgb(102, 51, 0);">&lt;</SPAN></SPAN></SPAN><SPAN style="font-weight: bold;">index</SPAN><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">_<SPAN style="color: black;">nvar</SPAN>&gt;</SPAN></SPAN></SPAN>
             will be the tapped index (1..n)<BR>
             <BR>
             If the user tapped outside the menu to close it, the
@@ -332,16 +381,25 @@
             "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
             <SPAN style="color: rgb(0, 0, 153);">MENU.GET
             <SPAN style=
-            "color: black;">mLabel$<BR></SPAN></SPAN></SPAN>
-            <SPAN style=
+            "color: black;">mLabel$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN></SPAN>
+            <SPAN style="color: rgb(51, 51, 51);">% get just the
+            label</SPAN><SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;"><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: black;"><BR>
+            </SPAN></SPAN></SPAN> <SPAN style=
             "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
             <SPAN style="color: rgb(0, 0, 153);">MENU.GET
             <SPAN style="color: black;">mLabel$,
-            mIndex<BR></SPAN></SPAN></SPAN> <SPAN style=
+            mIndex&nbsp;</SPAN></SPAN></SPAN> <SPAN style=
+            "color: rgb(51, 51, 51);">% get both label and
+            index</SPAN><SPAN style=
+            "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;"><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: black;"><BR>
+            </SPAN></SPAN></SPAN> <SPAN style=
             "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
             <SPAN style="color: rgb(0, 0, 153);">MENU.GET
-            <SPAN style="color: black;">,
-            mIndex</SPAN></SPAN></SPAN><BR>
+            <SPAN style=
+            "color: black;">,mIndex&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN></SPAN>
+            <SPAN style="color: rgb(51, 51, 51);">% get just the
+            index</SPAN><BR>
           </DIV><BR>
         </TD>
       </TR>
@@ -379,7 +437,6 @@
               menu.<BR>
               If the tap was outside, you will get the an empty
               string as the label and zero as the index.<BR>
-              <BR>
             </DIV><BR>
             <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
             "menutap_resume" id=
@@ -397,50 +454,116 @@
             Although functions called inside the block will still
             run in their own local scope.</SMALL><BR>
           </DIV><BR>
-          Example<BR>
-          <BR>
           <DIV style="margin-left: 40px;">
+            Example<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <FONT size="-1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">? "Tap
+            the menu"</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
-            "font-family: Courier New,Courier,monospace;">? "Tap
-            the menu"<BR>
-            <BR>
-            debug$ = ",$stop"<BR>
-            finish = 0<BR>
-            menuSelected = 0<BR>
-            <BR>
-            main_menu$ = "~Main Menu,Item 1,Item 2,~disabled
-            item,Quit"+debug$<BR>
-            menu.set main_menu$<BR>
-            <BR>
-            do<BR>
-            &nbsp;&nbsp;&nbsp; menuSelected = 0<BR>
-            &nbsp;&nbsp;&nbsp;
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">debug$
+            = ",$stop"</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">finish
+            = 0</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">menuSelected
+            = 0</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">main_menu$
+            = "~Main Menu,Item 1,Item 2,~disabled
+            item,Quit"+debug$</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">menu.set
+            main_menu$</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">do</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            menuSelected = 0</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
             do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % wait for a menu selection<BR>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pause
-            100<BR>
-            &nbsp;&nbsp;&nbsp; until menuSelected<BR>
-            until
+            % wait for a menu selection</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            pause 100</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            until menuSelected</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">until
             finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % user quits from menu<BR>
-            ? "Done"<BR>
-            END<BR>
-            <BR>
-            do_Menu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % process menu tap<BR>
-            &nbsp;&nbsp;&nbsp; MENU.GET label$, m<BR>
-            &nbsp;&nbsp;&nbsp; print "Tapped: ";label$,m<BR>
-            &nbsp;&nbsp;&nbsp; if label$ = "Quit" then finish =
-            1<BR>
-            &nbsp;&nbsp;&nbsp; menuSelected = 1<BR>
-            return<BR>
-            <BR>
-            onMenuTap:&nbsp;&nbsp; &nbsp;&nbsp;
+            % user quits from menu</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">?
+            "Done"</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">do_Menu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            % process menu tap</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            MENU.GET label$, m</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            print "Tapped: ";label$,m</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            if label$ = "Quit" then finish = 1</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            menuSelected = 1</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">return</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
+            onMenuTap</SPAN>:&nbsp;&nbsp; &nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % when user
-            taps an open menu<BR>
-            &nbsp;&nbsp;&nbsp; gosub do_Menu<BR>
-            &nbsp;&nbsp;&nbsp; MenuTap.Resume<BR>
-            end</SPAN><BR>
+            taps an open menu</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            gosub do_Menu</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            <SPAN style=
+            "font-weight: bold;">MenuTap.Resume</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">end</SPAN></FONT><BR>
+
+            <BR>
           </DIV>
         </TD>
       </TR>
