@@ -1,673 +1,775 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-
-
-
-  <meta content="HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" name="generator">
-  <meta http-equiv="content-type" content="text/html; charset=us-ascii">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ndk</title>
-
-  
-  <link rel="stylesheet" href="main.css" type="text/css"></head><body alink="#000099" link="#000099" vlink="#990099">
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <a href="http://humpity.github.io/home.htm">Humpty Promotes</a>
-  &gt; <a href="http://humpity.github.io/promotes/rfo-basic/rfo.html">Rfo-Basic</a>
-  &gt; <big style="font-family: Helvetica,Arial,sans-serif;"><small><a href="../articles.html">Project Articles</a>
-  &gt;</small><small><br></small></big><br>
-  <br>
-
-  <div style="text-align: left;">
-    <big><big><span style="color: rgb(0, 0, 153);">Android NDK
-    binaries with rfo-Basic!</span></big></big>&nbsp; <small>(Sep
-    2015)</small><br>
-  </div><br>
-
-  <table style="text-align: left; width: 100%; background-color: transparent;" border="0" cellpadding="2" cellspacing="2">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top;"><br></td>
-
-        <td class="large2" style="vertical-align: top; width: 30%; white-space: nowrap;">
-          <a href="ndk.html#hello">hello world</a><br>
-          <br>
-          <a href="ndk.html#What_is_NDK">What is NDK</a><br>
-
-          <div style="margin-left: 40px;">
-            Why Use it?<br>
-            Simple Interface<br>
-          </div><a href="ndk.html#Make_a_Binary">Make a
-          Binary</a><br>
-          <br>
-          <a href="ndk.html#Your_Basic_project">Your Basic!
-          project</a><br>
-          <br>
-          <a href="ndk.html#About_the_Shell">About The
-          Shell</a><br>
-
-          <div style="margin-left: 40px;">
-            Process Properties<br>
-            Conditions for exit<br>
-            Communication<br>
-          </div><a href="#About_PIE">About&nbsp; PIE</a>
-        </td>
-      </tr>
-    </tbody>
-  </table><span style="text-decoration: underline;"><a name="hello" id="hello"></a></span><big><big>T</big>he '<span style="color: rgb(0, 0, 153);">hello world</span>' moment</big><br>
-  <br style="font-family: Times New Roman,Times,serif;">
-
-  <div class="large2" style="margin-left: 40px;">
-    <span style="font-family: Times New Roman,Times,serif; text-decoration: underline;">
-    'hello world'&nbsp;&nbsp;</span><span style="font-family: Times New Roman,Times,serif; color: rgb(153, 51, 0);">&nbsp;&nbsp;
-    <span style="color: rgb(102, 0, 0);">/h&#601;&#712;l&#601;&#650;/&nbsp;
-    /w&#604;&#720;(r)ld/&nbsp;&nbsp; [noun]&nbsp;&nbsp;
-    [countable]</span><br style="color: rgb(102, 0, 0);">
-    <br style="color: rgb(102, 0, 0);"></span> <span style="font-family: Times New Roman,Times,serif; color: rgb(102, 0, 0);">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>ndk</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <A href="http://humpity.github.io/home.htm">Humpty Promotes</A>
+  &gt; <A href=
+  "http://humpity.github.io/promotes/rfo-basic/rfo.html">Rfo-Basic</A>
+  &gt; <BIG style=
+  "font-family: Helvetica,Arial,sans-serif;"><SMALL><A href=
+  "../articles.html">Project Articles</A>
+  &gt;</SMALL><SMALL><BR></SMALL></BIG><BR>
+  <BR>
+  <DIV style="text-align: left;">
+    <BIG><BIG><SPAN style="color: rgb(0, 0, 153);">Android NDK
+    binaries with rfo-Basic!</SPAN></BIG></BIG>&nbsp; <SMALL>(Sep
+    2015)</SMALL><BR>
+  </DIV><BR>
+  <TABLE style=
+  "text-align: left; width: 100%; background-color: transparent;"
+  cellspacing="2" cellpadding="2" border="0">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+        <TD class="large2" style=
+        "vertical-align: top; width: 30%; white-space: nowrap;">
+          <A href="ndk.html#hello">hello world</A><BR>
+          <BR>
+          <A href="ndk.html#What_is_NDK">What is NDK</A><BR>
+          <DIV style="margin-left: 40px;">
+            Why Use it?<BR>
+            Simple Interface<BR>
+          </DIV><A href="ndk.html#Make_a_Binary">Make a
+          Binary</A><BR>
+          <BR>
+          <A href="ndk.html#Your_Basic_project">Your Basic!
+          project</A><BR>
+          <BR>
+          <A href="ndk.html#About_the_Shell">About The
+          Shell</A><BR>
+          <DIV style="margin-left: 40px;">
+            Process Properties<BR>
+            Conditions for exit<BR>
+            Communication<BR>
+          </DIV><A href="#About_PIE">About&nbsp; PIE</A>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><SPAN style="text-decoration: underline;"><A name="hello"
+  id="hello"></A></SPAN><BIG><BIG>T</BIG>he '<SPAN style=
+  "color: rgb(0, 0, 153);">hello world</SPAN>' moment</BIG><BR>
+  <BR style="font-family: Times New Roman,Times,serif;">
+  <DIV class="large2" style="margin-left: 40px;">
+    <SPAN style=
+    "font-family: Times New Roman,Times,serif; text-decoration: underline;">
+    'hello world'&nbsp;&nbsp;</SPAN><SPAN style=
+    "font-family: Times New Roman,Times,serif; color: rgb(153, 51, 0);">&nbsp;&nbsp;
+    <SPAN style="color: rgb(102, 0, 0);">/həˈləʊ/&nbsp;
+    /wɜː(r)ld/&nbsp;&nbsp; [noun]&nbsp;&nbsp;
+    [countable]</SPAN><BR style="color: rgb(102, 0, 0);">
+    <BR style="color: rgb(102, 0, 0);"></SPAN> <SPAN style=
+    "font-family: Times New Roman,Times,serif; color: rgb(102, 0, 0);">
     Desc:&nbsp; A wonderment that suspends you in time while future
-    possibilites fly around your head like flies.</span><br style="font-family: Times New Roman,Times,serif; color: rgb(102, 0, 0);">
+    possibilites fly around your head like flies.</SPAN><BR style=
+    "font-family: Times New Roman,Times,serif; color: rgb(102, 0, 0);">
 
-    <span style="font-family: Times New Roman,Times,serif; color: rgb(102, 0, 0);">
-    Occurrence:&nbsp; rare.</span><br>
-  </div>
-
-  <div style="margin-left: 40px;">
-    <hr style="width: 100%; height: 2px;">
-    <br>
-    <big>T</big>he only other time I remember was the very first
-    output of my very first compiled language when a teenager.<br>
+    <SPAN style=
+    "font-family: Times New Roman,Times,serif; color: rgb(102, 0, 0);">
+    Occurrence:&nbsp; rare.</SPAN><BR>
+  </DIV>
+  <DIV style="margin-left: 40px;">
+    <HR style="width: 100%; height: 2px;">
+    <BR>
+    <BIG>T</BIG>he only other time I remember was the very first
+    output of my very first compiled language when a teenager.<BR>
     Subsequent events fade into boredom and indifference. And that
     wonderment gets forgotten, especially as languages and systems
-    become monotonously similar as the years drag on.<br>
-    <br>
+    become monotonously similar as the years drag on.<BR>
+    <BR>
     Surprisingly, the same feeling came back when executing a
     native c-binary from a basic! app on my Android
-    phone.&nbsp;<br>
-    <span style="color: rgb(0, 0, 153); font-style: italic;">'The
-    phone is running 'c' made code !'&nbsp;</span> For a few brief
-    minutes, I was again a teenager.<br>
-    <br>
+    phone.&nbsp;<BR>
+    <SPAN style="color: rgb(0, 0, 153); font-style: italic;">'The
+    phone is running 'c' made code !'&nbsp;</SPAN> For a few brief
+    minutes, I was again a teenager.<BR>
+    <BR>
     I don't know wether it was because of my usual bias against
     Java running android phones, or that I had forgotten that a
     phone was really just a small sized PC, or that I had mentally
     placed NDK as just another mass of geeky dependent-hell files
     designed not to work for 'normal' people. But that the binary
     actually ran, freaked me out and gave me quite a buzz for the
-    rest of the day.<br>
-  </div><br>
-  <big><big>T</big></big>his guide is simply about how to make a
-  native binary and run it from rfo-basic.<br>
-  <br>
-  <span style="text-decoration: underline;">Preliminaries</span><br>
-  It is assummed you are familiar with;<br>
-  a) rfo-basic<br>
-  b) the c language and compilers<br>
-  c) OS terminals and scripts (windows or linux) and filenames.<br>
-  <br>
+    rest of the day.<BR>
+  </DIV><BR>
+  <BIG><BIG>T</BIG></BIG>his guide is simply about how to make a
+  native binary and run it from rfo-basic.<BR>
+  <BR>
+  <SPAN style=
+  "text-decoration: underline;">Preliminaries</SPAN><BR>
+  It is assummed you are familiar with;<BR>
+  a) rfo-basic<BR>
+  b) the c language and compilers<BR>
+  c) OS terminals and scripts (windows or linux) and filenames.<BR>
+  <BR>
   In this guide, we will be using the c language and our host PC is
-  running linux. If you are using windows,<br>
+  running linux. If you are using windows,<BR>
   just convert the filepaths/names and script commands
-  accordingly.<br>
-  <br>
-  <hr style="width: 100%; height: 2px;">
-  <br>
-  <big><span style="text-decoration: underline;"><a name="What_is_NDK" id="What_is_NDK"></a>What is
-  NDK?</span></big><big><big><br></big></big><br>
-  The Android <span style="color: rgb(0, 0, 153);">Native
-  Development Kit</span> is primarily a system of building cross
+  accordingly.<BR>
+  <BR>
+  <HR style="width: 100%; height: 2px;">
+  <BR>
+  <BIG><SPAN style="text-decoration: underline;"><A name=
+  "What_is_NDK" id="What_is_NDK"></A>What is
+  NDK?</SPAN></BIG><BIG><BIG><BR></BIG></BIG><BR>
+  The Android <SPAN style="color: rgb(0, 0, 153);">Native
+  Development Kit</SPAN> is primarily a system of building cross
   compiled binaries of other languages to interface with Android's
   OS (which runs on Java). It relies heavily on using JNI as an
   interface to make library calls in-between the running binary and
   Java. But as you might have noticed, this website (about
   rfo-basic) avoids Java/XML due to it's complexities. So why use
-  NDK at all?<br>
-  <br>
-  <span class="large2" style="text-decoration: underline;">Why Use
-  It ?</span><br>
-  <br>
+  NDK at all?<BR>
+  <BR>
+  <SPAN class="large2" style="text-decoration: underline;">Why Use
+  It ?</SPAN><BR>
+  <BR>
   It so happens that you can still compile NDK binaries and have
-  them <span style="color: rgb(0, 0, 153);">execute</span>
-  <span style="color: rgb(102, 0, 0);">without</span> JNI as long
+  them <SPAN style="color: rgb(0, 0, 153);">execute</SPAN>
+  <SPAN style="color: rgb(102, 0, 0);">without</SPAN> JNI as long
   as you don't call the Java libraries. Such needs are typically
-  tasks which are cpu intensive and <span style="color: rgb(0, 0, 153);">don't need graphics or any other user
-  interaction</span>. e.g Background or service utilties e.g
+  tasks which are cpu intensive and <SPAN style=
+  "color: rgb(0, 0, 153);">don't need graphics or any other user
+  interaction</SPAN>. e.g Background or service utilties e.g
   servers, batch file operations, or self contained utitlities
   which have already been proven and written in other
-  languages.<br>
-  <br>
-  <span class="large2" style="text-decoration: underline;">Simple
-  Interface</span><br>
-  <br>
-  All we need to do is to find a way to <span style="text-decoration: underline;">execute</span> and perhaps devise a
-  simple way for the binary to <span style="text-decoration: underline;">talk</span> to the basic!
-  program.<br>
-  <br>
+  languages.<BR>
+  <BR>
+  <SPAN class="large2" style="text-decoration: underline;">Simple
+  Interface</SPAN><BR>
+  <BR>
+  All we need to do is to find a way to <SPAN style=
+  "text-decoration: underline;">execute</SPAN> and perhaps devise a
+  simple way for the binary to <SPAN style=
+  "text-decoration: underline;">talk</SPAN> to the basic!
+  program.<BR>
+  <BR>
   Launching is not a problem, Basic! already has a built-in shell
-  in the form of the <span style="color: rgb(0, 102, 0);">system.</span> command, of which we can
-  use to <span style="color: rgb(0, 0, 153);">launch</span> the
-  binary.<br>
-  <br>
-  The next requirement is <span style="color: rgb(0, 0, 153);">somewhere to put the binary</span>,
-  where we can give it permissions to execute.<br>
+  in the form of the <SPAN style=
+  "color: rgb(0, 102, 0);">system.</SPAN> command, of which we can
+  use to <SPAN style="color: rgb(0, 0, 153);">launch</SPAN> the
+  binary.<BR>
+  <BR>
+  The next requirement is <SPAN style=
+  "color: rgb(0, 0, 153);">somewhere to put the binary</SPAN>,
+  where we can give it permissions to execute.<BR>
   All android apps are entitled a private area of storage called
-  <span style="color: rgb(0, 0, 153);">Primary Internal Private
-  Storage</span>. This is usually at location <span style="color: rgb(102, 0, 0);">/data/data/&lt;package_name&gt;</span>.
+  <SPAN style="color: rgb(0, 0, 153);">Primary Internal Private
+  Storage</SPAN>. This is usually at location <SPAN style=
+  "color: rgb(102, 0, 0);">/data/data/&lt;package_name&gt;</SPAN>.
   It is created when the app is installed. The app has full rights
   here, so putting the binary here means we can give it the
-  <span style="text-decoration: underline;">right to
-  execute</span>. Another bonus, is that the directory is wiped
-  when the app is uninstalled.<br>
-  <br>
+  <SPAN style="text-decoration: underline;">right to
+  execute</SPAN>. Another bonus, is that the directory is wiped
+  when the app is uninstalled.<BR>
+  <BR>
   For communication between the binary and basic!, you can either
   use a protocol of read/write to temporary files, or alternatively
-  the stdin/stdout of the shell/binary.<br>
-  <br>
-  <hr style="width: 100%; height: 2px;">
-  <big style="text-decoration: underline;"><br>
-  <a name="Make_a_Binary" id="Make_a_Binary"></a>Make a
-  Binary</big><br>
-  <br>
+  the stdin/stdout of the shell/binary.<BR>
+  <BR>
+  <HR style="width: 100%; height: 2px;">
+  <BIG style="text-decoration: underline;"><BR>
+  <A name="Make_a_Binary" id="Make_a_Binary"></A>Make a
+  Binary</BIG><BR>
+  <BR>
   But first things first, let's see how we can build an actual
-  binary with NDK.<br>
-  <br>
+  binary with NDK.<BR>
+  <BR>
   The development environment is more simple than you think. There
   is no special IDE, no drivers to install and you can install to
   anywhere you want. You don't even have to set any environment
   variables if you don't want. Configuration It is mostly setting
-  values inside provided scripts.<br>
-  <br>
-  1. Download the latest <a href="https://developer.android.com/ndk/downloads/index.html">NDK
-  distribution</a>.
-
-  <div style="margin-left: 40px;">
+  values inside provided scripts.<BR>
+  <BR>
+  1. Download the latest <A href=
+  "https://developer.android.com/ndk/downloads/index.html">NDK
+  distribution</A>.
+  <DIV style="margin-left: 40px;">
     The NDK distro is a gigantic collection of compilers and
     toolchains (utilities for compilation) and examples that cater
-    for windows, linux and mac.<br>
-    Pick the distro that matches your development PC.<br>
+    for windows, linux and mac.<BR>
+    Pick the distro that matches your development PC.<BR>
     Download and run the self-extracter which will extract a tree
-    of files to a directory of your choice.<br>
-  </div><br>
-  2. Check for build script <span style="color: rgb(0, 102, 0);">ndk-build</span>.<br>
-  <br>
-
-  <div style="margin-left: 40px;">
-    In the main directory there is script file called '<span style="color: rgb(0, 102, 0);">ndk-build</span>'<br>
-    <br>
+    of files to a directory of your choice.<BR>
+  </DIV><BR>
+  2. Check for build script <SPAN style=
+  "color: rgb(0, 102, 0);">ndk-build</SPAN>.<BR>
+  <BR>
+  <DIV style="margin-left: 40px;">
+    In the main directory there is script file called '<SPAN style=
+    "color: rgb(0, 102, 0);">ndk-build</SPAN>'<BR>
+    <BR>
     This is the main script to call for compilation. Note it's
-    location, you will need it for later.<br>
-    <br>
-    (For windows, you can use '<span style="color: rgb(0, 102, 0);">ndk-build.cmd</span>' otherwise you
-    need to install cygwin to be able to use the linux script)<br>
-  </div><br>
-  3. Navigate to the standalone example file.<br>
-  <br>
-
-  <div style="margin-left: 40px;">
-    Open a terminal and cd into <span style="color: rgb(102, 0, 0);">tests/standalone/basic-c-compile/jni/</span><br>
-    </div>
-
-  <div style="text-align: right; margin-left: 40px;">
-    <small>(although we won't use jni, this is the standard
-    sub-directory structure.)</small><br>
-  </div>
-
-  <div style="margin-left: 40px;">
-    <br>
+    location, you will need it for later.<BR>
+    <BR>
+    (For windows, you can use '<SPAN style=
+    "color: rgb(0, 102, 0);">ndk-build.cmd</SPAN>' otherwise you
+    need to install cygwin to be able to use the linux script)<BR>
+  </DIV><BR>
+  3. Navigate to the standalone example file.<BR>
+  <BR>
+  <DIV style="margin-left: 40px;">
+    Open a terminal and cd into <SPAN style=
+    "color: rgb(102, 0, 0);">tests/standalone/basic-c-compile/jni/</SPAN><BR>
+  </DIV>
+  <DIV style="text-align: right; margin-left: 40px;">
+    <SMALL>(although we won't use jni, this is the standard
+    sub-directory structure.)</SMALL><BR>
+  </DIV>
+  <DIV style="margin-left: 40px;">
+    <BR>
     This is where the source files and makefile go, and where we
-    will be operating from.<br>
-    <br>
-    You will find a file called <span style="color: rgb(0, 0, 153);">main.c</span> which is the 'hello
-    world' c example.<br>
-
-    <div class="bordered">
-      <small><span style="font-family: monospace;">#include
-      &lt;stdio.h&gt;</span></small><br style="font-family: monospace;">
-      <br style="font-family: monospace;">
-      <small><span style="font-family: monospace;">int
-      main()</span></small><br style="font-family: monospace;">
-      <small><span style="font-family: monospace;">{&nbsp;</span></small><br style="font-family: monospace;">
-      <small><span style="font-family: monospace;">&nbsp;printf
-      ("hello world\n");</span></small><br style="font-family: monospace;">
-      <br style="font-family: monospace;">
-      <small><span style="font-family: monospace;">&nbsp;return
-      0;</span></small><br style="font-family: monospace;">
-      <small><span style="font-family: monospace;">}</span></small><br style="font-family: monospace;">
-    </div><br>
-    Now we check if a makefile is here..<br>
-  </div><br>
-  4. Create <span style="color: rgb(0, 0, 153);">Android.mk</span><br>
-  <br>
-
-  <div style="margin-left: 40px;">
+    will be operating from.<BR>
+    <BR>
+    You will find a file called <SPAN style=
+    "color: rgb(0, 0, 153);">main.c</SPAN> which is the 'hello
+    world' c example.<BR>
+    <DIV class="bordered">
+      <SMALL><SPAN style="font-family: monospace;">#include
+      &lt;stdio.h&gt;</SPAN></SMALL><BR style=
+      "font-family: monospace;">
+      <BR style="font-family: monospace;">
+      <SMALL><SPAN style="font-family: monospace;">int
+      main()</SPAN></SMALL><BR style="font-family: monospace;">
+      <SMALL><SPAN style=
+      "font-family: monospace;">{&nbsp;</SPAN></SMALL><BR style=
+      "font-family: monospace;">
+      <SMALL><SPAN style="font-family: monospace;">&nbsp;printf
+      ("hello world\n");</SPAN></SMALL><BR style=
+      "font-family: monospace;">
+      <BR style="font-family: monospace;">
+      <SMALL><SPAN style="font-family: monospace;">&nbsp;return
+      0;</SPAN></SMALL><BR style="font-family: monospace;">
+      <SMALL><SPAN style=
+      "font-family: monospace;">}</SPAN></SMALL><BR style=
+      "font-family: monospace;">
+    </DIV><BR>
+    Now we check if a makefile is here..<BR>
+  </DIV><BR>
+  4. Create <SPAN style=
+  "color: rgb(0, 0, 153);">Android.mk</SPAN><BR>
+  <BR>
+  <DIV style="margin-left: 40px;">
     Below is the makefile. If one is not provided, create this one
-    (infact, you should probably use this one);<br>
-    <br>
-    Android.mk<br>
-  </div>
-
-  <div class="bordered" style="margin-left: 40px;">
-    <small><span style="font-family: monospace;">LOCAL_PATH:=
-    $(call my-dir)</span><br style="font-family: monospace;">
-    <span style="font-family: monospace;">include
-    $(CLEAR_VARS)</span><br style="font-family: monospace;">
-    <br style="font-family: monospace;">
-    <span style="font-family: monospace;">LOCAL_MODULE :=
-    <span style="color: rgb(0, 102, 0);">main</span></span><br style="font-family: monospace;">
-    <br style="font-family: monospace;">
-    <span style="font-family: monospace; color: rgb(102, 51, 0);">#APP_PLATFORM
-    := android-16</span><br style="color: rgb(102, 51, 0); font-family: monospace;">
-    <span style="font-family: monospace; color: rgb(102, 51, 0);">#LOCAL_CFLAGS
-    += -fPIE</span><br style="color: rgb(102, 51, 0); font-family: monospace;">
-    <span style="font-family: monospace; color: rgb(102, 51, 0);">#LOCAL_LDFLAGS
-    += -fPIE -pie</span><br style="font-family: monospace;">
-    <br style="font-family: monospace;">
-    <span style="font-family: monospace;">LOCAL_SRC_FILES:=
-    <span style="color: rgb(0, 0, 153);">main.c</span></span><br style="font-family: monospace;">
-    <br style="font-family: monospace;">
-    <span style="font-family: monospace;">include
-    $(BUILD_EXECUTABLE)</span></small><br>
-  </div>
-
-  <div style="margin-left: 40px;">
-    <br>
-    This makefile takes one source file <span style="color: rgb(0, 0, 153);">main.c</span>, it will compile and
-    link it with android's <span style="color: rgb(0, 0, 153);">bionic</span> library <small>(a cut
-    down version of the standard c library for android)</small>,
-    and generate a binary called <span style="color: rgb(0, 102, 0);">main</span>.<br>
-    <br>
-    In the middle of the makefile are <span style="color: rgb(102, 51, 0);">3 commented lines.</span> The 3 lines
-    determine wether PIE is turned on or off. <small><span style="font-family: monospace;"><br>
-    <small><span style="color: rgb(102, 51, 0);">#APP_PLATFORM :=
-    android-16</span><br style="color: rgb(102, 51, 0);">
-    <span style="color: rgb(102, 51, 0);">#LOCAL_CFLAGS +=
-    -fPIE</span><br style="color: rgb(102, 51, 0);">
-    <span style="color: rgb(102, 51, 0);">#LOCAL_LDFLAGS += -fPIE
-    -pie</span></small></span></small><br>
-    <br>
-    <span style="color: rgb(102, 51, 0);">#commented</span> =
-    <span style="color: rgb(0, 0, 153);">PIE disabled ( off
-    )<br></span>un-commented = <span style="color: rgb(0, 0, 153);">PIE enabled ( on )<br></span><br>
-    If your Android phone version is <span style="color: rgb(0, 0, 153);">JellyBean or later (4.1+) i.e api16+,
-    then</span> un-comment <span style="color: rgb(0, 0, 153);">the
-    lines</span> (PIE on).<br>
+    (infact, you should probably use this one);<BR>
+    <BR>
+    Android.mk<BR>
+  </DIV>
+  <DIV class="bordered" style="margin-left: 40px;">
+    <SMALL><SPAN style="font-family: monospace;">LOCAL_PATH:=
+    $(call my-dir)</SPAN><BR style="font-family: monospace;">
+    <SPAN style="font-family: monospace;">include
+    $(CLEAR_VARS)</SPAN><BR style="font-family: monospace;">
+    <BR style="font-family: monospace;">
+    <SPAN style="font-family: monospace;">LOCAL_MODULE :=
+    <SPAN style=
+    "color: rgb(0, 102, 0);">main</SPAN></SPAN><BR style=
+    "font-family: monospace;">
+    <BR style="font-family: monospace;">
+    <SPAN style=
+    "font-family: monospace; color: rgb(102, 51, 0);">#APP_PLATFORM
+    := android-16</SPAN><BR style=
+    "color: rgb(102, 51, 0); font-family: monospace;">
+    <SPAN style=
+    "font-family: monospace; color: rgb(102, 51, 0);">#LOCAL_CFLAGS
+    += -fPIE</SPAN><BR style=
+    "color: rgb(102, 51, 0); font-family: monospace;">
+    <SPAN style=
+    "font-family: monospace; color: rgb(102, 51, 0);">#LOCAL_LDFLAGS
+    += -fPIE -pie</SPAN><BR style="font-family: monospace;">
+    <BR style="font-family: monospace;">
+    <SPAN style="font-family: monospace;">LOCAL_SRC_FILES:=
+    <SPAN style=
+    "color: rgb(0, 0, 153);">main.c</SPAN></SPAN><BR style=
+    "font-family: monospace;">
+    <BR style="font-family: monospace;">
+    <SPAN style="font-family: monospace;">include
+    $(BUILD_EXECUTABLE)</SPAN></SMALL><BR>
+  </DIV>
+  <DIV style="margin-left: 40px;">
+    <BR>
+    This makefile takes one source file <SPAN style=
+    "color: rgb(0, 0, 153);">main.c</SPAN>, it will compile and
+    link it with android's <SPAN style=
+    "color: rgb(0, 0, 153);">bionic</SPAN> library <SMALL>(a cut
+    down version of the standard c library for android)</SMALL>,
+    and generate a binary called <SPAN style=
+    "color: rgb(0, 102, 0);">main</SPAN>.<BR>
+    <BR>
+    In the middle of the makefile are <SPAN style=
+    "color: rgb(102, 51, 0);">3 commented lines.</SPAN> The 3 lines
+    determine wether PIE is turned on or off. <SMALL><SPAN style=
+    "font-family: monospace;"><BR>
+    <SMALL><SPAN style="color: rgb(102, 51, 0);">#APP_PLATFORM :=
+    android-16</SPAN><BR style="color: rgb(102, 51, 0);">
+    <SPAN style="color: rgb(102, 51, 0);">#LOCAL_CFLAGS +=
+    -fPIE</SPAN><BR style="color: rgb(102, 51, 0);">
+    <SPAN style="color: rgb(102, 51, 0);">#LOCAL_LDFLAGS += -fPIE
+    -pie</SPAN></SMALL></SPAN></SMALL><BR>
+    <BR>
+    <SPAN style="color: rgb(102, 51, 0);">#commented</SPAN> =
+    <SPAN style="color: rgb(0, 0, 153);">PIE disabled ( off
+    )<BR></SPAN>un-commented = <SPAN style=
+    "color: rgb(0, 0, 153);">PIE enabled ( on )<BR></SPAN><BR>
+    If your Android phone version is <SPAN style=
+    "color: rgb(0, 0, 153);">JellyBean or later (4.1+) i.e api16+,
+    then</SPAN> un-comment <SPAN style="color: rgb(0, 0, 153);">the
+    lines</SPAN> (PIE on).<BR>
     If your Android phone version is older, i.e is less than
-    4.1,&nbsp; then <span style="color: rgb(102, 51, 0);">#comment
-    the lines</span> out (PIE Off)<br>
-    <br>
-    (see later for explanation of PIE)<br>
-  </div><br>
-  5. Create a compile script.<br>
-  <br>
-
-  <div style="margin-left: 40px;">
-    In this directory, create a script called <span style="color: rgb(0, 102, 0);">go.sh</span> (or go.cmd) and type in
-    the path to the main build script ndk-build. e.g<br>
-    <br>
-    <span style="color: rgb(0, 102, 0);">go.sh</span><br>
-
-    <div style="margin-left: 40px;">
-      <span style="color: rgb(102, 51, 0);">/mnt/sda4/dev/android-ndk-r10d/</span><span style="color: rgb(0, 102, 0);">ndk-build</span><br>
-      </div><span style="color: rgb(102, 51, 0);"><br></span>This
-      means you can run this script instead of setting up
-      environment variables with a path.<br>
-    You will run '<span style="color: rgb(0, 102, 0);">go.sh</span>' whenever you need to
-    compile in this directory.<br>
-  </div><br>
-  6. Compile<br>
-  <br>
-
-  <div style="margin-left: 40px;">
-    Run the compile script <span style="color: rgb(0, 102, 0);">./go.sh</span><br>
-    This should generate any executables inside <span style="color: rgb(102, 0, 0);">../libs/armeabi/</span><br>
-    i.e <span style="color: rgb(102, 0, 0);">../libs/armeabi/</span><span style="color: rgb(0, 102, 0);">main</span><br>
-    <small>(It will also generate some files in
+    4.1,&nbsp; then <SPAN style="color: rgb(102, 51, 0);">#comment
+    the lines</SPAN> out (PIE Off)<BR>
+    <BR>
+    (see later for explanation of PIE)<BR>
+  </DIV><BR>
+  5. Create a compile script.<BR>
+  <BR>
+  <DIV style="margin-left: 40px;">
+    In this directory, create a script called <SPAN style=
+    "color: rgb(0, 102, 0);">go.sh</SPAN> (or go.cmd) and type in
+    the path to the main build script ndk-build. e.g<BR>
+    <BR>
+    <SPAN style="color: rgb(0, 102, 0);">go.sh</SPAN><BR>
+    <DIV style="margin-left: 40px;">
+      <SPAN style=
+      "color: rgb(102, 51, 0);">/mnt/sda4/dev/android-ndk-r10d/</SPAN><SPAN style="color: rgb(0, 102, 0);">ndk-build</SPAN><BR>
+    </DIV><SPAN style="color: rgb(102, 51, 0);"><BR></SPAN>This
+    means you can run this script instead of setting up environment
+    variables with a path.<BR>
+    You will run '<SPAN style=
+    "color: rgb(0, 102, 0);">go.sh</SPAN>' whenever you need to
+    compile in this directory.<BR>
+  </DIV><BR>
+  6. Compile<BR>
+  <BR>
+  <DIV style="margin-left: 40px;">
+    Run the compile script <SPAN style=
+    "color: rgb(0, 102, 0);">./go.sh</SPAN><BR>
+    This should generate any executables inside <SPAN style=
+    "color: rgb(102, 0, 0);">../libs/armeabi/</SPAN><BR>
+    i.e <SPAN style=
+    "color: rgb(102, 0, 0);">../libs/armeabi/</SPAN><SPAN style=
+    "color: rgb(0, 102, 0);">main</SPAN><BR>
+    <SMALL>(It will also generate some files in
     ../obj/local/armeabi/ but we aren't interested in
-    those.)</small><br>
-    <br>
-    <span style="color: rgb(0, 102, 0);">main</span> is the binary
-    executable which you will copy to your phone (see later).<br>
-  </div><br>
-  <hr style="width: 100%; height: 2px;">
-  <br>
-  <big><span style="text-decoration: underline;"><a name="Your_Basic_project" id="Your_Basic_project"></a>Your Basic!
-  project</span></big><br>
-  <br>
-  For editor mode, the <span style="color: rgb(102, 0, 0);">package_name</span> is "<span style="color: rgb(102, 51, 0);">com.rfo.basic</span>".<br>
+    those.)</SMALL><BR>
+    <BR>
+    <SPAN style="color: rgb(0, 102, 0);">main</SPAN> is the binary
+    executable which you will copy to your phone (see later).<BR>
+  </DIV><BR>
+  <HR style="width: 100%; height: 2px;">
+  <BR>
+  <BIG><SPAN style="text-decoration: underline;"><A name=
+  "Your_Basic_project" id="Your_Basic_project"></A>Your Basic!
+  project</SPAN></BIG><BR>
+  <BR>
+  For editor mode, the <SPAN style=
+  "color: rgb(102, 0, 0);">package_name</SPAN> is "<SPAN style=
+  "color: rgb(102, 51, 0);">com.rfo.basic</SPAN>".<BR>
   For Apk, the package name is whatever you named your
-  package(<small>with your apk builder</small>),<br>
-  For both cases, the project directory will be <span style="color: rgb(102, 0, 0);">/mnt/sdcard/&lt;package_name&gt;/<br></span><br>
+  package(<SMALL>with your apk builder</SMALL>),<BR>
+  For both cases, the project directory will be <SPAN style=
+  "color: rgb(102, 0, 0);">/mnt/sdcard/&lt;package_name&gt;/<BR></SPAN><BR>
 
-  1. Copy the <span style="text-decoration: underline; color: rgb(0, 102, 0);">binary</span>
-  you compiled to your <span style="color: rgb(102, 0, 0);">&lt;&gt;/data</span> directory. e.g
-  <span style="color: rgb(102, 0, 0);">/mnt/sdcard/rfo-basic/data/</span><span style="color: rgb(0, 102, 0);">main</span><br>
+  1. Copy the <SPAN style=
+  "text-decoration: underline; color: rgb(0, 102, 0);">binary</SPAN>
+  you compiled to your <SPAN style=
+  "color: rgb(102, 0, 0);">&lt;&gt;/data</SPAN> directory. e.g
+  <SPAN style=
+  "color: rgb(102, 0, 0);">/mnt/sdcard/rfo-basic/data/</SPAN><SPAN style="color: rgb(0, 102, 0);">main</SPAN><BR>
 
-  <br>
+  <BR>
   2. In your program, initialise the basic shell and go to private
-  storage <span style="color: rgb(102, 0, 0);">/data/data/&lt;package_name&gt;<br></span>
+  storage <SPAN style=
+  "color: rgb(102, 0, 0);">/data/data/&lt;package_name&gt;<BR></SPAN>
+  <DIV class="bordered" style="margin-left: 40px;">
+    <SMALL style="color: rgb(0, 0, 153);"><SPAN style=
+    "font-family: monospace;">p$="<SPAN style=
+    "color: rgb(102, 51, 0);">com.rfo.basic</SPAN>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <SPAN style="color: rgb(102, 102, 102);">% package
+    name</SPAN></SPAN></SMALL><BR style="font-family: monospace;">
+    <SMALL style="color: rgb(0, 0, 153);"><SPAN style=
+    "font-family: monospace;">path$ = "<SPAN style=
+    "color: rgb(102, 0, 0);">/data/data/</SPAN>"+p$+"/"</SPAN></SMALL><BR style="font-family: monospace;">
 
-  <div class="bordered" style="margin-left: 40px;">
-    <small style="color: rgb(0, 0, 153);"><span style="font-family: monospace;">p$="<span style="color: rgb(102, 51, 0);">com.rfo.basic</span>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <span style="color: rgb(102, 102, 102);">% package
-    name</span></span></small><br style="font-family: monospace;">
-    <small style="color: rgb(0, 0, 153);"><span style="font-family: monospace;">path$ = "<span style="color: rgb(102, 0, 0);">/data/data/</span>"+p$+"/"</span></small><br style="font-family: monospace;">
-
-    <small style="color: rgb(0, 0, 153);"><span style="font-family: monospace;">system.open</span></small><br style="font-family: monospace;">
-    <small style="color: rgb(0, 0, 153);"><span style="font-family: monospace;">system.write "cd "+ path$+"
-    2&gt;&amp;1"</span></small><br style="font-family: monospace;">
-    <small style="color: rgb(0, 0, 153);"><span style="font-family: monospace;">pause 50</span></small><br>
-  </div><br>
-  3. Copy over the binary to <a href="../storage.html">private storage</a><br>
-
-  <div class="bordered" style="margin-left: 40px; color: rgb(102, 51, 0);">
-    <small><span style="color: rgb(0, 0, 153); font-family: monospace;"><span style="color: rgb(0, 102, 0);">b$</span>="<span style="color: rgb(0, 102, 0);">main</span>"&nbsp;&nbsp; &nbsp;&nbsp;
+    <SMALL style="color: rgb(0, 0, 153);"><SPAN style=
+    "font-family: monospace;">system.open</SPAN></SMALL><BR style=
+    "font-family: monospace;">
+    <SMALL style="color: rgb(0, 0, 153);"><SPAN style=
+    "font-family: monospace;">system.write "cd "+ path$+"
+    2&gt;&amp;1"</SPAN></SMALL><BR style="font-family: monospace;">
+    <SMALL style="color: rgb(0, 0, 153);"><SPAN style=
+    "font-family: monospace;">pause 50</SPAN></SMALL><BR>
+  </DIV><BR>
+  3. Copy over the binary to <A href="../storage.html">private
+  storage</A><BR>
+  <DIV class="bordered" style=
+  "margin-left: 40px; color: rgb(102, 51, 0);">
+    <SMALL><SPAN style=
+    "color: rgb(0, 0, 153); font-family: monospace;"><SPAN style=
+    "color: rgb(0, 102, 0);">b$</SPAN>="<SPAN style=
+    "color: rgb(0, 102, 0);">main</SPAN>"&nbsp;&nbsp; &nbsp;&nbsp;
     &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-    <span style="color: rgb(102, 102, 102);">% binary
-    name</span><br>
+    <SPAN style="color: rgb(102, 102, 102);">% binary
+    name</SPAN><BR>
     file.root datapath$&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-    <span style="color: rgb(102, 102, 102);">%
-    &lt;base&gt;/data</span></span><br style="font-family: monospace; color: rgb(0, 0, 153);">
-    <span style="color: rgb(0, 0, 153); font-family: monospace;">srce$ =
-    datapath$+"/"+b$</span><br style="font-family: monospace; color: rgb(0, 0, 153);">
-    <span style="color: rgb(0, 0, 153); font-family: monospace;">system.write
-    ("cat "+srce$+" &gt;./"+b$+" 2&gt;&amp;1")</span></small><br>
-  </div>
-
-  <div style="margin-left: 120px;">
-    <small>note: the binary should first be in &lt;base&gt;/data.
+    <SPAN style="color: rgb(102, 102, 102);">%
+    &lt;base&gt;/data</SPAN></SPAN><BR style=
+    "font-family: monospace; color: rgb(0, 0, 153);">
+    <SPAN style=
+    "color: rgb(0, 0, 153); font-family: monospace;">srce$ =
+    datapath$+"/"+b$</SPAN><BR style=
+    "font-family: monospace; color: rgb(0, 0, 153);">
+    <SPAN style=
+    "color: rgb(0, 0, 153); font-family: monospace;">system.write
+    ("cat "+srce$+" &gt;./"+b$+" 2&gt;&amp;1")</SPAN></SMALL><BR>
+  </DIV>
+  <DIV style="margin-left: 120px;">
+    <SMALL>note: the binary should first be in &lt;base&gt;/data.
     If making a package either the apk-builder should ensure this
     or your basic program should pre-copy this from assets to
-    &lt;base&gt; /data.</small><br>
-  </div><br>
-  4. Make the binary executable<small><br></small>
-
-  <div class="bordered" style="margin-left: 40px;">
-    <small style="color: rgb(0, 0, 153);"><span style="font-family: monospace;">system.write "chmod 777
-    "+<span style="color: rgb(0, 102, 0);">b$</span>+"
-    2&gt;&amp;1"&nbsp; <span style="color: rgb(102, 102, 102);">%
-    make executable</span></span></small><br>
-  </div><br>
-  5. Run It.<br>
-
-  <div class="bordered" style="margin-left: 40px;">
-    <small><span style="color: rgb(0, 0, 153); font-family: monospace;">system.write
-    "<span style="color: rgb(0, 102, 0);">./"+b$</span>+"
-    2&gt;&amp;1"&nbsp;&nbsp; <span style="color: rgb(102, 102, 102);">% execute
-    binary</span></span></small><br>
-  </div><br>
-  6. Get the Output<br>
-
-  <div class="bordered" style="margin-left: 40px;">
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">r$=""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &lt;base&gt; /data.</SMALL><BR>
+  </DIV><BR>
+  4. Make the binary executable<SMALL><BR></SMALL>
+  <DIV class="bordered" style="margin-left: 40px;">
+    <SMALL style="color: rgb(0, 0, 153);"><SPAN style=
+    "font-family: monospace;">system.write "chmod 777
+    "+<SPAN style="color: rgb(0, 102, 0);">b$</SPAN>+"
+    2&gt;&amp;1"&nbsp; <SPAN style="color: rgb(102, 102, 102);">%
+    make executable</SPAN></SPAN></SMALL><BR>
+  </DIV><BR>
+  5. Run It.<BR>
+  <DIV class="bordered" style="margin-left: 40px;">
+    <SMALL><SPAN style=
+    "color: rgb(0, 0, 153); font-family: monospace;">system.write
+    "<SPAN style="color: rgb(0, 102, 0);">./"+b$</SPAN>+"
+    2&gt;&amp;1"&nbsp;&nbsp; <SPAN style=
+    "color: rgb(102, 102, 102);">% execute
+    binary</SPAN></SPAN></SMALL><BR>
+  </DIV><BR>
+  6. Get the Output<BR>
+  <DIV class="bordered" style="margin-left: 40px;">
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">r$=""&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-    &nbsp;&nbsp;&nbsp; <span style="color: rgb(102, 102, 102);">%
-    assume no reponse</span></small><br>
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">pause
-    1000</small><br>
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">system.READ.READY
-    ready&nbsp;&nbsp;&nbsp; <span style="color: rgb(102, 102, 102);">% if response</span></small><br>
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">while
-    ready</small><br>
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
-    &nbsp;&nbsp; system.READ.LINE l$</small><br>
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
-    &nbsp;&nbsp; r$ += l$+"\n"</small><br>
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
-    &nbsp;&nbsp; system.READ.READY ready</small><br>
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">repeat<br>
+    &nbsp;&nbsp;&nbsp; <SPAN style="color: rgb(102, 102, 102);">%
+    assume no reponse</SPAN></SMALL><BR>
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">pause
+    1000</SMALL><BR>
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">system.READ.READY
+    ready&nbsp;&nbsp;&nbsp; <SPAN style=
+    "color: rgb(102, 102, 102);">% if response</SPAN></SMALL><BR>
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">while
+    ready</SMALL><BR>
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+    &nbsp;&nbsp; system.READ.LINE l$</SMALL><BR>
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+    &nbsp;&nbsp; r$ += l$+"\n"</SMALL><BR>
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">&nbsp;&nbsp;
+    &nbsp;&nbsp; system.READ.READY ready</SMALL><BR>
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">repeat<BR>
     print r$&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="color: rgb(102, 102, 102);">% output</span><br></small>
-  </div><br>
-  7. Cleanup and close the shell<br>
+    &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
+    "color: rgb(102, 102, 102);">% output</SPAN><BR></SMALL>
+  </DIV><BR>
+  7. Cleanup and close the shell<BR>
+  <DIV class="bordered" style="margin-left: 40px;">
+    <SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">onBackKey:<BR></SMALL>
+    <DIV style="margin-left: 40px;">
+      <SMALL style=
+      "font-family: monospace; color: rgb(0, 0, 153);">system.close<BR>
 
-  <div class="bordered" style="margin-left: 40px;">
-    <small style="font-family: monospace; color: rgb(0, 0, 153);">onBackKey:<br></small>
-
-    <div style="margin-left: 40px;">
-      <small style="font-family: monospace; color: rgb(0, 0, 153);">system.close<br>
-
-      system.open<br>
+      system.open<BR>
       system.write "cd "+ path$ + ";rm "+b$&nbsp;&nbsp;
-      <span style="color: rgb(102, 102, 102);">% delete the
-      binary<br></span></small><small style="font-family: monospace; color: rgb(0, 0, 153);">pause
-      100</small><br>
-      <small style="font-family: monospace; color: rgb(0, 0, 153);">system.close<br>
-      </small>
-    </div><small style="font-family: monospace; color: rgb(0, 0, 153);">end<br></small>
-  </div><br>
+      <SPAN style="color: rgb(102, 102, 102);">% delete the
+      binary<BR></SPAN></SMALL><SMALL style=
+      "font-family: monospace; color: rgb(0, 0, 153);">pause
+      100</SMALL><BR>
+      <SMALL style=
+      "font-family: monospace; color: rgb(0, 0, 153);">system.close<BR>
+      </SMALL>
+    </DIV><SMALL style=
+    "font-family: monospace; color: rgb(0, 0, 153);">end<BR></SMALL>
+  </DIV><BR>
   When you run this basic program, it should copy over and execute
   the binary in a shell, then spool any output to the screen. Any
   shell errors will normally show by the spooling. If all goes
-  well, you will see "hello world" .<br>
-  <br>
-  That's It !<br>
-  <hr style="width: 100%; height: 2px;">
-  <br>
-  <big style="text-decoration: underline;"><a name="About_the_Shell" id="About_the_Shell"></a>About the
-  Shell</big><br>
-  <br>
-  Basic! can execute binaries because of it's <span style="color: rgb(0, 102, 0);">system</span> command. This is a shell
+  well, you will see "hello world" .<BR>
+  <BR>
+  That's It !<BR>
+  <HR style="width: 100%; height: 2px;">
+  <BR>
+  <BIG style="text-decoration: underline;"><A name=
+  "About_the_Shell" id="About_the_Shell"></A>About the
+  Shell</BIG><BR>
+  <BR>
+  Basic! can execute binaries because of it's <SPAN style=
+  "color: rgb(0, 102, 0);">system</SPAN> command. This is a shell
   by which you can pass commands to. You can only open one shell at
-  a time but even so, it is a powerful tool.<br>
-  <br>
-  <span style="text-decoration: underline;">Process
-  Properties</span><br>
-
-  <div style="margin-left: 40px;">
-    The shell is a truly spawned parallel process.<br>
+  a time but even so, it is a powerful tool.<BR>
+  <BR>
+  <SPAN style="text-decoration: underline;">Process
+  Properties</SPAN><BR>
+  <DIV style="margin-left: 40px;">
+    The shell is a truly spawned parallel process.<BR>
     The executed binary is also a truly spawned parallel
-    process.<br>
+    process.<BR>
     Basic, the shell and the binary will all have differing
-    PIDs.<br>
-    <br>
+    PIDs.<BR>
+    <BR>
     Both the shell and the binary might be seen under 'Basic' in a
-    task manager but the shell process is named "<span style="color: rgb(102, 0, 0);">sh</span>" and the binary process is
-    named with it's called command e.g "<span style="color: rgb(102, 0, 0);">./main</span>"<br>
-  </div><big style="text-decoration: underline;"><br></big><span style="text-decoration: underline;">Conditions for exit</span><br>
-
-  <div style="margin-left: 40px;">
+    task manager but the shell process is named "<SPAN style=
+    "color: rgb(102, 0, 0);">sh</SPAN>" and the binary process is
+    named with it's called command e.g "<SPAN style=
+    "color: rgb(102, 0, 0);">./main</SPAN>"<BR>
+  </DIV><BIG style=
+  "text-decoration: underline;"><BR></BIG><SPAN style=
+  "text-decoration: underline;">Conditions for exit</SPAN><BR>
+  <DIV style="margin-left: 40px;">
     If Basic exits or ends, it will also close the shell (if still
-    open).<br>
+    open).<BR>
     If the shell is closed, any spawned binaries will continue to
-    run.<br>
+    run.<BR>
     If Basic crashes, then both the shell and the binaries may
-    continue executing.<br>
-  </div><br>
-  <span style="text-decoration: underline;">Communication</span><br>
-
-  <div style="margin-left: 40px;">
+    continue executing.<BR>
+  </DIV><BR>
+  <SPAN style=
+  "text-decoration: underline;">Communication</SPAN><BR>
+  <DIV style="margin-left: 40px;">
     Because the binary is forked from the shell, they will share
     the same environment. This means stdin/stdout will be
-    shared.<br>
-    <br>
-    <span style="text-decoration: underline;">Data from
-    binary/shell to Basic.</span><br>
-
-    <div style="margin-left: 40px;">
-      Any data sent to stdout will set <span style="color: rgb(0, 102, 0);">system.read.ready</span>
-      <span style="color: rgb(102, 51, 0);">true</span> after a
-      linefeed (line based).<br>
+    shared.<BR>
+    <BR>
+    <SPAN style="text-decoration: underline;">Data from
+    binary/shell to Basic.</SPAN><BR>
+    <DIV style="margin-left: 40px;">
+      Any data sent to stdout will set <SPAN style=
+      "color: rgb(0, 102, 0);">system.read.ready</SPAN>
+      <SPAN style="color: rgb(102, 51, 0);">true</SPAN> after a
+      linefeed (line based).<BR>
       If Basic does not read the data, any furthur data will be
-      buffered.<br>
+      buffered.<BR>
       The binary may need to flush it's output stream to ensure
-      this.<br>
-      <br>
+      this.<BR>
+      <BR>
       If the shell or binary has nothing to send, (or any sent data
-      is not yet flushed),<br>
-      and any previous data has already been read then <span style="color: rgb(0, 102, 0);">system.read.ready</span> will be
-      <span style="color: rgb(102, 51, 0);">false</span>,<br>
-      <br>
-      Regardless of any condition of <span style="color: rgb(0, 102, 0);">system.read.ready</span>, Basic will
+      is not yet flushed),<BR>
+      and any previous data has already been read then <SPAN style=
+      "color: rgb(0, 102, 0);">system.read.ready</SPAN> will be
+      <SPAN style="color: rgb(102, 51, 0);">false</SPAN>,<BR>
+      <BR>
+      Regardless of any condition of <SPAN style=
+      "color: rgb(0, 102, 0);">system.read.ready</SPAN>, Basic will
       always continue to the next instruction (will not be
-      blocked).<br>
-    </div><br>
-    <span style="text-decoration: underline;">Data from Basic
-    to</span> <span style="text-decoration: underline;">binary/shell</span><span style="text-decoration: underline;">.</span><br>
-
-    <div style="margin-left: 40px;">
-      Any <span style="color: rgb(0, 102, 0);">system.write</span>
-      will be sent to stdin.<br>
+      blocked).<BR>
+    </DIV><BR>
+    <SPAN style="text-decoration: underline;">Data from Basic
+    to</SPAN> <SPAN style=
+    "text-decoration: underline;">binary/shell</SPAN><SPAN style=
+    "text-decoration: underline;">.</SPAN><BR>
+    <DIV style="margin-left: 40px;">
+      Any <SPAN style="color: rgb(0, 102, 0);">system.write</SPAN>
+      will be sent to stdin.<BR>
       If the shell or binary is not reading stdin, the data will be
       buffered and Basic will continue to the next instruction
-      (will not be blocked).<br>
-      <br>
+      (will not be blocked).<BR>
+      <BR>
       If the binary is reading from stdin and there is no data sent
-      (from Basic), then the binary will be blocked.<br>
-      <br>
-    </div>
-  </div><br>
-  <br>
-  <hr style="width: 100%; height: 2px;">
-  <br>
-  <big style="text-decoration: underline;"><a name="About_PIE" id="About_the_PIE"></a>About&nbsp; PIE<br>
-  <br></big> In Jun 2012, Google began to enable PIE (Position
-  Independent Executables) in Android as a security measure.<br>
+      (from Basic), then the binary will be blocked.<BR>
+      <BR>
+    </DIV>
+  </DIV><BR>
+  <BR>
+  <HR style="width: 100%; height: 2px;">
+  <BR>
+  <BIG style="text-decoration: underline;"><A name="About_PIE" id=
+  "About_the_PIE"></A>About&nbsp; PIE<BR>
+  <BR></BIG> In Jun 2012, Google began to enable PIE (Position
+  Independent Executables) in Android as a security measure.<BR>
   They sneaked this into the OS starting with JellyBean (4.1) and
   ending with KitKat (4.4). This was the 'grace period' whereby any
   phone within this range is able to execute both PIE and non-PIE
   compiled code. Any phone after this range (starting with Lollipop
-  (5.0)) will only execute PIE binaries.<br>
-  <br>
+  (5.0)) will only execute PIE binaries.<BR>
+  <BR>
   This means older phones (&lt; v4.1) don't work with PIE while
-  newer phones (&gt;4.4) don't work without it.<br>
-  <br>
+  newer phones (&gt;4.4) don't work without it.<BR>
+  <BR>
   The only choice left for binary makers then, was either to force
   the customer to upgrade their phones or make sure the package
   ships with both types of binaries. For the latter case, the app
-  will need to choose which binary to execute at runtime.<br>
-  <br>
-  Fortunately in Basic, you can get the OS version like this<br>
-
-  <div style="margin-left: 40px;">
-    <small><span style="font-family: monospace;">a=0</span><br style="font-family: monospace;">
-    <span style="font-family: monospace;">device a</span><br style="font-family: monospace;">
-    <span style="font-family: monospace;">bundle.get a, "OS",
-    s$</span><br style="font-family: monospace;"></small>
-  </div>With a bit of manipulation, you can convert this to an
-  integer value to decide which binary to use.<br>
-  (For apk making, you will need permission <span style="font-style: italic;">READ_PHONE_STATE</span> for the 'device'
-  command)<br>
-  <br>
+  will need to choose which binary to execute at runtime.<BR>
+  <BR>
+  Fortunately in Basic, you can get the OS version like this<BR>
+  <DIV style="margin-left: 40px;">
+    <SMALL><SPAN style=
+    "font-family: monospace;">a=0</SPAN><BR style=
+    "font-family: monospace;">
+    <SPAN style="font-family: monospace;">device a</SPAN><BR style=
+    "font-family: monospace;">
+    <SPAN style="font-family: monospace;">bundle.get a, "OS",
+    s$</SPAN><BR style="font-family: monospace;"></SMALL>
+  </DIV>With a bit of manipulation, you can convert this to an
+  integer value to decide which binary to use.<BR>
+  (For apk making, you will need permission <SPAN style=
+  "font-style: italic;">READ_PHONE_STATE</SPAN> for the 'device'
+  command)<BR>
+  <BR>
   &nbsp; Copy over the binary to private storage matching the OS
-  pie or no-pie version. (modify the program above like this;)<br>
-
-  <table class="bordered" style="text-align: left; width: 1%; margin-left: 40px;" border="0" cellpadding="2" cellspacing="2">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top; white-space: nowrap; width: 50%;">
-        <small><span style="color: rgb(0, 0, 153); font-family: monospace;"><span style="color: rgb(0, 102, 0);">
-        b$</span>="<span style="color: rgb(0, 102, 0);">main</span>"&nbsp;&nbsp;
+  pie or no-pie version. (modify the program above like this;)<BR>
+  <TABLE class="bordered" style=
+  "text-align: left; width: 1%; margin-left: 40px;" cellspacing="2"
+  cellpadding="2" border="0">
+    <TBODY>
+      <TR>
+        <TD style=
+        "vertical-align: top; white-space: nowrap; width: 50%;">
+        <SMALL><SPAN style=
+        "color: rgb(0, 0, 153); font-family: monospace;"><SPAN style="color: rgb(0, 102, 0);">
+        b$</SPAN>="<SPAN style=
+        "color: rgb(0, 102, 0);">main</SPAN>"&nbsp;&nbsp;
         &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-        &nbsp;&nbsp; <span style="color: rgb(102, 102, 102);">%
-        binary name</span><br>
+        &nbsp;&nbsp; <SPAN style="color: rgb(102, 102, 102);">%
+        binary name</SPAN><BR>
         file.root datapath$&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-        <span style="color: rgb(102, 102, 102);">%
-        &lt;base&gt;/data<br>
-        <br></span></span> <span style="font-family: monospace;">a=0</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">device
-        a</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">bundle.get a, "OS",
-        s$</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">v=
-        val(word$(s$,1,"\\."))*10+val(word$(s$,2,"\\."))</span><br style="font-family: monospace;">
+        <SPAN style="color: rgb(102, 102, 102);">%
+        &lt;base&gt;/data<BR>
+        <BR></SPAN></SPAN> <SPAN style=
+        "font-family: monospace;">a=0</SPAN><BR style=
+        "font-family: monospace;">
+        <SPAN style="font-family: monospace;">device
+        a</SPAN><BR style="font-family: monospace;">
+        <SPAN style="font-family: monospace;">bundle.get a, "OS",
+        s$</SPAN><BR style="font-family: monospace;">
+        <SPAN style="font-family: monospace;">v=
+        val(word$(s$,1,"\\."))*10+val(word$(s$,2,"\\."))</SPAN><BR style="font-family: monospace;">
 
-        <span style="font-family: monospace;">if v&lt;41 then
-        suffix$="-nopie" else suffix$="-pie"</span><br style="font-family: monospace;"></small> <small><span style="color: rgb(0, 0, 153); font-family: monospace;"><span style="color: rgb(102, 102, 102);">
-        <br></span></span> <span style="color: rgb(0, 0, 153); font-family: monospace;">srce$ =
-        datapath$+"/"+b$+<span style="color: black;">suffix$</span></span><br style="font-family: monospace; color: rgb(0, 0, 153);">
-        <span style="color: rgb(0, 0, 153); font-family: monospace;">system.write
+        <SPAN style="font-family: monospace;">if v&lt;41 then
+        suffix$="-nopie" else suffix$="-pie"</SPAN><BR style=
+        "font-family: monospace;"></SMALL> <SMALL><SPAN style=
+        "color: rgb(0, 0, 153); font-family: monospace;"><SPAN style="color: rgb(102, 102, 102);">
+        <BR></SPAN></SPAN> <SPAN style=
+        "color: rgb(0, 0, 153); font-family: monospace;">srce$ =
+        datapath$+"/"+b$+<SPAN style=
+        "color: black;">suffix$</SPAN></SPAN><BR style=
+        "font-family: monospace; color: rgb(0, 0, 153);">
+        <SPAN style=
+        "color: rgb(0, 0, 153); font-family: monospace;">system.write
         ("cat "+srce$+" &gt;./"+b$+"
-        2&gt;&amp;1")</span></small><br></td>
-      </tr>
-    </tbody>
-  </table>&nbsp;&nbsp;&nbsp; Note that the final binary copied to
-  private storage need not have the pie/nopie suffix.<br>
-  <br>
+        2&gt;&amp;1")</SPAN></SMALL><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE>&nbsp;&nbsp;&nbsp; Note that the final binary copied to
+  private storage need not have the pie/nopie suffix.<BR>
+  <BR>
   Ofcourse this means you have to compile two versions of your
-  binary, <span style="color: rgb(0, 102, 0);">main-pie</span> and
-  <span style="color: rgb(0, 102, 0);">main-nopie</span>.<br>
-  Android.mk can build both versions at the same time.<br>
-  <br>
-  Android.mk<br>
-
-  <table class="bordered" style="text-align: left; width: 100%;" border="0" cellpadding="8" cellspacing="2">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top; white-space: nowrap; width: 50%;">
-        <tt><small>LOCAL_PATH:= $(call my-dir)<br>
-        include $(CLEAR_VARS)<br>
-        <br>
-        LOCAL_MODULE := <span style="color: rgb(0, 102, 0);">main-nopie</span><br>
-        <br>
-        LOCAL_SRC_FILES:= main.c<br>
-        <br>
-        include $(BUILD_EXECUTABLE)<br>
-        <br>
-        #------------------------------<br>
-        include $(CLEAR_VARS)<br>
-        <br>
-        LOCAL_MODULE := <span style="color: rgb(0, 102, 0);">main-pie</span><br>
-        <br>
-        LOCAL_SRC_FILES:= main.c<br>
-        <br>
-        APP_PLATFORM := android-16<br>
-        LOCAL_CFLAGS += -fPIE<br>
-        LOCAL_LDFLAGS += -fPIE -pie<br>
-        <br>
-        include $(BUILD_EXECUTABLE)</small></tt></td>
-
-        <td class="divide" style="vertical-align: top; white-space: nowrap; width: 50%;">
-        <small><span style="font-family: monospace;">Output<br>
-        <br>
-        $ go.sh</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;"><span style="font-family: monospace;">[armeabi] Compile thumb&nbsp; :
-        main-nopie &lt;= main.c</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">[armeabi]
+  binary, <SPAN style="color: rgb(0, 102, 0);">main-pie</SPAN> and
+  <SPAN style="color: rgb(0, 102, 0);">main-nopie</SPAN>.<BR>
+  Android.mk can build both versions at the same time.<BR>
+  <BR>
+  Android.mk<BR>
+  <TABLE class="bordered" style="text-align: left; width: 100%;"
+  cellspacing="2" cellpadding="8" border="0">
+    <TBODY>
+      <TR>
+        <TD style=
+        "vertical-align: top; white-space: nowrap; width: 50%;">
+        <TT><SMALL>LOCAL_PATH:= $(call my-dir)<BR>
+        include $(CLEAR_VARS)<BR>
+        <BR>
+        LOCAL_MODULE := <SPAN style=
+        "color: rgb(0, 102, 0);">main-nopie</SPAN><BR>
+        <BR>
+        LOCAL_SRC_FILES:= main.c<BR>
+        <BR>
+        include $(BUILD_EXECUTABLE)<BR>
+        <BR>
+        #------------------------------<BR>
+        include $(CLEAR_VARS)<BR>
+        <BR>
+        LOCAL_MODULE := <SPAN style=
+        "color: rgb(0, 102, 0);">main-pie</SPAN><BR>
+        <BR>
+        LOCAL_SRC_FILES:= main.c<BR>
+        <BR>
+        APP_PLATFORM := android-16<BR>
+        LOCAL_CFLAGS += -fPIE<BR>
+        LOCAL_LDFLAGS += -fPIE -pie<BR>
+        <BR>
+        include $(BUILD_EXECUTABLE)</SMALL></TT></TD>
+        <TD class="divide" style=
+        "vertical-align: top; white-space: nowrap; width: 50%;">
+        <SMALL><SPAN style="font-family: monospace;">Output<BR>
+        <BR>
+        $ go.sh</SPAN><BR style="font-family: monospace;">
+        <SPAN style="font-family: monospace;"><SPAN style=
+        "font-family: monospace;">[armeabi] Compile thumb&nbsp; :
+        main-nopie &lt;= main.c</SPAN><BR style=
+        "font-family: monospace;">
+        <SPAN style="font-family: monospace;">[armeabi]
         Executable&nbsp;&nbsp;&nbsp;&nbsp; :
-        main-nopie</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">[armeabi]
+        main-nopie</SPAN><BR style="font-family: monospace;">
+        <SPAN style="font-family: monospace;">[armeabi]
         Install&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-        main-nopie =&gt; libs/armeabi/main-nopie</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">[armeabi] Compile
-        thumb&nbsp; : main-pie &lt;= main.c</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">[armeabi]
+        main-nopie =&gt; libs/armeabi/main-nopie</SPAN><BR style=
+        "font-family: monospace;">
+        <SPAN style="font-family: monospace;">[armeabi] Compile
+        thumb&nbsp; : main-pie &lt;= main.c</SPAN><BR style=
+        "font-family: monospace;">
+        <SPAN style="font-family: monospace;">[armeabi]
         Executable&nbsp;&nbsp;&nbsp;&nbsp; :
-        main-pie</span><br style="font-family: monospace;">
-        <span style="font-family: monospace;">[armeabi]
+        main-pie</SPAN><BR style="font-family: monospace;">
+        <SPAN style="font-family: monospace;">[armeabi]
         Install&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :
-        main-pie =&gt; libs/armeabi/main-pie</span><span style="font-family: Arial,Helvetica,sans-serif;"><br></span></span></small><br>
-        </td>
-      </tr>
-    </tbody>
-  </table><br>
-  <small style="font-style: italic;">note: since NDK 10d:<br>
+        main-pie =&gt; libs/armeabi/main-pie</SPAN><SPAN style=
+        "font-family: Arial,Helvetica,sans-serif;"><BR></SPAN></SPAN></SMALL><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <SMALL style="font-style: italic;">note: since NDK 10d:<BR>
   PIE is supposed to be anabled by default if APP_PLATFORM :=
-  android-16<br>
+  android-16<BR>
   but experience suggests this is not enough. To be sure that PIE
-  is enabled, also set :<br>
-  LOCAL_CFLAGS += -fPIE<br>
-  LOCAL_LDFLAGS += -fPIE -pie</small><br>
-  <br>
-  <hr style="width: 100%; height: 2px;">
-  -End.<br>
-  <hr style="width: 100%; height: 2px;">
-  <br>
-  Sources and Acknowledgements:<br>
-  <br>
-  <small>https://en.wikipedia.org/wiki/Android_version_history</small><br>
+  is enabled, also set :<BR>
+  LOCAL_CFLAGS += -fPIE<BR>
+  LOCAL_LDFLAGS += -fPIE -pie</SMALL><BR>
+  <BR>
+  <HR style="width: 100%; height: 2px;">
+  -End.<BR>
+  <HR style="width: 100%; height: 2px;">
+  <BR>
+  Sources and Acknowledgements:<BR>
+  <BR>
+  <SMALL>https://en.wikipedia.org/wiki/Android_version_history</SMALL><BR>
 
-  <small>https://www.duosecurity.com/blog/exploit-mitigations-in-android-jelly-bean-4-1</small><br>
+  <SMALL>https://www.duosecurity.com/blog/exploit-mitigations-in-android-jelly-bean-4-1</SMALL><BR>
 
-  <small>http://stackoverflow.com/questions/24818902/running-a-native-library-on-android-l-error-only-position-independent-executab</small><br>
+  <SMALL>http://stackoverflow.com/questions/24818902/running-a-native-library-on-android-l-error-only-position-independent-executab</SMALL><BR>
 
-  <br>
-  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
+  <BR>
+  <HR style=
+  "width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
 
-  Support my projects!<br>
-  <a href="http://humpity.github.io/payments/payment.html">Donate</a><br style="font-family: Helvetica,Arial,sans-serif;">
-
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <hr style="width: 100%; height: 2px; font-family: Helvetica,Arial,sans-serif;">
-
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <br>
-  <script type="text/javascript" src="http://humpity.github.io/main_index.js">
-</script>
-</body></html>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <SCRIPT type="text/javascript" src=
+  "http://humpity.github.io/main_index.js"></SCRIPT>
+</BODY>
+</HTML>

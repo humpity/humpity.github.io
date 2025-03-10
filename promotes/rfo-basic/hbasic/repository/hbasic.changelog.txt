@@ -3,6 +3,17 @@ hBasic changelog
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
 
+2025-03-10 v5.30
+		GR.BITMAP.LOAD Fix return -1 on error (-Spike) (0526)
+		GR.BITMAP.LOAD - enhancements (0527)
+		AUDIO.PLAY - timeout (0528)
+		BT enhancements ((0529))
+			BT.CONNECT    {rc,}{secure} 
+			BT.CONNECT.TO {rc,}{secure,} mac$	(-charles.rayer29)
+			BT.DEVICE.ADDR {rc,} mac$
+			BT.GET.PAIRED macList {,nameList}
+		Gui fixes for Android 15 (0530)
+
 2025-01-01 v5.25
 		Fix Menu.Show after Menu.Set(0522)
 		Fix help-commands keyboard (0523)
@@ -454,7 +465,11 @@ v4.93	v2.25	Merged 0492-0493
 v5.00	v2.26	Merged 0494-0500 Graphics upgrade (mkII engine)
 v5.04	v2.27	Merged 0501-0504
 v5.10	v2.28	Merged 0505-0510
-v5.20	v2.29	Merged 0511-0512 Targets API-35
+v5.20	v2.29	Merged 0511-0512, 0520 Targets API-35
+v5.21	v2.30	Merged 0521
+v5.25	v2.31   Merged 0522-0525 Legacy device support
+v5.30	v2.32   Merged 0526-0530 Fixes for Android 15 gui
+
 ============================================================================
 Patches that were created.
 	O = optional S = suspended (do not use)	D = defunct U=Upgraded

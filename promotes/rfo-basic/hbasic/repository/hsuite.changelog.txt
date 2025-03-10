@@ -3,6 +3,11 @@ hSuite changelog
 Date		Summary of Versions
 --------------- -------------------------------------------
 
+2025-03-10	v3.28
+		hmaster v2.32
+		hpatcher v3.21
+			default focus for Create Patch
+
 2025-01-01	v3.27
 		hmaster v2.31
 		hpatcher v3.20

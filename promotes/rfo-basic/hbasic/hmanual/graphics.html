@@ -64,11 +64,13 @@
                 <TD style="vertical-align: top;"><A href=
                 "#gr_bitmap_clr">GR.BITMAP.CLR</A><BR>
                 <A href="#gr_bitmap_blot">GR.BITMAP.BLOT</A><BR>
-                <A href="#gr_bitmap_scaf">GR.BITMAP.SCAF</A></TD>
+                <A href="#gr_bitmap_scaf">GR.BITMAP.SCAF</A><BR>
+                <A href="#gr_bitmap_load">GR.BITMAP.LOAD</A></TD>
                 <TD style="vertical-align: top; width: 50%;">Clear
                 a bitmap with transparency<BR>
                 Clear a bitmap section with transparency<BR>
-                Scale by factor<BR></TD>
+                Scale by factor<BR>
+                load a bitmap from a file with scaling<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;">Clipping<BR></TD>
@@ -736,6 +738,63 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
+          <A name="gr_bitmap_load" id=
+          "gr_bitmap_clr"></A><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">GR.BITMAP.LOAD</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">GR.BITMAP.LOAD</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">bitmap_ptr</SPAN>_nvar</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);">, <SPAN style=
+            "color: black; font-weight: bold;">filename</SPAN>_sexp</SPAN>
+            <SPAN style=
+            "color: rgb(102, 51, 0);">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">,
+            scale</SPAN>_nexp</SPAN>} <SPAN style=
+            "color: rgb(102, 51, 0);">{</SPAN></SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">smooth</SPAN>_lexp</SPAN>}</SPAN><BR>
+          </DIV><SPAN style="color: rgb(102, 51, 0);"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            Load a bitmap from a file, with optional scaling and
+            smoothing.<BR>
+            Unlike legacy Basic, the loaded bitmap is made
+            writeable, meaning it can be used directly with
+            Gr.bitmap.drawinto.start.
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">scale</SPAN>
+            (optional)<BR>
+            <DIV style="margin-left: 40px;">
+              e.g 2 will enlarge the bitmap to twice the original
+              dimensions.<BR>
+              e.g 0.5 will reduce the dimensions to half.<BR>
+              a negative value inverts the image<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">smooth</SPAN>
+            (optional)
+            <DIV style="margin-left: 40px;">
+              true - smoothing is applied to <SPAN style=
+              "font-weight: bold;">scale</SPAN><BR>
+              false - no smoothing<BR>
+              default is <SPAN style=
+              "font-weight: bold;">false.</SPAN><BR>
+              If <SPAN style="font-weight: bold;">scale</SPAN> is
+              1.0,&nbsp; the smoothing has no effect.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
           <A name="gr_clip" id="multi_input"></A><FONT size=
           "+1"><SPAN style="color: rgb(0, 0, 153);">GR.CLIP.START
           and</SPAN> <SPAN style=
@@ -913,6 +972,12 @@
               GR.HIDE cat, dog, mouse<BR>
             </DIV>
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">See also other
+            <A href="commands.html#multi-input">multi-input
+            commands</A>.<BR>
+            <BR></SPAN>
+          </DIV>
         </TD>
       </TR>
       <TR>
@@ -1267,13 +1332,13 @@
             e.g&nbsp;&nbsp; <SPAN style=
             "font-family: Courier New, Courier, monospace;">GR.PUSH
             oCircle, 45, 100 &nbsp;</SPAN> <SPAN style=
-            "color: rgb(51, 51, 51);">% pushes the circle<BR>
+            "color: rgb(51, 51, 51);">% pushes the circle with a
+            vector of 45° at 100 pixels/sec.<BR>
             <BR></SPAN> This adds a vector upon the object's
             current vector. It will affect the parameters <A href=
             "graphics-system.html#graphics_gp"><SPAN style=
-            "color: rgb(0, 0, 153);">"speed"</SPAN> and
-            <SPAN style="color: rgb(0, 0, 153);">"dir"</SPAN></A>.<BR>
-
+            "color: rgb(0, 0, 153);">"dir" and
+            "speed"</SPAN></A>.<BR>
             <BR>
             The object's current vector is added with the applied
             vector <SPAN style=
@@ -1367,8 +1432,10 @@
             ...}</SPAN><FONT size="+1"><BR></FONT>
           </DIV><BR>
           <DIV style="margin-left: 80px;">
-            GR.DL.MOVE will move the object(s) 'after' the z-index
-            <SPAN style="font-weight: bold;">pos</SPAN>.<BR>
+            GR.DL.MOVE will move the object(s) '<SPAN style=
+            "text-decoration: underline;">after</SPAN>' the z-index
+            <SPAN style="font-weight: bold;">pos</SPAN> in the
+            display list.<BR>
           </DIV>
           <DIV style="margin-left: 80px;">
             You can give multiple objects or arrays.<BR>
@@ -1376,7 +1443,7 @@
             moved.<BR>
             An object may also be a group object (see below).<BR>
             The object(s) does not have to already be on the
-            display list.<BR>
+            display list, but must be in the object list.<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
@@ -1387,8 +1454,8 @@
             <BR>
           </DIV>
           <DIV style="margin-left: 80px;">
-            Current objects will be shifted to the right to make
-            room.<BR>
+            Current display list objects will be shifted to the
+            right to make room.<BR>
             The first object will be moved 'after' <SPAN style=
             "font-weight: bold;">pos</SPAN>, i.e (pos+1).<BR>
           </DIV>
@@ -1512,10 +1579,13 @@
               "graphics-system.html#groups">group object</A>, the
               group object is removed (if it is on the display
               list).<BR>
-              The objects in the group's list are also removed.<BR>
-              (Note that group objects do not have to be present on
-              the display list, but the objects in their lists do,
-              in order to be rendered).<BR>
+              The objects in the group's list are also removed
+              (regardless of whether the group object was on the
+              display list).<BR>
+              <BR>
+              (Note that for rendering, group objects do not have
+              to be on the display list, but the objects in their
+              lists do.)<BR>
             </DIV>
           </DIV><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><BR></SPAN></FONT>
@@ -1591,21 +1661,26 @@
             By default a sprite's animation is 0 (no
             animation).<BR>
             <BR>
-            Example</SPAN></SPAN><SPAN style=
+            e.g</SPAN></SPAN><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
             "color: rgb(0, 0, 0);"><BR></SPAN></SPAN>
             <DIV style="margin-left: 40px;">
-              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-              "color: rgb(0, 0, 0);">GR.BITMAP.LOAD <SPAN style=
-              "color: rgb(0, 0, 153);">bmp</SPAN>,
-              "h-stand.png"</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
+              <SPAN style="color: rgb(0, 0, 0);">GR.BITMAP.LOAD
+              <SPAN style="color: rgb(0, 0, 153);">bmp</SPAN>,
+              "h-stand.png"</SPAN></SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             </DIV>
             <DIV style="margin-left: 40px;">
-              GR.SPRITE.DRAW s0, 100, 100, <SPAN style=
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">GR.SPRITE.DRAW
+              s0, 100, 100,</SPAN> <SPAN style=
               "color: rgb(102, 51, 0);"><SPAN style=
               "color: rgb(0, 0, 0);"><SPAN style=
               "color: rgb(102, 102, 102);"><SPAN style=
-              "color: rgb(0, 0, 153);">bmp&nbsp;&nbsp;&nbsp;&nbsp;
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">bmp&nbsp;</SPAN>&nbsp;&nbsp;&nbsp;
               <SPAN style="color: rgb(51, 51, 51);">% a sprite with
               no animation</SPAN></SPAN></SPAN></SPAN></SPAN><BR>
             </DIV>
@@ -1700,8 +1775,24 @@
               animation.<BR>
               e.g You could load two animations of 16 frames each,
               one animation for 'left', and the other for
-              'right'.<BR>
+              'right',<BR>
+              the 'right' animation would need a skip offset of
+              16.<BR>
               <BR>
+              e.g<BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">GR.ANIM.LOAD
+                aLeft,&nbsp;
+                "h-anim.png",32,33,16</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN> <SPAN style=
+                "font-family: Courier New, Courier, monospace;">GR.ANIM.LOAD
+                aRight,
+                "h-anim.png",32,33,16,16</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style="color: rgb(51, 51, 51);">% start load
+                from offset 16</SPAN><BR>
+              </DIV><BR>
               The number of rows, or columns <SPAN style=
               "text-decoration: underline;">does not matter,</SPAN>
               the command will try to read the image from left to
@@ -1846,6 +1937,9 @@
               This command will trigger several things.<BR>
             </DIV>
             <UL>
+              <LI>Executes <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics.html#tweens">
+              tweens</A>.</LI>
               <LI>Updates objects to new positions based on their
               <SPAN style=
               "text-decoration: underline;">speed</SPAN> and
@@ -1853,7 +1947,6 @@
               "text-decoration: underline;">direction</SPAN>.</LI>
               <LI>Updates animations (for sprites) based on their
               animation rates.</LI>
-              <LI>Executes <A href="#tweens">tweens</A>.</LI>
             </UL>
           </DIV>
           <DIV style="margin-left: 80px;">
@@ -1976,6 +2069,7 @@
             Tweens are triggered by <A href=
             "#gr_motion">GR.MOTION</A>. They are removed after
             their duration expires.<BR>
+            Tween are executed before any motion.<BR>
             (see also <A href=
             "functions.html#gr_tweens">GR_TWEENS</A>())<BR>
           </DIV>
