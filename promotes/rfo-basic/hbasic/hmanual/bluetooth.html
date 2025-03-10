@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Bluetooth</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; Bluetooth<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Bluetooth
+          command changes</BIG></BIG><BR>
+          <BR>
+          <BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#bt_return_codes"><FONT size="+1">Return
+                Codes</FONT></A></TD>
+                <TD style="vertical-align: top;">added return codes
+                for some commands</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="#bt_connect_to"><FONT size=
+                "+1">BT.CONNECT.TO</FONT></A></TD>
+                <TD style="vertical-align: top;">direct connect
+                using MAC address<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#bt_device_addr"><FONT size=
+                "+1">BT.DEVICE.ADDR</FONT></A></TD>
+                <TD style="vertical-align: top;">get MAC address of
+                current connected device<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#bt_get_paired"><FONT size=
+                "+1">BT.GET.PAIRED</FONT></A><BR></TD>
+                <TD style="vertical-align: top;">get list/s of
+                paired devices<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <BIG style="color: rgb(0, 0, 153);"><A name=
+          "bt_return_codes" id="fn_import"></A>Return Codes<BR>
+          <BR></BIG>
+          <DIV style="margin-left: 40px;">
+            An optional return code variable <SPAN style=
+            "font-weight: bold;">{rc_<SPAN style=
+            "color: rgb(102, 51, 0);">nvar</SPAN>}</SPAN> can be
+            inserted for the following commands;<BR>
+            <BR>
+            <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bluetooth.html#bt_device_addr">
+            BT.OPEN</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            }&nbsp;<SPAN style=
+            "font-weight: bold;">{secure</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN><BR>
+            <A href=
+            "#bt_connect">BT.CONNECT</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            { <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            } {<SPAN style=
+            "font-weight: bold;">secure</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN>}<BR>
+            <A href="#bt_connect_to">BT.CONNECT.TO</A>&nbsp;&nbsp;
+            { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            } {<SPAN style=
+            "font-weight: bold;">secure</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN></SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            } <SPAN style=
+            "font-weight: bold;">mac</SPAN>$<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN><BR>
+            BT.DEVICE.NAME&nbsp; { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> }&nbsp;<SPAN style=
+            "font-weight: bold;">name</SPAN>$<SPAN style=
+            "color: rgb(102, 51, 0);">_svar</SPAN><BR>
+            <A href="#bt_device_addr">BT.DEVICE.ADDR</A>&nbsp; {
+            <SPAN style="font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> }&nbsp;<SPAN style=
+            "font-weight: bold;">mac</SPAN>$<SPAN style=
+            "color: rgb(102, 51, 0);">_svar<BR></SPAN> <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bluetooth.html#bt_device_addr">
+            BT.READ.BYTES</A>&nbsp;&nbsp;&nbsp; { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> }&nbsp;<SPAN style=
+            "font-weight: bold;">buffer</SPAN>$<SPAN style=
+            "color: rgb(102, 51, 0);">_svar<BR></SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bluetooth.html#bt_device_addr">
+            BT.RECONNECT</A></SPAN>&nbsp; &nbsp; { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN> }<BR>
+            <BR>
+            In the case of { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> }&nbsp;<SPAN style=
+            "font-weight: bold;">{secure</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN>&nbsp; if only one
+            expression is given, without a preceding comma,<BR>
+            it will be taken as <SPAN style=
+            "font-weight: bold;">{secure</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN>.<BR>
+            <BR>
+            If the return code <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN> is unused
+            (omitted), you will get Run-Time-Error upon an
+            error.<BR>
+            If the return code <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN> is used (not
+            omitted), <SPAN style=
+            "text-decoration: underline;">then certain</SPAN>
+            Run-Time-Errors will be suppressed and the program will
+            continue. These errors include;<BR>
+            <DIV style="margin-left: 40px;">
+              Bluetooth is not available<BR>
+              Bluetooth Not Enabled<BR>
+              Bluetooth not connected<BR>
+              Could not get remote device<BR>
+              Connect error: ..<BR>
+              Error&gt; selecting device<BR>
+              Not previously connected<BR>
+            </DIV>These errors can be read with the system function
+            getError$().<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Exceptions</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              You <SPAN style="text-decoration: underline;">will
+              still get</SPAN> Run-Time-Errors for<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              Syntax-Errors<BR>
+              Bluetooth not opened<BR>
+              No Bluetooth permsissions granted<BR>
+            </DIV><BR>
+            The code value returned depends on the command but in
+            general the return codes are as follows;<BR>
+          </DIV>
+          <TABLE style=
+          "text-align: left; width: 70%; margin-left: 40px;"
+          cellspacing="0" cellpadding="5" border="0">
+            <CAPTION>
+              <BR>
+            </CAPTION>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: middle; width: 1px;">
+                Code</TD>
+                <TD style="vertical-align: middle; width: 1px;">
+                Meaning</TD>
+                <TD style="vertical-align: middle; width: 10%;">
+                e.g<BR></TD>
+                <TD style="vertical-align: top;">Remarks<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; text-align: center;" valign=
+                "middle">positive (+ve)</TD>
+                <TD style="vertical-align: top;" valign="middle">
+                OK</TD>
+                <TD style=
+                "vertical-align: top; text-align: center;" valign=
+                "middle">1<BR></TD>
+                <TD style="vertical-align: top;">successful
+                command<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; text-align: center;" valign=
+                "middle">zero<BR></TD>
+                <TD style="vertical-align: top; white-space;"
+                valign="middle">Error<BR></TD>
+                <TD style=
+                "vertical-align: top; text-align: center;" valign=
+                "middle">0<BR></TD>
+                <TD style="vertical-align: top;">furthur info can
+                be obtained with getError$()<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; text-align: center;" valign=
+                "middle">negative<BR>
+                (-ve)<BR></TD>
+                <TD style="vertical-align: top;" valign="middle">
+                Cancelled</TD>
+                <TD style=
+                "vertical-align: top; text-align: center;" valign=
+                "middle">-1<BR></TD>
+                <TD style="vertical-align: top;">for dialogs, the
+                user tapped outside or BackKey<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><U><BR></U>
+          <DIV style="margin-left: 40px;">
+            Note that a positive return code (OK) does not
+            neccessarily mean that an operation was successful,<BR>
+            but does mean that the command launched without
+            errors.<BR>
+            You should also use BT.STATUS to check the current
+            status.<BR>
+          </DIV><U><BR></U>
+          <DIV style="margin-left: 40px;">
+            Examples<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">s=1</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">BT.CONNECT
+            rc,s&nbsp;&nbsp;&nbsp; &nbsp; <SPAN style=
+            "color: rgb(51, 51, 51);">% get result, set
+            secure</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">BT.CONNECT
+            rc,&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; <SPAN style=
+            "color: rgb(51, 51, 51);">% get result, default
+            secure</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">BT.CONNECT
+            s&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            &nbsp;<SPAN style="color: rgb(51, 51, 51);">% no
+            result, set secure</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            BT.CONNECT &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <SPAN style="color: rgb(51, 51, 51);">% no result,
+            default secure</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">BT.CONNECT.TO
+            rc,,m$ <SPAN style="color: rgb(51, 51, 51);">% get
+            result, default secure</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">BT.CONNECT.TO
+            s,m$&nbsp;&nbsp; <SPAN style=
+            "color: rgb(51, 51, 51);">% no result, set
+            secure</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+          </DIV><U><BR></U>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="bt_connect"
+          id="printat"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BT.CONNECT</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BT.CONNECT&nbsp;</SPAN>&nbsp;&nbsp;
+            { <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            } {<SPAN style=
+            "font-weight: bold;">secure</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN>}<BR>
+            Connect to a bluetooth device by selecting one from a
+            dialog.<BR>
+            <BR>
+            This is now a modal dialog (blocking). Your program
+            will not continue until the dialog closes<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">secure</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              This optional parameter dictates whether the
+              connection should be secure or not.
+            </DIV><SPAN style="font-weight: bold;">rc</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              An optional return code.<BR>
+              If the&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;"><SPAN style=
+              "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN>
+              varaible is used, the command will suppress some
+              <A href="bt_return_codes">run-time-errors</A> during
+              connection.<BR>
+              <SPAN style="font-weight: bold;">rc</SPAN>
+              returns;<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp;
+              &nbsp;&nbsp; = OK<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+              0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Error&nbsp; (a
+              description may be found with getError$() )<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              -1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Cancelled dialog
+              (user touched outside or hit BackKey)<BR>
+              <BR>
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <A name="bt_connect_to" id=
+          "bt_connect_to"></A><BIG style="color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style="color: rgb(0, 0, 153);">BT.CONNECT.TO</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BT.CONNECT.TO</SPAN>
+            &nbsp;&nbsp;</SPAN> { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN></SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            } {<SPAN style=
+            "font-weight: bold;">secure</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN></SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            } <SPAN style=
+            "font-weight: bold;">mac</SPAN>$<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Connects directly to a device given the MAC address
+            <SPAN style="font-weight: bold;">mac</SPAN>$.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">mac</SPAN>$<BR>
+            <DIV style="margin-left: 40px;">
+              A MAC address is 6 hex bytes separated with
+              colons<BR>
+              e.g 11:22:33:DD:EE:FF<BR>
+              It is exactly 17 characters long.<BR>
+              <BR>
+              The MAC address is not optional.<BR>
+              If you don't already have a MAC address, you can get
+              one from <A href=
+              "bt_get_paired">BT.GET.PAIRED</A>.<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">secure</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              This optional parameter dictates wether the
+              connection should be secure or not.<BR>
+            </DIV><SPAN style="font-weight: bold;">rc</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              An optional return code.<BR>
+              If the&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;"><SPAN style=
+              "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN>
+              variable is used, the command will suppress some
+              <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bt_return_codes">
+              run-time-errors</A> during connection.<BR>
+              <SPAN style="font-weight: bold;">rc</SPAN>
+              returns;<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 1&nbsp; =
+              OK<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 0&nbsp; = Error
+              (a description may be found with getError$() )<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="bt_device_addr" id=
+          "bt_device_addr"></A><BIG style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BT.DEVICE.ADDR</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BT.DEVICE.ADDR</SPAN>&nbsp;</SPAN>
+            { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN>,
+            }&nbsp;<SPAN style=
+            "font-weight: bold;">mac</SPAN>$<SPAN style=
+            "color: rgb(102, 51, 0);">_svar</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Get the MAC address of the currently connected (other)
+            device.<BR>
+            The connection state must be connected (3) or there
+            will be an error.<BR>
+            Some run-rime-errors can be suppressed with
+            <SPAN style="font-weight: bold;">rc</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN>.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">mac</SPAN>$<BR>
+            <DIV style="margin-left: 40px;">
+              The variable to get the device MAC address.<BR>
+              e.g 11:22:33:DD:EE:FF<BR>
+              It is exactly 17 characters long.<BR>
+              The MAC address is not optional.<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">rc</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              An optional return code.<BR>
+              If the&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;"><SPAN style=
+              "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN>
+              variable is used, the command will suppress some
+              <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bt_return_codes">
+              run-time-errors</A>.<BR>
+              <SPAN style="font-weight: bold;">rc</SPAN>
+              returns;<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 1&nbsp; =
+              OK<BR>
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 0&nbsp; = Error
+              (a description may be found with getError$() )<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;"></DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="bt_get_paired" id=
+          "bt_get_paired"></A><BIG style="color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style="color: rgb(0, 0, 153);">BT.GET.PAIRED</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BT.GET.PAIRED</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-weight: bold;">macList</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN> { <SPAN style=
+            "font-weight: bold;">, nameList</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN>, }<BR>
+            Get list/s of paired devices.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Gets the paired MAC addresses into a list given by
+            <SPAN style=
+            "font-weight: bold;">macList</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN>.<BR>
+            Optionally get the corresponding Names into the list
+            <SPAN style=
+            "font-weight: bold;">nameList</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN>.<BR>
+            <BR>
+            If the given list/s already exist, it is
+            overwriiten.<BR>
+            If the given list/s does not exist, and is a numeric
+            variable (<SPAN style=
+            "color: rgb(102, 51, 0);">nvar</SPAN>), a new list is
+            created and the index is put in the variable.<BR>
+            If the given list/s does not exist, and is not a
+            numeric variable, there will be an error.<BR>
+            <BR>
+            If there are no paired devices. The list/s will be
+            empty.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">BT.OPEN</SPAN></SPAN><BR>
+
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            BT.GET.PAIRED</SPAN> macList, nameList</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">list.size
+            macList,z</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">.cs
+            "TextSize 16"</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">?
+            int$(z);" paired devices"</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">for i=1
+            to z</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            list.get maclist,i,mac$</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            list.get nameList,i,name$</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            ? int$(i);" ";mac$;"-";name$</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">next</SPAN><BR>
+
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END</SPAN><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>
