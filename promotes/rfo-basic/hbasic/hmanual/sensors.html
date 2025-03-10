@@ -11,7 +11,7 @@
   <TITLE>Sensors</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hManual</A> &gt; <A href=
   "commands.html">Commands</A> &gt; Sensors<BR>
@@ -86,10 +86,10 @@
             "font-weight: bold;">sensor_array$[]</SPAN>.<BR>
             <BR>
             Any sensors reported from SENSORS.LIST beginning with
-            "<FONT color="#990000">Unknown</FONT>"<BR>
-            is not supported by Android. <U>However, those that are
-            still within the range 1-42 can still be OPENed and
-            READ.</U><BR>
+            "<FONT color="#990000">Unknown</FONT>" is not
+            officially supported by Android.<BR>
+            <U>However, those that are still within the range 1-42
+            can still be OPENed and READ.</U><BR>
             <FONT color="#990000">"Unknown"</FONT> sensors will
             also try to print their names after <FONT color=
             "#990000">"Unknown"</FONT>.<BR>
@@ -98,10 +98,14 @@
             <BR>
             If <SPAN style="font-weight: bold;">size</SPAN> is
             given, the array size is returned in <SPAN style=
-            "font-weight: bold;">size</SPAN> and may be zero.<BR>
-            If <SPAN style="font-weight: bold;">size</SPAN> is
-            omitted, and there are no detected sensors, (array size
-            is zero) then there will be a RunTimeError.<BR>
+            "font-weight: bold;">size</SPAN>.<BR>
+            <DIV style="margin-left: 40px;">
+              If no sensors are found, this size will be zero,
+              RunTimeError is suppresed and the array is
+              untouched.<BR>
+            </DIV>If <SPAN style="font-weight: bold;">size</SPAN>
+            is omitted, and there are no sensors found, then there
+            will be a RunTimeError.<BR>
             <BR>
             <FONT color="#000099"><A name="openread" id=
             "openread"></A>SENSORS.OPEN</FONT> and <FONT color=
@@ -141,11 +145,11 @@
                   comment</TD>
                 </TR>
                 <TR>
-                  <TD nowrap="nowrap" valign="top" align="center">
+                  <TD valign="top" nowrap="nowrap" align="center">
                   17<BR></TD>
-                  <TD nowrap="nowrap" valign="top">Significant
+                  <TD valign="top" nowrap="nowrap">Significant
                   Motion<BR></TD>
-                  <TD nowrap="nowrap" width="80%" valign="top">
+                  <TD valign="top" nowrap="nowrap" width="80%">
                   (samsung, xiaomi)</TD>
                 </TR>
                 <TR>
@@ -169,36 +173,36 @@
                 </TR>
                 <TR>
                   <TD valign="top" align="center">22<BR></TD>
-                  <TD nowrap="nowrap" valign="top">Tilt
+                  <TD valign="top" nowrap="nowrap">Tilt
                   detector<BR></TD>
-                  <TD nowrap="nowrap" width="80%" valign="top">
+                  <TD valign="top" nowrap="nowrap" width="80%">
                   (samsung, xiaomi)</TD>
                 </TR>
                 <TR>
                   <TD valign="top" align="center">27<BR></TD>
-                  <TD nowrap="nowrap" valign="top">
+                  <TD valign="top" nowrap="nowrap">
                   Orientation<BR></TD>
-                  <TD nowrap="nowrap" width="80%" valign="top">
+                  <TD valign="top" nowrap="nowrap" width="80%">
                   discrete orientation<BR>
                   (samsung, xiaomi)</TD>
                 </TR>
                 <TR>
                   <TD valign="top" align="center">29<BR></TD>
-                  <TD nowrap="nowrap" valign="top">Stationary
+                  <TD valign="top" nowrap="nowrap">Stationary
                   detect<BR></TD>
-                  <TD nowrap="nowrap" valign="top">(xiaomi)</TD>
+                  <TD valign="top" nowrap="nowrap">(xiaomi)</TD>
                 </TR>
                 <TR>
                   <TD valign="top" align="center">30<BR></TD>
-                  <TD nowrap="nowrap" valign="top">Motion
+                  <TD valign="top" nowrap="nowrap">Motion
                   detect<BR></TD>
-                  <TD nowrap="nowrap" valign="top">(xiaomi)</TD>
+                  <TD valign="top" nowrap="nowrap">(xiaomi)</TD>
                 </TR>
                 <TR>
                   <TD valign="top" align="center">35<BR></TD>
-                  <TD nowrap="nowrap" valign="top">
+                  <TD valign="top" nowrap="nowrap">
                   Accelerometer-Uncalibrated<BR></TD>
-                  <TD nowrap="nowrap" valign="top">(xiaomi)</TD>
+                  <TD valign="top" nowrap="nowrap">(xiaomi)</TD>
                 </TR>
               </TBODY>
             </TABLE>

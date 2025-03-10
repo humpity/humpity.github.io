@@ -382,7 +382,7 @@
                   <TR>
                     <TD style=
                     "vertical-align: top; text-align: center;">
-                    bitmap<BR></TD>
+                    <A href="#sprite-bitmap">bitmap</A><BR></TD>
                     <TD style="vertical-align: top;">Standing
                     bitmap pointer<BR></TD>
                     <TD style="vertical-align: top;">*<BR></TD>
@@ -392,7 +392,7 @@
                   <TR>
                     <TD style=
                     "vertical-align: top; text-align: center;">
-                    anim<BR></TD>
+                    <A href="#sprite-anim">anim</A><BR></TD>
                     <TD style="vertical-align: top;">Animation
                     Index pointer<BR></TD>
                     <TD style="vertical-align: top;">0<BR></TD>
@@ -402,7 +402,7 @@
                   <TR>
                     <TD style=
                     "vertical-align: top; text-align: center;">
-                    arate<BR></TD>
+                    <A href="sprite-arate">arate</A><BR></TD>
                     <TD style="vertical-align: top;">Animation
                     Rate<BR></TD>
                     <TD style="vertical-align: top;">10<BR></TD>
@@ -414,7 +414,7 @@
                   <TR>
                     <TD style=
                     "vertical-align: top; text-align: center;">
-                    aframe<BR></TD>
+                    <A href="sprite-aframe">aframe</A><BR></TD>
                     <TD style="vertical-align: top;">Current
                     animation frame<BR></TD>
                     <TD style="vertical-align: top;">0<BR></TD>
@@ -424,7 +424,7 @@
                   <TR>
                     <TD style=
                     "vertical-align: top; text-align: center;">
-                    aloop<BR></TD>
+                    <A href="#sprite-aloop">aloop</A><BR></TD>
                     <TD style="vertical-align: top;">Animation
                     Looping or not<BR></TD>
                     <TD style="vertical-align: top;">1<BR></TD>
@@ -454,8 +454,8 @@
               </TABLE>(* filled upon creation)<BR>
               <BR>
             </DIV><SPAN style=
-            "text-decoration: underline;">Standing
-            bitmap</SPAN><BR>
+            "text-decoration: underline;"><A name="sprite-bitmap"
+            id="sprite-bitmap"></A>Standing bitmap</SPAN><BR>
             <DIV style="margin-left: 40px;">
               Before you create a sprite, you must have at least a
               bitmap. This is the called the 'standing' bitmap.<BR>
@@ -494,8 +494,8 @@
               "text-decoration: underline;">must already
               exist</SPAN><BR>
             </DIV><BR>
-            <SPAN style=
-            "text-decoration: underline;">Animation</SPAN><BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "Animation" id="Animation"></A>Animation</SPAN><BR>
             <DIV style="margin-left: 40px;">
               An animation is a sequence of bitmaps. Similar to
               bitmaps, there is an internal list of Animations.<BR>
@@ -517,6 +517,8 @@
               "color: rgb(0, 0, 153);">ani</SPAN>,
               "h-animate.png",32,33,16<BR>
               <BR>
+              This will put the new index/pointer into the variable
+              <SPAN style="color: rgb(0, 0, 153);">ani</SPAN>.<BR>
               See <A href=
               "graphics.html#gr_anim_load">GR.ANIM.LOAD</A> for
               more information.<BR>
@@ -540,8 +542,12 @@
               "color: rgb(0, 0, 153);">ani</SPAN> &nbsp;&nbsp;
               <SPAN style="color: rgb(102, 102, 102);">% obj, x , y
               , bitmap, animation<BR>
-              <BR></SPAN> Note that you still need to specify the
-              standing bitmap.<BR>
+              <BR></SPAN> This will return the new sprite object s1
+              and update it's property <SPAN style=
+              "color: rgb(102, 0, 0);">"anim"</SPAN> with
+              <SPAN style="color: rgb(0, 0, 153);">ani</SPAN>.<BR>
+              Note that you still need to specify the standing
+              bitmap.<BR>
               <BR>
               The default animation rate for a new sprite is 10
               frames per second (fps) and will animate with each
@@ -550,7 +556,8 @@
               "#object_motion">motion</A> (see below).<BR>
             </DIV><BR>
             <SPAN style="text-decoration: underline;"><SPAN style=
-            "text-decoration: underline;">Animation to existing
+            "text-decoration: underline;"><A name="sprite-anim" id=
+            "sprite-anim"></A>Animation to existing
             Sprite</SPAN><BR></SPAN>
             <DIV style="margin-left: 40px;">
               To attach or change an Animation to an existing
@@ -606,13 +613,20 @@
               <BR>
             </DIV>
             <DIV style="margin-left: 40px;">
-              The animation rate <SPAN style=
-              "font-weight: bold;">arate</SPAN> is given as frames
-              per second. The default for a new sprite is 10.<BR>
+              <SPAN style="font-weight: bold;"><A name=
+              "sprite-arate" id=
+              "sprite-arate"></A></SPAN><SPAN style=
+              "font-weight: bold;">arate</SPAN><BR>
+              The animation rate property "<SPAN style=
+              "color: rgb(102, 0, 0);">arate"</SPAN> is given as
+              frames per second. The default for a new sprite is
+              10.<BR>
               <BR>
-              <SPAN style="text-decoration: underline;">Zero</SPAN>
-              aRate<BR>
               <DIV style="margin-left: 40px;">
+                arate <SPAN style=
+                "text-decoration: underline;">Zero</SPAN><BR>
+              </DIV>
+              <DIV style="margin-left: 80px;">
                 If a sprite has animation (anim non-zero) but the
                 arate is zero, then the frame is not updated, it
                 stays on the current frame i.e <SPAN style=
@@ -625,17 +639,73 @@
                 (aframe), or if you are using a Tween, then you
                 should set the aRate to zero (so that arate does
                 not interefere with you manual rate).<BR>
-              </DIV><BR>
-              <SPAN style=
-              "text-decoration: underline;">Negative</SPAN>
-              aRate<BR>
+              </DIV>
               <DIV style="margin-left: 40px;">
+                <BR>
+                arate <SPAN style=
+                "text-decoration: underline;">Negative</SPAN><BR>
+              </DIV>
+              <DIV style="margin-left: 80px;">
                 If a sprite has animation (anim non-zero) but the
                 arate is negative, the animation is reversed
                 (frames <SPAN style=
                 "text-decoration: underline;">played
                 backwards</SPAN>) at the negative rate.<BR>
               </DIV>
+              <DIV style="margin-left: 40px;"></DIV>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              <A name="sprite-aloop" id=
+              "sprite-aloop"></A><SPAN style=
+              "font-weight: bold;">aloop</SPAN><BR>
+              The sprite property <SPAN style=
+              "color: rgb(102, 0, 0);">"aloop"</SPAN> is a flag
+              that determines if the sprite should animate forever
+              (true) or just once (false).<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                aloop <SPAN style=
+                "text-decoration: underline;">true (not
+                0)</SPAN><BR>
+                <DIV style="margin-left: 40px;">
+                  Animate forever.<BR>
+                  <BR>
+                </DIV>
+              </DIV>
+              <DIV style="margin-left: 80px;">
+                <DIV style="margin-left: 40px;"></DIV>
+              </DIV>
+              <DIV style="margin-left: 40px;"></DIV>
+              <DIV style="margin-left: 40px;">
+                aloop <SPAN style=
+                "text-decoration: underline;">false (0)<BR></SPAN>
+                <DIV style="margin-left: 40px;">
+                  Animate just once. When the last frame is
+                  reached, then just stay on the last frame.<BR>
+                  If animating backwards (arate negative) and
+                  reached first frame, then just stay on first
+                  frame.<BR>
+                  For another run, you must reset the frame an
+                  earlier one.<BR>
+                  <BR>
+                </DIV>
+              </DIV>
+            </DIV>Animation Frames<BR>
+            <DIV style="margin-left: 40px;">
+              <A name="sprite-aframe" id=
+              "sprite-aframe"></A><SPAN style=
+              "font-weight: bold;">aframe</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              The current animation frame index is stored in the
+              sprite property <SPAN style=
+              "color: rgb(102, 0, 0);">"</SPAN><SPAN style=
+              "color: rgb(102, 0, 0);">aframe</SPAN><SPAN style=
+              "color: rgb(102, 0, 0);">"</SPAN> and starts at
+              zero.<BR>
+              You may change this value with GR.MODIFY.<BR>
+              If you enter an illegal value, it will later be
+              forced to a legal one during animation.<BR>
             </DIV><BR>
           </DIV>
         </TD>

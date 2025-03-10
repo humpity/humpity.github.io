@@ -1,1553 +1,2228 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Commands</title>
-  <link rel="stylesheet" href="main.css" type="text/css">
-</head>
-<body vlink="#990099" link="#000099" alink="#000099">
-  <a href="../hbasic.html">hBasic</a> &gt; <a href="index.html">hManual</a> &gt; Commands<br>
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellspacing="2" cellpadding="8">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top; width: 90%;">
-          <div style="text-align: right;">
-            <big>hBasic Manual</big><br>
-          </div><big><big style="color: rgb(0, 0, 153);">Commands -
-          Changes by category<br>
-          <br></big></big>
-          <table style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;" cellspacing="2" cellpadding="2" border="0">
-            <tbody>
-              <tr>
-                <td style="vertical-align: top;">Console</td>
-                <td style="vertical-align: top; text-align: right;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="console.html">Console commands</a><br></td>
-                <td style="vertical-align: top;">commands that
-                affect the output console<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">Graphics</td>
-                <td style="vertical-align: top; text-align: right;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top; text-align: left;">
-                <a href="graphics.html">Graphics
-                commands<br></a></td>
-                <td style="vertical-align: top;">commands that
-                affect the graphics screen<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">HTML</td>
-                <td style="vertical-align: top; text-align: right;"><br></td>
-                <td style="vertical-align: top;">commands that
-                affect the web browser<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">HTML.OPEN<br></td>
-                <td style="vertical-align: top;"><a href="decors.html#decors">Decors Flag</a></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">
-                HTML.TITLE<br></td>
-                <td style="vertical-align: top;"><a href="#actionbar_title"><span style="text-decoration: underline;">Title and
-                Colors</span></a></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">Menu</td>
-                <td style="vertical-align: top; text-align: right;"><br></td>
-                <td style="vertical-align: top;">&nbsp;<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="menu.html">MENU commands</a></td>
-                <td style="vertical-align: top;">The action bar
-                menu system</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">File/FTP</td>
-                <td style="vertical-align: top; text-align: right;">
-                File/FTP<br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#text_writeln">TEXT.WRITELN</a></td>
-                <td style="vertical-align: top;">Now stream
-                based.<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="saf.html">FILE.SAF commands</a></td>
-                <td style="vertical-align: top;">Provides
-                read/write access for external sdcards</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#file_flags">FILE flags</a></td>
-                <td style="vertical-align: top;">ok flags added to
-                FILE Client commands</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#file_delete">FILE.DELETE</a></td>
-                <td style="vertical-align: top;">Recursive delete
-                option added</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#ftp_flags">FTP flags</a></td>
-                <td style="vertical-align: top;">ok flags added to
-                FTP Client commands</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#ftps">FTPS commands</a></td>
-                <td style="vertical-align: top;">Controls hBasic's
-                internal FTP server</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">System</td>
-                <td style="vertical-align: top; text-align: right;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="functions.html#device_function">DEVICE$
-                (..)<br></a></td>
-                <td style="vertical-align: top;">Gets specific
-                device information as a string<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="functions.html#version">VERSION$(0)</a><br></td>
-                <td style="vertical-align: top;">Gets the
-                underlying master version<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td valign="top"><a href="#program_info">PROGRAM.Info</a><br></td>
-                <td valign="top">App information<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="decors.html#decors">Decors Flag</a></td>
-                <td style="vertical-align: top;">Window items
-                for&nbsp; Graphics and HTML views.<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#actionbar_title"><span style="text-decoration: underline;">Title and
-                Colors</span></a><br>
-                <a href="#actionbar_subtitle"><span style="text-decoration: underline;">Subtitle and
-                Colors</span></a><br></td>
-                <td style="vertical-align: top;">ActionBar
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Commands</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; Commands<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top; width: 90%;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Commands -
+          Changes by category<BR>
+          <BR></BIG></BIG>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Console</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "console.html">Console commands</A><BR></TD>
+                <TD style="vertical-align: top;">commands that
+                affect the output console<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Graphics</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top; text-align: left;">
+                <A href="graphics.html">Graphics
+                commands<BR></A></TD>
+                <TD style="vertical-align: top;">commands that
+                affect the graphics screen<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">HTML</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;">commands that
+                affect the web browser<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">HTML.OPEN<BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "decors.html#decors">Decors Flag</A></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">
+                HTML.TITLE<BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#actionbar_title"><SPAN style=
+                "text-decoration: underline;">Title and
+                Colors</SPAN></A></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Menu</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;">&nbsp;<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "menu.html">MENU commands</A></TD>
+                <TD style="vertical-align: top;">The action bar
+                menu system</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">File/FTP</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;">
+                File/FTP<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#text_writeln">TEXT.WRITELN</A></TD>
+                <TD style="vertical-align: top;">Now stream
+                based.<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "saf.html">FILE.SAF commands</A></TD>
+                <TD style="vertical-align: top;">Provides
+                read/write access for external sdcards</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#file_flags">FILE flags</A></TD>
+                <TD style="vertical-align: top;">ok flags added to
+                FILE Client commands</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#file_delete">FILE.DELETE</A></TD>
+                <TD style="vertical-align: top;">Recursive delete
+                option added</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#ftp_flags">FTP flags</A></TD>
+                <TD style="vertical-align: top;">ok flags added to
+                FTP Client commands</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#ftps">FTPS commands</A></TD>
+                <TD style="vertical-align: top;">Controls hBasic's
+                internal FTP server</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">System</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "functions.html#device_function">DEVICE$
+                (..)<BR></A></TD>
+                <TD style="vertical-align: top;">Gets specific
+                device information as a string<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "functions.html#version">VERSION$(0)</A><BR></TD>
+                <TD style="vertical-align: top;">Gets the
+                underlying master version<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD valign="top"><A href=
+                "#program_info">PROGRAM.Info</A><BR></TD>
+                <TD valign="top">App information<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "decors.html#decors">Decors Flag</A></TD>
+                <TD style="vertical-align: top;">Window items
+                for&nbsp; Graphics and HTML views.<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#actionbar_title"><SPAN style=
+                "text-decoration: underline;">Title and
+                Colors</SPAN></A><BR>
+                <A href="#actionbar_subtitle"><SPAN style=
+                "text-decoration: underline;">Subtitle and
+                Colors</SPAN></A><BR></TD>
+                <TD style="vertical-align: top;">ActionBar
                 Titles&nbsp; and Colors for Console, Graphics and
-                HTML<br>
-                ActionBar Subtitles and Colors<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#color_strings"><span style="color: rgb(0, 0, 153);">Color
-                Strings</span></a></td>
-                <td style="vertical-align: top;">For various
-                commands<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td valign="top"><a href="#debug_dump_fn">DEBUG.DUMP.FN</a><br></td>
-                <td valign="top">Prints the function name(s) from
-                the function stack<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">Hardware</td>
-                <td style="vertical-align: top; text-align: right;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td valign="top"><a href="sensors.html">SENSORS</a><br></td>
-                <td valign="top">upgraded<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="gps.html">GPS</a><br></td>
-                <td style="vertical-align: top;">upgraded<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">Other</td>
-                <td style="vertical-align: top; text-align: right;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#bundle">BUNDLE<br>
-                Enhancements</a></td>
-                <td style="vertical-align: top;"><a href="#bundle_multi">Accept Multiple Input</a>.<br>
-                <a href="#bundle_auto">Bundle 'auto' Mode</a>.
-                (convenience loading for tags and variables)</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#clipboard">CLIPBOARD</a></td>
-                <td style="vertical-align: top;">upgraded</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="system.html#array_functions">FN.DEF<br></a></td>
-                <td style="vertical-align: top;">Functions can now
-                return an array<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#fn_import">FN.IMPORT</a></td>
-                <td style="vertical-align: top;">Imports global
-                variables into functions</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#fn_rtn">FN.RTN</a><br></td>
-                <td style="vertical-align: top;">Can be used
-                alone<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#input">INPUT</a></td>
-                <td style="vertical-align: top;">Restrict INPUT to
-                a single row</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#list_create">LIST.CREATE</a><br></td>
-                <td style="vertical-align: top;">New creation
-                modes<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#notify">NOTIFY</a></td>
-                <td style="vertical-align: top;">NOTIFY sub
-                commands <font color="#000099">.STATUS</font> and
-                .<font color="#000099">CANCEL</font></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#onorient">OnORIENT</a><br></td>
-                <td style="vertical-align: top;">&nbsp;and <a href="#onorient">ORIENT.Resume</a>&nbsp;
-                Interrupt<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#redim">REDIM</a></td>
-                <td style="vertical-align: top;">Re-Dimension
-                existing arrays</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#sql_ping">SQL.PING</a></td>
-                <td style="vertical-align: top;">Ping a database,
-                table or column for existence</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="commands.html#text_input">TEXT.INPUT</a></td>
-                <td style="vertical-align: top;">Added Cancel
-                flag.</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><a href="#audio_play">AUDIO.PLAY</a></td>
-                <td style="vertical-align: top;">Added optional
-                async preparation flag<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top; text-align: right;">SMS
-                commands<br></td>
-                <td style="vertical-align: top;">All SMS commands
-                removed since v2.60 <small>(playstore
-                compliance)</small><br></td>
-              </tr>
-            </tbody>
-          </table><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big style="color: rgb(0, 0, 153);"><a name="text_writeln" id="ftp_flags"></a>TEXT.WRITELN<br>
-          <br>
-          Fixes<br></big>
-          <div style="margin-left: 40px;">
+                HTML<BR>
+                ActionBar Subtitles and Colors<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#color_strings"><SPAN style=
+                "color: rgb(0, 0, 153);">Color
+                Strings</SPAN></A></TD>
+                <TD style="vertical-align: top;">For various
+                commands<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD valign="top"><A href=
+                "#debug_dump_fn">DEBUG.DUMP.FN</A><BR></TD>
+                <TD valign="top">Prints the function name(s) from
+                the function stack<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Hardware</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD valign="top"><A href=
+                "sensors.html">SENSORS</A><BR></TD>
+                <TD valign="top">upgraded<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "gps.html">GPS</A><BR></TD>
+                <TD style="vertical-align: top;">upgraded<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "bluetooth.html">Bluetooth</A><BR></TD>
+                <TD style="vertical-align: top;">enhanced<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Other</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#multi_input">Accept Multiple Input</A><BR>
+                <A href="#bundle_auto">BUNDLE auto<BR></A></TD>
+                <TD style="vertical-align: top;">Multi parameter
+                input.<BR>
+                Bundle 'auto' Mode. (convenience loading for tags
+                and variables)</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#clipboard">CLIPBOARD</A></TD>
+                <TD style="vertical-align: top;">upgraded</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "system.html#array_functions">FN.DEF<BR></A></TD>
+                <TD style="vertical-align: top;">Functions can now
+                return an array<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#fn_import">FN.IMPORT</A></TD>
+                <TD style="vertical-align: top;">Imports global
+                variables into functions</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#fn_rtn">FN.RTN</A><BR></TD>
+                <TD style="vertical-align: top;">Can be used
+                alone<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#input">INPUT</A></TD>
+                <TD style="vertical-align: top;">Restrict INPUT to
+                a single row</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#list_create">LIST.CREATE</A><BR></TD>
+                <TD style="vertical-align: top;">New creation
+                modes<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#notify">NOTIFY</A></TD>
+                <TD style="vertical-align: top;">NOTIFY sub
+                commands <FONT color="#000099">.STATUS</FONT> and
+                .<FONT color="#000099">CANCEL</FONT></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#onorient">OnORIENT</A><BR></TD>
+                <TD style="vertical-align: top;">&nbsp;and <A href=
+                "#onorient">ORIENT.Resume</A>&nbsp;
+                Interrupt<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#redim">REDIM</A></TD>
+                <TD style="vertical-align: top;">Re-Dimension
+                existing arrays</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#sql_ping">SQL.PING</A></TD>
+                <TD style="vertical-align: top;">Ping a database,
+                table or column for existence</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "commands.html#text_input">TEXT.INPUT</A></TD>
+                <TD style="vertical-align: top;">Added Cancel
+                flag.</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#audio_play">AUDIO.PLAY</A></TD>
+                <TD style="vertical-align: top;">Added optional
+                timeout / async flag<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style=
+                "vertical-align: top; text-align: right;">SMS
+                commands<BR></TD>
+                <TD style="vertical-align: top;">All SMS commands
+                removed since v2.60 <SMALL>(playstore
+                compliance)</SMALL><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name=
+          "text_writeln" id="ftp_flags"></A>TEXT.WRITELN<BR>
+          <BR>
+          Fixes<BR></BIG>
+          <DIV style="margin-left: 40px;">
             In legacy basic, this command was line-based using a
-            buffer to collect continuation text.<br>
+            buffer to collect continuation text.<BR>
             In hBasic (since v.4.93) it is now stream based and the
             buffer is removed. This means all text is output
-            directly.<br>
-            <br>
+            directly.<BR>
+            <BR>
             This fixes the problem of a last line having
             continuation (";") and not being written. And also
             fixes the conflict of multiple output files sharing the
-            only one buffer.<br>
-            <br>
+            only one buffer.<BR>
+            <BR>
             ( For legacy programs, there should be no need to make
-            any adjustments to the Basic code. )<br>
-            <br>
+            any adjustments to the Basic code. )<BR>
+            <BR>
             Note: The final output still uses an internal buffer
             (which is not related to continuation). It is therefore
             still strongly advised that TEXT.CLOSE be called to
             ensure that any remaining text is wriiten and the file
-            closed.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big style="color: rgb(0, 0, 153);">FTP.&lt;XXX&gt;
-          Return Flags</big><br>
-          <br>
-          <div style="margin-left: 40px;">
+            closed.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);">FTP.&lt;XXX&gt;
+          Return Flags</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
             An optional return flag was inserted into these FTP
-            client commands.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <font size="+1"><tt>FTP.OPEN&nbsp;&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt></font>
-            <tt><span style="color: rgb(102, 51, 0);"><font size="+1">&lt;url_sexp&gt;, &lt;port_nexp&gt;,
-            &lt;user_sexp&gt;, &lt;pw_sexp&gt;</font><span style="color: rgb(51, 51, 51);"><br></span></span></tt>
-            <tt><font size="+1">FTP.PUT</font></tt><font size="+1"><tt>&nbsp;</tt> <tt>&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;source_sexp&gt;,
-            &lt;destination_sexp&gt;<span style="color: rgb(51, 51, 51);"><br></span></span></tt>
-            <tt>FTP.GET&nbsp;&nbsp;&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;source_sexp&gt;,
-            &lt;destination_sexp&gt;</span></tt><tt><br></tt>
-            <tt>FTP.DIR&nbsp;&nbsp;&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;list_nvar&gt;
-            {,&lt;dirmark_sexp&gt;}</span></tt><tt><br></tt>
-            <tt>FTP.CD&nbsp;&nbsp;&nbsp;&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;new_directory_sexp&gt;</span></tt><tt><br>
-            </tt> <tt>FTP.RENAME</tt> <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;old_filename_sexp&gt;,
-            &lt;new_filename_sexp&gt;</span></tt><tt><br></tt>
-            <tt>FTP.DELETE</tt> <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;filename_sexp&gt;&gt;</span></tt><tt><br>
-            </tt> <tt>FTP.RMDIR&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;directory_sexp&gt;</span></tt><tt><br>
-            </tt> <tt>FTP.MKDIR&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar,}</span></tt>
-            <tt><span style="color: rgb(102, 51, 0);">&lt;directory_sexp&gt;</span></tt><tt><br>
-            </tt> <tt>FTP.CLOSE&nbsp;</tt>
-            <tt>{ok</tt><tt><span style="color: rgb(102, 51, 0);">_nvar}</span></tt><br></font>
-            <span style="color: rgb(102, 51, 0);"><span style="color: rgb(51, 51, 51);"><br></span></span>
-            <span style="color: rgb(102, 51, 0);"><span style="color: rgb(51, 51, 51);">If</span></span> <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is not
+            client commands.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.OPEN&nbsp;&nbsp;
+            {<SPAN style=
+            "font-weight: bold;">ok</SPAN></SPAN>_<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN>,}
+            url<SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN>,
+            port<SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN>,
+            user</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,
+            pw</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.PUT&nbsp;
+            &nbsp; {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN>,}
+            source</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,
+            destination</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.GET&nbsp;&nbsp;&nbsp;
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
+            source</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,
+            destination</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.DIR&nbsp;&nbsp;&nbsp;
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
+            list<SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN>
+            {,dirmark</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.CD&nbsp;&nbsp;&nbsp;&nbsp;
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
+            new_directory</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.RENAME
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
+            old_filename</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN>,
+            new_filename</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.DELETE
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
+            filename</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.RMDIR&nbsp;
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
+            directory</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.MKDIR&nbsp;
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
+            directory</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FTP.CLOSE&nbsp;
+            {</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>}</SPAN><FONT size="+1"><BR>
+            </FONT> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(51, 51, 51);"><BR></SPAN></SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(51, 51, 51);">If</SPAN></SPAN> <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is not
             present, an error will stop with an error message (like
-            legacy Basic).<br>
-            <span style="color: rgb(102, 51, 0);"><span style="color: rgb(51, 51, 51);">If</span></span> <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is present,
-            the <span style="color: rgb(0, 0, 153);">app <u>will
-            not</u> stop</span> with a run-time error.<br>
-            <br>
-            if <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is <b>1</b>
-            (true), the command was successful. There was <b>no
-            error</b>.<br>
-            if <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is 0, (false)
-            there was an <b>error.</b> Further information may be
-            contained in <font color="#000099">getERROR$()</font>.<br>
-            <br>
+            legacy Basic).<BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(51, 51, 51);">If</SPAN></SPAN> <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is present,
+            the app <SPAN style="color: rgb(0, 0, 153);"><U>will
+            not</U> stop</SPAN> with a run-time error.<BR>
+            <BR>
+            if <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is <B>1</B>
+            (true), the command was successful. There was <B>no
+            error</B>.<BR>
+            if <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is 0, (false)
+            there was an <B>error.</B> Further information may be
+            contained in <FONT color=
+            "#000099">getERROR$()</FONT>.<BR>
+            <BR>
             Note that if you don't use this flag (omitted), then
-            it's following comma (if any) is ignored.<br>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big style="color: rgb(0, 0, 153);"><a name="ftps" id="ftps"></a>FTPS</big> Commands<big style="color: rgb(0, 0, 153);"><br></big><br>
-          <div style="margin-left: 40px;">
-            These commands control the <a href="system.html#ftp_server">built-in ftp server</a>.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            &nbsp;&nbsp;&nbsp; FTPS.SET rc<span style="color: rgb(102, 51, 0);">_nvar <span style="color: rgb(51, 51, 51);">{ options}</span></span><br>
+            it's following comma (if any) is ignored.<BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="ftps" id=
+          "ftps"></A>FTPS</BIG> Commands<BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            These commands control the <A href=
+            "system.html#ftp_server">built-in ftp server</A>.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            &nbsp;&nbsp;&nbsp; FTPS.SET rc<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar <SPAN style=
+            "color: rgb(51, 51, 51);">{ options}</SPAN></SPAN><BR>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Configures the server. (must restart server after)<br>
-            <br>
-            &nbsp;&nbsp;&nbsp; FTPS.START rc<span style="color: rgb(102, 51, 0);">_nvar</span> <span style="color: rgb(102, 51, 0);"><span style="color: rgb(51, 51, 51);">{ options}</span></span><br>
+            Configures the server. (must restart server after)<BR>
+            <BR>
+            &nbsp;&nbsp;&nbsp; FTPS.START rc<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(51, 51, 51);">{ options}</SPAN></SPAN><BR>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Starts the server.<br>
-            <br>
-            &nbsp;&nbsp;&nbsp; FTPS.STOP <span style="color: rgb(102, 51, 0);">rc_nvar</span><br>
+            Starts the server.<BR>
+            <BR>
+            &nbsp;&nbsp;&nbsp; FTPS.STOP rc<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN><BR>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            Stops the server.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            Return codes<br>
-          </div><br>
-          <div style="margin-left: 80px;">
+            Stops the server.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Return codes<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;">
             All commands return an exit code (not optional) which
-            will be one of the following;<br>
-          </div><br>
-          <table style="text-align: left; width: 90%; margin-left: auto; margin-right: 0px;" cellspacing="2" cellpadding="2" border="0">
-            <tbody>
-              <tr>
-                <td style="vertical-align: top;">0<br></td>
-                <td style="vertical-align: top;">ok<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">1<br></td>
-                <td style="vertical-align: top;">could not start
-                server<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">2<br></td>
-                <td style="vertical-align: top;">server already
-                running<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">3<br></td>
-                <td style="vertical-align: top;">could not stop
-                server<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">4<br></td>
-                <td style="vertical-align: top;">server already
-                closed<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">5<br></td>
-                <td style="vertical-align: top;">bad port number
-                <small>(port number must be 1025 to
-                65535)</small><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">6<br></td>
-                <td style="vertical-align: top;">no internet
-                permission<br></td>
-              </tr>
-            </tbody>
-          </table>
-          <table style="text-align: left; margin-left: 80px;" cellspacing="2" cellpadding="2" border="0"></table><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">FTPS.SET</span>
-            return_code<span style="color: rgb(102, 51, 0);">_nvar</span> {,<span style="color: rgb(102, 51, 0);"><span style="color: black;">port</span>_nexp</span>} {,<span style="color: rgb(102, 51, 0);"><span style="color: black;">username</span>_sexp</span>}
-            {<span style="font-weight: bold;">,</span><span style="color: rgb(102, 51, 0);"><span style="color: black;">password</span>_sexp</span>}
-            {<span style="font-weight: bold;">,</span><span style="color: rgb(102, 51, 0);"><span style="color: black;">welcome_string</span>_sexp</span>}<br>
-            <br>
-            <div style="margin-left: 40px;">
+            will be one of the following;<BR>
+          </DIV><BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: 0px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">0<BR></TD>
+                <TD style="vertical-align: top;">ok<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">1<BR></TD>
+                <TD style="vertical-align: top;">could not start
+                server<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">2<BR></TD>
+                <TD style="vertical-align: top;">server already
+                running<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">3<BR></TD>
+                <TD style="vertical-align: top;">could not stop
+                server<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">4<BR></TD>
+                <TD style="vertical-align: top;">server already
+                closed<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">5<BR></TD>
+                <TD style="vertical-align: top;">bad port number
+                <SMALL>(port number must be from 1025 to
+                65535)</SMALL><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">6<BR></TD>
+                <TD style="vertical-align: top;">no internet
+                permission<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+          <TABLE style="text-align: left; margin-left: 80px;"
+          cellspacing="2" cellpadding="2" border="0"></TABLE><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">FTPS.SET</SPAN>
+            return_code<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN> {,<SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">port</SPAN>_nexp</SPAN>} {,<SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">username</SPAN>_sexp</SPAN>}
+            {<SPAN style="font-weight: bold;">,</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">password</SPAN>_sexp</SPAN>}
+            {<SPAN style="font-weight: bold;">,</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">welcome_string</SPAN>_sexp</SPAN>}<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
               Configures the server. (must restart server
-              after)<br>
-            </div><br>
-            <table style="text-align: left; margin-left: auto; margin-right: 0px; width: 90%;" cellspacing="2" cellpadding="2" border="0">
-              <tbody>
-                <tr>
-                  <td style="vertical-align: top;"><span style="color: rgb(102, 51, 0);"><span style="color: black;">port</span>_nexp</span></td>
-                  <td style="vertical-align: top;">the server's
-                  control port (1025 to 65535)<br>
-                  <br>
-                  default port : 2345<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><span style="color: rgb(102, 51, 0);"><span style="color: black;">username</span>_sexp</span></td>
-                  <td style="vertical-align: top;">the login user
-                  name from client to server<br>
-                  <br>
-                  default name : hbasic<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><span style="color: rgb(102, 51, 0);"><span style="color: black;">password</span>_sexp</span></td>
-                  <td style="vertical-align: top;">the login
-                  password from client to server<br>
-                  <br>
-                  default password : hbasic<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><span style="color: rgb(102, 51, 0);"><span style="color: black;">welcome_string</span>_sexp</span></td>
-                  <td style="vertical-align: top;">The welcome
-                  string from server to client.<br>
-                  This must not contain newline characters.<br>
-                  <br>
+              after)<BR>
+            </DIV><BR>
+            <TABLE style=
+            "text-align: left; margin-left: auto; margin-right: 0px; width: 90%;"
+            cellspacing="2" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "color: rgb(102, 51, 0);"><SPAN style=
+                  "color: black;">port</SPAN>_nexp</SPAN></TD>
+                  <TD style="vertical-align: top;">the server's
+                  control port (1025 to 65535)<BR>
+                  <BR>
+                  default port : 2345<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "color: rgb(102, 51, 0);"><SPAN style=
+                  "color: black;">username</SPAN>_sexp</SPAN></TD>
+                  <TD style="vertical-align: top;">the login user
+                  name from client to server<BR>
+                  <BR>
+                  default name : hbasic<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "color: rgb(102, 51, 0);"><SPAN style=
+                  "color: black;">password</SPAN>_sexp</SPAN></TD>
+                  <TD style="vertical-align: top;">the login
+                  password from client to server<BR>
+                  <BR>
+                  default password : hbasic<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "color: rgb(102, 51, 0);"><SPAN style=
+                  "color: black;">welcome_string</SPAN>_sexp</SPAN></TD>
+                  <TD style="vertical-align: top;">The welcome
+                  string from server to client.<BR>
+                  This must not contain newline characters.<BR>
+                  <BR>
                   default msg : "Welcome to the hBasic's
-                  FTP-Server"<br></td>
-                </tr>
-              </tbody>
-            </table><br>
-          </div>
-          <div style="margin-left: 40px;">
-            <div style="margin-left: 40px;">
-              e.g<br>
-            </div>
-            <div style="margin-left: 80px;">
-              <font face="Courier New, Courier, monospace"><span style="color: rgb(0, 0, 153);">FTPS.SET</span> rc, "john",
-              "mypass"<br>
-              <span style="color: rgb(0, 0, 153);">FTPS.SET</span>
-              rc, "john", p$, "Welcome to myApp's Server"<br>
-              <span style="color: rgb(0, 0, 153);">FTPS.SET</span>
-              ,,newpassword$</font><br>
-            </div>
-          </div>
-          <div style="margin-left: 40px;">
-            <br>
-            <div style="margin-left: 40px;">
-              Use lowercase for all parameters.<br>
-              <br>
+                  FTP-Server"<BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <FONT face=
+              "Courier New, Courier, monospace"><SPAN style=
+              "color: rgb(0, 0, 153);">FTPS.SET</SPAN> rc, "john",
+              "mypass"<BR>
+              <SPAN style="color: rgb(0, 0, 153);">FTPS.SET</SPAN>
+              rc, "john", p$, "Welcome to myApp's Server"<BR>
+              <SPAN style="color: rgb(0, 0, 153);">FTPS.SET</SPAN>
+              ,,newpassword$</FONT><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <DIV style="margin-left: 40px;">
+              Use lowercase for all parameters.<BR>
+              <BR>
               The config does not take place until a new server
-              starts. So do this before starting the server.<br>
-              <br>
+              starts. So do this before starting the server.<BR>
+              <BR>
               Do not put any newlines ("\n") inside the welcome
-              string.<br>
+              string.<BR>
               Note that some ftp-clients do not allow to have empty
-              usernames and/or passwords.<br>
-            </div>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">FTPS.START</span>
-            return_code<small><big><span style="color: rgb(102, 51, 0);">_nvar</span> {<span style="font-weight: bold;">,</span><span style="color: rgb(102, 51, 0);"><span style="color: black;">IP</span>_svar</span></big>}<br>
-            <br></small>
-            <div style="margin-left: 40px;">
-              Starts the server.<br>
-              <br>
-              Returns <span style="color: rgb(102, 51, 0);"><span style="color: black;">IP</span>_svar</span> as the server's
-              ip address plus the port number used as "<span style="color: rgb(0, 0, 102);">d.d.d.d:port"</span><br style="font-family: monospace; color: rgb(0, 0, 102);">
+              usernames and/or passwords.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">FTPS.START</SPAN>
+            return_code<SMALL><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN> {<SPAN style=
+            "font-weight: bold;">,</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">IP</SPAN>_svar</SPAN></BIG>}<BR>
+            <BR></SMALL>
+            <DIV style="margin-left: 40px;">
+              Starts the server.<BR>
+              <BR>
+              Returns <SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "color: black;">IP</SPAN>_svar</SPAN> as the server's
+              ip address plus the port number used as "<SPAN style=
+              "color: rgb(0, 0, 102);">d.d.d.d:port"</SPAN><BR style="font-family: monospace; color: rgb(0, 0, 102);">
 
-              e.g &nbsp;&nbsp; 192.0.0.105:2345<br>
-              <br>
-            </div>
-            <div style="margin-left: 40px;">
-              e.g<br>
-            </div>
-            <div style="margin-left: 80px;">
-              <span style="color: rgb(0, 0, 153);">FTPS.START</span> rc,
-              IP$<br style="font-family: monospace;">
+              e.g &nbsp;&nbsp; 192.0.0.105:2345<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "color: rgb(0, 0, 153);">FTPS.START</SPAN> rc,
+              IP$<BR style="font-family: monospace;">
               IF rc &gt; 0 THEN PRINT "Error" ELSE PRINT "Server
-              started on ";IP$<br>
-            </div>
-          </div><big style="color: rgb(0, 0, 153);"><br></big>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">FTPS.STOP</span>
-            <span style="color: rgb(102, 51, 0);"><span style="color: black;">return_code</span>_nvar</span><br>
-            <small><br></small>
-            <div style="margin-left: 40px;">
-              Stops the server.<br>
-            </div>
-            <div style="margin-left: 40px;">
-              e.g<br>
-            </div>
-            <div style="margin-left: 80px;">
-              <span style="color: rgb(0, 0, 153);">FTPS.STOP</span>
-              rc<br style="font-family: monospace;">
+              started on ";IP$<BR>
+            </DIV>
+          </DIV><BIG style="color: rgb(0, 0, 153);"><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">FTPS.STOP</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">return_code</SPAN>_nvar</SPAN><BR>
+            <SMALL><BR></SMALL>
+            <DIV style="margin-left: 40px;">
+              Stops the server.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style="color: rgb(0, 0, 153);">FTPS.STOP</SPAN>
+              rc<BR style="font-family: monospace;">
               IF rc &lt;&gt; 0 THEN PRINT "Error" ELSE PRINT
-              "Server stopped"<br style="font-family: monospace;">
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big style="color: rgb(0, 0, 153);"><a name="file_flags" id="file_flags"></a>FILE.&lt;XXX&gt; Return
-          Flag</big><br>
-          <br>
-          <div style="margin-left: 40px;">
+              "Server stopped"<BR style="font-family: monospace;">
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="file_flags"
+          id="file_flags"></A>FILE.&lt;XXX&gt; Return
+          Flag</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
             An optional ok return flag was inserted into these FILE
-            commands.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <font size="+1"><tt>FILE.MKDIR&nbsp; <b>{ok<font color="#663300">_nvar</font>,}</b> <font color="#663300">&lt;path_sexp&gt;</font><br>
-            FILE.DIR&nbsp;&nbsp;&nbsp; <b>{ok<font color="#663300">_nvar</font>,}</b> <font color="#663300">&lt;path_sexp&gt;, Array$[]
-            {,&lt;dirmark_sexp&gt;}</font><br>
-            FILE.RENAME <b>{ok<font color="#663300">_nvar</font>,}</b> <font color="#663300">&lt;old_path_sexp&gt;,
-            &lt;new_path_sexp&gt;</font><br>
-            FILE.DELETE <b>{ok_<font color="#663300">nvar</font>,}</b> <font color="#663300">&lt;path_sexp&gt;</font></tt></font><br>
-            <span style="color: rgb(102, 51, 0);"><span style="color: rgb(51, 51, 51);"><br></span></span>
-            <span style="color: rgb(102, 51, 0);"><span style="color: rgb(51, 51, 51);">If</span></span> <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is not
+            commands.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FILE.MKDIR&nbsp;
+            {<SPAN style="font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN>,}
+            path</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FILE.DIR&nbsp;&nbsp;&nbsp;
+            {<SPAN style=
+            "font-weight: bold;">ok</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>,}
+            path</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN>,
+            Array$[] {,dirmark</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FILE.RENAME
+            {<SPAN style=
+            "font-weight: bold;">ok</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>,}
+            old_path</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,
+            new_path</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FILE.DELETE
+            {<SPAN style=
+            "font-weight: bold;">ok</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>,}
+            path<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN></SPAN><BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(51, 51, 51);"><BR></SPAN></SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(51, 51, 51);">If</SPAN></SPAN> <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is not
             present, an error will stop with an error message (like
-            legacy Basic).<br>
-            <span style="color: rgb(102, 51, 0);"><span style="color: rgb(51, 51, 51);">If</span></span> <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is present,
-            the <span style="color: rgb(0, 0, 153);">app will not
-            stop</span> with a run-time error.<br>
-            <br>
-            if <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is <b>1</b>
-            (true), the command was succesful. There was <b>no
-            error</b>.<br>
-            if <span style="font-weight: bold;">ok</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">_nvar</span></span> is 0, (false)
-            there was an <b>error.</b><br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big style="color: rgb(0, 0, 153);"><a name="file_delete" id="file_delete"></a>FILE.DELETE</big><br>
-          <br>
-          <div style="margin-left: 40px;">
-            The return flag <span style="color: rgb(102, 51, 0);">ok_nvar</span> is now
-            optional<br>
+            legacy Basic).<BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(51, 51, 51);">If</SPAN></SPAN> <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is present,
+            the <SPAN style="color: rgb(0, 0, 153);">app will not
+            stop</SPAN> with a run-time error.<BR>
+            <BR>
+            if <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is <B>1</B>
+            (true), the command was succesful. There was <B>no
+            error</B>.<BR>
+            if <SPAN style=
+            "font-weight: bold;">ok</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">_nvar</SPAN></SPAN> is 0, (false)
+            there was an <B>error.</B><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="file_delete"
+          id="file_delete"></A>FILE.DELETE</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            The return flag <SPAN style=
+            "color: rgb(102, 51, 0);">ok_nvar</SPAN> is now
+            optional<BR>
             An option to delete recursively was added to this
-            command.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 102);">FILE.DELETE</span>
-            <span style="color: rgb(102, 51, 0);">{ok_nvar,}
-            path_sexp {,<span style="color: rgb(0, 0, 153);">recurse_nexp</span></span><span style="color: rgb(102, 51, 0); font-family: monospace;">}</span><br>
+            command.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 102);">FILE.DELETE</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);">ok</SPAN></SPAN>_nvar,}
+            <SPAN style="color: rgb(0, 0, 0);"><SPAN style=
+            "font-weight: bold;">path</SPAN></SPAN>_sexp
+            {,<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 0);"><SPAN style=
+            "font-weight: bold;">recurse</SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0); font-family: monospace;">}</SPAN><BR>
 
-            <br>
-            <span style="color: rgb(153, 0, 0);">Becareful</span>
-            with the recurse option. A blank path will delete the
-            default directory.<br>
-            <br>
-            if <span style="color: rgb(102, 51, 0);">ok_nvar</span>
-            is <b>1</b> (true), the command was succesful. The
-            file/dir existed and was deleted.<br>
-            if <span style="color: rgb(102, 51, 0);">ok_nvar</span>
-            is 0, (false) there was an <b>error.</b> Either the
-            file/dir did not exist or could not be deleted.<br>
-            <br>
-            If <span style="color: rgb(102, 51, 0);">&lt;path_sexp&gt;</span> is a
-            <u>non-empty</u> directory and <span style="color: rgb(102, 51, 0);"><span style="color: rgb(0, 0, 153);">recurse_nexp</span></span> is
+            <BR>
+            <SPAN style="color: rgb(153, 0, 0);">Becareful</SPAN>
+            with the <SPAN style=
+            "font-weight: bold;">recurse</SPAN> option. A blank
+            path will delete the default directory.<BR>
+            <BR>
+            if <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);">ok</SPAN></SPAN>_nvar</SPAN> is
+            <B>1</B> (true), the command was succesful. The
+            file/dir existed and was deleted.<BR>
+            if <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);">ok</SPAN></SPAN>_nvar</SPAN> is
+            0, (false) there was an <B>error.</B> Either the
+            file/dir did not exist or could not be deleted.<BR>
+            <BR>
+            If <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;<SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);">path</SPAN></SPAN>_sexp&gt;</SPAN>
+            is a <U>non-empty</U> directory and recurse_nexp is
             false;
-            <blockquote>
+            <BLOCKQUOTE>
               then the directory will not be deleted and
-              <span style="color: rgb(102, 51, 0);">ok_nvar</span>
-              is false.<br>
-            </blockquote>If <span style="color: rgb(102, 51, 0);">&lt;path_sexp&gt;</span> is a
-            <u>non-empty</u> directory and <span style="color: rgb(102, 51, 0);"><span style="color: rgb(0, 0, 153);">recurse_nexp</span></span> is
-            true
-            <blockquote>
+              <SPAN style=
+              "font-weight: bold;">ok</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN>
+              is false.<BR>
+            </BLOCKQUOTE>If <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;<SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);">path</SPAN></SPAN>_sexp&gt;</SPAN>
+            is a <U>non-empty</U> directory and r<SPAN style=
+            "font-weight: bold;">ecurse</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN> is true
+            <BLOCKQUOTE>
               then the directory and all subdirectories and files
-              will be deleted.<br>
-              If succesful, <span style="color: rgb(102, 51, 0);">ok_nvar</span> is true.<br>
-            </blockquote>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="width: 50%;">
-          <big style="color: rgb(0, 0, 153);"><a name="fn_import" id="fn_import"></a>FN_IMPORT</big><br>
-          <br>
-          <div style="margin-left: 40px;">
+              will be deleted.<BR>
+              If succesful, <SPAN style=
+              "font-weight: bold;">ok</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">_nvar</SPAN> is true.<BR>
+            </BLOCKQUOTE>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="fn_import"
+          id="fn_import"></A>FN_IMPORT</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
             This command imports 'global' (main) variables into the
             function's local variable list as referenced variables
-            with the same name.<br>
-            <br>
+            with the same name.<BR>
+            <BR>
             Effectively, you can import main variables into the
-            function with read/write access.<br>
-            <br>
-          </div>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">FN.IMPORT</span>
-            <span style="color: rgb(102, 51, 0);">nvar | svar |
-            array[] | array$[] { <span style="font-weight: bold;">,</span> ... }</span><br>
-            <br>
+            function with read/write access.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">FN.IMPORT</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);">nvar | svar |
+            array[] | array$[] { <SPAN style=
+            "font-weight: bold;">,</SPAN> ... }</SPAN><BR>
+            <BR>
             e.g &nbsp;&nbsp; &nbsp;FN.IMPORT a, foo$, b[],
             c$[]&nbsp;&nbsp; &nbsp;% imports main variables
-            a,foo$,b[] and c$[]<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            a,foo$,b[] and c$[]<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            <br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            <BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            And here are the rules;<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            And here are the rules;<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            <br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            <BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp; &nbsp;1. You can only use FN.IMPORT inside
-            a function.<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            a function.<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp; &nbsp;2. You can use the FN.IMPORT command
             anywhere inside a function, and even more than
-            once.<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            once.<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp; &nbsp;3. The import will only take effect
-            after the fn.import command (not before).<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            after the fn.import command (not before).<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp; &nbsp;4. Variable(s) given will ONLY be
             searched in the main program namespace (no where
-            else).<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            else).<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 5. Any changes to an imported
-            variable will also change the main variable.<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            variable will also change the main variable.<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 6. You must import at least one
-            variable.<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            variable.<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 7. You cannot repeat variables
             during import or have the same name local variable in
-            the function.<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            the function.<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 8. You can only import variables,
-            not functions nor any other literals.<br>
-          </div><br>
-          Example<br>
-          <div style="margin-left: 40px;">
-            <big><span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; fn.def
-            test()</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % fn.import a,a&nbsp;&nbsp;&nbsp;&nbsp; % error: var
-            Duplicate: a</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="color: rgb(0, 0, 102);">fn.import</span>
-            b</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % fn.import b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %
-            error: var Duplicate: b</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            b=3</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
-            fn.end</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; a=1 :
-            b=2</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
-            test()</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp; print
-            b</span><br style="color: rgb(0, 102, 0); font-family: monospace;">
-            <span style="font-family: monospace;">&nbsp;&nbsp;&nbsp;
-            end</span><br style="font-family: monospace;"></big>
-            <small><big><br>
-            Output:<br>
-            3</big></small> <small><span style="font-family: monospace; color: rgb(0, 102, 0);"><br>
-            </span></small>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big style="color: rgb(0, 0, 153);"><a name="fn_rtn" id="fn_import"></a>FN_RTN</big><br>
-          <br>
-          <div style="margin-left: 40px;">
-            In legacy Basic, FN.RTN <span style="font-weight: bold;">must</span> return a value. FN.RTN
-            alone will produce a syntax error.<br>
-            This has been changed in hBasic (since v2.50).<br>
-            <br>
+            not functions nor any other literals.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">fn.def
+              test()</SPAN><BR style="color: rgb(0, 102, 0);">
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">%
+                fn.import a,a&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
+                "color: rgb(51, 51, 51);">% error: var Duplicate:
+                a</SPAN></SPAN><SPAN style=
+                "color: rgb(51, 51, 51);"><BR></SPAN><BR style=
+                "color: rgb(0, 102, 0);">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                f</SPAN><SPAN style=
+                "color: rgb(0, 0, 153);">n.import</SPAN> b<BR>
+                <BR style="color: rgb(0, 102, 0);"></SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">%
+                fn.import b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style="color: rgb(51, 51, 51);">% error: var
+                Duplicate: b<BR>
+                <BR style="color: rgb(0, 102, 0);"></SPAN></SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">b=3</SPAN><BR style="color: rgb(0, 102, 0);">
+              </DIV><SPAN style=
+              "font-family: Courier New, Courier, monospace;">fn.end</SPAN><BR style="color: rgb(0, 102, 0);">
+
+              <BR style="color: rgb(0, 102, 0);">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">a=1 :
+              b=2</SPAN><BR style="color: rgb(0, 102, 0);">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">test()</SPAN><BR style="color: rgb(0, 102, 0);">
+
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">print
+              b</SPAN><BR style="color: rgb(0, 102, 0);">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">end</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SMALL><BIG><BR></BIG></SMALL>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SMALL><BIG>Output:</BIG></SMALL><BR>
+            <SMALL><BIG>3</BIG></SMALL><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="fn_rtn" id=
+          "fn_import"></A>FN_RTN</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            In legacy Basic, FN.RTN <SPAN style=
+            "font-weight: bold;">must</SPAN> return a value. FN.RTN
+            alone will produce a syntax error.<BR>
+            This has been changed in hBasic (since v2.50).<BR>
+            <BR>
             FN.RTN &lt;something_result&gt; is the similar to
-            Legacy,<br>
-            except that it can also <a href="system.html#array_functions">return an array
-            pointer</a>, (even if it's multi-dimensional)
-          </div>
-          <div style="margin-left: 40px;">
-            e.g FN.RTN a[] or FN.RTN a$[]<br>
-          </div>
-          <div style="margin-left: 40px;">
-            <br>
+            Legacy,<BR>
+            except that it can also <A href=
+            "system.html#array_functions">return an array
+            pointer</A>, (even if it's multi-dimensional)
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            e.g FN.RTN a[] or FN.RTN a$[]<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
             Also, FN.RTN alone does not syntax error (since v2.50).
-            It will behave the same as FN.END (below)<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            FN.END will return a default value.<br>
-            For a numeric function, it returns 0.<br>
+            It will behave the same as FN.END (below)<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            FN.END will return a default value.<BR>
+            For a numeric function, it returns 0.<BR>
             For a string function, it returns an empty string
-            "".<br>
+            "".<BR>
             For a numeric array pointer, it returns a
-            one-dimensional array with 0 as the only element.<br>
+            one-dimensional array with 0 as the only element.<BR>
             For a string array pointer, it returns a
-            one-dimensional array with "" as the only element.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="bundle" id="bundle"></a><span style="color: rgb(0, 0, 153);"><font size="+1">Bundle
-          Enhancements</font><br>
-          <br></span>
-          <blockquote>
-            <u><font size="+1"><a name="bundle_multi" id="bundle_multi"></a>Multiple Input</font></u><br>
-          </blockquote>
-          <div style="margin-left: 40px;">
-            These are enhancements made to <span style="color: rgb(0, 0, 153);">accept multiple input
-            parameters</span> instead of just one with the same
-            command.<br style="color: rgb(0, 0, 153);">
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">BUNDLE.PUT</span>
-            <span style="color: rgb(102, 51, 0);">&lt;pointer_nexp&gt;,
-            &lt;<span style="color: rgb(153, 0, 0);">key_sexp</span>&gt;,
-            &lt;<span style="color: black;">val_nexp</span>&gt;|&lt;<span style="color: black;">val_sexp</span>&gt; {, &lt;<span style="color: rgb(153, 0, 0);">key</span>, <span style="color: black;">val</span>&gt;...}</span><br>
-            <br>
-            puts one <span style="text-decoration: underline;">or
-            more</span> objects in a bundle.<br>
-            e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="color: rgb(0, 102, 0);">bundle.put
-              mybundle, <span style="color: rgb(153, 0, 0);">"Key1"</span>,</span>99<span style="color: rgb(0, 102, 0);">,
-              <span style="color: rgb(153, 0, 0);">"Key2"</span>,</span>"RED"<span style="color: rgb(0, 102, 0);">,
-              <span style="color: rgb(153, 0, 0);">"Key3"</span>,</span>"Balloons"<br>
-            </div><span style="color: rgb(0, 0, 153);"><br>
-            BUNDLE.GET</span> <span style="color: rgb(102, 51, 0);">&lt;pointer_nexp&gt;,
-            &lt;<span style="color: rgb(153, 0, 0);">key_sexp</span>&gt;,
-            &lt;<span style="color: black;">val_nvar</span>&gt;|&lt;<span style="color: black;">val_svar</span>&gt;</span> <span style="color: rgb(102, 51, 0);">{, &lt;<span style="color: rgb(153, 0, 0);">key</span>, <span style="color: black;">val</span>&gt;...}</span><br>
-            <span style="color: rgb(102, 51, 0);"><br></span> gets
-            one <span style="text-decoration: underline;">or
-            more</span> objects from a bundle.<br>
-            e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="color: rgb(0, 102, 0);">bundle.get
-              mybundle, <span style="color: rgb(153, 0, 0);">"Key1"</span>,</span>k1<span style="color: rgb(0, 102, 0);">,
-              <span style="color: rgb(153, 0, 0);">"Key2"</span>,</span>k2$<br>
-            </div>
-          </div>
-          <blockquote>
-            <u><font size="+1"><br>
-            <a name="bundle_auto" id="bundle_auto"></a>Bundle
-            'auto' Mode</font></u><br>
-          </blockquote>
-          <div style="margin-left: 40px;">
-            This enhancement made to <span style="color: rgb(0, 0, 153);">get or put variables with the
-            <span style="text-decoration: underline;">same named
-            tag</span></span> as a convenience.<br>
-            For '<span style="color: rgb(0, 0, 153);">auto'
-            <span style="color: black;">mod</span></span>e,
-            <span style="text-decoration: underline;">you only have
-            to specify the variable</span> (the tag is matched with
-            the variable).<br>
-            <br>
-            '<span style="color: rgb(0, 0, 153);">auto</span>' mode
-            starts with a ' <span style="color: rgb(0, 0, 153);">{</span> ', followed by a list
-            of comma separated variable names.<br>
-            &nbsp;and ends with a ' <span style="color: rgb(0, 0, 153);">}</span> '.<br>
-            <br>
+            one-dimensional array with "" as the only element.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BR>
+          <U><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="multi_input" id=
+          "multi_input"></A></SPAN></FONT></U><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">Multiple
+          Input</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            These are enhancements made to <SPAN style=
+            "color: rgb(0, 0, 153);">accept multiple input
+            parameters</SPAN> instead of just one with the same
+            command.<BR style="color: rgb(0, 0, 153);">
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">See Also <A href=
+            "graphics.html#multi_input">GR.SHOW and
+            GR.HIDE</A>.<BR>
+            <BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">BUNDLE.PUT</SPAN>
+            <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;pointer_nexp&gt;,
+            &lt;<SPAN style=
+            "color: rgb(153, 0, 0);">key_sexp</SPAN>&gt;,
+            &lt;<SPAN style=
+            "color: black;">val_nexp</SPAN>&gt;|&lt;<SPAN style=
+            "color: black;">val_sexp</SPAN>&gt; {, &lt;<SPAN style=
+            "color: rgb(153, 0, 0);">key</SPAN>, <SPAN style=
+            "color: black;">val</SPAN>&gt;...}</SPAN><BR>
+            <BR>
+            puts one <SPAN style="text-decoration: underline;">or
+            more</SPAN> objects in a bundle.<BR>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "color: rgb(0, 0, 153);">bundle.put</SPAN>
+              mybundle,</SPAN> <SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "color: rgb(153, 0, 0);">"Key1"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
+              <SPAN style=
+              "text-decoration: underline;">99</SPAN>&nbsp;
+              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "color: rgb(0, 0, 0);">,&nbsp;</SPAN> <SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "color: rgb(153, 0, 0);">"Key2"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN><SPAN style="text-decoration: underline;">"RED"</SPAN><SPAN style="color: rgb(0, 102, 0);">&nbsp;
+              <SPAN style="color: rgb(0, 0, 0);"><SPAN style=
+              "font-weight: bold;">,&nbsp;</SPAN></SPAN>
+              <SPAN style=
+              "text-decoration: underline;"><SPAN style="color: rgb(153, 0, 0);">
+              "Key3"</SPAN></SPAN><SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN><SPAN style="text-decoration: underline;">"Balloons"</SPAN><BR>
+            </DIV><SPAN style="color: rgb(0, 0, 153);"><BR>
+            BUNDLE.GET</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;pointer_nexp&gt;,
+            &lt;<SPAN style=
+            "color: rgb(153, 0, 0);">key_sexp</SPAN>&gt;,
+            &lt;<SPAN style=
+            "color: black;">val_nvar</SPAN>&gt;|&lt;<SPAN style=
+            "color: black;">val_svar</SPAN>&gt;</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">{, &lt;<SPAN style=
+            "color: rgb(153, 0, 0);">key</SPAN>, <SPAN style=
+            "color: black;">val</SPAN>&gt;...}</SPAN><BR>
+            <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN> gets
+            one <SPAN style="text-decoration: underline;">or
+            more</SPAN> objects from a bundle.<BR>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "color: rgb(0, 0, 153);">bundle.get</SPAN>
+              mybundle,</SPAN> <SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "color: rgb(153, 0, 0);">"Key1"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
+              <SPAN style="text-decoration: underline;">k1</SPAN>
+              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN></SPAN>&nbsp;
+              <SPAN style=
+              "text-decoration: underline;"><SPAN style="color: rgb(153, 0, 0);">
+              "Key2"</SPAN></SPAN><SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
+              <SPAN style=
+              "text-decoration: underline;">k2$</SPAN><BR>
+              <BR>
+            </DIV>
+          </DIV><U><A name="bundle_auto" id=
+          "bundle_auto"></A></U><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">Bundle 'auto'
+          Mode</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            This enhancement made to <SPAN style=
+            "color: rgb(0, 0, 153);">get or put variables with the
+            <SPAN style="text-decoration: underline;">same named
+            tag</SPAN></SPAN> as a convenience.<BR>
+            For '<SPAN style="color: rgb(0, 0, 153);">auto'
+            <SPAN style="color: black;">mod</SPAN></SPAN>e,
+            <SPAN style="text-decoration: underline;">you only have
+            to specify the variable</SPAN> (the tag is matched with
+            the variable).<BR>
+            <BR>
+            '<SPAN style="color: rgb(0, 0, 153);">auto</SPAN>' mode
+            starts with a ' <SPAN style=
+            "color: rgb(0, 0, 153);">{</SPAN> ', followed by a list
+            of comma separated variable names.<BR>
+            &nbsp;and ends with a ' <SPAN style=
+            "color: rgb(0, 0, 153);">}</SPAN> '.<BR>
+            <BR>
             Variables must be numeric or strings. They cannot be
             arrays, array cells, literal numbers nor literal
-            strings or you will get a syntax error.<br>
-            <br>
-            The matching tags will be <span style="color: rgb(153, 0, 0); text-decoration: underline;">lower
-            case</span> with <span style="color: rgb(153, 0, 0);"><span style="text-decoration: underline;">no
-            spaces</span>.</span>&nbsp;&nbsp;&nbsp; (Basic will
-            always lower case all variable names)<br>
+            strings or you will get a syntax error.<BR>
+            <BR>
+            The matching tags will be <SPAN style=
+            "color: rgb(153, 0, 0); text-decoration: underline;">lower
+            case</SPAN> with <SPAN style=
+            "color: rgb(153, 0, 0);"><SPAN style=
+            "text-decoration: underline;">no
+            spaces</SPAN>.</SPAN>&nbsp;&nbsp;&nbsp; (Basic will
+            always lower case all variable names)<BR>
             The matching tags which are strings will also have the
-            ending ' <span style="color: rgb(0, 0, 153);">$</span>
-            '.<br>
-            &nbsp;e.g'<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 102, 0);">BUNDLE.PUT</span>
-            mybundle, <span style="color: rgb(102, 0, 0);"><span style="font-weight: bold; color: rgb(0, 0, 153);">{</span>
-            <span style="color: black;">v1, v2$, v3</span>
-            <span style="font-weight: bold; color: rgb(0, 0, 153);">}</span></span><br>
+            ending ' <SPAN style="color: rgb(0, 0, 153);">$</SPAN>
+            '.<BR>
+            &nbsp;e.g'<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">BUNDLE.PUT</SPAN>
+            mybundle, <SPAN style=
+            "color: rgb(102, 0, 0);"><SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
+            <SPAN style="color: black;">v1, v2$, v3</SPAN>
+            <SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">}</SPAN></SPAN><BR>
 
-            <span style="color: rgb(0, 0, 153);">puts into the
-            bundle using tags</span> "v1", "v2$", "v3"&nbsp; with
-            content <span style="color: rgb(0, 0, 153);">from</span> variables v1, v2$,
-            v3<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 102, 0);">BUNDLE.GET</span>
-            mybundle, <span style="color: rgb(102, 0, 0);"><span style="font-weight: bold; color: rgb(0, 0, 153);">{</span>
-            <span style="color: black;">v1, v2$, v3</span>
-            <span style="font-weight: bold; color: rgb(0, 0, 153);">}</span><br>
-            </span> <span style="color: rgb(0, 0, 153);">gets</span> <span style="color: rgb(0, 0, 153);">content from bundle using
-            tags</span> "v1","v2$","v3" <span style="color: rgb(0, 0, 153);">into</span> variables v1, v2$,
+            <SPAN style="color: rgb(0, 0, 153);">puts into the
+            bundle using tags</SPAN> "v1", "v2$", "v3"&nbsp; with
+            content <SPAN style=
+            "color: rgb(0, 0, 153);">from</SPAN> variables v1, v2$,
+            v3<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);">BUNDLE.GET</SPAN>
+            mybundle, <SPAN style=
+            "color: rgb(102, 0, 0);"><SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
+            <SPAN style="color: black;">v1, v2$, v3</SPAN>
+            <SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">}</SPAN><BR>
+            </SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">gets</SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">content from bundle using
+            tags</SPAN> "v1","v2$","v3" <SPAN style=
+            "color: rgb(0, 0, 153);">into</SPAN> variables v1, v2$,
             v3
-          </div><br>
-          <div style="margin-left: 40px;">
-            '<span style="color: rgb(0, 0, 153);">auto'</span> mode
-            can also be mixed in with '<span style="color: rgb(102, 0, 0);">normal mode</span>;<br>
-            <br>
-            <span style="color: rgb(0, 102, 0);">BUNDLE.PUT</span>
-            mybundle, <span style="color: rgb(102, 0, 0);">"mytag0", v0,</span>&nbsp;
-            <span style="color: rgb(102, 0, 0);"><span style="font-weight: bold; color: rgb(0, 0, 153);">{</span>
-            <span style="color: black;">v1, v2$, v3</span>
-            <span style="font-weight: bold; color: rgb(0, 0, 153);">},</span></span>&nbsp;
-            <span style="color: rgb(102, 0, 0);">"mytag4",
-            44</span><br>
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="color_strings" id="color_strings"></a><span style="color: rgb(0, 0, 153);"><font size="+1">Accept a Color
-          String</font></span><span style="color: rgb(0, 0, 153);"><br>
-          <br></span>
-          <div style="margin-left: 40px;">
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            '<SPAN style="color: rgb(0, 0, 153);">auto'</SPAN> mode
+            can also be mixed in with '<SPAN style=
+            "color: rgb(102, 0, 0);">normal mode</SPAN>;<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 102, 0);">BUNDLE.PUT</SPAN>
+            mybundle, <SPAN style=
+            "color: rgb(102, 0, 0);">"mytag0", v0,</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 0, 0);"><SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
+            <SPAN style="color: black;">v1, v2$, v3</SPAN>
+            <SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">},</SPAN></SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 0, 0);">"mytag4",
+            44</SPAN><BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="color_strings" id=
+          "color_strings"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">Accept a Color
+          String</FONT></SPAN><SPAN style=
+          "color: rgb(0, 0, 153);"><BR>
+          <BR></SPAN>
+          <DIV style="margin-left: 40px;">
             For these existing commands, a color string
-            <span style="font-style: italic;">(similar to
-            console.set)</span> may be used in place of the 4
-            decimal colors at the front of the command.<br>
-            <br>
-            <span style="color: rgb(0, 0, 153);">GR.OPEN</span>&nbsp;&nbsp;&nbsp;
-            <span style="font-weight: bold;">&lt;{</span> {alpha},
-            {red}, { green},{ blue} <span style="font-weight: bold;">}&nbsp; |</span> <span style="font-weight: bold;">{</span> <span style="font-weight: bold;">color</span><span style="color: rgb(102, 51, 0);">_sexp</span> <span style="font-weight: bold;">}</span>&nbsp; &gt;&nbsp; {,
-            <a href="decors.html#decors">decors</a>_flag_nexp} {,
-            orientation_nexp}}<br>
-            <span style="color: rgb(0, 0, 153);">GR.COLOR</span>
-            <span style="font-weight: bold;">&lt;{</span> {alpha},
-            {red}, { green},{ blue} <span style="font-weight: bold;">}</span><span style="font-weight: bold;">&nbsp; |</span> <span style="font-weight: bold;">{</span> <span style="font-weight: bold;">color</span><span style="color: rgb(102, 51, 0);">_sexp</span> <span style="font-weight: bold;">}</span>&nbsp; &gt;&nbsp; {,
-            style} {, paint}}<br>
-            <br>
-            e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">GR.OPEN
-              "blue", 1,1<br>
-              <br></span> is the same as<br>
-              <span style="font-family: Courier New, Courier, monospace;">GR.OPEN
-              255,0,0,255,1,1</span><br>
-            </div>
-          </div><br>
-          <div style="margin-left: 40px;">
+            <SPAN style="font-style: italic;">(similar to
+            console.set)</SPAN> may be used in place of the 4
+            decimal colors at the front of the command.<BR>
+            <BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">GR.OPEN</SPAN>&nbsp;&nbsp;&nbsp;
+            <SPAN style="font-weight: bold;">&lt;{</SPAN> {alpha},
+            {red}, { green},{ blue} <SPAN style=
+            "font-weight: bold;">}&nbsp; |</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN> <SPAN style=
+            "font-weight: bold;">color</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN>&nbsp; &gt;&nbsp; {,
+            <A href="decors.html#decors">decors</A>_flag_nexp} {,
+            orientation_nexp}}<BR>
+            <SPAN style="color: rgb(0, 0, 153);">GR.COLOR</SPAN>
+            <SPAN style="font-weight: bold;">&lt;{</SPAN> {alpha},
+            {red}, { green},{ blue} <SPAN style=
+            "font-weight: bold;">}</SPAN><SPAN style=
+            "font-weight: bold;">&nbsp; |</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN> <SPAN style=
+            "font-weight: bold;">color</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN>&nbsp; &gt;&nbsp; {,
+            style} {, paint}}<BR>
+            <BR>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">GR.OPEN
+              "blue", 1,1<BR>
+              <BR></SPAN> is the same as<BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">GR.OPEN
+              255,0,0,255,1,1</SPAN><BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
             Color strings may also be used with various hBasic
-            commands eg;<br>
-            <div style="margin-left: 40px;">
-              <a href="#actionbar_title"><span style="color: rgb(0, 0, 153);">GR.TITLE</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <span style="color: rgb(102, 51, 0);">{<span style="color: black;">title</span>_sexp} {,<span style="color: black;">textcolor</span>_sexp},
-              {,<span style="color: black;">backcolor</span>_sexp}</span><br>
-            </div>
-            <div style="margin-left: 40px;">
-              <span style="color: rgb(0, 0, 153);">CONSOLE.TITLE&nbsp;
-              ..</span><br>
-              <span style="color: rgb(0, 0, 153);">HTML.TITLE
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ..</span>
-            </div>
-          </div><br style="color: rgb(0, 0, 153);">
-          <div style="margin-left: 40px;">
-            <a href="colors.html">Color Strings</a> <span style="font-weight: bold;">color</span><span style="color: rgb(102, 51, 0);">_sexp</span> may be
-            either<br>
-            <br>
-            <div style="margin-left: 40px;">
-              A hexadecimal pre-fixed with a hash '#<br>
-              6 digit hex<br>
-              <div style="margin-left: 40px;">
-                e.g "<span style="color: rgb(0, 0, 153); font-weight: bold;">#</span>112233"<br>
-              </div>8 digit hex<br>
-              <div style="margin-left: 40px;">
-                e.g "<span style="color: rgb(0, 0, 153); font-weight: bold;">#</span>FF112233"<br>
-              </div><br>
-              A color name<br>
-              <div style="margin-left: 40px;">
-                e.g "Orange" <span style="font-style: italic;">(case insensitive with no
-                spaces)</span><br>
-              </div><br>
-              A <span style="text-decoration: underline;">color
-              name postfixed with a decimal</span> <span style="font-weight: bold;">alpha channel</span> using a
-              <span style="color: rgb(0, 0, 153);">dot</span>
-              <span style="font-family: monospace;">'</span><span style="font-weight: bold; font-family: monospace;">.</span><span style="font-family: monospace;">'</span><br>
+            commands eg;<BR>
+            <DIV style="margin-left: 40px;">
+              <A href="#actionbar_title"><SPAN style=
+              "color: rgb(0, 0, 153);">GR.TITLE</SPAN></A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
+              "color: black;">title</SPAN>_sexp} {,<SPAN style=
+              "color: black;">textcolor</SPAN>_sexp},
+              {,<SPAN style="color: black;">backcolor</SPAN>_sexp}</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "color: rgb(0, 0, 153);">CONSOLE.TITLE&nbsp;
+              ..</SPAN><BR>
+              <SPAN style="color: rgb(0, 0, 153);">HTML.TITLE
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ..</SPAN>
+            </DIV>
+          </DIV><BR style="color: rgb(0, 0, 153);">
+          <DIV style="margin-left: 40px;">
+            <A href="colors.html">Color Strings</A> <SPAN style=
+            "font-weight: bold;">color</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> may be
+            either<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              A hexadecimal pre-fixed with a hash '#<BR>
+              6 digit hex<BR>
+              <DIV style="margin-left: 40px;">
+                e.g "<SPAN style=
+                "color: rgb(0, 0, 153); font-weight: bold;">#</SPAN>112233"<BR>
+              </DIV>8 digit hex<BR>
+              <DIV style="margin-left: 40px;">
+                e.g "<SPAN style=
+                "color: rgb(0, 0, 153); font-weight: bold;">#</SPAN>FF112233"<BR>
+              </DIV><BR>
+              A color name<BR>
+              <DIV style="margin-left: 40px;">
+                e.g "Orange" <SPAN style=
+                "font-style: italic;">(case insensitive with no
+                spaces)</SPAN><BR>
+              </DIV><BR>
+              A <SPAN style="text-decoration: underline;">color
+              name postfixed with a decimal</SPAN> <SPAN style=
+              "font-weight: bold;">alpha channel</SPAN> using a
+              <SPAN style="color: rgb(0, 0, 153);">dot</SPAN>
+              <SPAN style=
+              "font-family: monospace;">'</SPAN><SPAN style=
+              "font-weight: bold; font-family: monospace;">.</SPAN><SPAN style="font-family: monospace;">'</SPAN><BR>
 
-              <div style="margin-left: 40px;">
-                eg. "Orange<span style="color: rgb(0, 0, 153);">.255</span>"<br>
-              </div><br>
-              A <span style="text-decoration: underline;">color
-              name postfixed with a hexadecimal</span> <span style="font-weight: bold;">alpha channel</span> using a
-              <span style="color: rgb(0, 0, 153);">hash</span>
-              <span style="font-family: monospace;">'</span><span style="font-weight: bold; font-family: monospace;">#</span><span style="font-family: monospace;">'</span><br>
+              <DIV style="margin-left: 40px;">
+                eg. "Orange<SPAN style=
+                "color: rgb(0, 0, 153);">.255</SPAN>"<BR>
+              </DIV><BR>
+              A <SPAN style="text-decoration: underline;">color
+              name postfixed with a hexadecimal</SPAN> <SPAN style=
+              "font-weight: bold;">alpha channel</SPAN> using a
+              <SPAN style="color: rgb(0, 0, 153);">hash</SPAN>
+              <SPAN style=
+              "font-family: monospace;">'</SPAN><SPAN style=
+              "font-weight: bold; font-family: monospace;">#</SPAN><SPAN style="font-family: monospace;">'</SPAN><BR>
 
-              <div style="margin-left: 40px;">
-                eg. "Orange<span style="color: rgb(0, 0, 153);">#FF</span>"<br>
-              </div><br>
-            </div>e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">GR.OPEN
-              "blue.200", 1 &nbsp;&nbsp;</span> <span style="color: rgb(51, 51, 51);">% (<a href="decors.html#decors">decors flag</a> 1, default to
-              landscape)</span><br>
-            </div><br>
-            <br>
-            Color names are <a href="https://www.computerhope.com/htmcolor.htm#color-codes">
-            listed here</a> or <a href="colors.html">here</a>.<br>
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><big style="font-family: monospace;"><a name="actionbar_title" id="actionbar_title"></a></big></span><big><span style="color: rgb(0, 0, 153);">Window Titles and
-          Colors</span></big><span style="color: rgb(0, 0, 153);"><big style="font-family: monospace;"><span style="color: rgb(102, 51, 0);"><br>
-          <br></span></big></span>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">GR.TITLE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="font-weight: bold;">{</span><span style="color: rgb(102, 51, 0);"><span style="color: black;">title</span>_sexp</span><span style="font-weight: bold;">}</span> <span style="font-weight: bold;">{</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">,</span> <span style="color: black;">textcolor</span>_sexp</span><span style="font-weight: bold;">}</span>
-            <span style="font-weight: bold;">{,</span> <span style="color: rgb(102, 51, 0);"><span style="color: black;">backcolor</span>_sexp</span><span style="font-weight: bold;">}</span><br>
+              <DIV style="margin-left: 40px;">
+                eg. "Orange<SPAN style=
+                "color: rgb(0, 0, 153);">#FF</SPAN>"<BR>
+              </DIV><BR>
+            </DIV>e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">GR.OPEN
+              "blue.200", 1 &nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(51, 51, 51);">% (<A href=
+              "decors.html#decors">decors flag</A> 1, default to
+              landscape)</SPAN><BR>
+            </DIV><BR>
+            <BR>
+            Color names are <A href=
+            "https://www.computerhope.com/htmcolor.htm#color-codes">
+            listed here</A> or <A href="colors.html">here</A>.<BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><BIG style=
+          "font-family: monospace;"><A name="actionbar_title" id=
+          "actionbar_title"></A></BIG></SPAN><BIG><SPAN style=
+          "color: rgb(0, 0, 153);">Window Titles and
+          Colors</SPAN></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG style=
+          "font-family: monospace;"><SPAN style=
+          "color: rgb(102, 51, 0);"><BR>
+          <BR></SPAN></BIG></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">GR.TITLE</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
 
-            <br>
-            <span style="color: rgb(0, 0, 153);">CONSOLE.TITLE</span>&nbsp;
-            <span style="font-weight: bold;">{</span><span style="color: rgb(102, 51, 0);"><span style="color: black;">title</span>_sexp</span><span style="font-weight: bold;">}</span> <span style="font-weight: bold;">{</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">,</span> <span style="color: black;">textcolor</span>_sexp</span><span style="font-weight: bold;">}</span>
-            <span style="font-weight: bold;">{,</span> <span style="color: rgb(102, 51, 0);"><span style="color: black;">backcolor</span>_sexp</span><span style="font-weight: bold;">}</span><span style="color: rgb(102, 51, 0);"><br>
-            </span><br>
-            <span style="color: rgb(0, 0, 153);">HTML.TITLE</span>&nbsp;<span style="color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="font-weight: bold;">{</span><span style="color: rgb(102, 51, 0);"><span style="color: black;">title</span>_sexp</span><span style="font-weight: bold;">}</span> <span style="font-weight: bold;">{</span><span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">,</span> <span style="color: black;">textcolor</span>_sexp</span><span style="font-weight: bold;">}</span>
-            <span style="font-weight: bold;">{,</span> <span style="color: rgb(102, 51, 0);"><span style="color: black;">backcolor</span>_sexp</span><span style="font-weight: bold;">}</span>
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-          <div style="margin-left: 40px;">
-            <big>Sets the actionbar title, text color and
-            background color for the window.</big><br>
-            <br>
+            <BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">CONSOLE.TITLE</SPAN>&nbsp;
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN><BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">HTML.TITLE</SPAN>&nbsp;<SPAN style="color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <BIG>Sets the actionbar title, text color and
+            background color for the window.</BIG><BR>
+            <BR>
             Specify at least one argument. The commas are needed to
-            seperate the args.<br>
-            <br>
+            seperate the args.<BR>
+            <BR>
             These commands can be used even if screens are not
-            opened yet.<br>
-            <br>
-            The <a href="#color_strings">color strings</a> format
-            is the same as for console.set.<br>
-            <br>
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><big style="font-family: monospace;"><a name="actionbar_subtitle" id="actionbar_subtitle"></a></big></span><big><span style="color: rgb(0, 0, 153);">Window
-          Subitles and Colors</span></big><span style="color: rgb(0, 0, 153);"><big style="font-family: monospace;"><span style="color: rgb(102, 51, 0);"><br>
-          <br></span></big></span>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">GR.SUBTITLE</span>
+            opened yet.<BR>
+            <BR>
+            The <A href="#color_strings">color strings</A> format
+            is the same as for console.set.<BR>
+            <BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><BIG style=
+          "font-family: monospace;"><A name="actionbar_subtitle"
+          id="actionbar_subtitle"></A></BIG></SPAN><BIG><SPAN style="color: rgb(0, 0, 153);">Window
+          Subitles and Colors</SPAN></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG style=
+          "font-family: monospace;"><SPAN style=
+          "color: rgb(102, 51, 0);"><BR>
+          <BR></SPAN></BIG></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">GR.SUBTITLE</SPAN>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            <span style="color: rgb(102, 51, 0);">{<span style="color: black;">title</span>_sexp} {,<span style="color: black;">textcolor</span>_sexp}</span><br>
-            <br>
-            <span style="color: rgb(0, 0, 153);">CONSOLE.SUBTITLE</span>&nbsp;
-            <span style="color: rgb(102, 51, 0);">{<span style="color: black;">title</span>_sexp} {,<span style="color: black;">textcolor</span>_sexp}</span><span style="color: rgb(102, 51, 0);"><br>
+            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
+            "color: black;">title</SPAN>_sexp} {,<SPAN style=
+            "color: black;">textcolor</SPAN>_sexp}</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">CONSOLE.SUBTITLE</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
+            "color: black;">title</SPAN>_sexp} {,<SPAN style=
+            "color: black;">textcolor</SPAN>_sexp}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
 
-            <br></span> <span style="color: rgb(0, 0, 153);">HTML.SUBTITLE</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span style="color: rgb(102, 51, 0);">{<span style="color: black;">title</span>_sexp} {,<span style="color: black;">textcolor</span>_sexp}</span>
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-          <div style="margin-left: 40px;">
-            <big>Sets the actionbar subtitle (under the title)
-            and/or text color for the window.</big><br>
-            <br>
+            <BR></SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">HTML.SUBTITLE</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
+            "color: black;">title</SPAN>_sexp} {,<SPAN style=
+            "color: black;">textcolor</SPAN>_sexp}</SPAN>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <BIG>Sets the actionbar subtitle (under the title)
+            and/or text color for the window.</BIG><BR>
+            <BR>
             Specify at least one argument. The commas are needed to
-            seperate the args.<br>
-            <br>
+            seperate the args.<BR>
+            <BR>
             These commands can be used even if screens are not
-            opened yet.<br>
-            <br>
-            The <a href="#color_strings">color strings</a> format
-            is the same as for console.set.<br>
-            <br>
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="redim" id="redim"></a><span style="color: rgb(0, 0, 153);"><font size="+1">REDIM</font><br></span><br>
-          <div style="margin-left: 40px;">
+            opened yet.<BR>
+            <BR>
+            The <A href="#color_strings">color strings</A> format
+            is the same as for console.set.<BR>
+            <BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="redim" id="redim"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">REDIM</FONT><BR></SPAN><BR>
+          <DIV style="margin-left: 40px;">
             Re-Dimensions an existing array with optional 'preserve
-            contents' flag.<br>
-            <span style="color: rgb(0, 0, 153);"><br>
-            REDIM</span> <span style="color: rgb(102, 51, 0);">{<span style="color: black;">preserve</span>_nexp, }
+            contents' flag.<BR>
+            <SPAN style="color: rgb(0, 0, 153);"><BR>
+            REDIM</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">{<SPAN style=
+            "color: black;">preserve</SPAN>_nexp, }
             Array[&lt;nexp&gt;{, &lt;nexp&gt; } ... ]
-            ...</span><br style="color: rgb(102, 51, 0);">
-            <br>
-            e.g<br>
-            <br>
-            REDIM a[2,3]<br>
-            REDIM b[4] , c$[5]<span style="color: rgb(0, 102, 0);"><br></span> REDIM
-            1,d[6]&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
-            &nbsp;&nbsp; <span style="color: rgb(0, 0, 153);">% (
-            with preserve )</span><span style="color: rgb(0, 102, 0);"><br></span><br>
+            ...</SPAN><BR style="color: rgb(102, 51, 0);">
+            <BR>
+            e.g<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">REDIM
+              a[2,3]</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">REDIM
+              b[4] , c$[5]</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">REDIM
+              1,d[6]&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp;</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(51, 51, 51);">
+              % ( with preserve )</SPAN></SPAN><BR>
+            </DIV><BR>
             Any references to a REDIMed array will be intact, e.g
-            an array passed into a function<br>
+            an array passed into a function<BR>
             that executes a REDIM will not be un-dimmed, i.e it
-            will still be the same array but re-dimensioned.<br>
-            Arrays must exist before REDIMing.<br>
-            <br>
-            The preserve flag is optional.<br>
-            <br>
-            <div style="margin-left: 40px;">
-              If the preserve flag is zero,<br>
-              <div style="margin-left: 40px;">
-                the array will be full of 0's or "".<br>
-              </div>
-            </div><br>
-            <div style="margin-left: 40px;">
-              If the preserve flag is non-zero,<br>
-              <div style="margin-left: 40px;">
-                the old <span style="color: rgb(0, 0, 153);">contents will be
-                preserved</span> to the size of the old or new
-                array, <span style="text-decoration: underline;">whichever was
-                smallest.</span> Any cells left-over will be 0's or
-                "".<br>
-              </div>
-            </div><br>
-            If there are no preserve flags, the <span style="text-decoration: underline;">default is to not
-            preserve</span> (0).<br>
-            <br>
-            Preserve flags may be inserted <span style="text-decoration: underline;">anywhere</span> in the
-            arguments list.<br>
+            will still be the same array but re-dimensioned.<BR>
+            Arrays must exist before REDIMing.<BR>
+            <BR>
+            The preserve flag is optional.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              If the preserve flag is zero,<BR>
+              <DIV style="margin-left: 40px;">
+                the array will be full of 0's or "".<BR>
+              </DIV>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              If the preserve flag is non-zero,<BR>
+              <DIV style="margin-left: 40px;">
+                the old <SPAN style=
+                "color: rgb(0, 0, 153);">contents will be
+                preserved</SPAN> to the size of the old or new
+                array, <SPAN style=
+                "text-decoration: underline;">whichever was
+                smallest.</SPAN> Any cells left-over will be 0's or
+                "".<BR>
+              </DIV>
+            </DIV><BR>
+            If there are no preserve flags, the <SPAN style=
+            "text-decoration: underline;">default is to not
+            preserve</SPAN> (0).<BR>
+            <BR>
+            Preserve flags may be inserted <SPAN style=
+            "text-decoration: underline;">anywhere</SPAN> in the
+            arguments list.<BR>
             Arrays following a preserve flag will honor that
-            preserve flag until the next preserve flag.<br>
-            e.g<br>
-            <span style="color: rgb(0, 102, 0);"><font color="#000099">REDIM</font> <span style="color: rgb(102, 0, 0);">1</span>,</span>a[2,3]<span style="color: rgb(0, 102, 0);">,&nbsp;&nbsp;
-            <span style="color: rgb(102, 0, 0);">0</span>,</span>b[4],
-            <span style="color: rgb(0, 102, 0);">&nbsp;
-            <span style="color: rgb(102, 0, 0);">1</span>,</span>c[5],&nbsp;
-            d$[6]&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 0, 153);">%</span>&nbsp; <span style="color: rgb(0, 0, 153); font-style: italic;">b[]&nbsp;
-            will not be preserved.</span><br style="font-style: italic;">
-            <br>
-            Preserve flags may be numeric <span style="text-decoration: underline;">literals</span> or
-            numeric <span style="text-decoration: underline;">variables</span> but they
-            <span style="text-decoration: underline;">cannot</span>
+            preserve flag until the next preserve flag.<BR>
+            e.g<BR>
+            <SPAN style="color: rgb(0, 102, 0);"><FONT color=
+            "#000099">REDIM</FONT> <SPAN style=
+            "color: rgb(102, 0, 0);">1</SPAN>,</SPAN>a[2,3]<SPAN style="color: rgb(0, 102, 0);">,&nbsp;&nbsp;
+            <SPAN style=
+            "color: rgb(102, 0, 0);">0</SPAN>,</SPAN>b[4],
+            <SPAN style="color: rgb(0, 102, 0);">&nbsp;
+            <SPAN style="color: rgb(102, 0, 0);">1</SPAN>,</SPAN>c[5],&nbsp;
+            d$[6]&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">%</SPAN>&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153); font-style: italic;">b[]&nbsp;
+            will not be preserved.</SPAN><BR style=
+            "font-style: italic;">
+            <BR>
+            Preserve flags may be numeric <SPAN style=
+            "text-decoration: underline;">literals</SPAN> or
+            numeric <SPAN style=
+            "text-decoration: underline;">variables</SPAN> but they
+            <SPAN style="text-decoration: underline;">cannot</SPAN>
             be numeric array values e.g p[3] would be
-            mis-interpreted as an array to be re-dimmed.<br>
-            <br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="sql_ping" id="sql_ping"></a><span style="color: rgb(0, 0, 153);"><font size="+1">SQL.PING</font><br></span><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 102, 0);"><span style="color: rgb(0, 0, 153);">SQL.PING</span> <span style="color: rgb(102, 51, 0);">&lt;<span style="color: black; font-weight: bold;">result</span>_nvar&gt;,
-            &lt;<span style="color: black; font-weight: bold;">DB_pointer</span>_nvar&gt;
-            {,&lt;<span style="color: black; font-weight: bold;">table_name</span>_sexp&gt;
-            {,&lt;<span style="color: black; font-weight: bold;">column_name</span>_sexp&gt;}}</span></span><br>
-          </div><span style="color: rgb(0, 0, 153);"><br></span>
-          <div style="margin-left: 40px;">
-            Ping a database, table or column for some info.<br>
-            <br>
+            mis-interpreted as an array to be re-dimmed.<BR>
+            <BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="sql_ping" id="sql_ping"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">SQL.PING</FONT><BR></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">SQL.PING</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;<SPAN style=
+            "color: black; font-weight: bold;">result</SPAN>_nvar&gt;,
+            &lt;<SPAN style=
+            "color: black; font-weight: bold;">DB_pointer</SPAN>_nvar&gt;
+            {,&lt;<SPAN style=
+            "color: black; font-weight: bold;">table_name</SPAN>_sexp&gt;
+            {,&lt;<SPAN style=
+            "color: black; font-weight: bold;">column_name</SPAN>_sexp&gt;}}</SPAN></SPAN><BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            Ping a database, table or column for some info.<BR>
+            <BR>
             This is mainly used to test for existence of
-            tables.<br>
-            <br>
-            e.g<br>
-            <table style="text-align: left; width:90%;" cellspacing="0" cellpadding="2" border="0">
-              <tbody>
-                <tr>
-                  <td style="vertical-align: top; white-space;">A)
-                  SQL.PING result, db</td>
-                  <td style="vertical-align: top; white-space;">
-                  &nbsp;&nbsp;&nbsp;&nbsp;<br></td>
-                  <td style="vertical-align: top; white-space;">%
-                  ping only the database</td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; white-space;">(B)
-                  SQL.PING result, db, "mytable"<br></td>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top;">% ping a
-                  table</td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; white-space;">(C)
-                  SQL.PING result, db, "mytable", "col1"</td>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top; white-space;">%
-                  ping a table and column</td>
-                </tr>
-              </tbody>
-            </table><br>
+            tables.<BR>
+            <BR>
+            e.g<BR>
+            <TABLE style="text-align: left; width:90%;"
+            cellspacing="0" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top; white-space;">A)
+                  SQL.PING result, db</TD>
+                  <TD style="vertical-align: top; white-space;">
+                  &nbsp;&nbsp;&nbsp;&nbsp;<BR></TD>
+                  <TD style="vertical-align: top; white-space;">%
+                  ping only the database</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;">(B)
+                  SQL.PING result, db, "mytable"<BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;">% ping a
+                  table</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;">(C)
+                  SQL.PING result, db, "mytable", "col1"</TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top; white-space;">%
+                  ping a table and column</TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
             Returns the size (number of rows) of a database or
-            table to result.<br>
+            table to result.<BR>
             In case (A), this is the total number of user tables in
-            the db.<br>
-            <br>
-            The result code is as follows;<br>
-            <br>
-            -1 = table name does not exist<br>
+            the db.<BR>
+            <BR>
+            The result code is as follows;<BR>
+            <BR>
+            -1 = table name does not exist<BR>
             -2 = table name exists but column does not exist in the
-            table<br>
+            table<BR>
             &nbsp; &gt;=0 = The total number of tables in the
-            database or rows in the table.<br>
+            database or rows in the table.<BR>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; In case (C), this also means both
-            table and column exists.<br>
-            <br>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="program_info" id="program_info"></a><span style="color: rgb(0, 0, 153);"><font size="+1">PROGRAM.INFO</font><br>
-          <br></span>
-          <blockquote>
+            table and column exists.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="program_info" id="program_info"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">PROGRAM.INFO</FONT><BR>
+          <BR></SPAN>
+          <BLOCKQUOTE>
             In addition to the standard info from Program.Info,
-            these items were added :<br>
-          </blockquote>
-          <blockquote>
-            <table style="width: 100%;" cellspacing="2" cellpadding="2" border="0">
-              <tbody>
-                <tr>
-                  <td valign="top">Key<br></td>
-                  <td valign="top">Description<br></td>
-                  <td valign="top" width="50%">example<br></td>
-                </tr>
-                <tr>
-                  <td valign="middle"><font color="#000099">PkgName</font></td>
-                  <td valign="middle">The app's android Package
-                  Name</td>
-                  <td valign="middle">e.g "com.rfo.hbasic"<br></td>
-                </tr>
-                <tr>
-                  <td valign="top"><font color="#000099">SysPathC</font></td>
-                  <td valign="top">The full canonical path of app's
-                  private directory in internal storage.<br>
-                  <br>
+            these items were added :<BR>
+          </BLOCKQUOTE>
+          <BLOCKQUOTE>
+            <TABLE style="width: 100%;" cellspacing="2"
+            cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD valign="top">Key<BR></TD>
+                  <TD valign="top">Description<BR></TD>
+                  <TD valign="top" width="50%">example<BR></TD>
+                </TR>
+                <TR>
+                  <TD valign="middle"><FONT color=
+                  "#000099">PkgName</FONT></TD>
+                  <TD valign="middle">The app's android Package
+                  Name</TD>
+                  <TD valign="middle">e.g "com.rfo.hbasic"<BR></TD>
+                </TR>
+                <TR>
+                  <TD valign="top"><FONT color=
+                  "#000099">SysPathC</FONT></TD>
+                  <TD valign="top">The full canonical path of app's
+                  private directory in internal storage.<BR>
+                  <BR>
                   This area was mainly for internal use only,
                   although the app has (almost) full access
-                  here.<br>
-                  <br>
-                  This is Primary Internal Private Storage.<br>
-                  <br></td>
-                  <td style="word-break: break-all; vertical-align: top;">
+                  here.<BR>
+                  <BR>
+                  This is Primary Internal Private Storage.<BR>
+                  <BR></TD>
+                  <TD style=
+                  "word-break: break-all; vertical-align: top;">
                   Historically, Basic and hBasic does not use this
-                  path.<br>
-                  <br>
-                  <br>
-                  e.g "/data/data/com.rfo.hasic"</td>
-                </tr>
-                <tr>
-                  <td valign="top"><font color="#000099">BasePath</font></td>
-                  <td valign="top">The app's base path in External
-                  Storage.<br>
+                  path.<BR>
+                  <BR>
+                  <BR>
+                  e.g "/data/data/com.rfo.hasic"</TD>
+                </TR>
+                <TR>
+                  <TD valign="top"><FONT color=
+                  "#000099">BasePath</FONT></TD>
+                  <TD valign="top">The app's base path in External
+                  Storage.<BR>
                   This is where most commands can operate with full
-                  access and is where <span style="text-decoration: underline;">hBasic is
-                  scoped</span>.<br>
-                  <br>
-                  This is Primary External Private Storage<br>
-                  <br>
+                  access and is where <SPAN style=
+                  "text-decoration: underline;">hBasic is
+                  scoped</SPAN>.<BR>
+                  <BR>
+                  This is Primary External Private Storage<BR>
+                  <BR>
                   In the standard app, this can be changed via the
-                  Editor menu: Preferences &gt; Base Drive.<br>
-                  <br></td>
-                  <td style="word-break: break-all;vertical-align: top;">
-                  (Also known as the <a href="package.html#scoped"><span style="color: rgb(0, 0, 153);">Base
-                  Drive</span></a>)<br>
-                  <br>
-                  <br>
-                  e.g "/storage/emulated/0/Android/data/<br>
-                  com.rfo.hbasic"</td>
-                </tr>
-                <tr>
-                  <td valign="top"><font color="#000099">App_Path</font></td>
-                  <td valign="top">The main app directory after
+                  Editor menu: Preferences &gt; Base Drive.<BR>
+                  <BR></TD>
+                  <TD style=
+                  "word-break: break-all;vertical-align: top;">
+                  (Also known as the <A href=
+                  "package.html#scoped"><SPAN style=
+                  "color: rgb(0, 0, 153);">Base
+                  Drive</SPAN></A>)<BR>
+                  <BR>
+                  <BR>
+                  e.g "/storage/emulated/0/Android/data/<BR>
+                  com.rfo.hbasic"</TD>
+                </TR>
+                <TR>
+                  <TD valign="top"><FONT color=
+                  "#000099">App_Path</FONT></TD>
+                  <TD valign="top">The main app directory after
                   BasePath. It is the directory above source, data
-                  and databases.<br>
-                  <br>
+                  and databases.<BR>
+                  <BR>
                   Historically it is mis-named as a 'path', when in
                   fact it is just the app's main directory
-                  name.<br></td>
-                  <td valign="middle">e.g "rfo-basic"</td>
-                </tr>
-                <tr>
-                  <td valign="top"><font color="#000099">LibPath</font></td>
-                  <td valign="top">The full canonical path to where
-                  android puts native libraries.<br>
-                  <br>
+                  name.<BR></TD>
+                  <TD valign="middle">e.g "rfo-basic"</TD>
+                </TR>
+                <TR>
+                  <TD valign="top"><FONT color=
+                  "#000099">LibPath</FONT></TD>
+                  <TD valign="top">The full canonical path to where
+                  android puts native libraries.<BR>
+                  <BR>
                   Since api 29, this is the only area where you are
                   allowed to execute libraries or native
-                  executables.</td>
-                  <td style="word-break: break-all;" valign="middle">e.g
-                  /data/app/&lt;something&gt;/lib/arm</td>
-                </tr>
-                <tr>
-                  <td valign="top"><br></td>
-                  <td valign="top"><br></td>
-                  <td valign="middle"><br></td>
-                </tr>
-              </tbody>
-            </table>
-          </blockquote>
-          <blockquote>
+                  executables.</TD>
+                  <TD style="word-break: break-all;" valign=
+                  "middle">e.g
+                  /data/app/&lt;something&gt;/lib/arm</TD>
+                </TR>
+                <TR>
+                  <TD valign="top"><BR></TD>
+                  <TD valign="top"><BR></TD>
+                  <TD valign="middle"><BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE>
+          </BLOCKQUOTE>
+          <BLOCKQUOTE>
             Some of these added info keys will return absolute
-            paths.<br>
+            paths.<BR>
             Basic FILE commands were orginally designed for
-            relative paths (from data/),<br>
+            relative paths (from data/),<BR>
             since v4.38, FILE commands will also accept absolute
-            file paths beginning with a <font size="+1">'/'</font>.<br>
+            file paths beginning with a <FONT size=
+            "+1">'/'</FONT>.<BR>
             But be aware that threre are many areas where your app
-            will not have permission to access.<br>
-            <br>
+            will not have permission to access.<BR>
+            <BR>
             The above additions are mostly for advanced operations
             such as using the SYSTEM shell, special areas and/or
-            native libraries access.<br>
-            <br>
-            This code prints the app's package name.<br>
-            e.g<br>
-          </blockquote>
-          <blockquote>
-            <blockquote>
-              <font color="#000099">PROGRAM.INFO</font> b<br>
-              BUNDLE.GET b , "PkgName", name$<br>
-              PRINT name$<br>
-              <br>
-              com.rfo.hbasic<br>
-            </blockquote>&nbsp;Note that legacy's&nbsp;
-            <font color="#000099">FILE.Root</font> &lt;svar&gt;
-            command returns the combination of <font color="#000099">BasePath,</font> <font color="#000099">App_Path</font> and <font color="#663300">"/data"</font>.<br>
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">
-          <a name="debug_dump_fn" id="debug_dump_fn"></a><font size="+1" color="#000099">DEBUG.DUMP.FN</font><br>
-          <br>
-          <blockquote>
-            <font size="+1" color="#000099">DEBUG.DUMP.FN</font>
-            {level<span style="color: rgb(102, 51, 0);">_nexp</span>}<br>
-          </blockquote>
-          <blockquote>
-            Prints the function name from the function stack.<br>
-            where<br>
-            <blockquote>
-              <font size="+1"><tt><font color="#000099">level</font></tt></font> is the optional
-              maximum level (default is 1)<br>
-            </blockquote>
-            <blockquote>
-              1 - print only the last level (current function)<br>
-              2 - print two levels (last + previous caller)<br>
-              ..etc...<br>
+            native libraries access.<BR>
+            <BR>
+            This code prints the app's package name.<BR>
+            e.g<BR>
+          </BLOCKQUOTE>
+          <BLOCKQUOTE>
+            <BLOCKQUOTE>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              PROGRAM.INFO</SPAN> b</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">BUNDLE.GET
+              b , <SPAN style=
+              "color: rgb(0, 102, 0);">"PkgName"</SPAN></SPAN>,
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+              <SPAN style=
+              "color: rgb(0, 0, 0);">name$</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              name$</SPAN><BR>
+              <BR>
+              com.rfo.hbasic<BR>
+            </BLOCKQUOTE>&nbsp;Note that legacy's&nbsp;
+            <FONT color="#000099">FILE.Root</FONT> &lt;svar&gt;
+            command returns the combination of <FONT color=
+            "#000099">BasePath,</FONT> <FONT color=
+            "#000099">App_Path</FONT> and <FONT color=
+            "#663300">"/data"</FONT>.<BR>
+          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <A name="debug_dump_fn" id=
+          "debug_dump_fn"></A><FONT size="+1" color=
+          "#000099">DEBUG.DUMP.FN</FONT><BR>
+          <BR>
+          <BLOCKQUOTE>
+            <FONT size="+1" color="#000099">DEBUG.DUMP.FN</FONT>
+            {level<SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN>}<BR>
+          </BLOCKQUOTE>
+          <BLOCKQUOTE>
+            Prints the function name from the function stack.<BR>
+            where<BR>
+            <BLOCKQUOTE>
+              <FONT size="+1"><TT><FONT color=
+              "#000099">level</FONT></TT></FONT> is the optional
+              maximum level (default is 1)<BR>
+            </BLOCKQUOTE>
+            <BLOCKQUOTE>
+              1 - print only the last level (current function)<BR>
+              2 - print two levels (last + previous caller)<BR>
+              ..etc...<BR>
               0 - print all levels
-            </blockquote>
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">
-          <a name="input" id="input"></a><span style="color: rgb(0, 0, 153);"><font size="+1">INPUT</font><br></span>
-          <blockquote>
-            <font size="+1"><span style="color: rgb(0, 0, 153);">INPUT</span></font>
-            <span style="color: rgb(0, 0, 153);"><font color="#663300">{</font></span>prompt<span style="color: rgb(0, 0, 153);"><font color="#663300">_sexp},</font></span> result<span style="color: rgb(0, 0, 153);"><font color="#663300">_nvar
-            {,{</font></span>default<span style="color: rgb(0, 0, 153);"><font color="#663300">_exp}{,</font></span>canceled<span style="color: rgb(0, 0, 153);"><font color="#663300">_nvar}}{</font>,<span style="color: black; font-weight: bold;">extraFlags</span><span style="color: rgb(102, 51, 0);">_nexp}</span></span><br>
-          </blockquote>
-          <blockquote>
-            An optional <span style="font-weight: bold;">extraFlags</span> at the end of
-            INPUT was added.<br>
+            </BLOCKQUOTE>
+          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <A name="input" id="input"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">INPUT</FONT><BR></SPAN>
+          <BLOCKQUOTE>
+            <FONT size="+1"><SPAN style=
+            "color: rgb(0, 0, 153);">INPUT</SPAN></FONT>
+            <SPAN style="color: rgb(0, 0, 153);"><FONT color=
+            "#663300">{</FONT></SPAN>prompt<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color=
+            "#663300">_sexp},</FONT></SPAN> result<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color="#663300">_nvar
+            {,{</FONT></SPAN>default<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color=
+            "#663300">_exp}{,</FONT></SPAN>canceled<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color=
+            "#663300">_nvar}}{</FONT>,<SPAN style=
+            "color: black; font-weight: bold;">extraFlags</SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp}</SPAN></SPAN><BR>
+          </BLOCKQUOTE>
+          <BLOCKQUOTE>
+            An optional <SPAN style=
+            "font-weight: bold;">extraFlags</SPAN> at the end of
+            INPUT was added.<BR>
             If this flag is 1, input is constrained to a single
-            line.<br>
-            <br>
-            Default is 0 = off.<br>
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td style="width: 50%;">
-          <big style="color: rgb(0, 0, 153);"><a name="text_input" id="text_input"></a>TEXT.INPUT</big><br>
-          <br>
-          <div style="margin-left: 40px;">
-            A <span style="color: rgb(0, 0, 153);">cancelled_nvar</span> flag was
-            added to inform whether the user cancelled the input
-            via the backkey.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(0, 0, 153);">TEXT.INPUT</span>&nbsp;
-            <span style="color: rgb(102, 51, 0);"><span style="color: black;">result$</span>_svar{,<span style="color: black;">text</span>_sexp} {,<span style="color: black;">title</span>_sexp</span><span style="color: rgb(102, 51, 0);">} {,<span style="color: rgb(0, 0, 153);"><span style="color: black; font-weight: bold;">cancelled</span><span style="color: rgb(102, 51, 0);">_nvar</span></span>}</span><span style="color: rgb(102, 51, 0);"><br>
-            </span>
-          </div><big><br></big>
-          <div style="margin-left: 40px;">
+            line.<BR>
+            <BR>
+            Default is 0 = off.<BR>
+          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="text_input"
+          id="text_input"></A>TEXT.INPUT</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            A <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: black; font-weight: bold;">cancelled</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN></SPAN>
+            flag was added to inform whether the user cancelled the
+            input via the backkey.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">result$</SPAN>_svar{,<SPAN style=
+            "color: black;">text</SPAN>_sexp} {,<SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">} {,<SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: black; font-weight: bold;">cancelled</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN>
+          </DIV><BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
             If the user cancelled the input, the contents of
-            &lt;result$<span style="color: rgb(102, 51, 0);">_svar</span>&gt; remain
+            &lt;result$<SPAN style=
+            "color: rgb(102, 51, 0);">_svar</SPAN>&gt; remain
             unchanged.
-          </div><br>
-          Example<big><big><br></big></big>
-          <div style="margin-left: 40px;">
-            <big><span style="color: rgb(0, 0, 153); font-family: monospace;">TEXT.INPUT</span><span style="font-family: monospace;">&nbsp;
-            store$</span><span style="color: rgb(102, 51, 0); font-family: monospace;">,</span>
-            <span style="font-family: monospace;">default$, Title$,
-            <span style="font-weight: bold;">cancelled</span></span><span style="color: rgb(0, 0, 153); font-style: italic; font-family: monospace;"><br>
-            </span> <span style="font-family: monospace;"><span style="color: rgb(0, 0, 153);">IF</span> <span style="font-weight: bold;">cancelled</span> <span style="color: rgb(0, 0, 153);">THEN PRINT</span> "Do you wish
-            to try again ?"</span></big><br style="font-family: monospace;">
-            <br>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              TEXT.INPUT</SPAN>&nbsp; store$, default$, Title$,
+              <SPAN style=
+              "font-weight: bold;">cancelled</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">IF
+              <SPAN style="font-weight: bold;">cancelled</SPAN>
+              THEN PRINT <SPAN style="color: rgb(0, 102, 0);">"Do
+              you want to try again ?"</SPAN></SPAN><BR style=
+              "font-family: monospace;">
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
             (Since v4.90+ The orientation of TEXT.INPUT will lock
             to the same orientation of the top most screen at the
-            time the command is called.)<br>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">
-          <a name="clipboard" id="clipboard"></a><span style="color: rgb(0, 0, 153);"><font size="+1">CLIPBOARD</font><br></span>
-          <blockquote>
+            time the command is called.)<BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <A name="clipboard" id="clipboard"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">CLIPBOARD</FONT><BR></SPAN>
+          <BLOCKQUOTE>
             Due to privacy issues, the clipboard has not been
             working since Android 10 so the code was upgraded
-            (v4.60+).<br>
-            <br>
+            (v4.60+).<BR>
+            <BR>
             Note that your app needs to be in focus in order to
-            access the clipboard.<br>
-            <br>
+            access the clipboard.<BR>
+            <BR>
             Even so, the clipboard is still unreliable for some
-            devices / brands of phone.<font size="+1"><tt><font color="#000099"><br></font></tt></font>
+            devices / brands of phone.<FONT size=
+            "+1"><TT><FONT color="#000099"><BR></FONT></TT></FONT>
             It is recommended to insert a pause before getting from
-            the clipboard;<br>
-            e.g<br>
-            <blockquote style="font-family: monospace;">
-              <big>PAUSE 100<br>
-              <font color="#000099">CLIPBOARD.GET</font>
-              s$&nbsp;&nbsp;&nbsp; &nbsp;<font color="#006600">%
-              get data from clipboard</font><br>
-              <br>
-              print "input&gt;";s$<br>
-              r$=replace$(s$,"Hello","Goodbye")&nbsp; <font color="#006600">% change it</font><br>
-              print "output&gt;";r$<br>
-              <br>
-              if r$&lt;&gt;"" then <font color="#000099">CLIPBOARD.PUT</font> r$&nbsp;&nbsp;
-              <font color="#006600">% put it back</font><br></big>
-            </blockquote>
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">
-          <span style="color: rgb(0, 0, 153);"><font size="+1"><a name="notify" id="notify"></a>NOTIFY
-          sub-commands<br></font></span>
-          <blockquote>
-            <font color="#000099">NOTIFY.STATUS</font>&nbsp;
-            &lt;last_status<font color="#663300">_nvar</font>&gt;<br>
-            <font color="#000099">NOTIFY.CANCEL</font><br>
-          </blockquote>
-          <blockquote>
+            the clipboard;<BR>
+            <BR>
+            e.g<BIG><BR></BIG>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PAUSE
+              100</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CLIPBOARD.GET</SPAN> s$&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(51, 51, 51);">% get data from
+              clipboard</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              <SPAN style=
+              "color: rgb(0, 102, 0);">"input&gt;"</SPAN>;s$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">r$=replace$(s$,<SPAN style="color: rgb(0, 102, 0);">"Hello"</SPAN></SPAN>,<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">"Goodbye"</SPAN>)&nbsp;
+              <SPAN style="color: rgb(51, 51, 51);">% change
+              it</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "output&gt;";r$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              r$&lt;&gt;<SPAN style=
+              "color: rgb(0, 102, 0);">""</SPAN> then <SPAN style=
+              "color: rgb(0, 0, 153);">CLIPBOARD.PUT</SPAN>
+              r$&nbsp;&nbsp; <SPAN style=
+              "color: rgb(51, 51, 51);">% put it
+              back</SPAN></SPAN><BR>
+              <BR>
+            </DIV>
+          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="notify" id="notify"></A>NOTIFY
+          sub-commands<BR></FONT></SPAN>
+          <BLOCKQUOTE>
+            <FONT color="#000099">NOTIFY.STATUS</FONT>&nbsp;
+            &lt;last_status<FONT color=
+            "#663300">_nvar</FONT>&gt;<BR>
+            <FONT color="#000099">NOTIFY.CANCEL</FONT><BR>
+          </BLOCKQUOTE>
+          <BLOCKQUOTE>
             If the NOTIFY command is used with a 'wait'
-            flag&nbsp;&nbsp; e.g <font color="#000099">NOTIFY</font> t$, s$, a$,<font size="+1" color="#990000">1</font><br>
+            flag&nbsp;&nbsp; e.g <FONT color=
+            "#000099">NOTIFY</FONT> t$, s$, a$,<FONT size="+1"
+            color="#990000">1</FONT><BR>
             the program waits until the notification is tapped,
-            dismissed or system continued&nbsp; (e.g backKey).<br>
-            <br>
-            <font color="#000099">NOTIFY.STATUS</font> will return
-            the status of the last notification.<br>
-            where last_status<font color="#663300">_nvar</font>
-            will be filled with;<br>
-            <blockquote>
-              0 = no wait (last NOTIFY was not waiting)<br>
+            dismissed or system continued&nbsp; (e.g backKey).<BR>
+            <BR>
+            <FONT color="#000099">NOTIFY.STATUS</FONT> will return
+            the status of the last notification.<BR>
+            where last_status<FONT color="#663300">_nvar</FONT>
+            will be filled with;<BR>
+            <BLOCKQUOTE>
+              0 = no wait (last NOTIFY was not waiting)<BR>
               1 = system continued (e.g backkey)&nbsp;&nbsp;
-              notification not removed.<br>
-              2 = tapped (user tapped notification)<br>
-              3 = dismissed (user slides notification)<br>
-              4 = cancelled (by NOTIFY.CANCEL)<br>
-            </blockquote><font color="#000099">NOTIFY.CANCEL</font>
-            will remove the notification.<br>
-            <br>
-            e.g<font face="Courier New, Courier, monospace" color="#000099"><br></font>
-            <blockquote>
-              <span style="font-family: Courier New, Courier, monospace;">NOTIFY
-              "Title", "subTitle", "alert msg",1<br>
-              <br>
-              <font color="#000099">NOTIFY.STATUS</font>
-              last_status<br>
+              notification not removed.<BR>
+              2 = tapped (user tapped notification)<BR>
+              3 = dismissed (user slides notification)<BR>
+              4 = cancelled (by NOTIFY.CANCEL)<BR>
+            </BLOCKQUOTE><FONT color="#000099">NOTIFY.CANCEL</FONT>
+            will remove the notification.<BR>
+            <BR>
+            e.g<FONT face="Courier New, Courier, monospace" color=
+            "#000099"><BR></FONT>
+            <BLOCKQUOTE>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">NOTIFY
+              <SPAN style="color: rgb(0, 102, 0);">"Title"</SPAN>,
+              <SPAN style=
+              "color: rgb(0, 102, 0);">"subTitle"</SPAN>,
+              <SPAN style="color: rgb(0, 102, 0);">"alert
+              msg"</SPAN>,1<BR>
+              <BR>
+              <FONT color="#000099">NOTIFY.STATUS</FONT>
+              last_status<BR>
               IF last_status = 2 THEN informed =
-              1&nbsp;&nbsp;&nbsp; <font color="#006600">%
-              tapped</font><br>
-              IF last_status = 1 THEN <font color="#000099">NOTIFY.CANCEL&nbsp;&nbsp;</font>
-              <font color="#006600">% continued</font></span><br>
-            </blockquote>Note that notifications are always removed
-            on program exit.<br>
+              1&nbsp;&nbsp;&nbsp; <SPAN style=
+              "color: rgb(51, 51, 51);">% tapped</SPAN><BR>
+              IF last_status = 1 THEN <FONT color=
+              "#000099">NOTIFY.CANCEL&nbsp;&nbsp;</FONT>
+              <SPAN style="color: rgb(51, 51, 51);">%
+              continued</SPAN></SPAN><BR>
+            </BLOCKQUOTE>Note that notifications are always removed
+            on program exit.<BR>
             This command requires the permission POST_NOTIFICATIONS
-            or else it will not display.<br>
+            or else it will not display.<BR>
             NOTIFY sub commands are used in the sample program
-            <font color="#663300">h08_notify.bas</font>.<br>
-          </blockquote>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><font size="+1"><a name="onorient" id="notify"></a>OnORIENT ..
-          ORIENT.RESUME</font></span><br>
-          <br>
-          <div style="margin-left: 40px;">
-            Interrupt to catch orientation changes.<br>
-            Triggered if the device changes orientation.<br>
+            <FONT color="#663300">h08_notify.bas</FONT>.<BR>
+          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="onorient" id="notify"></A>OnORIENT ..
+          ORIENT.RESUME</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Interrupt to catch orientation changes.<BR>
+            Triggered if the device changes orientation.<BR>
             The device must be in auto-rotate mode (by sensors)
-            which can be set with <a href="console.html#orient">CONSOLE.ORIENT</a> -1,<br>
+            which can be set with <A href=
+            "console.html#orient">CONSOLE.ORIENT</A> -1,<BR>
             GR.ORIENTATION -1 or HTML.ORIENTATION as well as
-            GR.OPEN and&nbsp; HTML.OPEN.<br>
-            <br>
+            GR.OPEN and&nbsp; HTML.OPEN.<BR>
+            <BR>
             You can get a simple report of the orientation with
-            <a href="functions.html#device_function">DEVICE$(</a>"Orient_Simple").<br>
-          </div>
-          <div style="margin-left: 40px;">
-            e.g<br>
-          </div>
-          <div style="margin-left: 80px;">
-            <span style="font-family: Courier New, Courier, monospace;">CONSOLE.ORIENT
-            -1<br>
-            do : pause 100 : until 0<br>
-            END<br>
-            <br>
-            <span style="color: rgb(0, 0, 153);">OnORIENT</span><br></span>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">print
-              DEVICE$("orient_simple")<br></span>
-            </div><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">ORIENT.Resume</span></span><br>
-          </div><span style="color: rgb(0, 0, 153);"><font size="+1"><br></font></span>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="audio_play" id="audio_play"></a>AUDIO.PLAY<br>
-          <br>
-          <div style="margin-left: 40px;">
-            <font color="#000099">AUDIO.PLAY</font>&nbsp;
-            aft<font color="#663300">_nexp {,</font> <span style="font-weight: bold;">async_prep</span><font color="#663300">_lexp}</font><br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            An optional Asynchronous Preparation flag was
-            added.<br>
-            <br>
-            If set to true (non-zero), will attempt to prepare the
-            audio for play in the background before playing.<br>
-            This reduces stress on the foreground thread which may
-            otherwise cause a delay in graphics.<br>
-            <br>
-            If you omit this flag, the default setting is
-            <span style="font-weight: bold;">off</span> (legacy
-            behaviour) and the interpreter will wait until the
-            preparation is complete.<br>
-            <br>
-            Note: This option (if true) does not check if play was
-            successful and does not error message if
-            unsuccesful.<br>
-            <br>
-            You may test this flag with the sample program
-            <span style="color: rgb(102, 51, 0);">h13_animations.bas</span>.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="list_create" id="list_create"></a>LIST.CREATE<br>
-          <br>
-          <div style="margin-left: 40px;">
-            <font color="#000099">LIST.CREATE</font>&nbsp;
-            N<span style="font-weight: bold;">|</span>S
-            <span style="font-weight: bold;">{</span> <span style="color: rgb(153, 0, 0);">M</span> <span style="font-weight: bold;">|</span> <span style="color: rgb(153, 0, 0);">L</span> <span style="font-weight: bold;">}</span> <span style="font-weight: bold;">pointer</span><font color="#663300">_nvar</font> <span style="font-weight: bold;">{ ,</span> <span style="font-weight: bold;">pointer</span><font color="#663300">_nvar</font> <span style="font-weight: bold;">| data</span><font color="#663300"><font color="#663300">_nexp</font></font><span style="font-weight: bold;">|</span><font color="#663300"><font color="#663300">sexp</font></font>
-            <span style="font-weight: bold;">...</span>
-            <span style="font-weight: bold;">}</span><br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            Added optional creation modes <span style="color: rgb(153, 0, 0);">M</span> or <span style="color: rgb(153, 0, 0);">L</span> or omitted.<br>
-            <br>
-          </div>
-          <div style="margin-left: 40px;">
-            Omitted mode behaves exactly like legacy Basic.<br>
-            <br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">LIST.CREATE
-              N, nlist</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">LIST.CREATE
-              S, slist</span><br>
+            <A href=
+            "functions.html#device_function">DEVICE$(</A>"Orient_Simple").<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            e.g<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.ORIENT
+            -1<BR>
+            do : pause 100 : until 0<BR>
+            END<BR>
+            <BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">OnORIENT</SPAN><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">print
+              DEVICE$(<SPAN style=
+              "color: rgb(0, 102, 0);">"orient_simple"</SPAN>)<BR></SPAN>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">ORIENT.Resume</SPAN></SPAN><BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><BR></FONT></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="list_create" id=
+          "list_create"></A>LIST.CREATE<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <FONT color="#000099">LIST.CREATE</FONT>&nbsp;
+            N<SPAN style="font-weight: bold;">|</SPAN>S
+            <SPAN style="font-weight: bold;">{</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">pointer</SPAN><FONT color=
+            "#663300">_nvar</FONT> <SPAN style=
+            "font-weight: bold;">{ ,</SPAN> <SPAN style=
+            "font-weight: bold;">pointer</SPAN><FONT color=
+            "#663300">_nvar</FONT> <SPAN style=
+            "font-weight: bold;">| data</SPAN><FONT color=
+            "#663300"><FONT color=
+            "#663300">_nexp</FONT></FONT><SPAN style=
+            "font-weight: bold;">|</SPAN><FONT color=
+            "#663300"><FONT color="#663300">sexp</FONT></FONT>
+            <SPAN style="font-weight: bold;">...</SPAN>
+            <SPAN style="font-weight: bold;">}</SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Added optional creation modes <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> or <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> or omitted.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Omitted mode behaves exactly like legacy Basic.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              N, nlist</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              S, slist</SPAN><BR>
               There is no multiple creation nor any data
-              loading.<br>
-            </div><br>
-            Multiple mode <span style="color: rgb(153, 0, 0);">M</span> creates one or more
-            empty lists.<br>
-            <br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">LIST.CREATE
-              N</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(153, 0, 0);">M</span></span><span style="font-family: Courier New, Courier, monospace;">,
-              nlist1<span style="font-weight: bold;">,</span>nlist2..</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">LIST.CREATE
-              S</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(153, 0, 0);">M</span></span><span style="font-family: Courier New, Courier, monospace;">,
-              slist1<span style="font-weight: bold;">,</span>slist2..</span><br>
-            </div>&nbsp;&nbsp;&nbsp;<br>
-            Loading mode&nbsp; <span style="color: rgb(153, 0, 0);">L</span> creates one list with
-            data loading.<br>
-            <br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">LIST.CREATE
-              N</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(153, 0, 0);">L</span></span><span style="font-family: Courier New, Courier, monospace;">,
-              nlist<span style="font-weight: bold;">,</span>
-              <span style="color: rgb(102, 51, 0);">1,2,3</span></span><br>
-              <span style="font-family: Courier New, Courier, monospace;">LIST.CREATE
-              S</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(153, 0, 0);">L</span></span><span style="font-family: Courier New, Courier, monospace;">,
-              slist<span style="color: rgb(102, 51, 0);"><span style="font-weight: bold;">,</span>
-              "apple","orange","pear"</span></span><br>
-            </div><br>
-            Creation modes {&lt;omitted&gt; <span style="font-weight: bold;">|</span> <span style="color: rgb(153, 0, 0);">M</span> <span style="font-weight: bold;">|</span> <span style="color: rgb(153, 0, 0);">L</span> } are mutually
+              loading.<BR>
+            </DIV><BR>
+            Multiple mode <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> creates one or more
+            empty lists.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              N</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">M</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              nlist1<SPAN style=
+              "font-weight: bold;">,</SPAN>nlist2..</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              S</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">M</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              slist1<SPAN style=
+              "font-weight: bold;">,</SPAN>slist2..</SPAN><BR>
+            </DIV>&nbsp;&nbsp;&nbsp;<BR>
+            Loading mode&nbsp; <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> creates one list with
+            data loading.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              N</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">L</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              nlist<SPAN style="font-weight: bold;">,</SPAN>
+              <SPAN style=
+              "color: rgb(102, 51, 0);">1,2,3</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">LIST.CREATE
+              S</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 0, 0);">L</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              slist<SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "color: rgb(0, 102, 0);">"apple"</SPAN></SPAN></SPAN>,<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);"><SPAN style="color: rgb(0, 102, 0);">"orange"</SPAN></SPAN></SPAN>,<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);"><SPAN style="color: rgb(0, 102, 0);">"pear"</SPAN></SPAN></SPAN><BR>
+            </DIV><BR>
+            Creation modes {&lt;omitted&gt; <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">M</SPAN> <SPAN style=
+            "font-weight: bold;">|</SPAN> <SPAN style=
+            "color: rgb(153, 0, 0);">L</SPAN> } are mutually
             exclusive, i.e you can only use one of them per
-            command.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">-End<br></td>
-      </tr>
-    </tbody>
-  </table><br>
-
-
-</body></html>
+            command.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="audio_play" id="audio_play"></A>AUDIO.PLAY<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <FONT color="#000099">AUDIO.PLAY</FONT>&nbsp;
+            aft<FONT color="#663300">_nexp {,</FONT> <SPAN style=
+            "font-weight: bold;">timeout</SPAN><FONT color=
+            "#663300">_nexp}</FONT><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            This command will now timeout after 5 seconds by
+            default.<BR>
+            This can be changed with the optional <SPAN style=
+            "font-weight: bold;">timeout</SPAN> setting.<BR>
+            This setting can also flag for an asynchronous
+            launch.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">Sync mode
+            (default)</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              If you omit the <SPAN style=
+              "font-weight: bold;">timeout</SPAN>&nbsp; flag, the
+              default setting is a <SPAN style=
+              "font-weight: bold;">timeout</SPAN> of <SPAN style=
+              "font-weight: bold;">5000</SPAN>ms for preparation
+              time.<BR>
+              If you use <SPAN style=
+              "font-weight: bold;">timeout</SPAN> (not omitted), A
+              value of 100ms or more will override the timeout.<BR>
+              e.g 3000 will timeout after 3 secs.<BR>
+              The interpreter will wait for a maximum of this time
+              for the audio to start playing.<BR>
+              If the preparation times out, there <SPAN style=
+              "text-decoration: underline;">will be an
+              error</SPAN>.<BR>
+              <SPAN style="font-style: italic;">(This is different
+              to legacy Basic which can wait forever until the
+              audio starts).</SPAN><BR>
+              Upon success, <SPAN style=
+              "color: rgb(0, 0, 153);">AUDIO.ISDONE</SPAN>
+              isDone<SPAN style=
+              "color: rgb(102, 51, 0);">_lvar</SPAN> will be false
+              until the audio finishes (true).<BR>
+              <BR>
+              This mode is preferred for streams or unstable
+              formats that may fail.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Async
+            mode</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              If <SPAN style="font-weight: bold;">timeout</SPAN> is
+              <SPAN style="text-decoration: underline;">less</SPAN>
+              than <SPAN style="font-weight: bold;">100</SPAN>ms,
+              it overrides the timeout, i.e there will be
+              <SPAN style="text-decoration: underline;">no
+              timeout</SPAN>.<BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">AUDIO.PLAY</SPAN> will
+              launch but will <SPAN style=
+              "text-decoration: underline;">not wait</SPAN>
+              (asynchronous mode).<BR>
+              The command will <SPAN style=
+              "text-decoration: underline;">immediately
+              return</SPAN> and preparation for play will be done
+              <SPAN style="text-decoration: underline;">in the
+              background</SPAN> before playing.<BR>
+              <BR>
+              Note: Async mode does not check if preparation or
+              play was successful and <SPAN style=
+              "text-decoration: underline;">does not error</SPAN>
+              if unsuccesful.<BR>
+              Also, <SPAN style=
+              "color: rgb(0, 0, 153);">AUDIO.ISDONE</SPAN>
+              isDone<SPAN style=
+              "color: rgb(102, 51, 0);">_lvar</SPAN> <SPAN style=
+              "text-decoration: underline;">will assume</SPAN> the
+              audio is playing (false) until the audio finishes
+              (true).<BR>
+              <BR>
+              This mode is preferred for reliable audio sources
+              with stable formats where the app cannot afford to
+              wait, and does not need to check on the audio status,
+              e.g a graphics loop.<BR>
+              It reduces stress on the foreground thread which may
+              otherwise cause a delay.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              An example of async mode with a <SPAN style=
+              "font-weight: bold;">timeout</SPAN> override is found
+              in the sample program <SPAN style=
+              "color: rgb(102, 51, 0);">h13_animations.bas</SPAN>.<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">-End<BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+</BODY>
+</HTML>
