@@ -279,7 +279,13 @@
             "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
+            BT.CONNECT.TO m$&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style="color: rgb(51, 51, 51);">% default result,
+            default secure</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">BT.CONNECT.TO
             rc,,m$ <SPAN style="color: rgb(51, 51, 51);">% get
             result, default secure</SPAN></SPAN><SPAN style=
@@ -367,6 +373,12 @@
           <DIV style="margin-left: 40px;">
             Connects directly to a device given the MAC address
             <SPAN style="font-weight: bold;">mac</SPAN>$.<BR>
+            Leading commas are optional if only mac$ is used.<BR>
+            If only one numeric expression is given, it is taken
+            as&nbsp; <SPAN style=
+            "font-weight: bold;">secure</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN></SPAN>.<BR>
             <BR>
             <SPAN style="font-weight: bold;">mac</SPAN>$<BR>
             <DIV style="margin-left: 40px;">
@@ -405,6 +417,17 @@
               (a description may be found with getError$() )<BR>
             </DIV>
           </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">BT.CONNECT.TO
+              m$&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              <SPAN style="color: rgb(51, 51, 51);">% default
+              result, default secure</SPAN></SPAN></SPAN>
+            </DIV><BR>
+          </DIV>
           <DIV style="margin-left: 80px;"></DIV>
         </TD>
       </TR>
