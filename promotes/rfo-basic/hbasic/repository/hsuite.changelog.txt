@@ -172,7 +172,7 @@ Date		Summary of Versions
 		hPatcher v2.02
 			Fix WAKE_LOCK typo in permissions.
 
-		HFPTS replaces H0301 (hFTP server)
+		HFTPS replaces H0301 (hFTP server)
 			Default port changed from 1025 to 2345		
 		H0303	added (fix GR.MODIFY group list)
 		H0304	added (fix GR.OPEN status bar for Android 11+)
