@@ -1,412 +1,495 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Package</title>
-  <link rel="stylesheet" href="main.css" type="text/css">
-</head>
-<body vlink="#990099" link="#000099" alink="#000099">
-  <a href="../hbasic.html">hBasic</a> &gt; <a href="index.html">hManual</a> &gt; Package<br>
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellspacing="2" cellpadding="8">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top;">
-          <div style="text-align: right;">
-            <big>hBasic Manual</big><br>
-          </div><big><big style="color: rgb(0, 0, 153);">Package
-          changes<br>
-          <br></big></big>
-          <table style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;" cellspacing="2" cellpadding="2" border="0">
-            <tbody>
-              <tr>
-                <td style="vertical-align: top;"><big><a href="#api">API levels</a></big></td>
-                <td style="vertical-align: top;">Support and
-                requirements<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><big><a href="#id">Identity Changes</a></big></td>
-                <td style="vertical-align: top;">App
-                identity<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><big><a href="#legacy">Legacy Storage</a></big></td>
-                <td style="vertical-align: top;">Support for older
-                devices<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><big><a href="#scoped">Scoped Storage</a></big></td>
-                <td style="vertical-align: top;">How Google screwed
-                up shared storage<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="#permissions"><font size="+1">Permissions</font></a><br></td>
-                <td style="vertical-align: top;">What to expect
-                during installation<br></td>
-              </tr>
-            </tbody>
-          </table><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big><span style="color: rgb(0, 0, 153);"><a name="api" id="api"></a>API</span></big><br>
-          <br>
-          <div style="margin-left: 40px;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Package</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; Package<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Package
+          changes<BR>
+          <BR></BIG></BIG>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#api">API levels</A></BIG></TD>
+                <TD style="vertical-align: top;">Support and
+                requirements<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#id">Identity Changes</A></BIG></TD>
+                <TD style="vertical-align: top;">App
+                identity<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#legacy">Legacy Storage</A></BIG></TD>
+                <TD style="vertical-align: top;">Support for older
+                devices<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BIG><A href=
+                "#scoped">Scoped Storage</A></BIG></TD>
+                <TD style="vertical-align: top;">How Google screwed
+                up shared storage<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#permissions"><FONT size=
+                "+1">Permissions</FONT></A><BR></TD>
+                <TD style="vertical-align: top;">What to expect
+                during installation<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name="api"
+          id="api"></A>API</SPAN></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
             &nbsp;This release includes all mods and (most) patches
-            from v1.61 with support to target <span style="color: rgb(0, 0, 153);">API 35</span>;<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            from v1.61 with support to target <SPAN style=
+            "color: rgb(0, 0, 153);">API 35</SPAN>;<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            <br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            <BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            &nbsp;minSdkVersion : <span style="color: rgb(0, 0, 153);">19</span> &nbsp;
+            &nbsp;minSdkVersion : <SPAN style=
+            "color: rgb(0, 0, 153);">19</SPAN> &nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; (backward
-            support to no less than ICS)<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            support to no less than ICS)<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            &nbsp;targetSdkVersion : <span style="color: rgb(0, 0, 153);">35</span> &nbsp;
+            &nbsp;targetSdkVersion : <SPAN style=
+            "color: rgb(0, 0, 153);">35</SPAN> &nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp; (forward support up to Android
-            15)<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            15)<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            &nbsp;compileSdkVersion : <span style="color: rgb(0, 0, 153);">35</span> &nbsp;&nbsp; (built
-            with sdk version: 35)<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            &nbsp;compileSdkVersion : <SPAN style=
+            "color: rgb(0, 0, 153);">35</SPAN> &nbsp;&nbsp; (built
+            with sdk version: 35)<BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-            <br>
+            <BR>
             &nbsp;Note: hBasic will overwrite Sample_Programs if
-            another version of hBasic was run before).<br>
-            <br>
-            <span style="text-decoration: underline;">About Android
-            Target Versions on Google Playstore</span><br>
-          </div><span style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);"><big style="color: rgb(0, 0, 153);"><br>
-          </big></span>
-          <div style="margin-left: 40px;">
-            <div style="margin-left: 40px;">
+            another version of hBasic was run before).<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">About Android
+            Target Versions on Google Playstore</SPAN><BR>
+          </DIV><SPAN style=
+          "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);"><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG></SPAN>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
               Google requires that by the end August of each year
               (or after a new Android version comes out),&nbsp; all
-              Playstore apps and updates <span style="font-weight: bold;">must&nbsp;target&nbsp;a
+              Playstore apps and updates <SPAN style=
+              "font-weight: bold;">must&nbsp;target&nbsp;a
               level&nbsp;no more than one year older than the
-              current release</span><span style="font-style: italic;">.</span><br>
-              <br>
+              current release</SPAN><SPAN style=
+              "font-style: italic;">.</SPAN><BR>
+              <BR>
               New apps must meet this requirement from August (or
-              new version announcement).<br>
+              new version announcement).<BR>
               Old Apps (already on Playstore) must also be
-              updated.<br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: italic; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+              updated.<BR style=
+              "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: italic; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-              <br style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: italic; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+              <BR style=
+              "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: italic; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
               For&nbsp; August 2024 the minimum requirement will be
               a target of API 34 (Android 14) which would last up
               to August of 2025. The requirement for 2025 is likely
               to be a similar formula but has not yet been
-              announced.<br style="font-style: italic;">
-            </div><br style="font-style: italic;">
-            <span style="color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);">
-            <span style="font-style: italic;">hBasic comes with
+              announced.<BR style="font-style: italic;">
+            </DIV><BR style="font-style: italic;">
+            <SPAN style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; display: inline ! important; float: none; background-color: rgb(255, 255, 255);">
+            <SPAN style="font-style: italic;">hBasic comes with
             source code in a zip package. If you are able to
             compile from source, then you need to be able to
             upgrade the platform-api level to whatever you need
             before compilation. (This info is beyond the scope of
-            this manual).&nbsp;</span> Alternatively, you may
-            compile with the latest version of <a href="http://humpity.github.io/promotes/rfo-basic/hbasic/hsuite/index.html">
-            hSuite</a>.</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big><span style="color: rgb(0, 0, 153);"><a name="id" id="id"></a>App Identity<br></span></big><br>
-          <div style="margin-left: 40px;">
-            <span style="color: rgb(102, 51, 0);">Package ID</span>
-            : <span style="color: rgb(0, 0, 153);"><font size="+1">com.rfo.hbasic</font>&nbsp;</span> (since
-            <span style="font-style: italic;">July 2020
-            v3.00</span>)<br>
-            <br>
-            <span style="color: rgb(102, 51, 0);">Titles</span> for
+            this manual).&nbsp;</SPAN> Alternatively, you may
+            compile with the latest version of <A href=
+            "http://humpity.github.io/promotes/rfo-basic/hbasic/hsuite/index.html">
+            hSuite</A>.</SPAN>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name="id"
+          id="id"></A>App Identity<BR></SPAN></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(102, 51, 0);">Package ID</SPAN>
+            : <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+            "+1">com.rfo.hbasic</FONT>&nbsp;</SPAN> (since
+            <SPAN style="font-style: italic;">July 2020
+            v3.00</SPAN>)<BR>
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);">Titles</SPAN> for
             Program Output, SELECT, TEXT.INPUT, and TGET were
-            changed to generic names. (<small>since
-            v2.91)</small><br>
-            <br>
-            <span style="color: rgb(102, 51, 0);">Splash
-            screen</span> was changed to the hBasic splash screen
-            <font size="-1"><big><i>(optional and user-definable
-            within <a href="http://humpity.github.io/promotes/rfo-basic/hbasic/hsuite/index.html">
-            hSuite</a>)</i></big>.</font><br>
-            <br>
-            <span style="color: rgb(102, 51, 0);">APK
-            Signature</span><br>
-          </div>
-          <div style="margin-left: 80px;">
-            Since <span style="color: rgb(0, 0, 153);">v2.91</span>
+            changed to generic names. (<SMALL>since
+            v2.91)</SMALL><BR>
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);">Splash
+            screen</SPAN> was changed to the hBasic splash screen
+            <FONT size="-1"><BIG><I>(optional and user-definable
+            within <A href=
+            "http://humpity.github.io/promotes/rfo-basic/hbasic/hsuite/index.html">
+            hSuite</A>)</I></BIG>.</FONT><BR>
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);">APK
+            Signature</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Since <SPAN style="color: rgb(0, 0, 153);">v2.91</SPAN>
             the APK is signed with a new key (different from
-            previous).<br>
+            previous).<BR>
             You will need to un-install any old version ( &lt;
-            v2.91 ) before installing.<br>
-          </div>
-          <div style="margin-left: 40px;">
-            <br>
-          </div>
-          <div style="margin-left: 80px;">
-            Since <span style="color: rgb(0, 0, 153);">v3.04</span>
-            the APK is <span style="text-decoration: underline;">also</span> signed with
+            v2.91 ) before installing.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Since <SPAN style="color: rgb(0, 0, 153);">v3.04</SPAN>
+            the APK is <SPAN style=
+            "text-decoration: underline;">also</SPAN> signed with
             v2 scheme - a requirement for devices running Android
-            11+.<br>
-            Since <span style="color: rgb(0, 0, 153);">v3.06</span>
-            the APK is <span style="text-decoration: underline;">also</span> signed with
+            11+.<BR>
+            Since <SPAN style="color: rgb(0, 0, 153);">v3.06</SPAN>
+            the APK is <SPAN style=
+            "text-decoration: underline;">also</SPAN> signed with
             v3 scheme - ( a side affect from using bundletool
-            ).<br>
-          </div>
-          <div style="margin-left: 40px;">
-            <br>
-            <span style="color: rgb(102, 51, 0);">Package
-            version</span><br>
-          </div>
-          <div style="margin-left: 80px;">
-            <font face="Courier New, Courier, monospace">version$()</font>
-            will return the app version (as before).<br>
-            <a href="commands.html#version"><font face="Courier New, Courier, monospace">version$(0)</font></a>
+            ).<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);">Package
+            version</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <FONT face=
+            "Courier New, Courier, monospace">version$()</FONT>
+            will return the app version (as before).<BR>
+            <A href="commands.html#version"><FONT face=
+            "Courier New, Courier, monospace">version$(0)</FONT></A>
             will return the base version which by default is the
-            hMaster code base version (without patches).<br>
-            <br>
-            Both versions are user-definable&nbsp; within <a href="http://humpity.github.io/promotes/rfo-basic/hbasic/hsuite/index.html">
-            hSuite</a>.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big><span style="color: rgb(0, 0, 153);"><a name="legacy" id="legacy"></a>Legacy Storage</span></big><br>
-          <br>
-          <div style="margin-left: 40px;">
+            hMaster code base version (without patches).<BR>
+            <BR>
+            Both versions are user-definable&nbsp; within <A href=
+            "http://humpity.github.io/promotes/rfo-basic/hbasic/hsuite/index.html">
+            hSuite</A>.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "legacy" id="legacy"></A>Legacy Storage</SPAN></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
             hBasic's default storage base was moved to scoped
-            storage since <span style="color: rgb(0, 0, 153);">v3.00</span>.<br>
-            However, devices <span style="text-decoration: underline;">lower than</span> Android
+            storage since <SPAN style=
+            "color: rgb(0, 0, 153);">v3.00</SPAN>.<BR>
+            However, devices <SPAN style=
+            "text-decoration: underline;">lower than</SPAN> Android
             11 (&lt; Api 30) can choose legacy storage by selecting
-            the base Drive<br>
-            in Preferences &gt; Base Drive as either<br>
-            <br>
-<div style="margin-left: 40px;">
-            
-              <span style="color: rgb(102, 51, 0);">/sdcard&nbsp;&nbsp; </span>or &nbsp;<span style="color: rgb(102, 51, 0);"><span style="color: rgb(0, 0, 0);"> </span>/mnt/sdcard&nbsp;&nbsp; </span>or<span style="color: rgb(102, 51, 0);"> &nbsp; /storage/emulated/0</span><br>
-  <span style="color: rgb(102, 51, 0);">
-  </span>
-            </div>
-<br>
-which effectively moves the base to legacy
-            storage (outside of scoped storage).<br>
+            the base Drive<BR>
+            in Preferences &gt; Base Drive as either<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "color: rgb(102, 51, 0);">/sdcard&nbsp;&nbsp;</SPAN>
+              or &nbsp; <SPAN style=
+              "color: rgb(102, 51, 0);">/mnt/sdcard&nbsp;&nbsp;</SPAN>
+              or <SPAN style="color: rgb(102, 51, 0);">&nbsp;
+              /storage/emulated/0<BR>
+              <BR></SPAN>
+            </DIV>which effectively moves the base to legacy
+            storage (outside of scoped storage).<BR>
             Devices for Android 11 and higher will not have this
-            option.<br>
-            <br>
+            option.<BR>
+            <BR>
             For Standalone apks (made with hSuite/hPatcher), you
-            also need to add <a href="#permissions">permission</a>
-            WRITE_EXTERNAL_STORAGE<br>
+            also need to add <A href="#permissions">permission</A>
+            WRITE_EXTERNAL_STORAGE<BR>
             and select Customise &gt; Legacy &gt; use Unscoped
             Storage. You only need this option if the app was
-            developed using a legacy base.<br>
-            <br>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big><span style="color: rgb(0, 0, 153);"><a name="scoped" id="scoped"></a>Scoped Storage</span></big><br>
-          <br>
-          <div style="margin-left: 40px;">
+            developed using a legacy base.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "scoped" id="scoped"></A>Scoped Storage</SPAN></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
             hBasic was forced to move to scoped storage (since
-            <span style="color: rgb(0, 0, 153);">v3.00</span>) to
-            cater for devices running Android 11+ (Api 30+).<br>
+            <SPAN style="color: rgb(0, 0, 153);">v3.00</SPAN>) to
+            cater for devices running Android 11+ (Api 30+).<BR>
             This means that the app is boxed into a storage area
-            that only itself can read or write to (by design).<br>
+            that only itself can read or write to (by design).<BR>
             Outside apps cannot normally access this private
-            area.<br>
-            <br>
+            area.<BR>
+            <BR>
             Basic's legacy (unscoped) storage base is historically
-            on <span style="text-decoration: underline;">External</span> storage
-            at <span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">&lt;/sdcard&gt;</span></span>.<br>
+            on <SPAN style=
+            "text-decoration: underline;">External</SPAN> storage
+            at <SPAN style="color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;/sdcard&gt;</SPAN></SPAN>.<BR>
 
-            This area is often <span style="text-decoration: underline;">emulated</span> with
+            This area is often <SPAN style=
+            "text-decoration: underline;">emulated</SPAN> with
             faster 'internal' storage but still classified as
-            'External'.<br>
+            'External'.<BR>
             On the other hand, hBasic's (scoped) storage base
-            starts furthur inside e.g <span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">&lt;/sdcard&gt;</span></span>/<span style="color: rgb(51, 0, 153);">Android</span>/<span style="color: rgb(51, 0, 153);">data</span>/<span style="color: rgb(51, 0, 153);">com.rfo.hbasic</span><br>
+            starts furthur inside e.g <SPAN style=
+            "color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;/sdcard&gt;</SPAN></SPAN>/<SPAN style="color: rgb(51, 0, 153);">Android</SPAN>/<SPAN style="color: rgb(51, 0, 153);">data</SPAN>/<SPAN style="color: rgb(51, 0, 153);">com.rfo.hbasic</SPAN><BR>
 
-            <br>
-            Base Drive (or Base Path)<br>
-          </div>
-          <div style="margin-left: 80px;">
-            The <font color="#990000">base_drive</font> or
-            <span style="color: rgb(0, 102, 0);"><span style="color: rgb(0, 0, 153);">BasePath</span></span> is the
-            <span style="font-weight: bold;">start of scoped
-            storage</span>.<br>
-            It is usually found at <span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">&lt;sdcard&gt;</span></span>/<span style="color: rgb(51, 0, 153);">Android</span>/<span style="color: rgb(51, 0, 153);">data</span>/<span style="color: rgb(51, 0, 153);">com.rfo.hbasic</span>.<br>
-          </div>
-          <div style="margin-left: 40px;" align="right">
-            <i>(note: legacy Basic's default base drive used to be
-            just</i> &lt;<span style="font-weight: bold;"><i><span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">/sdcard</span></span></i></span>&gt;)<br>
-          </div>
-          <div style="margin-left: 40px;">
-            Base Directory<br>
-          </div>
-          <div style="margin-left: 80px;">
-            The <span style="color: rgb(153, 0, 0);">base_directory</span> is
-            therefore <span style="color: rgb(51, 0, 153);"><span style="color: rgb(102, 51, 0);">&lt;sdcard&gt;</span>/Android/data/com.rfo.hbasic/<span style="color: rgb(153, 0, 0);">rfo-basic<br>
-            </span></span>
-          </div>
-          <div style="margin-left: 80px;">
-            with <font color="#663300"><span style="color: rgb(0, 0, 153);">source,</span> <span style="color: rgb(0, 0, 153);">data</span></font> &amp;
-            <font color="#663300"><span style="color: rgb(0, 0, 153);">databases</span></font> under
-            this base.<br>
-          </div>
-          <div style="margin-left: 40px;">
-            <br>
-            App Path<br>
-          </div>
-          <div style="margin-left: 80px;">
-            Historically, the <font color="#990000">App_Path</font>
+            <BR>
+            Base Drive (or Base Path)<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            The <FONT color="#990000">base_drive</FONT> or
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">BasePath</SPAN></SPAN> is the
+            <SPAN style="font-weight: bold;">start of scoped
+            storage</SPAN>.<BR>
+            It is usually found at <SPAN style=
+            "color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN></SPAN>/<SPAN style="color: rgb(51, 0, 153);">Android</SPAN>/<SPAN style="color: rgb(51, 0, 153);">data</SPAN>/<SPAN style="color: rgb(51, 0, 153);">com.rfo.hbasic</SPAN>.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;" align="right">
+            <I>(note: legacy Basic's default base drive used to be
+            just</I> &lt;<SPAN style=
+            "font-weight: bold;"><I><SPAN style=
+            "color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">/sdcard</SPAN></SPAN></I></SPAN>&gt;)<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Base Directory<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            The <SPAN style=
+            "color: rgb(153, 0, 0);">base_directory</SPAN> is
+            therefore <SPAN style=
+            "color: rgb(51, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN>/Android/data/com.rfo.hbasic/<SPAN style="color: rgb(153, 0, 0);">rfo-basic<BR>
+            </SPAN></SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            with <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">source,</SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">data</SPAN></FONT> &amp;
+            <FONT color="#663300"><SPAN style=
+            "color: rgb(0, 0, 153);">databases</SPAN></FONT> under
+            this base.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            App Path<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Historically, the <FONT color="#990000">App_Path</FONT>
             or app directory is just the name of the base_directory
-            e.g <font color="#990000">"rfo-basic"</font><br>
-            (ironically without the path).<br>
+            e.g <FONT color="#990000">"rfo-basic"</FONT><BR>
+            (ironically without the path).<BR>
             This will be different for custom (standalone)
-            apps.<br>
-          </div>
-          <div style="margin-left: 40px;">
-            <br>
-            The mount point of <span style="color: rgb(102, 51, 0);">&lt;/sdcard&gt;</span> is
-            something like <span style="color: rgb(102, 51, 0);">/storage/emulated/0</span>
-            depending on the device.<br>
-            <br>
-            To read and write from/to outside of the <span style="color: rgb(153, 0, 0);">base_drive</span> you will
-            need an ftp client to connect to <a href="system.html#ftp_server">hBasic's embedded ftp
-            server</a> (hFTP server). You may need this if you are
+            apps.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            The mount point of <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;/sdcard&gt;</SPAN> is
+            something like <SPAN style=
+            "color: rgb(102, 51, 0);">/storage/emulated/0</SPAN>
+            depending on the device.<BR>
+            <BR>
+            To read and write from/to outside of the <SPAN style=
+            "color: rgb(153, 0, 0);">base_drive</SPAN> you will
+            need an ftp client to connect to <A href=
+            "system.html#ftp_server">hBasic's embedded ftp
+            server</A> (hFTP server). You may need this if you are
             developing on a PC and need to transfer your basic
             files to your phone. To start the server, tap on Editor
             menu &gt; Start FTP server. Then connect using you FTP
-            client.<br>
-            <br>
+            client.<BR>
+            <BR>
             An alternative is to use a file-manager that has
             permission to enter hBasic's scoped storage.
             Recommended is Total-Commander. For furthur details,
-            see this article on <a href="https://humpity.github.io/promotes/rfo-basic/hbasic/other/transfer.html">
-            Transfer of Files</a> for other methods. <a href="https://humpity.github.io/promotes/rfo-basic/hbasic/other/transfer.html">
-            </a><br>
-            <br>
+            see this article on <A href=
+            "https://humpity.github.io/promotes/rfo-basic/hbasic/other/transfer.html">
+            Transfer of Files</A> for other methods. <A href=
+            "https://humpity.github.io/promotes/rfo-basic/hbasic/other/transfer.html">
+            </A><BR>
+            <BR>
             Being boxed inside scoped storage also means you can't
-            get out.<br>
+            get out.<BR>
             All apps that run on an Android 11 device and higher
             (Api 30+) are forced to be scoped. i.e they can no
             longer easily access areas outside of their own scoped
             storage nor easily share their own files for other
-            apps.<br>
-            <br>
+            apps.<BR>
+            <BR>
             However, all apps modified to use scoped storage can
-            <span style="text-decoration: underline;">also</span>
-            run on older devices (&lt;Api 30) (see <a href="#legacy">legacy</a>).<br>
-            Scoped storage is furthur discussed in <a href="https://www.tapatalk.com/groups/rfobasic/viewtopic.php?p=47273#p47273">
-            this forum post</a>. and is mapped in <a href="https://humpity.github.io/promotes/rfo-basic/articles/storage.html">
-            this article</a>.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <big><span style="color: rgb(0, 0, 153);"><a name="permissions" id="scoped"></a>Permissions<br></span></big><br>
-          <div style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">also</SPAN>
+            run on older devices (&lt;Api 30) (see <A href=
+            "#legacy">legacy</A>).<BR>
+            Scoped storage is furthur discussed in <A href=
+            "https://www.tapatalk.com/groups/rfobasic/viewtopic.php?p=47273#p47273">
+            this forum post</A>. and is mapped in <A href=
+            "https://humpity.github.io/promotes/rfo-basic/articles/storage.html">
+            this article</A>.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "permissions" id=
+          "scoped"></A>Permissions<BR></SPAN></BIG><BR>
+          <DIV style="margin-left: 40px;">
             These are likely the permissions required by the user
-            to grant when the app is installed.<br>
+            to grant when the app is installed.<BR>
             Standard hBasic will ask for all dangerous permssions
             at the start of the program if not previously
-            granted.<br>
+            granted.<BR>
             If you don't want to grant any of the permssions and
-            don't want to be asked, select "Don't Ask Again".<br>
-            <br>
+            don't want to be asked, select "Don't Ask Again".<BR>
+            <BR>
             You can un-grant permissions via the devices' Settings
             app, infact, newer Android versions may do this
             automatically if the app is unused for a while. hBasic
             will then prompt for permission the next time it
-            starts.<br>
-            <br>
+            starts.<BR>
+            <BR>
             StandAlone Apps (made via hSuite) can select which
-            permissions will be required.<br>
+            permissions will be required.<BR>
             Only the dangerous ones will be asked for, the others
-            are automatically granted.<br>
-            <br>
-            <table style="text-align: left; width: 80%;" cellspacing="0" cellpadding="5" border="0">
-              <caption>
-                App Dangerous Permissions<br>
-                <br>
-              </caption>
-              <tbody>
-                <tr>
-                  <td style="vertical-align: middle; white-space: nowrap; width: 10%;">
-                  Device Api<br></td>
-                  <td style="vertical-align: middle; width: 10%;">
-                  Codes<br></td>
-                  <td style="vertical-align: middle; width: 80%;">
-                  Requested</td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; white-space;" valign="middle">&lt; Api 23<br></td>
-                  <td style="vertical-align: middle;">&lt; 6(M)<br>
-                  <br></td>
-                  <td style="vertical-align: top;" valign="middle">
-                  One screen requesting all permissions.<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; white-space;" valign="middle">Api 23<br></td>
-                  <td style="vertical-align: top;" valign="middle">
-                  6(M)<br>
-                  <br></td>
-                  <td style="vertical-align: top;" valign="middle">
-                  Media &amp; Files<br>
-                  Device Location<br>
-                  Record Video<br>
-                  Record Audio<br>
-                  Phone Calls<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top; white-space;" valign="middle">Api 30<br></td>
-                  <td style="vertical-align: top;" valign="middle">
-                  11(R)<br>
-                  <br></td>
-                  <td style="vertical-align: top;" valign="middle">
-                  Record Video<br>
-                  Device Location<br>
-                  Record Audio<br>
-                  Phone Calls<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;" valign="middle">
-                  &gt; Api 30<br></td>
-                  <td style="vertical-align: top;" valign="middle">
-                  &gt; 11(R)<br>
-                  <br>
-                  <br>
-                  <br>
-                  &gt; 13(T)<br></td>
-                  <td style="vertical-align: top; width: 50%; white-space;" valign="middle">Record Video<br>
-                  Device Location<br>
-                  Record Audio<br>
-                  Phone Calls<br>
-                  Nearby Devices<br>
-                  Notifications<br></td>
-                </tr>
-                <tr>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top;"><br></td>
-                  <td style="vertical-align: top;"><br></td>
-                </tr>
-              </tbody>
-            </table><br>
-            Older devices (&lt;Api 30) configured to run <a href="#legacy">legacy storage</a> (with base at root of
+            are automatically granted.<BR>
+            <BR>
+            <TABLE style="text-align: left; width: 80%;"
+            cellspacing="0" cellpadding="5" border="0">
+              <CAPTION>
+                App Dangerous Permissions<BR>
+                <BR>
+              </CAPTION>
+              <TBODY>
+                <TR>
+                  <TD style=
+                  "vertical-align: middle; white-space: nowrap; width: 10%;">
+                  Device Api<BR></TD>
+                  <TD style="vertical-align: middle; width: 10%;">
+                  Codes<BR></TD>
+                  <TD style="vertical-align: middle; width: 80%;">
+                  Requested</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">&lt; Api 23<BR></TD>
+                  <TD style="vertical-align: middle;">&lt; 6(M)<BR>
+                  <BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  One screen requesting all permissions.<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">Api 23<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  6(M)<BR>
+                  <BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Media &amp; Files<BR>
+                  Device Location<BR>
+                  Record Video<BR>
+                  Record Audio<BR>
+                  Phone Calls<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top; white-space;"
+                  valign="middle">Api 30<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  11(R)<BR>
+                  <BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  Record Video<BR>
+                  Device Location<BR>
+                  Record Audio<BR>
+                  Phone Calls<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;" valign="middle">
+                  &gt; Api 30<BR></TD>
+                  <TD style="vertical-align: top;" valign="middle">
+                  &gt; 11(R)<BR>
+                  <BR>
+                  <BR>
+                  <BR>
+                  &gt; 13(T)<BR></TD>
+                  <TD style=
+                  "vertical-align: top; width: 50%; white-space;"
+                  valign="middle">Record Video<BR>
+                  Device Location<BR>
+                  Record Audio<BR>
+                  Phone Calls<BR>
+                  Nearby Devices<BR>
+                  Notifications<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+            Older devices (&lt;Api 30) configured to run <A href=
+            "#legacy">legacy storage</A> (with base at root of
             /sdcard) will need permission WRITE_EXTERNAL_STORAGE
-            (Media &amp; Files). This is not needed for <a href="#scoped">Scoped Storage</a>.<br>
-            <br>
-            -End<br>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table><br>
-  <br>
-  <script type="text/javascript" src="https://humpity.github.io/counter.js"></script>
-
-
-</body></html>
+            (Media &amp; Files). This is not needed for <A href=
+            "#scoped">Scoped Storage</A>.<BR>
+            <BR>
+            -End<BR>
+          </DIV>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>

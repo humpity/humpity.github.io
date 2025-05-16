@@ -523,7 +523,9 @@
             true if the screen was touched.<BR>
             If the screen was touched, <SPAN style=
             "font-weight: bold;">x,y</SPAN> are the returned touch
-            coordinates. By default, these are the scaled device
+            coordinates.<BR>
+            <BR>
+            By default, these are the scaled (real) device
             coordinates.<BR>
             The scale is set by set by GR.SCALE. If you do not use
             GR.SCALE, the default scale is 1.0.<BR>
@@ -536,8 +538,8 @@
             <SPAN style="text-decoration: underline;">If</SPAN>
             <SPAN style="font-weight: bold;">unscale</SPAN> is
             given and is true (non-zero), the scaled x,y
-            coordinates are unscaled according to the current
-            screen scale (set by GR.SCALE). This will give you back
+            coordinates are unscaled by the current screen scale
+            (divided by GR.SCALE). This will give you back
             coordinates in the range of your development size.<BR>
             <BR>
           </DIV>
@@ -610,18 +612,32 @@
             true if the screen was touched within the bounds of the
             rectangle <SPAN style="font-weight: bold;">left,
             top,right, bottom</SPAN>.<BR>
-            By default, the rectangle coordinates are expected to
-            be already scaled by the user( relative to
+            <BR>
+            By default, the rectangle coordinates are for the
+            actual (real) screen size.<BR>
+            <SPAN style="text-decoration: underline;">And</SPAN>
+            expected to be already scaled by the user( relative to
             GR.SCALE).<BR>
+            <BR>
+            (Note: <SPAN style="text-decoration: underline;">There
+            is an error in the legacy manual</SPAN> that asks the
+            user to divide coordinates by the GR.SCALE The
+            coordinates should multiply by GR.SCALE (not
+            divide).<BR>
             <BR>
             An optional <SPAN style=
             "font-weight: bold;">scale</SPAN> flag was added and is
             by default false if ommited.<BR>
             If <SPAN style="font-weight: bold;">scale</SPAN> is
             given and is true, the rectangle coordinates will be
-            scaled the same as the current screen scale (set by
-            GR.SCALE). This will test the touch in the scaled range
-            using your non-scaled development coordinates.<BR>
+            scaled <SPAN style="text-decoration: underline;">the
+            same</SPAN> as the current screen scale
+            (multiplied&nbsp; by GR.SCALE). This will test the
+            touch in the scaled (real) range given your non-scaled
+            development coordinates.<BR>
+            <BR>
+            The scale is set by set by GR.SCALE. If you do not use
+            GR.SCALE, the default scale is 1.0.<BR>
             <BR>
             Note that the rectangle is treated with right,bottom as
             exclusive (not part of the rectangle).<SPAN style=
@@ -765,8 +781,9 @@
             Load a bitmap from a file, with optional scaling and
             smoothing.<BR>
             Unlike legacy Basic, the loaded bitmap is made
-            writeable, meaning it can be used directly with
-            Gr.bitmap.drawinto.start.
+            <SPAN style=
+            "text-decoration: underline;">writeable,</SPAN> meaning
+            it can be used directly with Gr.bitmap.drawinto.start.
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <SPAN style="font-weight: bold;">scale</SPAN>
@@ -2069,7 +2086,7 @@
             Tweens are triggered by <A href=
             "#gr_motion">GR.MOTION</A>. They are removed after
             their duration expires.<BR>
-            Tween are executed before any motion.<BR>
+            Tweens are executed before any motion.<BR>
             (see also <A href=
             "functions.html#gr_tweens">GR_TWEENS</A>())<BR>
           </DIV>

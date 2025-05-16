@@ -23,9 +23,11 @@
         <TD style="vertical-align: top; width: 90%;">
           <DIV style="text-align: right;">
             <BIG>hBasic Manual</BIG><BR>
-          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Commands -
-          Changes by category<BR>
-          <BR></BIG></BIG>
+          </DIV><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+2">Commands</FONT>
+          - Changes by category</SPAN></FONT><BR>
+          &nbsp;<BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG></BIG>
           <TABLE style=
           "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
           cellspacing="2" cellpadding="2" border="0">
@@ -89,14 +91,13 @@
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
                 "menu.html">MENU commands</A></TD>
-                <TD style="vertical-align: top;">The action bar
-                menu system</TD>
+                <TD style="vertical-align: top;">Integrated action
+                bar menu system</TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;">File/FTP</TD>
                 <TD style=
-                "vertical-align: top; text-align: right;">
-                File/FTP<BR></TD>
+                "vertical-align: top; text-align: right;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
@@ -152,8 +153,8 @@
                 <TD style="vertical-align: top;"><A href=
                 "functions.html#device_function">DEVICE$
                 (..)<BR></A></TD>
-                <TD style="vertical-align: top;">Gets specific
-                device information as a string<BR></TD>
+                <TD style="vertical-align: top;">The new way to get
+                device info<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -230,20 +231,25 @@
                 <TD style="vertical-align: top;">enhanced<BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;">Other</TD>
-                <TD style=
-                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;">Bundles</TD>
+                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "#multi_input">Accept Multiple Input</A><BR>
-                <A href="#bundle_auto">BUNDLE auto<BR></A></TD>
+                "bundles.html">Bundles</A><BR>
+                <A href="bundle-expr.html">Bundle
+                Expressions</A></TD>
                 <TD style="vertical-align: top;">Multi parameter
-                input.<BR>
-                Bundle 'auto' Mode. (convenience loading for tags
-                and variables)</TD>
+                input, Auto Mode<BR>
+                Can be used to access bundle items<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Other</TD>
+                <TD style=
+                "vertical-align: top; text-align: right;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -332,6 +338,13 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "system.html#popup_position">POPUP</A><BR></TD>
+                <TD style="vertical-align: top;">No longer
+                positions the popup<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
                 <TD style=
                 "vertical-align: top; text-align: right;">SMS
                 commands<BR></TD>
@@ -341,14 +354,23 @@
               </TR>
             </TBODY>
           </TABLE><BR>
+          See Also<BR>
+          <DIV style="margin-left: 40px;">
+            <A href="functions.html">Function Changes</A><BR>
+          </DIV>
         </TD>
       </TR>
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name=
-          "text_writeln" id="ftp_flags"></A>TEXT.WRITELN<BR>
-          <BR>
-          Fixes<BR></BIG>
+          "text_writeln" id="ftp_flags"></A></BIG><SPAN style=
+          "color: rgb(0, 0, 153);">TEXT.WRITELN</SPAN><BIG style=
+          "color: rgb(0, 0, 153);"><BR>
+          <BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "text-decoration: underline;">Fixes</SPAN><BR>
+          </DIV>
           <DIV style="margin-left: 40px;">
             In legacy basic, this command was line-based using a
             buffer to collect continuation text.<BR>
@@ -374,8 +396,8 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
-          <BIG style="color: rgb(0, 0, 153);">FTP.&lt;XXX&gt;
-          Return Flags</BIG><BR>
+          <SPAN style="color: rgb(0, 0, 153);">FTP.&lt;XXX&gt;
+          Return Flags</SPAN><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             An optional return flag was inserted into these FTP
@@ -492,7 +514,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="ftps" id=
-          "ftps"></A>FTPS</BIG> Commands<BIG style=
+          "ftps"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">FTPS</SPAN>
+          Commands</FONT><BIG style=
           "color: rgb(0, 0, 153);"><BR></BIG><BR>
           <DIV style="margin-left: 40px;">
             These commands control the <A href=
@@ -714,8 +738,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="file_flags"
-          id="file_flags"></A>FILE.&lt;XXX&gt; Return
-          Flag</BIG><BR>
+          id="file_flags"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.&lt;XXX&gt; Return
+          Flag</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             An optional ok return flag was inserted into these FILE
@@ -787,7 +812,8 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="file_delete"
-          id="file_delete"></A>FILE.DELETE</BIG><BR>
+          id="file_delete"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">FILE.DELETE</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             The return flag <SPAN style=
@@ -856,22 +882,20 @@
       <TR>
         <TD style="width: 50%;">
           <BIG style="color: rgb(0, 0, 153);"><A name="fn_import"
-          id="fn_import"></A>FN_IMPORT</BIG><BR>
+          id="fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">FN_IMPORT</SPAN></FONT><BR>
           <BR>
-          <DIV style="margin-left: 40px;">
-            This command imports 'global' (main) variables into the
-            function's local variable list as referenced variables
-            with the same name.<BR>
-            <BR>
-            Effectively, you can import main variables into the
-            function with read/write access.<BR>
-            <BR>
-          </DIV>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);">FN.IMPORT</SPAN>
             <SPAN style="color: rgb(102, 51, 0);">nvar | svar |
             array[] | array$[] { <SPAN style=
-            "font-weight: bold;">,</SPAN> ... }</SPAN><BR>
+            "font-weight: bold;">,</SPAN> ... }<BR>
+            <BR></SPAN> This command imports 'global' (main)
+            variables into the function's local variable list as
+            referenced variables with the same name.<BR>
+            <BR>
+            Effectively, you can import main variables into the
+            function with read/write access.<BR>
             <BR>
             e.g &nbsp;&nbsp; &nbsp;FN.IMPORT a, foo$, b[],
             c$[]&nbsp;&nbsp; &nbsp;% imports main variables
@@ -977,7 +1001,8 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="fn_rtn" id=
-          "fn_import"></A>FN_RTN</BIG><BR>
+          "fn_import"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">FN_RTN</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             In legacy Basic, FN.RTN <SPAN style=
@@ -985,7 +1010,7 @@
             alone will produce a syntax error.<BR>
             This has been changed in hBasic (since v2.50).<BR>
             <BR>
-            FN.RTN &lt;something_result&gt; is the similar to
+            FN.RTN &lt;something_result&gt; is similar to
             Legacy,<BR>
             except that it can also <A href=
             "system.html#array_functions">return an array
@@ -996,199 +1021,25 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
-            Also, FN.RTN alone does not syntax error (since v2.50).
-            It will behave the same as FN.END (below)<BR>
+            Also, FN.RTN (alone) does not syntax error (since
+            v2.50). It will behave <SPAN style=
+            "text-decoration: underline;">the same as FN.END</SPAN>
+            (below)<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            FN.END will return a default value.<BR>
-            For a numeric function, it returns 0.<BR>
-            For a string function, it returns an empty string
-            "".<BR>
-            For a numeric array pointer, it returns a
-            one-dimensional array with 0 as the only element.<BR>
-            For a string array pointer, it returns a
-            one-dimensional array with "" as the only element.<BR>
-          </DIV><BR>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <BR>
-          <U><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><A name="multi_input" id=
-          "multi_input"></A></SPAN></FONT></U><SPAN style=
-          "color: rgb(0, 0, 153);"><FONT size="+1">Multiple
-          Input</FONT></SPAN><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            These are enhancements made to <SPAN style=
-            "color: rgb(0, 0, 153);">accept multiple input
-            parameters</SPAN> instead of just one with the same
-            command.<BR style="color: rgb(0, 0, 153);">
-          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">See Also <A href=
-            "graphics.html#multi_input">GR.SHOW and
-            GR.HIDE</A>.<BR>
-            <BR></SPAN>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">BUNDLE.PUT</SPAN>
-            <SPAN style=
-            "color: rgb(102, 51, 0);">&lt;pointer_nexp&gt;,
-            &lt;<SPAN style=
-            "color: rgb(153, 0, 0);">key_sexp</SPAN>&gt;,
-            &lt;<SPAN style=
-            "color: black;">val_nexp</SPAN>&gt;|&lt;<SPAN style=
-            "color: black;">val_sexp</SPAN>&gt; {, &lt;<SPAN style=
-            "color: rgb(153, 0, 0);">key</SPAN>, <SPAN style=
-            "color: black;">val</SPAN>&gt;...}</SPAN><BR>
-            <BR>
-            puts one <SPAN style="text-decoration: underline;">or
-            more</SPAN> objects in a bundle.<BR>
-            e.g<BR>
+            Both FN.END and FN.RTN (alone) will return a default
+            value.<BR>
             <DIV style="margin-left: 40px;">
-              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-              "color: rgb(0, 0, 0);"><SPAN style=
-              "color: rgb(0, 0, 153);">bundle.put</SPAN>
-              mybundle,</SPAN> <SPAN style=
-              "text-decoration: underline;"><SPAN style=
-              "color: rgb(153, 0, 0);">"Key1"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
-              <SPAN style=
-              "text-decoration: underline;">99</SPAN>&nbsp;
-              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-              "color: rgb(0, 0, 0);">,&nbsp;</SPAN> <SPAN style=
-              "text-decoration: underline;"><SPAN style=
-              "color: rgb(153, 0, 0);">"Key2"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN><SPAN style="text-decoration: underline;">"RED"</SPAN><SPAN style="color: rgb(0, 102, 0);">&nbsp;
-              <SPAN style="color: rgb(0, 0, 0);"><SPAN style=
-              "font-weight: bold;">,&nbsp;</SPAN></SPAN>
-              <SPAN style=
-              "text-decoration: underline;"><SPAN style="color: rgb(153, 0, 0);">
-              "Key3"</SPAN></SPAN><SPAN style=
-              "text-decoration: underline;"><SPAN style=
-              "color: rgb(0, 0, 0);"><SPAN style=
-              "font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN><SPAN style="text-decoration: underline;">"Balloons"</SPAN><BR>
-            </DIV><SPAN style="color: rgb(0, 0, 153);"><BR>
-            BUNDLE.GET</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);">&lt;pointer_nexp&gt;,
-            &lt;<SPAN style=
-            "color: rgb(153, 0, 0);">key_sexp</SPAN>&gt;,
-            &lt;<SPAN style=
-            "color: black;">val_nvar</SPAN>&gt;|&lt;<SPAN style=
-            "color: black;">val_svar</SPAN>&gt;</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);">{, &lt;<SPAN style=
-            "color: rgb(153, 0, 0);">key</SPAN>, <SPAN style=
-            "color: black;">val</SPAN>&gt;...}</SPAN><BR>
-            <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN> gets
-            one <SPAN style="text-decoration: underline;">or
-            more</SPAN> objects from a bundle.<BR>
-            e.g<BR>
-            <DIV style="margin-left: 40px;">
-              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-              "color: rgb(0, 0, 0);"><SPAN style=
-              "color: rgb(0, 0, 153);">bundle.get</SPAN>
-              mybundle,</SPAN> <SPAN style=
-              "text-decoration: underline;"><SPAN style=
-              "color: rgb(153, 0, 0);">"Key1"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
-              <SPAN style="text-decoration: underline;">k1</SPAN>
-              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-              "color: rgb(0, 0, 0);"><SPAN style=
-              "font-weight: bold;">,</SPAN></SPAN>&nbsp;
-              <SPAN style=
-              "text-decoration: underline;"><SPAN style="color: rgb(153, 0, 0);">
-              "Key2"</SPAN></SPAN><SPAN style=
-              "text-decoration: underline;"><SPAN style=
-              "color: rgb(0, 0, 0);"><SPAN style=
-              "font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
-              <SPAN style=
-              "text-decoration: underline;">k2$</SPAN><BR>
-              <BR>
+              For a numeric function, it returns 0.<BR>
+              For a string function, it returns an empty string
+              "".<BR>
+              For a numeric array pointer, it returns a
+              one-dimensional array with 0 as the only element.<BR>
+              For a string array pointer, it returns a
+              one-dimensional array with "" as the only
+              element.<BR>
             </DIV>
-          </DIV><U><A name="bundle_auto" id=
-          "bundle_auto"></A></U><SPAN style=
-          "color: rgb(0, 0, 153);"><FONT size="+1">Bundle 'auto'
-          Mode</FONT></SPAN><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            This enhancement made to <SPAN style=
-            "color: rgb(0, 0, 153);">get or put variables with the
-            <SPAN style="text-decoration: underline;">same named
-            tag</SPAN></SPAN> as a convenience.<BR>
-            For '<SPAN style="color: rgb(0, 0, 153);">auto'
-            <SPAN style="color: black;">mod</SPAN></SPAN>e,
-            <SPAN style="text-decoration: underline;">you only have
-            to specify the variable</SPAN> (the tag is matched with
-            the variable).<BR>
-            <BR>
-            '<SPAN style="color: rgb(0, 0, 153);">auto</SPAN>' mode
-            starts with a ' <SPAN style=
-            "color: rgb(0, 0, 153);">{</SPAN> ', followed by a list
-            of comma separated variable names.<BR>
-            &nbsp;and ends with a ' <SPAN style=
-            "color: rgb(0, 0, 153);">}</SPAN> '.<BR>
-            <BR>
-            Variables must be numeric or strings. They cannot be
-            arrays, array cells, literal numbers nor literal
-            strings or you will get a syntax error.<BR>
-            <BR>
-            The matching tags will be <SPAN style=
-            "color: rgb(153, 0, 0); text-decoration: underline;">lower
-            case</SPAN> with <SPAN style=
-            "color: rgb(153, 0, 0);"><SPAN style=
-            "text-decoration: underline;">no
-            spaces</SPAN>.</SPAN>&nbsp;&nbsp;&nbsp; (Basic will
-            always lower case all variable names)<BR>
-            The matching tags which are strings will also have the
-            ending ' <SPAN style="color: rgb(0, 0, 153);">$</SPAN>
-            '.<BR>
-            &nbsp;e.g'<BR>
           </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 102, 0);">BUNDLE.PUT</SPAN>
-            mybundle, <SPAN style=
-            "color: rgb(102, 0, 0);"><SPAN style=
-            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
-            <SPAN style="color: black;">v1, v2$, v3</SPAN>
-            <SPAN style=
-            "font-weight: bold; color: rgb(0, 0, 153);">}</SPAN></SPAN><BR>
-
-            <SPAN style="color: rgb(0, 0, 153);">puts into the
-            bundle using tags</SPAN> "v1", "v2$", "v3"&nbsp; with
-            content <SPAN style=
-            "color: rgb(0, 0, 153);">from</SPAN> variables v1, v2$,
-            v3<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 102, 0);">BUNDLE.GET</SPAN>
-            mybundle, <SPAN style=
-            "color: rgb(102, 0, 0);"><SPAN style=
-            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
-            <SPAN style="color: black;">v1, v2$, v3</SPAN>
-            <SPAN style=
-            "font-weight: bold; color: rgb(0, 0, 153);">}</SPAN><BR>
-            </SPAN> <SPAN style=
-            "color: rgb(0, 0, 153);">gets</SPAN> <SPAN style=
-            "color: rgb(0, 0, 153);">content from bundle using
-            tags</SPAN> "v1","v2$","v3" <SPAN style=
-            "color: rgb(0, 0, 153);">into</SPAN> variables v1, v2$,
-            v3
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            '<SPAN style="color: rgb(0, 0, 153);">auto'</SPAN> mode
-            can also be mixed in with '<SPAN style=
-            "color: rgb(102, 0, 0);">normal mode</SPAN>;<BR>
-            <BR>
-            <SPAN style="color: rgb(0, 102, 0);">BUNDLE.PUT</SPAN>
-            mybundle, <SPAN style=
-            "color: rgb(102, 0, 0);">"mytag0", v0,</SPAN>&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);"><SPAN style=
-            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
-            <SPAN style="color: black;">v1, v2$, v3</SPAN>
-            <SPAN style=
-            "font-weight: bold; color: rgb(0, 0, 153);">},</SPAN></SPAN>&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);">"mytag4",
-            44</SPAN><BR>
-          </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
         </TD>
       </TR>
       <TR>
@@ -1442,14 +1293,14 @@
           "color: rgb(0, 0, 153);"><FONT size=
           "+1">REDIM</FONT><BR></SPAN><BR>
           <DIV style="margin-left: 40px;">
-            Re-Dimensions an existing array with optional 'preserve
-            contents' flag.<BR>
-            <SPAN style="color: rgb(0, 0, 153);"><BR>
-            REDIM</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);">{<SPAN style=
+            <SPAN style="color: rgb(0, 0, 153);">REDIM</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
             "color: black;">preserve</SPAN>_nexp, }
             Array[&lt;nexp&gt;{, &lt;nexp&gt; } ... ]
             ...</SPAN><BR style="color: rgb(102, 51, 0);">
+            <BR>
+            Re-Dimensions an existing array with optional 'preserve
+            contents' flag.<BR>
             <BR>
             e.g<BR>
             <BR>
@@ -1601,8 +1452,7 @@
         <TD style="vertical-align: top;">
           <A name="program_info" id="program_info"></A><SPAN style=
           "color: rgb(0, 0, 153);"><FONT size=
-          "+1">PROGRAM.INFO</FONT><BR>
-          <BR></SPAN>
+          "+1">PROGRAM.INFO</FONT><BR></SPAN>
           <BLOCKQUOTE>
             In addition to the standard info from Program.Info,
             these items were added :<BR>
@@ -1753,7 +1603,6 @@
           <A name="debug_dump_fn" id=
           "debug_dump_fn"></A><FONT size="+1" color=
           "#000099">DEBUG.DUMP.FN</FONT><BR>
-          <BR>
           <BLOCKQUOTE>
             <FONT size="+1" color="#000099">DEBUG.DUMP.FN</FONT>
             {level<SPAN style=
@@ -1771,8 +1620,10 @@
               1 - print only the last level (current function)<BR>
               2 - print two levels (last + previous caller)<BR>
               ..etc...<BR>
-              0 - print all levels
-            </BLOCKQUOTE>
+              0 - print all levels<BR>
+            </BLOCKQUOTE>This is an enhancement to Legacy Basic's
+            Debug commands (legacy manual v1.91 page 92).<BR>
+            To use it, you must have DEBUG.ON.<BR>
           </BLOCKQUOTE>
         </TD>
       </TR>
@@ -1782,8 +1633,7 @@
           "color: rgb(0, 0, 153);"><FONT size=
           "+1">INPUT</FONT><BR></SPAN>
           <BLOCKQUOTE>
-            <FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">INPUT</SPAN></FONT>
+            <SPAN style="color: rgb(0, 0, 153);">INPUT</SPAN>
             <SPAN style="color: rgb(0, 0, 153);"><FONT color=
             "#663300">{</FONT></SPAN>prompt<SPAN style=
             "color: rgb(0, 0, 153);"><FONT color=
@@ -1810,7 +1660,8 @@
       <TR>
         <TD style="width: 50%;">
           <BIG style="color: rgb(0, 0, 153);"><A name="text_input"
-          id="text_input"></A>TEXT.INPUT</BIG><BR>
+          id="text_input"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             A <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
@@ -1995,7 +1846,8 @@
             Triggered if the device changes orientation.<BR>
             The device must be in auto-rotate mode (by sensors)
             which can be set with <A href=
-            "console.html#orient">CONSOLE.ORIENT</A> -1,<BR>
+            "console.html#console_orient">CONSOLE.ORIENT</A>
+            -1,<BR>
             GR.ORIENTATION -1 or HTML.ORIENTATION as well as
             GR.OPEN and&nbsp; HTML.OPEN.<BR>
             <BR>
@@ -2028,8 +1880,9 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
-          <A name="list_create" id=
-          "list_create"></A>LIST.CREATE<BR>
+          <A name="list_create" id="list_create"></A><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">LIST.CREATE</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             <FONT color="#000099">LIST.CREATE</FONT>&nbsp;
@@ -2122,7 +1975,9 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
-          <A name="audio_play" id="audio_play"></A>AUDIO.PLAY<BR>
+          <A name="audio_play" id="audio_play"></A><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">AUDIO.PLAY</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             <FONT color="#000099">AUDIO.PLAY</FONT>&nbsp;

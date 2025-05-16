@@ -2,6 +2,14 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2025-05-16 v5.35
+		Android decides POPUP position (0531)
+		DEVICE$(..) add more items	(0532)
+			"nightmode"				(-Spike)
+			"orient_lock" 
+		BUNDLE.CREATE more than one bundle (0533)
+		Add back Bundle Expressions (0534)
+		Fix double execution (0535)
 
 2025-03-10 v5.30
 		GR.BITMAP.LOAD Fix return -1 on error (-Spike) (0526)
@@ -17,7 +25,7 @@ Date		Summary of Versions			(hcodes in brackets)
 2025-01-01 v5.25
 		Fix Menu.Show after Menu.Set(0522)
 		Fix help-commands keyboard (0523)
-		Added Console.Set "StatusTxt" and "NavBarTxt" (0524)
+		Add Console.Set "StatusTxt" and "NavBarTxt" (0524)
 		Legacy storage support (-Spike) (0525)
 
 2024-12-17 v5.21
@@ -300,7 +308,7 @@ Date		Summary of Versions			(hcodes in brackets)
 
 2020-07-19	v3.00	(0300, K0001)
 		Scoped Storage
-			Base directory moved to Scoped Storage. 
+			Base directory moved to Scoped Storage.
 			Removed legacy storage access
 		minSdkVersion bumped up to API-19 (KitKat)
 		Package name changed from com.rfo.basich to com.rfo.hbasic
@@ -452,7 +460,7 @@ v4.15	v2.12	Merged 0413-0415 html.open
 v4.21	v2.13	Merged 0416-0421
 v4.30	v2.14	Merged 0422-0430 Targets API-31
 v4.36	v2.15	Merged 0431-0438
-v4.39	v2.16	Merged 0439	 Installable on Android 12
+v4.39	v2.16	Merged 0439	 	 Installable on Android 12
 v4.48	v2.17	Merged 0440-0448
 v4.49   v2.18   Merged 0449
 v4.60	v2.19   Merged 0450-0460 Targets API-33
@@ -469,10 +477,11 @@ v5.20	v2.29	Merged 0511-0512, 0520 Targets API-35
 v5.21	v2.30	Merged 0521
 v5.25	v2.31   Merged 0522-0525 Legacy device support
 v5.30	v2.32   Merged 0526-0530 Fixes for Android 15 gui
+v5.35	v2.33   Merged 0531-0535 Fix double execution, Bundle Exps
 
 ============================================================================
 Patches that were created.
-	O = optional S = suspended (do not use)	D = defunct U=Upgraded
+	O = optional S = suspended (do not use)	D = defunct
 	M = Merged to hmaster and patch deleted (do not use after)
 Patch		hCode
 H0100	M	0100	FN.IMPORT
@@ -485,7 +494,7 @@ H0150	M	0150	Multi input for gr.hide/show bundle.put/get
 
 H0160	M	0160 + 0161
 			faster byte.write.buffer
-H0210	S	0210 (+ 0211)	bundle.key expressions
+H0210	D	0210 + 0211	bundle.key expressions (see 0534)
 H0220	M	0220	Array pointers and assignment
 H0230	M	0230	REDIM
 H0240	M	0240	Array Functions 
@@ -505,7 +514,7 @@ H0291	M	0291	Device.OS
 H0293	M	0293	Fix crash for DEVICE on Android-10+
 K0001   M	0300	Fix Sensors with less then 3 Return Values. ack:dkal,afox
 H0301	D	0301	Embeded an FTP server
-HFTPS	O	0301	Renamed patch and changed Ftp command port from 1025 to 2345
+FTPS	D	0301	Renamed patch and changed Ftp command port from 1025 to 2345
 H0303	M	0303	Fix Gr.Modify Group "list" and tidy up code. ack:afox
 H0304	M	0304	Fix status bar for Gr.Open on Android 11 devices. ack:dkal
 H0305	M	0305	Fix DEVICE permission for Android 11+. ack:dkal
@@ -513,6 +522,8 @@ H0306	M	0306	Fix invalid base paths
 H0312	D	0312	BACKSPACE and re-code append mode for PRINT
 HFTPS	O	0321	add Rename
 HFTPS	O	0333	basic can control hftps
+ADDTEL  O   +ADDTEL adds DEVICE & PHONE cmds (for standard edition)
+
 ============================================================================
 (hCodes details have been discontinued)
 -End-

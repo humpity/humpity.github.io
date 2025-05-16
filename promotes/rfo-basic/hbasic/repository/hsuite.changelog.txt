@@ -2,6 +2,12 @@ hSuite changelog
 
 Date		Summary of Versions
 --------------- -------------------------------------------
+2025-05-16	v3.29
+		hmaster v2.33
+		hpatcher v3.22
+			Settings can now be saved & loaded
+			Add Loading option: StartUp Color
+		New patch: ADDTEL - adds back DEVICE & PHONE cmds
 
 2025-03-10	v3.28
 		hmaster v2.32

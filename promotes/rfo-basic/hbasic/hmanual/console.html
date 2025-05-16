@@ -35,7 +35,7 @@
                 <TD style="vertical-align: top;"><A href=
                 "#backspace">BACKSPACE</A><BR></TD>
                 <TD style="vertical-align: top; width: 90%;">Delete
-                character of last row<BR></TD>
+                character at end of last row<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -806,10 +806,19 @@
             </DIV>
             <DIV style="margin-left: 80px;">
               <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              CONSOLE.BACKIMG</SPAN> "image.jpg"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              "font-family: Courier New, Courier, monospace;">.cs
+              "<SPAN style="color: rgb(0, 102, 0);">textcolor
+              lightblue, backcolor #00000000</SPAN>"<SPAN style=
+              "color: rgb(0, 0, 153);"><BR></SPAN> console.orient
+              -1<BR>
+              <BR>
               <SPAN style=
+              "color: rgb(0, 0, 153);">CONSOLE.BACKIMG</SPAN>
+              "<SPAN style=
+              "color: rgb(102, 0, 0);">cartman.png</SPAN>"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+
+              print "<SPAN style="color: rgb(0, 102, 0);">Rotate
+              device to reload</SPAN>"<BR></SPAN> <SPAN style=
               "font-family: Courier New, Courier, monospace;">do:
               pause 100: until 0</SPAN><SPAN style=
               "font-family: Courier New, Courier, monospace;"><BR></SPAN>
@@ -824,11 +833,13 @@
               <DIV style="margin-left: 40px;">
                 <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-                CONSOLE.BACKIMG</SPAN>
-                "image.jpg"</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
-                "color: rgb(102, 102, 102);">% reload the
-                background<BR></SPAN> PRINT "Now is " +
-                DEVICE$("Orient_Simple")<BR>
+                CONSOLE.BACKIMG</SPAN> "<SPAN style=
+                "color: rgb(102, 0, 0);">cartman.png</SPAN>"</SPAN>&nbsp;&nbsp;&nbsp;
+                <SPAN style="color: rgb(102, 102, 102);">% reload
+                the background<BR></SPAN> PRINT "<SPAN style=
+                "color: rgb(0, 102, 0);">Now is</SPAN> " +
+                DEVICE$("<SPAN style=
+                "color: rgb(0, 102, 0);">Orient_Simple</SPAN>")<BR>
               </DIV><SPAN style=
               "color: rgb(102, 0, 0);"><SPAN style=
               "font-family: Courier New, Courier, monospace;">ORIENT.Resume</SPAN></SPAN><BR>
@@ -843,12 +854,11 @@
               <DIV style="margin-left: 40px;">
                 <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><A href="console.html#cs_shortcut">
-                .CS</A></SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><A href="#backcolor">BACKCOLOR</A></SPAN>
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;">#00000000"</SPAN>&nbsp;&nbsp;&nbsp;
-                <SPAN style="color: rgb(102, 102, 102);">% let
-                image show through</SPAN><BR>
+                </A><A href="console.html#cs_shortcut">.CS</A>
+                "<A href="#backcolor">BACKCOLOR</A>
+                #00000000"&nbsp;</SPAN>&nbsp;&nbsp; <SPAN style=
+                "color: rgb(102, 102, 102);">% let image show
+                through</SPAN><BR>
               </DIV><BR>
               <DIV style="margin-left: 40px;"></DIV>
             </DIV>
@@ -1801,6 +1811,48 @@
             You can ensure non-wrapping with <A href=
             "#cs_shortcut"><SPAN style=
             "color: rgb(0, 0, 153);">.CS</SPAN></A> "WRAP OFF".<BR>
+            <BR>
+            Eg.<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">?
+              "&nbsp;&nbsp;&nbsp;&nbsp; Tap_Here_1"</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">?
+              "&nbsp;&nbsp;&nbsp;&nbsp; Tap_Here_2"</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">tapped=0</SPAN><BR>
+
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">do</SPAN><BR>
+
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;
+              pause 100</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">until
+              tapped</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">end</SPAN><BR>
+
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">onConsoleTouch:</SPAN><BR>
+
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              <SPAN style=
+              "color: rgb(0, 0, 153);">Console.Tapped</SPAN>
+              ,,w$</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              ? "You tapped ";w$<BR></SPAN>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              tapped=1<BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">ConsoleTouch.Resume</SPAN><BR>
+            </DIV>
           </BLOCKQUOTE>
         </TD>
       </TR>
@@ -1838,13 +1890,14 @@
             "text-decoration: underline;">unused</SPAN>, the
             default setting is the same as Editor's Preferences but
             does not affect it.<BR>
-            <BR>
-            In APK mode (StandAlone), If this command is unused ,
-            the default setting is based on sensors
+            <I>(Since v4.91+ This setting no longer affects the
+            Editor Preferences orientation value.)<BR>
+            <BR></I> In APK mode (StandAlone), If this command is
+            unused , the default setting is based on sensors
             (auto-rotate).<BR>
             <BR>
-            <I>(Since v4.91+ This setting no longer affects the
-            Editor Preferences orientation value.)</I><BR>
+            See also <A href=
+            "commands.html#onorient">ONORIENT</A><BR>
           </BLOCKQUOTE>
         </TD>
       </TR>

@@ -24,7 +24,7 @@
           <DIV style="text-align: right;">
             <BIG>hBasic Manual</BIG><BR>
           </DIV><FONT size="+2" color="#000099">Function
-          changes</FONT><BIG><BIG style=
+          <FONT size="+1">changes</FONT></FONT><BIG><BIG style=
           "color: rgb(0, 0, 153);"><BR>
           <BR></BIG></BIG>
           <TABLE style="text-align: left; width: 90%;" cellspacing=
@@ -110,7 +110,8 @@
       <TR>
         <TD style="vertical-align: top;">
           <SPAN style="color: rgb(0, 0, 153);"><A name="int" id=
-          "int"></A>INT (..) and INT$ (..)</SPAN><BIG style=
+          "int"></A><FONT size="+1">INT (..) and INT$
+          (..)</FONT></SPAN><BIG style=
           "color: rgb(0, 0, 153);"><BR></BIG>
           <DIV style="margin-left: 40px;">
             <BR>
@@ -155,7 +156,9 @@
         <TD style="vertical-align: top;">
           <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="device_function" id=
-          "device_function"></A>DEVICE$ ()<BR>
+          "device_function"></A></SPAN><SPAN style=
+          "color: rgb(0, 0, 153);">DEVICE$ ()</SPAN><SPAN style=
+          "color: rgb(0, 0, 153);"><BR>
           <BR></SPAN></FONT>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);">DEVICE$ (</SPAN>
@@ -168,13 +171,15 @@
             <BR>
             Gets device information without needing
             permissions.<BR>
-            This function is an alternative to the legacy DEVICE
-            sub-commands<BR>
+            <BR>
+            (This function is similar /but not the same/ as the
+            legacy DEVICE and&nbsp; sub commands).<BR>
             <BR>
             Pass a <SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
             "color: black;">key</SPAN>_sexp</SPAN> to get
             information about the key.<BR>
+            <BR>
             e.g<BR>
             <BLOCKQUOTE>
               <FONT face="Courier New, Courier, monospace">a$ =
@@ -286,16 +291,44 @@
                       </DIV>
                     </TD>
                   </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">"<A href=
+                    "#orient_locked">ORIENT_LOCK</A>"</TD>
+                    <TD style="vertical-align: top;">"Yes"<BR></TD>
+                    <TD style="vertical-align: top;">
+                      User specified rotation Locking<BR>
+                      <DIV style="margin-left: 40px;">
+                        "Yes", "No",&nbsp; "" <SPAN style=
+                        "color: rgb(102, 102, 102);">( empty means
+                        undefined )</SPAN>
+                      </DIV>
+                    </TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">
+                    "NIGHTMODE"<BR></TD>
+                    <TD style="vertical-align: top;">"Off"<BR></TD>
+                    <TD style="vertical-align: top;">
+                      <SPAN style="color: rgb(0, 0, 153);">Night
+                      Mode</SPAN> status (dark mode)<BR>
+                      <DIV style="margin-left: 40px;">
+                        "On", "Off",&nbsp; "" <SPAN style=
+                        "color: rgb(102, 102, 102);">( empty means
+                        undefined )</SPAN><BR>
+                      </DIV>
+                    </TD>
+                  </TR>
                 </TBODY>
               </TABLE>
             </BLOCKQUOTE>All keys are case-insensitive.<BR>
+            Results are mixed case.<BR>
             <BR>
             Notes:<BR>
             <DIV style="margin-left: 40px;">
               Returned value is a string. You may have to use
               IS_NUMBER and VAL to parse it for a number.<BR>
-              (This function is similar /but not the same/ as the
-              legacy DEVICE and&nbsp; sub commands).<BR>
+              If the return string is empty, it means a value could
+              not be obtained.<BR>
               <BR>
               Depending on the hardware manufacturer,&nbsp; some
               items may not be accurate,<BR>
@@ -316,6 +349,26 @@
               <A href="commands.html#onorient">OnORIENT
               ..ORIENT.Resume</A>.<BR>
             </DIV><BR>
+            <A name="orient_locked" id=
+            "orient_locked"></A>ORIENT_LOCK<BR>
+            <DIV style="margin-left: 40px;">
+              Returns whether or not the system setting has
+              requested to lock the orientation (i.e auto-rotate
+              off)<BR>
+              via the systems settings or quick-panel.<BR>
+              Internally, Basic ignores this user setting when
+              executing orientation changes ( e.g <A href=
+              "console.html#console_orient">Console.Orient</A>
+              )<BR>
+              but now you can decide what to do after interrogating
+              this key.<BR>
+            </DIV><BR>
+            NIGHTMODE<BR>
+            <DIV style="margin-left: 40px;">
+              Returns whether or not the system setting is set to
+              nightmode (i.e dark mode)<BR>
+              <BR>
+            </DIV>
           </DIV>
         </TD>
       </TR>
@@ -348,7 +401,7 @@
                 </TD>
                 <TD style=
                 "vertical-align: top; white-space: nowrap;">returns
-                a base version<BR></TD>
+                the base version that built the app<BR></TD>
               </TR>
             </TBODY>
           </TABLE><BR>
@@ -366,8 +419,9 @@
               "Courier New, Courier, monospace">04.30<BR>
               02.14</FONT><BR>
             </DIV><BR>
-            The current version of hBasic e.g 04.30 is equal to the
-            master version with almost ALL patches applied.<BR>
+            The current version of hBasic e.g 04.30 is equivalent
+            to the master version with almost all patches
+            applied.<BR>
             <BR>
             The master version e.g 02.14 is the code base version
             used to build hBasic. This is the master shipped with
@@ -388,10 +442,11 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="word_all"
-          id="word_all"></A></BIG><SPAN style=
+          id="word_all"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">WORD_ALL$ ( ..
-          )</SPAN><BIG style="color: rgb(0, 0, 153);"><BR></BIG>
-          <FONT size="+1"><TT><BR></TT></FONT>
+          )</SPAN></FONT><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG> <FONT size=
+          "+1"><TT><BR></TT></FONT>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);">WORD_ALL$</SPAN>
             <SPAN style=
@@ -411,24 +466,34 @@
             e.g<BR>
             <DIV style="margin-left: 40px;">
               <SPAN style=
-              "font-family: Courier New,Courier,monospace; color: rgb(0, 102, 0);">
-              s$ = "<SPAN style=
-              "color: black;">,,1,2,3,,</SPAN>"&nbsp;&nbsp;&nbsp;
+              "font-family: Courier New, Courier, monospace;">s$ =
+              <SPAN style=
+              "color: rgb(0, 102, 0);">"</SPAN><SPAN style=
+              "color: rgb(0, 102, 0);">,,1,2,3,,</SPAN><SPAN style=
+              "color: rgb(0, 102, 0);">"</SPAN></SPAN><SPAN style=
+              "font-family: Courier New,Courier,monospace; color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
               <SPAN style="color: rgb(51, 51, 51);">% get the 3rd
               word/column</SPAN></SPAN><BR style=
               "font-family: Courier New,Courier,monospace;">
               <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT</SPAN>
+              <SPAN style=
               "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
-              PRINT <SPAN style=
-              "color: rgb(0, 0, 153);">WORD$</SPAN>
-              (s$,3,"<SPAN style=
-              "color: black;">,</SPAN>")&nbsp;&nbsp;&nbsp;
+              <SPAN style=
+              "color: rgb(0, 0, 153);">WORD$</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">(</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">s$,3,</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">"</SPAN><SPAN style="color: rgb(0, 102, 0);">,</SPAN><SPAN style="color: rgb(0, 102, 0);">"</SPAN>)</SPAN><SPAN style="color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp; <SPAN style=
-              "color: rgb(51, 51, 51);">% 3<BR></SPAN> PRINT
-              <SPAN style="color: rgb(0, 0, 153);">WORD_ALL$</SPAN>
-              (s$,3,"<SPAN style=
-              "color: black;">,</SPAN>")&nbsp;&nbsp;&nbsp;
+              "color: rgb(51, 51, 51);">% 3<BR></SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT</SPAN>
+              <SPAN style=
+              "color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">
+              <SPAN style=
+              "color: rgb(0, 0, 153);">WORD_ALL$</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">(s$,3,<SPAN style="color: rgb(0, 102, 0);">"</SPAN><SPAN style="color: rgb(0, 102, 0);">,</SPAN><SPAN style="color: rgb(0, 102, 0);">"</SPAN>)</SPAN><SPAN style="color: rgb(0, 102, 0); font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
               <SPAN style="color: rgb(51, 51, 51);">%
               1</SPAN></SPAN><BR style=
               "font-family: Courier New,Courier,monospace; color: rgb(0, 102, 0);">
@@ -600,7 +665,8 @@
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
             <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
-            PRINT GR_TWEENS(,"alpha")
+            PRINT GR_TWEENS(,<SPAN style=
+            "color: rgb(0, 102, 0);">"alpha"</SPAN>)
             &nbsp;&nbsp;</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
             <SPAN style="color: rgb(51, 51, 51);">%</SPAN>
             <SPAN style="color: rgb(51, 51, 51);">all alpha
@@ -617,8 +683,8 @@
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
             <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
-            PRINT
-            GR_TWEENS(,"alpha",1)&nbsp;</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
+            PRINT GR_TWEENS(,<SPAN style=
+            "color: rgb(0, 102, 0);">"alpha"</SPAN>,1)&nbsp;</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN>
             <SPAN style="color: rgb(51, 51, 51);">% all alpha
             tweens, even if not on display</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>

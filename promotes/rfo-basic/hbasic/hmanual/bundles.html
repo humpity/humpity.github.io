@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Bundles</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; Bundles<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Changes to
+          Bundles</BIG></BIG><BR>
+          <BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#multi-input">Multiple Input</A><BR></TD>
+                <TD style="vertical-align: top;">Access more than
+                one key with one command<BR>
+                <A href="#bundle-create">BUNDLE.CREATE</A><BR>
+                <A href="bundle-put">BUNDLE.PUT</A><BR>
+                <A href="bundle-get">BUNDLE.GET</A><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="#auto-mode">Auto-Mode</A></TD>
+                <TD style="vertical-align: top;">Matches keys with
+                same named variables<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#chained"><FONT size="+1"><BR></FONT></A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "bundle-expr.html">Bundle Expressions</A><BR></TD>
+                <TD style="vertical-align: top;">A new way to
+                access bundle items<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <BIG style="color: rgb(0, 0, 153);"><A name="multi-input"
+          id="fn_import"></A>Multiple-Input<BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            These are enhancements made to <SPAN style=
+            "color: rgb(0, 0, 153);">accept multiple input
+            parameters</SPAN> with the same command.<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "bundle-create" id=
+            "bundle-create"></A>BUNDLE.CREATE</SPAN>
+            pointer<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN> <SPAN style=
+            "font-weight: bold;">{,</SPAN> pointer_<SPAN style=
+            "color: rgb(102, 51, 0);">nvar</SPAN>...<SPAN style=
+            "font-weight: bold;">}</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              creates one <SPAN style=
+              "text-decoration: underline;">or more</SPAN>
+              bundle(s) and puts the index in the pointer.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">bundle.create</SPAN> b1, b2,
+            b3, b4</SPAN></SPAN><BR>
+          </DIV><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "bundle-put" id="bundle-put"></A>BUNDLE.PUT</SPAN>
+            pointer<SPAN style="color: rgb(102, 51, 0);">_nexp,
+            <SPAN style="color: rgb(153, 0, 0);">key<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-weight: bold;">,</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">&lt;val_<SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN></SPAN></SPAN>
+            <SPAN style="font-weight: bold;">|</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">val<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp&gt;</SPAN></SPAN></SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(153, 0, 0);">key</SPAN>, <SPAN style=
+            "color: black;">val</SPAN></SPAN>...<SPAN style=
+            "font-weight: bold;">}</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              puts one <SPAN style="text-decoration: underline;">or
+              more</SPAN> objects in a bundle.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">bundle.put</SPAN>
+            mybundle<SPAN style=
+            "font-weight: bold;">_nexp,</SPAN></SPAN>&nbsp;
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(153, 0, 0);">"Key1"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
+            <SPAN style=
+            "text-decoration: underline;">99</SPAN>&nbsp;
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 0);">,&nbsp;</SPAN> <SPAN style=
+            "text-decoration: underline;"><SPAN style=
+            "color: rgb(153, 0, 0);">"Key2"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN><SPAN style="text-decoration: underline;">"RED"</SPAN><SPAN style="color: rgb(0, 102, 0);">&nbsp;
+            <SPAN style="color: rgb(0, 0, 0);"><SPAN style=
+            "font-weight: bold;">,&nbsp;</SPAN></SPAN> <SPAN style=
+            "text-decoration: underline;"><SPAN style=
+            "color: rgb(153, 0, 0);">"Key3"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN><SPAN style="text-decoration: underline;">"Balloons"</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "bundle-get" id="bundle-get"></A>BUNDLE.GET</SPAN>
+            pointer<SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(153, 0, 0);">key<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,</SPAN>
+            &lt;<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">val<SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>&gt;</SPAN><SPAN style="font-weight: bold;">|</SPAN><SPAN style="color: rgb(102, 51, 0);">&lt;<SPAN style="color: black;">val<SPAN style="color: rgb(102, 51, 0);">_svar</SPAN></SPAN></SPAN>&gt;
+            {, <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(153, 0, 0);">key</SPAN>, <SPAN style=
+            "color: black;">val</SPAN>.</SPAN>..}<BR>
+            <DIV style="margin-left: 40px;">
+              gets one <SPAN style="text-decoration: underline;">or
+              more</SPAN> objects from a bundle.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "color: rgb(0, 0, 153);">bundle.get</SPAN>
+              mybundle,</SPAN>&nbsp; <SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "color: rgb(153, 0, 0);">"Key1"</SPAN></SPAN><SPAN style="text-decoration: underline;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
+              <SPAN style="text-decoration: underline;">k1</SPAN>
+              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN></SPAN>&nbsp;
+              <SPAN style=
+              "text-decoration: underline;"><SPAN style="color: rgb(153, 0, 0);">
+              "Key2"</SPAN></SPAN><SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "color: rgb(0, 0, 0);"><SPAN style=
+              "font-weight: bold;">,</SPAN></SPAN></SPAN></SPAN>
+              <SPAN style=
+              "text-decoration: underline;">k2$</SPAN><BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <U><A name="auto-mode" id=
+          "bundle_auto"></A></U><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">'Auto'
+          Mode</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            This enhancement made to <SPAN style=
+            "color: rgb(0, 0, 153);">get or put variables with the
+            <SPAN style="text-decoration: underline;">same named
+            tag</SPAN></SPAN> as a convenience.<BR>
+            For '<SPAN style="color: rgb(0, 0, 153);">auto'
+            <SPAN style="color: black;">mod</SPAN></SPAN>e,
+            <SPAN style="text-decoration: underline;">you only have
+            to specify the variable</SPAN> (the tag is matched with
+            the variable).<BR>
+            <BR>
+            '<SPAN style="color: rgb(0, 0, 153);">auto</SPAN>' mode
+            starts with a ' <SPAN style=
+            "color: rgb(0, 0, 153);">{</SPAN> ', followed by a list
+            of comma separated variable names.<BR>
+            &nbsp;and ends with a ' <SPAN style=
+            "color: rgb(0, 0, 153);">}</SPAN> '.<BR>
+            <BR>
+            Variables must be numeric or strings. They cannot be
+            arrays, array cells, literal numbers nor literal
+            strings or you will get a syntax error.<BR>
+            <BR>
+            The matching tags will be <SPAN style=
+            "color: rgb(153, 0, 0); text-decoration: underline;">lower
+            case</SPAN> with <SPAN style=
+            "color: rgb(153, 0, 0);"><SPAN style=
+            "text-decoration: underline;">no
+            spaces</SPAN>.</SPAN>&nbsp;&nbsp;&nbsp; (Basic will
+            always lower case all variable names)<BR>
+            The matching tags which are strings will also have the
+            ending ' <SPAN style="color: rgb(0, 0, 153);">$</SPAN>
+            '.<BR>
+            &nbsp;e.g'<BR>
+            <BR>
+            Normal Mode<BR>
+            <DIV style="margin-left: 40px;">
+              BUNDLE.PUT mybundle, <SPAN style=
+              "color: rgb(102, 0, 0);">"v1"</SPAN>, v1<BR>
+              <BR>
+            </DIV>Multii-Mode<BR>
+            <DIV style="margin-left: 40px;">
+              BUNDLE.PUT mybundle, <SPAN style=
+              "color: rgb(102, 0, 0);">"v1"</SPAN>, v1,&nbsp;
+              <SPAN style="color: rgb(102, 0, 0);">"v2"</SPAN>,
+              v2<SPAN style="color: rgb(102, 0, 0);">,&nbsp;
+              "v3"</SPAN>, v3
+            </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Auto Mode<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 0, 153);">BUNDLE.PUT</SPAN>
+            mybundle, <SPAN style=
+            "color: rgb(102, 0, 0);"><SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
+            <SPAN style="color: black;">v1, v2$, v3</SPAN>
+            <SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">}</SPAN></SPAN><BR>
+
+            Puts into the bundle using tags <SPAN style=
+            "color: rgb(102, 0, 0);">"v1", "v2$", "v3"</SPAN>&nbsp;
+            with content <SPAN style=
+            "text-decoration: underline;">from</SPAN> variables v1,
+            v2$, v3<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 0, 153);">BUNDLE.GET</SPAN>
+            mybundle, <SPAN style=
+            "color: rgb(102, 0, 0);"><SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
+            <SPAN style="color: black;">v1, v2$, v3</SPAN>
+            <SPAN style=
+            "font-weight: bold; color: rgb(0, 0, 153);">}</SPAN><BR>
+            </SPAN> Gets content from bundle using tags
+            <SPAN style="color: rgb(102, 0, 0);">"v1","v2$","v3"</SPAN>
+            <SPAN style="text-decoration: underline;">into</SPAN>
+            variables v1, v2$, v3
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Mixed Mode<BR>
+            <DIV style="margin-left: 40px;">
+              '<SPAN style="color: rgb(0, 0, 153);">auto'</SPAN>
+              mode can also be mixed with <SPAN style=
+              "color: rgb(0, 0, 153);">'multi'</SPAN> mode;<BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">BUNDLE.PUT</SPAN> mybundle,
+              <SPAN style="color: rgb(102, 0, 0);">"mytag0",</SPAN>
+              v0<SPAN style="color: rgb(102, 0, 0);">,</SPAN>&nbsp;
+              <SPAN style="color: rgb(102, 0, 0);"><SPAN style=
+              "font-weight: bold; color: rgb(0, 0, 153);">{</SPAN>
+              <SPAN style="color: black;">v1, v2$, v3</SPAN>
+              <SPAN style=
+              "font-weight: bold; color: rgb(0, 0, 153);">},</SPAN></SPAN>&nbsp;
+              <SPAN style="color: rgb(102, 0, 0);">"mytag1",</SPAN>
+              101<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <BR>
+          <DIV style="margin-left: 80px;"></DIV>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>
