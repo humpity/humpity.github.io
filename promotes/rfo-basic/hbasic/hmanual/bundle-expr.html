@@ -577,7 +577,11 @@
           <FONT size="+1"><A name="passing" id=
           "passing"></A>Parameter Passing<BR></FONT><BR>
           <DIV style="margin-left: 40px;">
-            User Defined Functions<BR>
+            <SPAN style="text-decoration: underline;">User Defined
+            Functions</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
             Passing bundle expressions as arguments can only be
@@ -591,6 +595,8 @@
             passed to the local function parameter.<BR>
             The key item Type must match the type of the receiving
             parameter.<BR>
+            Bundle Expressions cannot be used in FN.DEF receiving
+            parameters.<BR>
             <BR>
             e.g<BR>
             <DIV style="margin-left: 40px;">
@@ -631,7 +637,7 @@
               allowed</SPAN></SPAN><BR>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
-              % a = f(&amp;b.k2)</SPAN>&nbsp;&nbsp;&nbsp;
+              % a = f(b.k2)</SPAN>&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
               "color: rgb(102, 102, 102);">% Parameter <SPAN style=
               "color: rgb(102, 0, 0);">Types mismatch</SPAN>
