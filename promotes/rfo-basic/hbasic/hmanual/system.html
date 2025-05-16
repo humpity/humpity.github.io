@@ -168,8 +168,10 @@
                 behaviour<BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#popup_position">PopUp Positioning</A><BR></TD>
+                <TD style="vertical-align: top;">Android decides
+                POPUP position<BR></TD>
               </TR>
               <TR>
                 <TD valign="top"><A href=
@@ -414,8 +416,20 @@
       <TR>
         <TD style="vertical-align: top;">
           <SPAN style="color: rgb(0, 0, 153);"><A name="array_ptrs"
-          id="array_ptrs"></A><BIG>Array Pointers<BR>
-          <BR></BIG></SPAN>
+          id="array_ptrs"></A><BIG>Array
+          Pointers<BR></BIG></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            hBasic uses the term&nbsp; "array pointer" (e.g a[] )as
+            representing the whole array. An array pointer has no
+            indices within the brackets. It is a reference to an
+            array as opposed to just one element.
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            This syntax is inline with traditional Basic 01.91
+            which uses the syntax for some commands and
+            functions.)<BR>
+            <BR>
+          </DIV>
           <DIV style="margin-left: 40px;">
             <SPAN style=
             "text-decoration: underline;">Assignments</SPAN><BR>
@@ -430,26 +444,94 @@
               "color: rgb(0, 102, 0);">b[]</SPAN> to <SPAN style=
               "color: rgb(0, 102, 0);">a[]</SPAN> <SPAN style=
               "color: rgb(0, 0, 153); font-style: italic;">including
-              the size and dimensions</SPAN><BR>
-              Background references, i.e passed by <SPAN style=
+              values, size and dimensions</SPAN><BR>
+              <SPAN style="text-decoration: underline;">Background
+              references</SPAN> of <SPAN style=
+              "color: rgb(0, 102, 0);">a[]</SPAN> , ( i.e passed by
+              <SPAN style=
               "color: rgb(0, 0, 153); font-style: italic;">referenced
-              variables, are preserved</SPAN> for a[].<BR>
+              variables</SPAN>)<SPAN style=
+              "color: rgb(0, 0, 153); font-style: italic;">, are
+              <SPAN style=
+              "text-decoration: underline;">preserved</SPAN></SPAN>
+              for <SPAN style=
+              "color: rgb(0, 102, 0);">a[]</SPAN><BR>
+              Background references of <SPAN style=
+              "color: rgb(0, 102, 0);">b[]</SPAN> are not passed
+              over to <SPAN style=
+              "color: rgb(0, 102, 0);">a[]<BR></SPAN> If
+              <SPAN style="color: rgb(0, 102, 0);">b[]</SPAN>
+              already exists, it is overwritten.<BR>
             </DIV><BR>
-            &nbsp;&nbsp;&nbsp;<BR>
-            hBasic uses the term&nbsp; "<SPAN style=
-            "color: rgb(0, 0, 153);">array pointer</SPAN>"
-            (<SMALL>e.g</SMALL> <SPAN style=
-            "color: rgb(0, 102, 0);">a[]</SPAN> )as representing
-            the whole array. An array pointer has no indices within
-            the brackets. It is a reference to an array as opposed
-            to just one element.<BR>
-            <SPAN style="font-style: italic;"><BR>
-            (This syntax is inline with traditional Basic 01.91
-            which already uses the syntax for</SPAN> <SPAN style=
-            "font-style: italic;">some commands and
-            functions.)</SPAN><BR>
-            &nbsp;&nbsp;&nbsp;<BR>
-            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">fn.def
+              myfunc(a[])</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              dim b[2]</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              b[1] = 99</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">a[] =
+              b[]</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </SPAN><SPAN style="color: rgb(102, 102, 102);">%
+              overwrite a[] with b[]</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">fn.end</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">dim
+              a[5]</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">array.load
+              a[],1,2,3,4,5</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">call
+              myfunc(a[])&nbsp;&nbsp;&nbsp; &nbsp;</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
+              % pass by reference</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">debug.on</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">debug.dump.array
+              a[]</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">END</SPAN><FONT size="-1"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN></SPAN></FONT>
+            </DIV>
+            <DIV style="margin-left: 120px;">
+              <FONT size="-1"><SPAN style=
+              "font-style: italic;">Dumping Array
+              a[]</SPAN></FONT><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;"></DIV>
+            <DIV style="margin-left: 80px;">
+              <DIV style="margin-left: 40px;">
+                <FONT size="-1"><SPAN style=
+                "font-style: italic;">99.0</SPAN></FONT><BR>
+                <FONT size="-1"><SPAN style=
+                "font-style: italic;">0.0</SPAN></FONT><BR>
+                <FONT size="-1"><SPAN style=
+                "font-style: italic;">....</SPAN></FONT><BR>
+                <FONT size="-1"><SPAN style=
+                "font-style: italic;">END</SPAN></FONT><BR>
+              </DIV>
+            </DIV><BR>
             <SPAN style=
             "text-decoration: underline;">Evaluation</SPAN>
             (<SPAN style="font-style: italic;">place holder for
@@ -469,11 +551,13 @@
               <SPAN style="color: rgb(0, 102, 0);">a[]</SPAN> leads
               to an error.<BR>
               <BR>
-              e.g <SPAN style="color: rgb(0, 102, 0);">PRINT a[]$,
-              b[]</SPAN><BR>
-              will print "<SPAN style=
-              "color: rgb(0, 0, 153); font-family: monospace;">,&nbsp;
-              0.0</SPAN>"<BR>
+              e.g <SPAN style="color: rgb(0, 102, 0);">PRINT
+              a[]$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">,</SPAN>
+              <SPAN style="color: rgb(0, 102, 0);">b[]</SPAN><BR>
+              will print <SPAN style=
+              "font-family: Courier New, Courier, monospace;">",&nbsp;
+              0.0"</SPAN><BR>
             </DIV><BR>
           </DIV>
         </TD>
@@ -485,21 +569,25 @@
           Functions<BR>
           <BR></BIG></SPAN>
           <DIV style="margin-left: 40px;">
-            Functions can now return an Array (pointer) <SMALL>by
-            adding <FONT size="+1"><TT>"[]"</TT></FONT><BR>
-            <BR></SMALL> Array function names cannot be the same as
-            existing non-array functions.<SMALL><BR>
+            Functions can now return an Array (pointer) by adding
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"[]"</SPAN><SMALL><BR>
+
+            <BR></SMALL> Array function <SPAN style=
+            "text-decoration: underline;">names</SPAN> cannot be
+            the same as existing non-array functions.<SMALL><BR>
             <BR>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             e.g<BR></SMALL><BR style="color: rgb(0, 102, 0);">
-            <FONT size="-1"><SPAN style=
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; fn.def
-            func_a$(n)[]&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: black;">% define an Array
-            Function</SPAN></SPAN><BR style=
-            "color: rgb(0, 102, 0);">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">myFunc$(n)[]</SPAN>&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN> %
+            define an Array Function<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR style="color: rgb(0, 102, 0);">
+
             <BR style="color: rgb(0, 102, 0);">
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; dim
@@ -510,61 +598,77 @@
             <BR style="color: rgb(0, 102, 0);">
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if n=1 then
-            fn.rtn&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <SPAN style="color: black;">% returns a useless default
-            array</SPAN></SPAN><BR style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">fn.rtn</SPAN>&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;</SPAN></SPAN> % returns a useless
+            default array<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR style="color: rgb(0, 102, 0);">
+
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if n=99 then
-            fn.rtn b$[]&nbsp; <SPAN style="color: black;">% return
-            specified array</SPAN></SPAN><BR style=
-            "color: rgb(0, 102, 0);">
+            <SPAN style="color: rgb(0, 0, 153);">fn.rtn
+            b$[]</SPAN>&nbsp;</SPAN></SPAN> % return specified
+            array<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR style="color: rgb(0, 102, 0);">
+
             <BR style="color: rgb(0, 102, 0);">
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; fn.end&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: black;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; %
-            returns default array</SPAN></SPAN><BR style=
-            "color: rgb(0, 102, 0);">
+            "color: black;">&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;</SPAN></SPAN></SPAN> % returns
+            default array<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR style="color: rgb(0, 102, 0);">
+
             <BR style="color: rgb(0, 102, 0);">
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; ! fn.def func_a$()&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; ! fn.def myFunc$()&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: black;">&nbsp;&nbsp;&nbsp; % (error) Function
-            previously defined at:</SPAN></SPAN><BR style=
-            "color: rgb(0, 102, 0);">
+            "color: black;">&nbsp;&nbsp;&nbsp;</SPAN></SPAN></SPAN>&nbsp;
+            % (error) Function previously defined at:<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR style="color: rgb(0, 102, 0);">
+
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;</SPAN><BR style=
             "color: rgb(0, 102, 0);">
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; a$[] =
-            func_a$(99)[]&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            <SPAN style="color: black;">&nbsp; % Array function
-            assignment (deep copy)</SPAN></SPAN><BR style=
-            "color: rgb(0, 102, 0);">
+            &nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">a$[] =
+            myFunc$(99)[]</SPAN>&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: black;">&nbsp;</SPAN></SPAN></SPAN> % Array
+            function assignment (deep copy)<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR style="color: rgb(0, 102, 0);">
+
             <BR style="color: rgb(0, 102, 0);">
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; ! print
-            func_a$(99)[]&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;<SPAN style="color: black;">&nbsp; %
-            Error&gt; Array functions cannot be evaluated
-            :</SPAN></SPAN><BR style="color: rgb(0, 102, 0);">
+            myFunc$(99)[]&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;<SPAN style=
+            "color: black;">&nbsp;</SPAN></SPAN></SPAN> % Error&gt;
+            Array functions cannot be evaluated :<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR style="color: rgb(0, 102, 0);">
+
             <SPAN style="color: rgb(0, 102, 0);">&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; print a$[2]&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;
-            &nbsp;&nbsp; <SPAN style="color: black;">% only normal
-            arrays can be evaluated with an
-            index</SPAN></SPAN></SPAN></FONT><BR>
+            &nbsp;&nbsp;</SPAN></SPAN> % only normal arrays can be
+            evaluated with an <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "color: black;">index</SPAN></SPAN></SPAN><BR>
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
         </TD>
       </TR>
       <TR>
         <TD style="vertical-align: top;">
           <A name="textbyte_open_onfailure" id=
-          "textbyte_open_onfailure"></A> <SPAN style=
-          "color: rgb(0, 0, 153);"><BIG>TEXT/BYTE.OPEN change on
-          failure<BR>
-          <SMALL><BR></SMALL></BIG></SPAN>
+          "textbyte_open_onfailure"></A> <FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">TEXT/BYTE.OPEN
+          change on failure</SPAN><BR></FONT> <SPAN style=
+          "color: rgb(0, 0, 153);"><BIG><SMALL><BR>
+          </SMALL></BIG></SPAN>
           <DIV style="margin-left: 40px;">
             Before, if TEXT.OPEN or BYTE.OPEN fails to open a file,
             an unusable filetable entry was still created.<BR>
@@ -603,14 +707,14 @@
             <FONT color="#000099">B</FONT>) hBasic also has
             shortcut support for <U>StandAlone</U> (i.e without
             editor) only if you had compiled the app as StandAlone
-            with included the supporting patch H0290.<BR>
+            with the included supporting patch H0290.<BR>
             <BR>
             For (B), a shortcut can be created on the Android home
             screen. It can launch the app and send a string of
             data.<BR>
             This feature will entertain any shortcut data string
             being sent by a shortcut launch and put the string into
-            an undocumented function called <SPAN style=
+            the legacy (undocumented) function called <SPAN style=
             "color: rgb(0, 0, 153);">COMMAND$()</SPAN>.<BR>
             <BR>
             Shortcuts to Standard APKs (non-standalone) will not be
@@ -892,8 +996,12 @@
             <SPAN style="color: rgb(0, 0, 153);">&gt;
             Preferences</SPAN> &gt; <SPAN style=
             "color: rgb(0, 0, 153);">FTP server port</SPAN>,<BR>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; you can change
-            the ftp command port.<BR>
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ** You may need
+            to enter this setting if you have installed hBasic for
+            the very first time, **<BR>
+            &nbsp; &nbsp; &nbsp; &nbsp; **&nbsp; &nbsp;&nbsp; even
+            though it is already set and you don't wish to change
+            it. **<BR>
             <BR>
             &nbsp;&nbsp;&nbsp; On your ftp client,<BR>
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; default cmd port
@@ -1079,8 +1187,9 @@
             cancel all inner loops/blocks automatically.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: underline;">The
-            Rules</SPAN> are;<BR>
+            <FONT size="+1"><SPAN style=
+            "text-decoration: underline;">The Rules</SPAN></FONT>
+            are;<BR>
             <BR>
             1. You can execute;<BR>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1121,35 +1230,17 @@
             <BR>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(0, 102, 0);">IF a
-            THEN</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            DO</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            IF a THEN<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DO<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             ELSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
             "color: rgb(102, 0, 0);">% Error - Misplaced
-            ELSE</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            PRINT "impossible"</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            UNTIL ++a &gt; 3</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            ENDIF</SPAN></SPAN><BR>
+            ELSE</SPAN><BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            PRINT "impossible"<BR>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UNTIL ++a
+            &gt; 3<BR>
+            &nbsp;&nbsp;&nbsp; ENDIF</SPAN><BR>
             <HR style="width: 100%; height: 2px;">
             3. You can safely use FN.RTN in the middle of&nbsp; a
             loop, a gosub, or an IF block<BR>
@@ -1166,20 +1257,20 @@
             the function<CODE><BR>
             <BR></CODE> <CODE>e.g</CODE><BR>
             <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            FN.DEF myfunc()</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">FN.DEF
+            myfunc()</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             NEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <SPAN style="color: rgb(102, 0, 0);">% error: NEXT
-            without FOR</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            without FOR</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            FN.END</SPAN></SPAN><BR>
+            FN.END</SPAN><BR>
             <BR>
             <CODE>&nbsp;&nbsp;&nbsp;</CODE> otherwise you will get
             an error.<BR>
@@ -1188,95 +1279,89 @@
             for Multiple Bottoms.</SPAN><BR>
             <BR>
             <DIV style="margin-left: 40px;">
-              You can only have one loop bottom per loop<BR>
-            </DIV>e.g&nbsp; you cannot do this;<BR>
+              You can only have one loop bottom per loop. The loop
+              bottom must be at the start of a line.<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g&nbsp; you <SPAN style=
+              "text-decoration: underline;">cannot</SPAN> do
+              this;<BR>
+              <BR>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            FOR a=1 TO 5<BR></SPAN>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">?
+              a</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">IF
+              a&lt;3 THEN</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">NEXT</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              % false-bottom1 (and illegal)<SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              % <SPAN style="color: rgb(102, 0, 0);">Error&gt; NEXT
+              without FOR</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            IF a=3 THEN GOTO SKIP1</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            IF a&gt;3 THEN GOTO SKIP2</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR>
             </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(0, 102, 0);">FOR a=1 TO
-            5</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            IF a&lt;3 THEN GOTO SKIP1</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            IF a&gt;3 THEN GOTO SKIP2</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            b++</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            NEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>%
+            <SPAN style="font-weight: bold;">true-bottom</SPAN>
+            (only one)<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
-            "color: rgb(0, 0, 153);">NEXT</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);">% true-bottom
-            (only one)</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            END</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            END</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN></SPAN> <SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
+            </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            SKIP1:</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            SKIP1:</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
-            "color: rgb(0, 0, 153);">NEXT</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);">%
-            false-bottom1</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN>
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            NEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            % false-bottom2<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;">%
-            Error&gt; NEXT without FOR</SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            SKIP2:</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            IF a&lt;5 THEN <SPAN style=
-            "color: rgb(0, 0, 153);">NEXT</SPAN>&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);">% false-bottom2
-            (and illegal)</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN>
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            % <SPAN style="color: rgb(102, 0, 0);">Error&gt; NEXT
+            without FOR</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;">%
-            Error&gt; NEXT without FOR</SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            ? "found 5"</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            SKIP2:</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            END</SPAN></SPAN><BR>
+            IF a&lt;4 THEN NEXT&nbsp;&nbsp;</SPAN> % false-bottom3
+            (and illegal)<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            % <SPAN style="color: rgb(102, 0, 0);">Error&gt; NEXT
+            without FOR</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            END</SPAN><BR>
             <BR>
             Instead, to make the above work, you must use
             &lt;loop&gt;.CONTINUE<BR>
@@ -1284,79 +1369,69 @@
             <BR>
             <DIV style="margin-left: 40px;">
               <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
-              FOR a=1 TO 5</SPAN></SPAN><SPAN style=
-              "color: rgb(0, 102, 0);"><BR></SPAN>
-            </DIV><SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">FOR
+              a=1 TO 5<BR></SPAN>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">IF
+              a&lt;3 THEN</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              F_N.CONTINUE</SPAN>&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(0, 102, 0);">% no
+              error</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN>
+            </DIV><SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            IF a&lt;3 THEN GOTO SKIP1</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            IF a=3 THEN GOTO SKIP1</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            IF a&gt;3 THEN GOTO SKIP2</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            IF a&gt;3 THEN GOTO SKIP2</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            b++</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            b++</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
             NEXT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);">&nbsp;&nbsp;&nbsp;
-            % true-bottom (only
-            one)</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            &nbsp;&nbsp;&nbsp;</SPAN> % <SPAN style=
+            "font-weight: bold;">true-bottom</SPAN> (only
+            one)<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            END</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            END</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN></SPAN> <SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
+            </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            SKIP1:</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            SKIP1:</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
             <SPAN style=
-            "color: rgb(0, 0, 153);">F_N.CONTINUE</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);">% no
-            error</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">F_N.CONTINUE</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(0, 102, 0);">% no
+            error</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            SKIP2:</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            SKIP2:</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            IF a&lt;5 THEN <SPAN style=
-            "color: rgb(0, 0, 153);">F_N.CONTINUE</SPAN>&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 0, 0);">% no
-            error</SPAN></SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN></SPAN> <SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
+            IF a&lt;4 THEN <SPAN style=
+            "color: rgb(0, 0, 153);">F_N.CONTINUE</SPAN>&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(0, 102, 0);">% no
+            error</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            ? "found 5"</SPAN></SPAN><SPAN style=
-            "color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            END</SPAN></SPAN><BR>
+            END</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
           </DIV><BR>
         </TD>
       </TR>
@@ -1488,7 +1563,7 @@
             (Note: Prior to v4.13, the directive prefixes used to
             be a single"@". The change to "@@" is to allow through
             variables that start with a single "@")<BR>
-            <BR></SMALL> Directives are processed before the a
+            <BR></SMALL> Directives are processed before the
             program is run. Therefore you cannot use any variables
             for arguments.<BR>
             <BR>
@@ -1541,7 +1616,8 @@
             </DIV>
             <DIV style="margin-left: 40px;"></DIV>
             <DIV style="margin-left: 120px;">
-              @@PRELOAD,&nbsp; @@LOCALSTACKS, @@DARK_STATUSTXT<BR>
+              @@PRELOADOFF,&nbsp; @@LOCALSTACKSOFF,
+              @@DARK_STATUSTXT<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -1685,6 +1761,47 @@
             </DIV><BR>
           </DIV>
           <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <A name="popup_position" id="directives"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">PopUp
+          Positioning<BR>
+          <BR></FONT></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">POPUP</SPAN>
+            message<SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+            "font-weight: bold;">{,</SPAN> <SPAN style=
+            "font-weight: bold;">x</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{,</SPAN> <SPAN style=
+            "font-weight: bold;">y</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{,</SPAN> <SPAN style=
+            "font-weight: bold;">duration</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">lexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            From hBasic v5.3x, the POPUP command <SPAN style=
+            "text-decoration: underline;">will ignore</SPAN> the
+            <SPAN style="font-weight: bold;">x,y</SPAN> positioning
+            coordinates.<BR>
+            <BR>
+            Google took away the ability to position the pop-up for
+            all apps that target Android 11+.<BR>
+            From Android 11, <SPAN style=
+            "text-decoration: underline;">android will
+            decide</SPAN> where to put it. (It is usually centered
+            near the bottom of the screen)<BR>
+            <BR>
+            <BR>
+          </DIV>
         </TD>
       </TR>
       <TR>

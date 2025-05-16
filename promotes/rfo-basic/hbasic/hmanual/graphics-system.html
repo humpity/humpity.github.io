@@ -1,1022 +1,1229 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Graphics System</title>
-  <link rel="stylesheet" href="main.css" type="text/css">
-</head>
-<body vlink="#990099" link="#000099" alink="#000099">
-  <a href="../hbasic.html">hBasic</a> &gt; <a href="index.html">hManual</a>&nbsp; &gt; Graphics System<br>
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellspacing="2" cellpadding="8">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top;">
-          <div style="text-align: right;">
-            <big>hBasic Manual</big><br>
-          </div><big><big style="color: rgb(0, 0, 153);">Graphics
-          System changes</big></big><br>
-          <big><big style="color: rgb(0, 0, 153);"><br></big></big>
-          <table style="text-align: left; margin-left: auto; margin-right: auto; width: 90%;" cellspacing="2" cellpadding="2" border="0">
-            <tbody>
-              <tr>
-                <td style="vertical-align: top;"><a href="#coordinates_upgrade">Coordinates Upgrade</a></td>
-                <td style="vertical-align: top;">Upgraded
-                positioning system<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="#display_list_changes">Display List</a><br></td>
-                <td style="vertical-align: top;">Changes to the
-                display list<br></td>
-              </tr>
-              <tr>
-                <td><a href="#graphics_parms"><br></a></td>
-                <td><br></td>
-              </tr>
-              <tr>
-                <td><a href="#object_motion">Object
-                Motion</a><br></td>
-                <td>Added motion for objects.<br></td>
-              </tr>
-              <tr>
-                <td><br></td>
-                <td><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="#sprites_and_animation">Sprites and
-                Animation<br></a></td>
-                <td style="vertical-align: top;">Added the Sprite
-                graphics object</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="#graphics_parms">Graphics Parameters</a></td>
-                <td style="vertical-align: top;">New parameters for
-                objects.</td>
-              </tr>
-              <tr>
-                <td><a href="#object_table">Updated Object
-                Table</a><br></td>
-                <td>graphics objects parameter list.<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">Other<br>
-                <a href="graphics.html">( Graphics command changes
-                )</a><br>
-                <a href="functions.html#graphics">( Graphics
-                functions</a> )<br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-            </tbody>
-          </table><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="coordinates_upgrade" id="setacc"></a>Coordinates Upgrade<br>
-          <br></span></font>
-          <div style="margin-left: 40px;">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Graphics System</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A>&nbsp; &gt; Graphics System<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Graphics
+          System changes</BIG></BIG><BR>
+          <BIG><BIG style="color: rgb(0, 0, 153);"><BR></BIG></BIG>
+          <TABLE style=
+          "text-align: left; margin-left: auto; margin-right: auto; width: 90%;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#coordinates_upgrade">Coordinates Upgrade</A></TD>
+                <TD style="vertical-align: top;">Upgraded
+                positioning system<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#display_list_changes">Display List</A><BR></TD>
+                <TD style="vertical-align: top;">Changes to the
+                display list<BR></TD>
+              </TR>
+              <TR>
+                <TD><A href="#graphics_parms"><BR></A></TD>
+                <TD><BR></TD>
+              </TR>
+              <TR>
+                <TD><A href="#object_motion">Object
+                Motion</A><BR></TD>
+                <TD>Added motion for objects.<BR></TD>
+              </TR>
+              <TR>
+                <TD><BR></TD>
+                <TD><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#sprites_and_animation">Sprites and
+                Animation<BR></A></TD>
+                <TD style="vertical-align: top;">Added the Sprite
+                graphics object</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#graphics_parms">Graphics Parameters</A></TD>
+                <TD style="vertical-align: top;">New parameters for
+                objects.</TD>
+              </TR>
+              <TR>
+                <TD><A href="#object_table">Updated Object
+                Table</A><BR></TD>
+                <TD>graphics objects parameter list.<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Other<BR>
+                <A href="graphics.html">( Graphics command changes
+                )</A><BR>
+                <A href="functions.html#graphics">( Graphics
+                functions</A> )<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="coordinates_upgrade"
+          id="setacc"></A>Coordinates Upgrade<BR>
+          <BR></SPAN></FONT>
+          <DIV style="margin-left: 40px;">
             The graphics coordinates system was upgraded from
             integers to single precision 32 bit floating point,
-            inline with the Android graphics library.<br>
+            inline with the Android graphics library.<BR>
             Even though screens will not use sub-pixel values, the
             fractional part is necessary for internal motion
-            calculations.<br>
-            <br>
+            calculations.<BR>
+            <BR>
             If you are using the built-in motion vectors, then you
             may get fractional parts back from x,y values, since
-            they represent the true distance moved.<br>
-            <br>
+            they represent the true distance moved.<BR>
+            <BR>
             Legacy Basic programs should not see any difference, as
             they don't use hBasic motion commands at all.
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><font size="+1"><a name="display_list_changes" id="display_list_changes"></a>Display List</font></span><br>
-          <br>
-          <div style="margin-left: 40px;">
-            <a href="graphics.html#display_list_commands">Additional
-            commands</a> were added to manage the display list
-            without having to resort to GR.GETDL and GR.NEWDL.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;"><a name="display_list_ordering" id="display_list_ordering"></a>Display List
-            Z-Ordering</span><br>
-          </div>
-          <div style="margin-left: 40px;">
-            <br>
-          </div>
-          <div style="margin-left: 80px;">
-            Objects that are put <span style="text-decoration: underline;">on a display list</span>
-            for rendering have a <span style="text-decoration: underline;">z-index</span>.<br>
-            (The z-index is not the same as the object number).<br>
-            <br>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="display_list_changes" id=
+          "display_list_changes"></A>Display List</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <A href=
+            "graphics.html#display_list_commands">Additional
+            commands</A> were added to manage the display list
+            without having to resort to GR.GETDL and GR.NEWDL.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "display_list_ordering" id=
+            "display_list_ordering"></A>Display List
+            Z-Ordering</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Objects that are put <SPAN style=
+            "text-decoration: underline;">on a display list</SPAN>
+            for rendering have a <SPAN style=
+            "text-decoration: underline;">z-index</SPAN>.<BR>
+            (The z-index is not the same as the object number).<BR>
+            <BR>
             The z-index is the same as the display list position
-            and determines the depth position of objects.<br>
-            <br>
+            and determines the depth position of objects.<BR>
+            <BR>
             The first display list item will be rendered first,
-            i.e&nbsp; the 'back' of the screen.<br>
-            z index is lowest.<br>
-            <br>
+            i.e&nbsp; the 'back' of the screen.<BR>
+            z index is lowest.<BR>
+            <BR>
             The last display list item will be rendered last. i.e
-            the 'front' of the screen.<br>
-            z index is highest.<br>
-            <br>
-          </div>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;"><a name="groups" id="groups"></a>Groups</span><br>
-            <div style="margin-left: 40px;">
-              Group objects are <span style="font-weight: bold;">no
-              longer added</span> to the <span style="text-decoration: underline;">display list</span>
-              upon creation. (since v5.00)<br>
-              Group objects need to be on the <span style="font-weight: bold;">object list</span> but don't
-              serve any purpose on the <span style="font-weight: bold;">display list</span>.<br>
+            the 'front' of the screen.<BR>
+            z index is highest.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "groups" id="groups"></A>Groups</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Group objects are <SPAN style="font-weight: bold;">no
+              longer added</SPAN> to the <SPAN style=
+              "text-decoration: underline;">display list</SPAN>
+              upon creation. (since v5.00)<BR>
+              Group objects need to be on the <SPAN style=
+              "font-weight: bold;">object list</SPAN> but don't
+              serve any purpose on the <SPAN style=
+              "font-weight: bold;">display list</SPAN>.<BR>
               Therefore they are no longer added to the display
-              list for the GR.GROUP.. commands.<br>
-              <br>Even so, you can still specify a group object to move
-              (z-ordering) via <a href="file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics.html#gr_dl_move">GR.DL.MOVE</a>, whether on the display list or not,<br>
-
-only the
-              objects in their lists will be moved. However,
-              <a href="file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics.html#gr_dl_remove">GR.DL.REMOVE</a>
-              <span style="text-decoration: underline;">will</span>
+              list for the GR.GROUP.. commands.<BR>
+              <BR>
+              Even so, you can still specify a group object to move
+              (z-ordering) via <A href=
+              "graphics.html#gr_dl_move">GR.DL.MOVE</A>, whether on
+              the display list or not,<BR>
+              only the objects in their lists will be moved.
+              However, <A href=
+              "graphics.html#gr_dl_remove">GR.DL.REMOVE</A>
+              <SPAN style="text-decoration: underline;">will</SPAN>
               remove group objects (if they are on the display
-              list), along with the objects in their lists.<br>
-            </div>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <a name="object_motion" id="gr_bitmap_clr"></a><font size="+1"><span style="color: rgb(0, 0, 153);">Object
-          Motion</span></font><span style="color: rgb(0, 0, 153);"><br>
-          <br></span>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;">All viewable
-            objects</span> now have "<span style="color: rgb(0, 0, 153);">speed</span>" and
-            "<span style="color: rgb(0, 0, 153);">dir</span>"
+              list), along with the objects in their lists.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="object_motion" id=
+          "gr_bitmap_clr"></A><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">Object
+          Motion</SPAN></FONT><SPAN style=
+          "color: rgb(0, 0, 153);"><BR>
+          <BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">All viewable
+            objects</SPAN> now have "<SPAN style=
+            "color: rgb(0, 0, 153);">speed</SPAN>" and
+            "<SPAN style="color: rgb(0, 0, 153);">dir</SPAN>"
             properties via GR.GET.VALUE or GR.MODIFY
-            parameters.<br>
+            parameters.<BR>
             These are properties for a velocity vector of motion.
-            It allows an object to move upon <span style="text-decoration: underline;"><a href="graphics.html#gr_motion">GR.MOTION</a></span>.<br>
-            <br>
-            <span style="text-decoration: underline;"><a name="gr_motion_objects" id="gr_motion_objects"></a>GR.MOTION and object
-            properties</span><br>
-            <br>
+            It allows an object to move upon <SPAN style=
+            "text-decoration: underline;"><A href=
+            "graphics.html#gr_motion">GR.MOTION</A></SPAN>.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "gr_motion_objects" id=
+            "gr_motion_objects"></A>GR.MOTION and object
+            properties</SPAN><BR>
+            <BR>
             In general, when GR.MOTION is called, it updates the
-            positions on all objects in the display list.<br>
-            For more advanced usage see <a href="graphics.html#gr_motion">GR.MOTION</a> and <a href="graphics.html#tweens">motion with tweens</a>.<br>
-            <br>
+            positions on all objects in the display list.<BR>
+            For more advanced usage see <A href=
+            "graphics.html#gr_motion">GR.MOTION</A> and <A href=
+            "graphics.html#tweens">motion with tweens</A>.<BR>
+            <BR>
             An object is moved relative to the previous GR.MOTION
             or GR.MOTION.MARK time, whichever was called
-            before.<br>
+            before.<BR>
             If both had not been called before, the reference time
-            is the start of the graphics screen.<br>
-            <br>
+            is the start of the graphics screen.<BR>
+            <BR>
             The object is moved according to it's speed and
-            direction parameters;<br>
-            <br>
-            <span style="text-decoration: underline;">Speed</span>
-            ("speed")<br>
-            <div style="margin-left: 40px;">
-              This is given as <span style="color: rgb(102, 51, 0);">pixels per
-              second</span>.<br>
-            </div>
-            <div style="margin-left: 40px;">
-              If the speed is <span style="text-decoration: underline;">zero</span>, the object
-              will not move.<br>
-            </div>
-            <div style="margin-left: 40px;">
-              If the speed is <span style="text-decoration: underline;">non-zero</span> and
-              positive, the object will move.<br>
-              If the speed is <span style="text-decoration: underline;">negative</span>, the
+            direction parameters;<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">Speed</SPAN>
+            ("speed")<BR>
+            <DIV style="margin-left: 40px;">
+              This is given as <SPAN style=
+              "color: rgb(102, 51, 0);">pixels per
+              second</SPAN>.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              If the speed is <SPAN style=
+              "text-decoration: underline;">zero</SPAN>, the object
+              will not move.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              If the speed is <SPAN style=
+              "text-decoration: underline;">non-zero</SPAN> and
+              positive, the object will move.<BR>
+              If the speed is <SPAN style=
+              "text-decoration: underline;">negative</SPAN>, the
               object will move oposite to it's direction
-              ("dir").<br>
-              <div style="margin-left: 40px;">
+              ("dir").<BR>
+              <DIV style="margin-left: 40px;">
                 In physics, a speed cannot be negative but it is
-                allowed here for convenience.<br>
-              </div>The default speed for all objects is zero (no
-              movement).<br>
-              <br>
-            </div>
-            <div style="margin-left: 40px;">
+                allowed here for convenience.<BR>
+              </DIV>The default speed for all objects is zero (no
+              movement).<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
               You may express the speed with a fractional part for
-              accuracy.<br>
-            </div>
-            <div style="margin-left: 40px;">
+              accuracy.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
               To stop an object (no movement), set the speed to
-              zero (default).<br>
-            </div><br>
-            <span style="text-decoration: underline;">Direction</span>
-            ("dir")<br>
-            <div style="margin-left: 40px;">
-              This is given as an <span style="color: rgb(102, 51, 0);">angle in
-              degrees</span>.<br>
+              zero (default).<BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline;">Direction</SPAN>
+            ("dir")<BR>
+            <DIV style="margin-left: 40px;">
+              This is given as an <SPAN style=
+              "color: rgb(102, 51, 0);">angle in
+              degrees</SPAN>.<BR>
               The default direction for all objects is zero, which
-              is pointing to the right (<span style="text-decoration: underline;">east</span>).<br>
-              Direction angles move <span style="text-decoration: underline;">clockwise,</span> so 90
-              degrees is pointing down (south).<br>
-              <br>
+              is pointing to the right (<SPAN style=
+              "text-decoration: underline;">east</SPAN>).<BR>
+              Direction angles move <SPAN style=
+              "text-decoration: underline;">clockwise,</SPAN> so 90
+              degrees is pointing down (south).<BR>
+              <BR>
               You may express the direction with a fractional part
-              for accuracy.<br>
-            </div><br>
-            <span style="text-decoration: underline;">Manual
-            Movement</span><br>
-            <br>
-            <div style="margin-left: 40px;">
+              for accuracy.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Manual
+            Movement</SPAN><BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
               If you never use GR.MOTION (e.g legacy programs),
-              then objects will not be moved by it.<br>
-              <br>
+              then objects will not be moved by it.<BR>
+              <BR>
               If you don't want objects affected by GR.MOTION, set
-              their speeds to zero.<br>
+              their speeds to zero.<BR>
               You can still manually move them in the usual way by
-              using GR.MODIFY.<br>
-              <br>
-              e.g<br>
+              using GR.MODIFY.<BR>
+              <BR>
+              e.g<BR>
               GR.MODIFY object, "speed",0&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp; % will not be moved by
-              GR.MOTION<br>
-              
-GR.MOTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-              % for other objects and animation<br>
-              GR.RENDER<br>
-              <br>
-              
-e.g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-              % manual positioning<br>
-              GR.MODIFY object, "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">x</span></span>",x,&nbsp;
-              "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">y</span></span>",y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % (see <a href="#whole">whole object
-              positioning</a>)<br>
-              <br>
+              GR.MOTION<BR>
+              GR.MOTION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              % for other objects and animation<BR>
+              GR.RENDER<BR>
+              <BR>
+              e.g&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              % manual positioning<BR>
+              GR.MODIFY object, "<SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">x</SPAN></SPAN>",x,&nbsp;
+              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">y</SPAN></SPAN>",y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              % (see <A href="#whole">whole object
+              positioning</A>)<BR>
+              <BR>
               GR.MOTION does not move objects with zero "speed" nor
-              animate sprites with zero "arate".<br>
-            </div><br>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="tweens" id="tweens"></a>Tweens<br></span></font><br>
-          <div style="margin-left: 40px;">
-            Tweens are explained under Motion and <a href="graphics.html#tweens">Tweens</a>.<br>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="sprites_and_animation" id="setacc"></a>Sprites and
-          Animation<br></span></font><br>
-          <div style="margin-left: 40px;">
+              animate sprites with zero "arate".<BR>
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="tweens" id=
+          "tweens"></A>Tweens<BR></SPAN></FONT><BR>
+          <DIV style="margin-left: 40px;">
+            Tweens are explained under Motion and <A href=
+            "graphics.html#tweens">Tweens</A>.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="sprites_and_animation"
+          id="setacc"></A>Sprites and
+          Animation<BR></SPAN></FONT><BR>
+          <DIV style="margin-left: 40px;">
             The Sprite object has been added to the graphics
-            engine.<br>
+            engine.<BR>
             A Sprite is similar to a bitmap but with the added
-            feature of Animation.<br>
-            <br>
-            (See also, <a href="graphics.html#sprites">Sprites</a>
-            and <a href="graphics.html#animation">Animation</a>
-            commands)<br>
-            <br>
-            <span style="text-decoration: underline;"><a name="sprite-props" id="sprite-props"></a>Sprite
-            Properties</span><br>
-            <div style="margin-left: 40px;">
-              As well as the <a href="graphics-system.html#graphics_gp">general purpose
-              properties</a> (including speed and dir) <a href="#object_sprite">sprite object</a>s also have the
-              following parameters.<br>
-              <br>
-              for GR.GET.VALUE<br>
-              <div style="margin-left: 40px;">
-                "<span style="font-weight: bold;">bitmap</span>" ,
-                "<span style="font-weight: bold;">anim</span>" ,
-                "<span style="font-weight: bold;">arate</span>" ,
-                "<span style="font-weight: bold;">aframe</span>" ,
-                "<span style="font-weight: bold;">aloop</span>" ,
-                "<span style="font-weight: bold;">width</span>" and
-                "<span style="font-weight: bold;">height</span>"<br>
-              </div><br>
-              and for GR.MODIFY,<br>
-              <div style="margin-left: 40px;">
-                "<span style="font-weight: bold;">bitmap</span>" ,
-                "<span style="font-weight: bold;">anim</span>" ,
-                "<span style="font-weight: bold;">arate</span>" ,
-                "<span style="font-weight: bold;">aframe</span>" ,
-                "<span style="font-weight: bold;">aloop</span>"<br>
-              </div><br>
-              where<br>
-              <table style="text-align: left; width: 90%;" cellspacing="1" cellpadding="1" border="0">
-                <tbody>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    Parameter property<br></td>
-                    <td style="vertical-align: top;">
-                    Description<br></td>
-                    <td style="vertical-align: top;">
-                    default<br></td>
-                    <td style="vertical-align: top;">special
-                    remarks<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    <a href="#sprite-bitmap">bitmap</a><br></td>
-                    <td style="vertical-align: top;">Standing
-                    bitmap pointer<br></td>
-                    <td style="vertical-align: top;">*<br></td>
-                    <td style="vertical-align: top;">used if no
-                    animation<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    <a href="#sprite-anim">anim</a><br></td>
-                    <td style="vertical-align: top;">Animation
-                    Index pointer<br></td>
-                    <td style="vertical-align: top;">0<br></td>
-                    <td style="vertical-align: top;">0 = no
-                    animation<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    <a href="sprite-arate">arate</a><br></td>
-                    <td style="vertical-align: top;">Animation
-                    Rate<br></td>
-                    <td style="vertical-align: top;">10<br></td>
-                    <td style="vertical-align: top;">frames per
-                    second<br>
-                    0 = freeze frame<br>
-                    &lt;0 = reverse animation<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    <a href="sprite-aframe">aframe</a><br></td>
-                    <td style="vertical-align: top;">Current
-                    animation frame<br></td>
-                    <td style="vertical-align: top;">0<br></td>
-                    <td style="vertical-align: top;">0 to max&nbsp;
-                    (zero based)<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    <a href="#sprite-aloop">aloop</a><br></td>
-                    <td style="vertical-align: top;">Animation
-                    Looping or not<br></td>
-                    <td style="vertical-align: top;">1<br></td>
-                    <td style="vertical-align: top;">0 = no
-                    looping<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    width<br></td>
-                    <td style="vertical-align: top;">width of
-                    standing bitmap<br></td>
-                    <td style="vertical-align: top;">*<br></td>
-                    <td style="vertical-align: top;">
-                    read-only<br></td>
-                  </tr>
-                  <tr>
-                    <td style="vertical-align: top; text-align: center;">
-                    height<br></td>
-                    <td style="vertical-align: top;">height of
-                    standing bitmap</td>
-                    <td style="vertical-align: top;">*<br></td>
-                    <td style="vertical-align: top;">read-only</td>
-                  </tr>
-                </tbody>
-              </table>(* filled upon creation)<br>
-              <br>
-            </div><span style="text-decoration: underline;"><a name="sprite-bitmap" id="sprite-bitmap"></a>Standing bitmap</span><br>
-            <div style="margin-left: 40px;">
+            feature of Animation.<BR>
+            <BR>
+            (See also, <A href="graphics.html#sprites">Sprites</A>
+            and <A href="graphics.html#animation">Animation</A>
+            commands)<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "sprite-props" id="sprite-props"></A>Sprite
+            Properties</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              As well as the <A href=
+              "graphics-system.html#graphics_gp">general purpose
+              properties</A> (including speed and dir) <A href=
+              "#object_sprite">sprite object</A>s also have the
+              following parameters.<BR>
+              <BR>
+              for GR.GET.VALUE<BR>
+              <DIV style="margin-left: 40px;">
+                "<SPAN style="font-weight: bold;">bitmap</SPAN>" ,
+                "<SPAN style="font-weight: bold;">anim</SPAN>" ,
+                "<SPAN style="font-weight: bold;">arate</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aframe</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aloop</SPAN>" ,
+                "<SPAN style="font-weight: bold;">width</SPAN>" and
+                "<SPAN style=
+                "font-weight: bold;">height</SPAN>"<BR>
+              </DIV><BR>
+              and for GR.MODIFY,<BR>
+              <DIV style="margin-left: 40px;">
+                "<SPAN style="font-weight: bold;">bitmap</SPAN>" ,
+                "<SPAN style="font-weight: bold;">anim</SPAN>" ,
+                "<SPAN style="font-weight: bold;">arate</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aframe</SPAN>" ,
+                "<SPAN style="font-weight: bold;">aloop</SPAN>"<BR>
+              </DIV><BR>
+              where<BR>
+              <TABLE style="text-align: left; width: 90%;"
+              cellspacing="1" cellpadding="1" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    Parameter property<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Description<BR></TD>
+                    <TD style="vertical-align: top;">
+                    default<BR></TD>
+                    <TD style="vertical-align: top;">special
+                    remarks<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    <A href="#sprite-bitmap">bitmap</A><BR></TD>
+                    <TD style="vertical-align: top;">Standing
+                    bitmap pointer<BR></TD>
+                    <TD style="vertical-align: top;">*<BR></TD>
+                    <TD style="vertical-align: top;">used if no
+                    animation<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    <A href="#sprite-anim">anim</A><BR></TD>
+                    <TD style="vertical-align: top;">Animation
+                    Index pointer<BR></TD>
+                    <TD style="vertical-align: top;">0<BR></TD>
+                    <TD style="vertical-align: top;">0 = no
+                    animation<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    <A href="sprite-arate">arate</A><BR></TD>
+                    <TD style="vertical-align: top;">Animation
+                    Rate<BR></TD>
+                    <TD style="vertical-align: top;">10<BR></TD>
+                    <TD style="vertical-align: top;">frames per
+                    second<BR>
+                    0 = freeze frame<BR>
+                    &lt;0 = reverse animation<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    <A href="sprite-aframe">aframe</A><BR></TD>
+                    <TD style="vertical-align: top;">Current
+                    animation frame<BR></TD>
+                    <TD style="vertical-align: top;">0<BR></TD>
+                    <TD style="vertical-align: top;">0 to max&nbsp;
+                    (zero based)<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    <A href="#sprite-aloop">aloop</A><BR></TD>
+                    <TD style="vertical-align: top;">Animation
+                    Looping or not<BR></TD>
+                    <TD style="vertical-align: top;">1<BR></TD>
+                    <TD style="vertical-align: top;">0 = no
+                    looping<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    width<BR></TD>
+                    <TD style="vertical-align: top;">width of
+                    standing bitmap<BR></TD>
+                    <TD style="vertical-align: top;">*<BR></TD>
+                    <TD style="vertical-align: top;">
+                    read-only<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    height<BR></TD>
+                    <TD style="vertical-align: top;">height of
+                    standing bitmap</TD>
+                    <TD style="vertical-align: top;">*<BR></TD>
+                    <TD style="vertical-align: top;">read-only</TD>
+                  </TR>
+                </TBODY>
+              </TABLE>(* filled upon creation)<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;"><A name="sprite-bitmap"
+            id="sprite-bitmap"></A>Standing bitmap</SPAN><BR>
+            <DIV style="margin-left: 40px;">
               Before you create a sprite, you must have at least a
-              bitmap. This is the called the 'standing' bitmap.<br>
-              GR.BITMAP.LOAD <span style="color: rgb(0, 0, 153);">bmp</span>,
-              "h-stand.png"<br>
-            </div><br>
-            <div style="margin-left: 40px;">
-              To create a Sprite with no animation,<br>
-              <a href="graphics.html#gr_sprite_draw">GR.SPRITE.DRAW</a> s0,
-              100, 100, <span style="color: rgb(0, 0, 153);">bmp</span> &nbsp;&nbsp;
-              <span style="color: rgb(102, 102, 102);">% spr_obj, x
-              , y , bitmap_ptr</span><br>
-              <br>
-              This creates a sprite object on the <span style="text-decoration: underline;">object list</span> and
-              also adds it onto the <span style="text-decoration: underline;">display
-              list</span>.<br>
-              The standing bitmap&nbsp; <span style="color: rgb(0, 0, 153);">bmp</span> is used when a
-              sprite is not animating (anim=0).<br>
-              <br>
-            </div><span style="text-decoration: underline;">Changing a standing
-            bitmap</span><br>
-            <div style="margin-left: 40px;">
+              bitmap. This is the called the 'standing' bitmap.<BR>
+              GR.BITMAP.LOAD <SPAN style=
+              "color: rgb(0, 0, 153);">bmp</SPAN>,
+              "h-stand.png"<BR>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              To create a Sprite with no animation,<BR>
+              <A href=
+              "graphics.html#gr_sprite_draw">GR.SPRITE.DRAW</A> s0,
+              100, 100, <SPAN style=
+              "color: rgb(0, 0, 153);">bmp</SPAN> &nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% spr_obj, x
+              , y , bitmap_ptr</SPAN><BR>
+              <BR>
+              This creates a sprite object on the <SPAN style=
+              "text-decoration: underline;">object list</SPAN> and
+              also adds it onto the <SPAN style=
+              "text-decoration: underline;">display
+              list</SPAN>.<BR>
+              The standing bitmap&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);">bmp</SPAN> is used when a
+              sprite is not animating (anim=0).<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Changing a standing
+            bitmap</SPAN><BR>
+            <DIV style="margin-left: 40px;">
               The standing bitmap can be changed with parameter
-              "bitmap", which is a bitmap index.<br>
-              GR.MODIFY s1, "bitmap", <span style="color: rgb(0, 0, 153);">bmp2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              %</span> bitmap <span style="color: rgb(0, 0, 153);">bmp2</span> <span style="text-decoration: underline;">must already
-              exist</span><br>
-            </div><br>
-            <span style="text-decoration: underline;"><a name="Animation" id="Animation"></a>Animation</span><br>
-            <div style="margin-left: 40px;">
+              "bitmap", which is a bitmap index.<BR>
+              GR.MODIFY s1, "bitmap", <SPAN style=
+              "color: rgb(0, 0, 153);">bmp2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              %</SPAN> bitmap <SPAN style=
+              "color: rgb(0, 0, 153);">bmp2</SPAN> <SPAN style=
+              "text-decoration: underline;">must already
+              exist</SPAN><BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "Animation" id="Animation"></A>Animation</SPAN><BR>
+            <DIV style="margin-left: 40px;">
               An animation is a sequence of bitmaps. Similar to
-              bitmaps, there is an internal list of Animations.<br>
+              bitmaps, there is an internal list of Animations.<BR>
               This list is indexed the same way as bitmaps, it
               starts with 1 and grows as more animations are
-              added.<br>
+              added.<BR>
               When you create an animation, you get back an
-              animation index (pointer).<br>
+              animation index (pointer).<BR>
               You can attach this animation to a sprite using this
-              index.<br>
-              Animations are <span style="text-decoration: underline;">not</span> graphic
+              index.<BR>
+              Animations are <SPAN style=
+              "text-decoration: underline;">not</SPAN> graphic
               objects, similar to bitmaps, they are attached to
-              sprites.<br>
-              <br>
+              sprites.<BR>
+              <BR>
               To create a new Animation, you can load it from a
-              file<br>
-              e.g GR.ANIM.LOAD <span style="color: rgb(0, 0, 153);">ani</span>,
-              "h-animate.png",32,33,16<br>
-              <br>
+              file<BR>
+              e.g GR.ANIM.LOAD <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN>,
+              "h-animate.png",32,33,16<BR>
+              <BR>
               This will put the new index/pointer into the variable
-              <span style="color: rgb(0, 0, 153);">ani</span>.<br>
-              See <a href="graphics.html#gr_anim_load">GR.ANIM.LOAD</a> for
-              more information.<br>
-              <br>
+              <SPAN style="color: rgb(0, 0, 153);">ani</SPAN>.<BR>
+              See <A href=
+              "graphics.html#gr_anim_load">GR.ANIM.LOAD</A> for
+              more information.<BR>
+              <BR>
               Animations may be created before or after sprite
-              object creation.<br>
-              <br>
-            </div><span style="text-decoration: underline;">Animation to new
-            Sprite</span>
-            <div style="margin-left: 40px;">
-              To create a new sprite with animation,<br>
-              First create and load an animation.<br>
-              GR.ANIM.LOAD <span style="color: rgb(0, 0, 153);">ani</span>,"h-animate.png",32,33,16<br>
+              object creation.<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Animation to new
+            Sprite</SPAN>
+            <DIV style="margin-left: 40px;">
+              To create a new sprite with animation,<BR>
+              First create and load an animation.<BR>
+              GR.ANIM.LOAD <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN>,"h-animate.png",32,33,16<BR>
 
-              <br>
+              <BR>
               Then create the new Sprite and attach the
-              animation;<br>
-              GR.SPRITE.DRAW s1,100,100,bmp,<span style="color: rgb(0, 0, 153);">ani</span> &nbsp;&nbsp;
-              <span style="color: rgb(102, 102, 102);">% obj, x , y
-              , bitmap, animation<br>
-              <br></span> This will return the new sprite object s1
-              and update it's property <span style="color: rgb(102, 0, 0);">"anim"</span> with
-              <span style="color: rgb(0, 0, 153);">ani</span>.<br>
+              animation;<BR>
+              GR.SPRITE.DRAW s1,100,100,bmp,<SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN> &nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% obj, x , y
+              , bitmap, animation<BR>
+              <BR></SPAN> This will return the new sprite object s1
+              and update it's property <SPAN style=
+              "color: rgb(102, 0, 0);">"anim"</SPAN> with
+              <SPAN style="color: rgb(0, 0, 153);">ani</SPAN>.<BR>
               Note that you still need to specify the standing
-              bitmap.<br>
-              <br>
+              bitmap.<BR>
+              <BR>
               The default animation rate for a new sprite is 10
               frames per second (fps) and will animate with each
-              GR.MOTION.<br>
-              The animation is based on times between each <a href="#object_motion">motion</a> (see below).<br>
-            </div><br>
-            <span style="text-decoration: underline;"><span style="text-decoration: underline;"><a name="sprite-anim" id="sprite-anim"></a>Animation to existing
-            Sprite</span><br></span>
-            <div style="margin-left: 40px;">
+              GR.MOTION.<BR>
+              The animation is based on times between each <A href=
+              "#object_motion">motion</A> (see below).<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "text-decoration: underline;"><A name="sprite-anim" id=
+            "sprite-anim"></A>Animation to existing
+            Sprite</SPAN><BR></SPAN>
+            <DIV style="margin-left: 40px;">
               To attach or change an Animation to an existing
-              Sprite, use GR.MODIFY<br>
-              <br>
-              GR.MODIFY s0, <span style="color: rgb(102, 0, 0);">"anim"</span>, <span style="color: rgb(0, 0, 153);">ani</span><br>
-              where s0 is the sprite object number and <span style="color: rgb(0, 0, 153);">ani</span> is the animation
-              index (pointer).<br>
+              Sprite, use GR.MODIFY<BR>
+              <BR>
+              GR.MODIFY s0, <SPAN style=
+              "color: rgb(102, 0, 0);">"anim"</SPAN>, <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN><BR>
+              where s0 is the sprite object number and <SPAN style=
+              "color: rgb(0, 0, 153);">ani</SPAN> is the animation
+              index (pointer).<BR>
               The animation must already exist. The exception is 0
-              = no animation.<br>
-              <br>
-            </div>
-            <div style="margin-left: 40px;">
+              = no animation.<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
               To stop animating, remove the animation by setting
-              the sprite's animation pointer to zero.<br>
-              GR.MODIFY s1, <span style="color: rgb(102, 0, 0);">"anim"</span>, 0<br>
-              This means the sprite has <span style="text-decoration: underline;">no animation</span> and
-              defaults to it's <span style="text-decoration: underline;">standing
-              bitmap</span>.<br>
+              the sprite's animation pointer to zero.<BR>
+              GR.MODIFY s1, <SPAN style=
+              "color: rgb(102, 0, 0);">"anim"</SPAN>, 0<BR>
+              This means the sprite has <SPAN style=
+              "text-decoration: underline;">no animation</SPAN> and
+              defaults to it's <SPAN style=
+              "text-decoration: underline;">standing
+              bitmap</SPAN>.<BR>
               Alternatively, you can freeze the frame by setting
-              the animation rate <span style="color: rgb(102, 0, 0);">"arate"</span> to zero (see
-              bleow).<br>
-              <br>
-            </div><span style="text-decoration: underline;">Movement and Animation
-            Rates</span><br>
-            <div style="margin-left: 40px;">
+              the animation rate <SPAN style=
+              "color: rgb(102, 0, 0);">"arate"</SPAN> to zero (see
+              bleow).<BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Movement and Animation
+            Rates</SPAN><BR>
+            <DIV style="margin-left: 40px;">
               As with all objects, you can use the built-in motion
-              vectors to move the sprite with GR.MOTION<br>
+              vectors to move the sprite with GR.MOTION<BR>
               or you can manually set the position of a sprite with
-              GR.MODIFY s1, "x", X, "y", Y<br>
-              (see the section on <a href="#object_motion">Object
-              Motion</a>).<br>
-              <br>
+              GR.MODIFY s1, "x", X, "y", Y<BR>
+              (see the section on <A href="#object_motion">Object
+              Motion</A>).<BR>
+              <BR>
               If you opt to move sprites manually, set their speed
-              to zero to avoid being moved by GR.MOTION.<br>
-              <br>
-              In addition to movement, <span style="font-weight: bold;">GR.MOTION also updates a
-              sprite's animation</span> according to it's animation
-              rate ("arate"), see <a href="graphics.html#gr_motion">GR.MOTION</a> for the
+              to zero to avoid being moved by GR.MOTION.<BR>
+              <BR>
+              In addition to movement, <SPAN style=
+              "font-weight: bold;">GR.MOTION also updates a
+              sprite's animation</SPAN> according to it's animation
+              rate ("arate"), see <A href=
+              "graphics.html#gr_motion">GR.MOTION</A> for the
               effects of entering a motion loop. Therefore, if you
               are using animation or tweens, you must also use
-              GR.MOTION.<br>
-              <br>
-            </div>
-            <div style="margin-left: 40px;">
-              <span style="font-weight: bold;"><a name="sprite-arate" id="sprite-arate"></a></span><span style="font-weight: bold;">arate</span><br>
-              The animation rate property "<span style="color: rgb(102, 0, 0);">arate"</span> is given as
+              GR.MOTION.<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="font-weight: bold;"><A name=
+              "sprite-arate" id=
+              "sprite-arate"></A></SPAN><SPAN style=
+              "font-weight: bold;">arate</SPAN><BR>
+              The animation rate property "<SPAN style=
+              "color: rgb(102, 0, 0);">arate"</SPAN> is given as
               frames per second. The default for a new sprite is
-              10.<br>
-              <br>
-              <div style="margin-left: 40px;">
-                arate <span style="text-decoration: underline;">Zero</span><br>
-              </div>
-              <div style="margin-left: 80px;">
+              10.<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                arate <SPAN style=
+                "text-decoration: underline;">Zero</SPAN><BR>
+              </DIV>
+              <DIV style="margin-left: 80px;">
                 If a sprite has animation (anim non-zero) but the
                 arate is zero, then the frame is not updated, it
-                stays on the current frame i.e <span style="text-decoration: underline;">freeze frame</span>.
+                stays on the current frame i.e <SPAN style=
+                "text-decoration: underline;">freeze frame</SPAN>.
                 It does not revert to it's standing bitmap because
                 there is still a valid animation (anim
-                non-zero).<br>
-                <span style="text-decoration: underline;">If you
-                are manually changing the current frame</span>
+                non-zero).<BR>
+                <SPAN style="text-decoration: underline;">If you
+                are manually changing the current frame</SPAN>
                 (aframe), or if you are using a Tween, then you
                 should set the aRate to zero (so that arate does
-                not interefere with you manual rate).<br>
-              </div>
-              <div style="margin-left: 40px;">
-                <br>
-                arate <span style="text-decoration: underline;">Negative</span><br>
-              </div>
-              <div style="margin-left: 80px;">
+                not interefere with you manual rate).<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                <BR>
+                arate <SPAN style=
+                "text-decoration: underline;">Negative</SPAN><BR>
+              </DIV>
+              <DIV style="margin-left: 80px;">
                 If a sprite has animation (anim non-zero) but the
                 arate is negative, the animation is reversed
-                (frames <span style="text-decoration: underline;">played
-                backwards</span>) at the negative rate.<br>
-              </div>
-              <div style="margin-left: 40px;"></div>
-            </div><br>
-            <div style="margin-left: 40px;">
-              <a name="sprite-aloop" id="sprite-aloop"></a><span style="font-weight: bold;">aloop</span><br>
-              The sprite property <span style="color: rgb(102, 0, 0);">"aloop"</span> is a flag
+                (frames <SPAN style=
+                "text-decoration: underline;">played
+                backwards</SPAN>) at the negative rate.<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;"></DIV>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              <A name="sprite-aloop" id=
+              "sprite-aloop"></A><SPAN style=
+              "font-weight: bold;">aloop</SPAN><BR>
+              The sprite property <SPAN style=
+              "color: rgb(102, 0, 0);">"aloop"</SPAN> is a flag
               that determines if the sprite should animate forever
-              (true) or just once (false).<br>
-              <br>
-              <div style="margin-left: 40px;">
-                aloop <span style="text-decoration: underline;">true (not
-                0)</span><br>
-                <div style="margin-left: 40px;">
-                  Animate forever.<br>
-                  <br>
-                </div>
-              </div>
-              <div style="margin-left: 80px;">
-                <div style="margin-left: 40px;"></div>
-              </div>
-              <div style="margin-left: 40px;"></div>
-              <div style="margin-left: 40px;">
-                aloop <span style="text-decoration: underline;">false (0)<br></span>
-                <div style="margin-left: 40px;">
+              (true) or just once (false).<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                aloop <SPAN style=
+                "text-decoration: underline;">true (not
+                0)</SPAN><BR>
+                <DIV style="margin-left: 40px;">
+                  Animate forever.<BR>
+                  <BR>
+                </DIV>
+              </DIV>
+              <DIV style="margin-left: 80px;">
+                <DIV style="margin-left: 40px;"></DIV>
+              </DIV>
+              <DIV style="margin-left: 40px;"></DIV>
+              <DIV style="margin-left: 40px;">
+                aloop <SPAN style=
+                "text-decoration: underline;">false (0)<BR></SPAN>
+                <DIV style="margin-left: 40px;">
                   Animate just once. When the last frame is
-                  reached, then just stay on the last frame.<br>
+                  reached, then just stay on the last frame.<BR>
                   If animating backwards (arate negative) and
                   reached first frame, then just stay on first
-                  frame.<br>
+                  frame.<BR>
                   For another run, you must reset the frame an
-                  earlier one.<br>
-                  <br>
-                </div>
-              </div>
-            </div>Animation Frames<br>
-            <div style="margin-left: 40px;">
-              <a name="sprite-aframe" id="sprite-aframe"></a><span style="font-weight: bold;">aframe</span><br>
-            </div>
-            <div style="margin-left: 80px;">
+                  earlier one.<BR>
+                  <BR>
+                </DIV>
+              </DIV>
+            </DIV>Animation Frames<BR>
+            <DIV style="margin-left: 40px;">
+              <A name="sprite-aframe" id=
+              "sprite-aframe"></A><SPAN style=
+              "font-weight: bold;">aframe</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
               The current animation frame index is stored in the
-              sprite property <span style="color: rgb(102, 0, 0);">"</span><span style="color: rgb(102, 0, 0);">aframe</span><span style="color: rgb(102, 0, 0);">"</span> and starts at
-              zero.<br>
-              You may change this value with GR.MODIFY.<br>
+              sprite property <SPAN style=
+              "color: rgb(102, 0, 0);">"</SPAN><SPAN style=
+              "color: rgb(102, 0, 0);">aframe</SPAN><SPAN style=
+              "color: rgb(102, 0, 0);">"</SPAN> and starts at
+              zero.<BR>
+              You may change this value with GR.MODIFY.<BR>
               If you enter an illegal value, it will later be
-              forced to a legal one during animation.<br>
-            </div><br>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="graphics_parms" id="graphics_parms"></a>Graphics
-          Parameters</span></font><br>
-          <br>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;"><a name="graphics_gp" id="graphics_gp"></a>General Purpose
-            (common)<br>
-            <br></span>
-          </div>
-          <div style="margin-left: 40px;">
-            <div style="margin-left: 40px;">
+              forced to a legal one during animation.<BR>
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="graphics_parms" id=
+          "graphics_parms"></A>Graphics
+          Parameters</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "graphics_gp" id="graphics_gp"></A>General Purpose
+            (common)<BR>
+            <BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
               Four more parameters have been added to the General
-              Purpose parameters (Paint and Alpha),<br>
-              these are "<span style="color: rgb(0, 0, 153);">x</span>","<span style="color: rgb(0, 0, 153);">y</span>","<span style="color: rgb(0, 0, 153);">speed</span>" and
-              "<span style="color: rgb(0, 0, 153);">dir</span>".<br>
-            </div>
-            <div style="margin-left: 40px;">
+              Purpose parameters (Paint and Alpha),<BR>
+              these are "<SPAN style=
+              "color: rgb(0, 0, 153);">x</SPAN>","<SPAN style=
+              "color: rgb(0, 0, 153);">y</SPAN>","<SPAN style=
+              "color: rgb(0, 0, 153);">speed</SPAN>" and
+              "<SPAN style=
+              "color: rgb(0, 0, 153);">dir</SPAN>".<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
               These parameters are available to all display list
-              objects&nbsp; (<a href="#object_table">updated object
-              table</a>).<br>
-            </div><br>
-          </div>
-          <table style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;" cellspacing="2" cellpadding="2" border="0">
-            <caption style="text-align:left">
-              General Purpose Parameters<br>
-            </caption>
-            <tbody>
-              <tr>
-                <td style="vertical-align: top;">Type<br></td>
-                <td style="vertical-align: top;">Position<br></td>
-                <td style="vertical-align: top;">Position<br></td>
-                <td style="vertical-align: top;">Paint</td>
-                <td style="vertical-align: top;">Alpha</td>
-                <td style="vertical-align: top;">Motion<br></td>
-                <td style="vertical-align: top;">Motion</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">Name
-                (string)<br></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">x</span></span><br></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">y</span></span><br></td>
-                <td style="vertical-align: top;">paint<br></td>
-                <td style="vertical-align: top;">alpha<br></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">speed</span></span><br></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">dir</span></span><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-            </tbody>
-          </table>
-          <div style="margin-left: 40px;">
-            <br>
-            <div style="margin-left: 40px;">
+              objects&nbsp; (<A href="#object_table">updated object
+              table</A>).<BR>
+            </DIV><BR>
+          </DIV>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <CAPTION style="text-align:left">
+              General Purpose Parameters<BR>
+            </CAPTION>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Type<BR></TD>
+                <TD style="vertical-align: top;">Position<BR></TD>
+                <TD style="vertical-align: top;">Position<BR></TD>
+                <TD style="vertical-align: top;">Paint</TD>
+                <TD style="vertical-align: top;">Alpha</TD>
+                <TD style="vertical-align: top;">Motion<BR></TD>
+                <TD style="vertical-align: top;">Motion</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Name
+                (string)<BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><SPAN style=
+                "font-weight: bold;">x</SPAN></SPAN><BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><SPAN style=
+                "font-weight: bold;">y</SPAN></SPAN><BR></TD>
+                <TD style="vertical-align: top;">paint<BR></TD>
+                <TD style="vertical-align: top;">alpha<BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><SPAN style=
+                "font-weight: bold;">speed</SPAN></SPAN><BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);"><SPAN style=
+                "font-weight: bold;">dir</SPAN></SPAN><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <DIV style="margin-left: 40px;">
               Note that as before (legacy Basic), the alpha is that
               of the object (not the paint's alpha). If the
               object's alpha has been changed, it overrides the
-              paint's alpha.<br>
-            </div><br>
-            <span style="text-decoration: underline;"><a name="whole" id="whole"></a>Whole Object Positioning&nbsp;
-            (</span> <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">x</span></span>,</span>
-            <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">y</span></span> )<br>
-            <br></span>
-            <div style="margin-left: 40px;">
-              "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">x</span></span>" and
-              "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">y</span></span>" are for moving
-              whole objects.<br>
-            </div>
-            <div style="margin-left: 40px;">
+              paint's alpha.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "whole" id="whole"></A>Whole Object Positioning&nbsp;
+            (</SPAN> <SPAN style=
+            "text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">x</SPAN></SPAN>,</SPAN>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">y</SPAN></SPAN> )<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">x</SPAN></SPAN>" and
+              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">y</SPAN></SPAN>" are for moving
+              whole objects.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
               The position parameters are the same parameters for
-              those objects that already have "x" and "y".<br>
+              those objects that already have "x" and "y".<BR>
               For other, objects that did not have them, "x" and
               "y" gives a position and will get the same values
               found for&nbsp; "x1", "y1" and&nbsp;
-              "left","top".<br>
-              e.g<br>
-              GR.GET.VALUE oLine, "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">x</span></span>",myvar
+              "left","top".<BR>
+              e.g<BR>
+              GR.GET.VALUE oLine, "<SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">x</SPAN></SPAN>",myvar
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % gets the same value as "<span style="font-weight: bold;">x1</span>"<br>
-              GR.GET.VALUE oRect, "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">x</span></span>",myvar
+              % gets the same value as "<SPAN style=
+              "font-weight: bold;">x1</SPAN>"<BR>
+              GR.GET.VALUE oRect, "<SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">x</SPAN></SPAN>",myvar
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % gets the same value as "<span style="font-weight: bold;">left</span>"<br>
-            </div>
-            <div style="margin-left: 40px;">
-              <br>
-            </div>
-            <div style="margin-left: 40px;">
-              The difference being that if you <span style="font-weight: bold;">modify</span> "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">x</span></span>" or
-              "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">y</span></span>" using <a href="graphics.html#gr_modify"><span style="color: rgb(0, 0, 153);">GR.MODIFY</span></a>, then
-              the <span style="font-weight: bold;">whole
-              object</span> is moved to that position (not just one
-              corner).<br>
-            </div>
-            <div style="margin-left: 40px;">
-              e.g<br>
-              GR.MODIFY oRect, "x", 200<br>
-              Above command modifies <span style="font-weight: bold;">both</span> "left" and "right"
+              % gets the same value as "<SPAN style=
+              "font-weight: bold;">left</SPAN>"<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              The difference being that if you <SPAN style=
+              "font-weight: bold;">modify</SPAN> "<SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">x</SPAN></SPAN>" or
+              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">y</SPAN></SPAN>" using <A href=
+              "graphics.html#gr_modify"><SPAN style=
+              "color: rgb(0, 0, 153);">GR.MODIFY</SPAN></A>, then
+              the <SPAN style="font-weight: bold;">whole
+              object</SPAN> is moved to that position (not just one
+              corner).<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+              GR.MODIFY oRect, "x", 200<BR>
+              Above command modifies <SPAN style=
+              "font-weight: bold;">both</SPAN> "left" and "right"
               values of the rectangle so that "left" is at 200 and
               "right" moves to right to preserve the same width.
-              Similarly with "y" and "top","bottom".<br>
-              <br>
-              <span style="text-decoration: underline;">Groups</span><br>
-              If you GR.MODIFY the "<span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">x</span></span>" or
-              "<span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);">y</span></span>" of a group,
+              Similarly with "y" and "top","bottom".<BR>
+              <BR>
+              <SPAN style=
+              "text-decoration: underline;">Groups</SPAN><BR>
+              If you GR.MODIFY the "<SPAN style=
+              "font-weight: bold;"><SPAN style=
+              "color: rgb(0, 0, 153);">x</SPAN></SPAN>" or
+              "<SPAN style="font-weight: bold;"><SPAN style=
+              "color: rgb(0, 0, 153);">y</SPAN></SPAN>" of a group,
               the objects in it's list are also modified (moved to
-              that position).<br>
+              that position).<BR>
               If instead, you want to move a group (and it's
               objects) relatively from their position,&nbsp;
-              consider using GR.MOVE.<br>
-            </div>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;">Motion
-            Vectors (</span> <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">speed</span></span><span style="color: rgb(0, 0, 0);">,</span></span></span></span>
-            <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;"><span style="color: rgb(0, 0, 0);"><span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">dir</span></span></span></span></span>
-            )<br>
-            <br></span>
-            <div style="margin-left: 40px;">
-              "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">speed</span></span>" and
-              "<span style="color: rgb(0, 0, 153);"><span style="font-weight: bold;">dir</span></span>" are quantites
+              consider using GR.MOVE.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">Motion
+            Vectors (</SPAN> <SPAN style=
+            "text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">speed</SPAN></SPAN><SPAN style=
+            "color: rgb(0, 0, 0);">,</SPAN></SPAN></SPAN></SPAN>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">dir</SPAN></SPAN></SPAN></SPAN></SPAN>
+            )<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">speed</SPAN></SPAN>" and
+              "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">dir</SPAN></SPAN>" are quantites
               for a vector of motion. Vectors allow an object to
               move in a specified way. This is described in the
-              section on <a href="#object_motion">Object
-              Motion</a>.<br>
-            </div>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <font size="+1"><span style="color: rgb(0, 0, 153);"><a name="object_table" id="setacc"></a>Updated Object Table</span></font><br>
-          <table style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;" cellspacing="2" cellpadding="2" border="0">
-            <caption>
-              Updated Graphics Object Table<br>
-              <br>
-            </caption>
-            <tbody>
-              <tr>
-                <td style="vertical-align: top;">Type<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">Pos<br></td>
-                <td style="vertical-align: top;">Pos<br></td>
-                <td style="vertical-align: top;">Pos<br></td>
-                <td style="vertical-align: top;">Pos<br></td>
-                <td style="vertical-align: top;">Other<br></td>
-                <td style="vertical-align: top;">Paint<br></td>
-                <td style="vertical-align: top;">Alpha<br></td>
-                <td style="vertical-align: top;">Motion<br></td>
-                <td style="vertical-align: top;">Motion<br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">( common
-                )<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">paint<br></td>
-                <td style="vertical-align: top;">alpha<br></td>
-                <td style="vertical-align: top;">speed<br></td>
-                <td style="vertical-align: top;">dir<br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">arc<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">left<br>
-                <span style="color: rgb(0, 0, 153);">x</span><br></td>
-                <td style="vertical-align: top;">top<br>
-                <span style="color: rgb(0, 0, 153);">y</span><br></td>
-                <td style="vertical-align: top;">right<br></td>
-                <td style="vertical-align: top;">bottom<br></td>
-                <td style="vertical-align: top;">start_angle<br>
-                sweep_angle<br>
-                fill_mode<br></td>
-                <td style="vertical-align: top;">paint<br></td>
-                <td style="vertical-align: top;">alpha<br></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span><br></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">bitmap<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x</td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">bitmap<br>
-                <span style="color: rgb(0, 0, 153);">width</span>
-                (read-only)<span style="color: rgb(0, 0, 153);"><br>
-                height</span> (read-only)<br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">circle<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x</td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">radius</td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">line<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x1<br>
-                <span style="color: rgb(0, 0, 153);">x</span></td>
-                <td style="vertical-align: top;">y1<br>
-                <span style="color: rgb(0, 0, 153);">y</span></td>
-                <td style="vertical-align: top;">x2<br></td>
-                <td style="vertical-align: top;">y2<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">oval<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">left<br>
-                <span style="color: rgb(0, 0, 153);">x</span></td>
-                <td style="vertical-align: top;">top<br>
-                <span style="color: rgb(0, 0, 153);">y</span></td>
-                <td style="vertical-align: top;">right<br></td>
-                <td style="vertical-align: top;">bottom<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">
-                set.pixels<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">point<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">poly<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">list<br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">rect<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">left<br>
-                <span style="color: rgb(0, 0, 153);">x</span></td>
-                <td style="vertical-align: top;">top<br>
-                <span style="color: rgb(0, 0, 153);">y</span></td>
-                <td style="vertical-align: top;">right<br></td>
-                <td style="vertical-align: top;">bottom<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a name="object_sprite" id="object_sprite"></a>sprite<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">bitmap</span><br>
-                <span style="color: rgb(0, 0, 153);">anim<br>
-                arate<br>
-                aframe<br>
-                aloop<br>
-                width</span> (read-only)<span style="color: rgb(0, 0, 153);"><br>
-                height</span> (read-only)</td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">text<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">text<br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">
-                clip.start<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">left<br>
-                <span style="color: rgb(0, 0, 153);">x</span></td>
-                <td style="vertical-align: top;">top<br>
-                <span style="color: rgb(0, 0, 153);">y</span></td>
-                <td style="vertical-align: top;">right<br></td>
-                <td style="vertical-align: top;">bottom<br></td>
-                <td style="vertical-align: top;">RO<br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">
-                rotate.start<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">angle<br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">group<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">x<br></td>
-                <td style="vertical-align: top;">y<br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;">list<br></td>
-                <td style="vertical-align: top;">paint</td>
-                <td style="vertical-align: top;">alpha</td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">speed</span></td>
-                <td style="vertical-align: top;"><span style="color: rgb(0, 0, 153);">dir</span></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-            </tbody>
-          </table><br>
-          <div style="margin-left: 40px;">
-            x,y is used for&nbsp; <a href="#whole">whole object
-            positioning</a><br>
-          </div>
-          <div style="margin-left: 40px;">
-            ( common ) means General Purpose.<br>
-            (read-only) will error if used with GR.MODIFY<br>
-          </div><br>
-        </td>
-      </tr>
-    </tbody>
-  </table><br>
-  <hr>
-  <script type="text/javascript" src="https://humpity.github.io/counter.js"></script>
-
-
-</body></html>
+              section on <A href="#object_motion">Object
+              Motion</A>.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="object_table" id=
+          "setacc"></A>Updated Object Table</SPAN></FONT><BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <CAPTION>
+              Updated Graphics Object Table<BR>
+              <BR>
+            </CAPTION>
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Type<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">Pos<BR></TD>
+                <TD style="vertical-align: top;">Pos<BR></TD>
+                <TD style="vertical-align: top;">Pos<BR></TD>
+                <TD style="vertical-align: top;">Pos<BR></TD>
+                <TD style="vertical-align: top;">Other<BR></TD>
+                <TD style="vertical-align: top;">Paint<BR></TD>
+                <TD style="vertical-align: top;">Alpha<BR></TD>
+                <TD style="vertical-align: top;">Motion<BR></TD>
+                <TD style="vertical-align: top;">Motion<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">( common
+                )<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">paint<BR></TD>
+                <TD style="vertical-align: top;">alpha<BR></TD>
+                <TD style="vertical-align: top;">speed<BR></TD>
+                <TD style="vertical-align: top;">dir<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">arc<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">left<BR>
+                <SPAN style=
+                "color: rgb(0, 0, 153);">x</SPAN><BR></TD>
+                <TD style="vertical-align: top;">top<BR>
+                <SPAN style=
+                "color: rgb(0, 0, 153);">y</SPAN><BR></TD>
+                <TD style="vertical-align: top;">right<BR></TD>
+                <TD style="vertical-align: top;">bottom<BR></TD>
+                <TD style="vertical-align: top;">start_angle<BR>
+                sweep_angle<BR>
+                fill_mode<BR></TD>
+                <TD style="vertical-align: top;">paint<BR></TD>
+                <TD style="vertical-align: top;">alpha<BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN><BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">bitmap<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x</TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">bitmap<BR>
+                <SPAN style="color: rgb(0, 0, 153);">width</SPAN>
+                (read-only)<SPAN style=
+                "color: rgb(0, 0, 153);"><BR>
+                height</SPAN> (read-only)<BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">circle<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x</TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">radius</TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">line<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x1<BR>
+                <SPAN style="color: rgb(0, 0, 153);">x</SPAN></TD>
+                <TD style="vertical-align: top;">y1<BR>
+                <SPAN style="color: rgb(0, 0, 153);">y</SPAN></TD>
+                <TD style="vertical-align: top;">x2<BR></TD>
+                <TD style="vertical-align: top;">y2<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">oval<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">left<BR>
+                <SPAN style="color: rgb(0, 0, 153);">x</SPAN></TD>
+                <TD style="vertical-align: top;">top<BR>
+                <SPAN style="color: rgb(0, 0, 153);">y</SPAN></TD>
+                <TD style="vertical-align: top;">right<BR></TD>
+                <TD style="vertical-align: top;">bottom<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">
+                set.pixels<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">point<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">poly<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">list<BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">rect<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">left<BR>
+                <SPAN style="color: rgb(0, 0, 153);">x</SPAN></TD>
+                <TD style="vertical-align: top;">top<BR>
+                <SPAN style="color: rgb(0, 0, 153);">y</SPAN></TD>
+                <TD style="vertical-align: top;">right<BR></TD>
+                <TD style="vertical-align: top;">bottom<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A name=
+                "object_sprite" id=
+                "object_sprite"></A>sprite<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">bitmap</SPAN><BR>
+                <SPAN style="color: rgb(0, 0, 153);">anim<BR>
+                arate<BR>
+                aframe<BR>
+                aloop<BR>
+                width</SPAN> (read-only)<SPAN style=
+                "color: rgb(0, 0, 153);"><BR>
+                height</SPAN> (read-only)</TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">text<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">text<BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">
+                clip.start<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">left<BR>
+                <SPAN style="color: rgb(0, 0, 153);">x</SPAN></TD>
+                <TD style="vertical-align: top;">top<BR>
+                <SPAN style="color: rgb(0, 0, 153);">y</SPAN></TD>
+                <TD style="vertical-align: top;">right<BR></TD>
+                <TD style="vertical-align: top;">bottom<BR></TD>
+                <TD style="vertical-align: top;">RO<BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">
+                rotate.start<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">angle<BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">group<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">x<BR></TD>
+                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">list<BR></TD>
+                <TD style="vertical-align: top;">paint</TD>
+                <TD style="vertical-align: top;">alpha</TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 40px;">
+            x,y is used for&nbsp; <A href="#whole">whole object
+            positioning</A><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            ( common ) means General Purpose.<BR>
+            (read-only) will error if used with GR.MODIFY<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>
