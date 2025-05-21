@@ -26,8 +26,9 @@
         <TD style="vertical-align: top;">
           <DIV style="text-align: right;">
             <BIG>hBasic Manual</BIG><BR>
-          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">System
-          changes<BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+2">System changes</FONT></SPAN><BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR>
           <BR></BIG></BIG>
           <TABLE style=
           "text-align: left; width: 90%; margin-left: 40px;"
@@ -194,7 +195,10 @@
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name=
           "Interrupt_Scope_Fixes" id=
-          "Interrupt_Scope_Fixes"></A>Interrupt Scope Fixes<BR>
+          "Interrupt_Scope_Fixes"></A></BIG><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">Interrupt Scope
+          Fixes</SPAN></FONT><BIG style=
+          "color: rgb(0, 0, 153);"><BR>
           <BR></BIG>
           <DIV style="margin-left: 40px;">
             By 'scope' we mean the list/s that Basic! searches
@@ -297,9 +301,9 @@
             <BR>
             The following fixes were done.<BR>
             <BR>
-            <BIG><SPAN style=
-            "text-decoration: underline; color: rgb(0, 0, 153);">Fixed
-            scope during an interrupt.</SPAN><BR></BIG><BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "text-decoration: underline;">Fixed scope during an
+            interrupt.</SPAN></SPAN><BIG><BR></BIG><BR>
             <DIV style="margin-left: 40px;">
               <SPAN style="color: rgb(0, 0, 153);">Fixed Case
               A)</SPAN> Variable searches inside the main-block or
@@ -312,11 +316,12 @@
               (no matter when they are called) will only search the
               function's local variable list.<BR>
             </DIV><BR>
-            <BIG style=
-            "text-decoration: underline; color: rgb(0, 0, 153);">Fixed
-            scope for new variables created during an
-            interrupt<BR></BIG> <SPAN style=
-            "text-decoration: underline;"><BR></SPAN>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);">Fixed scope for new variables
+            created during an interrupt</SPAN></SPAN><BIG style=
+            "text-decoration: underline; color: rgb(0, 0, 153);"><BR>
+            </BIG> <SPAN style="text-decoration: underline;"><BR>
+            </SPAN>
             <DIV style="margin-left: 40px;">
               Made sure new variables in main-block and
               interrupt-main-block are always created in main
@@ -326,8 +331,8 @@
             </DIV><BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <BIG><SPAN style=
-            "color: rgb(0, 0, 153); text-decoration: underline;">Exceptions</SPAN></BIG><BR>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "text-decoration: underline;">Exceptions</SPAN></SPAN><BR>
 
             <BR>
             <DIV style="margin-left: 40px;">
@@ -353,8 +358,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="fix_volkeys"
-          id="fix_volkeys"></A>Fix for volkeys at start of
-          run</BIG><BR>
+          id="fix_volkeys"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">Fix for volkeys at start of
+          run</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             When <SPAN style=
@@ -369,9 +375,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <A name="faster_byte_write_buffer" id=
-          "faster_byte_write_buffer"></A><BIG><SPAN style=
-          "color: rgb(0, 0, 153);">Faster
-          BYTE.WRITE.BUFFER</SPAN></BIG><BR>
+          "faster_byte_write_buffer"></A><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">Faster
+          BYTE.WRITE.BUFFER</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
             <SPAN style=
@@ -416,8 +422,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <SPAN style="color: rgb(0, 0, 153);"><A name="array_ptrs"
-          id="array_ptrs"></A><BIG>Array
-          Pointers<BR></BIG></SPAN><BR>
+          id="array_ptrs"></A><FONT size="+1">Array
+          Pointers</FONT></SPAN><SPAN style=
+          "color: rgb(0, 0, 153);"><BIG><BR></BIG></SPAN><BR>
           <DIV style="margin-left: 40px;">
             hBasic uses the term&nbsp; "array pointer" (e.g a[] )as
             representing the whole array. An array pointer has no
@@ -439,7 +446,10 @@
             e.g&nbsp; a$[] = b$[]<BR>
             <BR>
             <DIV style="margin-left: 40px;">
-              <SPAN style="color: rgb(0, 102, 0);">a[] = b[]<BR>
+              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">a[] =
+              b[]</SPAN></SPAN><SPAN style=
+              "color: rgb(0, 102, 0);"><BR>
               <BR></SPAN> Makes an exact copy of <SPAN style=
               "color: rgb(0, 102, 0);">b[]</SPAN> to <SPAN style=
               "color: rgb(0, 102, 0);">a[]</SPAN> <SPAN style=
@@ -479,9 +489,9 @@
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
               <SPAN style="font-weight: bold;">a[] =
-              b[]</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              </SPAN><SPAN style="color: rgb(102, 102, 102);">%
-              overwrite a[] with b[]</SPAN><SPAN style=
+              b[]</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% overwrite
+              a[] with b[]</SPAN><SPAN style=
               "font-family: Courier New, Courier, monospace;"><BR></SPAN>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">fn.end</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
@@ -529,36 +539,30 @@
                 <FONT size="-1"><SPAN style=
                 "font-style: italic;">....</SPAN></FONT><BR>
                 <FONT size="-1"><SPAN style=
-                "font-style: italic;">END</SPAN></FONT><BR>
+                "font-style: italic;">END<BR>
+                <BR></SPAN></FONT>
               </DIV>
-            </DIV><BR>
-            <SPAN style=
-            "text-decoration: underline;">Evaluation</SPAN>
-            (<SPAN style="font-style: italic;">place holder for
-            future development</SPAN>).<BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;">Evaluation</SPAN><BR>
             <BR>
             <DIV style="margin-left: 40px;">
-              Evaluation of <SPAN style=
-              "color: rgb(0, 102, 0);">a[]</SPAN> always returns
-              0&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ( might be
-              changed in the future )<BR>
-              Evaluation of <SPAN style=
-              "color: rgb(0, 102, 0);">a$[]</SPAN> always returns
-              ""&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ( might be
-              changed in the future )<BR>
-              Evaluation of <SPAN style=
-              "color: rgb(0, 0, 153);">non-existent</SPAN>
-              <SPAN style="color: rgb(0, 102, 0);">a[]</SPAN> leads
-              to an error.<BR>
+              Array Pointers may <SPAN style=
+              "text-decoration: underline;">not</SPAN> be evaluated
+              for PRINT. Doing so will lead to an error.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
               <BR>
-              e.g <SPAN style="color: rgb(0, 102, 0);">PRINT
-              a[]$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">,</SPAN>
-              <SPAN style="color: rgb(0, 102, 0);">b[]</SPAN><BR>
-              will print <SPAN style=
-              "font-family: Courier New, Courier, monospace;">",&nbsp;
-              0.0"</SPAN><BR>
-            </DIV><BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">array.load
+                a[],1,2,3<BR>
+                PRINT
+                a[]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                <SPAN style="color: rgb(51, 51, 51);">% Array
+                pointer[] not allowed</SPAN><BR>
+              </DIV><BR>
+            </DIV>
           </DIV>
         </TD>
       </TR>
