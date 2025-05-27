@@ -470,7 +470,7 @@
               "color: rgb(0, 102, 0);">b[]</SPAN> are not passed
               over to <SPAN style=
               "color: rgb(0, 102, 0);">a[]<BR></SPAN> If
-              <SPAN style="color: rgb(0, 102, 0);">b[]</SPAN>
+              <SPAN style="color: rgb(0, 102, 0);">a[]</SPAN>
               already exists, it is overwritten.<BR>
             </DIV><BR>
             <DIV style="margin-left: 40px;">
@@ -793,8 +793,8 @@
           Fixes<BR></BIG></SPAN>
           <DIV style="margin-left: 40px;">
             <DIV style="text-align: right;">
-              <SPAN style="font-style: italic;">Ack: dkal - forum
-              member.</SPAN><BR>
+              <SPAN style="font-style: italic;">Ack: dkal -
+              forum.</SPAN><BR>
             </DIV><SPAN style=
             "color: rgb(0, 0, 153);"><BIG><SPAN style=
             "text-decoration: underline;">Permissions Fix 1 -
@@ -892,8 +892,8 @@
           Fix<BR></BIG></SPAN>
           <DIV style="margin-left: 40px;">
             <DIV style="text-align: right;">
-              <SPAN style="font-style: italic;">Ack: dkal,daveacre
-              - forum member.</SPAN><BR>
+              <SPAN style="font-style: italic;">Ack:
+              dkal,daveacre,aFox.</SPAN><BR>
             </DIV><SPAN style=
             "color: rgb(0, 0, 153);">SENSORS</SPAN> command would
             crash on devices with Android-10+ if (internal)
@@ -910,9 +910,8 @@
           "textbyte_open_onfailure"></A> <SPAN style=
           "color: rgb(0, 0, 153);"><BIG>Gr.Modify List
           Fix<BR></BIG></SPAN>
-          <DIV style="text-align: right; margin-left: 40px;">
-            <SPAN style="font-style: italic;">Ack: afox -
-            forum.</SPAN><BR>
+          <DIV style="text-align: left; margin-left: 40px;">
+            <BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             Gr.Modify Group "list" would treat the list as a
@@ -958,8 +957,8 @@
             <BR>
             So an ftp server (hFTP server)&nbsp; was embedded.
             (This is thanks to server code from <SPAN style=
-            "font-style: italic;">MoStueck / hk
-            University).</SPAN><BR>
+            "font-style: italic;">MoStueck /
+            hk.university).</SPAN><BR>
             <BR>
             The new built-in ftp server (hFTP) allows any
             ftp-client (or plugin) to access the base<BR>
@@ -1634,7 +1633,8 @@
               The console actionbar default title is "Program
               Output".<BR>
               You may want to avoid displaying the actionbar when
-              your program starts up.<BR>
+              your program starts up, especially<BR>
+              if you are going straight into graphics.<BR>
               <BR>
               The actionbar will remain hidden until the next
               <A href="commands.html#actionbar_title"><SPAN style=
@@ -1706,11 +1706,11 @@
                 "color: rgb(0, 102, 0);">% console now in front
                 with title</SPAN></SPAN><BR>
               </DIV><BR>
-              If you do not use this directive, the actionbar
-              will&nbsp; be shown by default with the default title
-              "Program Output".<BR>
-            </DIV><BR>
-            <SPAN style="color: rgb(0, 0, 153);"><A name=
+              If you do not use this directive, the actionbar will
+              be shown by default with the default title "Program
+              Output".<BR>
+              <BR>
+            </DIV><SPAN style="color: rgb(0, 0, 153);"><A name=
             "void_color" id="void_color"></A>@@VOID_COLOR</SPAN>
             "&lt;color&gt;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             e.g @@void_color "blue"<BR>
@@ -1723,6 +1723,8 @@
               "console.html#voidcolor">CONSOLE.SET "voidcolor</A>
               &lt;color&gt;" but occurs before the console is
               displayed.<BR>
+              Note that the directive @@void_color has an
+              underscore while CONSOLE.SET key does not.<BR>
               <BR>
               The color must be a string and is the same format as
               the <A href="colors.html">color strings</A> for other
