@@ -41,7 +41,11 @@
                 <A href="#behave"><FONT size="+1">Behaviour and
                 Colors<BR></FONT></A></TD>
                 <TD style="vertical-align: top;">Behaviour and
-                appearence<BR></TD>
+                appearence<BR>
+                <A href="#window_bg">window_bg</A><BR>
+                <A href="#actionbar_bg">actionbar_bg</A><BR>
+                <A href="#matching_bars">matching</A><BR>
+                <A href="#shading">shading</A><BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -155,7 +159,8 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;">&gt;= Api 35<BR>
-                actionbar_on<BR></TD>
+                actionbar_<SPAN style=
+                "font-weight: bold;">on</SPAN><BR></TD>
                 <TD style="vertical-align: top; white-space;"
                 valign="middle">(light/dark) text on <SPAN style=
                 "font-weight: bold;">actionbar</SPAN><SPAN style=
@@ -170,9 +175,11 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;">&gt;= Api 35<BR>
-                actionbar_off<BR></TD>
+                actionbar_<SPAN style=
+                "font-weight: bold;">off</SPAN><BR></TD>
                 <TD style="vertical-align: top;" valign="middle">
-                (light/dark) text on window_bg<BR></TD>
+                (light/dark) text on <SPAN style=
+                "font-weight: bold;">window_bg</SPAN><BR></TD>
                 <TD style="vertical-align: top;" valign="middle">
                 (same as above)<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -231,8 +238,9 @@
               the background color of the statusbar and navbar<BR>
               depending on their configuration.<BR>
             </DIV><U><BIG><BR></BIG></U> <BIG><FONT size=
-            "+1">actionbar_bg</FONT></BIG> is the background color
-            of the actionbar. It can be set
+            "+1"><A name="actionbar_bg" id=
+            "actionbar_bg"></A>actionbar_bg</FONT></BIG> is the
+            background color of the actionbar. It can be set
             with;<U><BIG><BR></BIG></U>
             <DIV style="margin-left: 40px;">
               for console&nbsp; <A href=
@@ -285,17 +293,28 @@
 
               <SPAN style="font-weight: bold;"><BR></SPAN> Note
               that for devices &gt;= Api 35, the statusbar bg will
-              show the actionbar_bg only if the actionbar is
-              on.<BR>
-              If the actionbar is off, the statusbar bg will revert
-              to the window_bg.<BR>
+              follow the actionbar_bg <SPAN style=
+              "text-decoration: underline;">only</SPAN> if the
+              actionbar is on.<BR>
+              If the actionbar is off, the statusbar bg will follow
+              the window_bg.<BR>
+              <BR>
+            </DIV><A name="matching_bars" id=
+            "matching_bars"></A>System bars color <FONT size=
+            "+1">matching.</FONT><BR>
+            <DIV style="margin-left: 40px;">
+              As a general rule, if you set the actionbar_bg the
+              same as the window_bg, you will have the same color
+              for both the status bar and navigation bar.<BR>
+              <BR>
               (see also <A href=
               "#notch_hiding">notch_hiding</A>)<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <A name="systembar_shading" id=
-            "systembar_shading"></A>System bar text and icons.<BR>
+            "systembar_shading"></A>System bars Text and Icon
+            <FONT size="+1">shading</FONT>.<BR>
             <DIV style="margin-left: 40px;">
               Status bar text and Navigation bar icons can be made
               light or dark if they a permanently on (depending on
@@ -337,9 +356,10 @@
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;">sdark=1:
-                ndark=1: nav=1: act=0: sta=1</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
+                ndark=1: nav=1: act=0: sta=1&nbsp;&nbsp;
+                <SPAN style="color: rgb(102, 102, 102);">% dark
+                text, no actionbar<BR>
+                <BR></SPAN></SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
                 decors</SPAN> = ndark*16 + sdark*8 + (!nav)*4 +
                 act*2 + sta*1</SPAN><SPAN style=
