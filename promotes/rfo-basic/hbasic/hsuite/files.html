@@ -1,269 +1,202 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<HTML>
-<HEAD>
-  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
-  "generator">
-  <META http-equiv="content-type" content=
-  "text/html; charset=utf-8">
-  <META name="viewport" content=
-  "width=device-width, initial-scale=1.0">
-  <TITLE>Files</TITLE>
-  <LINK rel="stylesheet" href="main.css" type="text/css">
-</HEAD>
-<BODY vlink="#990099" link="#000099" alink="#000099">
-  <BR>
-  <A href="../hbasic.html">hBasic</A> &gt; <A href=
-  "index.html">hSuite</A> &gt; File Locations<BR>
-  <BR style="font-family: Helvetica,Arial,sans-serif;">
-  <TABLE style=
-  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
-  cellspacing="2" cellpadding="8">
-    <TBODY>
-      <TR>
-        <TD style="vertical-align: top;">
-          <DIV style="text-align: right;">
-            <BIG>hSuite</BIG><BR>
-          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">File
-          Locations</BIG></BIG><BR>
-          <DIV style="margin-left: 120px;">
-            <FONT size="+1">for hSuite Standalone Compilation<BR>
-            <BR></FONT>
-          </DIV>
-          <TABLE style=
-          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
-          border="0">
-            <TBODY>
-              <TR>
-                <TD><BIG><A href="#keys">About
-                Assets</A></BIG><BR></TD>
-                <TD style="height: 1px;">The virtual file
-                system.<BR></TD>
-              </TR>
-              <TR>
-                <TD height="1"><BIG><A href="#keystores">App
-                Created Files</A></BIG></TD>
-                <TD style="height: 1px;"><BR></TD>
-              </TR>
-              <TR>
-                <TD height="1"><A href="#creation"><BIG>Unsupported
-                Features</BIG><BR></A></TD>
-                <TD height="1"><BR></TD>
-              </TR>
-              <TR>
-                <TD height="1"><BIG><A href=
-                "#twokeys"><BR></A></BIG></TD>
-                <TD height="1"><BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-              </TR>
-            </TBODY>
-          </TABLE><FONT size="+1" color="#000099"><BR></FONT>
-          <FONT size="+1" color="#000099"><A name="assets" id=
-          "keys"></A>About Assets</FONT><BR>
-          <DIV style="margin-left: 80px;">
-            <BR>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Files</title>
+  <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body vlink="#990099" link="#000099" alink="#000099">
+  <br>
+  <a href="../hbasic.html">hBasic</a> &gt; <a href="index.html">hSuite</a> &gt; File Locations<br>
+  <br style="font-family: Helvetica,Arial,sans-serif;">
+  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;" cellspacing="2" cellpadding="8">
+    <tbody>
+      <tr>
+        <td style="vertical-align: top;">
+          <div style="text-align: right;">
+            <big>hSuite</big><br>
+          </div><big><big style="color: rgb(0, 0, 153);">File
+          Locations</big></big><br>
+          <div style="margin-left: 120px;">
+            <font size="+1">for hSuite Standalone Compilation<br>
+            <br></font>
+          </div>
+          <table style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;" border="0">
+            <tbody>
+              <tr>
+                <td><big><a href="#keys">About
+                Assets</a></big><br></td>
+                <td style="height: 1px;">The virtual file
+                system.<br></td>
+              </tr>
+              <tr>
+                <td height="1"><big><a href="#keystores">App
+                Created Files</a></big></td>
+                <td style="height: 1px;"><br></td>
+              </tr>
+              <tr>
+                <td height="1"><a href="#creation"><big>Unsupported
+                Features</big><br></a></td>
+                <td height="1"><br></td>
+              </tr>
+              <tr>
+                <td height="1"><big><a href="#twokeys"><br></a></big></td>
+                <td height="1"><br></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: top;"><br></td>
+                <td style="vertical-align: top;"><br></td>
+              </tr>
+            </tbody>
+          </table><font size="+1" color="#000099"><br></font>
+          <font size="+1" color="#000099"><a name="assets" id="keys"></a>About Assets</font><br>
+          <div style="margin-left: 80px;">
+            <br>
             All files that you need to exists 'before' you start
-            your app must be under<BR>
-            <SPAN style="color: rgb(102, 51, 0);">[source]</SPAN> ,
-            <SPAN style="color: rgb(102, 51, 0);">[data]</SPAN> ,
-            or&nbsp; <SPAN style=
-            "color: rgb(102, 51, 0);">[databases]</SPAN> of you
-            project base. These are called <SPAN style=
-            "text-decoration: underline;">'supported'
-            directories</SPAN>.<BR>
-            <BR>
-            <SPAN style=
-            "color: rgb(102, 51, 0);">[data]</SPAN>&nbsp; and&nbsp;
-            <SPAN style=
-            "color: rgb(102, 51, 0);">[databases]</SPAN>&nbsp; must
-            be indicated via hSuite options.<BR>
-            All the above files are known as <SPAN style=
-            "font-weight: bold;">Assets</SPAN> files.<BR>
-            They are <SPAN style=
-            "color: rgb(153, 0, 0);"><SPAN style=
-            "text-decoration: underline;">read-only</SPAN></SPAN>
+            your app must be under<br>
+            <span style="color: rgb(102, 51, 0);">[source]</span> ,
+            <span style="color: rgb(102, 51, 0);">[data]</span> ,
+            or&nbsp; <span style="color: rgb(102, 51, 0);">[databases]</span> of you
+            project base. These are called <span style="text-decoration: underline;">'supported'
+            directories</span>.<br>
+            <br>
+            <span style="color: rgb(102, 51, 0);">[data]</span>&nbsp; and&nbsp;
+            <span style="color: rgb(102, 51, 0);">[databases]</span>&nbsp; must
+            be indicated via hSuite options.<br>
+            All the above files are known as <span style="font-weight: bold;">Assets</span> files.<br>
+            They are <span style="color: rgb(153, 0, 0);"><span style="text-decoration: underline;">read-only</span></span>
             and are embedded into the package as a virtual
-            file-system.<BR>
+            file-system.<br>
             It is basically a file that pretends to be a disk
-            drive.<BR>
-            <BR>
-            Files outside these <SPAN style=
-            "text-decoration: underline;">supported
-            directories</SPAN> will not get copied to assets, so
-            will not exist before your app runs.<BR>
+            drive.<br>
+            <br>
+            Files outside these <span style="text-decoration: underline;">supported
+            directories</span> will not get copied to assets, so
+            will not exist before your app runs.<br>
             However, files outside supported directories can be
-            created 'after' your app runs by your app code.<BR>
-            <BR>
-          </DIV><A name="app-created" id="keystores"></A>
-          <FONT size="+1" color="#000099">App Created
-          Files</FONT><BR>
-          <DIV style="margin-left: 80px;">
+            created 'after' your app runs by your app code.<br>
+            <br>
+          </div><a name="app-created" id="keystores"></a>
+          <font size="+1" color="#000099">App Created
+          Files</font><br>
+          <div style="margin-left: 80px;">
             Files can be created by your app code e.g using the
-            TEXT and BYTE commands.<BR>
-            <BR>
+            TEXT and BYTE commands.<br>
+            <br>
             App created files are more flexible. They are
-            <SPAN style="color: rgb(0, 51, 0);"><SPAN style=
-            "text-decoration: underline;">writable</SPAN></SPAN>
-            and can be put anywhere under the<BR>
-            <A href=
-            "../other/transfer.html#app_path">[app_path]</A>
+            <span style="color: rgb(0, 51, 0);"><span style="text-decoration: underline;">writable</span></span>
+            and can be put anywhere under the<br>
+            <a href="../other/transfer.html#app_path">[app_path]</a>
             directory. This is the directory just above
-            <SPAN style="color: rgb(102, 51, 0);">[source],</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);">[data]</SPAN> and
-            <SPAN style=
-            "color: rgb(102, 51, 0);">[databases].</SPAN><BR>
-            ( In fact, you even have write-access to <SPAN style=
-            "color: rgb(0, 0, 153);">[app_path]</SPAN>'s parent
-            [com.rfo.myApp] ) which is the start of <A href=
-            "../hmanual/package.html/scoped">scoped-storage</A>.<BR>
+            <span style="color: rgb(102, 51, 0);">[source],</span>
+            <span style="color: rgb(102, 51, 0);">[data]</span> and
+            <span style="color: rgb(102, 51, 0);">[databases].</span><br>
+            ( In fact, you even have write-access to <span style="color: rgb(0, 0, 153);">[app_path]</span>'s parent
+            [com.rfo.myApp] ) which is the start of <a href="../hmanual/package.html/scoped">scoped-storage</a>.<br>
 
-            <BR>
-          </DIV><A name="app-created" id="keystores"></A>
-          <FONT size="+1" color="#000099">Unsupported
-          Features</FONT><BR>
-          <DIV style="margin-left: 40px;">
-            <FONT size="+1" color="#000099"><BR></FONT>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            <FONT size="+1"><SPAN style=
-            "text-decoration: underline;">Files to load at
-            startup</SPAN></FONT>
-          </DIV>
-          <DIV style="margin-left: 80px;">
+            <br>
+          </div><a name="app-created" id="keystores"></a>
+          <font size="+1" color="#000099">Unsupported
+          Features</font><br>
+          <div style="margin-left: 40px;">
+            <font size="+1" color="#000099"><br></font>
+          </div>
+          <div style="margin-left: 80px;">
+            <font size="+1"><span style="text-decoration: underline;">Files to load at
+            startup</span></font>
+          </div>
+          <div style="margin-left: 80px;">
             Legacy Basic and perhaps other apk makers have a
-            feature that supports copying files to to assets during
-            apk creation. These files can be outside of the
-            <SPAN style="text-decoration: underline;">'supported'
-            directories</SPAN>, and in addition they will be copied
-            to external storage (sdcard) at <SPAN style=
-            "text-decoration: underline;">every program
-            startup</SPAN>, overwriting any changes. This is
-            undesirable in many situations.<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-            <DIV style="margin-left: 40px;">
-              hBasic does <SPAN style=
-              "font-weight: bold;">not</SPAN> support this feature,
-              due to the confusion it creates.<BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
+            feature that supports copying files from read-only assets to the file-system during
+            apk creation. These files will be copied
+            to external storage (sdcard) at <span style="text-decoration: underline;">every program
+            startup</span>, overwriting any changes. This is
+            undesirable in many situations.<br>
+          </div>
+          <div style="margin-left: 40px;">
+            <br>
+            <div style="margin-left: 40px;">
+              hBasic does <span style="font-weight: bold;">not</span> support this feature,
+              due to the confusion it creates.<br>
+            </div>
+            <div style="margin-left: 40px;">
               If you need files that need copying from assets to
               external storage (sdcard), then the program must do
-              this itself using<BR>
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            <DIV style="margin-left: 40px;">
-              <BR>
-            </DIV><SPAN style=
-            "font-family: Courier New, Courier, monospace;">file.exists
-            e, <SPAN style=
-            "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;</SPAN> <SPAN style=
-            "color: rgb(102, 102, 102);">% looks only on
-            sdcard/data</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">if !e
+              this itself using<br>
+            </div>
+          </div>
+          <div style="margin-left: 80px;">
+            <div style="margin-left: 40px;">
+              <br>
+            </div><span style="font-family: Courier New, Courier, monospace;">file.exists
+            e, <span style="color: rgb(102, 51, 0);">"settings.dat"</span>&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">% looks only on
+            sdcard/data</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">if !e
             then&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
-            "color: rgb(102, 102, 102);">% if not exist on sdcard
-            /data</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
-            &nbsp;&nbsp; byte.open r,fv, <SPAN style=
-            "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;</SPAN>
-            <SPAN style="color: rgb(102, 102, 102);">% get it from
-            assets</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">% if not exist on sdcard
+            /data</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+            &nbsp;&nbsp; byte.open r,fv, <span style="color: rgb(102, 51, 0);">"settings.dat"</span>&nbsp;</span>
+            <span style="color: rgb(102, 102, 102);">% get it from
+            assets</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;
             &nbsp; &nbsp; if fv&lt;&gt;-1 then byte.copy
-            fv,<SPAN style=
-            "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;</SPAN>
-            <SPAN style="color: rgb(102, 102, 102);">% copy it to
-            sdcard/data</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">endif</SPAN><BR>
+            fv,<span style="color: rgb(102, 51, 0);">"settings.dat"</span>&nbsp;&nbsp;</span>
+            <span style="color: rgb(102, 102, 102);">% copy it to
+            sdcard/data</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">endif</span><br>
 
-            <BR>
-            This is much clearer and user-controllable.<BR>
-            <BR>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">File.Exists</SPAN>
+            <br>
+            <span style="text-decoration: underline;">The above manual method is much clearer and user-controllable</span>.<br>
+            <br>
+            <span style="font-family: Courier New, Courier, monospace;">File.Exists</span>
             only looks in file system. Does not look into
-            /assets/<BR>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">File.Type</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            /assets/<br>
+            <span style="font-family: Courier New, Courier, monospace;">File.Type</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             first looks in the file system, if not found then looks
-            in /assets/<BR>
-            <BR>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-            file.exists</SPAN> e, paths$&nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style="color: rgb(102, 102, 102);">% look only in
-            the file system</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">if e
-            then</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
-            print "file is on sdcard"</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style="color: rgb(102, 102, 102);">% not in file
-            system</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(0, 0, 153);">file.type</SPAN>
-            typ$, path$</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
-            if typ$="x" then</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            in /assets/<br>
+            <br>
+            <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
+            file.exists</span> e, paths$&nbsp;&nbsp;&nbsp;</span>
+            <span style="color: rgb(102, 102, 102);">% look only in
+            the file system</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">if e
+            then</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+            print "file is on sdcard"</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span style="color: rgb(102, 102, 102);">% not in file
+            system</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="color: rgb(0, 0, 153);">file.type</span>
+            typ$, path$</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+            if typ$="x" then</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
             &nbsp; &nbsp; print "file does not exist
-            anywhere"</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
-            else</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            print "file is in assets"</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
-            endif</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">endif</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN><BR>
-          </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="width: 50%;">-End.<BR></TD>
-      </TR>
-    </TBODY>
-  </TABLE><BR>
-  <SCRIPT type="text/javascript" src=
-  "https://humpity.github.io/counter.js"></SCRIPT>
-</BODY>
-</HTML>
+            anywhere"</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+            else</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            print "file is in assets"</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
+            endif</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
+            <span style="font-family: Courier New, Courier, monospace;">endif</span><span style="font-family: Courier New, Courier, monospace;"><br>
+            </span><br>
+          </div>
+          <div style="margin-left: 40px;"></div>
+        </td>
+      </tr>
+      <tr>
+        <td style="width: 50%;">-End.<br></td>
+      </tr>
+    </tbody>
+  </table><br>
+  <script type="text/javascript" src="https://humpity.github.io/counter.js"></script>
+
+
+</body></html>
