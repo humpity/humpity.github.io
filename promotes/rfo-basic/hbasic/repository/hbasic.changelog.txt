@@ -27,7 +27,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		GR.BITMAP.LOAD Fix return -1 on error (-Spike) (0526)
 		GR.BITMAP.LOAD - enhancements (0527)
 		AUDIO.PLAY - timeout (0528)
-		BT enhancements ((0529))
+		BT enhancements      (0529)
 			BT.CONNECT    {rc,}{secure} 
 			BT.CONNECT.TO {rc,}{secure,} mac$	(-charles.rayer29)
 			BT.DEVICE.ADDR {rc,} mac$
