@@ -11,7 +11,7 @@
   <TITLE>hPatcher Manual</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <BR>
   <A href="../hbasic.html">hBasic</A> &gt; <A href=
   "index.html">hSuite</A> &gt; hPatcher<BR>
@@ -24,8 +24,9 @@
         <TD style="vertical-align: top;">
           <DIV style="text-align: right;">
             <BIG>hSuite</BIG><BR>
-          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">hPatcher
-          Manual<BR></BIG></BIG><BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+2">hPatcher Manual</FONT></SPAN><BIG><BIG style=
+          "color: rgb(0, 0, 153);"><BR></BIG></BIG><BR>
           hPatcher is the main gui of hSuite. Aside from creating
           and applying patches, it is the front-end to customising
           the hBasic app.<BR>
@@ -51,7 +52,8 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "#settings"><BIG>Settings</BIG><BR></A></TD>
+                "#settings"><FONT size=
+                "+1">Settings</FONT><BR></A></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
@@ -59,10 +61,20 @@
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><BIG><A href=
-                "#customise">Customise</A></BIG></TD>
+                <TD style="vertical-align: top;">
+                  <A href="#customise"><FONT size=
+                  "+1">Customise</FONT></A><BIG><BR></BIG>
+                  <DIV style="margin-left: 40px;">
+                    <BR>
+                  </DIV>
+                </TD>
                 <TD style="vertical-align: top;"><SPAN style=
-                "color: rgb(51, 51, 51);"><BR></SPAN></TD>
+                "color: rgb(51, 51, 51);"><BR>
+                Identity<BR>
+                App Icon<BR>
+                Permissions<BR>
+                Loading<BR>
+                StandAlone<BR></SPAN></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -76,7 +88,9 @@
       <TR>
         <TD style="vertical-align: top;">
           <BIG style="color: rgb(0, 0, 153);"><A name="settings"
-          id="fn_import"></A>Settings</BIG><BIG style=
+          id="fn_import"></A></BIG><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">Settings</FONT></SPAN><BIG style=
           "color: rgb(0, 0, 153);"><BR></BIG><BR>
           <DIV style="margin-left: 40px;">
             <SPAN style=
@@ -132,7 +146,207 @@
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;"><BR></TD>
+        <TD style="width: 50%;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1">Customise</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Aside from patches, Customisations also make changes to
+            the hBasic source files.<BR>
+            Unlike patches, customisations may be applied more than
+            once.<BR>
+            To apply customisations, Click the Commit button.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">When to
+            Commit</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              You will need to Commit if you have made any changes
+              to the Customisation settings <SPAN style=
+              "text-decoration: underline;">and for every
+              change</SPAN> to your Basic project program files for
+              StandAlone mode.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;"><A name=
+            "identity" id="identity"></A><SPAN style=
+            "color: rgb(0, 0, 153);">Identity</SPAN></SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              <TABLE style="text-align: left; width: 90%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top;">Field<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Example<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Comment<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">App
+                    Version</TD>
+                    <TD style="vertical-align: top;">2.02<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Major.Minor<BR>
+                    Shows up in VERSION$(0)<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">base
+                    Version<BR></TD>
+                    <TD style="vertical-align: top;">1.50<BR></TD>
+                    <TD style="vertical-align: top;">Arbitrary
+                    number to indicate anything you want.<BR>
+                    e.g version of the master used.<BR>
+                    Shows up in VERSION$(1)<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">
+                    Package_Name<BR>
+                    postfix<BR></TD>
+                    <TD style="vertical-align: top;">myapp<BR></TD>
+                    <TD style="vertical-align: top;">Your app
+                    package name.<BR>
+                    The front "com.rfo" is not optional.<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">
+                    App_Name<BR></TD>
+                    <TD style="vertical-align: top;">My
+                    App<BR></TD>
+                    <TD style="vertical-align: top;">The app
+                    display name shown below it's icon and other
+                    places.<BR></TD>
+                  </TR>
+                </TBODY>
+              </TABLE><BR>
+            </DIV><A name="app-icon" id="app-icon"></A><SPAN style=
+            "color: rgb(0, 0, 153);">App Icon</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              <TABLE style="text-align: left; width: 90%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top;">Field<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Example<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Comment<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">Icon input
+                    file<BR></TD>
+                    <TD style="vertical-align: top;">
+                    my_project/my_icon.png<BR></TD>
+                    <TD style="vertical-align: top;">Must be ".png"
+                    format. Use the file selector.<BR>
+                    blank = no change<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">maximum output
+                    density.<BR></TD>
+                    <TD style="vertical-align: top;">
+                    144x144<BR></TD>
+                    <TD style="vertical-align: top;">Your icon will
+                    be resized to different densities.<BR>
+                    This specifies the maximum.<BR>
+                    (72x72 is not recommended anymore for modern
+                    phones)<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">resize
+                    filter<BR></TD>
+                    <TD style="vertical-align: top;">nearest
+                    neighbour<BR></TD>
+                    <TD style="vertical-align: top;">The resize
+                    method.<BR>
+                    <BR></TD>
+                  </TR>
+                </TBODY>
+              </TABLE><BR>
+            </DIV><A name="permissions" id=
+            "permissions"></A>Permissions<BR>
+            <DIV style="margin-left: 40px;">
+              Select the permissions that you app needs.<BR>
+              <BR>
+              Here are a few notes;<BR>
+              <BR>
+              EXTERNAL_STORAGE<BR>
+              <DIV style="margin-left: 40px;">
+                For modern day scoped storage, READ and WRITE
+                EXTERNAL_STORAGE is usually not needed anymore
+                because you app is basically confined and you don't
+                need any permission to do anything in your own
+                prison.<BR>
+                <BR>
+                If you are using the Legacy feature (UnScoped
+                Storage) and only targeting older phones, then
+                permission<BR>
+                WRITE_EXTERNAL_STORAGE is required.<BR>
+              </DIV><BR>
+              INTERNET<BR>
+              <DIV style="margin-left: 40px;">
+                You don't need this permission as it is
+                automatically granted.<BR>
+                However, there are older phones (such as android
+                Marshmallow) that are sensitive to commands such as
+                HTML.OPEN and BROWSE that may need this
+                permission.<BR>
+              </DIV>
+            </DIV><BR>
+            <DIV style="margin-left: 40px;">
+              LOCATION<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              LOCATION permissions (COURSE, FINE, MOCK,
+              _EXTRA_COMMANDS) are needed for GPS.<BR>
+              ACCESS_BACKGROUND_LOCATION is not needed and is
+              probably not allowed anymore or doesn't work.<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              ACCESS_WIFI_STATE<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              For WIFI.INFO<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              ACCESS_NETWORK_STATE<BR>
+              <DIV style="margin-left: 40px;">
+                This is only used for AdMob otherwise you don't
+                need it.<BR>
+                <BR>
+              </DIV>BLUETOOTH<BR>
+              <DIV style="margin-left: 40px;">
+                All the BLUETOOTH permissions are needed for
+                bluetooth commands.<BR>
+              </DIV><BR>
+              CAMERA<BR>
+              <DIV style="margin-left: 40px;">
+                For CAMERA commands.<BR>
+              </DIV><BR>
+              BLUETOOTH<BR>
+              <DIV style="margin-left: 40px;">
+                All the BLUETOOTH permissions are needed for
+                bluetooth commands.<BR>
+              </DIV><BR>
+              BLUETOOTH<BR>
+              <DIV style="margin-left: 40px;">
+                All the BLUETOOTH permissions are needed for
+                bluetooth commands.<BR>
+              </DIV><BR>
+              BLUETOOTH<BR>
+              <DIV style="margin-left: 40px;">
+                All the BLUETOOTH permissions are needed for
+                bluetooth commands.<BR>
+              </DIV><BR>
+              BLUETOOTH<BR>
+              <DIV style="margin-left: 40px;">
+                All the BLUETOOTH permissions are needed for
+                bluetooth commands.
+              </DIV><BR>
+            </DIV>
+          </DIV>(to be continued...)<BR>
+          <BR>
+        </TD>
       </TR>
       <TR>
         <TD style="vertical-align: top;">-End.<BR></TD>

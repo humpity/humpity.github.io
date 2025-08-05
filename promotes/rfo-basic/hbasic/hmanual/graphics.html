@@ -60,6 +60,22 @@
                 scaling flag<BR></TD>
               </TR>
               <TR>
+                <TD style="vertical-align: top;">Settings<BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#gr_text_scalex">GR.TEXT.SCALEX</A><BR>
+                <A href=
+                "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics.html#gr_set_dsah">
+                GR.SET.DASH</A><BR></TD>
+                <TD style="vertical-align: top;">Scales text
+                horizontally<BR>
+                Dashed Lines</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
                 <TD style="vertical-align: top;">Bitmaps</TD>
                 <TD style="vertical-align: top;"><A href=
                 "#gr_bitmap_clr">GR.BITMAP.CLR</A><BR>
@@ -82,7 +98,8 @@
                 GR.CLIP</TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;">Objects</TD>
+                <TD style="vertical-align: top;"><A href=
+                "#objects">Objects</A></TD>
                 <TD style="vertical-align: top;"><A href=
                 "#multi_input">GR.HIDE / GR.SHOW</A><BR>
                 <BR>
@@ -164,11 +181,6 @@
                 Removes tween(s) or specific tweens<BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;">Other<BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-              </TR>
-              <TR>
                 <TD style="vertical-align: top;"><A href=
                 "functions.html#graphics">Graphics
                 functions</A><BR>
@@ -203,9 +215,9 @@
           "color: rgb(102, 51, 0);"><BR>
           </SPAN></BIG></SPAN></BIG></SPAN><BR></SPAN></BIG></SPAN>
           <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);"><BIG><SPAN style=
-            "color: rgb(102, 51, 0);"><FONT size="+1"><SPAN style=
-            "color: rgb(0, 0, 153);">GR.SCREEN</SPAN></FONT></SPAN></BIG></SPAN>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">GR.SCREEN</SPAN></SPAN></SPAN>
             <SPAN style=
             "font-weight: bold;">width</SPAN><SMALL><SPAN style=
             "color: rgb(0, 0, 153);"><BIG><SPAN style=
@@ -358,13 +370,13 @@
             drawable graphics area which is the unscaled size of
             the real screen graphics view.<BR>
             <BR>
-            <SPAN style="font-weight: bold;">width</SPAN> and
-            <SPAN style="font-weight: bold;">height</SPAN> must be
+            <SPAN style="font-weight: bold;">w</SPAN> and
+            <SPAN style="font-weight: bold;">h</SPAN> must be
             greater than zero.<BR>
             By default, <SPAN style=
             "font-weight: bold;">x,</SPAN><SPAN style=
-            "font-weight: bold;">y,width,height</SPAN> are expected
-            to be unscaled real screen values.<BR>
+            "font-weight: bold;">y,w,h</SPAN> are expected to be
+            unscaled real screen values.<BR>
             <BR>
             If you have scaled the screen with GR.SCALE and are
             working with virtual development coordinates, and you
@@ -396,8 +408,9 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
-            Internally, the result of x, y (after any scaling) must
-            be within the <SPAN style=
+            Internally, the result of <SPAN style=
+            "font-weight: bold;">x, y</SPAN> (after any scaling)
+            must be within the <SPAN style=
             "text-decoration: underline;">real screen area</SPAN>
             or you will get an error (see below).<BR>
             (You can get the real screen size with GR.SCREEN
@@ -549,7 +562,9 @@
         <TD style="vertical-align: top;">
           <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="gr_bounded_touch" id=
-          "setacc"></A>GR.BOUNDED.TOUCH</SPAN></FONT><BR>
+          "setacc"></A></SPAN><SPAN style=
+          "color: rgb(0, 0, 153);">GR.BOUNDED.TOUCH</SPAN></FONT><BR>
+
           <DIV style="margin-left: 40px;">
             <SPAN style=
             "text-decoration: line-through;"><SPAN style=
@@ -642,6 +657,283 @@
             Note that the rectangle is treated with right,bottom as
             exclusive (not part of the rectangle).<SPAN style=
             "text-decoration: line-through;"><BR></SPAN><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><A name=
+          "gr_text_scalex" id="gr_text_scalex"></A><FONT size=
+          "+1">GR.TEXT.SCALEX</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">GR.TEXT.SCALEX</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">{
+            percent</SPAN>_nexp</SPAN> <SPAN style=
+            "font-weight: bold;">} { ,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">paint</SPAN>_nexp</SPAN>
+            <SPAN style="font-weight: bold;">}</SPAN><BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Set the horizontal scaling of the text<BR>
+            This will squash or stretch the text along the x-axis
+            as a <SPAN style=
+            "text-decoration: underline;">percentage</SPAN>.<BR>
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">percent</SPAN>_nexp</SPAN><BR>
+
+            <DIV style="margin-left: 40px;">
+              A percentage of 50 will reduce the font width by
+              half. while 200 will double the width.<BR>
+              The value must be greater than 0.<BR>
+              The default value is 100.<BR>
+              <BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">paint</SPAN>_nexp</SPAN><BR>
+
+            <DIV style="margin-left: 40px;">
+              Optional paint index to apply to. Omitted applies to
+              a new paint, which becomes the current paint.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="gr_set_dash" id=
+          "gr_set_dash"></A>GR.SET.DASH</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">GR.SET.DASH</SPAN>
+            <SPAN style=
+            "font-weight: bold;">{pattern_list</SPAN><SMALL><SPAN style="color: rgb(0, 0, 153);"><BIG><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL><SPAN style="font-weight: bold;">}
+            {,offset</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL><SPAN style="font-weight: bold;">}
+            {,radius</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL><SPAN style="font-weight: bold;">}
+            {,paint</SPAN><SMALL><SPAN style=
+            "color: rgb(0, 0, 153);"><BIG><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN></BIG></SPAN></SMALL><SPAN style="font-weight: bold;">}<BR>
+            </SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Sets the paint stroke style for objects drawn to a path
+            effect of a dashed line.<BR>
+            <BR>
+            <TABLE style="text-align: left; width: 80%;"
+            cellspacing="2" cellpadding="5" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;">
+                  Description<BR></TD>
+                  <TD style="vertical-align: top;">Default
+                  Value<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "font-weight: bold;">pattern_list</SPAN></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;">optional index
+                  of a list with the dash pattern.&nbsp; (0 = no
+                  dash)<BR></TD>
+                  <TD style="vertical-align: top;">&nbsp; -1 = no
+                  list = default pattern (20,15)<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "font-weight: bold;">offset</SPAN></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;">optional start
+                  offset into the pattern in pixels.<BR></TD>
+                  <TD style="vertical-align: top;">&nbsp;&nbsp; 0 (
+                  zero phase)</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "font-weight: bold;">radius</SPAN></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;">optional corner
+                  radius in pixels.</TD>
+                  <TD style="vertical-align: top;">&nbsp;&nbsp; 0 =
+                  no round cornering<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><SPAN style=
+                  "font-weight: bold;">paint</SPAN></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;">optional paint
+                  index to apply the dash effect.<BR></TD>
+                  <TD style="vertical-align: top;">&nbsp; -1
+                  =&nbsp; new paint that becomes the current
+                  paint.<BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+            <SPAN style=
+            "font-weight: bold;">pattern_list</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              This is a list containing a pair of numbers, with at
+              least one pair.<BR>
+              Each number is the number of pixels drawn of which
+              the first number is 'ON' and the next<BR>
+              number is 'OFF'.<BR>
+              You can <SPAN style="font-weight: bold;">turn
+              off</SPAN> the dash effect by specifying an invalid
+              list index of <SPAN style=
+              "font-weight: bold;">0</SPAN>.<BR>
+              You can choose the default pattern by omitting this
+              parameter or specify an invalid list index of
+              <SPAN style="font-weight: bold;">-1</SPAN> or less.
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">paint</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              If you don't specify the paint, then it will default
+              to -1, i.e a clone of the current paint, which<BR>
+              becomes the new current paint.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">dW=360
+              :
+              dH=640&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% dev
+              size</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.open
+              "white",0,1 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">%
+              color,bar,portrait</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.screen
+              rW,rH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% real
+              WxH</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">sW=rW/dW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% scale to
+              width</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.scale
+              sW,sW</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.set.antialias
+              0</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.set.stroke
+              2</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              <SPAN style="color: rgb(102, 102, 102);">% width of
+              stroke</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">list.create
+              NL,pattern,30,15,5,15</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              gr.set.dash</SPAN> pattern,20,10&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% set dash
+              with rounded corner</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style="color: rgb(102, 102, 102);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">REM
+              gr.set.dash&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              % default dash</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">REM
+              gr.set.dash 0&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % turn off
+              dash</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              <BR></SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.color
+              "black",0&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
+              "color: rgb(102, 102, 102);">% black
+              stroked</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.rect
+              o,75,200,275,400</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.paint.get
+              p&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
+              "color: rgb(102, 102, 102);">% save the
+              paint</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style="color: rgb(102, 102, 102);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">REM
+              gr.set.dash -1,,10,p&nbsp;&nbsp;&nbsp;&nbsp; % apply
+              default dash &amp; round</SPAN></SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">it<BR>
+              </SPAN></SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">REM
+              gr.set.dash
+              0,,,p&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; %
+              apply no-dash</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">gr.render</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">do:
+              pause 50: gr.touch t,x,y : until t</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">onbackkey:</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">end</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <IMG src=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/pics/dash.png"
+              alt="" style="width: 200px; height: 200px;"><BR>
+            </DIV>
           </DIV>
         </TD>
       </TR>
@@ -950,12 +1242,18 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
-          <A name="multi_input" id="multi_input"></A><FONT size=
-          "+1">Accept Multiple Input</FONT><SPAN style=
+          <A name="objects" id="multi_input"></A><SPAN style=
           "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);"><BR>
-          <BR></SPAN></FONT></SPAN>
+          "color: rgb(0, 0, 153);">Objects<BR>
+          <BR></SPAN></FONT></SPAN> <FONT size="+1"><A name=
+          "multi_input" id="multi_input"></A>Accept Multiple
+          Input</FONT><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><BR></SPAN></FONT></SPAN></SPAN></FONT></SPAN>
           <DIV style="margin-left: 40px;">
+            <BR>
             These are enhancements made to <SPAN style=
             "color: rgb(0, 0, 153);">accept multiple input
             parameters</SPAN> instead of just one with the same
@@ -1015,7 +1313,7 @@
             <BR></SPAN>
             <DIV style="margin-left: 40px;">
               In legacy Basic, this command gets the modifiable
-              parameters of the display list <SPAN style=
+              parameters of the graphics object <SPAN style=
               "font-weight: bold;">object_ptr</SPAN> into the
               <SPAN style="font-weight: bold;">param</SPAN> string
               array.<BR>
@@ -2567,6 +2865,9 @@
             </DIV>
           </DIV>
         </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
       </TR>
       <TR>
         <TD style="vertical-align: top;">

@@ -2,6 +2,18 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2025-08-05 v5.45
+		Fix GR.MOTION obj|arr[] syntax error (0536)
+		Fix inc/decrement of bundle expression key values (0537)
+		Fix TEXT.INPUT (0538) (-Spike)
+		Fix device$("orient_lock") had wrong logic. (0539)
+		Add new SELECT subcommands. (0540)
+		Add DIALOG.SET (0541) (-charles.rayer29, Spike)
+		Add GR.DASH (0542) (-charles.rayer29)
+		Add GR.TEXT.SCALEX (0543) (-Spike)
+		Add CONSOLE.SET "TextScaleX <percent>" (0544) (-Spike)
+		Add LIST.COPY (0545)
+
 2025-05-16 v5.35
 		Android decides POPUP position (0531)
 		DEVICE$(..) add more items	(0532)
@@ -525,5 +537,4 @@ HFTPS	O	0333	basic can control hftps
 ADDTEL  O   +ADDTEL adds DEVICE & PHONE cmds (for standard edition)
 
 ============================================================================
-(hCodes details have been discontinued)
 -End-

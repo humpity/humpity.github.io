@@ -72,12 +72,14 @@
                     <A href="#textsize">TEXTSIZE</A><BR>
                     <A href="console.html#setfont">FONT</A><BR>
                     <A href="#antialias">AntiAlias</A><BR>
-                    <A href="#underscore">UnderScore</A><BR>
+                    <A href="#underline">UnderLine</A><BR>
                     <A href="#strikethrough">Strike</A><BR>
                   </DIV>Line Based<BR>
                   <DIV style="margin-left: 40px;">
                     <A href="#spacing">SPACING</A><BR>
                     <A href="#wrap">WRAP</A><BR>
+                    <A href="#textscalex"><SPAN style=
+                    "color: rgb(0, 0, 238);">TEXTSCALEX</SPAN></A><BR>
                   </DIV>Console Based<BR>
                   <DIV style="margin-left: 40px;">
                     <A href="#voidcolor">VOIDCOLOR</A><BR>
@@ -1085,10 +1087,12 @@
             "font-weight: bold;">future</SPAN> printing.<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <SPAN style="text-decoration: underline;"><A name=
-            "colors" id="colors"></A>Colors</SPAN><BR>
-            &lt;color&gt; may either be<BR>
             <DIV style="margin-left: 40px;">
+              <SPAN style="text-decoration: underline;"><A name=
+              "colors" id="colors"></A>Colors</SPAN><BR>
+              &lt;color&gt; may either be<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
               hex #<SPAN style=
               "color: rgb(102, 102, 102);">AA</SPAN><SPAN style=
               "color: rgb(153, 0, 0);">RR</SPAN><SPAN style=
@@ -1116,15 +1120,19 @@
               underscore ignored.<BR>
               (this is to accomodate underscored names from other
               environments).</SMALL><BR>
-            </DIV><BR>
-            <SPAN style="text-decoration: underline;">Alpha
-            channels</SPAN> for color Names<BR>
-            <BR>
+            </DIV>
             <DIV style="margin-left: 40px;">
+              <BR>
+              <SPAN style="text-decoration: underline;">Alpha
+              channels</SPAN> for color Names<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
               A color name can be post-fixed with an alpha-channel
               value e.g<BR>
             </DIV>
-            <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;"></DIV>
+            <DIV style="margin-left: 80px;">
               <BIG><SPAN style=
               "color: rgb(0, 0, 153); font-family: monospace;">CONSOLE.SET</SPAN>
               <SPAN style=
@@ -1182,6 +1190,11 @@
             <DIV style="margin-left: 120px;">
               <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN> size
               will use Basic's default size (5dp)<BR>
+              This applies to the <SPAN style=
+              "text-decoration: underline;">whole line</SPAN> and
+              only affects new lines added.<BR>
+              To change the setting on existing lines, you will
+              have to clear the line using the CLR command.<BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.<BR>
             </DIV><BR>
@@ -1209,9 +1222,46 @@
               Note that wrapped text still sits on 'one' line, even
               though it looks likes there are two or more. Set the
               dividers 'on' to see which line the text sits on.<BR>
+              This applies to the <SPAN style=
+              "text-decoration: underline;">whole line</SPAN> and
+              only affects new lines added.<BR>
+              To change the setting on existing lines, you will
+              have to clear the line using the CLR command.<BR>
               Applies for <SPAN style=
               "font-weight: bold;">future</SPAN> printing.
             </DIV><BR style="font-family: monospace;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "textsize" id="textsize"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSCALEX</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;percent&gt;"&nbsp;
+            e.g</SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">CONSOLE.SET</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSCALEX</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=
+            80"</SPAN><BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the
+              horizontal scaling of the text<BR></SPAN> This will
+              squash or stretch the text along the x-axis as a
+              <SPAN style=
+              "text-decoration: underline;">percentage</SPAN>.<BR>
+              A setting of 50 will reduce the font width by half.
+              while 200 will double the width.<BR>
+              The value must be greater than 0.<BR>
+              The default value is 100.<BR>
+              This applies to the <SPAN style=
+              "text-decoration: underline;">whole line</SPAN> and
+              only affects new lines added.<BR>
+              To change the setting on existing lines, you will
+              have to clear the line using the CLR command.<BR>
+              Applies for <SPAN style=
+              "font-weight: bold;">future</SPAN> printing.<BR>
+            </DIV><BR>
             <BIG><SPAN style="font-family: monospace;"><A name=
             "textsize" id="textsize"></A></SPAN></BIG><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSIZE</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
@@ -1228,20 +1278,22 @@
             point dp)<BR>
             <DIV style="margin-left: 120px;">
               <SPAN style="color: rgb(0, 0, 153);">Set the font
-              size of the text<BR>
+              size of the text</SPAN><BR>
               <BR>
-              +ve</SPAN> size means dp (device independent
-              pixels)<BR>
+              <SPAN style="color: rgb(0, 0, 153);">+ve</SPAN> size
+              means dp (device independent pixels)<BR>
               <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN> size
               means sp (scaled pixels, <SPAN style=
               "font-style: italic;">adhering to android user
               prefs</SPAN>)<BR>
               0 size will default to Basic's preferences.<BR>
               Applies for <SPAN style=
-              "font-weight: bold;">future</SPAN> printing.<BR>
-            </DIV><BR>
-            <SPAN style="font-family: monospace;"><A name="setfont"
-            id="setfont"></A></SPAN><SPAN style=
+              "font-weight: bold;">future</SPAN> printing.
+            </DIV>
+            <DIV style="margin-left: 120px;">
+              <BR>
+            </DIV><SPAN style="font-family: monospace;"><A name=
+            "setfont" id="setfont"></A></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">FONT</SPAN></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&lt;number|family&gt;"</SPAN>
@@ -1412,6 +1464,32 @@
                 "font-weight: bold;">whole</SPAN> console.<BR>
                 <BR>
               </DIV>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><A name="window_bg"
+            id="statustxt"></A>"</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;"&nbsp;
+            e.g "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">#FF112233"</SPAN><BR>
+            </SPAN>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the
+              underlying console background color.&nbsp;</SPAN>
+              (default is black).<BR>
+              This is the same as <A href=
+              "system.html#window_bg">@@window_bg</A> but is
+              executed after the console is shown.<BR>
+              It can show through if the <A href=
+              "#voidcolor">VOIDCOLOR</A> is transparent and
+              similarly can affect the<BR>
+              system bars background (see <A href=
+              "decors.html#window_bg">window_bg</A>).<BR>
+              Applies to the <SPAN style=
+              "font-weight: bold;">whole</SPAN> console.<BR>
+              <BR>
             </DIV><SPAN style=
             "font-family: Courier New, Courier, monospace;"><A name="statustxt"
             id="statustxt"></A>"</SPAN><SPAN style=
@@ -1730,19 +1808,60 @@
             }<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            Guess the dimensions of the console as number of
-            characters.<BR>
+            Guess the dimensions of the console as <SPAN style=
+            "text-decoration: underline;">number of
+            characters</SPAN>.<BR>
             <BR>
-            This command only works well with the MONOSPACE
-            font.<BR>
+            This command only works well with the MONOSPACE font
+            and style settings at the time of the command.<BR>
             Other fonts will give unpredicatble results.<BR>
             <BR>
-            width or height is optional, but the comma is needed
-            for height.<BR>
+            <SPAN style="font-weight: bold;">width</SPAN> or
+            <SPAN style="font-weight: bold;">height</SPAN> is
+            optional, but the comma is needed for height.<BR>
             <BR>
-            Note that the returned values may have a fractional
-            part, .eg 32.2<BR>
-          </DIV><BIG style="color: rgb(0, 0, 153);"><BR></BIG>
+            <SPAN style="font-weight: bold;">Note</SPAN> that the
+            returned values may have a fractional part, .eg
+            32.2<BR>
+            <DIV style="margin-left: 40px;">
+              If the fractional part of the width is significant,
+              e.g 32.80,&nbsp;&nbsp; (almost 33),<BR>
+              then it is likely that <SPAN style=
+              "text-decoration: underline;">you can visually
+              see</SPAN> the entire extra character (i.e 0.80 of
+              33),<BR>
+              this is because only it's padding is cut off.<BR>
+              In this case it may be better to round the value to
+              the nearest integer using the ROUND function.<BR>
+              <BR>
+            </DIV>Example<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">.cs
+              "wrap off"<BR>
+              .cs "textsize 21"<BR>
+              <BR>
+              console.screen w,h<BR>
+              ? h,w<BR>
+              if frac(w) &gt;= 0.8 then
+              w=round(w)&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% round up if
+              significant</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              ?h,w<BR>
+              ?.at h,w;"X"&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% mark the bottom right
+              corner with 'X'</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              <BR>
+              quit=0 : do: pause 50: until quit<BR>
+              END<BR>
+              onConsoleTouch:<BR>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; quit=1<BR>
+              consoletouch.resume<BR></SPAN><BR>
+            </DIV>
+          </DIV>
         </TD>
       </TR>
       <TR>
@@ -1773,7 +1892,7 @@
             triggers and you can get your information with either
             CONSOLE.LINE.TOUCHED or <FONT color=
             "#000099">CONSOLE.TAPPED.</FONT><BR>
-            <BR>
+            &nbsp;<BR>
             You can get the row, column or word that was
             <U>last</U> tapped.<BR>
             <BR>

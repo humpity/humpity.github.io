@@ -1,0 +1,1868 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Dialogs</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; Dialogs<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Changes to
+          Dialogs</BIG></BIG><BR>
+          <BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#input">INPUT</A></TD>
+                <TD style="vertical-align: top;">Restrict INPUT to
+                a single row</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#text_input">TEXT.INPUT</A></TD>
+                <TD style="vertical-align: top;">Added Cancel
+                flag.<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#select_multi">SELECT.MULTI</A><BR>
+                <A href="#select_file">SELECT.FILE</A><BR>
+                <A href=
+                "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/dialogs.html#select_file">
+                SELECT.MULTIFILE</A><BR>
+                <A href="#select_dir"><SPAN style=
+                "color: rgb(0, 0, 238);">SELECT.DIR</SPAN></A><BR>
+                <A href="#chained"></A></TD>
+                <TD style="vertical-align: top;">Select more than
+                one item<BR>
+                Select a file<BR>
+                Select more than one file<BR>
+                Select a directory<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "dialogs.html#dialog_set">DIALOG.SET</A></TD>
+                <TD style="vertical-align: top;">Customise
+                appearence to some of the dialogs</TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <A name="input" id="input"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">INPUT<BR></FONT></SPAN>
+          <DIV style="text-align: right;">
+            (see also <A href=
+            "dialogs.html#dialog_set">DIALOG.SET</A>)<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">INPUT</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);"><FONT color=
+            "#663300">{</FONT></SPAN>prompt<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color=
+            "#663300">_sexp},</FONT></SPAN> result<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color="#663300">_nvar
+            {,{</FONT></SPAN>default<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color=
+            "#663300">_exp}{,</FONT></SPAN>canceled<SPAN style=
+            "color: rgb(0, 0, 153);"><FONT color=
+            "#663300">_nvar}}{</FONT>,<SPAN style=
+            "color: black; font-weight: bold;">extraFlags</SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp}</SPAN></SPAN><BR>
+          </DIV>
+          <BLOCKQUOTE style="margin-left: 40px;">
+            An optional <SPAN style=
+            "font-weight: bold;">extraFlags</SPAN> at the end of
+            INPUT was added.<BR>
+          </BLOCKQUOTE>
+          <DIV style="margin-left: 40px;">
+            If this flag is 1, input is <SPAN style=
+            "text-decoration: underline;">constrained to a single
+            line</SPAN>.<BR>
+            <BR>
+            Default is 0 = off.
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="text_input"
+          id="text_input"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN></FONT><BR>
+          <DIV style="text-align: right;">
+            (see also <A href="#dialog_set">DIALOG.SET</A>)
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;">result$</SPAN>_svar</SPAN><SPAN style=
+            "font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">,<SPAN style=
+            "color: black;">initial_text</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">{,</SPAN><SPAN style=
+            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{,</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: black; font-weight: bold;">cancelled</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN></SPAN><SPAN style="font-weight: bold;">}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN><BR>
+            A <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "color: black; font-weight: bold;">cancelled</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN></SPAN>
+            flag was added to this command. It informs whether the
+            user cancelled the input via the backKey.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            If the user cancelled the input, <SPAN style=
+            "text-decoration: line-through;">the contents of
+            &lt;result$</SPAN><SPAN style=
+            "text-decoration: line-through;"><SPAN style=
+            "color: rgb(102, 51, 0);">_svar</SPAN></SPAN><SPAN style="text-decoration: line-through;">&gt;
+            remain unchanged.<BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "color: black; font-weight: bold;">cancelled</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN></SPAN>
+              will be true<BR>
+              and<BR>
+              the <SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style="color: black;">
+              result$</SPAN>_svar</SPAN> will contain <SPAN style=
+              "color: rgb(102, 51, 0);"><SPAN style=
+              "color: black;">initial_text</SPAN>_sexp</SPAN> (if
+              used) or will be empty (if unused).<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              TEXT.INPUT</SPAN>&nbsp; store$, default$, Title$,
+              <SPAN style=
+              "font-weight: bold;">cancelled</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">IF
+              <SPAN style="font-weight: bold;">cancelled</SPAN>
+              THEN PRINT <SPAN style="color: rgb(0, 102, 0);">"Do
+              you want to try again ?"</SPAN></SPAN><BR style=
+              "font-family: monospace;">
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            (Since v4.90+ The orientation of TEXT.INPUT will lock
+            to the same orientation of the top most screen at the
+            time the command is called.)
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name=
+          "select_multi" id="text_input"></A></BIG><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">SELECT.MULTI</SPAN></FONT><BR>
+          <DIV style="text-align: right;">
+            (see also <A href="#dialog_set">DIALOG.SET</A>)
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">SELECT.MULTI</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>
+            <SPAN style="font-weight: bold;">,</SPAN> &lt;
+            <SPAN style="font-weight: bold;">array$[]</SPAN>
+            <SPAN style="font-weight: bold;">|</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">list</SPAN></SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN> &gt; <SPAN style=
+            "font-weight: bold;">{ ,title</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;">{ ,message</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN><BR>
+            <DIV style="text-align: right;">
+              <SPAN style="font-style: italic;">(use commas</SPAN>
+              <SPAN style="font-style: italic;">to separate omitted
+              arguments)</SPAN><BR>
+            </DIV>Select multiple values fom a list.<BR>
+            where<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp; &nbsp; &nbsp;&nbsp; is a return code;<BR>
+              <DIV style="margin-left: 40px;">
+                &nbsp;&nbsp; 0 = No selection or cancelled
+                (backKey). &lt; <SPAN style=
+                "font-weight: bold;">array$[]</SPAN> <SPAN style=
+                "font-weight: bold;">|</SPAN> <SPAN style=
+                "font-weight: bold;"><SPAN style=
+                "font-weight: bold;">list</SPAN></SPAN>_<SPAN style="color: rgb(102, 51, 0);">nexp</SPAN>
+                &gt; is untouched.<BR>
+                &gt; 0 = The number of items
+                selected.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &lt; <SPAN style=
+                "font-weight: bold;">array$[]</SPAN> <SPAN style=
+                "font-weight: bold;">|</SPAN> <SPAN style=
+                "font-weight: bold;"><SPAN style=
+                "font-weight: bold;">list</SPAN></SPAN>_<SPAN style="color: rgb(102, 51, 0);">nexp</SPAN>
+                &gt; contains results.<BR>
+                <DIV style="margin-left: 40px;">
+                  <BR>
+                </DIV>
+              </DIV><SPAN style=
+              "font-weight: bold;">array$[]</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;</SPAN> is an input and output string
+              array.<BR>
+              or <SPAN style="font-weight: bold;"><SPAN style=
+              "font-weight: bold;">list</SPAN></SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">nexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              or alternatively,&nbsp; an input and output list<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an input array or
+                list</SPAN></SPAN>,&nbsp;&nbsp;&nbsp; it contains
+                the list of items <SPAN style=
+                "text-decoration: underline;">to be
+                shown</SPAN>.<BR>
+                <BR>
+                <DIV style="margin-left: 40px;">
+                  This will be overwriiten with picked items, so it
+                  is a good idea to use a copy.<BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">pickArr$[]
+                  = orginalArr$[]</SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><BR>
+
+                  &nbsp;&nbsp;&nbsp; SELECT.MULTI rc,
+                  pickArr$[]<BR>
+                  <BR>
+                  or&nbsp; LIST.COPY oList, pList<BR></SPAN>
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+                  &nbsp;&nbsp;&nbsp; SELECT.MULTI rc,
+                  pList</SPAN></SPAN>
+                </DIV><BR>
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an output array or
+                list</SPAN></SPAN>,&nbsp; &nbsp; it returns the
+                picked rows by the user.<BR>
+                <BR>
+                <DIV style="margin-left: 40px;">
+                  If there is one selection or more, the array or
+                  list is overwritten with the picked rows<BR>
+                  and <SPAN style=
+                  "color: rgb(102, 51, 0);"><SPAN style=
+                  "color: black; font-weight: bold;">rc</SPAN></SPAN>
+                  will contain the number of items.<BR>
+                  <BR>
+                </DIV>
+              </DIV><SPAN style=
+              "font-weight: bold;">title</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              is an optional title. The default title is
+              "Select".<BR>
+              <BR>
+              <SPAN style=
+              "font-weight: bold;">message</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;
+              is an optional message for a popup.<BR>
+              <DIV style="margin-left: 160px;">
+                It will be the same as <SPAN style=
+                "font-weight: bold;">title</SPAN> if title is set
+                otherwise it will not show.<BR>
+              </DIV>
+              <DIV style="margin-left: 160px;">
+                You can force it to not show with a set
+                <SPAN style="font-weight: bold;">title</SPAN> by
+                setting this to "" (empty).<BR>
+              </DIV><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              Example<BR>
+            </DIV><IMG src="pics/select-multi.png" alt="" style=
+            "width: 300px; height: 301px;" align="right"><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">dialog.set
+              "window_bg green"<BR>
+              array.load f$[],"Orange","Banana","Apple","Pear"<BR>
+              p$[] = f$[] &nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% make a
+              copy</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              <BR>
+              SELECT.MULTI</SPAN> rc,p$[],"Pick
+              Fruits"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">,""<BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc=0 then ?"Nothing Picked"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">debug.on<BR>
+
+              debug.dump.array p$[]<BR>
+              debug.off<BR></SPAN> END<BR>
+              <BR>
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="select_file"
+          id="text_input"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">SELECT.FILE<BR></SPAN></FONT>
+          <DIV style="text-align: right;">
+            (see also <A href="#dialog_set">DIALOG.SET</A>)
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">SELECT.FILE</SPAN>&nbsp;&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>
+            <SPAN style="font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;">path</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">svar</SPAN>&nbsp;
+            <SPAN style="font-weight: bold;">{
+            ,title</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><BR></SPAN></SPAN>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="font-weight: bold;"><SPAN style=
+              "font-weight: bold;">{ ,dirLock</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">lexp</SPAN> <SPAN style=
+              "font-weight: bold;">}</SPAN> {
+              ,editable</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">lexp</SPAN> <SPAN style=
+              "font-weight: bold;">}</SPAN> <SPAN style=
+              "font-weight: bold;">{ ,endsWith</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+              "font-weight: bold;">}<BR></SPAN>
+              <DIV style="text-align: right;">
+                <SPAN style="font-style: italic;">(use
+                commas</SPAN> <SPAN style="font-style: italic;">to
+                separate omitted arguments)</SPAN><BR>
+              </DIV>
+            </DIV>Select a file from the file system.<SPAN style=
+            "font-weight: bold;"><BR></SPAN> where<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp; is a return code;<BR>
+              <DIV style="margin-left: 40px;">
+                &nbsp;1&nbsp; =&nbsp; OK. File selected (or
+                defaulted using <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN>).&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                updated.<BR>
+                &nbsp;0&nbsp; =&nbsp; No selection (filename is
+                empty). &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                updated.<BR>
+                -1&nbsp; =&nbsp; Cancelled
+                (backKey).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                untouched<BR>
+                -2&nbsp; =&nbsp; Directory Error (does not exist or
+                no
+                access).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                untouched.<BR>
+                <BR>
+              </DIV><SPAN style=
+              "font-weight: bold;">path</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">svar &nbsp;&nbsp;</SPAN> is
+              an input and output path.<SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "text-decoration: underline;"><BR>
+              <BR></SPAN></SPAN>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an input
+                path</SPAN></SPAN>,&nbsp;&nbsp;&nbsp; <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> may contain a
+                directory and/or a filename.<BR>
+                <BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                <DIV style="margin-left: 40px;">
+                  A <SPAN style="font-weight: bold;">path</SPAN>
+                  may contain a directory and/or a filename.<BR>
+                  e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+                  my_dir</SPAN></SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN></SPAN></SPAN><BR>
+
+                  e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+                  my_dir</SPAN></SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">my_file.txt<BR>
+                  </SPAN></SPAN><BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  This sets the <SPAN style=
+                  "text-decoration: underline;">starting
+                  point</SPAN> of the directory navigation.<BR>
+                  A empty or blank path represents the&nbsp;
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  directory. (Default).<BR>
+                </DIV><BR>
+                <DIV style="margin-left: 40px;">
+                  Filenames must always end <SPAN style=
+                  "text-decoration: underline;">without</SPAN> a
+                  slash ( / )<BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+                  my_file.txt<BR></SPAN></SPAN> If a filename is
+                  given, it will fill the textbox at the dialog
+                  start.<BR>
+                  This may be used as a suggestion for an editable
+                  textbox or a default value for an un-editable
+                  box.<BR>
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+                  <BR></SPAN></SPAN>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  Directories <SPAN style=
+                  "font-weight: bold;">should</SPAN> end
+                  <SPAN style=
+                  "text-decoration: underline;">with</SPAN> a slash
+                  ( / ). The exception is&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  as a relative path i.e "" (empty path).<BR>
+                  <DIV style="margin-left: 40px;">
+                    e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(102, 0, 0);">my_dir</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN><BR>
+
+                    If a relative directory is given, it will set
+                    the <SPAN style=
+                    "text-decoration: underline;">starting
+                    point</SPAN> relative to <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    &lt;&gt;/data/</SPAN><BR>
+                    You will see it as "Path: my_dir"&nbsp; on the
+                    first line of the list.<BR>
+                    <BR>
+                  </DIV>Filenames must always end <SPAN style=
+                  "text-decoration: underline;">without</SPAN> a
+                  slash ( / )<BR>
+                  <DIV style="margin-left: 40px;">
+                    e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(0, 102, 0);">my_file.txt</SPAN></SPAN><BR>
+
+                    If a filename is given, it will fill the
+                    textbox at the dialog start.<BR>
+                    This may be used as a suggestion for an
+                    editable textbox or a default value for an
+                    un-editable box.<BR>
+                  </DIV><BR>
+                </DIV><BR>
+                <DIV style="margin-left: 40px;">
+                  A path <SPAN style=
+                  "text-decoration: underline;">without</SPAN> a
+                  starting slash ( / ) is always relative to
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>&nbsp;
+                  (recommended).<BR>
+                  A path beginning with a slash ( / ) is considered
+                  as an absolute path (not recommended).<BR>
+                  <DIV style="margin-left: 40px;">
+                    For scoped storage, many absolute paths are
+                    inaccessible and you might not see any
+                    files.<BR>
+                  </DIV>
+                </DIV><BR>
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an output
+                path</SPAN></SPAN>,&nbsp; &nbsp; <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> returns the
+                path of the selected filename (directory +
+                filename).<BR>
+                <BR>
+                <DIV style="margin-left: 40px;">
+                  If the input path started <SPAN style=
+                  "text-decoration: underline;">without</SPAN> a
+                  slash ( / ) or was
+                  empty,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  (recommended)
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  the output path is always relative to
+                  <SPAN style="font-family: Courier New, Courier, monospace;">
+                  &lt;&gt;/data/</SPAN><BR>
+                  <BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  If the input path started with a slash ( /
+                  ),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  (not recommended)<BR>
+                  <DIV style="margin-left: 40px;">
+                    the output path is absolute.<BR>
+                  </DIV><BR>
+                  Tip: to split the &lt;path&gt;/filename, you can
+                  use IS_IN ("/",path$, -1) to find the last
+                  slash.<BR>
+                </DIV><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN>
+              </DIV><SPAN style=
+              "font-weight: bold;">title</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              is an optional title. The default title is "Select
+              File".<BR>
+              <BR>
+              <SPAN style=
+              "font-weight: bold;">dirLock</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">lexp</SPAN>&nbsp;&nbsp; is
+              an optional flag to lock the directory so that the
+              user cannot navigate away.<BR>
+              <DIV style="margin-left: 40px;">
+                Default is false (no lock).<BR>
+                If a directory has no files and the textbox is
+                un-editable, then it is not advisable to lock the
+                directory.<BR>
+              </DIV><BR>
+              <SPAN style=
+              "font-weight: bold;">editable</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">lexp</SPAN> &nbsp; is an
+              optional flag to make the text box editable.<BR>
+              <DIV style="margin-left: 40px;">
+                If this flag is false (default), the user is not
+                able to alter the contents of the text box.<BR>
+                <DIV style="margin-left: 40px;">
+                  The textbox can only be filled by selecting a
+                  file, or defaulted using <SPAN style=
+                  "font-weight: bold;">path</SPAN>_<SPAN style=
+                  "color: rgb(102, 51, 0);">svar</SPAN>.<BR>
+                </DIV><BR>
+                If this flag is true, the user may edit the
+                textbox.<BR>
+                <DIV style="margin-left: 40px;">
+                  The contents are appended to the directory path
+                  and returned as <SPAN style=
+                  "font-weight: bold;">path</SPAN>_<SPAN style=
+                  "color: rgb(102, 51, 0);">svar</SPAN> when the
+                  user clicks OK.<BR>
+                  If the user types in a filename, or adds a
+                  subpath before the filename,<BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  the dialog <SPAN style=
+                  "color: rgb(153, 0, 0);">does not check it's
+                  validity</SPAN>. It is up to the developer to do
+                  this.<BR>
+                </DIV><BR>
+                e.g This may be used to get a new file name from
+                the user.<BR>
+                The dialog never creates any new files.<BR>
+                <BR>
+              </DIV><SPAN style=
+              "font-weight: bold;">endsWith</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN> is a simple
+              end-filter.<BR>
+              <DIV style="margin-left: 40px;">
+                If this string is not empty, the dialog will list
+                only those files that end with the string in
+                <SPAN style=
+                "font-weight: bold;">endsWith</SPAN>.<BR>
+                e.g <SPAN style=
+                "font-family: Courier New, Courier, monospace;">".txt"</SPAN><BR>
+
+                (note that an asterisk is not needed and shouldn't
+                be used.)<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                <BR>
+              </DIV>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              Example<BR>
+            </DIV><IMG src="pics/select_file.png" alt="" style=
+            "width: 300px; height: 273px;" align="right"><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">p$=""</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% default is
+              relative to /data/</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              <BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              SELECT.FILE</SPAN> rc,p$,"Pick a
+              File"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN><BR>
+
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              if rc=&nbsp; 0 then ?"No
+              Selection"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> if rc= -1 then
+              ?"Cancelled"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "Path: ";p$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">i =
+              IS_IN ("/",p$,-1)&nbsp;<SPAN style=
+              "color: rgb(102, 102, 102);">&nbsp;&nbsp;</SPAN></SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% i.e
+              lastIndexOf /</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "Dir : ";</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">left$(p$,i)</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "File: ";</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">mid$(p$,i+1)</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN>
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">SELECT.MULTIFILE</SPAN></FONT></SPAN></FONT>
+          <DIV style="text-align: right;">
+            (see also <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/dialogs.html#dialog_set">
+            DIALOG.SET</A>)
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">SELECT.MULTIFILE</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>
+            <SPAN style="font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;">path</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">svar</SPAN> , &lt;
+            <SPAN style="font-weight: bold;">array$[]</SPAN>
+            <SPAN style="font-weight: bold;">|</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">list</SPAN></SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">nexp</SPAN> <SPAN style=
+            "font-weight: bold;">&gt;</SPAN><SPAN style=
+            "font-weight: bold;"><BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style=
+            "font-weight: bold;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            { ,title</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style="font-weight: bold;">{
+            ,dirLock</SPAN>_</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">lexp</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">}</SPAN></SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style="font-weight: bold;">{
+            ,endsWith</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}<BR></SPAN></SPAN>
+            <DIV style="text-align: right;">
+              <SPAN style="font-style: italic;">(use commas</SPAN>
+              <SPAN style="font-style: italic;">to separate omitted
+              arguments)</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Select a set of files from the file system into an
+            array or list.<BR>
+            where<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              is a return code;<BR>
+              <DIV style="margin-left: 40px;">
+                &gt; 0&nbsp; =&nbsp; The number of files selected.
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                updated.<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                &nbsp;&nbsp; 0&nbsp; =&nbsp; No
+                selection.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                updated.<BR>
+                &nbsp; -1&nbsp; =&nbsp; Cancelled (backKey). &nbsp;
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is untouched
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                &nbsp; -2&nbsp; =&nbsp; Directory
+                Error.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                untouched.&nbsp; (does not exist or no access)<BR>
+                <BR>
+                For any <SPAN style="font-weight: bold;">rc</SPAN>
+                &gt; 0&nbsp; &lt;<SPAN style=
+                "font-weight: bold;">array$[]</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">sarray</SPAN>
+                <SPAN style="font-weight: bold;">|</SPAN>
+                <SPAN style="font-weight: bold;"><SPAN style=
+                "font-weight: bold;">list</SPAN></SPAN>_<SPAN style="color: rgb(102, 51, 0);">nexp</SPAN>
+                <SPAN style="font-weight: bold;">&gt;</SPAN>
+                contains results, otherwise it is untouched.<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                <BR>
+              </DIV><SPAN style=
+              "font-weight: bold;">path</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">svar
+              &nbsp;&nbsp;&nbsp;</SPAN> is an input and output
+              path;<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an input
+                path</SPAN></SPAN>,&nbsp;&nbsp;&nbsp; <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> may contain a
+                directory path.<BR>
+                <BR>
+                <DIV style="margin-left: 40px;">
+                  This sets the <SPAN style=
+                  "text-decoration: underline;">starting
+                  point</SPAN> of the directory navigation.<BR>
+                  An empty or blank path represents the&nbsp;
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  directory. (Default)<BR>
+                  <BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  Directories <SPAN style=
+                  "font-weight: bold;">should</SPAN> end
+                  <SPAN style=
+                  "text-decoration: underline;">with</SPAN> a slash
+                  ( <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
+                  /</SPAN></SPAN> ). The exception is&nbsp;
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  as a relative path i.e "' (empty path).
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+                  my_dir</SPAN></SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/<BR>
+                  </SPAN></SPAN> If a relative directory is given,
+                  it will set the <SPAN style=
+                  "text-decoration: underline;">starting
+                  point</SPAN> relative to <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN><BR>
+
+                  You will see it as "Path: my_dir"&nbsp; on the
+                  first line of the list.<BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  <BR>
+                </DIV>
+              </DIV>
+              <DIV style="margin-left: 40px;"></DIV>
+              <DIV style="margin-left: 80px;">
+                Filenames (without a slash&nbsp; / ) <SPAN style=
+                "text-decoration: underline;">are always
+                ignored</SPAN>. Only the directory is taken.<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;"></DIV>
+              <DIV style="margin-left: 40px;">
+                <DIV style="margin-left: 120px;">
+                  e.g <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+                  my_dir</SPAN></SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">my_file.txt</SPAN></SPAN>
+                  is the same as <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+                  my_dir</SPAN></SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  <BR>
+                  A path <SPAN style=
+                  "text-decoration: underline;">without</SPAN> a
+                  starting slash ( / ) is always relative to
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>&nbsp;
+                  (recommended).<BR>
+                  A path beginning with a slash ( / ) is considered
+                  as an absolute path (not recomended).<BR>
+                  <DIV style="margin-left: 40px;">
+                    For scoped storage, many absolute paths are
+                    inaccessible and you might not see any
+                    files.<BR>
+                  </DIV>
+                </DIV><BR>
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an output
+                path</SPAN></SPAN>,&nbsp; &nbsp; <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> returns the
+                path of the navigated directory.<BR>
+                <BR>
+                <DIV style="margin-left: 40px;">
+                  The returned path is always a directory and
+                  usually ends with a slash ( / ),<BR>
+                  <DIV style="margin-left: 40px;">
+                    The exception is that it will be <SPAN style=
+                    "text-decoration: underline;">empty</SPAN> if
+                    the directory is <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    &lt;&gt;/data/</SPAN> on a relative path,<BR>
+                  </DIV>
+                  <DIV style="margin-left: 40px;">
+                    or if the dialog was cancelled or error.<BR>
+                    <BR>
+                  </DIV>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  If the input path started without a slash ( / )
+                  or was empty,&nbsp;&nbsp;&nbsp;&nbsp;
+                  (recommended)<BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  the output path is always relative to
+                  <SPAN style="font-family: Courier New, Courier, monospace;">
+                  &lt;&gt;/data/</SPAN><BR>
+                  <BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  If the input path started with a slash ( / ),<BR>
+                  <DIV style="margin-left: 40px;">
+                    the output path is absolute.
+                  </DIV>
+                </DIV><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN>
+              </DIV><SPAN style=
+              "font-weight: bold;">array$[]</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              is an output string array<BR>
+              or <SPAN style="font-weight: bold;"><SPAN style=
+              "font-weight: bold;">list</SPAN></SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">nexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp; &nbsp; or alternatively,&nbsp; an output
+              list.<BR>
+              <DIV style="margin-left: 40px;">
+                <BR>
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an output array or
+                list</SPAN></SPAN>,&nbsp; &nbsp; it returns the
+                picked filenames.<BR>
+                <BR>
+                If there is one selection or more, the array or
+                list is overwritten with the picked rows<BR>
+                and <SPAN style=
+                "color: rgb(102, 51, 0);"><SPAN style=
+                "color: black; font-weight: bold;">rc</SPAN></SPAN>
+                will contain the number of items.<BR>
+                <BR>
+              </DIV><SPAN style=
+              "font-weight: bold;">title</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              is an optional title. The default title is "Select
+              File(s)".<BR>
+              <BR>
+              <SPAN style="font-weight: bold;"><SPAN style=
+              "font-weight: bold;">dirLock</SPAN>_</SPAN><SPAN style="color: rgb(102, 51, 0);">lexp</SPAN>&nbsp;&nbsp;
+              is an optional flag to lock the directory so that the
+              user cannot navigate away.<BR>
+              <DIV style="margin-left: 80px;">
+                Default is false (no lock).<BR>
+                If a directory has no subdirectories and no files,
+                it is not advisable to lock the directory.<BR>
+              </DIV><BR>
+              <SPAN style=
+              "font-weight: bold;">endsWith</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN> is a simple
+              end-filter.<BR>
+              <DIV style="margin-left: 80px;">
+                If this string is not empty, the dialog will list
+                only those files that end with the string in
+                <SPAN style=
+                "font-weight: bold;">endsWith</SPAN>.<BR>
+                e.g ".txt"<BR>
+                (note that an asterisk is not needed and shouldn't
+                be used.)<BR>
+              </DIV><BR>
+              <DIV style="margin-left: 40px;"></DIV>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              Example<BR>
+            </DIV><IMG src="pics/select-multifile.png" alt=""
+            style="width: 300px; height: 300px;" align="right"><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              dialog.set "window_bg darkblue"</SPAN><BR>
+              p$=""</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% default is
+              relative to /data/</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              list.create S,source<BR>
+              list.copy source,picked<BR>
+              <BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              SELECT.MULTIFILE</SPAN> rc, p$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">,
+              picked<BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc=&nbsp; 0 then ?"No Selection!"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              if rc= -1 then ?"Cancelled"<BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "Path: ";p$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              debug.on<BR>
+              debug.dump.list picked<BR>
+              debug.off<BR>
+              END<BR></SPAN>
+            </DIV><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="select_dir"
+          id="text_input"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">SELECT.DIR</SPAN></FONT><BR>
+          <DIV style="text-align: right;">
+            (see also <A href="#dialog_set">DIALOG.SET</A>)
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">SELECT.DIR</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>
+            <SPAN style="font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;">path</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">svar</SPAN> <SPAN style=
+            "font-weight: bold;">{ ,title</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style="font-weight: bold;">{
+            ,dirLock</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">lexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN> {
+            ,editable</SPAN>_<SPAN style=
+            "color: rgb(102, 51, 0);">lexp</SPAN> <SPAN style=
+            "font-weight: bold;">}</SPAN><BR>
+            <DIV style="text-align: right;">
+              <SPAN style="font-style: italic;">( use commas</SPAN>
+              <SPAN style="font-style: italic;">to separate omitted
+              arguments)</SPAN><BR>
+            </DIV>Select a directory from the file system.<BR>
+            where<SPAN style="font-weight: bold;"><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>&nbsp;&nbsp;
+              &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; is a return
+              code;<BR>
+              <DIV style="margin-left: 40px;">
+                &nbsp;1&nbsp; =&nbsp;
+                OK.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                updated.<BR>
+                -1&nbsp; =&nbsp; Cancelled (backKey).&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                untouched.<BR>
+                -2&nbsp; =&nbsp; Directory
+                Error.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> is
+                untouched.&nbsp; (does not exist or no access)<BR>
+                (note that there is no return code of zero).<BR>
+                <BR>
+              </DIV><SPAN style=
+              "font-weight: bold;">path</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">svar
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> is an
+              input and output path;<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an input
+                path</SPAN></SPAN>,&nbsp;&nbsp;&nbsp; <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> may contain a
+                directory path.<BR>
+                <BR>
+                <DIV style="margin-left: 40px;">
+                  This sets the <SPAN style=
+                  "text-decoration: underline;">starting
+                  point</SPAN> of the directory navigation.<BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  An empty or blank path represents the&nbsp;
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  directory as a relative path. (Default)<BR>
+                  <BR>
+                  A path <SPAN style=
+                  "text-decoration: underline;">without</SPAN> a
+                  starting slash ( / ) is always relative to
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>&nbsp;
+                  (recommended).<BR>
+                  A path beginning with a slash ( / ) is considered
+                  as an absolute path (not recomended).<BR>
+                  <DIV style="margin-left: 40px;">
+                    For scoped storage, many absolute paths are
+                    inaccessible and you might not see any
+                    files.<BR>
+                  </DIV><BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  Directories <SPAN style=
+                  "font-weight: bold;">should</SPAN> end
+                  <SPAN style=
+                  "text-decoration: underline;">with</SPAN> a slash
+                  ( / ).The exception is&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  as a relative path i.e "' (empty path).<BR>
+                  <DIV style="margin-left: 40px;">
+                    <BR>
+                  </DIV>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+                  my_dir</SPAN></SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  is relative to <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/<BR>
+
+                  &nbsp;&nbsp; (empty)</SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  is <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN></SPAN><BR>
+
+                  <BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  Names (without a slash&nbsp; / ) <SPAN style=
+                  "text-decoration: underline;">are always
+                  ignored</SPAN>. Only the directory is taken.<BR>
+                  <BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  <DIV style="margin-left: 40px;">
+                    e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(102, 0, 0);">my_dir</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">my_file</SPAN></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    is the same
+                    as&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(102, 0, 0);">my_dir</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN><BR>
+
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(102, 0, 0);">&nbsp;&nbsp;&nbsp;</SPAN></SPAN>
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(0, 102, 0);">my_file</SPAN></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                    is the same as&nbsp;<SPAN style=
+                    "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+                    (empty)<SPAN style=
+                    "font-weight: bold;"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;"><BR>
+
+                    <BR></SPAN></SPAN></SPAN></SPAN>
+                  </DIV>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  <DIV style="margin-left: 40px;">
+                    If a directory is given, <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    y</SPAN>ou will see it as "Path: my_dir"&nbsp;
+                    on the first line of the directory list.<BR>
+                  </DIV><BR>
+                </DIV><SPAN style=
+                "color: rgb(0, 0, 153);"><SPAN style=
+                "text-decoration: underline;">As an output
+                path</SPAN></SPAN>,&nbsp; &nbsp; <SPAN style=
+                "font-weight: bold;">path</SPAN>_<SPAN style=
+                "color: rgb(102, 51, 0);">svar</SPAN> returns the
+                path of the navigated directory.<BR>
+                <BR>
+                <DIV style="margin-left: 40px;">
+                  The returned path is always a directory and
+                  usually ends with a slash ( / ),<BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  The exception is that it will be <SPAN style=
+                  "text-decoration: underline;">empty</SPAN> if the
+                  directory is <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  on a relative path,<BR>
+                </DIV>
+                <DIV style="margin-left: 40px;"></DIV>
+                <DIV style="margin-left: 80px;">
+                  or if the dialog was cancelled or error.<BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  <BR>
+                  If the user typed a name into the textbox and
+                  presses OK, it will be converted into a directory
+                  name,<BR>
+                  i.e the dialog will append it to the path (see
+                  <SPAN style=
+                  "font-weight: bold;">editable</SPAN>_<SPAN style=
+                  "color: rgb(102, 51, 0);">lexp</SPAN>).<BR>
+                  If the final path has no end slash, <SPAN style=
+                  "text-decoration: underline;">one will be
+                  appended</SPAN>.<BR>
+                  <BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  If the input path started without a slash ( / )
+                  or was empty,&nbsp;&nbsp;&nbsp;&nbsp;
+                  (recommended)<BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  the output path is always relative to
+                  <SPAN style="font-family: Courier New, Courier, monospace;">
+                  &lt;&gt;/data/</SPAN><BR>
+                  <BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  If the input path started with a slash ( /
+                  ),&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  (not recommended)
+                  <DIV style="margin-left: 40px;">
+                    the output path is absolute.
+                  </DIV>
+                </DIV><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><BR>
+                </SPAN>
+              </DIV><SPAN style=
+              "font-weight: bold;">title</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">sexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              is an optional title. The default title is "Select
+              Directory".<BR>
+              <BR>
+              <SPAN style="font-weight: bold;"><SPAN style=
+              "font-weight: bold;">dirLock</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">lexp</SPAN></SPAN>&nbsp;&nbsp;
+              is an optional flag to lock the directory so that the
+              user cannot navigate away.<BR>
+              <DIV style="margin-left: 40px;">
+                Default is false (no lock).<BR>
+                If a directory has no subdirectories and the
+                textbox is un-editable, it is not advisable to lock
+                the directory.<BR>
+              </DIV><BR>
+              <SPAN style=
+              "font-weight: bold;">editable</SPAN>_<SPAN style=
+              "color: rgb(102, 51, 0);">lexp</SPAN>&nbsp; is an
+              optional flag to show an editable text box.<BR>
+              <DIV style="margin-left: 40px;">
+                If this flag is false (default),&nbsp; there is no
+                text box.<BR>
+                <BR>
+                If this flag is true, the user may edit a textbox
+                to enter a directory name.<BR>
+                <DIV style="margin-left: 40px;">
+                  The contents are appended to the directory path
+                  and returned as <SPAN style=
+                  "font-weight: bold;">path</SPAN>_<SPAN style=
+                  "color: rgb(102, 51, 0);">svar</SPAN> when the
+                  user clicks OK.<BR>
+                  If the user types in a directory name or adds a
+                  subpath to the name,<BR>
+                </DIV>
+                <DIV style="margin-left: 80px;">
+                  the dialog <SPAN style=
+                  "color: rgb(153, 0, 0);">does not check it's
+                  validity</SPAN>. It is up to the developer to do
+                  this.<BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  Upon click OK, if the user did not add a slash (
+                  / ) to the name, a slash will be appended.<BR>
+                </DIV>
+                <DIV style="margin-left: 40px;">
+                  <BR>
+                </DIV>e.g This may be used to get a new directory
+                name from the user.<BR>
+                The dialog never creates any new directories.
+              </DIV>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <BR>
+              Examples<BR>
+              <IMG src="pics/select_dir1.png" alt="" style=
+              "width: 300px; height: 244px;" align="right"><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">p$="../source/"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              SELECT.DIR</SPAN> rc,p$,"Pick a
+              Directory"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc= -1 then ?"Cancelled"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "Path: ";p$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              END<BR>
+              <BR>
+              <BR>
+              !-----------------------------------<BR></SPAN>
+              <DIV style="text-align: right;">
+                <DIV style="text-align: right;">
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><IMG src="pics/select_dir2.png"
+                  alt="" style="width: 300px; height: 249px;"
+                  align="right"></SPAN><BR>
+                </DIV>
+              </DIV><SPAN style=
+              "font-family: Courier New, Courier, monospace;">REM
+              Editable entry<BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">p$=""</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              SELECT.DIR</SPAN> rc,p$,"Create
+              Directory",,1</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc= -1 then ?"Cancelled"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "Path: ";p$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">FILE.MKDIR
+              ok,p$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% create
+              dir</SPAN><BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if ok
+              then</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              ? p$;" Success"</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">else</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              ?"Could not create ";p$</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">endif</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">END</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN><BR>
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <BIG style="color: rgb(0, 0, 153);"><A name="dialog_set"
+          id="text_input"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">DIALOG.SET</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG.SET</SPAN>&nbsp;
+            <SPAN style="color: rgb(102, 51, 0);">&lt;<SPAN style=
+            "color: black; font-weight: bold;">pair</SPAN>_sexp&gt;
+            {,..}</SPAN><BR>
+            Certain attributes to the appearence of dialogs (and
+            screens that behave like dialogs) can be changed with
+            this command.<BR>
+            These settings will affect all future calls unless they
+            are reset with "default".<BR>
+            <DIV style="margin-left: 40px;">
+              e.g&nbsp;&nbsp;&nbsp; <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              DIALOG.SET</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
+              "</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">DIM</SPAN></SPAN>&nbsp;
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
+              0</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">"</SPAN></SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;"></DIV>
+            <DIV style="text-align: left; margin-left: 120px;">
+              <SPAN style=
+              "font-weight: bold; font-family: monospace;"><BR></SPAN>
+            </DIV>where <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;<SPAN style=
+            "color: black; font-weight: bold;">pair</SPAN>_sexp&gt;</SPAN>
+            = <SPAN style=
+            "font-weight: bold;">"</SPAN>&lt;<SPAN style=
+            "color: rgb(102, 0, 0);">keyword</SPAN>&gt;[
+            |<SPAN style="font-weight: bold;">=</SPAN>
+            ]&lt;value&gt; {,..} <SPAN style=
+            "font-weight: bold;">"</SPAN><BR>
+            <DIV style="text-align: center; margin-left: 40px;">
+              <DIV style="text-align: right;">
+                <DIV style="text-align: center;">
+                  &nbsp;&nbsp; note :&nbsp; the <SPAN style=
+                  "font-weight: bold;">pair</SPAN> is a
+                  <SPAN style="text-decoration: underline;">string
+                  expression</SPAN>.<BR>
+                </DIV>
+                <DIV style="text-align: left;">
+                  (the '<SPAN style="font-weight: bold;">=</SPAN>'
+                  is optional but there must be a space if it is
+                  not used)
+                </DIV>
+              </DIV>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <DIV style="text-align: center;">
+              <DIV style="text-align: right;"></DIV>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            This format is similar to CONSOLE.SET.<BR>
+            <DIV style="margin-left: 40px;">
+              You can use commas to separate pairs either inside a
+              string or outside the strings.<BR>
+              You can use the continuation marker (~) to continue a
+              line after a comma,<BR>
+              <DIV style="margin-left: 40px;">
+                or you can concatenate strings after the marker
+                with "+".<BR>
+              </DIV>
+            </DIV>For some values, you may use the reserved value
+            "default".<BR>
+            <DIV style="margin-left: 40px;"></DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            The Keyword Value Pairs accepted are;<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            For <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">DIALOG.SELECT</SPAN></SPAN><SPAN style="color: rgb(0, 0, 153);">,</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">DIALOG.MESSAGE</SPAN></SPAN>
+            <SPAN style="color: rgb(0, 0, 153);">&amp;</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">INPUT</SPAN></SPAN> only,<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_dim" id="spacing"></A>"</SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">DIM</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=
+            &lt;percent&gt;|default"&nbsp; e.g&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG.SET</SPAN>
+            "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">DIM</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=
+            30"<BR>
+            <BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">DIM the background
+            of the dialog to a <SPAN style=
+            "text-decoration: underline;">percentage</SPAN></SPAN><SPAN style="color: rgb(0, 0, 153);">.</SPAN>
+            (0..100)<BR>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            w</SPAN>ill turn off the dimming.<BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">100&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            will be solid black.<BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">default</SPAN>
+            will use Android's default (usually 60%)<BR>
+            <BR>
+            Fractional part of numbers is allowed e.g 25.5<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            For <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">SELECT,SELECT.FILE,
+            SELECT.DIR</SPAN></SPAN> &amp; <SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">TEXT.INPUT</SPAN></SPAN>
+            only,&nbsp; (screens that behave like dialogs)<BR>
+            <BR>
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_window_bg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">green"<BR>
+
+            <BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the window
+            background color. (see <A href=
+            "decors.html#window_bg">decors</A>)<BR></SPAN> This may
+            affect the dialog background and system bars background
+            colors.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+            A <A href="colors.html">color string</A><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">default</SPAN>
+            will use the default color (black)<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 160px;"></DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TITLE_FG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">TITLE_FG</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">white"</SPAN><BR>
+          </DIV><SPAN style=
+          "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the title
+            foreground color.</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+            A <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
+            color string</A><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">default</SPAN>
+            will use the default color (light grey).<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TITLE_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">TITLE_BG</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
+
+            <BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the title
+              background color.</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+              A <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
+              color string</A><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">default</SPAN>
+              will be transparent, revealing the <A href=
+              "#set_window_bg">window_bg</A>.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXT_FG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">TEXT_FG</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">blue"</SPAN><BR>
+          </DIV><SPAN style=
+          "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the main text
+            foreground color.</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+            A <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
+            color string</A><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">default</SPAN>
+            will use the default color (black).<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXT_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">TEXT_BG</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">cream"</SPAN><BR>
+
+            <BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the main
+              text background color.</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+              A <A href="colors.html">color string</A><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">default</SPAN>
+              will use the default color (white).<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
+
+            <BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the
+              background color behind the dialog.<BR></SPAN> For
+              SELECT type dialogs, this would be color below the
+              last line of a list.<BR>
+              For TEXT.INPUT, this would be the background
+              surrounding the input pane.<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+              A <A href="colors.html">color string</A><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">default</SPAN>
+              will be transparent, revealing the <A href=
+              "#set_window_bg">window_bg</A>.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">HIGHCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">HIGHCOLOR</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
+
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the highlight
+            color behind selected text.<BR></SPAN> For SELECT &amp;
+            SELECT.FILE&nbsp;&nbsp;&nbsp; this is the highlight
+            color of a single selection.<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            color&nbsp;&nbsp;</SPAN> A <A href="colors.html">color
+            string</A><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">default
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">is
+            #0xFF00C000</SPAN></SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STATUSTXT</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">dark|light|default"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">STATUSTXT</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">dark"</SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the status bar
+            text shading</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 120px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">default</SPAN>
+              will use the default&nbsp; (light).<BR>
+              * Only works for Api 23 and later *&nbsp; (see
+              <A href=
+              "decors.html#systembar_shading">decors</A>)<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">NAVBARTXT</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">dark|light|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">NAVBARTXT</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">light"</SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the navigation
+            bar icon shading</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 120px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">default</SPAN>
+              will use the default (light).<BR>
+              * Only works for Api 26-34 *&nbsp; (see <A href=
+              "decors.html#systembar_shading">decors</A>)<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              DIALOG.SET</SPAN> "Window_BG green, VoidColor =
+              green",~<BR>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              "Title_FG lightgrey",~<BR>
+              <BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN>
+              t$,"data",,cancelled<BR>
+              if !cancelled then ?t$<BR>
+              <BR>
+              array.load arr$[],"A","B","C"<BR>
+              <SPAN style="color: rgb(0, 0, 153);">SELECT</SPAN>
+              s,arr$[],,""<BR>
+              if s&lt;&gt;0 then ?"Selected row
+              ";int$(s)<BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">END</SPAN><BR>
+            </DIV><BR>
+            <IMG src="pics/text-input.png" alt="" style=
+            "width: 169px; height: 300px;" vspace="10" hspace=
+            "10"><IMG src="pics/select.png" alt="" style=
+            "width: 169px; height: 300px;" vspace="10" hspace=
+            "10"><BR>
+            <BR>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">-End<BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>

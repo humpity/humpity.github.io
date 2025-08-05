@@ -1,578 +1,821 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
-  <meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name="generator">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bundle Expressions</title>
-  <link rel="stylesheet" href="main.css" type="text/css">
-</head>
-<body vlink="#990099" link="#000099" alink="#000099">
-  <a href="../hbasic.html">hBasic</a> &gt; <a href="index.html">hManual</a> &gt; <a href="commands.html">Commands</a> &gt; <a href="bundles.html">Bundles</a> &gt; Bundle Expressions<br>
-  <br style="font-family: Helvetica,Arial,sans-serif;">
-  <table style="border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; font-family: Helvetica,Arial,sans-serif;" cellspacing="2" cellpadding="8">
-    <tbody>
-      <tr>
-        <td style="vertical-align: top;">
-          <div style="text-align: right;">
-            <big>hBasic Manual</big><br>
-          </div><span style="color: rgb(0, 0, 153);"><font size="+2">Bundle Expressions</font></span><br>
-          <br>
-          <table style="text-align: left; width: 90%; margin-left: auto; margin-right: auto;" cellspacing="2" cellpadding="2" border="0">
-            <tbody>
-              <tr>
-                <td style="vertical-align: top;"><a href="#intro">Introduction</a><br></td>
-                <td style="vertical-align: top;">What are Bundle
-                Expressions ?</td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top; width: 30%;">
-                <a href="#syntax">Syntax</a></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="#chained">Chained Bundles<font size="+1"><br></font></a></td>
-                <td style="vertical-align: top;">Bundles Indexes
-                within bundles<a href="file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bundle-expr.html#example"><br>
-                </a></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="#auto-create">Auto-Create</a><br></td>
-                <td style="vertical-align: top;">Rules for bundles
-                and keys<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="#passing">Parameter Passing</a></td>
-                <td style="vertical-align: top;">Passing
-                expressions to functions and commands<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top; text-align: right;"><a href="#example">Example</a></td>
-                <td style="vertical-align: top;">An example using
-                Bundle Expressions and chaining<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">Other<br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;"><a href="bundles.html">Bundles</a><br></td>
-                <td style="vertical-align: top;"><br></td>
-              </tr>
-            </tbody>
-          </table><br>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <big style="color: rgb(0, 0, 153);"><a name="intro" id="fn_import"></a>Introduction<br></big>
-          <div style="margin-left: 40px;">
-            <br>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Bundle Expressions</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; <A href=
+  "bundles.html">Bundles</A> &gt; Bundle Expressions<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="8">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+2">Bundle Expressions</FONT></SPAN><BR>
+          <BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#intro">Introduction</A><BR></TD>
+                <TD style="vertical-align: top;">What are Bundle
+                Expressions ?</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="#syntax">Syntax</A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#chained">Chained Bundles<FONT size=
+                "+1"><BR></FONT></A></TD>
+                <TD style="vertical-align: top;">Bundles Indexes
+                within bundles<A href=
+                "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bundle-expr.html#example"><BR>
+                </A></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#auto-create">Auto-Create</A><BR></TD>
+                <TD style="vertical-align: top;">Rules for bundles
+                and keys<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#passing">Parameter Passing</A></TD>
+                <TD style="vertical-align: top;">Passing
+                expressions to functions and commands<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; text-align: right;"><A href=
+                "#example">Example</A></TD>
+                <TD style="vertical-align: top;">An example using
+                Bundle Expressions and chaining<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Other<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "bundles.html">Bundles</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <BIG style="color: rgb(0, 0, 153);"><A name="intro" id=
+          "fn_import"></A>Introduction<BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <BR>
             The interpreter will now accept Bundle Expressions as
-            an alterntative to <span style="color: rgb(0, 0, 153);">BUNDLE.GET</span> and
-            <span style="color: rgb(0, 0, 153);">BUNDLE.PUT</span>.<br>
-          </div>
-          <div style="margin-left: 40px;">
-            e.g<br>
-          </div>
-          <div style="margin-left: 80px;">
-            <span style="font-family: Courier New, Courier, monospace;">bundle.create
-            myBundle</span><br>
-            <br>
-            <span style="font-family: Courier New, Courier, monospace;"><span style="font-family: Courier New, Courier, monospace;">
-            myBundle.</span><span style="color: rgb(102, 0, 0);"><span style="font-family: Courier New, Courier, monospace;">key1</span></span>&nbsp;&nbsp;&nbsp;
-            = a&nbsp;&nbsp;&nbsp; <span style="font-family: Helvetica, Arial, sans-serif;"><span style="color: rgb(102, 102, 102);">
-            %</span></span> <span style="font-family: Helvetica, Arial, sans-serif;"><span style="color: rgb(102, 102, 102);">
-            <span style="color: rgb(102, 102, 102);"><span style="font-style: italic;">i.e</span>&nbsp;</span>
-            bundle.put myBundle,"key1",a</span></span><br>
-            <span style="font-family: Courier New, Courier, monospace;">myBundle.</span><span style="color: rgb(153, 51, 0);"><span style="font-family: Courier New, Courier, monospace;">"Key
-            1"</span></span><span style="color: rgb(0, 102, 0);"><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 0);"><span style="font-family: Helvetica, Arial, sans-serif;">&nbsp;&nbsp;</span></span></span></span>
-            = a&nbsp;&nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">%</span> <span style="color: rgb(102, 102, 102);"><span style="color: rgb(102, 102, 102);"><span style="font-style: italic;">i.e</span>&nbsp;</span>
-            bundle.put myBundle,"Key 1",a</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(102, 102, 102);"><br>
+            an alterntative to <SPAN style=
+            "color: rgb(0, 0, 153);">BUNDLE.GET</SPAN> and
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BUNDLE.PUT</SPAN>.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            e.g<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">bundle.create
+            myBundle</SPAN><BR>
+            <BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            myBundle.</SPAN><SPAN style=
+            "color: rgb(102, 0, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">key1</SPAN></SPAN>&nbsp;&nbsp;&nbsp;
+            = a&nbsp;&nbsp;&nbsp; <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+            %</SPAN></SPAN> <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;"><SPAN style="color: rgb(102, 102, 102);">
+            <SPAN style="color: rgb(102, 102, 102);"><SPAN style=
+            "font-style: italic;">i.e</SPAN>&nbsp;</SPAN>
+            bundle.put myBundle,"key1",a</SPAN></SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">myBundle.</SPAN><SPAN style="color: rgb(153, 51, 0);"><SPAN style="font-family: Courier New, Courier, monospace;">"Key
+            1"</SPAN></SPAN><SPAN style=
+            "color: rgb(0, 102, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 0);"><SPAN style="font-family: Helvetica, Arial, sans-serif;">&nbsp;&nbsp;</SPAN></SPAN></SPAN></SPAN>
+            = a&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+            "color: rgb(102, 102, 102);">%</SPAN> <SPAN style=
+            "color: rgb(102, 102, 102);"><SPAN style=
+            "color: rgb(102, 102, 102);"><SPAN style=
+            "font-style: italic;">i.e</SPAN>&nbsp;</SPAN>
+            bundle.put myBundle,"Key 1",a</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);"><BR>
 
-            <br></span> a = myBundle.</span><span style="color: rgb(102, 0, 0);"><span style="font-family: Courier New, Courier, monospace;">key1</span></span><span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="color: rgb(102, 102, 102);">% <span style="font-style: italic;">i.e</span> &nbsp;&nbsp;
-            bundle.get myBundle,"key1",a</span><span style="font-family: Courier New, Courier, monospace;"><br></span>
-            <span style="font-family: Courier New, Courier, monospace;">a =
-            myBundle.</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(153, 51, 0);">"</span><span style="color: rgb(153, 51, 0);">Key
-            1</span><span style="color: rgb(153, 51, 0);">"</span>&nbsp;&nbsp;&nbsp;</span>
-            <span style="color: rgb(102, 102, 102);">%</span>
-            <span style="color: rgb(102, 102, 102);"><span style="color: rgb(102, 102, 102);"><span style="font-style: italic;">i.e</span> &nbsp;&nbsp;</span>
-            bundle.get myBundle,"Key 1",a</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 102, 0);"><br>
-            </span></span><br>
-          </div>
-          <div style="margin-left: 40px;">
-            What are Bundle Expressions ?<br>
-            <div style="margin-left: 40px;">
-              <ul>
-                <li>Expressions that represent a Bundle
-                Item.<br></li>
-                <li>Temporary bundle 'variables' which can take the
-                place of real variables in Basic expressions.</li>
-                <li>Only exist for the lifetime of the
-                instruction.</li>
-                <li>Do not exist in the real variables symbol
-                table.</li>
-              </ul>
-            </div>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <span style="color: rgb(0, 0, 153);"><font size="+1"><a name="syntax" id="syntax"></a>Syntax</font></span><br>
-          <br>
-          <table style="text-align: left; width: 80%; margin-left: 40px;" cellspacing="0" cellpadding="5" border="0">
-            <tbody>
-              <tr>
-                <td style="vertical-align: middle; white-space: nowrap; text-align: center;">
-                format<br></td>
-                <td style="vertical-align: middle; text-align: center;">
-                example</td>
-                <td style="vertical-align: middle; text-align: center;">
-                type<br></td>
-                <td style="vertical-align: middle; width: 50%; text-align: left;">
-                comment<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: middle; white-space: nowrap; text-align: center;">
-                nvar. <span style="color: rgb(102, 51, 0);"><span style="color: rgb(102, 0, 0);">key</span></span></td>
-                <td style="vertical-align: middle; white-space: nowrap; text-align: center;">
-                &nbsp;myBundle.<span style="color: rgb(102, 0, 0);">key1</span><br></td>
-                <td style="vertical-align: middle; text-align: center;">
-                <span style="color: rgb(0, 0, 153);">simple
-                key</span></td>
-                <td style="vertical-align: middle;">key always
-                converted to lowercase.<br>
-                No spaces allowed.<br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: middle; white-space: nowrap; text-align: center;">
-                nvar. "<span style="color: rgb(102, 0, 0);">key</span>"</td>
-                <td style="vertical-align: middle; white-space: nowrap; text-align: center;">
-                &nbsp;myBundle.<span style="color: rgb(153, 51, 0);">"</span><span style="color: rgb(153, 51, 0);">Key 1</span><span style="color: rgb(153, 51, 0);">"</span><br></td>
-                <td style="vertical-align: middle; text-align: center;">
-                <span style="color: rgb(0, 0, 153);">quoted
-                key</span></td>
-                <td style="vertical-align: middle;">key can be
-                mixed case and contain spaces.<br>
-                <br></td>
-              </tr>
-              <tr>
-                <td style="vertical-align: top;">nvar.<span style="color: rgb(102, 0, 0);">k1</span>{.<span style="color: rgb(102, 0, 0);">k2</span>..}<br></td>
-                <td style="vertical-align: top;">
-                myBundle.<span style="color: rgb(102, 0, 0);">k1.k2.k3<br></span>
-                myBundle.<span style="color: rgb(102, 0, 0);">k1.<span style="color: rgb(153, 51, 0);">"K2"</span>.k3</span></td>
-                <td style="vertical-align: top; text-align: center;">
-                <span style="color: rgb(0, 0, 153);">chained</span><br></td>
-                <td style="vertical-align: top;">bundle indexes within
-                bundles leading to final key<br></td>
-              </tr>
-            </tbody>
-          </table><br>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;">Nvars</span><br>
-          </div>
-          <div style="margin-left: 80px;">
+            <BR></SPAN> a = myBundle.</SPAN><SPAN style=
+            "color: rgb(102, 0, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">key1</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% <SPAN style=
+            "font-style: italic;">i.e</SPAN> &nbsp;&nbsp;
+            bundle.get myBundle,"key1",a</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">a =
+            myBundle.</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(153, 51, 0);">"</SPAN><SPAN style="color: rgb(153, 51, 0);">Key
+            1</SPAN><SPAN style=
+            "color: rgb(153, 51, 0);">"</SPAN>&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">%</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);"><SPAN style=
+            "color: rgb(102, 102, 102);"><SPAN style=
+            "font-style: italic;">i.e</SPAN> &nbsp;&nbsp;</SPAN>
+            bundle.get myBundle,"Key 1",a</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><BR>
+            </SPAN></SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            What are Bundle Expressions ?<BR>
+            <DIV style="margin-left: 40px;">
+              <UL>
+                <LI>Expressions that represent a Bundle
+                Item.<BR></LI>
+                <LI>Temporary bundle 'variables' which can take the
+                place of real variables in Basic expressions.</LI>
+                <LI>Only exist for the lifetime of the
+                instruction.</LI>
+                <LI>Do not exist in the real variables symbol
+                table.</LI>
+              </UL>
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="syntax" id=
+          "syntax"></A>Syntax</FONT></SPAN><BR>
+          <BR>
+          <TABLE style=
+          "text-align: left; width: 80%; margin-left: 40px;"
+          cellspacing="0" cellpadding="5" border="0">
+            <TBODY>
+              <TR>
+                <TD style=
+                "vertical-align: middle; white-space: nowrap; text-align: center;">
+                format<BR></TD>
+                <TD style=
+                "vertical-align: middle; text-align: center;">
+                example</TD>
+                <TD style=
+                "vertical-align: middle; text-align: center;">
+                type<BR></TD>
+                <TD style=
+                "vertical-align: middle; width: 50%; text-align: left;">
+                comment<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: middle; white-space: nowrap; text-align: center;">
+                nvar. <SPAN style=
+                "color: rgb(102, 51, 0);"><SPAN style=
+                "color: rgb(102, 0, 0);">key</SPAN></SPAN></TD>
+                <TD style=
+                "vertical-align: middle; white-space: nowrap; text-align: center;">
+                &nbsp;myBundle.<SPAN style=
+                "color: rgb(102, 0, 0);">key1</SPAN><BR></TD>
+                <TD style=
+                "vertical-align: middle; text-align: center;">
+                <SPAN style="color: rgb(0, 0, 153);">simple
+                key</SPAN></TD>
+                <TD style="vertical-align: middle;">key always
+                converted to lowercase.<BR>
+                No spaces allowed.<BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: middle; white-space: nowrap; text-align: center;">
+                nvar. "<SPAN style=
+                "color: rgb(102, 0, 0);">key</SPAN>"</TD>
+                <TD style=
+                "vertical-align: middle; white-space: nowrap; text-align: center;">
+                &nbsp;myBundle.<SPAN style=
+                "color: rgb(153, 51, 0);">"</SPAN><SPAN style=
+                "color: rgb(153, 51, 0);">Key 1</SPAN><SPAN style=
+                "color: rgb(153, 51, 0);">"</SPAN><BR></TD>
+                <TD style=
+                "vertical-align: middle; text-align: center;">
+                <SPAN style="color: rgb(0, 0, 153);">quoted
+                key</SPAN></TD>
+                <TD style="vertical-align: middle;">key can be
+                mixed case and contain spaces.<BR>
+                <BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">nvar.<SPAN style=
+                "color: rgb(102, 0, 0);">k1</SPAN>{.<SPAN style=
+                "color: rgb(102, 0, 0);">k2</SPAN>..}<BR></TD>
+                <TD style="vertical-align: top;">
+                myBundle.<SPAN style=
+                "color: rgb(102, 0, 0);">k1.k2.k3<BR></SPAN>
+                myBundle.<SPAN style=
+                "color: rgb(102, 0, 0);">k1.<SPAN style=
+                "color: rgb(153, 51, 0);">"K2"</SPAN>.k3</SPAN></TD>
+                <TD style=
+                "vertical-align: top; text-align: center;">
+                <SPAN style=
+                "color: rgb(0, 0, 153);">chained</SPAN><BR></TD>
+                <TD style="vertical-align: top;">bundle indexes
+                within bundles leading to final key<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "text-decoration: underline;">Nvars</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
             Expressions must begin with a numeric variable
-            (nvar).<br>
-            This nvar must contain an <span style="text-decoration: underline;">existing bundle
-            index</span>.<br>
+            (nvar).<BR>
+            This nvar must contain an <SPAN style=
+            "text-decoration: underline;">existing bundle
+            index</SPAN>.<BR>
             The nvar must be followed by a dot "." and then the
-            key.<br>
-          </div><br>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;">Keys<br></span>
-          </div>
-          <div style="margin-left: 80px;">
-            e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">mybundle.<span style="color: rgb(102, 0, 0);">key1</span><br>
-              </span> <span style="font-family: Courier New, Courier, monospace;">mybundle.</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 102, 0);"><span style="color: rgb(153, 51, 0);">"Key
-              1"</span><br>
-              <br></span></span>
-            </div>
-          </div>
-          <div style="margin-left: 80px;">
-            <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 153);">simple key</span></span><br>
-          </div>
-          <div style="margin-left: 80px;">
-            The <span style="color: rgb(0, 0, 153);"><span style="color: rgb(102, 0, 0);">first form</span></span> has
-            <span style="text-decoration: underline;">no
-            quotes</span> surrounding the key and conforms to rules
-            simiar to variable names;<br>
-            <br>
-          </div>
-          <div style="margin-left: 40px;"></div>
-          <div style="margin-left: 80px;">
-            Will be converted to lowercase,<br>
-            Cannot have spaces,<br>
-            Must begin with a letter, but can have numbers.<br>
+            key.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "text-decoration: underline;">Keys<BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">mybundle.<SPAN style="color: rgb(102, 0, 0);">key1</SPAN><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">mybundle.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="color: rgb(153, 51, 0);">"Key
+              1"</SPAN><BR>
+              <BR></SPAN></SPAN>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);">simple key</SPAN></SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            The <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(102, 0, 0);">first form</SPAN></SPAN> has
+            <SPAN style="text-decoration: underline;">no
+            quotes</SPAN> surrounding the key and conforms to rules
+            simiar to variable names;<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 80px;">
+            Will be converted to lowercase,<BR>
+            Cannot have spaces,<BR>
+            Must begin with a letter, but can have numbers.<BR>
             The only allowable special characters are : "_"&nbsp;
-            or "@" or '#"<br>
+            or "@" or '#"<BR>
             A '$' is allowed at the end of the key if it is the
-            <span style="text-decoration: underline;">only
-            key</span> or <span style="text-decoration: underline;">last key</span> (see
-            <a href="#chained">Chained Bundles</a>).<br>
-          </div>
-          <div style="margin-left: 120px;">
-            <br>
-          </div>
-          <div style="margin-left: 40px;"></div>
-          <div style="margin-left: 80px;">
-            <span style="text-decoration: underline;"><span style="color: rgb(0, 0, 153);">quoted key</span></span><br>
-            The <span style="color: rgb(153, 51, 0);">second
-            form</span> <span style="text-decoration: underline;">has quotes</span> and the
+            <SPAN style="text-decoration: underline;">only
+            key</SPAN> or <SPAN style=
+            "text-decoration: underline;">last key</SPAN> (see
+            <A href="#chained">Chained Bundles</A>).<BR>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);">quoted key</SPAN></SPAN><BR>
+            The <SPAN style="color: rgb(153, 51, 0);">second
+            form</SPAN> <SPAN style=
+            "text-decoration: underline;">has quotes</SPAN> and the
             key can have any characters, including spaces within
-            the quotes.<br>
-            <br>
-          </div>
-          <div style="margin-left: 80px;">
-            Is case sensitive,<br>
-            Is fully compatible with <span style="color: rgb(0, 0, 153);">BUNDLE.PUT/GET</span> (mixed
-            cased keys).<br>
+            the quotes.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Is case sensitive,<BR>
+            Is compatible with <SPAN style=
+            "color: rgb(0, 0, 153);">BUNDLE.PUT/GET</SPAN> for
+            mixed cased keys.<BR>
             Note that this second form key cannot be substituted
-            with a string expression.<br>
-            It must be a&nbsp; <span style="color: rgb(153, 51, 0);">"<span style="text-decoration: underline;">literal quoted string
-            constant</span></span><span style="color: rgb(153, 51, 0);">"</span>.<br>
-          </div>
-          <div style="margin-left: 80px;"></div><br>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">
-          <big style="color: rgb(0, 0, 153);"><a name="chained" id="printat"></a></big><font size="+1"><span style="color: rgb(0, 0, 153);">Chained
-          Bundles</span></font><br>
-          <br>
-          <div style="margin-left: 40px;">
-            e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;">myBundle.</span><span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(102, 0, 0);">k1.k2.k3</span></span><br>
-            </div><br>
+            with a string expression.<BR>
+            It must be a&nbsp; <SPAN style=
+            "color: rgb(153, 51, 0);">"<SPAN style=
+            "text-decoration: underline;">literal quoted string
+            constant</SPAN></SPAN><SPAN style=
+            "color: rgb(153, 51, 0);">"</SPAN>.<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;"></DIV><BR>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);"><A name="syntax_incr" id=
+            "syntax_incr"></A>Pre/Post Inc/Decrement
+            key</SPAN></SPAN><BR>
+            Expressions as a whole can be pre/post
+            increment/decrement ed.<BR>
+            These operations always changes the <SPAN style=
+            "text-decoration: underline;">key value</SPAN> (not the
+            index)<BR>
+            <BR>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">bundle.create
+              b<BR>
+              b.key1 = 7</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">:
+              b.key2=7</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              <BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">++b.key1&nbsp;&nbsp;</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">: ?
+              b.key1 &nbsp; &nbsp; % 8</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b.key2--
+              &nbsp;</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">: ?
+              b.key2 &nbsp; &nbsp; %</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">6<BR></SPAN>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">a =
+              (b++).key1&nbsp;</SPAN> % Syntax Error (does not
+              conform to syntax)<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <BIG style="color: rgb(0, 0, 153);"><A name="chained" id=
+          "printat"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">Chained
+          Bundles</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">myBundle.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">k1.k2.k3</SPAN></SPAN><BR>
+            </DIV><BR>
             Any bundle can contain a numeric item which is an index
-            to another bundle.<br>
-            Traditionally, this can be done manually;<br>
-            <br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              bundle.put</span></span> <span style="font-family: Courier New, Courier, monospace;">b2,<span style="color: rgb(153, 51, 0);">"k2"</span>,<span style="color: rgb(0, 102, 0);">"Hello"</span></span>
-              % create a bundle item<span style="font-family: Courier New, Courier, monospace;"><span style="font-family: Courier New, Courier, monospace;"><br>
-              </span></span> <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              bundle.put</span></span> <span style="font-family: Courier New, Courier, monospace;">b1,<span style="color: rgb(153, 51, 0);">"k1"</span>,b2</span>
-              <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            to another bundle.<BR>
+            Traditionally, this can be done manually;<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              bundle.put</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b2,<SPAN style="color: rgb(153, 51, 0);">"k2"</SPAN>,<SPAN style="color: rgb(0, 102, 0);">"Hello"</SPAN></SPAN>
+              % create a bundle item<SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              bundle.put</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1,<SPAN style="color: rgb(153, 51, 0);">"k1"</SPAN>,b2</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
               % put the bundle into another bundle (chain
-              it)<span style="font-family: Courier New, Courier, monospace;"><br>
-              <br></span> <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              bundle.get</span></span> <span style="font-family: Courier New, Courier, monospace;">b1,<span style="color: rgb(153, 51, 0);">"k1"</span>,b</span>
-              <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              % access b1 to get stored bundle index<span style="font-family: Courier New, Courier, monospace;"><br></span>
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              bundle.get</span></span> <span style="font-family: Courier New, Courier, monospace;">b,<span style="color: rgb(153, 51, 0);">"k2"</span>,a$</span><span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              % access final key<span style="font-family: Courier New, Courier, monospace;"><br></span>
-              <span style="font-family: Courier New, Courier, monospace;">PRINT
-              a$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              % "Hello"<br>
-              <br>
-            </div>The equivalent program using bundle expressions
-            is;<br>
-            <br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              bundle.create</span></span> <span style="font-family: Courier New, Courier, monospace;">b1</span><span style="font-family: Courier New, Courier, monospace;">,
-              b2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> %
-              create bundles<span style="font-family: Courier New, Courier, monospace;"><br></span>
-              <span style="font-family: Courier New, Courier, monospace;"><span style="font-family: Courier New, Courier, monospace;">
-              b2.<span style="color: rgb(102, 0, 0);">k2</span> =
-              <span style="color: rgb(0, 102, 0);">"Hello"</span></span><span style="font-family: Courier New, Courier, monospace;"><br>
-              </span></span> <span style="font-family: Courier New, Courier, monospace;">b1.<span style="color: rgb(102, 0, 0);">k1</span>
+              it)<SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              <BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              bundle.get</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1,<SPAN style="color: rgb(153, 51, 0);">"k1"</SPAN>,b</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              % access b1 to get stored bundle index<SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              bundle.get</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b,<SPAN style="color: rgb(153, 51, 0);">"k2"</SPAN>,a$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              % access final key<SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              a$&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              % "Hello"<BR>
+              <BR>
+            </DIV>The equivalent program using bundle expressions
+            is;<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              bundle.create</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">,
+              b2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> %
+              create bundles<SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              b2.<SPAN style="color: rgb(102, 0, 0);">k2</SPAN> =
+              <SPAN style=
+              "color: rgb(0, 102, 0);">"Hello"</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1.<SPAN style="color: rgb(102, 0, 0);">k1</SPAN>
               =
-              b2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;
-              % chain b1 to b<span style="font-family: Courier New, Courier, monospace;">2</span><span style="font-family: Courier New, Courier, monospace;"><br>
+              b2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;
+              % chain b1 to b<SPAN style=
+              "font-family: Courier New, Courier, monospace;">2</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
 
-              <br></span> <span style="font-family: Courier New, Courier, monospace;">PRINT
-              b1.<span style="color: rgb(102, 0, 0);">k1.k2</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              % access final key k2 "Hello"<br>
-              <br>
+              <BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              b1.<SPAN style="color: rgb(102, 0, 0);">k1.k2</SPAN>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              % access final key k2 "Hello"<BR>
+              <BR>
               You can extend this key chain to any number of
-              intermediate numeric bundle items.<br>
+              intermediate numeric bundle items.<BR>
               The final key item can be either a number or a
-              string.<br>
-              <br>
-            </div>Note that <span style="text-decoration: underline;">for Bundle Expressions,
-            New Bundles are Not Auto-created</span>.<br>
-            <div style="margin-left: 40px;">
+              string.<BR>
+              <BR>
+            </DIV>Note that <SPAN style=
+            "text-decoration: underline;">for Bundle Expressions,
+            New Bundles are Not Auto-created</SPAN>.<BR>
+            <DIV style="margin-left: 40px;">
               The nvar b1 itself might be auto-created BUT the
-              bundle index (inside b1) is NOT auto-created.<br>
-            </div>
-            <div style="margin-left: 40px;">
+              bundle index (inside b1) is NOT auto-created.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
               You must create new bundles with either bundle.create
-              or bundle.put. (see <a href="#auto-create">Auto-create</a>)<br>
-            </div>
-            <div style="margin-left: 40px;">
-              <br>
+              or bundle.put. (see <A href=
+              "#auto-create">Auto-create</A>)<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <BR>
               If you do not create these bundles yourself, you will
-              get an error;<br>
-              <div style="margin-left: 40px;">
-                e.g &nbsp; &nbsp; <span style="color: rgb(102, 0, 0);">"Invalid bundle expr:
-                b1.k1 &gt; b1 has bad index&gt; 0"</span><br>
-              </div>
-            </div><br>
+              get an error;<BR>
+              <DIV style="margin-left: 40px;">
+                e.g &nbsp; &nbsp; <SPAN style=
+                "color: rgb(102, 0, 0);">"Invalid bundle expr:
+                b1.k1 &gt; b1 has bad index&gt; 0"</SPAN><BR>
+              </DIV>
+            </DIV><BR>
             For non-quoted bundle expressions, a dollar character (
-            $ ) is allowed only for the <span style="text-decoration: underline;">last key</span>.<br>
-            (this is mainly to accomodate bundle <a href="bundles.html#auto-mode">auto-mode</a>)<br>
-            <div style="margin-left: 40px;">
-              e.g<br>
-              <div style="margin-left: 40px;">
-                % (continue program from above)<br>
-                <br>
-              </div>
-              <div style="margin-left: 40px;">
-                <span style="font-family: Courier New, Courier, monospace;">b2.<span style="color: rgb(102, 0, 0);">k2$</span>
-                = <span style="color: rgb(0, 102, 0);">"World"</span><br></span>
-                <span style="font-family: Courier New, Courier, monospace;">PRINT
-                b1.<span style="color: rgb(102, 0, 0);">k1.k2</span>;"
-                ";</span><span style="font-family: Courier New, Courier, monospace;">b1.<span style="color: rgb(102, 0, 0);">k1.k2$</span></span>&nbsp;
+            $ ) is allowed only for the <SPAN style=
+            "text-decoration: underline;">last key</SPAN>.<BR>
+            (this is mainly to accomodate bundle <A href=
+            "bundles.html#auto-mode">auto-mode</A>)<BR>
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+              <DIV style="margin-left: 40px;">
+                % (continue program from above)<BR>
+                <BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">b2.<SPAN style="color: rgb(102, 0, 0);">k2$</SPAN>
+                = <SPAN style=
+                "color: rgb(0, 102, 0);">"World"</SPAN><BR></SPAN>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">PRINT
+                b1.<SPAN style=
+                "color: rgb(102, 0, 0);">k1.k2</SPAN>;"
+                ";</SPAN><SPAN style=
+                "font-family: Courier New, Courier, monospace;">b1.<SPAN style="color: rgb(102, 0, 0);">k1.k2$</SPAN></SPAN>&nbsp;
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; % Hello
-                World<br>
-              </div>
-            </div><br>
-          </div>
-          <div style="margin-left: 80px;"></div>
-        </td>
-      </tr>
-      <tr>
-        <td valign="top">
-          <span style="color: rgb(0, 0, 153);"><font size="+1"><a name="auto-create" id="auto-create"></a>Auto-Create</font></span><br>
-          <br>
-          <div style="margin-left: 40px;">
-            Bundles<br>
-            <div style="margin-left: 40px;">
-              For Bundle Expressions,<br>
-              <div style="margin-left: 40px;">
+                World<BR>
+              </DIV>
+            </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="auto-create" id=
+          "auto-create"></A>Auto-Create</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Bundles<BR>
+            <DIV style="margin-left: 40px;">
+              For Bundle Expressions,<BR>
+              <DIV style="margin-left: 40px;">
                 Bundle indexes cannot auto-create. The bundle must
-                exist.<br>
-                <br>
-              </div>To create new bundles - use legacy methods;<br>
-              <div style="margin-left: 40px;">
-                Bundles can be created with bundle.create.<br>
+                exist.<BR>
+                <BR>
+              </DIV>To create new bundles - use legacy methods;<BR>
+              <DIV style="margin-left: 40px;">
+                Bundles can be created with bundle.create.<BR>
                 Bundles can also be auto-created with
-                bundle.put<br>
-              </div><br>
-            </div>Keys<br>
-            <div style="margin-left: 40px;">
+                bundle.put<BR>
+              </DIV><BR>
+            </DIV>Keys<BR>
+            <DIV style="margin-left: 40px;">
               For Bundle Expressions,
-            </div>
-            <div style="margin-left: 80px;">
-              Keys can be auto-created for an <span style="text-decoration: underline;">existing</span>
-              bundle.<br>
-              Auto-creation for keys can <span style="text-decoration: underline;">only</span> be done by
-              LET or implicit-LET.<br>
-              <br>
-            </div>Key Types<br>
-            <div style="margin-left: 40px;">
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              Keys can be auto-created for an <SPAN style=
+              "text-decoration: underline;">existing</SPAN>
+              bundle.<BR>
+              Auto-creation for keys can <SPAN style=
+              "text-decoration: underline;">only</SPAN> be done by
+              LET or implicit-LET.<BR>
+              <BR>
+            </DIV>Key Types<BR>
+            <DIV style="margin-left: 40px;">
               For Bundle Expressions,
-            </div>
-            <div style="margin-left: 80px;">
+            </DIV>
+            <DIV style="margin-left: 80px;">
               Key item Types can be changed from a number to string
-              or vice-versa<br>
-              by assignment or system commands.<br>
-              eg.<br>
-              <div style="margin-left: 40px;">
-                <span style="font-family: Courier New, Courier, monospace;">bundle.create
-                b</span><br>
-                <span style="font-family: Courier New, Courier, monospace;">b.<span style="color: rgb(102, 0, 0);">key</span>
-                = <span style="color: rgb(0, 102, 0);">"Test"</span></span><br>
-                <span style="font-family: Courier New, Courier, monospace;">b.<span style="color: rgb(102, 0, 0);">key</span>
+              or vice-versa<BR>
+              by assignment or system commands.<BR>
+              eg.<BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">bundle.create
+                b</SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">b.<SPAN style="color: rgb(102, 0, 0);">key</SPAN>
+                = <SPAN style=
+                "color: rgb(0, 102, 0);">"Test"</SPAN></SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">b.<SPAN style="color: rgb(102, 0, 0);">key</SPAN>
                 = 99
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <span style="color: rgb(102, 102, 102);">% changed
-                to number</span></span><br>
-                <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-                SOCKET.MYIP</span> b.<span style="color: rgb(102, 0, 0);">key</span>&nbsp;&nbsp; %
-                <span style="color: rgb(102, 102, 102);">changed to
-                string</span></span><br>
-                <span style="font-family: Courier New, Courier, monospace;">PRINT
-                b.<span style="color: rgb(102, 0, 0);">key</span></span>
-              </div>
-            </div>Examples<br>
-            <br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              bundle.create</span></span> <span style="font-family: Courier New, Courier, monospace;">b1</span><span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span style="color: rgb(102, 102, 102);">% create the
-              bundle index into b1</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">b1.<span style="color: rgb(102, 0, 0);">k1</span>
+                <SPAN style="color: rgb(102, 102, 102);">% changed
+                to number</SPAN></SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                SOCKET.MYIP</SPAN> b.<SPAN style=
+                "color: rgb(102, 0, 0);">key</SPAN>&nbsp;&nbsp; %
+                <SPAN style="color: rgb(102, 102, 102);">changed to
+                string</SPAN></SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">PRINT
+                b.<SPAN style=
+                "color: rgb(102, 0, 0);">key</SPAN></SPAN>
+              </DIV>
+            </DIV>Examples<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              bundle.create</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% create the
+              bundle index into b1</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1.<SPAN style="color: rgb(102, 0, 0);">k1</SPAN>
               =
-              "Hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span style="color: rgb(102, 102, 102);">% keys (k1)
-              can auto-create by LET</span><br>
-              <br>
-              Alternatively,<br>
-              <br>
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              bundle.put</span></span> <span style="font-family: Courier New, Courier, monospace;">b1,<span style="color: rgb(153, 51, 0);">"k1"</span>,""</span><span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</span>
-              <span style="color: rgb(102, 102, 102);">% bundle.put
-              can auto-create both b1 and <span style="text-decoration: underline;">it's index</span>, and
-              k1</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">b1.<span style="color: rgb(102, 0, 0);">k1</span>
+              "Hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% keys (k1)
+              can auto-create by LET</SPAN><BR>
+              <BR>
+              Alternatively,<BR>
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              bundle.put</SPAN></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1,<SPAN style="color: rgb(153, 51, 0);">"k1"</SPAN>,""</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% bundle.put
+              can auto-create both b1 and <SPAN style=
+              "text-decoration: underline;">it's index</SPAN>, and
+              k1</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b1.<SPAN style="color: rgb(102, 0, 0);">k1</SPAN>
               =
-              "Hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span style="color: rgb(102, 102, 102);">% keys can
-              auto-create by LET</span><br>
-            </div>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <font size="+1"><a name="passing" id="passing"></a>Parameter Passing<br></font><br>
-          <div style="margin-left: 40px;">
-            <span style="text-decoration: underline;">User Defined
-            Functions</span><br>
-            <div style="margin-left: 40px;">
-              <br>
-            </div>
-          </div>
-          <div style="margin-left: 80px;">
+              "Hello"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% keys can
+              auto-create by LET</SPAN><BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><A name="passing" id=
+          "passing"></A>Parameter Passing<BR></FONT><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">User Defined
+            Functions</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
             Passing bundle expressions as arguments can only be
-            <span style="text-decoration: underline;">called</span>
-            <span style="text-decoration: underline;">by
-            value</span>.<br>
-            The bundle index and key must <span style="text-decoration: underline;">both exist</span>.<br>
-            The <span style="text-decoration: underline;">value</span> will be
-            passed to the local function parameter.<br>
+            <SPAN style="text-decoration: underline;">called</SPAN>
+            <SPAN style="text-decoration: underline;">by
+            value</SPAN>.<BR>
+            The bundle index and key must <SPAN style=
+            "text-decoration: underline;">both exist</SPAN>.<BR>
+            The <SPAN style=
+            "text-decoration: underline;">value</SPAN> will be
+            passed to the local function parameter.<BR>
             The key item Type must match the type of the receiving
-            parameter.<br>
+            parameter.<BR>
             Bundle Expressions cannot be used in FN.DEF receiving
-            parameters.<br>
-            <br>
-            e.g<br>
-            <div style="margin-left: 40px;">
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(102, 102, 102);">
+            parameters.<BR>
+            <BR>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
               % fn.def
-              f(b1.k1)</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span style="color: rgb(102, 102, 102);">% FN.DEF&gt;
-              Bundle expr <span style="color: rgb(102, 0, 0);">not
-              allowed</span></span><br>
-              <br>
-              <span style="font-family: Courier New, Courier, monospace;">fn.def
-              f(s$)</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-              fn.rtn len(s$)&nbsp;&nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">% print length of
-              string</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">fn.end</span><br>
+              f(b1.k1)</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% FN.DEF&gt;
+              Bundle expr <SPAN style="color: rgb(102, 0, 0);">not
+              allowed</SPAN></SPAN><BR>
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">fn.def
+              f(s$)</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              fn.rtn len(s$)&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% print length of
+              string</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">fn.end</SPAN><BR>
 
-              <br>
-              <span style="font-family: Courier New, Courier, monospace;">b.<span style="color: rgb(102, 0, 0);">k1</span>
-              = <span style="color: rgb(0, 102, 0);">"Test"</span></span><span style="font-family: Courier New, Courier, monospace;"><br>
-              </span> <span style="font-family: Courier New, Courier, monospace;">b.<span style="color: rgb(102, 0, 0);">k2</span>
-              = 99</span><br>
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(102, 102, 102);">
-              % a = f(&amp;b.k1)</span>&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">% Call by Ref
-              &amp;bundle_expr <span style="color: rgb(102, 0, 0);">not
-              allowed</span></span><br>
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(102, 102, 102);">
-              % a = f(b.k2)</span>&nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">% Parameter <span style="color: rgb(102, 0, 0);">Types mismatch</span>
-              at:</span><span style="font-family: Courier New, Courier, monospace;"><br>
-              <br></span> <span style="color: rgb(0, 0, 153);"><span style="font-family: Courier New, Courier, monospace;">a =
-              f(b.k1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
-              <span style="color: rgb(102, 102, 102);">% call by
-              value only</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">PRINT
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b.<SPAN style="color: rgb(102, 0, 0);">k1</SPAN>
+              = <SPAN style=
+              "color: rgb(0, 102, 0);">"Test"</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b.<SPAN style="color: rgb(102, 0, 0);">k2</SPAN>
+              = 99</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
+              % a = f(&amp;b.k1)</SPAN>&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% Call by Ref
+              &amp;bundle_expr <SPAN style=
+              "color: rgb(102, 0, 0);">not
+              allowed</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
+              % a = f(b.k2)</SPAN>&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% Parameter <SPAN style=
+              "color: rgb(102, 0, 0);">Types mismatch</SPAN>
+              at:</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              <BR></SPAN> <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">a =
+              f(b.k1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% call by
+              value only</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
               a&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">% 4.0</span><br>
-            </div><br>
-          </div>
-          <div style="margin-left: 40px;">
-            System Commands or Functions<br>
-          </div>
-          <div style="margin-left: 80px;">
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% 4.0</SPAN><BR>
+            </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            System Commands or Functions<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
             Passing bundle expressions as arguments may be called
-            by value or reference<br>
-            depending on the command or function.<br>
-            <br>
+            by value or reference<BR>
+            depending on the command or function.<BR>
+            <BR>
             The value or reference will be passed to the command or
-            function.<br>
-            The bundle index and key must <span style="text-decoration: underline;">both exist</span>.<br>
-            The key item Type <span style="text-decoration: underline;">might</span> be changed
-            by the command or function.<br>
-          </div>
-          <div style="margin-left: 40px;">
-            <div style="margin-left: 40px;">
-              e.g<br>
-            </div>
-            <div style="margin-left: 80px;">
-              <span style="font-family: Courier New, Courier, monospace;">bundle.create
-              b</span><br>
-              <span style="font-family: Courier New, Courier, monospace;">b.<span style="color: rgb(102, 0, 0);">key</span>
-              = 99</span><br>
-              <span style="font-family: Courier New, Courier, monospace;"><span style="color: rgb(0, 0, 153);">
-              SOCKET.MYIP</span> b.<span style="color: rgb(102, 0, 0);">key</span>&nbsp;&nbsp;</span>
-              <span style="color: rgb(102, 102, 102);">% changed to
-              string</span> <span style="color: rgb(102, 102, 102);">(call by
-              reference)<br></span> <span style="font-family: Courier New, Courier, monospace;">PRINT
-              b.<span style="color: rgb(102, 0, 0);">key</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-              <span style="color: rgb(102, 102, 102);">% is a
-              string</span><span style="color: rgb(102, 102, 102);"><br></span>
-            </div>
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;">
-          <font size="+1"><a name="example" id="example"></a><span style="color: rgb(0, 0, 153);">Example</span></font><br>
-          <br>
-          <div style="margin-left: 80px;">
-            <span style="font-family: Courier New, Courier, monospace;">bundle.create
-            location, contact, work<br></span><br style="color: rgb(0, 102, 0);">
-            <span style="font-family: Courier New, Courier, monospace;">location.<span style="color: rgb(102, 0, 0);">area</span>
-            = "Westminster"</span><br style="color: rgb(0, 102, 0);">
-            <span style="font-family: Courier New, Courier, monospace;">location.<span style="color: rgb(102, 0, 0);">city</span>
-            = "London"<br></span><br style="color: rgb(0, 102, 0);">
-            <span style="font-family: Courier New, Courier, monospace;">contact.<span style="color: rgb(102, 0, 0);">name</span>
-            = "John"</span><br style="color: rgb(0, 102, 0);">
-            <span style="font-family: Courier New, Courier, monospace;">contact.<span style="color: rgb(102, 0, 0);">phone</span>
-            = 55556666</span><br style="color: rgb(0, 102, 0);">
-            <span style="font-family: Courier New, Courier, monospace;">contact.<span style="color: rgb(102, 0, 0);">assigned</span>
-            = location&nbsp;&nbsp;&nbsp;</span> <span style="color: rgb(102, 102, 102);">% chain to
-            location</span><br>
-            <br style="color: rgb(0, 102, 0);">
-            <span style="font-family: Courier New, Courier, monospace;">work.<span style="color: rgb(102, 0, 0);">dog</span>
-            = "humpty"</span><br>
-            <span style="font-family: Courier New, Courier, monospace;">work.<span style="color: rgb(102, 0, 0);">sales</span>
+            function.<BR>
+            The bundle index and key must <SPAN style=
+            "text-decoration: underline;">both exist</SPAN>.<BR>
+            The key item Type <SPAN style=
+            "text-decoration: underline;">might</SPAN> be changed
+            by the command or function.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              e.g<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">bundle.create
+              b</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">b.<SPAN style="color: rgb(102, 0, 0);">key</SPAN>
+              = 99</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              SOCKET.MYIP</SPAN> b.<SPAN style=
+              "color: rgb(102, 0, 0);">key</SPAN>&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% changed to
+              string</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">(call by
+              reference)<BR></SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              b.<SPAN style=
+              "color: rgb(102, 0, 0);">key</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% is a
+              string</SPAN><SPAN style=
+              "color: rgb(102, 102, 102);"><BR></SPAN>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><A name="example" id=
+          "example"></A><SPAN style=
+          "color: rgb(0, 0, 153);">Example</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">bundle.create
+            location, contact, work<BR></SPAN><BR style=
+            "color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">location.<SPAN style="color: rgb(102, 0, 0);">area</SPAN>
+            = "Westminster"</SPAN><BR style=
+            "color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">location.<SPAN style="color: rgb(102, 0, 0);">city</SPAN>
+            = "London"<BR></SPAN><BR style=
+            "color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">contact.<SPAN style="color: rgb(102, 0, 0);">name</SPAN>
+            = "John"</SPAN><BR style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">contact.<SPAN style="color: rgb(102, 0, 0);">phone</SPAN>
+            = 55556666</SPAN><BR style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">contact.<SPAN style="color: rgb(102, 0, 0);">assigned</SPAN>
+            = location&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+            "color: rgb(102, 102, 102);">% chain to
+            location</SPAN><BR>
+            <BR style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">work.<SPAN style="color: rgb(102, 0, 0);">dog</SPAN>
+            = "humpty"</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">work.<SPAN style="color: rgb(102, 0, 0);">sales</SPAN>
             =
-            contact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="color: rgb(102, 102, 102);">% chain to
-            contact</span><span style="font-family: Courier New, Courier, monospace;"><br></span><br style="color: rgb(0, 102, 0);">
+            contact&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% chain to
+            contact</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN><BR style="color: rgb(0, 102, 0);">
 
-            <span style="font-family: Courier New, Courier, monospace;">?
-            work.<span style="color: rgb(102, 0, 0);">sales.name</span>;</span><br style="color: rgb(0, 0, 153);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">?
+            work.<SPAN style=
+            "color: rgb(102, 0, 0);">sales.name</SPAN>;</SPAN><BR style="color: rgb(0, 0, 153);">
 
-            <span style="font-family: Courier New, Courier, monospace;">? " to
-            cover ";</span><br style="color: rgb(0, 0, 153);">
-            <span style="font-family: Courier New, Courier, monospace;">?</span>
-            <span style="font-family: Courier New, Courier, monospace;">work.<span style="color: rgb(102, 0, 0);">sales.assigned.area</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span style="color: rgb(102, 102, 102);">% the key
-            chain to area</span><span style="font-family: Courier New, Courier, monospace;"><br>
-            <br style="color: rgb(0, 102, 0);"></span> <span style="font-family: Courier New, Courier, monospace;">! John
-            to cover Westminster</span><br style="font-family: monospace; color: rgb(0, 102, 0);">
-          </div><br>
-        </td>
-      </tr>
-      <tr>
-        <td style="vertical-align: top;"><br></td>
-      </tr>
-    </tbody>
-  </table><br>
-  <br>
-  <hr>
-  <script type="text/javascript" src="https://humpity.github.io/counter.js"></script>
-
-
-</body></html>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">? " to
+            cover ";</SPAN><BR style="color: rgb(0, 0, 153);">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">?</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">work.<SPAN style="color: rgb(102, 0, 0);">sales.assigned.area</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% the key
+            chain to area</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            <BR style="color: rgb(0, 102, 0);"></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">! John
+            to cover Westminster</SPAN><BR style=
+            "font-family: monospace; color: rgb(0, 102, 0);">
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;"><BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>

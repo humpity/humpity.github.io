@@ -2,6 +2,12 @@ hSuite changelog
 
 Date		Summary of Versions
 --------------- -------------------------------------------
+2025-08-05  v3.30
+		hmaster v2.34
+		hpatcher v3.23
+			Fixed commit on 0 app_version  > unchanged > (error)
+			Fixed settings>load will update gui.
+
 2025-05-16	v3.29
 		hmaster v2.33
 		hpatcher v3.22
