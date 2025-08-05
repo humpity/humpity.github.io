@@ -58,7 +58,7 @@
                 Enable menu items<BR>
                 Disable menu items<BR>
                 Shows the menu<BR>
-                <BR>
+                Get last tapped menu item<BR>
                 <BR>
                 Interrupt block<BR>
                 <BR></TD>
@@ -353,15 +353,14 @@
           }</SPAN></SPAN></SPAN><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            <FONT size="+1">Get the last tap of a&nbsp;
+            <FONT size="+1">Get the last tapped item of a
             menu.</FONT><BR>
             <BR>
             Either the <SPAN style=
             "font-weight: bold;">label</SPAN>$ or/and the
-            <SPAN style="font-weight: bold;">index</SPAN>
-            <SPAN style=
-            "text-decoration: underline;">variable</SPAN> must be
-            given to get the last tapped item.<BR>
+            <SPAN style="font-weight: bold;">index</SPAN> of the
+            last tapped item will be put into the <SPAN style=
+            "text-decoration: underline;">variable</SPAN>.<BR>
             <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
             "color: rgb(0, 0, 153);"><SPAN style=
             "color: rgb(102, 51, 0);">&lt;</SPAN></SPAN></SPAN><SPAN style="font-weight: bold;">label</SPAN><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(0, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">$_<SPAN style="color: black;">svar</SPAN>&gt;</SPAN></SPAN></SPAN>
@@ -456,9 +455,11 @@
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             Example<BR>
-            <BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN>
           </DIV>
-          <DIV style="margin-left: 40px;">
+          <DIV style="margin-left: 80px;">
             <FONT size="-1"><SPAN style=
             "font-family: Courier New, Courier, monospace;">? "Tap
             the menu"</SPAN><SPAN style=
@@ -499,7 +500,8 @@
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
             do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % wait for a menu selection</SPAN><SPAN style=
+            <SPAN style="color: rgb(102, 102, 102);">% wait for a
+            menu selection</SPAN></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -512,7 +514,8 @@
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">until
             finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % user quits from menu</SPAN><SPAN style=
+            <SPAN style="color: rgb(102, 102, 102);">% user quits
+            from menu</SPAN></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">?
@@ -524,7 +527,8 @@
             "font-family: Courier New, Courier, monospace;"><BR>
             </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">do_Menu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            % process menu tap</SPAN><SPAN style=
+            <SPAN style="color: rgb(102, 102, 102);">% process menu
+            tap</SPAN></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
@@ -548,21 +552,24 @@
             "font-family: Courier New, Courier, monospace;"><BR>
             </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
-            onMenuTap</SPAN>:&nbsp;&nbsp; &nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % when user
-            taps an open menu</SPAN><SPAN style=
+            onMenuTap</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">:&nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <SPAN style="color: rgb(102, 102, 102);">% when user
+            taps an open menu</SPAN></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
             gosub do_Menu</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            <SPAN style=
-            "font-weight: bold;">MenuTap.Resume</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">MenuTap.Resume</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
             </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">end</SPAN></FONT><BR>
-
+          </DIV>
+          <DIV style="margin-left: 40px;">
             <BR>
           </DIV>
         </TD>

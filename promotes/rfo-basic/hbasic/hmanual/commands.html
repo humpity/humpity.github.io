@@ -246,6 +246,18 @@
                 Can be used to access bundle items<BR></TD>
               </TR>
               <TR>
+                <TD style="vertical-align: top;">Dialogs<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "dialogs.html">Dialogs</A><BR></TD>
+                <TD style="vertical-align: top;">Dialogs and
+                Screens that behave like dialogs<BR></TD>
+              </TR>
+              <TR>
                 <TD style="vertical-align: top;">Other</TD>
                 <TD style=
                 "vertical-align: top; text-align: right;"><BR></TD>
@@ -281,16 +293,11 @@
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "commands.html#input">INPUT</A></TD>
-                <TD style="vertical-align: top;">Restrict INPUT to
-                a single row</TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "#list_create">LIST.CREATE</A><BR></TD>
+                "#list_create">LIST.CREATE</A><BR>
+                <A href="#list_copy">LIST.COPY</A></TD>
                 <TD style="vertical-align: top;">New creation
-                modes<BR></TD>
+                modes<BR>
+                Copy a list to a list<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -321,13 +328,6 @@
                 "commands.html#sql_ping">SQL.PING</A></TD>
                 <TD style="vertical-align: top;">Ping a database,
                 table or column for existence</TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "commands.html#text_input">TEXT.INPUT</A></TD>
-                <TD style="vertical-align: top;">Added Cancel
-                flag.</TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -1239,6 +1239,11 @@
             The <A href="#color_strings">color strings</A> format
             is the same as for console.set.<BR>
             <BR>
+            The above behaviours and effects only apply for a
+            running program, i.e console, graphics and webview.<BR>
+            For Standard hBasic (i.e Editor, Search.. etc), the
+            system will follow the manufacturer's theme if
+            possible.<BR>
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
         </TD>
       </TR>
@@ -1491,7 +1496,7 @@
                   path.<BR>
                   <BR>
                   <BR>
-                  e.g "/data/data/com.rfo.hasic"</TD>
+                  e.g "/data/data/com.rfo.hbasic"</TD>
                 </TR>
                 <TR>
                   <TD valign="top"><FONT color=
@@ -1625,91 +1630,6 @@
             Debug commands (legacy manual v1.91 page 92).<BR>
             To use it, you must have DEBUG.ON.<BR>
           </BLOCKQUOTE>
-        </TD>
-      </TR>
-      <TR>
-        <TD valign="top">
-          <A name="input" id="input"></A><SPAN style=
-          "color: rgb(0, 0, 153);"><FONT size=
-          "+1">INPUT</FONT><BR></SPAN>
-          <BLOCKQUOTE>
-            <SPAN style="color: rgb(0, 0, 153);">INPUT</SPAN>
-            <SPAN style="color: rgb(0, 0, 153);"><FONT color=
-            "#663300">{</FONT></SPAN>prompt<SPAN style=
-            "color: rgb(0, 0, 153);"><FONT color=
-            "#663300">_sexp},</FONT></SPAN> result<SPAN style=
-            "color: rgb(0, 0, 153);"><FONT color="#663300">_nvar
-            {,{</FONT></SPAN>default<SPAN style=
-            "color: rgb(0, 0, 153);"><FONT color=
-            "#663300">_exp}{,</FONT></SPAN>canceled<SPAN style=
-            "color: rgb(0, 0, 153);"><FONT color=
-            "#663300">_nvar}}{</FONT>,<SPAN style=
-            "color: black; font-weight: bold;">extraFlags</SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp}</SPAN></SPAN><BR>
-          </BLOCKQUOTE>
-          <BLOCKQUOTE>
-            An optional <SPAN style=
-            "font-weight: bold;">extraFlags</SPAN> at the end of
-            INPUT was added.<BR>
-            If this flag is 1, input is constrained to a single
-            line.<BR>
-            <BR>
-            Default is 0 = off.<BR>
-          </BLOCKQUOTE>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="width: 50%;">
-          <BIG style="color: rgb(0, 0, 153);"><A name="text_input"
-          id="text_input"></A></BIG><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN></FONT><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            A <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(0, 0, 153);"><SPAN style=
-            "color: black; font-weight: bold;">cancelled</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN></SPAN>
-            flag was added to inform whether the user cancelled the
-            input via the backkey.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN>&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">result$</SPAN>_svar{,<SPAN style=
-            "color: black;">text</SPAN>_sexp} {,<SPAN style=
-            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">} {,<SPAN style=
-            "color: rgb(0, 0, 153);"><SPAN style=
-            "color: black; font-weight: bold;">cancelled</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
-            </SPAN>
-          </DIV><BIG><BR></BIG>
-          <DIV style="margin-left: 40px;">
-            If the user cancelled the input, the contents of
-            &lt;result$<SPAN style=
-            "color: rgb(102, 51, 0);">_svar</SPAN>&gt; remain
-            unchanged.
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            e.g<BR>
-            <DIV style="margin-left: 40px;">
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              TEXT.INPUT</SPAN>&nbsp; store$, default$, Title$,
-              <SPAN style=
-              "font-weight: bold;">cancelled</SPAN></SPAN><BR>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">IF
-              <SPAN style="font-weight: bold;">cancelled</SPAN>
-              THEN PRINT <SPAN style="color: rgb(0, 102, 0);">"Do
-              you want to try again ?"</SPAN></SPAN><BR style=
-              "font-family: monospace;">
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-            (Since v4.90+ The orientation of TEXT.INPUT will lock
-            to the same orientation of the top most screen at the
-            time the command is called.)<BR>
-          </DIV>
         </TD>
       </TR>
       <TR>
@@ -1970,6 +1890,86 @@
             "color: rgb(153, 0, 0);">L</SPAN> } are mutually
             exclusive, i.e you can only use one of them per
             command.<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="list_copy" id="list_create"></A><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">LIST.COPY</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <FONT color="#000099">LIST.COPY</FONT>&nbsp;
+            <SPAN style=
+            "font-weight: bold;">from_List</SPAN><FONT color=
+            "#663300">_nexp</FONT> <SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;">to_List</SPAN><FONT color=
+            "#663300">_nexp</FONT><BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Copies a list to another list.<BR>
+            where;<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-weight: bold;">from_List</SPAN><FONT color=
+              "#663300">_nexp</FONT> is the source list index.<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                This list must exist.<BR>
+              </DIV><BR>
+              <SPAN style=
+              "font-weight: bold;">to_List</SPAN><FONT color=
+              "#663300">_nexp</FONT> is the destination list
+              index.<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <DIV style="margin-left: 80px;">
+                <BR>
+              </DIV><SPAN style=
+              "text-decoration: underline;">If</SPAN> <SPAN style=
+              "text-decoration: underline;"><SPAN style=
+              "font-weight: bold;">to_List</SPAN> already
+              exists</SPAN>,<BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="font-weight: bold;">to_List</SPAN>
+                must be the same type as <SPAN style=
+                "font-weight: bold;">from_List</SPAN> or an error
+                is thrown.<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                <SPAN style="font-weight: bold;">to_List</SPAN> is
+                overwritten with <SPAN style=
+                "font-weight: bold;"><SPAN style=
+                "font-weight: bold;">from_List</SPAN></SPAN>,
+                whether it is an <SPAN style=
+                "color: rgb(102, 51, 0);">nvar</SPAN> or not.<BR>
+              </DIV><BR>
+              <SPAN style="text-decoration: underline;">If</SPAN>
+              <SPAN style=
+              "text-decoration: underline;"><SPAN style="font-weight: bold;">
+              to_List</SPAN> does not exist</SPAN>&nbsp;<BR>
+              <DIV style="margin-left: 40px;">
+                If it is an <SPAN style=
+                "color: rgb(102, 51, 0);">nvar</SPAN>, a list is
+                auto-created. The <SPAN style=
+                "color: rgb(102, 51, 0);">nvar</SPAN> will be
+                filled with the new index.<BR>
+                If it is <SPAN style=
+                "text-decoration: underline;">not</SPAN> an
+                <SPAN style="color: rgb(102, 51, 0);">nvar</SPAN>,
+                an error is thrown.<BR>
+              </DIV><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              On success , <SPAN style=
+              "font-weight: bold;">to_List</SPAN> will be an exact
+              copy of <SPAN style=
+              "font-weight: bold;">from_List</SPAN> with the same
+              size.
+            </DIV>
           </DIV><BR>
         </TD>
       </TR>

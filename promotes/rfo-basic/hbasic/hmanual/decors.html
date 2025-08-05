@@ -121,12 +121,12 @@
                 <TD style="vertical-align: top;">Running<BR>
                 Device Api</TD>
                 <TD style="vertical-align: top;" valign="middle">
-                Permanent<BR></TD>
+                Shown (permanent)<BR></TD>
                 <TD style="vertical-align: top;" valign="middle">
                 Hidden (swipe down to show)<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;" valign="middle">
-                Permanent</TD>
+                Shown (permanent)</TD>
                 <TD style="vertical-align: top;" valign="middle">
                 Hidden (swipe up to show)<BR></TD>
               </TR>
@@ -195,9 +195,10 @@
             <DIV style="margin-left: 40px;">
               * Some manufacturers may furthur color the navigation
               bars which may override your settings.<BR>
-              ** v5.25+ added support for older devices between Api
-              23-30 for <A href="#systembar_shading">System bar
-              text and icons</A>.<BR>
+              ** v5.25+ furthur added support for older devices
+              between <SPAN style="text-decoration: underline;">Api
+              23-30</SPAN> for <A href="#systembar_shading">System
+              bar text and icons</A>.<BR>
             </DIV><SPAN style=
             "text-decoration: underline;"><BR></SPAN>
           </DIV>
@@ -207,11 +208,16 @@
             color of the window. It can be set with;<BR>
             <DIV style="margin-left: 40px;">
               for console&nbsp; <A href=
-              "system.html#window_bg">@@window_bg</A><BR>
+              "system.html#window_bg">@@window_bg&nbsp;</A><BR>
+              <DIV style="margin-left: 80px;">
+                also <A href=
+                "console.html#window_bg">CONSOLE.SET</A> "window_bg
+                &lt;color&gt;"<BR>
+              </DIV>
             </DIV>
             <DIV style="margin-left: 40px;">
-              for graphics <A href="decors">GR.OPEN</A> <FONT size=
-              "+1"><SPAN style=
+              for graphics <A href="#decors">GR.OPEN</A>
+              <FONT size="+1"><SPAN style=
               "color: rgb(0, 0, 153);">&nbsp;</SPAN></FONT>&nbsp;<BIG><SPAN style="color: rgb(0, 0, 153);">&nbsp;</SPAN></BIG>
               <SPAN style="font-weight: bold;">,</SPAN>
               <SPAN style="font-weight: bold;">, , , ,</SPAN>
@@ -222,21 +228,23 @@
               "font-weight: bold;">window_bg</SPAN><SPAN style=
               "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
               "font-weight: bold;">}</SPAN><BR>
-              for webview HTML.OPEN <SPAN style=
-              "font-weight: bold;">,</SPAN> <SPAN style=
-              "font-weight: bold;">,</SPAN> <SPAN style=
-              "color: rgb(102, 51, 0);"><SPAN style=
+              for webview <A href="#decors">HTML.OPEN</A>
+              <SPAN style="font-weight: bold;">,</SPAN>
+              <SPAN style="font-weight: bold;">,</SPAN>
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
               "color: black; font-weight: bold;">{</SPAN></SPAN>
               <SPAN style=
               "font-weight: bold;">window_bg</SPAN><SPAN style=
               "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
-              "font-weight: bold;">}<BR>
-              <BR></SPAN> Normally you do not see this color
-              because it is under several layers of other
-              backgrounds,<BR>
+              "font-weight: bold;">}<BR></SPAN> for some dialogs
+              <A href="dialogs.html#dialog_set">DIALOG.SET</A><BR>
+              <SPAN style="font-weight: bold;"><BR></SPAN> Normally
+              you do not see this color because it is under several
+              layers of other backgrounds,<BR>
               but since hBasic v5.20, it can be used to determine
-              the background color of the statusbar and navbar<BR>
-              depending on their configuration.<BR>
+              the background color of the statusbar, navbar<BR>
+              and even the empty lines of the console or certain
+              dialogs, depending on their configuration.<BR>
             </DIV><U><BIG><BR></BIG></U> <BIG><FONT size=
             "+1"><A name="actionbar_bg" id=
             "actionbar_bg"></A>actionbar_bg</FONT></BIG> is the
@@ -297,7 +305,8 @@
               "text-decoration: underline;">only</SPAN> if the
               actionbar is on.<BR>
               If the actionbar is off, the statusbar bg will follow
-              the window_bg.<BR>
+              the window_bg. (see <A href=
+              "#action_bar">action_bar</A>).<BR>
               <BR>
             </DIV><A name="matching_bars" id=
             "matching_bars"></A>System bars color <FONT size=
@@ -322,14 +331,16 @@
               CONSOLE.SET or the decors flags for GR.OPEN and
               HTML.OPEN<BR>
               Here is a sample program.<BR>
-              <BR>
+              <IMG src="pics/sysbars.png" alt="" style=
+              "width: 225px; height: 400px;" align="right"><BR>
               <DIV style=
               "margin-left: 40px; background-color: rgb(255, 255, 255);">
                 <FONT size="-1"><SPAN style=
                 "font-family: Courier New, Courier, monospace;">@@hide_actionbar</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;">@@window_bg
-                "lightgrey"</SPAN><SPAN style=
+                "lightgrey"</SPAN></FONT><FONT size=
+                "-1"><SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><A href="console.html#statustxt">
@@ -352,13 +363,17 @@
                 "font-family: Courier New, Courier, monospace;">bk=0:
                 do:pause 100: until bk</SPAN><SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
+                </SPAN></FONT> <FONT size="-1"><SPAN style=
+                "font-family: Courier New, Courier, monospace;"><FONT size="-1">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                % dark text, no
+                actionbar<BR></SPAN></SPAN></FONT></SPAN>
+                <SPAN style=
                 "font-family: Courier New, Courier, monospace;">sdark=1:
-                ndark=1: nav=1: act=0: sta=1&nbsp;&nbsp;
-                <SPAN style="color: rgb(102, 102, 102);">% dark
-                text, no actionbar<BR>
+                ndark=1: nav=1: act=0: sta=1<SPAN style=
+                "color: rgb(102, 102, 102);"><BR>
                 <BR></SPAN></SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
                 decors</SPAN> = ndark*16 + sdark*8 + (!nav)*4 +
@@ -375,9 +390,10 @@
                 "grey", <SPAN style=
                 "font-weight: bold;"><SPAN style=
                 "color: rgb(0, 0, 0);">decors</SPAN></SPAN> ,1,
-                winBG$</SPAN></A><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
+                winBG$</SPAN></A></FONT><FONT size=
+                "-1"><SPAN style="font-family: Courier New, Courier, monospace;"><FONT size="-1">&nbsp;&nbsp;
+                <SPAN style="color: rgb(102, 102, 102);">% for
+                GRAPHICS<BR></SPAN></FONT></SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;">gr.text.size
                 40 : gr.color "white"</SPAN><SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
@@ -400,7 +416,10 @@
                 "font-family: Courier New, Courier, monospace;">HTML.OPEN
                 <SPAN style="font-weight: bold;"><SPAN style=
                 "color: rgb(0, 0, 0);">decors</SPAN></SPAN>, 1,
-                winBG$</SPAN></A><SPAN style=
+                winBG$</SPAN></A></FONT><FONT size=
+                "-1"><SPAN style="font-family: Courier New, Courier, monospace;"><FONT size="-1"><SPAN style="font-family: Courier New, Courier, monospace;"><FONT size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style="color: rgb(102, 102, 102);">% for
+                WEB</SPAN></FONT></SPAN></FONT></SPAN><SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;">html.load.string
@@ -445,9 +464,9 @@
           <DIV style="margin-left: 40px;">
             The above behaviours and effects only apply for a
             running program, i.e console, graphics and webview.<BR>
-            For Select and Standard hBasic (i.e Editor, Search..
-            etc), the system will follow the manufacturer's theme
-            if possible.<BR>
+            For Standard hBasic (i.e Editor, Search.. etc), the
+            system will follow the manufacturer's theme if
+            possible.<BR>
           </DIV><BR>
         </TD>
       </TR>
@@ -691,12 +710,11 @@
               "commands.html#actionbar_title">CONSOLE.TITLE</A>.<BR>
 
               If you do not set this background color, then it will
-              default to the manufacturer's theme color.<BR>
-              This color is usually not pure black but a very dark
-              brown.<BR>
-            </DIV><BR>
-            <SPAN style="text-decoration: underline;">Hiding the
-            Action Bar<BR></SPAN>
+              default to transparent and the window_bg color<BR>
+              (default black) will show through<BR>
+              <BR>
+            </DIV><SPAN style="text-decoration: underline;">Hiding
+            the Action Bar<BR></SPAN>
             <DIV style="margin-left: 40px;">
               The actionbar can be hidden before the program
               starts.<BR>
@@ -721,8 +739,8 @@
             It can only be hidden and brought back once.<BR>
             <DIV style="margin-left: 40px;">
               &nbsp;If you have hidden the actionbar for graphics
-              or webview with <A href="#decors">decors</A>, they
-              will not come back.<BR>
+              or webview with <A href="#decors">decors</A>, it will
+              not come back.<BR>
             </DIV>
           </DIV><BR>
         </TD>
