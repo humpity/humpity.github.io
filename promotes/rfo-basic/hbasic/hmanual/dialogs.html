@@ -47,9 +47,7 @@
                 <TD style="vertical-align: top;"><A href=
                 "#select_multi">SELECT.MULTI</A><BR>
                 <A href="#select_file">SELECT.FILE</A><BR>
-                <A href=
-                "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/dialogs.html#select_file">
-                SELECT.MULTIFILE</A><BR>
+                <A href="select_multifile">SELECT.MULTIFILE</A><BR>
                 <A href="#select_dir"><SPAN style=
                 "color: rgb(0, 0, 238);">SELECT.DIR</SPAN></A><BR>
                 <A href="#chained"></A></TD>
@@ -61,7 +59,7 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "dialogs.html#dialog_set">DIALOG.SET</A></TD>
+                "dialog_set">DIALOG.SET</A></TD>
                 <TD style="vertical-align: top;">Customise
                 appearence to some of the dialogs</TD>
               </TR>
@@ -526,12 +524,15 @@
                   <SPAN style=
                   "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>&nbsp;
                   (recommended).<BR>
-                  A path beginning with a slash ( / ) is considered
-                  as an absolute path (not recommended).<BR>
+                  <A name="select_file_abs" id=
+                  "select_file_abs"></A>A path beginning with a
+                  slash ( / ) is considered as an <A href=
+                  "system.html#files_abs">absolute path</A> (not
+                  recommended).<BR>
                   <DIV style="margin-left: 40px;">
                     For scoped storage, many absolute paths are
-                    inaccessible and you might not see any
-                    files.<BR>
+                    inaccessible and you might not see any files
+                    other than those created by the app itself.<BR>
                   </DIV>
                 </DIV><BR>
                 <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
@@ -867,17 +868,19 @@
                   "text-decoration: underline;">without</SPAN> a
                   starting slash ( / ) is always relative to
                   <SPAN style=
-                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>&nbsp;
-                  (recommended).<BR>
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
+                  &nbsp; &nbsp;&nbsp; (recommended).<BR>
                   A path beginning with a slash ( / ) is considered
-                  as an absolute path (not recomended).<BR>
+                  as an <A href="system.html#files_abs">absolute
+                  path</A>&nbsp;&nbsp; (not recommended).<BR>
                   <DIV style="margin-left: 40px;">
                     For scoped storage, many absolute paths are
-                    inaccessible and you might not see any
-                    files.<BR>
+                    inaccessible and you might not see any files
+                    other than those created by the app itself.<BR>
+                    <BR>
                   </DIV>
-                </DIV><BR>
-                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                </DIV><SPAN style=
+                "color: rgb(0, 0, 153);"><SPAN style=
                 "text-decoration: underline;">As an output
                 path</SPAN></SPAN>,&nbsp; &nbsp; <SPAN style=
                 "font-weight: bold;">path</SPAN>_<SPAN style=
