@@ -35,25 +35,30 @@
           border="0">
             <TBODY>
               <TR>
-                <TD><BIG><A href="#keys">About
-                Assets</A></BIG><BR></TD>
+                <TD style="width: 50%;"><FONT size="+1"><A href=
+                "#about-assets">About Assets</A><BR></FONT></TD>
                 <TD style="height: 1px;">The virtual file
                 system.<BR></TD>
               </TR>
               <TR>
-                <TD height="1"><BIG><A href="#keystores">App
-                Created Files</A></BIG></TD>
-                <TD style="height: 1px;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#app-created-files"><FONT size="+1">App Created
+                Files</FONT></A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
-                <TD height="1"><A href="#creation"><BIG>Unsupported
-                Features</BIG><BR></A></TD>
-                <TD height="1"><BR></TD>
+                <TD style="vertical-align: top;"><FONT size=
+                "+1"><A href="#assets-vs-real-files">Assets vs Real
+                Files</A><BR></FONT></TD>
+                <TD style="vertical-align: top;">Know the
+                difference.<BR></TD>
               </TR>
               <TR>
-                <TD height="1"><BIG><A href=
-                "#twokeys"><BR></A></BIG></TD>
-                <TD height="1"><BR></TD>
+                <TD height="1"><A href=
+                "#unsupported-features"><FONT size="+1">Unsupported
+                Features<BR></FONT></A></TD>
+                <TD height="1">hSuite does not support
+                confusion.<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -61,11 +66,11 @@
               </TR>
             </TBODY>
           </TABLE><FONT size="+1" color="#000099"><BR></FONT>
-          <FONT size="+1" color="#000099"><A name="assets" id=
-          "keys"></A>About Assets</FONT><BR>
+          <FONT size="+1" color="#000099"><A name="about-assets"
+          id="keys"></A>About Assets</FONT><BR>
           <DIV style="margin-left: 80px;">
             <BR>
-            All files that you need to exists 'before' you start
+            All files that you need to exist 'before' you start
             your app must be under<BR>
             <SPAN style="color: rgb(102, 51, 0);">[source]</SPAN> ,
             <SPAN style="color: rgb(102, 51, 0);">[data]</SPAN> ,
@@ -87,22 +92,28 @@
             "text-decoration: underline;">read-only</SPAN></SPAN>
             and are embedded into the package as a virtual
             file-system.<BR>
-            It is basically a file that pretends to be a disk
-            drive.<BR>
+            Internally, this VFS is a file that pretends to be a
+            disk drive.<BR>
             <BR>
             Files outside these <SPAN style=
             "text-decoration: underline;">supported
             directories</SPAN> will not get copied to assets, so
             will not exist before your app runs.<BR>
-            However, files outside supported directories can be
-            created 'after' your app runs by your app code.<BR>
+            However, files outside these supported directories can
+            be created 'after' your app runs. And they can even
+            have<BR>
+            the same names and paths as the Assets files. The
+            difference is that they will be created on the 'real '
+            file system.<BR>
             <BR>
-          </DIV><A name="app-created" id="keystores"></A>
+          </DIV><A name="app-created-files" id="keystores"></A>
           <FONT size="+1" color="#000099">App Created
           Files</FONT><BR>
           <DIV style="margin-left: 80px;">
             Files can be created by your app code e.g using the
             TEXT and BYTE commands.<BR>
+            These files will created on the real file system (not
+            Assets) on external storage (sdcard).<BR>
             <BR>
             App created files are more flexible. They are
             <SPAN style="color: rgb(0, 51, 0);"><SPAN style=
@@ -120,8 +131,38 @@
             [com.rfo.myApp] ) which is the start of <A href=
             "../hmanual/package.html/scoped">scoped-storage</A>.<BR>
 
+            You can also create paths that are identical to Assets
+            paths in supported directories (see below).<BR>
             <BR>
-          </DIV><A name="app-created" id="keystores"></A>
+          </DIV><A name="assets-vs-real-files" id=
+          "assets-vs-real-files"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size="+1">Assets vs Real
+          Files</FONT></SPAN><BR>
+          <DIV style="margin-left: 80px;">
+            <BR>
+            If an App creates a file with the same name as one in
+            Assets e.g <SPAN style=
+            "color: rgb(102, 51, 0);">&lt;..&gt;/data/cartman.png</SPAN><BR>
+
+            then you will have two different files of the same name
+            on the same path.<BR>
+            <BR>
+            The general rule for most commands is to first look on
+            the real file system (sdcard). If it doesn't exist,
+            then Basic will<BR>
+            look inside Assets. e.g FILE.OPEN, FILE.TYPE.. etc<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(102, 0, 0);">The Exceptions</SPAN></SPAN>
+            to this rule is<BR>
+            <DIV style="margin-left: 40px;">
+              a)
+              RUN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              -&nbsp; Only looks in Assets<BR>
+              b) FILE.EXISTS -&nbsp; Only looks in real file system
+              (sdcard i.e external).<BR>
+            </DIV><BR>
+          </DIV><A name="unsupported-features" id="keystores"></A>
           <FONT size="+1" color="#000099">Unsupported
           Features</FONT><BR>
           <DIV style="margin-left: 40px;">
@@ -135,70 +176,68 @@
           <DIV style="margin-left: 80px;">
             Legacy Basic and perhaps other apk makers have a
             feature that supports copying files from read-only
-            assets to the file-system during apk creation. These
-            files will be copied to external storage (sdcard) at
-            <SPAN style="text-decoration: underline;">every program
-            startup</SPAN>, overwriting any changes. This is
-            undesirable in many situations.<BR>
+            assets to the real-file-system during <SPAN style=
+            "text-decoration: underline;">apk creation</SPAN>.
+            These files will be copied to external storage (sdcard)
+            at <SPAN style="text-decoration: underline;">every
+            program startup !!</SPAN>, overwriting any changes you
+            may have made. This is undesirable in many
+            situations.<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
             <DIV style="margin-left: 40px;">
-              hBasic does <SPAN style=
+              hSuite does <SPAN style=
               "font-weight: bold;">not</SPAN> support this feature,
               due to the confusion it creates.<BR>
             </DIV>
             <DIV style="margin-left: 40px;">
               If you need files that need copying from assets to
-              external storage (sdcard), then the program must do
-              this itself using<BR>
+              external storage (sdcard), then the program must
+              <SPAN style="text-decoration: underline;">do this
+              itself</SPAN> ,<BR>
+              e.g<BR>
             </DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
             <DIV style="margin-left: 40px;">
-              <BR>
-            </DIV><SPAN style=
-            "font-family: Courier New, Courier, monospace;">file.exists
-            e, <SPAN style=
-            "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;</SPAN> <SPAN style=
-            "color: rgb(102, 102, 102);">% looks only on
-            sdcard/data</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">if !e
-            then&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
-            "color: rgb(102, 102, 102);">% if not exist on sdcard
-            /data</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
-            &nbsp;&nbsp; byte.open r,fv, <SPAN style=
-            "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;</SPAN>
-            <SPAN style="color: rgb(102, 102, 102);">% get it from
-            assets</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&nbsp;
-            &nbsp; &nbsp; if fv&lt;&gt;-1 then byte.copy
-            fv,<SPAN style=
-            "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;</SPAN>
-            <SPAN style="color: rgb(102, 102, 102);">% copy it to
-            sdcard/data</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">endif</SPAN><BR>
-
-            <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">file.exists
+              e, <SPAN style=
+              "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% looks only on
+              sdcard/data</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if !e
+              then&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% if not exist on sdcard
+              /data</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+              &nbsp;&nbsp; byte.open r,fv, <SPAN style=
+              "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% get it
+              from assets</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;
+              &nbsp; &nbsp; if fv&lt;&gt;-1 then byte.copy
+              fv,<SPAN style=
+              "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% make a
+              copy to sdcard/data</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">endif</SPAN><BR>
+            </DIV><BR>
             <SPAN style="text-decoration: underline;">The above
             manual method is much clearer and
             user-controllable</SPAN>.<BR>
             <BR>
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;">File.Exists</SPAN>
+            "font-family: Courier New, Courier, monospace;">File.Exists</SPAN>&nbsp;&nbsp;
             only looks in file system. Does not look into
             /assets/<BR>
             <SPAN style=
