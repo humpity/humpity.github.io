@@ -16,20 +16,20 @@ Date		Summary of Versions			(hcodes in brackets)
 
 2025-05-16 v5.35
 		Android decides POPUP position (0531)
-		DEVICE$(..) add more items	(0532)
-			"nightmode"				(-Spike)
+		DEVICE$(..) add more items     (0532)
+			"nightmode"			(-Spike)
 			"orient_lock" 
 		BUNDLE.CREATE more than one bundle (0533)
 		Add back Bundle Expressions (0534)
 		Fix double execution (0535)
 
 2025-03-10 v5.30
-		GR.BITMAP.LOAD Fix return -1 on error (-Spike) (0526)
+		GR.BITMAP.LOAD Fix return -1 on error   (-Spike) (0526)
 		GR.BITMAP.LOAD - enhancements (0527)
 		AUDIO.PLAY - timeout (0528)
 		BT enhancements      (0529)
 			BT.CONNECT    {rc,}{secure} 
-			BT.CONNECT.TO {rc,}{secure,} mac$	(-charles.rayer29)
+			BT.CONNECT.TO {rc,}{secure,} mac$  (-charles.rayer29)
 			BT.DEVICE.ADDR {rc,} mac$
 			BT.GET.PAIRED macList {,nameList}
 		Gui fixes for Android 15 (0530)
