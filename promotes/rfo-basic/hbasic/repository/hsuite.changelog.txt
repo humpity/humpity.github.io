@@ -13,7 +13,7 @@ Date		Summary of Versions
 		hpatcher v3.22
 			Settings can now be saved & loaded
 			Add Loading option: StartUp Color
-		New patch: ADDTEL - adds back DEVICE & PHONE cmds
+		New patch: ADDTEL -adds back DEVICE & PHONE cmds
 
 2025-03-10	v3.28
 		hmaster v2.32
