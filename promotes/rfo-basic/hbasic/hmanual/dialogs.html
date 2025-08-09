@@ -59,7 +59,7 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "dialog_set">DIALOG.SET</A></TD>
+                "#dialog_set">DIALOG.SET</A></TD>
                 <TD style="vertical-align: top;">Customise
                 appearence to some of the dialogs</TD>
               </TR>
@@ -436,8 +436,6 @@
               </DIV>
               <DIV style="margin-left: 40px;">
                 <DIV style="margin-left: 40px;">
-                  A <SPAN style="font-weight: bold;">path</SPAN>
-                  may contain a directory and/or a filename.<BR>
                   e.g&nbsp;&nbsp;&nbsp; <SPAN style=
                   "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
                   <SPAN style=
@@ -459,21 +457,8 @@
                   <SPAN style=
                   "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
                   directory. (Default).<BR>
-                </DIV><BR>
-                <DIV style="margin-left: 40px;">
-                  Filenames must always end <SPAN style=
-                  "text-decoration: underline;">without</SPAN> a
-                  slash ( / )<BR>
                 </DIV>
                 <DIV style="margin-left: 80px;">
-                  e.g&nbsp;&nbsp;&nbsp; <SPAN style=
-                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
-                  my_file.txt<BR></SPAN></SPAN> If a filename is
-                  given, it will fill the textbox at the dialog
-                  start.<BR>
-                  This may be used as a suggestion for an editable
-                  textbox or a default value for an un-editable
-                  box.<BR>
                   <SPAN style=
                   "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
                   <BR></SPAN></SPAN>
@@ -483,7 +468,9 @@
                   "font-weight: bold;">should</SPAN> end
                   <SPAN style=
                   "text-decoration: underline;">with</SPAN> a slash
-                  ( / ). The exception is&nbsp; <SPAN style=
+                  ( / ). The <SPAN style=
+                  "font-weight: bold;">exception</SPAN> is&nbsp;
+                  <SPAN style=
                   "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
                   as a relative path i.e "" (empty path).<BR>
                   <DIV style="margin-left: 40px;">
@@ -515,7 +502,7 @@
                     This may be used as a suggestion for an
                     editable textbox or a default value for an
                     un-editable box.<BR>
-                  </DIV><BR>
+                  </DIV>
                 </DIV><BR>
                 <DIV style="margin-left: 40px;">
                   A path <SPAN style=
@@ -821,7 +808,8 @@
                   "text-decoration: underline;">with</SPAN> a slash
                   ( <SPAN style=
                   "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
-                  /</SPAN></SPAN> ). The exception is&nbsp;
+                  /</SPAN></SPAN> ). The <SPAN style=
+                  "font-weight: bold;">exception</SPAN> is&nbsp;
                   <SPAN style=
                   "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
                   as a relative path i.e "' (empty path).
@@ -846,9 +834,10 @@
               </DIV>
               <DIV style="margin-left: 40px;"></DIV>
               <DIV style="margin-left: 80px;">
-                Filenames (without a slash&nbsp; / ) <SPAN style=
-                "text-decoration: underline;">are always
-                ignored</SPAN>. Only the directory is taken.<BR>
+                Filenames (i.e without ending slash&nbsp; / )
+                <SPAN style="text-decoration: underline;">are
+                always ignored</SPAN>. Only the directory is
+                taken.<BR>
               </DIV>
               <DIV style="margin-left: 40px;"></DIV>
               <DIV style="margin-left: 40px;">
@@ -857,7 +846,7 @@
                   "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
                   my_dir</SPAN></SPAN><SPAN style=
                   "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">my_file.txt</SPAN></SPAN>
-                  is the same as <SPAN style=
+                  is taken as <SPAN style=
                   "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
                   my_dir</SPAN></SPAN><SPAN style=
                   "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">/</SPAN></SPAN>
