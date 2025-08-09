@@ -221,12 +221,17 @@
             hBasic's default storage base was moved to scoped
             storage since <SPAN style=
             "color: rgb(0, 0, 153);">v3.00</SPAN>.<BR>
-            However, devices <SPAN style=
-            "text-decoration: underline;">lower than</SPAN> Android
-            11 (&lt; Api 30) can choose legacy storage by selecting
-            the base Drive<BR>
-            in Preferences &gt; Base Drive as either<BR>
             <BR>
+            <SPAN style="text-decoration: underline;">Option to use
+            Legacy<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              Devices <SPAN style="font-weight: bold;"><SPAN style=
+              "text-decoration: underline;">lower
+              than</SPAN></SPAN> Android 11 (&lt; Api 30) can
+              choose legacy storage by selecting the base Drive<BR>
+              in Preferences &gt; Base Drive as either<BR>
+            </DIV><BR>
             <DIV style="margin-left: 40px;">
               <SPAN style=
               "color: rgb(102, 51, 0);">/sdcard&nbsp;&nbsp;</SPAN>
@@ -247,6 +252,32 @@
             Storage. You only need this option if the app was
             developed using a legacy base.<BR>
             <BR>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(102, 51, 0);">/sdcard</SPAN> is NOT the
+            same as SDCARD<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              On some devices &amp; file managers, the path
+              <SPAN style="color: rgb(102, 51, 0);">/sdcard</SPAN>
+              is not the same as "SDCARD".<BR>
+              These devices may give the name "SDCARD" to 'real'
+              external storage cards,<BR>
+              e.g /storage/1B16-4105<BR>
+              ( which is a physical un-emulated card ).<BR>
+              <BR>
+              They will pretend not to understand "<SPAN style=
+              "color: rgb(102, 51, 0);">/sdcard</SPAN>", but
+              internally it still exists as "<SPAN style=
+              "color: rgb(102, 51, 0);">/sdcard</SPAN>" or another
+              name.<BR>
+              These phones prefer you to use "<SPAN style=
+              "color: rgb(102, 51, 0);">/mnt/sdcard</SPAN>" or the
+              more modern "/<SPAN style=
+              "color: rgb(102, 51, 0);">storage/emulated/0</SPAN>"
+              which is the same thing.<BR>
+              And have chosen to reserved the name "SDCARD" for a
+              real external device instead.<BR>
+            </DIV><BR>
           </DIV>
         </TD>
       </TR>
