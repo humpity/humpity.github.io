@@ -306,42 +306,49 @@
                 <SPAN style="font-weight: bold;">title</SPAN> by
                 setting this to "" (empty).<BR>
               </DIV><BR>
+              Example
+              <DIV style="margin-left: 160px;"></DIV>
+              <TABLE style="text-align: left; width: 100%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top; width: 50%;">
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    dialog.set "window_bg green"<BR>
+                    array.load
+                    f$[],"Orange","Banana","Apple","Pear"<BR>
+                    p$[] = f$[] &nbsp;</SPAN> <SPAN style=
+                    "color: rgb(102, 102, 102);">% make a
+                    copy</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style="color: rgb(0, 0, 153);"><BR>
+                    SELECT.MULTI</SPAN> rc,p$[],"Pick
+                    Fruits"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">,""<BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if rc=0 then ?"Nothing
+                    Picked"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    debug.on<BR>
+                    debug.dump.array p$[]<BR>
+                    debug.off<BR></SPAN> END</TD>
+                    <TD style="vertical-align: top;"><IMG src=
+                    "pics/select-multi.png" alt="" style=
+                    "width: 300px; height: 301px;"></TD>
+                  </TR>
+                </TBODY>
+              </TABLE><BR>
             </DIV>
-            <DIV style="margin-left: 40px;">
-              Example<BR>
-            </DIV><IMG src="pics/select-multi.png" alt="" style=
-            "width: 300px; height: 301px;" align="right"><BR>
           </DIV>
-          <DIV style="margin-left: 40px;">
-            <DIV style="margin-left: 40px;">
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">dialog.set
-              "window_bg green"<BR>
-              array.load f$[],"Orange","Banana","Apple","Pear"<BR>
-              p$[] = f$[] &nbsp;</SPAN> <SPAN style=
-              "color: rgb(102, 102, 102);">% make a
-              copy</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              <BR>
-              SELECT.MULTI</SPAN> rc,p$[],"Pick
-              Fruits"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">,""<BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc=0 then ?"Nothing Picked"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">debug.on<BR>
-
-              debug.dump.array p$[]<BR>
-              debug.off<BR></SPAN> END<BR>
-              <BR>
-            </DIV>
-          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
         </TD>
       </TR>
       <TR>
@@ -470,10 +477,12 @@
                   <SPAN style=
                   "text-decoration: underline;">with</SPAN> a slash
                   ( / ). The <SPAN style=
-                  "font-weight: bold;">exception</SPAN> is&nbsp;
+                  "font-weight: bold;">exception</SPAN> is the
+                  empty path ("") which<BR>
+                  represents the relative path from&nbsp;
                   <SPAN style=
-                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
-                  as a relative path i.e "" (empty path).<BR>
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/<SPAN style="font-family: Helvetica, Arial, sans-serif;">.</SPAN></SPAN><BR>
+
                   <DIV style="margin-left: 40px;">
                     e.g&nbsp;&nbsp;&nbsp; <SPAN style=
                     "font-family: Courier New, Courier, monospace;">
@@ -622,62 +631,68 @@
 
                 (note that an asterisk is not needed and shouldn't
                 be used.)<BR>
-              </DIV>
-              <DIV style="margin-left: 40px;">
-                <BR>
-              </DIV>
-            </DIV>
-            <DIV style="margin-left: 40px;">
+              </DIV><BR>
               Example<BR>
-            </DIV><IMG src="pics/select_file.png" alt="" style=
-            "width: 300px; height: 273px;" align="right"><BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <DIV style="margin-left: 40px;">
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">p$=""</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</SPAN>
-              <SPAN style="color: rgb(102, 102, 102);">% default is
-              relative to /data/</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              <BR></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              SELECT.FILE</SPAN> rc,p$,"Pick a
-              File"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN><BR>
+              <TABLE style="text-align: left; width: 100%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top; width: 50%;">
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      p$=""</SPAN><SPAN style=
+                      "font-family: Courier New, Courier, monospace;">&nbsp;
+                      &nbsp; &nbsp;</SPAN> <SPAN style=
+                      "color: rgb(102, 102, 102);">% default is
+                      relative to /data/</SPAN><BR>
+                      <DIV style="margin-left: 40px;">
+                        <SPAN style=
+                        "font-family: Courier New, Courier, monospace;">
+                        <BR></SPAN>
+                      </DIV><SPAN style=
+                      "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">SELECT.FILE</SPAN>
+                      rc,p$,"Pick a File"</SPAN><BR>
+                      <BR>
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      if rc=&nbsp; 0 then ?"No
+                      Selection"</SPAN></SPAN><BR>
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                       if rc= -1 then ?"Cancelled"</SPAN><BR>
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      if rc= -2 then ?"Error&gt; Bad
+                      Dir!"</SPAN><BR>
+                      <BR>
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      PRINT "Path: ";p$</SPAN><BR>
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      i = IS_IN ("/",p$,-1)&nbsp;</SPAN>
+                      <SPAN style="color: rgb(102, 102, 102);">%
+                      i.e lastIndexOf /</SPAN><BR>
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      PRINT "Dir : ";</SPAN><SPAN style=
+                      "font-family: Courier New, Courier, monospace;">left$(p$,i)</SPAN><BR>
 
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
-              if rc=&nbsp; 0 then ?"No
-              Selection"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> if rc= -1 then
-              ?"Cancelled"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">PRINT
-              "Path: ";p$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">i =
-              IS_IN ("/",p$,-1)&nbsp;<SPAN style=
-              "color: rgb(102, 102, 102);">&nbsp;&nbsp;</SPAN></SPAN>
-              <SPAN style="color: rgb(102, 102, 102);">% i.e
-              lastIndexOf /</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">PRINT
-              "Dir : ";</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">left$(p$,i)</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">PRINT
-              "File: ";</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">mid$(p$,i+1)</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN>
+                      <SPAN style=
+                      "font-family: Courier New, Courier, monospace;">
+                      PRINT "File: ";</SPAN><SPAN style=
+                      "font-family: Courier New, Courier, monospace;">mid$(p$,i+1)</SPAN><BR>
+
+                      END<BR>
+                    </TD>
+                    <TD style="vertical-align: top; width: 1px;">
+                    <IMG src="pics/select_file.png" alt="" style=
+                    "width: 300px; height: 273px;"></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
             </DIV><BR>
           </DIV>
         </TD>
@@ -807,13 +822,12 @@
                   "font-weight: bold;">should</SPAN> end
                   <SPAN style=
                   "text-decoration: underline;">with</SPAN> a slash
-                  ( <SPAN style=
-                  "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
-                  /</SPAN></SPAN> ). The <SPAN style=
-                  "font-weight: bold;">exception</SPAN> is&nbsp;
+                  ( / ). The <SPAN style=
+                  "font-weight: bold;">exception</SPAN> is the
+                  empty path ("") which<BR>
+                  represents the relative path from&nbsp;
                   <SPAN style=
-                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
-                  as a relative path i.e "' (empty path).
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/<SPAN style="font-family: Helvetica, Arial, sans-serif;">.</SPAN></SPAN><BR>
                 </DIV>
                 <DIV style="margin-left: 80px;">
                   e.g&nbsp;&nbsp;&nbsp; <SPAN style=
@@ -965,47 +979,63 @@
             </DIV>
             <DIV style="margin-left: 40px;">
               Example<BR>
-            </DIV><IMG src="pics/select-multifile.png" alt=""
-            style="width: 300px; height: 300px;" align="right"><BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <DIV style="margin-left: 40px;">
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
-              dialog.set "window_bg darkblue"</SPAN><BR>
-              p$=""</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">&nbsp;
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</SPAN>
-              <SPAN style="color: rgb(102, 102, 102);">% default is
-              relative to /data/</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              list.create S,source<BR>
-              list.copy source,picked<BR>
-              <BR></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              SELECT.MULTIFILE</SPAN> rc, p$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">,
-              picked<BR></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc=&nbsp; 0 then ?"No Selection!"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              if rc= -1 then ?"Cancelled"<BR></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">PRINT
-              "Path: ";p$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              debug.on<BR>
-              debug.dump.list picked<BR>
-              debug.off<BR>
-              END<BR></SPAN>
-            </DIV><BR>
+              <TABLE style="text-align: left; width: 100%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top; width: 50%;">
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    dialog.set "window_bg darkblue"</SPAN><BR>
+                    p$=""</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">&nbsp;
+                    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</SPAN>
+                    <SPAN style="color: rgb(102, 102, 102);">%
+                    default is relative to
+                    /data/</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+
+                    list.create S,source<BR>
+                    list.copy source,picked<BR>
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(0, 0, 153);">SELECT.MULTIFILE</SPAN>
+                    rc, p$</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">,
+                    picked<BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if rc=&nbsp; 0 then ?"No
+                    Selection!"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+
+                    if rc= -1 then ?"Cancelled"<BR></SPAN>
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if rc= -2 then ?"Error&gt; Bad
+                    Dir!"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    PRINT "Path: ";p$</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+
+                    debug.on<BR>
+                    debug.dump.list picked<BR>
+                    debug.off<BR>
+                    END</SPAN></TD>
+                    <TD style="vertical-align: top;"><IMG src=
+                    "pics/select-multifile.png" alt="" style=
+                    "width: 300px; height: 300px;"></TD>
+                  </TR>
+                </TBODY>
+              </TABLE><BR>
+            </DIV>
           </DIV>
         </TD>
       </TR>
@@ -1084,13 +1114,20 @@
                   This sets the <SPAN style=
                   "text-decoration: underline;">starting
                   point</SPAN> of the directory navigation.<BR>
+                  Directories <SPAN style=
+                  "font-weight: bold;">should</SPAN> end
+                  <SPAN style=
+                  "text-decoration: underline;">with</SPAN> a slash
+                  ( / ). The <SPAN style=
+                  "font-weight: bold;">exception</SPAN> is the
+                  empty path ("") which<BR>
+                  represents the relative path from&nbsp;
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/<SPAN style="font-family: Helvetica, Arial, sans-serif;">.</SPAN></SPAN><BR>
+
+                  <BR>
                 </DIV>
                 <DIV style="margin-left: 40px;">
-                  An empty or blank path represents the&nbsp;
-                  <SPAN style=
-                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
-                  directory as a relative path. (Default)<BR>
-                  <BR>
                   A path <SPAN style=
                   "text-decoration: underline;">without</SPAN> a
                   starting slash ( / ) is always relative to
@@ -1103,20 +1140,8 @@
                     For scoped storage, many absolute paths are
                     inaccessible and you might not see any
                     files.<BR>
-                  </DIV><BR>
-                </DIV>
-                <DIV style="margin-left: 40px;">
-                  Directories <SPAN style=
-                  "font-weight: bold;">should</SPAN> end
-                  <SPAN style=
-                  "text-decoration: underline;">with</SPAN> a slash
-                  ( / ).The exception is&nbsp; <SPAN style=
-                  "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
-                  as a relative path i.e "' (empty path).<BR>
-                  <DIV style="margin-left: 40px;">
-                    <BR>
                   </DIV>
-                </DIV>
+                </DIV><BR>
                 <DIV style="margin-left: 80px;">
                   e.g&nbsp;&nbsp;&nbsp; <SPAN style=
                   "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
@@ -1133,9 +1158,10 @@
                   <BR>
                 </DIV>
                 <DIV style="margin-left: 80px;">
-                  Names (without a slash&nbsp; / ) <SPAN style=
-                  "text-decoration: underline;">are always
-                  ignored</SPAN>. Only the directory is taken.<BR>
+                  Names (without an end slash&nbsp; / )
+                  <SPAN style="text-decoration: underline;">are
+                  always ignored</SPAN>. Only the directory is
+                  taken.<BR>
                   <BR>
                 </DIV>
                 <DIV style="margin-left: 80px;">
@@ -1291,95 +1317,113 @@
             <DIV style="margin-left: 40px;">
               <BR>
               Examples<BR>
-              <IMG src="pics/select_dir1.png" alt="" style=
-              "width: 300px; height: 244px;" align="right"><BR>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">p$="../source/"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              SELECT.DIR</SPAN> rc,p$,"Pick a
-              Directory"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc= -1 then ?"Cancelled"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">PRINT
-              "Path: ";p$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              END<BR>
-              <BR>
-              <BR>
-              !-----------------------------------<BR></SPAN>
-              <DIV style="text-align: right;">
-                <DIV style="text-align: right;">
-                  <SPAN style=
-                  "font-family: Courier New, Courier, monospace;"><IMG src="pics/select_dir2.png"
-                  alt="" style="width: 300px; height: 249px;"
-                  align="right"></SPAN><BR>
-                </DIV>
-              </DIV><SPAN style=
-              "font-family: Courier New, Courier, monospace;">REM
-              Editable entry<BR></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">p$=""</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              SELECT.DIR</SPAN> rc,p$,"Create
-              Directory",,1</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc= -1 then ?"Cancelled"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if
-              rc= -2 then ?"Error&gt; Bad Dir!"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">PRINT
-              "Path: ";p$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">FILE.MKDIR
-              ok,p$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <SPAN style="color: rgb(102, 102, 102);">% create
-              dir</SPAN><BR></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">if ok
-              then</SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-              ? p$;" Success"</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">else</SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-              ?"Could not create ";p$</SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">endif</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">END</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN><BR>
+              <TABLE style="text-align: left; width: 100%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top; width: 50%;">
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    p$="../source/"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(0, 0, 153);">SELECT.DIR</SPAN>
+                    rc,p$,"Pick a Directory"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if rc= -1 then ?"Cancelled"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if rc= -2 then ?"Error&gt; Bad
+                    Dir!"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    PRINT "Path: ";p$</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR>
+                    END</SPAN></TD>
+                    <TD style="vertical-align: top;"><IMG src=
+                    "pics/select_dir1.png" alt="" style=
+                    "width: 300px; height: 244px;"></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    REM Editable entry<BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    p$=""</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(0, 0, 153);">SELECT.DIR</SPAN>
+                    rc,p$,"Create Directory",,1</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if rc= -1 then ?"Cancelled"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if rc= -2 then ?"Error&gt; Bad
+                    Dir!"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    PRINT "Path: ";p$</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    FILE.MKDIR ok,p$</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <SPAN style="color: rgb(102, 102, 102);">%
+                    create dir</SPAN><BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    if ok then</SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    &nbsp;&nbsp;&nbsp; ? p$;"
+                    Success"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    else</SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    &nbsp;&nbsp;&nbsp; ?"Could not create
+                    ";p$</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    endif</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    END</SPAN></TD>
+                    <TD style="vertical-align: top;"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <IMG src="pics/select_dir2.png" alt="" style=
+                    "width: 300px; height: 249px;"></SPAN></TD>
+                  </TR>
+                </TBODY>
+              </TABLE><BR>
             </DIV>
           </DIV>
         </TD>
@@ -1821,35 +1865,44 @@
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             Example<BR>
-            <DIV style="margin-left: 40px;">
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-              DIALOG.SET</SPAN> "Window_BG green, VoidColor =
-              green",~<BR>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              "Title_FG lightgrey",~<BR>
-              <BR>
-              <SPAN style=
-              "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN>
-              t$,"data",,cancelled<BR>
-              if !cancelled then ?t$<BR>
-              <BR>
-              array.load arr$[],"A","B","C"<BR>
-              <SPAN style="color: rgb(0, 0, 153);">SELECT</SPAN>
-              s,arr$[],,""<BR>
-              if s&lt;&gt;0 then ?"Selected row
-              ";int$(s)<BR></SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;"><BR>
-              </SPAN> <SPAN style=
-              "font-family: Courier New, Courier, monospace;">END</SPAN><BR>
-            </DIV><BR>
-            <IMG src="pics/text-input.png" alt="" style=
-            "width: 169px; height: 300px;" vspace="10" hspace=
-            "10"><IMG src="pics/select.png" alt="" style=
-            "width: 169px; height: 300px;" vspace="10" hspace=
-            "10"><BR>
-            <BR>
-          </DIV><BR>
+            <TABLE style="text-align: left; width: 100%;"
+            cellspacing="2" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top; width: 50%;">
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                  DIALOG.SET</SPAN> "Window_BG green",~<BR>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  "VoidColor = green",~<BR>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  "Title_FG lightgrey",~<BR>
+                  <BR>
+                  <SPAN style=
+                  "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN>
+                  t$,"data",,cancelled<BR>
+                  if !cancelled then ?t$<BR>
+                  <BR>
+                  array.load arr$[],"A","B","C"<BR>
+                  <SPAN style=
+                  "color: rgb(0, 0, 153);">SELECT</SPAN>
+                  s,arr$[],,""<BR>
+                  if s&lt;&gt;0 then ?"Selected row
+                  ";int$(s)<BR></SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">END<BR>
+                  </SPAN></TD>
+                  <TD style="vertical-align: top;"><IMG src=
+                  "pics/text-input.png" alt="" style=
+                  "width: 169px; height: 300px;" vspace="10"
+                  hspace="10"> <IMG src="pics/select.png" alt=""
+                  style="width: 169px; height: 300px;" vspace="10"
+                  hspace="10"><BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+          </DIV>
           <DIV style="margin-left: 80px;"></DIV>
         </TD>
       </TR>
