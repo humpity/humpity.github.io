@@ -49,8 +49,8 @@ Preferences &gt; LXQt Settings &gt; Shortcut Keys.<br>
 You can assign a shorcut to call a script.<br>
 <br>
 Below is the script that moves or resizes a window.<br>
-It relies on a utility called <span style=
-"font-weight: bold;">wmctrl</span>,<br>
+It relies on <span style="font-weight: bold;">wmctrl</span>, and
+<span style="font-weight: bold;">xwininfo</span>.<br>
 1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 <div style="margin-left: 40px;">Install wmctrl<br></div>
 <div style="margin-left: 40px;"><span style=
@@ -67,12 +67,18 @@ sure to rename your file as <span style=
 <div style="margin-left: 40px;">Put this script somewhere where it
 can be found and executed, e.g /usr/local/bin/<span style=
 "font-weight: bold;">wmove.sh<br></span> and make it <span style=
-"text-decoration: underline;">executable</span>.<br></div>
+"text-decoration: underline;">executable</span>.<br>
+<div style="margin-left: 40px;">You can test the script inside a
+terminal. <span style="color: rgb(102, 0, 0);">e.g <span style=
+"color: rgb(0, 102, 0);">wmove.sh moveup</span></span><br>
+and the terminal should move up a tenth of it's height.<br></div>
+</div>
 3.<br>
 <div style="margin-left: 40px;">Enter these shortcuts to call the
 script <span style="font-weight: bold;">wmove.sh</span><br></div>
-<div style="margin-left: 40px;">Preferences &gt; LXQt Settings &gt;
-Shortcut Keys.<br></div>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 0, 0);">Preferences &gt; LXQt Settings &gt;
+Shortcut Keys</span>.<br></div>
 <br>
 <table style="text-align: left; width: 80%; margin-left: 40px;"
 cellspacing="2" cellpadding="2" border="0">
@@ -83,9 +89,16 @@ cellspacing="2" cellpadding="2" border="0">
 <td style="vertical-align: top;">Command</td>
 </tr>
 <tr>
-<td style="vertical-align: top; text-align: center;"><br></td>
+<td style="vertical-align: top; text-align: right;">
+Resizing<br></td>
 <td style="vertical-align: top;"><br></td>
 <td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Control+Meta+Up&nbsp;<br></td>
+<td style="vertical-align: top;">Win Shrink Height (1/10)</td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);">wmove.sh</span> decheight</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">Control+Meta+Down</td>
@@ -106,37 +119,66 @@ cellspacing="2" cellpadding="2" border="0">
 "color: rgb(0, 0, 153);">wmove.sh</span> incwidth</td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Control+Meta+Up&nbsp;<br></td>
-<td style="vertical-align: top;">Win Shrink Height v<br></td>
-<td style="vertical-align: top;"><span style=
-"color: rgb(0, 0, 153);">wmove.sh</span> decheight</td>
+<td style="vertical-align: top; text-align: right;">Moving<br></td>
+<td style="vertical-align: top;"><br></td>
+<td style="vertical-align: top;"><br></td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Meta+Down&nbsp;<br></td>
-<td style="vertical-align: top;">Win Bottom Half&nbsp;<br></td>
+<td style="vertical-align: top;">Alt+Meta+Up&nbsp;&nbsp;<br></td>
+<td style="vertical-align: top;">Win Move Up (1/10)</td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);">wmove.sh</span> moveup<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Alt+Meta+Down<br></td>
+<td style="vertical-align: top;">Win Move Down<br></td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);">wmove.sh</span> movedown<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Alt+Meta+Left</td>
+<td style="vertical-align: top;">Win Move Left<br></td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);">wmove.sh</span> moveleft<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Alt+Meta+Right</td>
+<td style="vertical-align: top;">Win Move
+Rightf&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);">wmove.sh</span> moveright<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top; text-align: right;">
+Quadrants<br></td>
+<td style="vertical-align: top;"><br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Meta+Up&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top;">Win Top Half</td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);">wmove.sh</span> tophalf</td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Meta+Down<br></td>
+<td style="vertical-align: top;">Win Bottom Half<br></td>
 <td style="vertical-align: top;"><span style=
 "color: rgb(0, 0, 153);">wmove.sh</span> bothalf</td>
 </tr>
 <tr>
 <td style="vertical-align: top;">
-Meta+Left&nbsp;&nbsp;&nbsp;&nbsp;<br></td>
-<td style="vertical-align: top;">Win Left Half&nbsp;&nbsp;<br></td>
+Meta+Left&nbsp;&nbsp;&nbsp;<br></td>
+<td style="vertical-align: top;">Win Left Half&nbsp;<br></td>
 <td style="vertical-align: top;"><span style=
 "color: rgb(0, 0, 153);">wmove.sh</span> lefthalf</td>
 </tr>
 <tr>
-<td style="vertical-align: top;">Meta+Right&nbsp;&nbsp;&nbsp;</td>
+<td style="vertical-align: top;">Meta+Right&nbsp;&nbsp;<br></td>
 <td style="vertical-align: top;">Win Right
-Half&nbsp;&nbsp;&nbsp;</td>
+Half&nbsp;&nbsp;<br></td>
 <td style="vertical-align: top;"><span style=
 "color: rgb(0, 0, 153);">wmove.sh</span> righthalf</td>
-</tr>
-<tr>
-<td style="vertical-align: top;">
-Meta+Up&nbsp;&nbsp;&nbsp;&nbsp;<br></td>
-<td style="vertical-align: top;">Win Top Half</td>
-<td style="vertical-align: top;"><span style=
-"color: rgb(0, 0, 153);">wmove.sh</span> tophalf</td>
 </tr>
 </tbody>
 </table>

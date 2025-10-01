@@ -1,28 +1,39 @@
 #!/bin/bash
 
-# move / resize the active window - by humpty Jun 2024
-# wmove.sh <type>
-# where <type> is
+# move / resize the active window - by humpty Jun 2024 - Sep 2025
+# wmove.sh <cmd>
+# 					e.g wmove.sh righthalf
+# where <cmd> is
 
 # full		- full size (permanent - not maximized nor fullscreen)
 # lefthalf  - left & half screen width
 # righthalf	- right & half screen width
-# tophalf	- top & half screen height
+# tophalf	- top & half screen height		e.g assign to WIN-UP
 # bothalf	- bottom & half screen height
 
-# incheight	- increase height
+# incheight	- increase height 1/10			e.g assign to CTRL-WIN-UP
 # decheight	- decrease height
 # incwidth	- increase width
 # decwidth	- decrease width
 
+# moveup	- move up 1/10					e.g assign to ALT-WIN-UP
+# movedown	- move down
+# moveleft	- move left
+# moveright	- move right
+
+# screen width and height
 SCR_W=$(xwininfo -root | grep Width | cut -f 4 -d ' ')
 SCR_H=$(xwininfo -root | grep Height | cut -f 4 -d ' ')
-
 ID=$(xprop -root | grep "NET_ACTIVE_WINDOW(WINDOW)" | cut -f 5 -d ' ')
+# title height and border width
 TIT_H=$(xwininfo -id $ID | grep "Relative upper-left Y" | cut -f 7 -d ' ')
 BOR_W=$(xwininfo -id $ID | grep "Relative upper-left X" | cut -f 7 -d ' ')
+# width and height
 WIN_W=$(xwininfo -id $ID | grep Width | cut -f 4 -d ' ')
 WIN_H=$(xwininfo -id $ID | grep Height | cut -f 4 -d ' ')
+# X,Y
+WIN_X=$(xwininfo -id $ID | grep "Absolute upper-left X" | cut -f 7 -d ' ')
+WIN_Y=$(xwininfo -id $ID | grep "Absolute upper-left Y" | cut -f 7 -d ' ')
 
 # right side inc/dec = 1/10 of the current width
 INC_RIGHT=$(($WIN_W + $WIN_W/10))
@@ -31,6 +42,14 @@ DEC_RIGHT=$(($WIN_W - $WIN_W/10))
 # bottom side inc/dec = 1/10 of the current height
 INC_BOT=$(($WIN_H + $WIN_H/10))
 DEC_BOT=$(($WIN_H - $WIN_H/10))
+
+# top side inc/dec = 1/10 of the current height
+INC_Y=$(($WIN_Y + $WIN_H/10 - $TIT_H))
+DEC_Y=$(($WIN_Y - $WIN_H/10 - $TIT_H))
+
+# left side inc/dec = 1/10 of the current width
+INC_X=$(($WIN_X + $WIN_W/10 - $BOR_W))
+DEC_X=$(($WIN_X - $WIN_W/10 - $BOR_W))
 
 # work out half a window width and height
 SCR_HALF_W=$(($SCR_W/2))
@@ -73,6 +92,18 @@ case $1 in
 		;;
 	decheight)
 		wmctrl -r :ACTIVE: -e 0,-1,-1,-1,$DEC_BOT
+		;;
+	moveup)
+		wmctrl -r :ACTIVE: -e 0,-1,$DEC_Y,-1,-1
+		;;
+	movedown)
+		wmctrl -r :ACTIVE: -e 0,-1,$INC_Y,-1,-1
+		;;
+	moveleft)
+		wmctrl -r :ACTIVE: -e 0,$DEC_X,-1,-1,-1
+		;;
+	moveright)
+		wmctrl -r :ACTIVE: -e 0,$INC_X,-1,-1,-1
 		;;
 	*)
 	echo action not found

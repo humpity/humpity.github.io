@@ -1232,7 +1232,8 @@
             </DIV><BR style="font-family: monospace;">
             <BIG><SPAN style="font-family: monospace;"><A name=
             "textscalex" id=
-            "textsize"></A></SPAN></BIG><SPAN style="font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSCALEX</SPAN></SPAN>
+            "textscalex"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXTSCALEX</SPAN></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
             <SPAN style=
@@ -2066,35 +2067,51 @@
               <SPAN style="font-weight: bold;">result$</SPAN>
               &nbsp;&nbsp; is the return string&nbsp;&nbsp; ( not
               optional)<BR>
-              <SPAN style=
+              <DIV style="margin-left: 80px;">
+                This variable will be overwritten.<BR>
+                If the input entered nothing or input was cancelled
+                (BackKey) the result will be the empty string.<BR>
+                <BR>
+              </DIV><SPAN style=
               "font-weight: bold;">prompt</SPAN>&nbsp;&nbsp;&nbsp;
               sets the prompt (optional)<BR>
-              <SPAN style="font-weight: bold;">title</SPAN> &nbsp;
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sets the
-              window title (optional)<BR>
-              <SPAN style="font-weight: bold;">backKey</SPAN> is a
-              variable to hold the backKey flag
-              (optional)<SMALL><BR>
-              <BR></SMALL>
-              <DIV style="margin-left: 120px;">
-                0 =&gt; backKey was not pressed to exit TGET<BR>
-                1 =&gt; backKey was pressed to exit TGET<BR>
+              <DIV style="margin-left: 80px;">
+                This string will be printed on the left of the
+                input line e.g "cmd&gt;"<BR>
                 <BR>
-              </DIV>Commas are needed to seperate parameters, even
-              if they are omitted.<BR>
+              </DIV><SPAN style="font-weight: bold;">title</SPAN>
+              &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              sets the window title (optional)<BR>
               <BR>
-            </DIV>TGET now closely resembles the output
-            console.<BR>
+              <SPAN style="font-weight: bold;">backKey</SPAN> is a
+              variable to return the backKey flag (optional)
+            </DIV>
+            <DIV style="margin-left: 120px;">
+              0 =&gt; backKey was not pressed to exit TGET<BR>
+              1 =&gt; backKey was pressed to exit TGET<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              Commas are needed to seperate parameters, even if
+              they are omitted.<BR>
+              <BR>
+            </DIV>TGET now closely resembles the output console
+            (because it is now part of the console),<BR>
+            Make sure the console is in front. You can do this with
+            CONSOLE.FRONT or GR.FRONT 0.<BR>
             Any style changes to the console will do the same to
             TGET.<BR>
             <BR>
-            After input from the user, TGET prints both the prompt
-            and user input.<BR>
-            <BR>
+            After input from the user, TGET <SPAN style=
+            "font-weight: bold;">prints both the prompt and user
+            input</SPAN> to the console.<BR>
+            This is not true for <A href=
+            "#tget_sub">subcommands</A> (see later).<BR>
             The exception is if the user presses 'Stop' from the
             console menu, in which case 'Stopped by user' is
             printed instead, and the program execution is stopped
-            or exited.<BR>
+            or exited. You can also customise the menu via <A href=
+            "menu.html">MENU</A> commands.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             Examples<BR>

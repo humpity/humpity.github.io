@@ -61,8 +61,11 @@
                 confusion.<BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#assets-to-sdcard">Assets to File
+                System</A><BR></TD>
+                <TD style="vertical-align: top;">How to copy from
+                Assets to File System</TD>
               </TR>
             </TBODY>
           </TABLE><FONT size="+1" color="#000099"><BR></FONT>
@@ -100,8 +103,9 @@
             directories</SPAN> will not get copied to assets, so
             will not exist before your app runs.<BR>
             However, files outside these supported directories can
-            be created 'after' your app runs. And they can even
-            have<BR>
+            be created '<SPAN style=
+            "text-decoration: underline;">after</SPAN>' your app
+            runs. And they can even have<BR>
             the same names and paths as the Assets files. The
             difference is that they will be created on the 'real '
             file system.<BR>
@@ -113,7 +117,8 @@
             Files can be created by your app code e.g using the
             TEXT and BYTE commands.<BR>
             These files will created on the real file system (not
-            Assets) on external storage (sdcard).<BR>
+            Assets) on external storage (historically name
+            'sdcard').<BR>
             <BR>
             App created files are more flexible. They are
             <SPAN style="color: rgb(0, 51, 0);"><SPAN style=
@@ -158,8 +163,8 @@
             <DIV style="margin-left: 40px;">
               a)
               RUN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              -&nbsp; Only looks in Assets<BR>
-              b) FILE.EXISTS -&nbsp; Only looks in real file system
+              -&nbsp; ONLY looks in Assets<BR>
+              b) FILE.EXISTS -&nbsp; ONLY looks in real file system
               (sdcard i.e external).<BR>
             </DIV><BR>
           </DIV><A name="unsupported-features" id="keystores"></A>
@@ -190,6 +195,15 @@
               hSuite does <SPAN style=
               "font-weight: bold;">not</SPAN> support this feature,
               due to the confusion it creates.<BR>
+              <BR>
+            </DIV>
+          </DIV><SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="assets-to-sdcard" id=
+          "assets-to-sdcard"></A>How to copy from Assets to File
+          System</FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <BR>
             </DIV>
             <DIV style="margin-left: 40px;">
               If you need files that need copying from assets to

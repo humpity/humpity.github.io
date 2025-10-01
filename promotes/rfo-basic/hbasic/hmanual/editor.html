@@ -11,7 +11,7 @@
   <TITLE>Editor</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
 </HEAD>
-<BODY link="#000099" vlink="#990099" alink="#000099">
+<BODY vlink="#990099" link="#000099" alink="#000099">
   <A href=
   "http://humpity.github.io/promotes/rfo-basic/hbasic/hbasic.html">hBasic</A>
   &gt; <A href="index.html">hManual</A> &gt; Editor<BR>
@@ -42,6 +42,13 @@
                 "#line_number">Error Line Number</A></BIG></TD>
                 <TD style="vertical-align: top;">Error line
                 displayed for 5 secs</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#search_case"><FONT size="+1">Search case
+                sensitivity</FONT></A><BR></TD>
+                <TD style="vertical-align: top;">Can now search
+                mixed case text<BR></TD>
               </TR>
             </TBODY>
           </TABLE><BR>
@@ -86,6 +93,22 @@
             If the error occurred&nbsp; inside an INCLUDE file,
             then only the line# that loaded the first INCLUDE file
             will be displayed.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="search_case"
+          id="fix_volkeys"></A>Search case sensitivity</BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Code was previously available to do a case-sensitive
+            search but the dialog was not complete.<BR>
+            A checkbox (Tt) was added to flag a case-sensitive
+            search.<BR>
+            This checkbox will reset if the dialog is called again
+            from the Editor.<BR>
             <BR>
           </DIV>
         </TD>

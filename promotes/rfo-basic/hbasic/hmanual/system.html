@@ -696,7 +696,9 @@
             A <B>shortcut</B> is a widget on the home screen that
             calls the app with a string of data.<BR>
             Note that shortcut creation requires the app to be run
-            once beforehand.<BR>
+            at least <SPAN style=
+            "text-decoration: underline;">once</SPAN>
+            beforehand.<BR>
             <BR>
             A <B>file-share</B> is a request (normally by a
             file-manger) to hBasic with a filename.<BR>
@@ -780,9 +782,73 @@
                 will receive a full path (as best that hBasic can
                 extract a path) starting with a slash "/".<BR>
                 This does not affect shortcuts to a Standalone apk,
-                which will always send the shortcut data cleanly.
+                which will always send the shortcut data
+                cleanly.<BR>
+                <BR>
               </DIV>
+            </DIV><FONT size="+1"><A name="icon_shortcut" id=
+            "icon_shortcut"></A>Shortcut Creator in Desktop Main
+            Icon</FONT><BR>
+            <DIV style="margin-left: 40px;">
+              Some Android launchers (e.g Xiaomi) may not support
+              shortcut creation.<BR>
             </DIV>
+            <DIV style="margin-left: 40px;">
+              A menu item&nbsp; was addd to the app's desktop icon
+              to create a shortcut.<BR>
+              On long pressing the icon on the desktop, an item to
+              create a shortcut maybe available.<BR>
+              (This might not work for some launchers).<BR>
+            </DIV><BR>
+            <FONT size="+1"><A name="icon_shortcut" id=
+            "icon_shortcut"></A>Shortcut Icons</FONT><BR>
+            <DIV style="margin-left: 40px;">
+              In the shortcut creator dialog, there is an option to
+              specify a user-defind icon for the shortcut.<BR>
+              This icon must be present in the /data directory of
+              scoped storage. An icon in &lt;assets&gt;/data is not
+              enough.<BR>
+              Therefore the app must be run at least <SPAN style=
+              "text-decoration: underline;">once</SPAN> and the
+              icon must be copied from assets to /data or put
+              there<BR>
+              by other means.<BR>
+              <BR>
+              Example<BR>
+              <DIV style="margin-left: 40px;">
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">file.exists
+                e, <SPAN style=
+                "color: rgb(102, 51, 0);">"icon.png"</SPAN>&nbsp;&nbsp;&nbsp;
+                &nbsp;</SPAN> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                &nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
+                "color: rgb(102, 102, 102);">% looks only on
+                sdcard/data</SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">if
+                !e then&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <SPAN style="color: rgb(102, 102, 102);">% if not
+                exist on sdcard /data</SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
+                &nbsp;&nbsp; byte.open r,fv, <SPAN style=
+                "color: rgb(102, 51, 0);">"icon.png"</SPAN>&nbsp;</SPAN>
+                <SPAN style="color: rgb(102, 102, 102);">% get it
+                from assets</SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">&nbsp;
+                &nbsp; &nbsp; if fv&lt;&gt;-1 then byte.copy
+                fv,<SPAN style=
+                "color: rgb(102, 51, 0);">"icon.png"</SPAN>&nbsp;&nbsp;</SPAN>
+                <SPAN style="color: rgb(102, 102, 102);">% make a
+                copy to sdcard/data</SPAN><BR>
+                <SPAN style=
+                "font-family: Courier New, Courier, monospace;">endif</SPAN>
+              </DIV>
+            </DIV><BR>
           </DIV>
         </TD>
       </TR>

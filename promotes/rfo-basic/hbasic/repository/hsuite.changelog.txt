@@ -2,7 +2,12 @@ hSuite changelog
 
 Date		Summary of Versions
 --------------- -------------------------------------------
-2025-08-05  v3.30
+2025-10-01	v3.31
+		hmaster v2.35
+		hpatcher v3.24
+			removed dependency on vconvert
+
+2025-08-05	v3.30
 		hmaster v2.34
 		hpatcher v3.23
 			Fixed commit on 0 app_version  > unchanged > (error)

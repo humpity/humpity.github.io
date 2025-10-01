@@ -38,20 +38,29 @@
             <TBODY>
               <TR>
                 <TD style="vertical-align: top; width: 30%;">
-                <A href="#behave"><FONT size="+1">Behaviour and
-                Colors<BR></FONT></A></TD>
+                  <A href="#behave"><FONT size="+1">Behaviour and
+                  Colors</FONT></A><BR>
+                  <DIV style="text-align: right;">
+                    <DIV style="text-align: left;">
+                      <BR>
+                    </DIV><BR>
+                    <BR>
+                  </DIV>
+                </TD>
                 <TD style="vertical-align: top;">Behaviour and
                 appearence<BR>
                 <A href="#window_bg">window_bg</A><BR>
                 <A href="#actionbar_bg">actionbar_bg</A><BR>
                 <A href="#matching_bars">matching</A><BR>
-                <A href="#shading">shading</A><BR></TD>
+                <A href="#shading">shading</A></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "#decors"><FONT size="+1">Decors</FONT></A></TD>
+                "#decors"><FONT size="+1">Decors</FONT></A><BR>
+                <BR></TD>
                 <TD style="vertical-align: top;">Opening
-                parameters<BR></TD>
+                parameters<BR>
+                <A href="#decors_immersive">Immersive mode</A></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -81,12 +90,12 @@
           "behave"></A>Behaviour and Colors</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            Changes to the system bars appearence and
-            behaviour.<BR>
+            System bars appearence and behaviour.<BR>
             <BR>
             Since hBasic v5.20, the app targets Api 35+. The
             following behaviour and appearences have changed as
             indicated below.<BR>
+            <BR>
           </DIV>
           <TABLE style=
           "text-align: left; width: 90%; margin-left: 40px;"
@@ -331,128 +340,176 @@
               CONSOLE.SET or the decors flags for GR.OPEN and
               HTML.OPEN<BR>
               Here is a sample program.<BR>
-              <IMG src="pics/sysbars.png" alt="" style=
-              "width: 225px; height: 400px;" align="right"><BR>
+              <BR>
+              <TABLE style="text-align: left; width: 90%;"
+              cellspacing="2" cellpadding="2" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top; width: 60%;">
+                    <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    @@hide_actionbar</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    @@window_bg
+                    "lightgrey"</SPAN></FONT><FONT size="-1"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <A href=
+                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#statustxt">
+                    CONSOLE.SET "StatusTxt
+                    dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <SPAN style="color: rgb(102, 102, 102);">% Api
+                    23 and later</SPAN><BR>
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <A href=
+                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#navbartxt">
+                    CONSOLE.SET "NavBarTxt
+                    dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <SPAN style="color: rgb(102, 102, 102);">% Api
+                    26 to Api 34 only</SPAN><BR>
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    ? "Console&gt; tap BackKey to
+                    graphics"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    bk=0: do:pause 100: until bk<BR>
+                    <BR></SPAN></FONT> <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style=
+                    "color: rgb(102, 102, 102);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    % dark text, no
+                    actionbar<BR></SPAN></SPAN></FONT></SPAN>
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    sdark=1: ndark=1: nav=1: act=0:
+                    sta=1<SPAN style=
+                    "color: rgb(102, 102, 102);"><BR></SPAN></SPAN>
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <SPAN style="font-weight: bold;">decors</SPAN>
+                    = ndark*16 + sdark*8 + (!nav)*4 + act*2 +
+                    sta*1</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    winBG$&nbsp; = "lightgrey"</SPAN></FONT><BR>
+                    <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <FONT size=
+                    "-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <SPAN style="color: rgb(102, 102, 102);">% for
+                    GRAPHICS<BR></SPAN></FONT></SPAN></FONT></SPAN>
+                    <A href=
+                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/decors.html#decors">
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    GR.OPEN "grey", <SPAN style=
+                    "font-weight: bold;"><SPAN style=
+                    "color: rgb(0, 0, 0);">decors</SPAN></SPAN> ,1,
+                    winBG$</SPAN></A></FONT><FONT size=
+                    "-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><FONT size="-1">&nbsp;&nbsp;
+                    <SPAN style="color: rgb(102, 102, 102);"><BR>
+                    </SPAN></FONT></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    gr.text.size 50 : gr.color
+                    "white"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    gr.text.draw oT,50,50,"Graphics&gt; tap BackKey
+                    to web"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    gr.render</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    bk=0: do:pause 100: until bk</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    GR.CLOSE</SPAN></FONT><BR>
+                    <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <FONT size="-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <FONT size="-1"><SPAN style=
+                    "color: rgb(102, 102, 102);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    % for
+                    WEB</SPAN></FONT></SPAN></FONT></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN></FONT></SPAN> <A href=
+                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/decors.html#decors">
+                    <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    HTML.OPEN <SPAN style=
+                    "font-weight: bold;"><SPAN style=
+                    "color: rgb(0, 0, 0);">decors</SPAN></SPAN>, 1,
+                    winBG$</SPAN></A></FONT><FONT size=
+                    "-1"><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    html.load.string "&lt;big&gt;Web&gt; tap
+                    BackKey to End&lt;/big&gt;"</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    &nbsp;&nbsp;&nbsp; do : html.get.datalink
+                    data$</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    &nbsp;&nbsp;&nbsp; until starts_with
+                    ("BAK:",data$)</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    HTML.CLOSE</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    cls: ? "Console&gt; Done."</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    END</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    OnBackKey:</SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    <BR></SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    &nbsp;bk=1</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
+                    </SPAN> <SPAN style=
+                    "font-family: Courier New, Courier, monospace;">
+                    Back.Resume</SPAN></FONT></TD>
+                    <TD style=
+                    "vertical-align: top; background-color: rgb(153, 153, 153);">
+                    <IMG src="pics/sysbars.png" alt="" style=
+                    "width: 225px; height: 400px;"></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
               <DIV style=
               "margin-left: 40px; background-color: rgb(255, 255, 255);">
-                <FONT size="-1"><SPAN style=
-                "font-family: Courier New, Courier, monospace;">@@hide_actionbar</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">@@window_bg
-                "lightgrey"</SPAN></FONT><FONT size=
-                "-1"><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><A href="console.html#statustxt">
-                CONSOLE.SET "StatusTxt
-                dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <SPAN style="color: rgb(102, 102, 102);">% Api 23
-                and later</SPAN><BR>
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><A href="console.html#navbartxt">
-                CONSOLE.SET "NavBarTxt
-                dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <SPAN style="color: rgb(102, 102, 102);">% Api 26
-                to Api 34 only</SPAN><BR>
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;">?
-                "Console&gt; tap BackKey to
-                graphics"</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">bk=0:
-                do:pause 100: until bk</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN></FONT> <FONT size="-1"><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><FONT size="-1">
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                % dark text, no
-                actionbar<BR></SPAN></SPAN></FONT></SPAN>
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;">sdark=1:
-                ndark=1: nav=1: act=0: sta=1<SPAN style=
-                "color: rgb(102, 102, 102);"><BR>
-                <BR></SPAN></SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
-                decors</SPAN> = ndark*16 + sdark*8 + (!nav)*4 +
-                act*2 + sta*1</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">winBG$&nbsp;
-                = "lightgrey"</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <A href="#decors"><SPAN style=
-                "font-family: Courier New, Courier, monospace;">GR.OPEN
-                "grey", <SPAN style=
-                "font-weight: bold;"><SPAN style=
-                "color: rgb(0, 0, 0);">decors</SPAN></SPAN> ,1,
-                winBG$</SPAN></A></FONT><FONT size=
-                "-1"><SPAN style="font-family: Courier New, Courier, monospace;"><FONT size="-1">&nbsp;&nbsp;
-                <SPAN style="color: rgb(102, 102, 102);">% for
-                GRAPHICS<BR></SPAN></FONT></SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">gr.text.size
-                40 : gr.color "white"</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">gr.text.draw
-                oT,50,50,"Graphics&gt; tap BackKey to
-                web"</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">gr.render</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">bk=0:
-                do:pause 100: until bk</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">GR.CLOSE</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <A href="#decors"><SPAN style=
-                "font-family: Courier New, Courier, monospace;">HTML.OPEN
-                <SPAN style="font-weight: bold;"><SPAN style=
-                "color: rgb(0, 0, 0);">decors</SPAN></SPAN>, 1,
-                winBG$</SPAN></A></FONT><FONT size=
-                "-1"><SPAN style="font-family: Courier New, Courier, monospace;"><FONT size="-1"><SPAN style="font-family: Courier New, Courier, monospace;"><FONT size="-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <SPAN style="color: rgb(102, 102, 102);">% for
-                WEB</SPAN></FONT></SPAN></FONT></SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">html.load.string
-                "&lt;big&gt;Web&gt; tap BackKey to
-                End&lt;/big&gt;"</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-                do : html.get.datalink data$</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-                until starts_with ("BAK:",data$)</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">HTML.CLOSE</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">cls:
-                ? "Console&gt; Done."</SPAN><SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">END</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">OnBackKey:</SPAN>
-                <SPAN style=
-                "font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">&nbsp;bk=1</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-                </SPAN> <SPAN style=
-                "font-family: Courier New, Courier, monospace;">Back.Resume</SPAN></FONT><BR>
-
+                <BR>
                 <BR>
               </DIV>Status bar text shading only works for Api 23
               and later.<BR>
@@ -464,8 +521,8 @@
           <DIV style="margin-left: 40px;">
             The above behaviours and effects only apply for a
             running program, i.e console, graphics and webview.<BR>
-            For Standard hBasic (i.e Editor, Search.. etc), the
-            system will follow the manufacturer's theme if
+            For Standard hBasic (i.e Editor, Load, Delete.. etc),
+            the system will follow the manufacturer's theme if
             possible.<BR>
           </DIV><BR>
         </TD>
@@ -537,6 +594,9 @@
                   <TD style="vertical-align: top;">Set to
                   mean<BR></TD>
                   <TD style="vertical-align: top;">Default<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  Mask<BR></TD>
                   <TD style="vertical-align: top;">In
                   general<BR></TD>
                 </TR>
@@ -547,6 +607,9 @@
                   statusbar_SHOW&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</TD>
                   <TD style="vertical-align: top; white-space;">1 =
                   show<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  1<BR></TD>
                   <TD style="vertical-align: top;"><BR></TD>
                 </TR>
                 <TR>
@@ -556,6 +619,9 @@
                   actionbar_SHOW</TD>
                   <TD style="vertical-align: top;">0 =
                   hide<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  2<BR></TD>
                   <TD style="vertical-align: top;"><BR></TD>
                 </TR>
                 <TR>
@@ -564,6 +630,16 @@
                   <TD style="vertical-align: top;">navbar_HIDE</TD>
                   <TD style="vertical-align: top; white-space;">0 =
                   show<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  4<BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
                   <TD style="vertical-align: top;"><BR></TD>
                 </TR>
                 <TR>
@@ -572,6 +648,9 @@
                   dark_StatusText</TD>
                   <TD style="vertical-align: top; white-space;">0 =
                   light text<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  8<BR></TD>
                   <TD style=
                   "vertical-align: top; width: 30%; white-space;">(
                   only works for Android 11+ )<BR></TD>
@@ -582,17 +661,32 @@
                   dark_NavBar_Icons<BR></TD>
                   <TD style="vertical-align: top;">0 = light
                   icons<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  16<BR></TD>
                   <TD style="vertical-align: top;">( only works
                   Android 8-14 )</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;">Bit 5<BR></TD>
+                  <TD style="vertical-align: top;">
+                  immersive_mode<BR></TD>
+                  <TD style="vertical-align: top;">0 =
+                  non-immersive<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  32<BR></TD>
+                  <TD style="vertical-align: top;">( only useful
+                  for notch area )<BR></TD>
                 </TR>
               </TBODY>
             </TABLE><BR>
             If you don't specify this flag (e.g ",,") the default
             is <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">decors_flags</SPAN></SPAN>=1
+            "color: black; font-weight: bold;">decors_flags</SPAN></SPAN>=<SPAN style="font-weight: bold;">1</SPAN>
             or bin ("001").<BR>
             This shows the statusbar and navbar but hides the
-            action bar.<BR>
+            actionbar.<BR>
             <BR>
             This is different from legacy Basic which hides the
             statusbar by default ("000").<BR>
@@ -679,7 +773,25 @@
             </DIV>
             <DIV style="margin-left: 40px;">
               It disappears after 3 secs.<BR>
-            </DIV><BR>
+              <BR>
+            </DIV><SPAN style=
+            "text-decoration: underline;"><A name="decors_immersive"
+            id="decors_immersive"></A>Immersive Mode</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              This flag sets a full screen mode in which the status
+              bar is forced hidden (even if you turned it on).<BR>
+              If either the action bar or navigation bar is on,
+              then they will <SPAN style=
+              "font-weight: bold;">overlap</SPAN> with your
+              content.<BR>
+              For some devices with a camera notch, it also enables
+              your content to be displayed inside the <SPAN style=
+              "font-weight: bold;">notch area</SPAN>.<BR>
+              (This might not work for some devices).<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;"></DIV>
           </DIV>
         </TD>
       </TR>
@@ -714,10 +826,10 @@
               (default black) will show through<BR>
               <BR>
             </DIV><SPAN style="text-decoration: underline;">Hiding
-            the Action Bar<BR></SPAN>
+            the Console Action Bar<BR></SPAN>
             <DIV style="margin-left: 40px;">
-              The actionbar can be hidden before the program
-              starts.<BR>
+              The console actionbar can be hidden before the
+              program starts.<BR>
               To hide the actionbar, use the directive&nbsp;
               <SPAN style=
               "color: rgb(0, 0, 153);">@@hide_actionbar</SPAN>&nbsp;
