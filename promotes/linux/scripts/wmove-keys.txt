@@ -1,0 +1,20 @@
+
+Preferences > LXQt Settings > Shortcut Keys
+
+Shortcut			Description			Command
+
+Control+Meta+Up 	Win Shrink Height 	wmove.sh decheight
+Control+Meta+Down	Win Grow Height		wmove.sh incheight
+Control+Meta+Left	Win Shrink Width	wmove.sh decwidth
+Control+Meta+Right	Win Grow Width		wmove.sh incwidth
+
+Meta+Up    			Win Top Half		wmove.sh tophalf
+Meta+Down 			Win Bottom Half 	wmove.sh bothalf
+Meta+Left    		Win Left Half  		wmove.sh lefthalf
+Meta+Right   		Win Right Half   	wmove.sh righthalf
+
+Alt+Meta+Up			Win Move Up			wmove.sh moveup
+Alt+Meta+Down		Win Move Down		wmove.sh movedown
+Alt+Meta+Left		Win Move Left		wmove.sh moveleft
+Alt+Meta+right 		Win Move Right	 	wmove.sh moveright
+

@@ -2,6 +2,13 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2025-10-01 v5.50
+		Fix bugs when in background (0546)
+		Fix Search dialog for Api 35+ (0547)
+		Add Search case-sensitivity (0548)
+		Add Immersive mode to decors flag (0549)
+		Add Shortcut creation from icon (0550)
+
 2025-08-05 v5.45
 		Fix GR.MOTION obj|arr[] syntax error (0536)
 		Fix inc/decrement of bundle expression key values (0537)
@@ -490,7 +497,8 @@ v5.21	v2.30	Merged 0521
 v5.25	v2.31   Merged 0522-0525 Legacy device support
 v5.30	v2.32   Merged 0526-0530 Fixes for Android 15 gui
 v5.35	v2.33   Merged 0531-0535 Fix double execution, Bundle Exps
-
+v5.45	v2.34	Merged 0536-0545 SELECT subcommands
+v5.50	v2.35	Merged 0546-0550 shortcut from icon menu
 ============================================================================
 Patches that were created.
 	O = optional S = suspended (do not use)	D = defunct
@@ -526,7 +534,7 @@ H0291	M	0291	Device.OS
 H0293	M	0293	Fix crash for DEVICE on Android-10+
 K0001   M	0300	Fix Sensors with less then 3 Return Values. ack:dkal,afox
 H0301	D	0301	Embeded an FTP server
-FTPS	D	0301	Renamed patch and changed Ftp command port from 1025 to 2345
+FTPS	D	0301	Renamed to HFTPS. Changed command port from 1025 to 2345
 H0303	M	0303	Fix Gr.Modify Group "list" and tidy up code. ack:afox
 H0304	M	0304	Fix status bar for Gr.Open on Android 11 devices. ack:dkal
 H0305	M	0305	Fix DEVICE permission for Android 11+. ack:dkal
@@ -534,7 +542,7 @@ H0306	M	0306	Fix invalid base paths
 H0312	D	0312	BACKSPACE and re-code append mode for PRINT
 HFTPS	O	0321	add Rename
 HFTPS	O	0333	basic can control hftps
-ADDTEL  O   +ADDTEL adds DEVICE & PHONE cmds (for standard edition)
+ADDTEL  O   	+ADDTEL adds DEVICE & PHONE cmds (for standard edition)
 
 ============================================================================
 -End-
