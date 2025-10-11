@@ -79,11 +79,13 @@
             <SPAN style="color: rgb(102, 51, 0);">[data]</SPAN> ,
             or&nbsp; <SPAN style=
             "color: rgb(102, 51, 0);">[databases]</SPAN> of you
-            project base. These are called <SPAN style=
+            project <A href=
+            "../other/transfer.html#base_directory">base
+            directory</A>. These are called <SPAN style=
             "text-decoration: underline;">'supported'
             directories</SPAN>.<BR>
             <BR>
-            <SPAN style=
+            The use of <SPAN style=
             "color: rgb(102, 51, 0);">[data]</SPAN>&nbsp; and&nbsp;
             <SPAN style=
             "color: rgb(102, 51, 0);">[databases]</SPAN>&nbsp; must
@@ -94,7 +96,7 @@
             "color: rgb(153, 0, 0);"><SPAN style=
             "text-decoration: underline;">read-only</SPAN></SPAN>
             and are embedded into the package as a virtual
-            file-system.<BR>
+            file-system (VFS).<BR>
             Internally, this VFS is a file that pretends to be a
             disk drive.<BR>
             <BR>
@@ -108,16 +110,17 @@
             runs. And they can even have<BR>
             the same names and paths as the Assets files. The
             difference is that they will be created on the 'real '
-            file system.<BR>
+            file<BR>
+            system instead of Assets (see below).<BR>
             <BR>
           </DIV><A name="app-created-files" id="keystores"></A>
-          <FONT size="+1" color="#000099">App Created
-          Files</FONT><BR>
+          <FONT size="+1" color="#000099">App Created Files<BR>
+          <BR></FONT>
           <DIV style="margin-left: 80px;">
             Files can be created by your app code e.g using the
             TEXT and BYTE commands.<BR>
-            These files will created on the real file system (not
-            Assets) on external storage (historically name
+            These files will be created on the real file system
+            (not Assets) on external storage (historically named
             'sdcard').<BR>
             <BR>
             App created files are more flexible. They are
@@ -134,8 +137,9 @@
             ( In fact, you even have write-access to <SPAN style=
             "color: rgb(0, 0, 153);">[app_path]</SPAN>'s parent
             [com.rfo.myApp] ) which is the start of <A href=
-            "../hmanual/package.html/scoped">scoped-storage</A>.<BR>
+            "../hmanual/package.html/#scoped">scoped-storage</A>.<BR>
 
+            <BR>
             You can also create paths that are identical to Assets
             paths in supported directories (see below).<BR>
             <BR>
@@ -153,9 +157,9 @@
             on the same path.<BR>
             <BR>
             The general rule for most commands is to first look on
-            the real file system (sdcard). If it doesn't exist,
-            then Basic will<BR>
-            look inside Assets. e.g FILE.OPEN, FILE.TYPE.. etc<BR>
+            the real file system (sdcard). If it doesn't exist,<BR>
+            then Basic will look inside Assets. e.g FILE.OPEN,
+            FILE.TYPE.. etc<BR>
             <BR>
             <SPAN style="text-decoration: underline;"><SPAN style=
             "color: rgb(102, 0, 0);">The Exceptions</SPAN></SPAN>
@@ -163,7 +167,7 @@
             <DIV style="margin-left: 40px;">
               a)
               RUN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              -&nbsp; ONLY looks in Assets<BR>
+              -&nbsp; ONLY looks in Assets (in general)<BR>
               b) FILE.EXISTS -&nbsp; ONLY looks in real file system
               (sdcard i.e external).<BR>
             </DIV><BR>
@@ -185,8 +189,9 @@
             "text-decoration: underline;">apk creation</SPAN>.
             These files will be copied to external storage (sdcard)
             at <SPAN style="text-decoration: underline;">every
-            program startup !!</SPAN>, overwriting any changes you
-            may have made. This is undesirable in many
+            program startup <SPAN style=
+            "font-weight: bold;">!!</SPAN></SPAN>, overwriting any
+            changes you may have made. This is undesirable in many
             situations.<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
@@ -221,28 +226,28 @@
               "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;</SPAN> <SPAN style=
               "color: rgb(102, 102, 102);">% looks only on
-              sdcard/data</SPAN><BR>
+              &lt;sdcard base&gt;/data</SPAN><BR>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">if !e
               then&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp;
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
-              "color: rgb(102, 102, 102);">% if not exist on sdcard
-              /data</SPAN><BR>
+              "color: rgb(102, 102, 102);">% if not exist on
+              &lt;sdcard base&gt; /data</SPAN><BR>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;
               &nbsp;&nbsp; byte.open r,fv, <SPAN style=
               "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;</SPAN>
               <SPAN style="color: rgb(102, 102, 102);">% get it
-              from assets</SPAN><BR>
+              from &lt;assets base&gt;/data</SPAN><BR>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">&nbsp;
               &nbsp; &nbsp; if fv&lt;&gt;-1 then byte.copy
               fv,<SPAN style=
               "color: rgb(102, 51, 0);">"settings.dat"</SPAN>&nbsp;&nbsp;</SPAN>
               <SPAN style="color: rgb(102, 102, 102);">% make a
-              copy to sdcard/data</SPAN><BR>
+              copy to &lt;sdcard base&gt;/data</SPAN><BR>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">endif</SPAN><BR>
             </DIV><BR>
@@ -299,8 +304,11 @@
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             print "file is in assets"</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
-            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% must be in
+            assets</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN></SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
             endif</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
