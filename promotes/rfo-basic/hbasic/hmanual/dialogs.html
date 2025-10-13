@@ -284,6 +284,11 @@
                   "color: rgb(102, 51, 0);"><SPAN style=
                   "color: black; font-weight: bold;">rc</SPAN></SPAN>
                   will contain the number of items.<BR>
+                  Warning: If using an array, the array will be
+                  re-dimensioned to the number&nbsp; of items
+                  returned.<BR>
+                  If the selection was cancelled, the list or array
+                  is untouched.<BR>
                   <BR>
                 </DIV>
               </DIV><SPAN style=
@@ -644,7 +649,7 @@
                       "font-family: Courier New, Courier, monospace;">&nbsp;
                       &nbsp; &nbsp;</SPAN> <SPAN style=
                       "color: rgb(102, 102, 102);">% default is
-                      relative to /data/</SPAN><BR>
+                      relative to data/</SPAN><BR>
                       <DIV style="margin-left: 40px;">
                         <SPAN style=
                         "font-family: Courier New, Courier, monospace;">
@@ -927,7 +932,7 @@
                 </SPAN>
               </DIV><SPAN style=
               "font-weight: bold;">array$[]</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              is an output string array<BR>
+              is an output string array&nbsp;<BR>
               or <SPAN style="font-weight: bold;"><SPAN style=
               "font-weight: bold;">list</SPAN></SPAN>_<SPAN style=
               "color: rgb(102, 51, 0);">nexp</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -946,6 +951,9 @@
                 "color: rgb(102, 51, 0);"><SPAN style=
                 "color: black; font-weight: bold;">rc</SPAN></SPAN>
                 will contain the number of items.<BR>
+                Warning: If using an array, the array will be
+                re-dimensioned to the number&nbsp; of items
+                returned.<BR>
                 <BR>
               </DIV><SPAN style=
               "font-weight: bold;">title</SPAN>_<SPAN style=
@@ -972,7 +980,7 @@
                 <SPAN style=
                 "font-weight: bold;">endsWith</SPAN>.<BR>
                 e.g ".txt"<BR>
-                (note that an asterisk is not needed and shouldn't
+                (note that an asterisk is not needed and should not
                 be used.)<BR>
               </DIV><BR>
               <DIV style="margin-left: 40px;"></DIV>
@@ -993,8 +1001,8 @@
                     "font-family: Courier New, Courier, monospace;">&nbsp;
                     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</SPAN>
                     <SPAN style="color: rgb(102, 102, 102);">%
-                    default is relative to
-                    /data/</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                    default is relative to data/</SPAN><SPAN style=
+                    "font-family: Courier New, Courier, monospace;"><BR>
 
                     list.create S,source<BR>
                     list.copy source,picked<BR>
@@ -1752,10 +1760,9 @@
             <DIV style="margin-left: 120px;">
               <SPAN style="color: rgb(0, 0, 153);">Set the
               background color behind the dialog.<BR></SPAN> For
-              SELECT type dialogs, this would be color below the
-              last line of a list.<BR>
-              For TEXT.INPUT, this would be the background
-              surrounding the input pane.<BR>
+              all SELECT type dialogs only.<BR>
+              This would be the color below the last line of a list
+              that fills the void of empty items.<BR>
             </DIV>
           </DIV>
           <DIV style="margin-left: 120px;">
@@ -1765,8 +1772,13 @@
               A <A href="colors.html">color string</A><BR>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">default</SPAN>
-              will be transparent, revealing the <A href=
-              "#set_window_bg">window_bg</A>.<BR>
+              (if not set) will be to follow the text background
+              color.<BR>
+              <BR>
+              If you set this color to transparent (#00000000) then
+              the window background<BR>
+              <A href="#set_window_bg">window_bg</A> will be
+              revealed.<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -1789,8 +1801,8 @@
           <DIV style="margin-left: 160px;">
             <SPAN style="color: rgb(0, 0, 153);">Set the highlight
             color behind tapped text.<BR></SPAN> For SELECT &amp;
-            SELECT.FILE&nbsp;&nbsp;&nbsp; this is the highlight
-            color of a <SPAN style=
+            SELECT.FILE only.<BR>
+            This is the highlight color of a <SPAN style=
             "text-decoration: underline;">single
             selection</SPAN>.<SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR>
@@ -1876,7 +1888,7 @@
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   "VoidColor = green",~<BR>
                   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  "Title_FG lightgrey",~<BR>
+                  "Title_FG lightgrey"<BR>
                   <BR>
                   <SPAN style=
                   "color: rgb(0, 0, 153);">TEXT.INPUT</SPAN>
