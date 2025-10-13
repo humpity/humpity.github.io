@@ -319,7 +319,7 @@
             storage</SPAN>.<BR>
             It is usually found at <SPAN style=
             "color: rgb(51, 0, 153);"><SPAN style=
-            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN></SPAN>/<SPAN style="color: rgb(51, 0, 153);">Android</SPAN>/<SPAN style="color: rgb(51, 0, 153);">data</SPAN>/<SPAN style="color: rgb(51, 0, 153);">com.rfo.hbasic</SPAN>.<BR>
+            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN></SPAN>/<SPAN style="color: rgb(51, 0, 153);">Android</SPAN>/<SPAN style="color: rgb(51, 0, 153);">data</SPAN>/<SPAN style="color: rgb(51, 0, 153);">com.rfo.hbasic</SPAN><BR>
           </DIV>
           <DIV style="margin-left: 40px;" align="right">
             <I>(note: legacy Basic's default base drive used to be
@@ -330,14 +330,25 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             Base Directory<BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            The <SPAN style=
-            "color: rgb(153, 0, 0);">base_directory</SPAN> is
-            therefore <SPAN style=
-            "color: rgb(51, 0, 153);"><SPAN style=
-            "color: rgb(102, 51, 0);">&lt;sdcard&gt;</SPAN>/Android/data/com.rfo.hbasic/<SPAN style="color: rgb(153, 0, 0);">rfo-basic<BR>
-            </SPAN></SPAN>
+            <DIV style="margin-left: 40px;">
+              The <SPAN style=
+              "color: rgb(153, 0, 0);">base_directory</SPAN>&nbsp;
+              =&nbsp; <FONT color="#990000">base_drive</FONT>&nbsp;
+              + <SPAN style=
+              "font-weight: bold;">/</SPAN><SPAN style=
+              "color: rgb(51, 0, 153);"><SPAN style=
+              "color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              e.g <SPAN style=
+              "color: rgb(51, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">
+              &lt;sdcard&gt;</SPAN>/Android/data/com.rfo.hbasic/<SPAN style="color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              e.g <SPAN style=
+              "color: rgb(51, 0, 153);"><SPAN style="color: rgb(102, 51, 0);">
+              /storage/emulated/0</SPAN>/Android/data/com.rfo.hbasic/<SPAN style="color: rgb(153, 0, 0);">rfo-basic</SPAN></SPAN>
+            </DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
             with <FONT color="#663300"><SPAN style=
@@ -353,8 +364,10 @@
           </DIV>
           <DIV style="margin-left: 80px;">
             Historically, the <FONT color="#990000">App_Path</FONT>
-            or app directory is just the name of the base_directory
-            e.g <FONT color="#990000">"rfo-basic"</FONT><BR>
+            or app directory is <SPAN style=
+            "text-decoration: underline;">just the name</SPAN> of
+            the base_directory e.g <FONT color=
+            "#990000">"rfo-basic"</FONT><BR>
             (ironically without the path).<BR>
             This will be different for custom (standalone)
             apps.<BR>
