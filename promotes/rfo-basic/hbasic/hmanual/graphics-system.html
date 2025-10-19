@@ -119,6 +119,13 @@
           "display_list_changes"></A>Display List</FONT></SPAN><BR>
           <BR>
           <DIV style="margin-left: 40px;">
+            The display list is not the same as the objects list.
+            All objects exist on objects list but not neccessarily
+            on the display list.<BR>
+            Any objects on the display list are rendered to the
+            display (if it is not hidden or special).<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
             <A href=
             "graphics.html#display_list_commands">Additional
             commands</A> were added to manage the display list
@@ -404,7 +411,7 @@
                   <TR>
                     <TD style=
                     "vertical-align: top; text-align: center;">
-                    <A href="sprite-arate">arate</A><BR></TD>
+                    <A href="#sprite-arate">arate</A><BR></TD>
                     <TD style="vertical-align: top;">Animation
                     Rate<BR></TD>
                     <TD style="vertical-align: top;">10<BR></TD>
@@ -416,7 +423,7 @@
                   <TR>
                     <TD style=
                     "vertical-align: top; text-align: center;">
-                    <A href="sprite-aframe">aframe</A><BR></TD>
+                    <A href="#sprite-aframe">aframe</A><BR></TD>
                     <TD style="vertical-align: top;">Current
                     animation frame<BR></TD>
                     <TD style="vertical-align: top;">0<BR></TD>
@@ -558,12 +565,16 @@
               "#object_motion">motion</A> (see below).<BR>
             </DIV><BR>
             <SPAN style="text-decoration: underline;"><SPAN style=
-            "text-decoration: underline;"><A name="sprite-anim" id=
-            "sprite-anim"></A>Animation to existing
+            "text-decoration: underline;">Animation to existing
             Sprite</SPAN><BR></SPAN>
             <DIV style="margin-left: 40px;">
+              <BR>
+              <A name="sprite-anim" id=
+              "sprite-anim"></A><SPAN style=
+              "font-weight: bold;">anim</SPAN><BR>
               To attach or change an Animation to an existing
-              Sprite, use GR.MODIFY<BR>
+              Sprite, use GR.MODIFY on the <SPAN style=
+              "color: rgb(102, 0, 0);">"anim"</SPAN> property.<BR>
               <BR>
               GR.MODIFY s0, <SPAN style=
               "color: rgb(102, 0, 0);">"anim"</SPAN>, <SPAN style=
@@ -582,9 +593,8 @@
               "color: rgb(102, 0, 0);">"anim"</SPAN>, 0<BR>
               This means the sprite has <SPAN style=
               "text-decoration: underline;">no animation</SPAN> and
-              defaults to it's <SPAN style=
-              "text-decoration: underline;">standing
-              bitmap</SPAN>.<BR>
+              defaults to it's <A href="#sprite-bitmap">standing
+              bitmap</A>.<BR>
               Alternatively, you can freeze the frame by setting
               the animation rate <SPAN style=
               "color: rgb(102, 0, 0);">"arate"</SPAN> to zero (see
@@ -942,15 +952,19 @@
                 <TD style="vertical-align: top;">( common
                 )<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;">x<BR></TD>
-                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">x</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">y</SPAN></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;">paint<BR></TD>
                 <TD style="vertical-align: top;">alpha<BR></TD>
-                <TD style="vertical-align: top;">speed<BR></TD>
-                <TD style="vertical-align: top;">dir<BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
@@ -1196,8 +1210,10 @@
                 <TD style="vertical-align: top;"><A name=
                 "object_group" id="object_group"></A>group<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;">x<BR></TD>
-                <TD style="vertical-align: top;">y<BR></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">x</SPAN></TD>
+                <TD style="vertical-align: top;"><SPAN style=
+                "color: rgb(0, 0, 153);">y</SPAN></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;">list<BR></TD>

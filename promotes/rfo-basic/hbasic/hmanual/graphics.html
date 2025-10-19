@@ -375,7 +375,7 @@
             By default, <SPAN style=
             "font-weight: bold;">x,</SPAN><SPAN style=
             "font-weight: bold;">y,w,h</SPAN> are expected to be
-            unscaled real screen values.<BR>
+            real screen values.<BR>
             <BR>
             If you have scaled the screen with GR.SCALE and are
             working with virtual development coordinates, and you
@@ -389,7 +389,7 @@
               If scale flag is 1, then x,y,w,h will be scaled by
               the scales set by GR.SCALE.<BR>
               If scale flag is 0 (default), then x,y,w,h will be
-              taken as unscaled real screen coordinates.<BR>
+              taken as real screen coordinates.<BR>
             </DIV>
             <DIV style="margin-left: 40px;"></DIV>
             <DIV style="margin-left: 80px;">
@@ -403,7 +403,7 @@
           <DIV style="margin-left: 80px;">
             b) Scale the values of x,y,w,h <SPAN style=
             "text-decoration: underline;">yourself</SPAN> before
-            calling the command without scaling.<BR>
+            calling the command.<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
@@ -427,14 +427,17 @@
               e.g<BR>
               <DIV style="margin-left: 40px;">
                 <SPAN style=
-                "font-family: Courier New, Courier, monospace;">GR.SCREEN.TO_BITMAP
-                bmp, 100,100,200,300</SPAN><BR>
+                "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                GR.SCREEN.TO_BITMAP</SPAN> bmp,
+                100,100,200,300</SPAN><BR>
               </DIV>
             </DIV>
             <DIV style="margin-left: 80px;">
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">IF
-              bmp &lt; 0 THEN PRINT getError$() : END</SPAN><BR>
+              bmp &lt; 0 THEN PRINT <SPAN style=
+              "color: rgb(0, 0, 153);">getError$()</SPAN> :
+              END</SPAN><BR>
             </DIV><BR>
           </DIV>
         </TD>
@@ -552,7 +555,8 @@
             given and is true (non-zero), the scaled x,y
             coordinates are unscaled by the current screen scale
             (divided by GR.SCALE). This will give you back
-            coordinates in the range of your development size.<BR>
+            coordinates in the range of your development size
+            (virtual coordinates).<BR>
             <BR>
           </DIV>
         </TD>
@@ -647,8 +651,8 @@
             scaled <SPAN style="text-decoration: underline;">the
             same</SPAN> as the current screen scale
             (multiplied&nbsp; by GR.SCALE). This will test the
-            touch in the scaled (real) range given your non-scaled
-            development coordinates.<BR>
+            touch in the scaled (real) range given your virtual
+            non-scaled&nbsp; coordinates.<BR>
             <BR>
             The scale is set by set by GR.SCALE. If you do not use
             GR.SCALE, the default scale is 1.0.<BR>
@@ -690,7 +694,7 @@
               A percentage of 50 will reduce the font width by
               half. while 200 will double the width.<BR>
               The value must be greater than 0.<BR>
-              The default value is 100.<BR>
+              The default value is 100 if omitted.<BR>
               <BR>
             </DIV>
           </DIV>
