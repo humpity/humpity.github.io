@@ -2048,17 +2048,21 @@
           <BIG style="color: rgb(0, 0, 153);"><A name="tget" id=
           "tget"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">TGET</SPAN></FONT><BR>
-          <FONT size="+1"><BR></FONT>
           <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">TGET</SPAN>&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN> <B style=
             "color: black;">result</B><B style=
-            "color: black;">$</B>_svar, {,<B style=
-            "color: black;">prompt$</B>_sexp} {,<B style=
-            "color: black;">title$</B>_sexp}</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);">{,<B style=
-            "color: black;">backKey</B>_nvar}</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><BR></SPAN>
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN></SPAN>
           </DIV><BIG><BR></BIG>
           <DIV style="margin-left: 40px;">
             Get text Input from the last line of the console.<BR>
@@ -2080,6 +2084,8 @@
               <DIV style="margin-left: 80px;">
                 This string will be printed on the left of the
                 input line e.g "cmd&gt;"<BR>
+              </DIV>
+              <DIV style="margin-left: 80px;">
                 <BR>
               </DIV><SPAN style="font-weight: bold;">title</SPAN>
               &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -2094,8 +2100,8 @@
               <BR>
             </DIV>
             <DIV style="margin-left: 40px;">
-              Commas are needed to seperate parameters, even if
-              they are omitted.<BR>
+              Preceding commas are needed to seperate parameters if
+              they are used.<BR>
               <BR>
             </DIV>TGET now closely resembles the output console
             (because it is now part of the console),<BR>
@@ -2104,11 +2110,17 @@
             Any style changes to the console will do the same to
             TGET.<BR>
             <BR>
+            Before input from the user, TGET ignores any value in
+            <SPAN style="font-weight: bold;">result$</SPAN>.<BR>
+            This is not true for <A href=
+            "#tget_sub">subcommands</A> (see later).<BR>
+            <BR>
             After input from the user, TGET <SPAN style=
             "font-weight: bold;">prints both the prompt and user
             input</SPAN> to the console.<BR>
             This is not true for <A href=
             "#tget_sub">subcommands</A> (see later).<BR>
+            <BR>
             The exception is if the user presses 'Stop' from the
             console menu, in which case 'Stopped by user' is
             printed instead, and the program execution is stopped
@@ -2156,58 +2168,74 @@
           commands</SPAN></FONT><BR>
           <BLOCKQUOTE>
             These sub-commnds are designed to quickly get input
-            without obscuring the console.<BR>
+            without poluting the console.<BR>
             Typically, they are used on the last page of the screen
             because TGET is always on the last row.<BR>
             <BR>
             <B>Al</B><B>l</B> subcommands <SPAN style=
             "font-weight: bold;">do not print</SPAN> the
-            <SPAN style="font-weight: bold;">prompt+result</SPAN>
+            <SPAN style="font-weight: bold;">prompt+result$</SPAN>
             after they finish.<BR>
+            Also, all subcommands will use any old value that was
+            put into <SPAN style=
+            "font-weight: bold;">result$</SPAN> as the intial
+            value.<BR>
             <BR>
-            <SPAN style=
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-            TGET.S</SPAN> result_<SPAN style=
-            "color: rgb(102, 51, 0);">svar</SPAN>,
-            {,prompt<SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,title<SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,backKey<SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN>}<BR>
-            <SPAN style="color: rgb(0, 0, 153);">TGET.N</SPAN>
-            result_<SPAN style=
-            "color: rgb(102, 51, 0);">svar</SPAN>,
-            {,prompt_<SPAN style=
-            "color: rgb(102, 51, 0);">sexp</SPAN>}
-            {,title<SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,backKey<SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN>}<BR>
-            <SPAN style="color: rgb(0, 0, 153);">TGET.I</SPAN>
-            result_<SPAN style=
-            "color: rgb(102, 51, 0);">svar</SPAN>,
-            {,prompt<SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,title<SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,backKey<SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN>}<BR>
-            <SPAN style="color: rgb(0, 0, 153);">TGET.P</SPAN>
-            result_<SPAN style=
-            "color: rgb(102, 51, 0);">svar</SPAN>,
-            {,prompt<SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,title<SPAN style=
-            "color: rgb(102, 51, 0);">_sexp</SPAN>}
-            {,backKey<SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN>}</SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-family: monospace;"><SPAN style="color: rgb(102, 51, 0);"><BR>
-            </SPAN></SPAN></SPAN>
-          </BLOCKQUOTE>
-          <BLOCKQUOTE>
+            TGET.S</SPAN></SPAN></SPAN> <B style=
+            "color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            TGET.N</SPAN></SPAN></SPAN> <B style=
+            "color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN></SPAN> {
+            ,<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN></SPAN> }&nbsp;
+            {, <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN></SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN></SPAN>
+            }<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="color: black;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">TGET.I</SPAN></SPAN></SPAN>
+            <B style="color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">TGET.P</SPAN></SPAN></SPAN>
+            <B style="color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN><BR>
             Like TGET, they get input into <SPAN style=
-            "font-family: Courier New, Courier, monospace;">result</SPAN>
-            with optional <SPAN style=
+            "font-weight: bold;">result$</SPAN> with optional
+            <SPAN style=
             "font-family: Courier New, Courier, monospace;">prompt</SPAN>
             and <SPAN style=
             "font-family: Courier New, Courier, monospace;">title.<BR>
@@ -2227,7 +2255,7 @@
             <BR>
             <FONT size="+1"><SPAN style=
             "font-family: Courier New, Courier, monospace;">TGET.<SPAN style="font-weight: bold;">S</SPAN></SPAN></FONT>&nbsp;&nbsp;&nbsp;
-            Same as TGET except that it will not print out the
+            Similar as TGET except that it will not print out the
             result.<BR>
             <FONT size="+1"><SPAN style=
             "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>N</B></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
@@ -2248,8 +2276,7 @@
             return a number as a string.<BR>
             Both <B>N</B> and <B>I</B> subcommands have no error
             checking on the default <SPAN style=
-            "font-family: Courier New, Courier, monospace;">result</SPAN><BR>
-
+            "font-weight: bold;">result$</SPAN><BR>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             i.e you can default the input with a string, but the
             keyboard will only let you type a number.<BR>
