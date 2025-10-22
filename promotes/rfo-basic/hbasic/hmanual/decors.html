@@ -66,7 +66,11 @@
                 <TD style="vertical-align: top;"><A href=
                 "#action_bar">Action Bar</A><BR></TD>
                 <TD style="vertical-align: top;">i.e the Title
-                bar<BR></TD>
+                bar<BR>
+                <A href="#actionbar_background">Background</A>
+                color<BR>
+                <A href="actionbar_hiding">Hiding</A> the console
+                action bar<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -314,7 +318,7 @@
               "text-decoration: underline;">only</SPAN> if the
               actionbar is on.<BR>
               If the actionbar is off, the statusbar bg will follow
-              the window_bg. (see <A href=
+              the window_bg. (see also about <A href=
               "#action_bar">action_bar</A>).<BR>
               <BR>
             </DIV><A name="matching_bars" id=
@@ -809,7 +813,8 @@
               <A href="commands.html#actionbar_title">CONSOLE / GR
               / HTML.TITLE</A> and <A href=
               "commands.html#actionbar_subtitle">CONSOLE / GR /
-              HTML.SUBTITLE</A>
+              HTML.SUBTITLE</A><BR>
+              <BR>
             </DIV>The Menu can be changed with <A href=
             "menu.html">MENU</A> commands and is shared between
             console, graphics and webview.<BR>
@@ -823,28 +828,45 @@
 
               If you do not set this background color, then it will
               default to transparent and the window_bg color<BR>
-              (default black) will show through<BR>
+              (default black) will show through.<BR>
+              The background color of the actionbar may also affect
+              the statusbar (see also <A href=
+              "##actionbar_bg">actionbar_bg</A>).<BR>
               <BR>
-            </DIV><SPAN style="text-decoration: underline;">Hiding
-            the Console Action Bar<BR></SPAN>
+            </DIV><SPAN style=
+            "text-decoration: underline;"><A name="actionbar_hiding"
+            id="actionbar_hiding"></A>Hiding the <SPAN style=
+            "font-weight: bold;">Console</SPAN> Action
+            Bar<BR></SPAN>
             <DIV style="margin-left: 40px;">
               The console actionbar can be hidden before the
               program starts.<BR>
               To hide the actionbar, use the directive&nbsp;
-              <SPAN style=
-              "color: rgb(0, 0, 153);">@@hide_actionbar</SPAN>&nbsp;
+              <A href="system.html#hide_actionbar"><SPAN style=
+              "color: rgb(0, 0, 153);">@@hide_actionbar</SPAN></A>&nbsp;
               (see <A href=
-              "system.html#directives">directives)</A><BR>
+              "system.html#directives">directives)</A>.<BR>
               This can be useful to hide the image of the actionbar
               if you are immediatley going into the graphics
               screen.<BR>
+              <BR>
+              Tip: If you want to go straight into graphics without
+              showing the console, you can use <A href=
+              "system.html#hide_actionbar"><SPAN style=
+              "color: rgb(0, 0, 153);">@@hide_actionbar</SPAN></A><BR>
+
+              together with <A href=
+              "system.html#void_color"><SPAN style=
+              "color: rgb(0, 0, 153);">@@void_color</SPAN></A> set
+              to the same color as the graphics background.<BR>
+              <BR>
               To bring back the actionbar, use <A href=
               "commands.html#actionbar_title">CONSOLE.TITLE</A>.<BR>
             </DIV>
-          </DIV><BR>
+          </DIV>
           <DIV style="margin-left: 80px;">
-            Note: The Action Bar is the only bar that can be
-            brought back after hiding <SPAN style=
+            Note: The Console Action Bar is the only bar that can
+            be brought back after hiding <SPAN style=
             "text-decoration: underline;">for the console
             only</SPAN>.<BR>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -853,8 +875,8 @@
               &nbsp;If you have hidden the actionbar for graphics
               or webview with <A href="#decors">decors</A>, it will
               not come back.<BR>
-            </DIV>
-          </DIV><BR>
+            </DIV><BR>
+          </DIV>
         </TD>
       </TR>
       <TR>
