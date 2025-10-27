@@ -8,17 +8,18 @@
 <link rel="stylesheet" href="main.css" type="text/css">
 </head>
 <body style=
-"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" alink=
-"#000099" link="#000099" vlink="#990099">
-<a href="http://humpity.github.io/">humpty</a> &gt; <a href=
-"http://humpity.github.io/promotes/linux/linux.html">promotes
-Linux</a>&nbsp; &gt; <a href=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" vlink=
+"#990099" link="#000099" alink="#000099">
+<a href="https://humpity.github.io/home.htm">humpty</a> <a href=
+"http://humpity.github.io/home.htm">promotes</a> &gt; <a href=
+"http://humpity.github.io/promotes/linux/linux.html">Linux</a> &gt;
+<a href=
 "http://humpity.github.io/promotes/linux/lubuntu.html">Lubuntu
 Tips</a><big style=
 "font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><span style="font-family: Helvetica,Arial,sans-serif;"><br>
 </span>
-<table style="text-align: left; width: 100%;" border="0"
-cellpadding="2" cellspacing="2">
+<table style="text-align: left; width: 100%;" cellspacing="2"
+cellpadding="2" border="0">
 <tbody>
 <tr>
 <td style="vertical-align: top; width: 30%;"><big style=
@@ -39,7 +40,7 @@ password<br></span></big></big>
 <br style="font-family: Helvetica,Arial,sans-serif;">
 <table style=
 "text-align: left; width: 100%; font-family: Helvetica,Arial,sans-serif;"
-border="0" cellpadding="2" cellspacing="2">
+cellspacing="2" cellpadding="2" border="0">
 <tbody>
 <tr>
 <td style="vertical-align: top;"><br>
@@ -87,7 +88,7 @@ to execute any command</span><br style="color: rgb(0, 51, 0);">
 ALL=(ALL:ALL) NOPASSWD: ALL</span><br></div>
 <br>
 Save the file <span style="font-style: italic;">(for vi, use ": +
-"wq") (for Nano, ^O+^X)</span><br>
+"wq") (for Nano, ^O,Enter,^X)</span><br>
 <br>
 Logout or reboot. That's it.<br>
 <hr style="width: 100%; height: 2px;">
@@ -99,12 +100,17 @@ In some distros (e.g lubuntu 20.04), there might be a line at the
 bottom of /etc/sudoers<br>
 <br>
 <div style="margin-left: 40px;"><span style=
-"color: rgb(0, 51, 0);">#includedir /etc/sudoers.d</span><br></div>
-<br>
+"color: rgb(0, 51, 0);">#includedir /etc/sudoers.d</span><br>
+or<br>
+<span style="color: rgb(0, 51, 0);">@includedir /etc/sudoers.d<br>
+<br></span></div>
 This line looks like a comment because it begins with a hash
-<span style="text-decoration: underline;">BUT</span> it is not. It
-is an include directive that loads whatever files there are in
+'#'&nbsp; <span style="text-decoration: underline;">BUT</span> it
+is NOT.<br>
+It is an include directive that loads whatever files there are in
 directory /etc/sudoers.d.<br>
+In modern systems (sudo version 1.9.1+),&nbsp; '@' is used
+instead.<br>
 <br>
 You should check if there are any files there.e.g<br>
 <div style="margin-left: 40px;"><span style=
@@ -117,7 +123,7 @@ The best thing to do then is to make your changes here instead.
 e.g,<br>
 <br>
 <div style="margin-left: 40px;"><span style=
-"color: rgb(0, 0, 102);">&gt; sudo leafpad
+"color: rgb(0, 0, 102);">&gt; sudo vi
 /etc/sudoers.d/10-installer</span><br></div>
 change<br>
 <div style="margin-left: 40px;"><span style=
