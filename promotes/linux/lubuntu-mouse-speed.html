@@ -424,7 +424,7 @@ to evdev, it offers <u>a lot</u> more options.<br>
 "1.5"</code><br></font></span> <font color="#000099"><span style=
 "font-family: Courier New, Courier, monospace;"><font color=
 "#000099"><code>&nbsp;&nbsp;&nbsp; Option "AdaptiveDeceleration"
-"1.5"<br></code></font></span> <span style=
+"1.4"<br></code></font></span> <span style=
 "font-family: Courier New, Courier, monospace;">&nbsp;</span><span style="font-family: Courier New, Courier, monospace;"><br>
 </span> <span style=
 "font-family: Courier New, Courier, monospace;"><code>&nbsp;&nbsp;&nbsp;
@@ -459,7 +459,7 @@ echo $NAME Mouse ID is $ID<br>
 <br>
 xinput --set-prop $ID "Device Accel Profile" 7<br>
 xinput --set-prop $ID "Device Accel Constant Deceleration" 1.5<br>
-xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.5<br>
+xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.4<br>
 xinput --set-prop $ID "Device Accel Velocity Scaling" 8<br>
 <br>
 xinput --list-props $ID | grep
@@ -530,6 +530,11 @@ Deceleration acts against acceleration and is the most significant
 setting, even though it does not act 'directly' against it
 one-to-one. To tame aggressive profiles such as 2, you will need to
 tweak this setting quite a lot.<br>
+<br>
+Adaptive Deceleration adds to constant deceleration for short
+distances.<br>
+You should set this to 1.0 to start off and then tweak it
+later.<br>
 <font color="#000099"><code><br></code></font> <u>Profiles</u><br>
 For users who like a quiet life with no thrills or need precise
 movement over a small area,<br>
@@ -580,7 +585,7 @@ get)</tt><br>
 "#000099"><tt><font color="#000099"><font color=
 "#000099"><tt><font color="#000099"><tt>xinput --set-prop $ID
 "Device Accel Adaptive Deceleration"
-1.3<br></tt></font></tt></font> <tt>xinput --set-prop $ID "Device
+1.4<br></tt></font></tt></font> <tt>xinput --set-prop $ID "Device
 Accel Profile" 7<br>
 xinput --set-prop $ID "Device Accel Velocity Scaling"
 8<br></tt></font></tt></font></blockquote>
