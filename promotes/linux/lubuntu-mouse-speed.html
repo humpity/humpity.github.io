@@ -424,7 +424,7 @@ to evdev, it offers <u>a lot</u> more options.<br>
 "1.5"</code><br></font></span> <font color="#000099"><span style=
 "font-family: Courier New, Courier, monospace;"><font color=
 "#000099"><code>&nbsp;&nbsp;&nbsp; Option "AdaptiveDeceleration"
-"1.4"<br></code></font></span> <span style=
+"1.5"<br></code></font></span> <span style=
 "font-family: Courier New, Courier, monospace;">&nbsp;</span><span style="font-family: Courier New, Courier, monospace;"><br>
 </span> <span style=
 "font-family: Courier New, Courier, monospace;"><code>&nbsp;&nbsp;&nbsp;
@@ -440,7 +440,8 @@ Option "AccelerationScheme" "none"</code></span><span style=
 <br></font></blockquote>
 3 . Remember to remove any libinput .conf file if you had one
 previously.<br></blockquote>
-<blockquote>Here is a script for testing in evdev;<br>
+<blockquote>Here is a script for testing evdev with xset and xinput
+commands;<br>
 <blockquote><font size="-1"><span style=
 "font-family: Courier New, Courier, monospace;"><font color=
 "#000099">#!/bin/bash<br>
@@ -459,7 +460,7 @@ echo $NAME Mouse ID is $ID<br>
 <br>
 xinput --set-prop $ID "Device Accel Profile" 7<br>
 xinput --set-prop $ID "Device Accel Constant Deceleration" 1.5<br>
-xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.4<br>
+xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.5<br>
 xinput --set-prop $ID "Device Accel Velocity Scaling" 8<br>
 <br>
 xinput --list-props $ID | grep
@@ -512,19 +513,20 @@ Profile"</tt></font></td>
 </tbody>
 </table>
 <br>
-<br>
-To start, keep Acceleration as 2/1. It seems to be a common
-standard. By keeping this as 2, it will be easier to tweak the
-other options until you are familiar with them.<br>
+Without acceleration, the pointer will not move very far for a
+fling of the wrist.<br>
+To start, you will want at least some acceleration to work with.
+2/1 seems to be a common standard.<br>
+By keeping this as 2, it will be easier to tweak the other options
+until you are familiar with them.<br>
 <br>
 Threshold controls the sensitivity. The difference is how hard you
 have to fling your wrist in order to get the pointer to a corner of
 the screen. A low threshold will get you there quicker.<br>
-Over 100 (mickeys=pixels) any wrist movement does not become
-noticeable. So you can use this to supress acceleration.<br>
-Below 50, you will see some affect. Recommended is to keep it at
-100 to suppress adverse effects,<br>
-then tweak it later.<br>
+Over 100 (mickeys=pixels) any wrist movement becomes less
+noticeable. Use this to suppress acceleration.<br>
+Below 50, you will see significant affects. Recommended is to keep
+it at 100 to suppress adverse effects, then tweak it later.<br>
 <font color="#000099"><code><br></code></font> Constant
 Deceleration acts against acceleration and is the most significant
 setting, even though it does not act 'directly' against it
