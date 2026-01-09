@@ -33,7 +33,9 @@ linux Tips<br></small></big></big></big> <big><small style=
 speed<br></span></big></big> This is a way to setup your mouse
 speed.<br>
 <br>
+<a href="#get_info">Getting Information</a><br>
 <a href="#create">Create a Script</a><br>
+<a href="#acceleration">Acceleration Explained</a><br>
 <a href="#harmony">Harmony with Xorg</a><br>
 <a href="#flat">Flat Acceleration</a><br>
 <font size="+1"><a moz-do-not-send="true" href=
@@ -76,12 +78,17 @@ evdev + xset. There are far fewer options, you can only set the
 acceleration and there are only two profiles to choose from.<br>
 <br>
 Here I'll show you how to fix you mouse speed for Lubuntu.<br>
-<big><span style="color: rgb(0, 0, 153);"><br>
-xinput</span></big><br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<big><span style="color: rgb(0, 0, 153);"><big><span style=
+"color: rgb(0, 0, 153);">Getting
+Information<br></span></big></span></big>
+<div style="margin-left: 40px;"><big><span style=
+"color: rgb(0, 0, 153);">xinput</span></big><br>
 This command gets information about devices;<br>
 <br>
-1. Open a terminal and type<br>
-<div style="margin-left: 40px;"><span style=
+1. Open a terminal and type<br></div>
+<div style="margin-left: 80px;"><span style=
 "color: rgb(102, 0, 0);">xinput list --short<br>
 <br></span> You'll get something like this;<br>
 <span style="font-family: Courier New, Courier, monospace;"><br>
@@ -157,13 +164,13 @@ Keyboard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Done&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 leafpad upback&nbsp; (wd: ~/utils)</span><span style=
 "font-family: monospace;"><br></span></small><br></div>
-And you can guess (in this case) the mouse device ID as 10.
-<span style="font-style: italic;">(it will be different for
-yours).</span><br>
+<div style="margin-left: 40px;">And you can guess (in this case)
+the mouse device ID as 10. <span style="font-style: italic;">(it
+will be different for yours).</span><br>
 Once you know how to get the ID, you can use it in a script..<br>
 <br>
-<a name="create" id="create"></a> 2. Create the script<br>
-<div style="margin-left: 40px; width: 748px;"><span style=
+<a name="create" id="create"></a> 2. Create the script<br></div>
+<div style="margin-left: 80px; width: 748px;"><span style=
 "color: rgb(0, 0, 102);"><span style="color: rgb(102, 0, 0);">$ cd
 ~</span><br style="color: rgb(102, 0, 0);">
 <span style="color: rgb(102, 0, 0);">$ &lt;your_editor&gt;
@@ -251,12 +258,12 @@ Accel Profile Enabled Default (287):&nbsp;&nbsp;&nbsp; 1,
 0</span></small></span><span style=
 "font-family: Courier New, Courier, monospace;"><br></span></div>
 </div>
-<br>
+<div style="margin-left: 40px;"><br>
 3. If you want to run this script every time you login, then see,
 <a href="lubuntu-autostart.html">&lt; lubuntu-autostart</a>
 &gt;<br>
-<br>
-<div style="margin-left: 40px;">Your session manager <span style=
+<br></div>
+<div style="margin-left: 80px;">Your session manager <span style=
 "text-decoration: underline;">might still</span> override both xorg
 and your autostart script. If this is the case, then to disable
 lxsession effects, <b>comment out</b> these lines in;<br>
@@ -288,19 +295,37 @@ those who 'do' want to use lxsession settings;</span><br style=
 <span style="font-style: italic;">Sensitivity =
 110-</span></small><small style=
 "font-style: italic;">AccThreshold</small></div>
-<br>
+<div style="margin-left: 40px;"><br>
 <br>
 4. If you want to attach your script to a <span style=
 "color: rgb(153, 0, 0);">hotkey</span> in openbox, then see
-<a href="lubuntu-assign-key.html">here</a>.<br>
-<small style="font-style: italic;"><br></small>
+<a href="lubuntu-assign-key.html">here</a>.<br></div>
+<br>
 <hr style="width: 100%; height: 2px;">
-<a name="harmony" id="harmony"></a> <big style=
-"color: rgb(0, 0, 153);"><font size="+2">Harmony with
+<font size="+2"><a name="acceleration" id=
+"acceleration"></a><span style=
+"color: rgb(0, 0, 153);">Acceleration Explained</span></font><br>
+<br>
+<div style="margin-left: 40px;">The common approach with mouse
+control schemes is to first set an Acceleration and then to Tame
+it.<br>
+<br>
+Without <span style="font-weight: bold;">acceleration,</span> the
+pointer will not move very far for a fling of the wrist.<br>
+<br>
+To start, you will want at least some acceleration to work with.
+2/1 seems to be a common standard.<br>
+By keeping this as 2, it will be easier to tweak the other options
+until you are familiar with them.<br></div>
+<br>
+<hr style="width: 100%; height: 2px;">
+<big style="color: rgb(0, 0, 153);"><font size="+2">Harmony with
 XORG</font><br>
-<br></big> You can infact duplicate these settings in xorg. And it
-<span style="color: rgb(153, 0, 0);">will be what you end up
-doing</span> once you have them setup just the way you want.<br>
+<br></big>
+<div style="margin-left: 40px;">You can infact duplicate these
+settings in xorg. And it <span style="color: rgb(153, 0, 0);">will
+be what you end up doing</span> once you have them setup just the
+way you want.<br>
 <br>
 Normally, <span style="color: rgb(0, 0, 153);">Xorg is the
 first</span> to set the mouse speed at boot-up, <span style=
@@ -319,15 +344,15 @@ two PCs with the same keyboard) so you might want to do this if you
 are using a KVM.<br>
 <br>
 To get Xorg to load your settings at boot, create an Xorg conf file
-(if one does not already exist) inside <span style=
-"color: rgb(0, 102, 0);"><br>
-/usr/share/X11/xorg.conf.d</span>/<br>
+(if one does not already exist) inside<br>
+<span style=
+"color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d</span>/<br>
 e.g<br>
 <span style="color: rgb(102, 51, 0);"><span style=
 "color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d/</span>45-mouse.conf</span><br>
 
-<br>
-<div style="margin-left: 40px;"><small style=
+<br></div>
+<div style="margin-left: 80px;"><small style=
 "color: rgb(0, 0, 153);"><span style=
 "font-family: Courier New, Courier, monospace;">Section
 "InputClass"</span><span style=
@@ -349,31 +374,33 @@ MatchIsPointer "yes"</span><span style=
 <span style=
 "font-family: Courier New, Courier, monospace;">EndSection</span><span style="font-family: monospace;"><br>
 </span></small></div>
-<br>
+<div style="margin-left: 40px;"><br>
 To activate, logout and log back in.<br>
 <br>
-<small><span style="font-style: italic;">Notes:</span><br style=
+<small><span style=
+"font-style: italic;">Notes:</span></small><br style=
 "font-style: italic;">
-<span style="font-style: italic;">The Xorg config is the default
-after KVM switching, so it will be the most convenient if you use a
-KVM, otherwise you will have to execute a script after every KVM
-switch.<br>
-<br></span></small>
+<small><span style="font-style: italic;">The Xorg config is the
+default after KVM switching, so it will be the most convenient if
+you use a KVM, otherwise you will have to execute a script after
+every KVM switch.</span></small><br></div>
+<small><span style="font-style: italic;"><br></span></small>
 <hr style="width: 100%; height: 2px;">
 <big style="color: rgb(0, 0, 153);"><a name="flat" id=
 "flat"></a><font size="+2">Flat Acceleration</font><br>
-<br></big> This is an alternative technique to slow down your mouse
-using the Xorg conf file.<br>
+<br></big>
+<div style="margin-left: 40px;">This is an alternative technique to
+slow down your mouse using the Xorg conf file.<br>
 If you still feel the mouse moves or feels weird, even though you
 have slowed it down with AccelSpeed, then you can opt to have a
 <font color="#000099">'flat'</font> acceleration profile (the
 default is 'adaptive').<br>
 e.g<br>
 <span style="color: rgb(102, 51, 0);"><span style=
-"color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d/</span>45-mouse.conf<br>
+"color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d/</span>45-mouse.conf</span><br>
 
-<br></span>
-<div style="margin-left: 40px;"><span style=
+<br></div>
+<div style="margin-left: 80px;"><span style=
 "font-family: Courier New, Courier, monospace;"><small style=
 "color: rgb(0, 0, 153);">Section "InputClass"<br>
 &nbsp; Identifier "mouse"<br>
@@ -383,18 +410,22 @@ e.g<br>
 &nbsp; Option "AccelSpeed" "-0.3"<br>
 &nbsp; Option "AccelProfile" "flat"<br>
 EndSection<br></small></span></div>
-<br>
+<div style="margin-left: 40px;"><br>
 A flat profile, requires less deceleration (negative AccelSpeed)
 and is the closest thing you can get to 'constant' speed. In this
 case AccelSpeed behaves more like speed than acceleration.<br>
-<big style="color: rgb(0, 0, 153);"><br></big>
+<br></div>
 <hr style="width: 100%; height: 2px; font-style: italic;">
 <font size="+1" color="#000099"><a name="goback_evdev" id=
 "goback_evdev"></a><font size="+2">Going Back to
 evdev</font></font><br>
 <br>
-<font size="+1">Still not satisfied ?</font> You can always go back
-to evdev, it offers <u>a lot</u> more options.<br>
+<div style="margin-left: 40px;"><font size="+1">Still not satisfied
+?</font> You can always go back to evdev, it offers <u>a lot</u>
+more options.<br>
+To use evdev, you must <span style=
+"text-decoration: underline;">turn off any libinput
+settings.</span><br></div>
 <blockquote>1. Install the evdev input for xorg<br>
 <blockquote><font color="#660000">apt-get install <font size=
 "+1">xserver-xorg-input-evdev</font><br></font><br></blockquote>
@@ -440,8 +471,10 @@ Option "AccelerationScheme" "none"</code></span><span style=
 <br></font></blockquote>
 3 . Remember to remove any libinput .conf file if you had one
 previously.<br></blockquote>
-<blockquote>Here is a script for testing evdev with xset and xinput
-commands;<br>
+<blockquote>Here is a script for <span style=
+"text-decoration: underline;">testing</span> evdev with xset and
+xinput commands. The settings are only temporary until a
+reboot.<br>
 <blockquote><font size="-1"><span style=
 "font-family: Courier New, Courier, monospace;"><font color=
 "#000099">#!/bin/bash<br>
@@ -513,30 +546,54 @@ Profile"</tt></font></td>
 </tbody>
 </table>
 <br>
-Without acceleration, the pointer will not move very far for a
-fling of the wrist.<br>
-To start, you will want at least some acceleration to work with.
-2/1 seems to be a common standard.<br>
-By keeping this as 2, it will be easier to tweak the other options
-until you are familiar with them.<br>
+<span style="font-weight: bold;">Acceleration</span> the pointer
+will not move very far for a fling of the wrist.<br>
+Keep this as 2. It seems to be a common standard. The equivalent
+command is <font size="-1"><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#000099">xset m 2</font></span></font><br>
+It is not recommended to set an Acceleration without a Threshold.
+e.g use <font size="-1"><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#000099">xset m 2 100</font></span></font><br>
+otherwise the acceleration will be untamed and wild.<br>
 <br>
-Threshold controls the sensitivity. The difference is how hard you
-have to fling your wrist in order to get the pointer to a corner of
-the screen. A low threshold will get you there quicker.<br>
+<span style="font-weight: bold;">Threshold</span> controls the
+sensitivity. The difference is how hard you have to fling your
+wrist in order to get the pointer to a corner of the screen. A low
+threshold will get you there quicker.<br>
 Over 100 (mickeys=pixels) any wrist movement becomes less
 noticeable. Use this to suppress acceleration.<br>
-Below 50, you will see significant affects. Recommended is to keep
-it at 100 to suppress adverse effects, then tweak it later.<br>
-<font color="#000099"><code><br></code></font> Constant
-Deceleration acts against acceleration and is the most significant
-setting, even though it does not act 'directly' against it
-one-to-one. To tame aggressive profiles such as 2, you will need to
-tweak this setting quite a lot.<br>
+Below 50, you will see significant affects of higher speed.
+Recommended is to keep it at 100 to suppress adverse effects, then
+tweak it later.<br>
+<font color="#000099"><code><br></code></font> <span style=
+"font-weight: bold;">Constant Deceleration</span> acts against
+acceleration and is the most significant setting, even though it
+does not act 'directly' against it one-to-one. To tame aggressive
+profiles such as 2, you will need to tweak this setting quite a
+lot.<br>
 <br>
-Adaptive Deceleration adds to constant deceleration for short
-distances.<br>
+<div style="margin-left: 40px;">examples are&nbsp; 1.0 for 800 dpi.
+1.5 for 1200dpi and 2 for 1600dpi.<br></div>
+<div style="margin-left: 40px;">When the mouse is running at a high
+dpi setting (e.g 1600), there are more pixels covered per movement.
+Therefore you need more Deceleration.<br></div>
+<br>
+The mininum setting is 1.0<br>
+<br>
+<span style="font-weight: bold;">Adaptive Deceleration</span> adds
+to constant deceleration for short distances.<br>
+This makes short distances less affective and long distances more
+responsive.<br>
+So editing becomes manageable while a flick of the wrist will get
+to a far away menu quickly.<br>
 You should set this to 1.0 to start off and then tweak it
 later.<br>
+The mininum setting is 1.0<br>
+<br>
+It is possible to turn off Constant Deceleration and set only
+Adaptive deceleration (e.g Logitech).<br>
 <font color="#000099"><code><br></code></font> <u>Profiles</u><br>
 For users who like a quiet life with no thrills or need precise
 movement over a small area,<br>
@@ -555,7 +612,7 @@ For those that love acceleration <font color="#000099"><code><br>
 "2"<br></code></font></code></font><br>
 <u>Some examples</u><br>
 <blockquote><tt># Almost No acceleration due to equal Deceleration
-+ low sensistivity</tt><br>
++ low sensistivity for 800dpi</tt><br>
 <tt><font color="#000099">xset m 2 100</font></tt><font color=
 "#000099"><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
@@ -577,7 +634,18 @@ get)</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
 1.8</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Profile" 7<br>
-<br></tt></font><br>
+<br></tt></font> <tt># An example of using Adaptive' only. (for a
+Logitech mouse at 1200 dpi)</tt><br>
+<font color="#000099"><tt>xset m 2 <span style=
+"font-family: Helvetica, Arial, sans-serif;">100</span></tt><br>
+<tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
+1.0</tt><br></font> <font color="#000099"><tt><font color=
+"#000099"><tt><font color="#000099"><font color=
+"#000099"><tt><font color="#000099"><tt>xinput --set-prop $ID
+"Device Accel Adaptive Deceleration"
+1.5<br></tt></font></tt></font></font></tt></font> xinput
+--set-prop $ID "Device Accel Profile" 7</tt></font><br>
+<br>
 <font color="#000099"><tt><span style="color: rgb(0, 0, 0);"><tt>#
 (This is what I use most)</tt></span><span style=
 "color: rgb(0, 0, 0);"><br></span> <font color="#000099"><tt>xset m
