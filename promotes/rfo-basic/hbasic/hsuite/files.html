@@ -62,8 +62,8 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "#assets-to-sdcard">Assets to File
-                System</A><BR></TD>
+                "#assets-to-sdcard"><FONT size="+1">Assets to File
+                System</FONT></A><BR></TD>
                 <TD style="vertical-align: top;">How to copy from
                 Assets to File System</TD>
               </TR>
@@ -249,8 +249,13 @@
               <SPAN style="color: rgb(102, 102, 102);">% make a
               copy to &lt;sdcard base&gt;/data</SPAN><BR>
               <SPAN style=
-              "font-family: Courier New, Courier, monospace;">endif</SPAN><BR>
-            </DIV><BR>
+              "font-family: Courier New, Courier, monospace;">endif<BR>
+
+              <BR></SPAN>
+            </DIV>You can create a function using this code e.g
+            fn.def copy_file (fn$).. to copy your files to the real
+            file system.<BR>
+            <BR>
             <SPAN style="text-decoration: underline;">The above
             manual method is much clearer and
             user-controllable</SPAN>.<BR>
@@ -266,7 +271,8 @@
             <BR>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-            file.exists</SPAN> e, paths$&nbsp;&nbsp;&nbsp;</SPAN>
+            file.exists</SPAN> e,
+            paths$&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <SPAN style="color: rgb(102, 102, 102);">% look only in
             the file system</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
@@ -279,9 +285,10 @@
             print "file is on sdcard"</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;">else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
-            <SPAN style="color: rgb(102, 102, 102);">% not in file
-            system</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">else&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            &nbsp;&nbsp; <SPAN style="color: rgb(102, 102, 102);">%
+            not in file system</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;
