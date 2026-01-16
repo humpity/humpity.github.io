@@ -546,10 +546,11 @@ Profile"</tt></font></td>
 </tbody>
 </table>
 <br>
-<span style="font-weight: bold;">Acceleration</span> the pointer
-will not move very far for a fling of the wrist.<br>
-Keep this as 2. It seems to be a common standard. The equivalent
-command is <font size="-1"><span style=
+<span style="font-weight: bold;">Acceleration</span>. Without
+Acceleration, the pointer will not move very far for a fling of the
+wrist.<br>
+It seems the common standard is 2. The equivalent command is
+<font size="-1"><span style=
 "font-family: Courier New, Courier, monospace;"><font color=
 "#000099">xset m 2</font></span></font><br>
 It is not recommended to set an Acceleration without a Threshold.
@@ -558,12 +559,17 @@ e.g use <font size="-1"><span style=
 "#000099">xset m 2 100</font></span></font><br>
 otherwise the acceleration will be untamed and wild.<br>
 <br>
+If you have an old mouse fixed at a low dpi (e.g 800,dpi), and
+short movement does not go very far, you may have no other option
+but to increase the Acceleration to 3 or 4.<br>
+<br>
 <span style="font-weight: bold;">Threshold</span> controls the
 sensitivity. The difference is how hard you have to fling your
 wrist in order to get the pointer to a corner of the screen. A low
 threshold will get you there quicker.<br>
-Over 100 (mickeys=pixels) any wrist movement becomes less
-noticeable. Use this to suppress acceleration.<br>
+A setting of over 100 (mickeys=pixels) makes any wrist movement
+becomes less noticeable. Increase this to suppress
+acceleration.<br>
 Below 50, you will see significant affects of higher speed.
 Recommended is to keep it at 100 to suppress adverse effects, then
 tweak it later.<br>
@@ -577,8 +583,9 @@ lot.<br>
 <div style="margin-left: 40px;">examples are&nbsp; 1.0 for 800 dpi.
 1.5 for 1200dpi and 2 for 1600dpi.<br></div>
 <div style="margin-left: 40px;">When the mouse is running at a high
-dpi setting (e.g 1600), there are more pixels covered per movement.
-Therefore you need more Deceleration.<br></div>
+dpi setting (e.g 1600), there are more pixels reported per
+movement. Therefore you need more Deceleration for
+control.<br></div>
 <br>
 The mininum setting is 1.0<br>
 <br>
