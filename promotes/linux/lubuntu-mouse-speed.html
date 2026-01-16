@@ -496,7 +496,7 @@ xinput --set-prop $ID "Device Accel Constant Deceleration" 1.5<br>
 xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.5<br>
 xinput --set-prop $ID "Device Accel Velocity Scaling" 8<br>
 <br>
-xinput --list-props $ID | grep
+xinput list-props $ID | grep
 Accel</font></span></font></blockquote>
 </blockquote>
 <blockquote>There are 4 settings that are most useful.<br>
@@ -654,15 +654,16 @@ Logitech mouse at 1200 dpi)</tt><br>
 --set-prop $ID "Device Accel Profile" 7</tt></font><br>
 <br>
 <font color="#000099"><tt><span style="color: rgb(0, 0, 0);"><tt>#
-(This is what I use most)</tt></span><span style=
+For an old mouse fixed at 800 dpi. Needs more
+acceleration.</tt></span><span style=
 "color: rgb(0, 0, 0);"><br></span> <font color="#000099"><tt>xset m
-2 100</tt><br>
+35/100 100</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
-1.5</tt><br></font></tt></font> <font color=
+1.0</tt><br></font></tt></font> <font color=
 "#000099"><tt><font color="#000099"><font color=
 "#000099"><tt><font color="#000099"><tt>xinput --set-prop $ID
 "Device Accel Adaptive Deceleration"
-1.4<br></tt></font></tt></font> <tt>xinput --set-prop $ID "Device
+1.0<br></tt></font></tt></font> <tt>xinput --set-prop $ID "Device
 Accel Profile" 7<br>
 xinput --set-prop $ID "Device Accel Velocity Scaling"
 8<br></tt></font></tt></font></blockquote>
