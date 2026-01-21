@@ -176,14 +176,12 @@ Once you know how to get the ID, you can use it in a script..<br>
 <span style="color: rgb(102, 0, 0);">$ &lt;your_editor&gt;
 fixmouse.sh<br>
 <br></span></span>
-<table style=
-"text-align: left; width: 100%; font-family: monospace;"
-cellspacing="2" cellpadding="2" border="0">
+<table style="text-align: left; width: 100%;" cellspacing="2"
+cellpadding="2" border="0">
 <tbody>
 <tr>
-<td style=
-"vertical-align: top; font-family: monospace; color: rgb(0, 0, 153);">
-<font size="+1"><span style=
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);"><font size="-1"><span style=
 "font-family: Courier New, Courier, monospace;">#!/bin/bash</span><span style="font-family: Courier New, Courier, monospace;"><br>
 </span> <span style=
 "font-family: Courier New, Courier, monospace;">clear</span><span style="font-family: Courier New, Courier, monospace;"><br>
@@ -214,7 +212,7 @@ libinput</span><span style=
 <span style="font-family: Courier New, Courier, monospace;"><br>
 </span> <span style=
 "font-family: Courier New, Courier, monospace;">xinput --list-props
-$ID | grep Accel</span></font></td>
+$ID | grep Accel</span></font></span><br></td>
 </tr>
 </tbody>
 </table>
@@ -312,6 +310,11 @@ it.<br>
 <br>
 Without <span style="font-weight: bold;">acceleration,</span> the
 pointer will not move very far for a fling of the wrist.<br>
+This is especially true for low dpi (800) mice.<br>
+He higher the dpi, the more pixel distance is reported for the same
+wrist movement.<br>
+So for low dpi, you need more Acceleration, and for hight dpi, you
+need less.<br>
 <br>
 To start, you will want at least some acceleration to work with.
 2/1 seems to be a common standard.<br>
@@ -639,14 +642,23 @@ sensitivity</tt><br>
 1.8</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Profile"
 0</tt></font><br></blockquote>
-<blockquote><tt># (This is as close to ms windows as I could
+<blockquote><tt># Regular - meduim flat acceleration + low
+sensitivity for menus</tt><br>
+<tt><font color="#000099">xset m 2 80</font></tt><br>
+<font color="#000099"><tt>xinput --set-prop $ID "Device Accel
+Constant Deceleration" 1.5</tt></font><br>
+<font color="#000099"><tt>xinput --set-prop $ID "Device Accel
+Profile" 0</tt></font><br>
+<tt><font color="#000099"><tt>xinput --set-prop $ID "Device Accel
+Profile" 7<br>
+<br></tt></font> # (This is as close to ms windows as I could
 get)</tt><br>
 <tt># Quick response for both short and long range</tt><br>
 <font color="#000099"><tt>xset m 2 8</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
 1.8</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Profile" 7<br>
-<br></tt></font> <tt># An example of using Adaptive' only. (for a
+<br></tt></font> <tt># An example of using only Adaptive'. (for a
 Logitech mouse at 1200 dpi)</tt><br>
 <font color="#000099"><tt>xset m 2 <span style=
 "font-family: Helvetica, Arial, sans-serif;">100</span></tt><br>
