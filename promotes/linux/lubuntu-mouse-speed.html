@@ -651,13 +651,18 @@ Constant Deceleration" 1.5</tt></font><br>
 Profile" 0</tt></font><br>
 <tt><font color="#000099"><tt>xinput --set-prop $ID "Device Accel
 Profile" 7<br>
-<br></tt></font> # (This is as close to ms windows as I could
-get)</tt><br>
-<tt># Quick response for both short and long range</tt><br>
-<font color="#000099"><tt>xset m 2 8</tt><br>
+<br></tt></font> # Accomdative - fast for long range, subdued short
+range<br>
+# (This is as close to ms windows as I could get)</tt><br>
+<font color="#000099"><tt>xset m 2 80</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
-1.8</tt><br>
-<tt>xinput --set-prop $ID "Device Accel Profile" 7<br>
+1.6</tt><br></font> <font color="#000099"><tt><font color=
+"#000099"><tt><font color="#000099"><tt><font color=
+"#000099"><font color="#000099"><tt><font color=
+"#000099"><tt>xinput --set-prop $ID "Device Accel Adaptive
+Deceleration"
+1.2</tt></font></tt></font></font></tt></font></tt></font><br>
+xinput --set-prop $ID "Device Accel Profile" 7<br>
 <br></tt></font> <tt># An example of using only Adaptive'. (for a
 Logitech mouse at 1200 dpi)</tt><br>
 <font color="#000099"><tt>xset m 2 <span style=
