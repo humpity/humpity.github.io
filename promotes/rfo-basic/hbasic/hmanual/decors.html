@@ -39,11 +39,8 @@
               <TR>
                 <TD style="vertical-align: top; width: 30%;">
                   <A href="#behave"><FONT size="+1">Behaviour and
-                  Colors</FONT></A><BR>
-                  <DIV style="text-align: right;">
-                    <DIV style="text-align: left;">
-                      <BR>
-                    </DIV><BR>
+                  Colors</FONT></A><FONT size="+1"><BR></FONT>
+                  <DIV style="text-align: left;">
                     <BR>
                   </DIV>
                 </TD>
@@ -52,29 +49,41 @@
                 <A href="#window_bg">window_bg</A><BR>
                 <A href="#actionbar_bg">actionbar_bg</A><BR>
                 <A href="#matching_bars">matching</A><BR>
-                <A href="#shading">shading</A></TD>
+                <A href="#shading">shading</A><BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "#decors"><FONT size="+1">Decors</FONT></A><BR>
+                "#decors"><FONT size=
+                "+1">Decors</FONT></A><BR></TD>
+                <TD style="vertical-align: top;">Opening parameters
+                for Graphics and Web<BR>
+                <A href="#decors_immersive">Immersive mode</A><BR>
+                <A href="#decors_webzoom">Webzoom</A><BR>
                 <BR></TD>
-                <TD style="vertical-align: top;">Opening
-                parameters<BR>
-                <A href="#decors_immersive">Immersive mode</A></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><A href=
-                "#action_bar">Action Bar</A><BR></TD>
+                <TD style="vertical-align: top;">
+                  <FONT size="+1"><A href="#action_bar">Action
+                  Bar</A><BR></FONT>
+                  <DIV style="text-align: right;">
+                    <DIV style="text-align: left;">
+                      <BR>
+                    </DIV>
+                    <DIV style="text-align: left;">
+                      <BR>
+                    </DIV>
+                  </DIV>
+                </TD>
                 <TD style="vertical-align: top;">i.e the Title
                 bar<BR>
                 <A href="#actionbar_background">Background</A>
                 color<BR>
-                <A href="#actionbar_hiding">Hiding</A> the console
-                action bar<BR></TD>
+                <A href="#actionbar_hiding">Hiding</A></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "#known">Known Issues</A><BR></TD>
+                "#known"><FONT size="+1">Known
+                Issues</FONT></A><BR></TD>
                 <TD style="vertical-align: top;">Known behaviours
                 and glitches<BR></TD>
               </TR>
@@ -96,17 +105,17 @@
           <DIV style="margin-left: 40px;">
             System bars appearence and behaviour.<BR>
             <BR>
-            Since hBasic v5.20, the app targets Api 35+. The
-            following behaviour and appearences have changed as
-            indicated below.<BR>
+            Since hBasic v5.20, the app targets Api 35<SPAN style=
+            "font-weight: bold;">+</SPAN>. The following behaviour
+            and appearences have changed as indicated below.<BR>
             <BR>
           </DIV>
           <TABLE style=
           "text-align: left; width: 90%; margin-left: 40px;"
           cellspacing="0" cellpadding="5" border="0">
             <CAPTION>
-              <A name="behave_table" id="behave_table"></A>(hBasic
-              targets to Api 35+)<BR>
+              <A name="behave_table" id="behave_table"></A>(for
+              hBasic targets &gt;= Api 35+)<BR>
               Decors behaviours<BR>
               <BR>
             </CAPTION>
@@ -336,14 +345,24 @@
           <DIV style="margin-left: 40px;">
             <A name="systembar_shading" id=
             "systembar_shading"></A>System bars Text and Icon
-            <FONT size="+1">shading</FONT>.<BR>
+            <FONT size="+1">Shading</FONT>.<BR>
             <DIV style="margin-left: 40px;">
               Status bar text and Navigation bar icons can be made
               light or dark if they a permanently on (depending on
               the device Api), with;<BR>
-              CONSOLE.SET or the decors flags for GR.OPEN and
-              HTML.OPEN<BR>
-              Here is a sample program.<BR>
+              <BR>
+              For the console,<BR>
+              <DIV style="margin-left: 40px;">
+                <A href="console.html#statustxt">CONSOLE.SET</A> or
+                <A href=
+                "system.html#dark_statustxt">Directives</A><BR>
+                <BR>
+              </DIV>For Graphics and Web<BR>
+              <DIV style="margin-left: 40px;">
+                The <A href="#decors">decors</A> flags for GR.OPEN
+                and HTML.OPEN<BR>
+                <BR>
+              </DIV>Here is a sample program.<BR>
               <BR>
               <TABLE style="text-align: left; width: 90%;"
               cellspacing="2" cellpadding="2" border="0">
@@ -360,17 +379,15 @@
                     "lightgrey"</SPAN></FONT><FONT size="-1"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
                     </SPAN> <SPAN style=
                     "font-family: Courier New, Courier, monospace;">
-                    <A href=
-                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#statustxt">
-                    CONSOLE.SET "StatusTxt
+                    <A href="console.html#statustxt">CONSOLE.SET
+                    "StatusTxt
                     dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <SPAN style="color: rgb(102, 102, 102);">% Api
                     23 and later</SPAN><BR>
                     <SPAN style=
                     "font-family: Courier New, Courier, monospace;">
-                    <A href=
-                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#navbartxt">
-                    CONSOLE.SET "NavBarTxt
+                    <A href="console.html#navbartxt">CONSOLE.SET
+                    "NavBarTxt
                     dark"</A></SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <SPAN style="color: rgb(102, 102, 102);">% Api
                     26 to Api 34 only</SPAN><BR>
@@ -412,9 +429,7 @@
                     "-1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <SPAN style="color: rgb(102, 102, 102);">% for
                     GRAPHICS<BR></SPAN></FONT></SPAN></FONT></SPAN>
-                    <A href=
-                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/decors.html#decors">
-                    <SPAN style=
+                    <A href="decors.html#decors"><SPAN style=
                     "font-family: Courier New, Courier, monospace;">
                     GR.OPEN "grey", <SPAN style=
                     "font-weight: bold;"><SPAN style=
@@ -455,8 +470,7 @@
                     % for
                     WEB</SPAN></FONT></SPAN></FONT></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
                     </SPAN></FONT></SPAN> <A href=
-                    "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/decors.html#decors">
-                    <SPAN style=
+                    "decors.html#decors"><SPAN style=
                     "font-family: Courier New, Courier, monospace;">
                     HTML.OPEN <SPAN style=
                     "font-weight: bold;"><SPAN style=
@@ -510,13 +524,11 @@
                     "width: 225px; height: 400px;"></TD>
                   </TR>
                 </TBODY>
-              </TABLE>
-              <DIV style=
-              "margin-left: 40px; background-color: rgb(255, 255, 255);">
-                <BR>
-                <BR>
-              </DIV>Status bar text shading only works for Api 23
-              and later.<BR>
+              </TABLE>(see also <SPAN style=
+              "color: rgb(102, 51, 0);">h16_decors.bas</SPAN>)<BR>
+              <BR>
+              Status bar text shading only works for Api 23 and
+              later.<BR>
               Navigation bar icon shading only works between Api 26
               - Api 34.
             </DIV>
@@ -543,7 +555,7 @@
             <BIG><SPAN style=
             "color: rgb(0, 0, 153);">&nbsp;&nbsp;</SPAN></BIG>
             {<A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/commands.html#color_strings">&lt;color</A>&gt;}
+            "commands.html#color_strings">&lt;color</A>&gt;}
             <SPAN style="font-weight: bold;">,{</SPAN> <SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
             "color: black; font-weight: bold;">decors_flags</SPAN>_nexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
@@ -656,8 +668,8 @@
                   "vertical-align: top; text-align: center;">
                   8<BR></TD>
                   <TD style=
-                  "vertical-align: top; width: 30%; white-space;">(
-                  only works for Android 11+ )<BR></TD>
+                  "vertical-align: top; width: 30%; white-space;">
+                  Only works for Android 11+<BR></TD>
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;">Bit 4<BR></TD>
@@ -668,20 +680,31 @@
                   <TD style=
                   "vertical-align: top; text-align: center;">
                   16<BR></TD>
-                  <TD style="vertical-align: top;">( only works
-                  Android 8-14 )</TD>
+                  <TD style="vertical-align: top;">Only works
+                  Android 8-14<BR></TD>
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;">Bit 5<BR></TD>
-                  <TD style="vertical-align: top;">
-                  immersive_mode<BR></TD>
+                  <TD style="vertical-align: top;"><A href=
+                  "#decors_immersive">immersive</A> mode<BR></TD>
                   <TD style="vertical-align: top;">0 =
                   non-immersive<BR></TD>
                   <TD style=
                   "vertical-align: top; text-align: center;">
                   32<BR></TD>
-                  <TD style="vertical-align: top;">( only useful
-                  for notch area )<BR></TD>
+                  <TD style="vertical-align: top;">Only useful for
+                  notch area<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;">Bit 6<BR></TD>
+                  <TD style="vertical-align: top;"><A href=
+                  "#decors_webzoom">web zoom</A> control<BR></TD>
+                  <TD style="vertical-align: top;">0 = off<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  64<BR></TD>
+                  <TD style="vertical-align: top;">Only for HTML
+                  WebView<BR></TD>
                 </TR>
               </TBODY>
             </TABLE><BR>
@@ -731,7 +754,7 @@
               Decors = bin ("100") &nbsp;&nbsp;&nbsp; % i.e
               4</SPAN></BIG><BR>
             </DIV><BR>
-            * The scheme is compatible with legacy programs which
+            * This scheme is compatible with legacy programs which
             either sets the legacy flag to 0 or 1.<BR>
             <BR>
             Example<BR>
@@ -793,6 +816,21 @@
               "font-weight: bold;">notch area</SPAN>.<BR>
               (This might not work for some devices).<BR>
             </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "decors_webzoom" id="decors_immersive"></A>WebVIew Zoom
+            Controller</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            This flag is only for WebVIew (HTML mode).<BR>
+            If this flag is set then the zoom controller (- | +)
+            will appear if the content is swiped. It will disapper
+            after 3 secs.<BR>
+            It is by default <SPAN style=
+            "font-weight: bold;">off</SPAN>.&nbsp; (<SPAN style=
+            "font-style: italic;">in legacy Basic, it was by
+            default on</SPAN>).<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;"></DIV>

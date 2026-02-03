@@ -52,7 +52,7 @@
                 <TD style="vertical-align: top;">Menu related
                 changes<BR>
                 <BR>
-                menu item change<BR>
+                The system menu item<BR>
                 <BR>
                 Set menu items<BR>
                 Enable menu items<BR>
@@ -81,8 +81,13 @@
             The menu is part of the <A href=
             "decors#actionbar">Actionbar</A> and the actionbar must
             be showing in order to use the menu.<BR>
-            In hBasic, the menu is shared between the console,
-            graphics and webview.<BR>
+            <BR>
+            In hBasic, the menu is <SPAN style=
+            "text-decoration: underline;">common</SPAN> between the
+            Console, Graphics and Webview,<BR>
+            if the actionbar is showing in all of them, you will
+            see the same items and the same actions are
+            performed.<BR>
             <BR>
             Items may be added and removed.<BR>
             Be aware that if you remove all items, the menu
@@ -100,21 +105,24 @@
           item</BIG><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            In legacy basic two of the above items appear in the
-            console menu. One is Stop and the other is either
-            Editor or Exit (for apk). When the program is stopped,
-            Stop is disabled and vice-versa.<BR>
+            In <SPAN style="text-decoration: underline;">legacy
+            basic</SPAN> the console menu had <SPAN style=
+            "text-decoration: underline;">two</SPAN> items. One is
+            Stop and the other is either Editor or Exit (for apk).
+            When the program is stopped, Stop is disabled and
+            Editor/Exit is enabled&nbsp; -- and vice-versa.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <BIG style="text-decoration: underline;">In hBasic this
             system menu item has been simplified to just <B>one</B>
             item.</BIG><BR>
             <BR>
-            It will show Stop or Exit or Editor depending on if the
+            It will show Stop or Editor or Exit depending on if the
             program has stopped or if the app is standard or
             standalone (apk).<BR>
             <BR>
-            When defining&nbsp; a user menu, this system item is
+            When defining&nbsp; a user menu, this <SPAN style=
+            "text-decoration: underline;">System Item</SPAN> is
             recognised as "<BIG style=
             "color: rgb(0, 0, 153);">$stop"</BIG>.&nbsp; The "$"
             tells hBasic that it is a system item. It is case
@@ -126,7 +134,12 @@
             System items can be <B>hidden</B> from the menu&nbsp;
             by <U>not including</U> them in the MENU.SET
             string.<BR>
-            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="font-style: italic;">Warning: Hiding the
+              system menu means you cannot Stop your program for
+              debugging.<BR>
+              <BR></SPAN>
+            </DIV>
           </DIV>
         </TD>
       </TR>
@@ -154,11 +167,19 @@
             <SPAN style=
             "color: rgb(0, 0, 153); font-family: Courier New,Courier,monospace;">
             MENU.SET</SPAN> <SPAN style=
-            "font-family: Courier New,Courier,monospace;">"Item
-            1,Item 2,~Item 3,Item 4,Item 5,</SPAN><SPAN style=
-            "color: rgb(0, 51, 0); font-family: Courier New,Courier,monospace;">$stop</SPAN><SPAN style="font-family: Courier New,Courier,monospace;">"</SPAN><BR>
+            "font-family: Courier New,Courier,monospace;">"<SPAN style="color: rgb(102, 51, 0);">Item
+            1<SPAN style="color: rgb(0, 0, 0);">,</SPAN>Item
+            2<SPAN style=
+            "color: rgb(0, 0, 0);">,</SPAN><SPAN style="font-weight: bold;"><SPAN style="color: rgb(0, 0, 0);">~</SPAN></SPAN>Item
+            3<SPAN style="color: rgb(0, 0, 0);">,</SPAN>Item
+            4<SPAN style="color: rgb(0, 0, 0);">,</SPAN>Item
+            5<SPAN style=
+            "color: rgb(0, 0, 0);">,</SPAN></SPAN></SPAN><SPAN style="color: rgb(0, 102, 0);"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;"><SPAN style="color: rgb(0, 0, 0);">$</SPAN></SPAN>stop</SPAN></SPAN><SPAN style="font-family: Courier New,Courier,monospace;">"<BR>
 
-            <BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 120px;">
+              Note that this is just one string.<BR>
+            </DIV>
           </DIV>
           <DIV style="margin-left: 40px;">
             <SPAN style=
@@ -170,11 +191,13 @@
               "font-family: Courier New,Courier,monospace;">Item
               1</SPAN>" has index 1.<BR>
               <BR>
-              Spaces before and after an item label count as part
-              of the label.<BR>
+              <SPAN style="font-style: italic;">Caution</SPAN> :
+              <SPAN style="text-decoration: underline;">Spaces
+              before and after an item label will be part of the
+              label</SPAN>.<BR>
               Comma is not allowed as part of an item.<BR>
-              Normally, an empty Item string is not allowed except
-              to mark an empty menu.<BR>
+              An empty Item string is not allowed except to mark an
+              empty menu.<BR>
             </DIV><BR>
             <SPAN style="text-decoration: underline;">Empty
             Menu</SPAN><BIG><SPAN style=
@@ -185,7 +208,7 @@
               first Item,</SPAN><BR>
             </DIV><BR>
           </DIV>
-          <DIV style="margin-left: 40px;">
+          <DIV style="margin-left: 80px;">
             Example<BR>
             <DIV style="margin-left: 40px;">
               <SPAN style=
@@ -195,27 +218,32 @@
               <BR></SPAN>
             </DIV>
           </DIV>
-          <DIV style="margin-left: 80px;">
-            An empty menu <SPAN style=
-            "text-decoration: underline;">will <SPAN style=
-            "font-weight: bold;">not</SPAN> show the menu</SPAN> (3
-            dots).<BR>
-          </DIV>
-          <DIV style="text-align: right; margin-left: 320px;">
-            <SPAN style="font-style: italic;">Warning: Because it
-            is empty, you will not get the system item, so your
-            program will be harder to debug.</SPAN><BR style=
-            "font-style: italic;">
+          <DIV style="text-align: right;">
+            <DIV style="text-align: left;">
+              <DIV style="margin-left: 80px;">
+                An empty menu <SPAN style=
+                "text-decoration: underline;">will <SPAN style=
+                "font-weight: bold;">not</SPAN> show the
+                menu</SPAN> (3 dots).<BR>
+                <BR>
+                <SPAN style="font-style: italic;">Warning: Because
+                it is empty, you will not get the system item, so
+                your program will be harder to
+                debug.</SPAN><BR style="font-style: italic;">
+              </DIV>
+            </DIV>
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;">
               If you need a blank Item as part of a <SPAN style=
               "text-decoration: underline;">non-empty</SPAN> menu,
               then use space(s) instead of an empty string.<BR>
             </DIV><BR>
             <SPAN style="text-decoration: underline;">Disabled
-            Items</SPAN><BR>
+            Items</SPAN> (<BIG><FONT size="+2">~</FONT></BIG>)<BR>
             <DIV style="margin-left: 40px;">
               By default, all items are enabled (not dimmed).<BR>
               Items that start with a twiddle&nbsp;
@@ -235,7 +263,7 @@
             </DIV><BR>
             <DIV style="margin-left: 40px;">
               There is only one system item and that is the Stop
-              item&nbsp; (Stop/Exit/Editor).<BR>
+              item&nbsp; (Stop/Editor/Exit).<BR>
               The default menu will already contain the system
               item.<BR>
               If you want the $stop system item in your custom
@@ -323,8 +351,8 @@
           <DIV style="margin-left: 40px;">
             <BIG>Opens the menu as if you had tapped it.</BIG><BR>
             <BR>
-            You can use this to bring up another (changed) menu
-            after the user taps the first menu.<BR>
+            You can use this to open or re-open a (optionally
+            changed) menu after the user taps the first menu.<BR>
             <BR>
           </DIV>
         </TD>
@@ -499,9 +527,10 @@
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
-            do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 102, 102);">% wait for a
-            menu selection</SPAN></SPAN><SPAN style=
+            do&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">% wait
+            for a menu selection</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -513,9 +542,10 @@
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">until
-            finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 102, 102);">% user quits
-            from menu</SPAN></SPAN><SPAN style=
+            finish&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">% user
+            quits from menu</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">?
@@ -526,9 +556,10 @@
             </SPAN> <SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR>
             </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">do_Menu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 102, 102);">% process menu
-            tap</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">do_Menu:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">%
+            process menu tap</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
@@ -554,9 +585,11 @@
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
             onMenuTap</SPAN></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;">:&nbsp;&nbsp;
-            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 102, 102);">% when user
-            taps an open menu</SPAN></SPAN><SPAN style=
+            &nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">% when
+            user taps an open menu</SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;"><BR></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;

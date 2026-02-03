@@ -10,7 +10,7 @@
   "width=device-width, initial-scale=1.0">
   <TITLE>Fonts</TITLE>
   <LINK rel="stylesheet" href="main.css" type="text/css">
-  <LINK rel="preconnect" href="https://fonts.googleapis.com">
+  <LINK rel="preconnect" href="httpwhites://fonts.googleapis.com">
   <LINK rel="preconnect" href="https://fonts.gstatic.com">
   <LINK href=
   "https://fonts.googleapis.com/css2?family=Alex+Brush&amp;family=Archivo+Black&amp;family=Coming+Soon&amp;family=David+Libre&amp;family=Noto+Sans:wght@100;300;400;500&amp;family=Noto+Serif&amp;family=Roboto+Condensed:wght@300;400&amp;family=Roboto+Mono&amp;family=Source+Sans+3&amp;display=swap"
@@ -41,20 +41,25 @@
           "color: rgb(0, 0, 153);">Fonts</SPAN></FONT><BR>
           <BR>
           <TABLE style=
-          "text-align: left; width: 491px; height: 104px; margin-left: 40px;"
+          "text-align: left; width: 491px; height: 104px; margin-left: 80px;"
           cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;"><A href=
                 "#font_families">Font Families</A></TD>
-                <TD style="vertical-align: top;">Font families
-                available for CONSOLE.SET</TD>
+                <TD style="vertical-align: top;">Family
+                fonts<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#loaded_fonts">Loaded Fonts</A><BR></TD>
+                <TD style="vertical-align: top;">External
+                fonts<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
                 "#scaled_text">Scaled Text</A></TD>
-                <TD style="vertical-align: top;">About scaled
-                pixels</TD>
+                <TD style="vertical-align: top;">SP vs DP<BR></TD>
               </TR>
             </TBODY>
           </TABLE><BR>
@@ -65,111 +70,306 @@
           <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="font_families" id=
           "font_families"></A>Font Families</SPAN></FONT><BR>
+          <BR>
           <DIV style="margin-left: 40px;">
+            Font families are built-in fonts on your Android
+            device.<BR>
+            Each family has an additional set of fonts for styles
+            bold, italic, or both.<BR>
+            <BLOCKQUOTE>
+              <TABLE style="text-align: left; width: 100px;"
+              cellspacing="2" cellpadding="2" border="0">
+                <CAPTION>
+                  Android Font Families<BR>
+                </CAPTION>
+                <TBODY>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; width: 50%; white-space: nowrap;">
+                    Families found on most devices.<BR>
+                    <BR>
+                    <FONT size="+1" face=
+                    "Roboto Mono">monospace</FONT><BR>
+                    <FONT size="+1" face=
+                    "Noto Serif">serif</FONT><BR>
+                    <FONT size="+1" face="Noto Sans">sans-serif<BR>
+                    <SPAN style=
+                    "font-weight:300">sans-serif-light</SPAN><BR>
+                    <SPAN style=
+                    "font-weight:100">sans-serif-thin</SPAN><BR></FONT>
+                    <FONT size="+1" face=
+                    "Roboto Condensed">sans-serif-condensed</FONT><BR>
+                    </TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    Families as of Lollipop<BR>
+                    <BR>
+                    <FONT size="+1" face=
+                    "Coming Soon">casual</FONT><BR>
+                    <FONT size="+3" face=
+                    "Alex Brush">cursive</FONT><BR>
+                    <FONT size="+1" face=
+                    "Roboto Mono">monospace</FONT><BR>
+                    <FONT size="+1" face=
+                    "Archivo Black">sans-serif-black</FONT><BR>
+                    <FONT size="+1" face=
+                    "Roboto Condensed">sans-serif-condensed<BR>
+                    <SPAN style=
+                    "font-weight:300">sans-serif-condensed-light</SPAN><BR>
+                    </FONT> <FONT size="+1" face=
+                    "Noto Sans">sans-serif<BR>
+                    <SPAN style=
+                    "font-weight:300">sans-serif-light</SPAN><BR>
+                    <SPAN style=
+                    "font-weight:500">sans-serif-medium</SPAN><BR>
+                    <SPAN style=
+                    "font-weight:100">sans-serif-thin</SPAN></FONT><BR>
+
+                    <SUP><FONT size="-1" face=
+                    "Carrois Gothic SC">SANS-SERIF-SMALLCAPS</FONT></SUP><BR>
+
+                    <FONT size="+1" face=
+                    "Noto Serif">serif</FONT><BR>
+                    <FONT size="+1" face=
+                    "Cutive Mono">serif-monospace</FONT></TD>
+                    <TD style="vertical-align: top;">
+                      Android Font Styles<BR>
+                      <BR>
+                      <BR>
+                      <BLOCKQUOTE>
+                        <TABLE style=
+                        "text-align: left; width: 1px; height: 1px;"
+                        cellspacing="2" cellpadding="2" border="0">
+                          <TBODY>
+                            <TR>
+                              <TD style=
+                              "vertical-align: top; width: 50%; white-space: nowrap;">
+                              Normal<BR>
+                              Bold<BR>
+                              Italic<BR>
+                              Bold_Italic<BR></TD>
+                              <TD style=
+                              "vertical-align: top; white-space: nowrap;">
+                              or&nbsp; N<BR>
+                              or&nbsp; B<BR>
+                              or&nbsp; I<BR>
+                              or&nbsp; BI<BR></TD>
+                            </TR>
+                          </TBODY>
+                        </TABLE>
+                      </BLOCKQUOTE>The style can be post-fixed
+                      after the family name with a dot (".").<BR>
+                    </TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </BLOCKQUOTE><BR>
+            Families can be specified for the following commands as
+            a string (with optional style extension).<BR>
+            <BR>
             <DIV style="margin-left: 40px;">
+              <A href="console.html#setfont">CONSOLE.SET</A>&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">FONT</SPAN> &lt;number
+              <SPAN style="font-weight: bold;">|
+              family</SPAN>&gt;<SPAN style=
+              "font-weight: bold;">"</SPAN><BR>
+              <BR>
+              <A href=
+              "dialogs.html#dialog_set">DIALOG.SET&nbsp;</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              "<SPAN style=
+              "color: rgb(102, 51, 0);">TITLE_FONT</SPAN> =
+              &lt;number <SPAN style="font-weight: bold;">|
+              family</SPAN>&gt;"<BR>
+              <BR>
+              CONSOLE|GR|HTML.<A href=
+              "commands.html#actionbar_title">TITLE</A>&nbsp;&nbsp;
+              title$, fg$,bg$,&nbsp;&nbsp; <SPAN style=
+              "font-weight: bold;">"</SPAN>&lt;number <SPAN style=
+              "font-weight: bold;">|
+              family</SPAN>&gt;",&nbsp;&nbsp; align<BR>
+              <BR>
+              GR.TEXT.SETFONT&nbsp; <SPAN style=
+              "font-weight: bold;">&lt;</SPAN>number | <SPAN style=
+              "font-weight: bold;">family$</SPAN><SPAN style=
+              "font-weight: bold;">&gt;</SPAN> <SPAN style=
+              "font-weight: bold;">,</SPAN> <SPAN style=
+              "font-weight: bold;">style$</SPAN> <SPAN style=
+              "font-weight: bold;">,</SPAN>
+              paint&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% style is
+              separate from family string</SPAN><BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Styles can be appended to the family name after a dot
+            ("<SPAN style="font-weight: bold;">.</SPAN>") e.g
+            <SPAN style=
+            "color: rgb(102, 51, 0);">sans-serif.BOLD</SPAN>.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              For GR.TEXT.SETFONT, if a style is given both as part
+              of family name and an argument,<BR>
               <DIV style="margin-left: 40px;">
-                <FONT size="+1">&nbsp;for <SPAN style=
-                "font-weight: bold;">CONSOLE.SET</SPAN>
-                <SPAN style="font-weight: bold;">"</SPAN><SPAN style="color: rgb(102, 51, 0);">FONT</SPAN>
-                &lt;number | family&gt;<SPAN style=
-                "font-weight: bold;">"</SPAN></FONT><BR>
+                then the argument <SPAN style=
+                "font-weight: bold;">style$</SPAN> will override
+                the style in <SPAN style=
+                "font-weight: bold;">family$</SPAN>.<BR>
               </DIV>
-            </DIV><FONT size="+1"><SPAN style=
-            "font-weight: bold;"><BR></SPAN></FONT> e.g <A href=
-            "console.html#setfont"><SPAN style=
-            "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN></A>
-            <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">FONT
-            sans-serif.BOLD</SPAN><SPAN style=
-            "font-weight: bold;">"</SPAN><FONT size=
-            "+1"><SPAN style="font-weight: bold;"><BR>
-            <BR></SPAN></FONT>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;"></DIV>Examples<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">FONT
+              sans-serif</SPAN><SPAN style=
+              "font-weight: bold;">"<BR></SPAN> <SPAN style=
+              "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">FONT
+              sans-serif.BOLD</SPAN><SPAN style=
+              "font-weight: bold;">"</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% use the
+              bold version of family sans-serif</SPAN><BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">GR.TEXT.SETFONT</SPAN>&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">3.BOLD</SPAN><SPAN style=
+              "font-weight: bold;">"</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% fake bold
+              for loaded font 3</SPAN><BR>
+              <BR>
+            </DIV>
           </DIV>
-          <BLOCKQUOTE>
-            <TABLE style="text-align: left; width: 100px;"
-            cellspacing="2" cellpadding="2" border="0">
-              <TBODY>
-                <TR>
-                  <TD style=
-                  "vertical-align: top; width: 50%; white-space: nowrap;">
-                  Families found on most devices.<BR>
-                  <BR>
-                  <FONT size="+1" face=
-                  "Roboto Mono">monospace</FONT><BR>
-                  <FONT size="+1" face=
-                  "Noto Serif">serif</FONT><BR>
-                  <FONT size="+1" face="Noto Sans">sans-serif<BR>
-                  <SPAN style=
-                  "font-weight:300">sans-serif-light</SPAN><BR>
-                  <SPAN style=
-                  "font-weight:100">sans-serif-thin</SPAN><BR></FONT>
-                  <FONT size="+1" face=
-                  "Roboto Condensed">sans-serif-condensed</FONT><BR>
-                  </TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">
-                  Families as of Lollipop<BR>
-                  <BR>
-                  <FONT size="+1" face=
-                  "Coming Soon">casual</FONT><BR>
-                  <FONT size="+3" face=
-                  "Alex Brush">cursive</FONT><BR>
-                  <FONT size="+1" face=
-                  "Roboto Mono">monospace</FONT><BR>
-                  <FONT size="+1" face=
-                  "Archivo Black">sans-serif-black</FONT><BR>
-                  <FONT size="+1" face=
-                  "Roboto Condensed">sans-serif-condensed<BR>
-                  <SPAN style=
-                  "font-weight:300">sans-serif-condensed-light</SPAN><BR>
-                  </FONT> <FONT size="+1" face=
-                  "Noto Sans">sans-serif<BR>
-                  <SPAN style=
-                  "font-weight:300">sans-serif-light</SPAN><BR>
-                  <SPAN style=
-                  "font-weight:500">sans-serif-medium</SPAN><BR>
-                  <SPAN style=
-                  "font-weight:100">sans-serif-thin</SPAN></FONT><BR>
-
-                  <SUP><FONT size="-1" face=
-                  "Carrois Gothic SC">SANS-SERIF-SMALLCAPS</FONT></SUP><BR>
-
-                  <FONT size="+1" face=
-                  "Noto Serif">serif</FONT><BR>
-                  <FONT size="+1" face=
-                  "Cutive Mono">serif-monospace</FONT></TD>
-                  <TD style=
-                  "vertical-align: top; white-space: nowrap;">
-                    Android Font Styles<BR>
-                    <BR>
-                    <BR>
-                    <BLOCKQUOTE>
-                      <TABLE style=
-                      "text-align: left; width: 1px; height: 1px;"
-                      cellspacing="2" cellpadding="2" border="0">
-                        <TBODY>
-                          <TR>
-                            <TD style=
-                            "vertical-align: top; width: 50%; white-space: nowrap;">
-                            Normal<BR>
-                            Bold<BR>
-                            Italic<BR>
-                            Bold_Italic<BR></TD>
-                            <TD style=
-                            "vertical-align: top; white-space: nowrap;">
-                            or&nbsp; N<BR>
-                            or&nbsp; B<BR>
-                            or&nbsp; I<BR>
-                            or&nbsp; BI<BR></TD>
-                          </TR>
-                        </TBODY>
-                      </TABLE>
-                    </BLOCKQUOTE><BR>
-                  </TD>
-                </TR>
-              </TBODY>
-            </TABLE>
-          </BLOCKQUOTE>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="loaded_fonts" id=
+          "font_families"></A>Loaded Fonts</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Loaded fonts are external fonts loaded with the
+            FONT.LOAD command (page 95 of legacy manual).<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            After loading, a font index number is returned. Use the
+            number to reference the font.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#setfont">
+              CONSOLE.SET</A>&nbsp; <SPAN style=
+              "font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">FONT</SPAN> <SPAN style=
+              "font-weight: bold;">number</SPAN> |
+              family&gt;<SPAN style=
+              "font-weight: bold;">"</SPAN><BR>
+              <BR>
+              <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/dialogs.html#dialog_set">
+              DIALOG.SET&nbsp;</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">TITLE_FONT</SPAN> =
+              &lt;<SPAN style="font-weight: bold;">number</SPAN> |
+              family&gt;<SPAN style=
+              "font-weight: bold;">"</SPAN><BR>
+              <BR>
+              CONSOLE|GR|HTML.<A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/commands.html#actionbar_title">TITLE</A>&nbsp;&nbsp;
+              title$, fg$,bg$,&nbsp;&nbsp; <SPAN style=
+              "font-weight: bold;">"</SPAN>&lt;<SPAN style=
+              "font-weight: bold;">number</SPAN> |
+              family&gt;<SPAN style=
+              "font-weight: bold;">"</SPAN>,&nbsp;&nbsp; align<BR>
+              <BR>
+              GR.TEXT.SETFONT&nbsp; <SPAN style=
+              "font-weight: bold;">&lt;</SPAN><SPAN style=
+              "font-weight: bold;">number</SPAN> |
+              family$<SPAN style="font-weight: bold;">&gt;</SPAN>
+              <SPAN style="font-weight: bold;">,</SPAN> style$
+              <SPAN style="font-weight: bold;">,</SPAN> paint<BR>
+            </DIV><BR>
+            <SPAN style=
+            "text-decoration: underline;">Styling</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Similar to families, you can also append a style
+              after a dot;<BR>
+              Examples<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#setfont">
+              <SPAN style=
+              "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN></A>&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">FONT <SPAN style=
+              "color: rgb(0, 0, 0);">3</SPAN></SPAN><SPAN style=
+              "font-weight: bold;">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% normal
+              style is default</SPAN><BR>
+              <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#setfont">
+              <SPAN style=
+              "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN></A>&nbsp;&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">FONT <SPAN style=
+              "color: rgb(0, 0, 0);">3</SPAN></SPAN><SPAN style=
+              "font-weight: bold;">.</SPAN>BOLD<SPAN style=
+              "font-weight: bold;">"</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% use fake
+              bolding for loaded font 3</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              &nbsp;<BR>
+              For GR.TEXT.SETFONT, you may express the font index
+              either as a number or a string.<BR>
+              These commands below are all equivalent for setting
+              the font for a paint.<BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">GR.TEXT.SETFONT</SPAN>&nbsp;
+              3,
+              "bold"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% name as a
+              number</SPAN><BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">GR.TEXT.SETFONT</SPAN>&nbsp;
+              "3",
+              "bold"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% name as a
+              string</SPAN><BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">GR.TEXT.SETFONT</SPAN>&nbsp;
+              "3.bold"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% style as
+              part of the anme</SPAN><BR>
+              <BR>
+            </DIV><SPAN style="text-decoration: underline;">Fake
+            Styling</SPAN><SPAN style=
+            "font-weight: bold;"><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              Because loaded fonts do not normally carry bold or
+              italic versions with them, hBasic will attempt to
+              apply<BR>
+              fake bolding or fake italics if a style is
+              requested.<BR>
+              <BR>
+              For GR.TEXT.SETFONT, you can <SPAN style=
+              "text-decoration: underline;">later change</SPAN> the
+              fake styling with GR.TEXT.BOLD or GR.TEXT.SKEW<BR>
+              for the current paint or any given paint.<BR>
+            </DIV><SPAN style="font-weight: bold;"><BR></SPAN> Note
+            that the intermal loaded fonts table is shared between
+            all commands that use it, including graphics
+            commands.<BR>
+            An example of loading a font may be found in <A href=
+            "samples.html">here</A>.<BR>
+            <SPAN style="font-weight: bold;"><BR></SPAN>
+          </DIV>
         </TD>
       </TR>
       <TR>
@@ -180,15 +380,15 @@
           <BR>
           <DIV style="margin-left: 40px;">
             Some commands such as CONSOLE.SET "TEXTSIZE
-            &lt;size&gt;" can accept scaled pixel sizes.<BR>
-            These are diffferent to dip (device independent
-            pixels), in that furthur scaling is applied according
-            to the android device user preferences (e.g Display
-            settings of device). These are refered to as scaled
-            pixels (SP).<BR>
+            &lt;size&gt;" default to dip (device independent pixels
+            or DP) but can also accept scaled pixel sizes (SP).<BR>
             <BR>
-            To honour SP sizes, you can set the console text size
-            with a negative size,<BR>
+            SP is diffferent to DP, in that furthur scaling is
+            applied according to the android device user
+            preferences (e.g Display settings of device).<BR>
+            <BR>
+            To honour SP sizes, you must specify with a negative
+            size,<BR>
             <BR>
           </DIV>
           <DIV style="margin-left: 80px;">
@@ -198,16 +398,19 @@
             -16"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <SPAN style="color: rgb(51, 51, 51);">% positive values
             are DP, negative values are SP</SPAN><BR>
-            <DIV style="margin-left: 40px;"></DIV><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN>
           </DIV>
           <DIV style="margin-left: 40px;">
             If the user has enlarged the fonts in the device
             systems settings, then the font will appear larger than
             the equivalent&nbsp; size of 16dp.<BR>
             <BR>
-            To get the perceived scaled pixel density, you can
-            use<BR>
+            To get the <SPAN style=
+            "text-decoration: underline;">perceived scaled pixel
+            density</SPAN><SPAN style=
+            "font-style: italic;">,</SPAN> you can use<BR>
           </DIV>
           <DIV style="margin-left: 80px;">
             <SPAN style="font-weight: bold;"><BR></SPAN> <A href=
@@ -226,8 +429,10 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             &nbsp;<BR>
-            e.g density_SP returns 320 on a 160 dpi display with a
-            user preference scale of 2X in settings.
+            e.g <SPAN style="font-weight: bold;">density_SP</SPAN>
+            returns 320 on a 160 dpi display with a user preference
+            scale of 2X in the device settings.<BR>
+            <BR>
           </DIV>
         </TD>
       </TR>
