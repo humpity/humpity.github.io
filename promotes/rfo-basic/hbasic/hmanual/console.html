@@ -87,6 +87,7 @@
                     <A href="#dividers">DIVIDERS</A><BR>
                     <A href="#scroll">SCROLL</A><BR>
                     <A href="#stack">STACK</A><BR>
+                    <A href="#window_bg">WINDOW_BG</A><BR>
                     <A href="#statustxt">STATUSTXT</A><BR>
                     <A href="#navbartxt">NAVBARTXT</A><BR>
                     <A style="text-decoration: line-through;" href=
@@ -146,16 +147,15 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "#tget">TGET</A> and <A href=
-                "#tget_sub">TGET.S/N/I/P</A><BR></TD>
-                <TD style="vertical-align: top;">
-                Overhauled<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><A href=
                 "#clr">CLR</A><BR></TD>
                 <TD style="vertical-align: top;">Clear till end of
                 line<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "dialogs.html#tget">TGET</A><BR></TD>
+                <TD style="vertical-align: top;">
+                Overhauled<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;">Other<BR></TD>
@@ -205,24 +205,80 @@
             leaving an empty line.<BR>
             &nbsp;&nbsp;&nbsp; 3. Any PRINT following BACKSPACE is
             appended to the end of the line.<BR>
-            &nbsp;&nbsp;&nbsp;<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            Examples<BR>
+            &nbsp;<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <DIV style="margin-left: 40px;">
-              <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
-              "color: rgb(0, 0, 153);">BACKSPACE&nbsp;</SPAN>
-              &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</SPAN>
-              <SPAN style="color: rgb(102, 102, 102);">%&nbsp;
-              deletes 1 character backward</SPAN><BR style=
-              "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            <SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+            "color: rgb(0, 0, 153);">BACKSPACE&nbsp;</SPAN>
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">%&nbsp;
+            deletes 1 character backward</SPAN><BR style=
+            "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
-              <SPAN style="color: rgb(0, 0, 153);">BACKSPACE</SPAN>
-              5&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-              <SPAN style="color: rgb(102, 102, 102);">%&nbsp;
-              deletes 5 characters backward</SPAN><BR>
+            <SPAN style="color: rgb(0, 0, 153);">BACKSPACE</SPAN>
+            5&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <SPAN style="color: rgb(102, 102, 102);">%&nbsp;
+            deletes 5 characters backward</SPAN><BR>
+            <BR>
+            You may want to leave your last PRINT in append mode (
+            <FONT size="+1"><SPAN style=
+            "font-weight: bold;">;</SPAN></FONT> ) if you want to
+            delete the last character.<BR>
+            Example<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">ARRAY.LOAD
+              twidle$[], "-", "\\", "|", "/"</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "Please Wait..";&nbsp;</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
+              % leave PRINT in append mode</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">GOSUB
+              <SPAN style=
+              "color: rgb(102, 0, 0);">busy</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">PRINT
+              "OK."</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">END</SPAN><BR>
+
+              <BR>
+              <SPAN style="color: rgb(102, 0, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">busy
+              :</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;i
+              = 1</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;FOR
+              b = 1 TO 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 102, 102);">
+              % do for 5 seconds</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;
+              PRINT twidle$[i];</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;
+              IF ++i &gt; 4 THEN i=1</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;
+              PAUSE
+              1000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% pretend to
+              do something</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;
+              <SPAN style=
+              "color: rgb(0, 0, 153);">BACKSPACE</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;NEXT
+              b</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">RETURN</SPAN><BR>
             </DIV><BR>
           </DIV>
         </TD>
@@ -588,13 +644,13 @@
             which is "<SPAN style=
             "color: rgb(102, 0, 0);">CartmanTagged</SPAN>"<BR>
             <BR>
-            Use a <SPAN style=
-            "text-decoration: underline;">space</SPAN> if you wish
-            to separate "<SPAN style=
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "font-weight: bold;">Use a space</SPAN></SPAN> if you
+            wish to separate "<SPAN style=
             "color: rgb(102, 0, 0);">Cartman</SPAN>" from
             "<SPAN style=
             "color: rgb(102, 0, 0);">Tagged</SPAN>";<BR>
-            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
+            i.e &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
             "font-family: Courier New,Courier,monospace;">PRINT
             <SPAN style="color: rgb(102, 51, 0);">"<SPAN style=
             "color: rgb(102, 0, 0);">Cartman</SPAN> "<BR>
@@ -846,14 +902,15 @@
               "color: rgb(102, 0, 0);"><SPAN style=
               "font-family: Courier New, Courier, monospace;">ORIENT.Resume</SPAN></SPAN><BR>
             </DIV><BR>
-            <FONT size="+1"><SPAN style=
-            "text-decoration: underline;">Replacing the Text
-            background color with image<BR></SPAN></FONT>
             <DIV style="margin-left: 40px;">
+              <SPAN style="text-decoration: underline;">Replacing
+              the Text background color with image</SPAN><BR>
               You can let the image show through behind the text by
               setting the text background color to transparent.<BR>
               e.g<BR>
-              <DIV style="margin-left: 40px;">
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <DIV style="margin-left: 80px;">
                 <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><A href="console.html#cs_shortcut">
                 </A><A href="console.html#cs_shortcut">.CS</A>
@@ -1010,8 +1067,8 @@
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <BIG><A name="console_styling" id=
-            "console_styling"></A>Sets console attributes for
-            styling.</BIG><BR>
+            "console_styling"></A></BIG>Sets console attributes for
+            styling.<BR>
             <DIV style="margin-left: 40px;">
               These attributes may apply to either the whole
               console or only for future printing.<BR>
@@ -1068,7 +1125,7 @@
             #000000"</SPAN><BIG><SPAN style=
             "font-family: monospace;">&nbsp;
             <SMALL>%</SMALL></SPAN> <SMALL><SPAN style=
-            "color: rgb(0, 0, 153);">Empty Console
+            "color: rgb(0, 0, 153);">Empty lines in the Console
             Area</SPAN></SMALL></BIG><BR>
             <BR>
           </DIV>
@@ -1161,7 +1218,6 @@
               "text-decoration: underline;">alpha</SPAN> value as
               Decimal.<BR>
             </DIV><BR>
-            <BR>
             <BIG><SPAN style="font-family: monospace;"><A name=
             "spacing" id="spacing"></A>"</SPAN></BIG><SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">SPACING</SPAN></SPAN>
@@ -1180,12 +1236,16 @@
             </DIV>
           </DIV>
           <DIV style="margin-left: 160px;">
-            (padding above &amp; below text measured as dp)<BR>
+            Sets the padding <SPAN style=
+            "text-decoration: underline;">above &amp; below</SPAN>
+            text measured as dp.<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 120px;">
               <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN> size
-              will use Basic's default size (5dp)<BR>
+              will use Basic's default size (5dp).<BR>
+              A value of zero will also remove any vertical font
+              padding.<BR>
               This applies to the <SPAN style=
               "text-decoration: underline;">whole line</SPAN> and
               only affects new lines added.<BR>
@@ -1324,7 +1384,7 @@
               android <A href="fonts.html#font_families">family
               font</A><BR>
               <BR>
-              This command is similar to Gr.text.setfont.<BR>
+              This command is similar to Gr.Text.SetFont.<BR>
               A font number or family name can be post-fixed with a
               style after a dot '.'<BR>
               Normal | Bold | Italic | Bold_Italic<BR>
@@ -1336,8 +1396,9 @@
               <SPAN style=
               "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
               sans-serif</SPAN></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">.</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">BOLD"</SPAN><BR>
-
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">.</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">BOLD"&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% Add a
+              style to a font family</SPAN><BR>
               <BIG><SMALL>e.g</SMALL></BIG> <SPAN style=
               "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
               CONSOLE.SET</SPAN></SPAN> <SPAN style=
@@ -1345,11 +1406,22 @@
               <SPAN style=
               "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
               3</SPAN></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">.</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">BOLD"</SPAN><BR>
-
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">.</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">BOLD"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% Add a
+              style to a loaded font</SPAN><BR>
               <BR>
-              (any unrecognised style will default to NORMAL).<BR>
-              <BR>
+              Any unrecognised style will default to NORMAL.<BR>
+              Any unrecognised family name will default to the
+              system font (usually sans-serif).<BR>
+              If this setting is never used, the console will
+              default to "monospace",<BR>
+              <DIV style="margin-left: 40px;">
+                (note that this default is different to the ones in
+                <A href="#actionbar_title">CONSOLE.TITLE</A> and
+                <A href=
+                "dialogs.html#set_title_font">DIALOG.SET</A>
+                "title_font ...")<BR>
+              </DIV><BR>
               An example of loading a font is found <A href=
               "samples.html">here</A>.<BR>
               Applies for <SPAN style=
@@ -1527,11 +1599,12 @@
                 "color: rgb(0, 0, 153);"><BR></SPAN> The colors are
                 dependent on the device version or if they are
                 hidden or not (<A href=
-                "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/decors.html#behave_table">see
-                this table</A>).<BR>
+                "decors.html#behave_table">see this table</A>).<BR>
                 e.g You may want dark text if you know the
                 statusbar background will be light (see <A href=
                 "system.html#window_bg">@@window_bg</A>).<BR>
+                ( See Also <A href=
+                "system.html#dark_statustxt">Directives</A> )<BR>
                 Applies to the <SPAN style=
                 "font-weight: bold;">whole</SPAN> console.<BR>
                 <BR>
@@ -1757,7 +1830,9 @@
             <SPAN style="font-weight: bold;">only</SPAN>.<BR>
             <BR>
             The size[] and realsize[] arrays will have width and
-            height values returned in elements [1] and [2].<BR>
+            height values (in <SPAN style=
+            "text-decoration: underline;">pixels</SPAN>) returned
+            in elements [1] and [2].<BR>
             In hBasic, <SPAN style=
             "font-weight: bold;">size</SPAN>[] refers to the
             console view size <SPAN style=
@@ -1765,7 +1840,8 @@
             decorations).<BR>
             In hBasic, <SPAN style=
             "font-weight: bold;">realsize</SPAN>[] refers to the
-            whole device screen (with decorations).<BR>
+            <SPAN style="text-decoration: underline;">whole</SPAN>
+            device screen (with decorations).<BR>
             <BR>
             <SPAN style="font-weight: bold;">density_DP</SPAN> Gets
             the screen <SPAN style=
@@ -1831,8 +1907,8 @@
               e.g 32.80,&nbsp;&nbsp; (almost 33),<BR>
               then it is likely that <SPAN style=
               "text-decoration: underline;">you can visually
-              see</SPAN> the entire extra character (i.e 0.80 of
-              33),<BR>
+              see</SPAN> the entire extra character (i.e 80% of
+              column 33),<BR>
               this is because only it's padding is cut off.<BR>
               In this case it may be better to round the value to
               the nearest integer using the ROUND function.<BR>
@@ -2035,252 +2111,13 @@
             <BR></FONT> Exits the console without exiting the
             Editor. (This is different to EXIT which exits the
             app).<BR>
-            This is an immediate exit. The console screen will not
-            be held.<BR>
+            This is an immediate exit. The console screen
+            <SPAN style="text-decoration: underline;">will not be
+            held</SPAN>.<BR>
             For Standard mode, it will exit to the Editor.<BR>
             For APK mode the Standalone app will exit to the
             caller.<BR>
           </DIV><BIG><FONT color="#663300"><BR></FONT></BIG>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <BIG style="color: rgb(0, 0, 153);"><A name="tget" id=
-          "tget"></A></BIG><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);">TGET</SPAN></FONT><BR>
-          <DIV style="margin-left: 40px;">
-            <BR>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;"><SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN> <B style=
-            "color: black;">result</B><B style=
-            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
-            "color: rgb(102, 51, 0);"><B style=
-            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
-            <SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
-            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
-            "color: rgb(102, 51, 0);"><BR></SPAN></SPAN>
-          </DIV><BIG><BR></BIG>
-          <DIV style="margin-left: 40px;">
-            Get text Input from the last line of the console.<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            where<BR>
-            <DIV style="margin-left: 40px;">
-              <SPAN style="font-weight: bold;">result$</SPAN>
-              &nbsp;&nbsp; is the return string&nbsp;&nbsp; ( not
-              optional)<BR>
-              <DIV style="margin-left: 80px;">
-                This variable will be overwritten.<BR>
-                If the input entered nothing or input was cancelled
-                (BackKey) the result will be the empty string.<BR>
-                <BR>
-              </DIV><SPAN style=
-              "font-weight: bold;">prompt</SPAN>&nbsp;&nbsp;&nbsp;
-              sets the prompt (optional)<BR>
-              <DIV style="margin-left: 80px;">
-                This string will be printed on the left of the
-                input line e.g "cmd&gt;"<BR>
-              </DIV>
-              <DIV style="margin-left: 80px;">
-                <BR>
-              </DIV><SPAN style="font-weight: bold;">title</SPAN>
-              &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              sets the window title (optional)<BR>
-              <BR>
-              <SPAN style="font-weight: bold;">backKey</SPAN> is a
-              variable to return the backKey flag (optional)
-            </DIV>
-            <DIV style="margin-left: 120px;">
-              0 =&gt; backKey was not pressed to exit TGET<BR>
-              1 =&gt; backKey was pressed to exit TGET<BR>
-              <BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              Preceding commas are needed to seperate parameters if
-              they are used.<BR>
-              <BR>
-            </DIV>TGET now closely resembles the output console
-            (because it is now part of the console),<BR>
-            Make sure the console is in front. You can do this with
-            CONSOLE.FRONT or GR.FRONT 0.<BR>
-            Any style changes to the console will do the same to
-            TGET.<BR>
-            <BR>
-            Before input from the user, TGET ignores any value in
-            <SPAN style="font-weight: bold;">result$</SPAN>.<BR>
-            This is not true for <A href=
-            "#tget_sub">subcommands</A> (see later).<BR>
-            <BR>
-            After input from the user, TGET <SPAN style=
-            "font-weight: bold;">prints both the prompt and user
-            input</SPAN> to the console.<BR>
-            This is not true for <A href=
-            "#tget_sub">subcommands</A> (see later).<BR>
-            <BR>
-            The exception is if the user presses 'Stop' from the
-            console menu, in which case 'Stopped by user' is
-            printed instead, and the program execution is stopped
-            or exited. You can also customise the menu via <A href=
-            "menu.html">MENU</A> commands.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            Examples<BR>
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">r$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="color: rgb(0, 0, 153);">,
-            <SPAN style="color: rgb(102, 0, 0);">"cmd &gt;"</SPAN>,
-            <SPAN style="color: rgb(102, 0, 0);">"Enter
-            Command"</SPAN></SPAN></SPAN></SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153); font-style: italic;"><BR>
-
-            <BR></SPAN></SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">r$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="color: rgb(0, 0, 153);">,
-            <SPAN style="color: rgb(102, 0, 0);">"Input your
-            password &gt;"</SPAN>, <SPAN style=
-            "color: rgb(102, 0, 0);">"Security
-            Check",</SPAN></SPAN></SPAN></SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">bkey</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR style="color: rgb(51, 51, 51); font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255);">
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">IF bkey
-            THEN PRINT "Do you want to Quit ?"</SPAN><BR>
-            <BR>
-            (see sample program <SPAN style=
-            "color: rgb(0, 102, 0);">h05_shell.bas</SPAN> for a
-            demo of a terminal emulator)<BR>
-          </DIV><BR>
-          <BIG style="color: rgb(0, 0, 153);"><A name="tget_sub"
-          id="tget_sub"></A></BIG><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);">TGET Sub
-          commands</SPAN></FONT><BR>
-          <BLOCKQUOTE>
-            These sub-commnds are designed to quickly get input
-            without poluting the console.<BR>
-            Typically, they are used on the last page of the screen
-            because TGET is always on the last row.<BR>
-            <BR>
-            <B>Al</B><B>l</B> subcommands <SPAN style=
-            "font-weight: bold;">do not print</SPAN> the
-            <SPAN style="font-weight: bold;">prompt+result$</SPAN>
-            after they finish.<BR>
-            Also, all subcommands will use any old value that was
-            put into <SPAN style=
-            "font-weight: bold;">result$</SPAN> as the intial
-            value.<BR>
-            <BR>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-            TGET.S</SPAN></SPAN></SPAN> <B style=
-            "color: black;">result</B><B style=
-            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
-            "color: rgb(102, 51, 0);"><B style=
-            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
-            <SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
-            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
-            "color: rgb(102, 51, 0);"><BR></SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
-            TGET.N</SPAN></SPAN></SPAN> <B style=
-            "color: black;">result</B><B style=
-            "color: black;">$</B>_svar&nbsp;</SPAN></SPAN> {
-            ,<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(102, 51, 0);"><B style=
-            "color: black;">prompt</B>_sexp</SPAN></SPAN> }&nbsp;
-            {, <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(102, 51, 0);"><B style=
-            "color: black;">title</B>_sexp</SPAN></SPAN> }&nbsp; {
-            ,<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(102, 51, 0);"><B style=
-            "color: black;">backKey</B>_nvar</SPAN></SPAN>
-            }<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(102, 51, 0);"><BR></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="color: black;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">TGET.I</SPAN></SPAN></SPAN>
-            <B style="color: black;">result</B><B style=
-            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
-            "color: rgb(102, 51, 0);"><B style=
-            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
-            <SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
-            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
-            "color: rgb(102, 51, 0);"><BR></SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;"><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">TGET.P</SPAN></SPAN></SPAN>
-            <B style="color: black;">result</B><B style=
-            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
-            "color: rgb(102, 51, 0);"><B style=
-            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
-            <SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
-            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
-            "color: black;">backKey</B>_nvar</SPAN> }<SPAN style=
-            "color: rgb(102, 51, 0);"><BR></SPAN><BR>
-            Like TGET, they get input into <SPAN style=
-            "font-weight: bold;">result$</SPAN> with optional
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">prompt</SPAN>
-            and <SPAN style=
-            "font-family: Courier New, Courier, monospace;">title.<BR>
-
-            The</SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
-            title</SPAN></SPAN> (if used) temporarily replaces the
-            console title. To prevent this, omit the title.<BR>
-            The <SPAN style=
-            "font-family: Courier New, Courier, monospace;">backKey</SPAN>
-            variable (if used) returns 1 if user had tapped the
-            back key, otherwise 0.<BR>
-            <BR>
-            <B>Al</B><B>l</B> subcommands have the prompt above the
-            input unless the prompt is empty or omitted.<BR>
-            The prompt (if shown) will be in reverse colors.<BR>
-            <BR>
-            <FONT size="+1"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">TGET.<SPAN style="font-weight: bold;">S</SPAN></SPAN></FONT>&nbsp;&nbsp;&nbsp;
-            Similar as TGET except that it will not print out the
-            result.<BR>
-            <FONT size="+1"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>N</B></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
-            Brings up a NUMERIC keyboard - restricts input as a
-            real <B>number.</B><BR>
-            <FONT size="+1"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>I</B></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
-            Brings up a NUMERIC keyboard - restricts input as an
-            <B>integer.</B><BR>
-            <FONT size="+1"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>P</B></SPAN></FONT>&nbsp;&nbsp;&nbsp;
-            Same as TGET.S except that it hides the input like a
-            <B>password.</B><BR>
-            <BR>
-            Both <B>N</B> and <B>I</B> subcommands will still
-            accept a negative number.<BR>
-            Both <B>N</B> and <B>I</B> subcommands will still
-            return a number as a string.<BR>
-            Both <B>N</B> and <B>I</B> subcommands have no error
-            checking on the default <SPAN style=
-            "font-weight: bold;">result$</SPAN><BR>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            i.e you can default the input with a string, but the
-            keyboard will only let you type a number.<BR>
-          </BLOCKQUOTE>
         </TD>
       </TR>
       <TR>
@@ -2307,19 +2144,25 @@
             If the row becomes completely empty, the row's <A href=
             "#console_styling"><FONT color="#000099">default
             styling</FONT></A> is replaced with the current console
-            style (this is useful for padding Print.ATs at a later
+            style<BR>
+            (this is useful for padding Print.ATs at a later
             stage).<BR>
             <BR>
             <FONT style="color: black; font-weight: bold;" color=
             "#663300">row</FONT> &nbsp;&nbsp; The row to clear
-            (1..n). This is not optional.<BR>
-            &nbsp;&nbsp;&nbsp; If row is zero no action is
-            taken.<BR>
-            &nbsp;&nbsp;&nbsp; If row is negative, the row will
-            count backwards (-1 = last line).<BR>
-            &nbsp;&nbsp;&nbsp; If row is out of range, (no row
-            exists), no action is taken.<BR>
-            <BR>
+            (1..n). This is not optional<BR>
+            <DIV style="margin-left: 40px;">
+              If row is zero no action is taken.<BR>
+              If row is negative, the row will count backwards (-1
+              = last line).<BR>
+              <DIV style="margin-left: 40px;">
+                If this becomes out of range, no action is
+                taken.<BR>
+              </DIV>If row is postive but out of range, (no row
+              exists), <SPAN style=
+              "text-decoration: underline;">extra empty lines are
+              added to pad</SPAN>.<BR>
+            </DIV><BR>
             <FONT style="color: black; font-weight: bold;" color=
             "#663300">column</FONT> &nbsp;&nbsp; A starting column
             (1..n)<BR>

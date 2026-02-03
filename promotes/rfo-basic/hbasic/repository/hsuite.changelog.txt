@@ -2,6 +2,14 @@ hSuite changelog
 
 Date		Summary of Versions
 --------------- -------------------------------------------
+2026-02-03	v3.32
+		hmaster v2.36
+		hpatcher v3.25
+			Fix PATH to prioritise hSuite jdk (-glareboa)
+			Fix info report of standalone mode
+			Updated help panel
+		Build platform API-36
+
 2025-10-01	v3.31
 		hmaster v2.35
 		hpatcher v3.24
@@ -37,7 +45,7 @@ Date		Summary of Versions
 		hmaster v2.29
 		hpatcher v3.19
 			internal changes
-		adt:API-35
+		Build platform API-35
 
 2024-11-02	v3.24
 		hmaster v2.28
@@ -64,7 +72,7 @@ Date		Summary of Versions
 		hpatcher v3.14
 			Default keystore input focus to password
 			Fix file loading msg, (blank = no change)
-		adt: API-34
+		Build Platform API-34
 
 2023-10-13	v3.19
 		hmaster v2.23
@@ -93,7 +101,7 @@ Date		Summary of Versions
 			Fix encryption error for missing temp dir
 			Fix gui forgetting last app icon resolution
 			Added permission POST_NOTIFICATIONS
-		adt: API-33
+		Build Platform API-33
 
 2022-12-17	v3.14
 		hMaster v2.18
@@ -193,7 +201,7 @@ Date		Summary of Versions
 			Default port changed from 1025 to 2345		
 		H0303	added (fix GR.MODIFY group list)
 		H0304	added (fix GR.OPEN status bar for Android 11+)
-		adt: API-30
+		Buid Platform API-30
 
 2020-12-08	v2.01
 		hMaster v2.01
@@ -217,7 +225,7 @@ Date		Summary of Versions
 
 2020-03-03	v1.10
 		hMaster v1.60
-		adt: API-29
+		Build Platform API-29
 2020-03-03	v1.00
 		hMaster v1.52
 		Java OpenJDK (Zulu) 32bit 1.8.0_222

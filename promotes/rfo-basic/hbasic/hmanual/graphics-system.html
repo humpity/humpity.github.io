@@ -25,14 +25,21 @@
             <BIG>hBasic Manual</BIG><BR>
           </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Graphics
           System changes</BIG></BIG><BR>
-          <BIG><BIG style="color: rgb(0, 0, 153);"><BR></BIG></BIG>
+          &nbsp; <BIG><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG></BIG>
+          <DIV style="margin-left: 40px;">
+            Since v5.00, the (Mk II) graphics engine uses a
+            streamlined rendering pipeline as well as the following
+            changes.<BR>
+          </DIV>&nbsp;<BR>
           <TABLE style=
           "text-align: left; margin-left: auto; margin-right: auto; width: 90%;"
           cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
-                <TD style="vertical-align: top;"><A href=
-                "#coordinates_upgrade">Coordinates Upgrade</A></TD>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="#coordinates_upgrade">Coordinates
+                Upgrade</A></TD>
                 <TD style="vertical-align: top;">Upgraded
                 positioning system<BR></TD>
               </TR>
@@ -43,17 +50,9 @@
                 display list<BR></TD>
               </TR>
               <TR>
-                <TD><A href="#graphics_parms"><BR></A></TD>
-                <TD><BR></TD>
-              </TR>
-              <TR>
                 <TD><A href="#object_motion">Object
                 Motion</A><BR></TD>
-                <TD>Added motion for objects.<BR></TD>
-              </TR>
-              <TR>
-                <TD><BR></TD>
-                <TD><BR></TD>
+                <TD>Added motion for objects<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -66,12 +65,30 @@
                 <TD style="vertical-align: top;"><A href=
                 "#graphics_parms">Graphics Parameters</A></TD>
                 <TD style="vertical-align: top;">New parameters for
-                objects.</TD>
+                objects</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#canvas_stack">Canvas Stack</A></TD>
+                <TD style="vertical-align: top;">Shared canvas
+                stack</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#paints">Paints</A><BR></TD>
+                <TD style="vertical-align: top;">GR.OPEN &amp;
+                GR.CLS consistency<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "graphics.html#setacc">Acceleration</A><BR></TD>
+                <TD style="vertical-align: top;">Default is now
+                hardware overlay<BR></TD>
               </TR>
               <TR>
                 <TD><A href="#object_table">Updated Object
                 Table</A><BR></TD>
-                <TD>graphics objects parameter list.<BR></TD>
+                <TD>Graphics objects parameters<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -79,7 +96,7 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;">Other<BR>
-                <A href="graphics.html">( Graphics command changes
+                <A href="graphics.html">( Graphics commands
                 )</A><BR>
                 <A href="functions.html#graphics">( Graphics
                 functions</A> )<BR></TD>
@@ -98,10 +115,9 @@
           <DIV style="margin-left: 40px;">
             The graphics coordinates system was upgraded from
             integers to single precision 32 bit floating point,
-            inline with the Android graphics library.<BR>
-            Even though screens will not use sub-pixel values, the
-            fractional part is necessary for internal motion
-            calculations.<BR>
+            inline with the Android graphics library. Even though
+            screens will not use sub-pixel values, the fractional
+            part is necessary for internal motion calculations.<BR>
             <BR>
             If you are using the built-in motion vectors, then you
             may get fractional parts back from x,y values, since
@@ -119,16 +135,17 @@
           "display_list_changes"></A>Display List</FONT></SPAN><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            The display list is not the same as the objects list.
-            All objects exist on objects list but not neccessarily
-            on the display list.<BR>
+            The display list is <SPAN style=
+            "text-decoration: underline;">not</SPAN> the same as
+            the objects list. All objects exist on the objects list
+            but not neccessarily on the display list.<BR>
             Any objects on the display list are rendered to the
             display (if it is not hidden or special).<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            <A href=
-            "graphics.html#display_list_commands">Additional
-            commands</A> were added to manage the display list
+            New <A href=
+            "graphics.html#display_list_commands">Display List
+            Commands</A> were added to manage the display list
             without having to resort to GR.GETDL and GR.NEWDL.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -177,8 +194,8 @@
               Even so, you can still specify a group object to move
               (z-ordering) via <A href=
               "graphics.html#gr_dl_move">GR.DL.MOVE</A>, whether on
-              the display list or not,<BR>
-              only the objects in their lists will be moved.
+              the display list or not.<BR>
+              Only the objects in their lists will be moved.
               However, <A href=
               "graphics.html#gr_dl_remove">GR.DL.REMOVE</A>
               <SPAN style="text-decoration: underline;">will</SPAN>
@@ -262,6 +279,8 @@
             <DIV style="margin-left: 40px;">
               To stop an object (no movement), set the speed to
               zero (default).<BR>
+              If the graphics screen has been scaled (GR.SCALE)
+              then the motion will scale upon GR.RENDER.<BR>
             </DIV><BR>
             <SPAN style=
             "text-decoration: underline;">Direction</SPAN>
@@ -289,8 +308,8 @@
               <BR>
               If you don't want objects affected by GR.MOTION, set
               their speeds to zero.<BR>
-              You can still manually move them in the usual way by
-              using GR.MODIFY.<BR>
+              (You can still manually move them in the usual way by
+              using GR.MODIFY obj, "x", X, "y",Y).<BR>
               <BR>
               e.g<BR>
               GR.MODIFY object, "speed",0&nbsp;&nbsp;&nbsp;
@@ -308,7 +327,7 @@
               "font-weight: bold;">x</SPAN></SPAN>",x,&nbsp;
               "<SPAN style="color: rgb(0, 0, 153);"><SPAN style=
               "font-weight: bold;">y</SPAN></SPAN>",y&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              % (see <A href="#whole">whole object
+              % (see also <A href="#whole">whole object
               positioning</A>)<BR>
               <BR>
               GR.MOTION does not move objects with zero "speed" nor
@@ -335,7 +354,7 @@
           id="setacc"></A>Sprites and
           Animation<BR></SPAN></FONT><BR>
           <DIV style="margin-left: 40px;">
-            The Sprite object has been added to the graphics
+            The Sprite object has been added to the mkII graphics
             engine.<BR>
             A Sprite is similar to a bitmap but with the added
             feature of Animation.<BR>
@@ -531,6 +550,9 @@
               See <A href=
               "graphics.html#gr_anim_load">GR.ANIM.LOAD</A> for
               more information.<BR>
+              You may also create animations without a file, having
+              empty frames and load them yourself using the<BR>
+              GR.ANIM subcommands (see h13_animations.bas).<BR>
               <BR>
               Animations may be created before or after sprite
               object creation.<BR>
@@ -697,7 +719,7 @@
                   If animating backwards (arate negative) and
                   reached first frame, then just stay on first
                   frame.<BR>
-                  For another run, you must reset the frame an
+                  For another run, you must reset the frame to an
                   earlier one.<BR>
                   <BR>
                 </DIV>
@@ -808,6 +830,7 @@
           </TABLE>
           <DIV style="margin-left: 40px;">
             <BR>
+            <A name="alpha" id="alpha"></A>Alpha<BR>
             <DIV style="margin-left: 40px;">
               Note that as before (legacy Basic), the alpha is that
               of the object (not the paint's alpha). If the
@@ -924,13 +947,47 @@
       <TR>
         <TD style="vertical-align: top;">
           <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="canvas_stack" id=
+          "setacc"></A>Canvas Stack</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Previously (legacy), this stack was used to manage
+            nested GR.ROTATE commands.<BR>
+            Both the GR.CLIP and GR.ROTATE commands now share the
+            canvas stack.<BR>
+            The stack is needed to restore the canvas state when
+            either GR.ROTATE.END or GR.CLIP.END is used.<BR>
+            See also <A href="graphics.html#gr_clip">GR.CLIP</A>
+            commands for more information.<BR>
+          </DIV><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><BR></SPAN></FONT>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><A name="paints" id=
+          "paints"></A>Paints</FONT></SPAN><BR>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            In Legacy Basic, GR.OPEN previously started the current
+            paint index as 2.<BR>
+            For consistency, in hBasic (v5.60+), both GR.OPEN and
+            GR.CLS both start the current paint as index 1.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);"><A name="object_table" id=
           "setacc"></A>Updated Object Table</SPAN></FONT><BR>
           <TABLE style=
           "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
           cellspacing="2" cellpadding="2" border="0">
             <CAPTION>
-              Updated Graphics Object Table<BR>
+              hBasic Graphics Object Table<BR>
               <BR>
             </CAPTION>
             <TBODY>
@@ -952,19 +1009,24 @@
                 <TD style="vertical-align: top;">( common
                 )<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><SPAN style=
-                "color: rgb(0, 0, 153);">x</SPAN></TD>
-                <TD style="vertical-align: top;"><SPAN style=
-                "color: rgb(0, 0, 153);">y</SPAN></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#whole"><SPAN style=
+                "color: rgb(0, 0, 153);">x</SPAN></A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#whole"><SPAN style=
+                "color: rgb(0, 0, 153);">y</SPAN></A></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;">paint<BR></TD>
-                <TD style="vertical-align: top;">alpha<BR></TD>
-                <TD style="vertical-align: top;"><SPAN style=
-                "color: rgb(0, 0, 153);">speed</SPAN></TD>
-                <TD style="vertical-align: top;"><SPAN style=
-                "color: rgb(0, 0, 153);">dir</SPAN></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#alpha">alpha</A><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#object_motion"><SPAN style=
+                "color: rgb(0, 0, 153);">speed</SPAN></A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#object_motion"><SPAN style=
+                "color: rgb(0, 0, 153);">dir</SPAN></A></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
@@ -1130,8 +1192,8 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A name=
-                "object_sprite" id=
-                "object_sprite"></A>sprite<BR></TD>
+                "object_sprite" id="object_sprite"></A><A href=
+                "#sprites_and_animation">sprite</A><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;">x<BR></TD>
                 <TD style="vertical-align: top;">y<BR></TD>
@@ -1171,8 +1233,8 @@
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;">
-                clip.start<BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "graphics.html#gr_clip">clip.start</A><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;">left<BR>
                 <SPAN style="color: rgb(0, 0, 153);">x</SPAN></TD>
@@ -1229,11 +1291,12 @@
           </TABLE><BR>
           <DIV style="margin-left: 40px;">
             x,y is used for&nbsp; <A href="#whole">whole object
-            positioning</A><BR>
+            positioning</A> .<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            ( common ) means General Purpose.<BR>
-            (read-only) will error if used with GR.MODIFY<BR>
+            ( common ) means General Purpose, available for all
+            objects.<BR>
+            (read-only) will error if used with GR.MODIFY.<BR>
           </DIV><BR>
         </TD>
       </TR>

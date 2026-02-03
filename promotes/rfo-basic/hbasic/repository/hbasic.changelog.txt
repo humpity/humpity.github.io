@@ -2,6 +2,21 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2026-02-03 v5.63
+		Fix FONT.DELETE not deleting last font (0551)
+		Fix CLR to pad extra lines (0552)
+		Fix zero scale for GR.BITMAP.LOAD (0553)
+		Show server IP inside Settings (0554)
+		TGET enhancements & Fix backKey (0555)
+		More directives for console decors (0556)
+		Disabled web zoom flag as default (0557)
+		Millisecond precision for TIME (0558)
+		GR.OPEN/CLS consistency (0559)
+		CONSOLE.TITLE & DIALOG.SET enhancements (0560)
+		Add HTML.FRONT	(0561) (-rblack1946)
+		Fake styling for loaded fonts (0561)
+		Target Api 36 (0563)
+
 2025-10-01 v5.50
 		Fix bugs when in background (0546)
 		Fix Search dialog for Api 35+ (0547)
@@ -499,6 +514,8 @@ v5.30	v2.32   Merged 0526-0530 Fixes for Android 15 gui
 v5.35	v2.33   Merged 0531-0535 Fix double execution, Bundle Exps
 v5.45	v2.34	Merged 0536-0545 SELECT subcommands
 v5.50	v2.35	Merged 0546-0550 shortcut from icon menu
+v5.63	v2.36	Merged 0551-0563 Targets API-36
+
 ============================================================================
 Patches that were created.
 	O = optional S = suspended (do not use)	D = defunct
@@ -542,7 +559,7 @@ H0306	M	0306	Fix invalid base paths
 H0312	D	0312	BACKSPACE and re-code append mode for PRINT
 HFTPS	O	0321	add Rename
 HFTPS	O	0333	basic can control hftps
-ADDTEL  O   	+ADDTEL adds DEVICE & PHONE cmds (for standard edition)
+ADDTEL  O   	+ADDTEL adds DEVICE & PHONE cmds (for standalone apk)
 
 ============================================================================
 -End-

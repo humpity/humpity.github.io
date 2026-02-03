@@ -1661,32 +1661,52 @@
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;"><A href=
-                  "#hide_actionbar">@@hide_actionbar</A><BR></TD>
-                  <TD style="vertical-align: top;">Hides the
-                  actionbar at startup<BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "text-decoration: line-through;">@@dark_statustxt</SPAN><BR>
-                  </TD>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "font-style: italic;">( replaced with <A href=
-                  "console.html#statustxt">console.set
-                  "statustxt</A> dark")</SPAN><BR></TD>
+                  "#hide_statusbar">@@hide_statusbar</A><BR></TD>
+                  <TD style="vertical-align: top;">hides the status
+                  bar at startup<BR></TD>
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;"><A href=
-                  "void_color">@@void_color</A>
-                  "&lt;color&gt;"<BR></TD>
-                  <TD style="vertical-align: top;">Set the console
-                  background (void) color<BR></TD>
+                  "#hide_actionbar">@@hide_actionbar</A></TD>
+                  <TD style="vertical-align: top;">hides the
+                  actionbar at startup</TD>
                 </TR>
                 <TR>
                   <TD style="vertical-align: top;"><A href=
-                  "window_bg">@@window_bg</A>
-                  "&lt;color&gt;"<BR></TD>
-                  <TD style="vertical-align: top;">Set the window
-                  background color<BR></TD>
+                  "#hide_navbar">@@hide_navbar</A></TD>
+                  <TD style="vertical-align: top;">hides the
+                  navigation bar at startup</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "#immersive">@@immersive</A></TD>
+                  <TD style="vertical-align: top;">set immersive
+                  more at startup</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "#dark_statustxt">@@dark_statustxt</A><BR></TD>
+                  <TD style="vertical-align: top;">set dark status
+                  bar text<BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "#dark_navbartxt">@@dark_navbartxt</A><BR></TD>
+                  <TD style="vertical-align: top;">set dark
+                  navigation bar text</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "#void_color">@@void_color</A>
+                  "&lt;color&gt;"</TD>
+                  <TD style="vertical-align: top;">set the console
+                  background (void) color</TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><A href=
+                  "#window_bg">@@window_bg</A> "&lt;color&gt;"</TD>
+                  <TD style="vertical-align: top;">set the window
+                  background color</TD>
                 </TR>
               </TBODY>
             </TABLE><BR>
@@ -1699,8 +1719,17 @@
             </DIV>
             <DIV style="margin-left: 40px;"></DIV>
             <DIV style="margin-left: 120px;">
-              @@PRELOADOFF,&nbsp; @@LOCALSTACKSOFF,
-              @@DARK_STATUSTXT<BR>
+              @@PRELOADOFF,&nbsp; @@LOCALSTACKSOFF<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "hide_statusbar" id=
+            "hide_statusbar"></A>@@HIDE_STATUSBAR</SPAN><BR>
+            <DIV style="margin-left: 80px;">
+              This hides the console Status Bar at startup.<BR>
+              <BR>
+              Once hidden, you cannot bring it back.<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -1734,25 +1763,25 @@
               <DIV style="margin-left: 40px;">
                 <SPAN style=
                 "font-family: Courier New, Courier, monospace;">@@HIDE_ACTIONBAR&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp; <SPAN style=
-                "color: rgb(0, 102, 0);">% prevent flash of console
-                title</SPAN></SPAN><SPAN style=
+                &nbsp;&nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);">% prevent flash of
+                console title</SPAN><SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;">GR.OPEN
-                "white",1,1&nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
-                "color: rgb(0, 102, 0);">% graphics now in
-                front</SPAN></SPAN><SPAN style=
+                "white",1,1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                <SPAN style="color: rgb(102, 102, 102);">% graphics
+                now in front</SPAN><SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;">CONSOLE.TITLE
-                "My Title" <SPAN style="color: rgb(0, 102, 0);">%
-                restore actionbar in
-                background</SPAN></SPAN><SPAN style=
+                "My Title"</SPAN> <SPAN style=
+                "color: rgb(102, 102, 102);">% restore actionbar in
+                background</SPAN><SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;"><BR>
@@ -1782,15 +1811,78 @@
                 "font-family: Courier New, Courier, monospace;"><BR>
                 </SPAN> <SPAN style=
                 "font-family: Courier New, Courier, monospace;">END&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
-                "color: rgb(0, 102, 0);">% console now in front
-                with title</SPAN></SPAN><BR>
+                &nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+                <SPAN style="color: rgb(102, 102, 102);">% console
+                now in front with title</SPAN><BR>
               </DIV><BR>
               If you do not use this directive, the actionbar will
               be shown by default with the default title "Program
               Output".<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "hide_navbar" id=
+            "hide_navbar"></A>@@HIDE_NAVBAR</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              This hides the console Navigation Bar at startup.<BR>
               <BR>
-            </DIV><SPAN style="color: rgb(0, 0, 153);"><A name=
+              Once hidden, you cannot bring it back.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "immersive" id="immersive"></A>@@IMMERSIVE</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Sets Immersive mode for the console at startup.<BR>
+              <BR>
+              This sets a full screen mode in which the status bar
+              is forced hidden (even if you turned it on).<BR>
+              If either the action bar or navigation bar is on,
+              then they will <SPAN style=
+              "font-weight: bold;">overlap</SPAN> with your
+              content.<BR>
+              For some devices with a camera notch, it also enables
+              your content to be displayed inside the <SPAN style=
+              "font-weight: bold;">notch area</SPAN>.<BR>
+              (This might not work for some devices).<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "dark_statusbartxt" id=
+            "dark_statusbartxt"></A>@@DARK_STATUSTXT</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Sets the console Status Bar text to be dark. This
+              only works for Api 23 or later.<BR>
+              If unused, the text is by default light.<BR>
+              This is the same as <A href=
+              "console.html#statustxt">CONSOLE.SET</A> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STATUSTXT</SPAN>
+              DARK&gt;"</SPAN> except that it happens earlier.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
+            "dark_navbartxt" id=
+            "dark_navbartxt"></A>@@DARK_NAVBARTXT</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Sets the console Navigation Bar text to be dark. This
+              only works for Api 23 to Api 34.
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            If unused, the text is by default light.<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            This is the same as <A href=
+            "console.html#navbartxt">CONSOLE.SET</A> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">NAVBARTXT</SPAN>
+            DARK&gt;"</SPAN> except that it happens earlier.
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><A name=
             "void_color" id="void_color"></A>@@VOID_COLOR</SPAN>
             "&lt;color&gt;"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             e.g @@void_color "blue"<BR>
@@ -1839,9 +1931,8 @@
               "decors.html#behave_table">configuration</A>.<BR>
               <BR>
               The color must be a string and is the same format as
-              the <A href=
-              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
-              color strings</A> for other hBasic commands.<BR>
+              the <A href="colors.html">color strings</A> for other
+              hBasic commands.<BR>
               Because this is a directive, you cannot use a string
               variable, it must be literal.<BR>
               <BR>

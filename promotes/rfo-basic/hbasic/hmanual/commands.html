@@ -82,6 +82,12 @@
                 Colors</SPAN></A></TD>
               </TR>
               <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#html_front">HTML.FRONT</A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
                 <TD style="vertical-align: top;">Menu</TD>
                 <TD style=
                 "vertical-align: top; text-align: right;"><BR></TD>
@@ -181,14 +187,14 @@
                 <TD style="vertical-align: top;"><A href=
                 "#actionbar_title"><SPAN style=
                 "text-decoration: underline;">Title and
-                Colors</SPAN></A><BR>
+                styling</SPAN></A><BR>
                 <A href="#actionbar_subtitle"><SPAN style=
                 "text-decoration: underline;">Subtitle and
-                Colors</SPAN></A><BR></TD>
+                styling</SPAN></A><BR></TD>
                 <TD style="vertical-align: top;">ActionBar
-                Titles&nbsp; and Colors for Console, Graphics and
+                Titles&nbsp; and styling for Console, Graphics and
                 HTML<BR>
-                ActionBar Subtitles and Colors<BR></TD>
+                ActionBar Subtitles and styling<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -205,6 +211,13 @@
                 "#debug_dump_fn">DEBUG.DUMP.FN</A><BR></TD>
                 <TD valign="top">Prints the function name(s) from
                 the function stack<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#time">TIME and TIME(..)</A><BR></TD>
+                <TD style="vertical-align: top;">TIME command and
+                TIME(..) function.<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;">Hardware</TD>
@@ -855,8 +868,9 @@
             "color: rgb(102, 51, 0);">&lt;<SPAN style=
             "font-weight: bold;"><SPAN style=
             "color: rgb(0, 0, 0);">path</SPAN></SPAN>_sexp&gt;</SPAN>
-            is a <U>non-empty</U> directory and recurse_nexp is
-            false;
+            is a <U>non-empty</U> directory and <SPAN style=
+            "font-weight: bold;">recurse</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN> is false;
             <BLOCKQUOTE>
               then the directory will not be deleted and
               <SPAN style=
@@ -866,12 +880,12 @@
             "color: rgb(102, 51, 0);">&lt;<SPAN style=
             "font-weight: bold;"><SPAN style=
             "color: rgb(0, 0, 0);">path</SPAN></SPAN>_sexp&gt;</SPAN>
-            is a <U>non-empty</U> directory and r<SPAN style=
-            "font-weight: bold;">ecurse</SPAN><SPAN style=
+            is a <U>non-empty</U> directory and <SPAN style=
+            "font-weight: bold;">recurse</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nexp</SPAN> is true
             <BLOCKQUOTE>
-              then the directory and all subdirectories and files
-              will be deleted.<BR>
+              then the directory and all of it's subdirectories and
+              files will be deleted.<BR>
               If succesful, <SPAN style=
               "font-weight: bold;">ok</SPAN><SPAN style=
               "color: rgb(102, 51, 0);">_nvar</SPAN> is true.<BR>
@@ -938,8 +952,8 @@
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 7. You cannot repeat variables
-            during import or have the same name local variable in
-            the function.<BR style=
+            during import or have the same name local variable
+            already existing in the function.<BR style=
             "color: rgb(51, 51, 51); font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; background-color: rgb(255, 255, 255);">
 
             &nbsp;&nbsp;&nbsp; 8. You can only import variables,
@@ -1008,7 +1022,7 @@
             In legacy Basic, FN.RTN <SPAN style=
             "font-weight: bold;">must</SPAN> return a value. FN.RTN
             alone will produce a syntax error.<BR>
-            This has been changed in hBasic (since v2.50).<BR>
+            This has been changed in hBasic (see below).<BR>
             <BR>
             FN.RTN &lt;something_result&gt; is similar to
             Legacy,<BR>
@@ -1024,7 +1038,7 @@
             Also, FN.RTN (alone) does not syntax error (since
             v2.50). It will behave <SPAN style=
             "text-decoration: underline;">the same as FN.END</SPAN>
-            (below)<BR>
+            (see below).<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             Both FN.END and FN.RTN (alone) will return a default
@@ -1051,7 +1065,8 @@
           "color: rgb(0, 0, 153);"><BR>
           <BR></SPAN>
           <DIV style="margin-left: 40px;">
-            For these existing commands, a color string
+            For these existing commands, a <SPAN style=
+            "text-decoration: underline;">color string</SPAN>
             <SPAN style="font-style: italic;">(similar to
             console.set)</SPAN> may be used in place of the 4
             decimal colors at the front of the command.<BR>
@@ -1098,14 +1113,15 @@
               <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
               "color: black;">title</SPAN>_sexp} {,<SPAN style=
               "color: black;">textcolor</SPAN>_sexp},
-              {,<SPAN style="color: black;">backcolor</SPAN>_sexp}</SPAN><BR>
+              {,<SPAN style="color: black;">backcolor</SPAN>_sexp</SPAN>}
+              {, ... }<BR>
             </DIV>
             <DIV style="margin-left: 40px;">
               <SPAN style=
               "color: rgb(0, 0, 153);">CONSOLE.TITLE&nbsp;
-              ..</SPAN><BR>
+              ...</SPAN><BR>
               <SPAN style="color: rgb(0, 0, 153);">HTML.TITLE
-              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ..</SPAN>
+              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ...</SPAN>
             </DIV>
           </DIV><BR style="color: rgb(0, 0, 153);">
           <DIV style="margin-left: 40px;">
@@ -1132,10 +1148,12 @@
                 spaces)</SPAN><BR>
               </DIV><BR>
               A <SPAN style="text-decoration: underline;">color
-              name postfixed with a decimal</SPAN> <SPAN style=
-              "font-weight: bold;">alpha channel</SPAN> using a
-              <SPAN style="color: rgb(0, 0, 153);">dot</SPAN>
-              <SPAN style=
+              name postfixed with a <SPAN style=
+              "font-weight: bold;">d</SPAN>ecimal</SPAN>
+              <SPAN style="font-weight: bold;">alpha channel</SPAN>
+              using a <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">d</SPAN>ot</SPAN> <SPAN style=
               "font-family: monospace;">'</SPAN><SPAN style=
               "font-weight: bold; font-family: monospace;">.</SPAN><SPAN style="font-family: monospace;">'</SPAN><BR>
 
@@ -1144,12 +1162,15 @@
                 "color: rgb(0, 0, 153);">.255</SPAN>"<BR>
               </DIV><BR>
               A <SPAN style="text-decoration: underline;">color
-              name postfixed with a hexadecimal</SPAN> <SPAN style=
-              "font-weight: bold;">alpha channel</SPAN> using a
-              <SPAN style="color: rgb(0, 0, 153);">hash</SPAN>
-              <SPAN style=
+              name postfixed with a <SPAN style=
+              "font-weight: bold;">h</SPAN>exadecimal</SPAN>
+              <SPAN style="font-weight: bold;">alpha channel</SPAN>
+              using a <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-weight: bold;">h</SPAN>ash</SPAN> <SPAN style=
               "font-family: monospace;">'</SPAN><SPAN style=
-              "font-weight: bold; font-family: monospace;">#</SPAN><SPAN style="font-family: monospace;">'</SPAN><BR>
+              "font-weight: bold;"><FONT size="+1"><SPAN style=
+              "font-family: monospace;">#</SPAN></FONT></SPAN><SPAN style="font-family: monospace;">'</SPAN><BR>
 
               <DIV style="margin-left: 40px;">
                 eg. "Orange<SPAN style=
@@ -1159,9 +1180,11 @@
             <DIV style="margin-left: 40px;">
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">GR.OPEN
-              "blue.200", 1 &nbsp;&nbsp;</SPAN> <SPAN style=
-              "color: rgb(51, 51, 51);">% (<A href=
-              "decors.html#decors">decors flag</A> 1, default to
+              "blue.200", 1,0 &nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(51, 51, 51);">% (</SPAN>&nbsp; blue with
+              alpha=decimal 200 , <SPAN style=
+              "color: rgb(51, 51, 51);"><A href=
+              "decors.html#decors">decors flag</A> 1,
               landscape)</SPAN><BR>
             </DIV><BR>
             <BR>
@@ -1177,7 +1200,7 @@
           "font-family: monospace;"><A name="actionbar_title" id=
           "actionbar_title"></A></BIG></SPAN><BIG><SPAN style=
           "color: rgb(0, 0, 153);">Window Titles and
-          Colors</SPAN></BIG><SPAN style=
+          styling</SPAN></BIG><SPAN style=
           "color: rgb(0, 0, 153);"><BIG style=
           "font-family: monospace;"><SPAN style=
           "color: rgb(102, 51, 0);"><BR>
@@ -1187,53 +1210,153 @@
             "color: rgb(0, 0, 153);">GR.TITLE</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
-            "font-weight: bold;">}</SPAN> <SPAN style=
-            "font-weight: bold;">{</SPAN><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">title</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
             "font-weight: bold;">,</SPAN> <SPAN style=
-            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            "font-weight: bold;"><SPAN style=
+            "color: black;">textcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
             <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
+            "font-weight: bold;"><SPAN style=
+            "color: black;">backcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">font</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">align</SPAN></SPAN>_nexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
 
             <BR>
             <SPAN style=
             "color: rgb(0, 0, 153);">CONSOLE.TITLE</SPAN>&nbsp;
             <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
-            "font-weight: bold;">}</SPAN> <SPAN style=
-            "font-weight: bold;">{</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "font-weight: bold;">,</SPAN> <SPAN style=
-            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
-            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
-            </SPAN><BR>
-            <SPAN style=
-            "color: rgb(0, 0, 153);">HTML.TITLE</SPAN>&nbsp;<SPAN style="color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            "font-weight: bold;"><SPAN style=
+            "color: black;">title</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
             <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">title</SPAN>_sexp</SPAN><SPAN style=
-            "font-weight: bold;">}</SPAN> <SPAN style=
-            "font-weight: bold;">{</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
             "font-weight: bold;">,</SPAN> <SPAN style=
-            "color: black;">textcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            "font-weight: bold;"><SPAN style=
+            "color: black;">textcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
             <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">backcolor</SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            "font-weight: bold;"><SPAN style=
+            "color: black;">backcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">font</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">align</SPAN></SPAN>_nexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
+
+            <BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">HTML.TITLE</SPAN>&nbsp;<SPAN style="color: rgb(102, 51, 0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN><SPAN style="font-weight: bold;">{</SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="font-weight: bold;"><SPAN style="color: black;">title</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">textcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">backcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">font</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">align</SPAN></SPAN>_nexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
           <DIV style="margin-left: 40px;">
-            <BIG>Sets the actionbar title, text color and
-            background color for the window.</BIG><BR>
+            Sets the actionbar title, text color and background
+            color for the window.<BR>
             <BR>
+            Addtional (optional) styling can be set as follows;<BR>
+            <SPAN style="font-weight: bold;"><BR>
+            textcolor, backcolor</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              These are the colors for the title text and it's
+              background expressed as a color string.<BR>
+              <DIV style="margin-left: 40px;">
+                Note that the background color is for the whole
+                actionbar, not just the text.<BR>
+              </DIV>The <A href="#color_strings">color strings</A>
+              format is the same as for CONSOLE.SET.<BR>
+            </DIV><BR>
+            <SPAN style="font-weight: bold;">font</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              A string specifying a font.<BR>
+              The&nbsp; format of the name is the same as <A href=
+              "console.html#setfont">CONSOLE.SET</A> "font =
+              <SPAN style="font-weight: bold;">number |
+              name</SPAN>{.style}"<BR>
+              &nbsp;<BR>
+              e.g CONSOLE.TITLE "My Title","white","blue",
+              "<SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">2</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">","<SPAN style="color: rgb(51, 51, 153);">center</SPAN>"&nbsp;&nbsp;</SPAN>
+              <SPAN style="color: rgb(102, 102, 102);">% use loaded
+              font 2</SPAN>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              e.g CONSOLE.TITLE "My Title","white","blue",
+              "<SPAN style="color: rgb(0, 102, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">monospace.bold</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">","<SPAN style="color: rgb(51, 51, 153);">center</SPAN>"</SPAN>
+              &nbsp;&nbsp; <SPAN style=
+              "color: rgb(102, 102, 102);">% use family
+              font</SPAN><BR>
+              <BR>
+              It can either be a font index number (of a loaded
+              font) or the name of a family font.<BR>
+              For a font index,<BR>
+              <DIV style="margin-left: 40px;">
+                the font must be loaded with the FONT command.
+                (<A href="samples.html">example</A>)<BR>
+                If the font index does not exist, there will be an
+                error.<BR>
+              </DIV>For a <A href="fonts.html#font_families">font
+              family</A>,<BR>
+              <DIV style="margin-left: 40px;">
+                If a font family is not found, it will fallback to
+                the system default&nbsp; (usually sans-serif).<BR>
+              </DIV><BR>
+              If unused or set to "default", then it will use the
+              system default&nbsp; (usually
+              "sans-serif-<SPAN style="text-decoration: underline;">medium</SPAN>"),<BR>
+
+              <DIV style="margin-left: 40px;">
+                which is heavier than "sans-serif" but not as heavy
+                as "sans-serif.bold".<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                (note that this default is different to the ones in
+                <A href="console.html#setfont">CONSOLE.SET</A>
+                "font ..." and <A href=
+                "dialogs.html#dialog_set">DIALOG.SET</A>
+                "title_font ...")<BR>
+              </DIV>
+            </DIV><SPAN style="font-weight: bold;">align</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              A number specifying the title text alignment,<BR>
+              where;<BR>
+              <DIV style="margin-left: 40px;">
+                1 = Left aligned&nbsp;&nbsp; (default)<BR>
+                2 = Centered<BR>
+                3 = Right aligned<BR>
+              </DIV>
+            </DIV><BR>
             Specify at least one argument. The commas are needed to
             separate the args.<BR>
             The <A href="#color_strings">color strings</A> format
-            is the same as for console.set.<BR>
+            is the same as for CONSOLE.SET.<BR>
             For graphics and web, you can use these commands before
             the screens are opened.<BR>
             <BR>
@@ -1250,7 +1373,7 @@
           <SPAN style="color: rgb(0, 0, 153);"><BIG style=
           "font-family: monospace;"><A name="actionbar_subtitle"
           id="actionbar_subtitle"></A></BIG></SPAN><BIG><SPAN style="color: rgb(0, 0, 153);">Window
-          Subitles and Colors</SPAN></BIG><SPAN style=
+          Subitles and styling</SPAN></BIG><SPAN style=
           "color: rgb(0, 0, 153);"><BIG style=
           "font-family: monospace;"><SPAN style=
           "color: rgb(102, 51, 0);"><BR>
@@ -1258,25 +1381,69 @@
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);">GR.SUBTITLE</SPAN>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
-            "color: black;">title</SPAN>_sexp} {,<SPAN style=
-            "color: black;">textcolor</SPAN>_sexp}</SPAN><BR>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">title</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">textcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>&nbsp;
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;">{</SPAN>,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">font</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><BR>
+
             <BR>
             <SPAN style=
             "color: rgb(0, 0, 153);">CONSOLE.SUBTITLE</SPAN>&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
-            "color: black;">title</SPAN>_sexp} {,<SPAN style=
-            "color: black;">textcolor</SPAN>_sexp}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">title</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">textcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>&nbsp;
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;">{</SPAN>,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">font</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
 
             <BR></SPAN> <SPAN style=
             "color: rgb(0, 0, 153);">HTML.SUBTITLE</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <SPAN style="color: rgb(102, 51, 0);">{<SPAN style=
-            "color: black;">title</SPAN>_sexp} {,<SPAN style=
-            "color: black;">textcolor</SPAN>_sexp}</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">title</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>
+            <SPAN style="font-weight: bold;">{</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;">,</SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">textcolor</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>&nbsp;
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;">{</SPAN>,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">font</SPAN></SPAN>_sexp</SPAN><SPAN style="font-weight: bold;">}</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
           <DIV style="margin-left: 40px;">
-            <BIG>Sets the actionbar subtitle (under the title)
-            and/or text color for the window.</BIG><BR>
+            Sets the actionbar subtitle (under the title) and/or
+            stylings for it.<BR>
+            See <A href="#actionbar_title">Titles and Styling</A>
+            for the styling formats of <SPAN style=
+            "font-weight: bold;">textcolor</SPAN> and <SPAN style=
+            "font-weight: bold;">font</SPAN>.<BR>
+            <BR>
+            <SPAN style="font-style: italic;">Warning</SPAN>: Not
+            all fonts can fit inside the subtitle area. Generally,
+            monospace, sans-serif and serif fonts are safe.<BR>
+            The background color and&nbsp; text alignment will
+            follow the main title settings.<BR>
             <BR>
             Specify at least one argument. The commas are needed to
             seperate the args.<BR>
@@ -1396,7 +1563,8 @@
             "color: black; font-weight: bold;">column_name</SPAN>_sexp&gt;}}</SPAN></SPAN><BR>
           </DIV><SPAN style="color: rgb(0, 0, 153);"><BR></SPAN>
           <DIV style="margin-left: 40px;">
-            Ping a database, table or column for some info.<BR>
+            Ping a database, table or column for some
+            information.<BR>
             <BR>
             This is mainly used to test for existence of
             tables.<BR>
@@ -1555,7 +1723,7 @@
           <BLOCKQUOTE>
             Some of these added info keys will return absolute
             paths.<BR>
-            Basic FILE commands were orginally designed for
+            Legacy Basic FILE commands were orginally designed for
             relative paths (from data/),<BR>
             since v4.38, <A href="system.html#file_abs">FILE
             commands will also accept absolute file paths</A>
@@ -1940,7 +2108,8 @@
                 "font-weight: bold;"><SPAN style=
                 "font-weight: bold;">from_List</SPAN></SPAN>,
                 whether it is an <SPAN style=
-                "color: rgb(102, 51, 0);">nvar</SPAN> or not.<BR>
+                "color: rgb(102, 51, 0);">nvar</SPAN> or a
+                literal.<BR>
               </DIV><BR>
               <SPAN style="text-decoration: underline;">If</SPAN>
               <SPAN style=
@@ -2066,6 +2235,228 @@
           <DIV style="margin-left: 40px;">
             <BR>
           </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="time" id="audio_play"></A><FONT size=
+          "+1"><SPAN style=
+          "color: rgb(0, 0, 153);">TIME<BR></SPAN></FONT>
+          <DIV style="margin-left: 40px;">
+            &nbsp;<BR>
+            The TIME command and TIME function (with args) are now
+            capable of millisecond precision.<BR>
+            <BR>
+            Function<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 0, 153);">TIME</SPAN>
+              <SPAN style="font-weight: bold;">()</SPAN><BR>
+              <SPAN style="color: rgb(0, 0, 153);">TIME</SPAN>
+              <SPAN style=
+              "font-weight: bold;">(</SPAN>&lt;year<SPAN style=
+              "color: rgb(102, 51, 0);">_exp</SPAN>&gt;<SPAN style=
+              "font-weight: bold;">,</SPAN> &lt;month<SPAN style=
+              "color: rgb(102, 51, 0);">_exp</SPAN>&gt;<SPAN style=
+              "font-weight: bold;">,</SPAN> &lt;day<SPAN style=
+              "color: rgb(102, 51, 0);">_exp</SPAN>&gt;<SPAN style=
+              "font-weight: bold;">,</SPAN><BR>
+              <DIV style="margin-left: 80px;">
+                &lt;hours<SPAN style=
+                "color: rgb(102, 51, 0);">_exp</SPAN>&gt;<SPAN style="font-weight: bold;">,</SPAN>
+                &lt;minutes<SPAN style=
+                "color: rgb(102, 51, 0);">_exp</SPAN>&gt;<SPAN style="font-weight: bold;">,</SPAN>
+                &lt;<SPAN style=
+                "font-weight: bold;">seconds</SPAN><SPAN style=
+                "color: rgb(102, 51, 0);">_exp</SPAN>&gt;<SPAN style="font-weight: bold;">)</SPAN><BR>
+              </DIV>
+            </DIV>Command<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 0, 153);">TIME</SPAN>
+              <SPAN style=
+              "font-weight: bold;">{</SPAN>&lt;ms<SPAN style=
+              "color: rgb(102, 51, 0);">_nexp</SPAN>&gt;,<SPAN style="font-weight: bold;">}</SPAN>&nbsp;&nbsp;&nbsp;
+              Year$<SPAN style=
+              "color: rgb(102, 51, 0);">_svar</SPAN><SPAN style=
+              "font-weight: bold;">,</SPAN>&nbsp;&nbsp;&nbsp;
+              Month$<SPAN style=
+              "color: rgb(102, 51, 0);">_svar</SPAN><SPAN style=
+              "font-weight: bold;">,</SPAN>&nbsp;&nbsp;
+              Day$<SPAN style=
+              "color: rgb(102, 51, 0);">_svar</SPAN><SPAN style=
+              "font-weight: bold;">,</SPAN><BR>
+              <DIV style="margin-left: 80px;">
+                Hours$<SPAN style=
+                "color: rgb(102, 51, 0);">_svar</SPAN><SPAN style=
+                "font-weight: bold;">,</SPAN>&nbsp;&nbsp;
+                Minutes$<SPAN style=
+                "color: rgb(102, 51, 0);">_svar</SPAN><SPAN style=
+                "font-weight: bold;">,</SPAN>&nbsp; <SPAN style=
+                "font-weight: bold;">Seconds$</SPAN><SPAN style=
+                "color: rgb(102, 51, 0);">_svar</SPAN><SPAN style=
+                "font-weight: bold;">,</SPAN><BR>
+                WeekDay<SPAN style="font-weight: bold;">,</SPAN>
+                isDST <SPAN style=
+                "font-weight: bold;">{,</SPAN>&lt;<SPAN style=
+                "font-weight: bold;">precision</SPAN><SPAN style=
+                "color: rgb(102, 51, 0);">_nexp</SPAN>&gt;,<SPAN style="font-weight: bold;">}</SPAN><BR>
+              </DIV>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            For the <SPAN style="text-decoration: underline;">TIME
+            Function</SPAN>, precision is enabled and <SPAN style=
+            "text-decoration: underline;">not optional</SPAN>.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              It is carried by the fractional part of the
+              <SPAN style="font-weight: bold;">seconds</SPAN> input
+              parameter as milliseconds.<BR>
+              e.g 12.328 or "12.328" represents 12 seconds and 328
+              milliseconds.<BR>
+              ( The parameter is either a number or a string that
+              evaluates to a number. )<BR>
+              <BR>
+            </DIV>For the <SPAN style=
+            "text-decoration: underline;">TIME Command</SPAN>, the
+            precision <SPAN style="text-decoration: underline;">is
+            optional</SPAN> and is enabled by the newly added
+            <SPAN style="font-weight: bold;">precision</SPAN>
+            flag.<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              If this flag is zero or omitted, there will be no
+              millisecond precision (default).<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              If this flag is set (non-zero), then <SPAN style=
+              "font-weight: bold;">Seconds$</SPAN>&nbsp; will have
+              the milliseconds appended.<BR>
+              e.g<BR>
+            </DIV>
+            <TABLE style=
+            "text-align: left; width: 30%; margin-left: 40px;"
+            cellspacing="2" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">No
+                  Precision<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">With
+                  Precision<BR></TD>
+                </TR>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  "12"<BR></TD>
+                  <TD style=
+                  "vertical-align: top; text-align: center;">
+                  "12.328"<BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+            The TIME command and TIME (..) function can now be
+            truly inverse operations.<BR>
+            E.g<BR>
+            <BR>
+            <TABLE style=
+            "text-align: left; width: 80%; margin-left: 40px;"
+            cellspacing="2" cellpadding="8" border="0">
+              <TBODY>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; width: 50%; text-align: left; white-space: nowrap;">
+                  <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?
+                  "<SPAN style="color: rgb(0, 102, 0);">TIME()
+                  function gets time
+                  (ms)</SPAN>"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">ms
+                  = <SPAN style=
+                  "color: rgb(0, 0, 153);">TIME()</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?"ms
+                  = ";using$ (,"%d",int(ms))</SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?
+                  "<SPAN style="color: rgb(0, 102, 0);">TIME
+                  command (ms to vars)</SPAN>"</SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+                  TIME</SPAN> ms, Y$, M$, D$, H$, min$,
+                  S$,,,<SPAN style=
+                  "color: rgb(153, 0, 0);"><SPAN style=
+                  "font-weight: bold;">1</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?
+                  Y$":"M$":"D$" | "H$":"min$":"<SPAN style=
+                  "color: rgb(153, 0, 0);">S$</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?
+                  "<SPAN style="color: rgb(0, 102, 0);">TIME(..)
+                  function (vars to ms)</SPAN>"</SPAN><SPAN style=
+                  "font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">ms
+                  = <SPAN style=
+                  "color: rgb(0, 0, 153);">TIME</SPAN>
+                  (Y$,M$,D$,&nbsp; H$,min$,<SPAN style=
+                  "color: rgb(153, 0, 0);">S$</SPAN>)</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+                  </SPAN> <SPAN style=
+                  "font-family: Courier New, Courier, monospace;">?"ms
+                  = ";using$
+                  (,"%d",int(ms))</SPAN><CODE><BR></CODE></TD>
+                  <TD style=
+                  "vertical-align: top; width: 50%; white-space: nowrap;">
+                  TIME() function gets time (ms)<BR>
+                  ms = 1766957292<SPAN style=
+                  "text-decoration: underline;">328</SPAN><BR>
+                  <BR>
+                  TIME command (ms to vars)<BR>
+                  with extended precision<BR>
+                  2025:12:29 | 05:28:12<SPAN style=
+                  "color: rgb(153, 0, 0);">.328</SPAN><BR>
+                  <BR>
+                  TIME(..) function (vars to ms)<BR>
+                  ms = 1766957292<SPAN style=
+                  "color: rgb(153, 0, 0);">328</SPAN><BR>
+                  <BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="html_front" id=
+          "html_front"></A>HTML.FRONT<BR></SPAN></FONT><BR>
+          <DIV style="margin-left: 40px;">
+            <FONT color="#000099">HTML.FRONT</FONT>&nbsp;
+            <SPAN style="font-weight: bold;">{
+            flag</SPAN><FONT color="#663300">_nexp</FONT>
+            <SPAN style="font-weight: bold;">}</SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            Brings the HTML screen (Webview) to the front.<BR>
+            This is needed if it was put behind with CONSOLE.FRONT
+            or GR.FRONT.<BR>
+            <BR>
+            If flag is 0 the console will be brought to the
+            front.<BR>
+            If flag is not 0 or omitted, the HTML screen is brought
+            to the front.<BR>
+          </DIV><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">&nbsp;</SPAN></FONT><BR>
         </TD>
       </TR>
       <TR>

@@ -36,9 +36,9 @@
           "2" cellpadding="2" border="0">
             <TBODY>
               <TR>
-                <TD style="vertical-align: top; width: 50%;">
+                <TD style="vertical-align: top; width: 30%;">
                 <BIG><A href="patches.html#patches_using">How to
-                use patches with hPatcher</A></BIG><BR></TD>
+                use patches</A></BIG><BR></TD>
                 <TD style="vertical-align: top;">Quick guide to
                 using patches with hPatcher.<BR></TD>
               </TR>
@@ -71,11 +71,12 @@
                 </TD>
                 <TD style="vertical-align: top;"><SPAN style=
                 "color: rgb(51, 51, 51);"><BR>
-                Identity<BR>
-                App Icon<BR>
-                Permissions<BR>
+                <A href="#identity">Identity</A><BR>
+                <A href="#app_icon">App Icon</A><BR>
+                <A href="#permissions">Permissions</A><BR>
                 Loading<BR>
-                StandAlone<BR></SPAN></TD>
+                StandAlone<BR>
+                Legacy<BR></SPAN></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -140,8 +141,10 @@
             Options</SPAN></SPAN><BR>
             This option controls how verbose the output will be and
             is mainly for the hSuite developer.<BR>
-            However, the half option is recommended to see how the
-            compilation process is going.<BR>
+            However, the <SPAN style=
+            "text-decoration: underline;">half option is
+            recommended to see how the compilation process is
+            going</SPAN>.<BR>
             <BR>
             Off - no debug output.<BR>
             half - some debug output. (recommended)<BR>
@@ -150,7 +153,7 @@
         </TD>
       </TR>
       <TR>
-        <TD style="width: 50%;">
+        <TD style="vertical-align: top;">
           <SPAN style="color: rgb(0, 0, 153);"><FONT size=
           "+1">Customise</FONT></SPAN><BR>
           <BR>
@@ -165,171 +168,197 @@
             Commit</SPAN><BR>
             <DIV style="margin-left: 40px;">
               You will need to Commit if you have made any changes
-              to the Customisation settings <SPAN style=
-              "text-decoration: underline;">and for every
-              change</SPAN> to your Basic project program files for
-              StandAlone mode.<BR>
-            </DIV><BR>
-            <SPAN style="text-decoration: underline;"><A name=
-            "identity" id="identity"></A><SPAN style=
-            "color: rgb(0, 0, 153);">Identity</SPAN></SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              <TABLE style="text-align: left; width: 90%;"
-              cellspacing="2" cellpadding="2" border="0">
-                <TBODY>
-                  <TR>
-                    <TD style="vertical-align: top;">Field<BR></TD>
-                    <TD style="vertical-align: top;">
-                    Example<BR></TD>
-                    <TD style="vertical-align: top;">
-                    Comment<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">App
-                    Version</TD>
-                    <TD style="vertical-align: top;">2.02<BR></TD>
-                    <TD style="vertical-align: top;">
-                    Major.Minor<BR>
-                    Shows up in VERSION$(0)<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">base
-                    Version<BR></TD>
-                    <TD style="vertical-align: top;">1.50<BR></TD>
-                    <TD style="vertical-align: top;">Arbitrary
-                    number to indicate anything you want.<BR>
-                    e.g version of the master used.<BR>
-                    Shows up in VERSION$(1)<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">
-                    Package_Name<BR>
-                    postfix<BR></TD>
-                    <TD style="vertical-align: top;">myapp<BR></TD>
-                    <TD style="vertical-align: top;">Your app
-                    package name.<BR>
-                    The front "com.rfo" is not optional.<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">
-                    App_Name<BR></TD>
-                    <TD style="vertical-align: top;">My
-                    App<BR></TD>
-                    <TD style="vertical-align: top;">The app
-                    display name shown below it's icon and other
-                    places.<BR></TD>
-                  </TR>
-                </TBODY>
-              </TABLE><BR>
-            </DIV><A name="app-icon" id="app-icon"></A><SPAN style=
-            "color: rgb(0, 0, 153);">App Icon</SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              <TABLE style="text-align: left; width: 90%;"
-              cellspacing="2" cellpadding="2" border="0">
-                <TBODY>
-                  <TR>
-                    <TD style="vertical-align: top;">Field<BR></TD>
-                    <TD style="vertical-align: top;">
-                    Example<BR></TD>
-                    <TD style="vertical-align: top;">
-                    Comment<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">Icon input
-                    file<BR></TD>
-                    <TD style="vertical-align: top;">
-                    my_project/my_icon.png<BR></TD>
-                    <TD style="vertical-align: top;">Must be ".png"
-                    format. Use the file selector.<BR>
-                    blank = no change<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">maximum output
-                    density.<BR></TD>
-                    <TD style="vertical-align: top;">
-                    144x144<BR></TD>
-                    <TD style="vertical-align: top;">Your icon will
-                    be resized to different densities.<BR>
-                    This specifies the maximum.<BR>
-                    (72x72 is not recommended anymore for modern
-                    phones)<BR></TD>
-                  </TR>
-                  <TR>
-                    <TD style="vertical-align: top;">resize
-                    filter<BR></TD>
-                    <TD style="vertical-align: top;">nearest
-                    neighbour<BR></TD>
-                    <TD style="vertical-align: top;">The resize
-                    method.<BR>
-                    <BR></TD>
-                  </TR>
-                </TBODY>
-              </TABLE><BR>
-            </DIV><A name="permissions" id=
-            "permissions"></A>Permissions<BR>
-            <DIV style="margin-left: 40px;">
-              Select the permissions that you app needs.<BR>
-              <BR>
-              Here are a few notes;<BR>
-              <BR>
-              EXTERNAL_STORAGE<BR>
-              <DIV style="margin-left: 40px;">
-                For modern day scoped storage, READ and WRITE
-                EXTERNAL_STORAGE is usually not needed anymore
-                because you app is basically confined and you don't
-                need any permission to do anything in your own
-                prison.<BR>
-                <BR>
-                If you are using the Legacy feature (UnScoped
-                Storage) and only targeting older phones, then
-                permission<BR>
-                WRITE_EXTERNAL_STORAGE is required.<BR>
-              </DIV><BR>
-              INTERNET<BR>
-              <DIV style="margin-left: 40px;">
-                You don't need this permission as it is
-                automatically granted.<BR>
-                However, there are older phones (such as android
-                Marshmallow) that are sensitive to commands such as
-                HTML.OPEN and BROWSE that may need this
-                permission.<BR>
-                (Also AdMob needs this)<BR>
-              </DIV>
-            </DIV><BR>
-            <DIV style="margin-left: 40px;">
-              LOCATION<BR>
+              to the Customisation settings<BR>
+              <SPAN style="text-decoration: underline;">and for
+              every change</SPAN> to your Basic project program
+              files for StandAlone mode.
             </DIV>
-            <DIV style="margin-left: 80px;">
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1">Customise &gt;</FONT></SPAN> <SPAN style=
+          "text-decoration: underline;"><A name="identity" id=
+          "identity"></A><SPAN style=
+          "color: rgb(0, 0, 153);">Identity<BR>
+          <BR></SPAN></SPAN><BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: 80px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Field<BR></TD>
+                <TD style="vertical-align: top;">Example<BR></TD>
+                <TD style="vertical-align: top;">Comment<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">App Version</TD>
+                <TD style="vertical-align: top;">2.02<BR></TD>
+                <TD style="vertical-align: top;">Major.Minor<BR>
+                Shows up in VERSION$(0)<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">base
+                Version<BR></TD>
+                <TD style="vertical-align: top;">1.50<BR></TD>
+                <TD style="vertical-align: top;">Arbitrary number
+                to indicate anything you want.<BR>
+                e.g version of the master used.<BR>
+                Shows up in VERSION$(1)<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Package_Name<BR>
+                postfix<BR></TD>
+                <TD style="vertical-align: top;">myapp<BR></TD>
+                <TD style="vertical-align: top;">Your app package
+                name.<BR>
+                The front "com.rfo" is not optional.<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">App_Name<BR></TD>
+                <TD style="vertical-align: top;">My App<BR></TD>
+                <TD style="vertical-align: top;">The app display
+                name shown below it's icon and other
+                places.<BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1">Customise &gt;</FONT></SPAN> <A name="app_icon" id=
+          "app-icon"></A><SPAN style="color: rgb(0, 0, 153);">App
+          Icon<BR>
+          <BR></SPAN><BR>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: 80px;"
+          cellspacing="2" cellpadding="2" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;">Field<BR></TD>
+                <TD style="vertical-align: top;">Example<BR></TD>
+                <TD style="vertical-align: top;">Comment<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">Icon input
+                file<BR></TD>
+                <TD style="vertical-align: top;">
+                my_project/my_icon.png<BR></TD>
+                <TD style="vertical-align: top;">Must be ".png"
+                format. Use the file selector.<BR>
+                blank = no change<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">maximum output
+                density.<BR></TD>
+                <TD style="vertical-align: top;">144x144<BR></TD>
+                <TD style="vertical-align: top;">Your icon will be
+                resized to different densities.<BR>
+                This specifies the maximum.<BR>
+                (72x72 is not recommended anymore for modern
+                phones)<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">resize
+                filter<BR></TD>
+                <TD style="vertical-align: top;">nearest
+                neighbour<BR></TD>
+                <TD style="vertical-align: top;">The resize
+                method.<BR>
+                <BR></TD>
+              </TR>
+            </TBODY>
+          </TABLE><SPAN style="color: rgb(0, 0, 153);"><BR>
+          <BR></SPAN>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="width: 50%;">
+          <SPAN style="color: rgb(0, 0, 153);"><FONT size=
+          "+1">Customise &gt;</FONT></SPAN> <A name="permissions"
+          id="permissions"></A><SPAN style=
+          "color: rgb(0, 0, 153);">Permissions</SPAN>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            Select the permissions that you app needs.<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>Here are some notes;<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>EXTERNAL_STORAGE<BR>
+            <DIV style="margin-left: 40px;">
+              For modern day scoped storage, READ and WRITE
+              EXTERNAL_STORAGE is usually not needed anymore
+              because you app is basically confined and you don't
+              need any permission to do anything in your own
+              prison.<BR>
+              <BR>
+              If you are using the Legacy feature (UnScoped
+              Storage) and only targeting older phones, then
+              permission<BR>
+              WRITE_EXTERNAL_STORAGE is required.<BR>
+            </DIV><BR>
+            INTERNET<BR>
+            <DIV style="margin-left: 40px;">
+              You don't need this permission as it is automatically
+              granted.<BR>
+              However, there are older phones (such as android
+              Marshmallow) that are sensitive to commands such as
+              HTML.OPEN and BROWSE that may need this
+              permission.<BR>
+              (Also AdMob needs this)<BR>
+            </DIV><BR>
+            LOCATION<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
               LOCATION permissions (COURSE, FINE, MOCK,
               _EXTRA_COMMANDS) are needed for GPS.<BR>
-              ACCESS_BACKGROUND_LOCATION is not needed and is
-              probably not allowed anymore or doesn't work.<BR>
-              <BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              ACCESS_WIFI_STATE<BR>
-            </DIV>
-            <DIV style="margin-left: 80px;">
-              For WIFI.INFO<BR>
-              <BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              ACCESS_NETWORK_STATE<BR>
-              <DIV style="margin-left: 40px;">
-                This is only used for AdMob otherwise you don't
-                need it.<BR>
-                <BR>
-              </DIV>BLUETOOTH<BR>
-              <DIV style="margin-left: 40px;">
-                All the BLUETOOTH permissions are needed for
-                bluetooth commands.<BR>
-              </DIV><BR>
-              CAMERA<BR>
-              <DIV style="margin-left: 40px;">
-                For CAMERA commands.<BR>
-              </DIV><BR>
-              <BR>
-            </DIV>
+            </DIV><BR>
+            ACCESS_BACKGROUND_LOCATION is not needed and is
+            probably not allowed anymore or doesn't work.<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            ACCESS_WIFI_STATE<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            For WIFI.INFO<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            ACCESS_NETWORK_STATE<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            This is only used for AdMob otherwise you don't need
+            it.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            BLUETOOTH<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            All the BLUETOOTH permissions are needed for bluetooth
+            commands.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            CAMERA<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            For CAMERA commands.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <BR>
           </DIV>
           <DIV style="margin-left: 80px;">
             (to be continued...)<BR>

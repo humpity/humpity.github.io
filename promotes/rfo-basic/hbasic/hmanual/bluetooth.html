@@ -76,8 +76,7 @@
             inserted for the following commands;<BR>
             <BR>
             <A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bluetooth.html#bt_device_addr">
-            BT.OPEN</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            "#bt_device_addr">BT.OPEN</A>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             { <SPAN style=
             "font-weight: bold;">rc</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style="font-weight: bold;">,</SPAN>
             }&nbsp;<SPAN style=
@@ -114,18 +113,17 @@
             "font-weight: bold;">,</SPAN> }&nbsp;<SPAN style=
             "font-weight: bold;">mac</SPAN>$<SPAN style=
             "color: rgb(102, 51, 0);">_svar<BR></SPAN> <A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bluetooth.html#bt_device_addr">
-            BT.READ.BYTES</A>&nbsp;&nbsp;&nbsp; { <SPAN style=
-            "font-weight: bold;">rc</SPAN><SPAN style=
+            "#bt_device_addr">BT.READ.BYTES</A>&nbsp;&nbsp;&nbsp; {
+            <SPAN style="font-weight: bold;">rc</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nvar</SPAN><SPAN style=
             "font-weight: bold;">,</SPAN> }&nbsp;<SPAN style=
             "font-weight: bold;">buffer</SPAN>$<SPAN style=
             "color: rgb(102, 51, 0);">_svar<BR></SPAN> <SPAN style=
             "color: rgb(102, 51, 0);"><A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bluetooth.html#bt_device_addr">
-            BT.RECONNECT</A></SPAN>&nbsp; &nbsp; { <SPAN style=
-            "font-weight: bold;">rc</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN> }<BR>
+            "#bt_device_addr">BT.RECONNECT</A></SPAN>&nbsp; &nbsp;
+            { <SPAN style=
+            "font-weight: bold;">rc</SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN>
+            }<BR>
             <BR>
             In the case of { <SPAN style=
             "font-weight: bold;">rc</SPAN><SPAN style=
@@ -133,27 +131,35 @@
             "font-weight: bold;">,</SPAN> }&nbsp;<SPAN style=
             "font-weight: bold;">{secure</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_lexp</SPAN><SPAN style=
-            "font-weight: bold;">}</SPAN>&nbsp; if only one
+            "font-weight: bold;">}</SPAN>&nbsp; if only one numeric
             expression is given, without a preceding comma,<BR>
             it will be taken as <SPAN style=
             "font-weight: bold;">{secure</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_lexp</SPAN><SPAN style=
-            "font-weight: bold;">}</SPAN> (unless two commas
+            "font-weight: bold;">}</SPAN> (unless one or two commas
             follow).<BR>
             <BR>
             If the return code <SPAN style=
             "font-weight: bold;">rc</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nvar</SPAN> is unused
-            (omitted), you will get Run-Time-Error upon an
-            error.<BR>
-            If the return code <SPAN style=
+            (omitted),<BR>
+            <DIV style="margin-left: 40px;">
+              you will get Run-Time-Error upon an error.<BR>
+              <BR>
+            </DIV>If the return code <SPAN style=
             "font-weight: bold;">rc</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nvar</SPAN> is used (not
             omitted), <SPAN style=
-            "text-decoration: underline;">then certain</SPAN>
-            Run-Time-Errors will be suppressed and the program will
-            continue. These errors include;<BR>
+            "text-decoration: underline;"><BR></SPAN>
             <DIV style="margin-left: 40px;">
+              <SPAN style="text-decoration: underline;">then
+              certain</SPAN> Run-Time-Errors will be suppressed and
+              the program will continue.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              These errors include;<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
               Bluetooth is not available<BR>
               Bluetooth Not Enabled<BR>
               Bluetooth not connected<BR>
@@ -217,7 +223,10 @@
                 "vertical-align: top; text-align: center;" valign=
                 "middle">0<BR></TD>
                 <TD style="vertical-align: top;">furthur info can
-                be obtained with getError$()<BR></TD>
+                be obtained with getError$().<BR>
+                <BR>
+                For BT.OPEN, a user who has Cancelled or Denied, is
+                also considered as an Error.<BR></TD>
               </TR>
               <TR>
                 <TD style=
@@ -229,8 +238,8 @@
                 <TD style=
                 "vertical-align: top; text-align: center;" valign=
                 "middle">-1<BR></TD>
-                <TD style="vertical-align: top;">for dialogs, the
-                user tapped outside or BackKey<BR></TD>
+                <TD style="vertical-align: top;">for some dialogs,
+                the user tapped outside or BackKey<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -334,12 +343,13 @@
               "font-weight: bold;"><SPAN style=
               "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN>
               varaible is used, the command will suppress some
-              <A href="bt_return_codes">run-time-errors</A> during
+              <A href="#bt_return_codes">run-time-errors</A> during
               connection.<BR>
               <SPAN style="font-weight: bold;">rc</SPAN>
               returns;<BR>
               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 1 &nbsp;
-              &nbsp;&nbsp; = OK<BR>
+              &nbsp;&nbsp; = OK&nbsp;&nbsp;&nbsp;&nbsp; connection
+              initiated (check BT_STATUS for progress)<BR>
               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
               0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Error&nbsp; (a
               description may be found with getError$() )<BR>
@@ -388,7 +398,7 @@
               The MAC address is not optional.<BR>
               If you don't already have a MAC address, you can get
               one from <A href=
-              "bt_get_paired">BT.GET.PAIRED</A>.<BR>
+              "#bt_get_paired">BT.GET.PAIRED</A>.<BR>
             </DIV>
           </DIV>
           <DIV style="margin-left: 40px;">
@@ -404,9 +414,8 @@
               "font-weight: bold;"><SPAN style=
               "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN>
               variable is used, the command will suppress some
-              <A href=
-              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bt_return_codes">
-              run-time-errors</A> during connection.<BR>
+              <A href="#bt_return_codes">run-time-errors</A> during
+              connection.<BR>
               <SPAN style="font-weight: bold;">rc</SPAN>
               returns;<BR>
               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 1&nbsp; =
@@ -471,9 +480,7 @@
               "font-weight: bold;"><SPAN style=
               "color: rgb(0, 0, 0);">rc</SPAN></SPAN></SPAN>
               variable is used, the command will suppress some
-              <A href=
-              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/bt_return_codes">
-              run-time-errors</A>.<BR>
+              <A href="#bt_return_codes">run-time-errors</A>.<BR>
               <SPAN style="font-weight: bold;">rc</SPAN>
               returns;<BR>
               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 1&nbsp; =

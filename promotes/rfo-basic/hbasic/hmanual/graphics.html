@@ -50,7 +50,9 @@
                 <A href="#gr_touch">GR.TOUCH / 2</A><BR>
                 <A href="#gr_bounded_touch">GR.BOUNDED.TOUCH /
                 2</A><BR></TD>
-                <TD style="vertical-align: top;">Decors Flag<BR>
+                <TD style="vertical-align: top;">Decors Flag. (see
+                also <A href=
+                "graphics-system.html#paints">Paints</A>.)<BR>
                 Size of View<BR>
                 optional crop area<BR>
                 Accept a color string<BR>
@@ -454,8 +456,9 @@
             "font-weight: bold;">level</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nexp&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(51, 51, 51);">% default is
-            2</SPAN></SPAN><BR>
+            "color: rgb(51, 51, 51);">% <SPAN style=
+            "text-decoration: underline;">default is
+            2</SPAN></SPAN></SPAN><BR>
           </DIV>
           <BLOCKQUOTE>
             &nbsp;&nbsp;&nbsp; where <SPAN style=
@@ -485,6 +488,10 @@
             GPU rendering<BR>
             at the expense of causing lag in some animations. But
             in most cases it is faster.<BR>
+            <BR>
+            Note that you cannot disable both direct GPU and HW
+            overlay rendering,<BR>
+            you must choose either one.<BR>
           </BLOCKQUOTE>
         </TD>
       </TR>
@@ -797,9 +804,11 @@
               off</SPAN> the dash effect by specifying an invalid
               list index of <SPAN style=
               "font-weight: bold;">0</SPAN>.<BR>
-              You can choose the default pattern by omitting this
-              parameter or specify an invalid list index of
-              <SPAN style="font-weight: bold;">-1</SPAN> or less.
+              You can choose the <SPAN style=
+              "text-decoration: underline;">default pattern</SPAN>
+              by omitting this parameter or specify an invalid list
+              index of <SPAN style="font-weight: bold;">-1</SPAN>
+              or less.
             </DIV>
           </DIV>
           <DIV style="margin-left: 40px;">
@@ -1084,7 +1093,9 @@
               e.g 2 will enlarge the bitmap to twice the original
               dimensions.<BR>
               e.g 0.5 will reduce the dimensions to half.<BR>
-              a negative value inverts the image<BR>
+              A negative value inverts the image<BR>
+              A zero value will runtime error.<BR>
+              <BR>
             </DIV>
           </DIV>
           <DIV style="margin-left: 40px;">
@@ -1859,7 +1870,8 @@
           <DIV style="margin-left: 80px;">
             An object not on the display list never gets
             rendered.<BR>
-            Removing an object from the display list does not
+            Removing an object from the display list does
+            <SPAN style="text-decoration: underline;">not</SPAN>
             remove it from the object list.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -1867,7 +1879,7 @@
             "gr_dl_remove" id=
             "gr_dl_remove"></A>GR.DL.REMOVE</SPAN> &lt;
             <SPAN style="font-weight: bold;">object_ptr</SPAN><SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN>
-            | <SPAN style=
+            <SPAN style="font-weight: bold;">|</SPAN> <SPAN style=
             "font-weight: bold;">arr[]</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_array[]</SPAN> &gt;
             <SPAN style="font-weight: bold;">{, ...}</SPAN><BR>
@@ -1962,7 +1974,7 @@
             "text-decoration: underline;">must</SPAN> have a
             <SPAN style="font-weight: bold;">bmpPtr</SPAN> called a
             Standing bitmap. This is displayed if the sprite has no
-            animation.<BR>
+            animation (anim=0).<BR>
             The bmpPtr and it's bitmap must be created in
             advance.<BR>
             <BR>
@@ -1970,8 +1982,10 @@
             "font-weight: bold;">animation</SPAN><SPAN style=
             "color: rgb(102, 51, 0);"><SPAN style=
             "color: rgb(0, 0, 0);">. If you use this parameter, you
-            must create the animation in advance . If not, you can
-            omit this parameter and attach an animation later.<BR>
+            must create the animation in advance.<BR>
+            If not, you can omit this parameter and attach an
+            animation later. The exception is if the value is 0 (no
+            animation).<BR>
             <BR>
             By default a sprite's animation is 0 (no
             animation).<BR>
@@ -2252,9 +2266,7 @@
               This command will trigger several things.<BR>
             </DIV>
             <UL>
-              <LI>Executes <A href=
-              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics.html#tweens">
-              tweens</A>.</LI>
+              <LI>Executes <A href="#tweens">tweens</A>.</LI>
               <LI>Updates objects to new positions based on their
               <SPAN style=
               "text-decoration: underline;">speed</SPAN> and

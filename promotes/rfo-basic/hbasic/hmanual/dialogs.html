@@ -28,7 +28,7 @@
           Dialogs</BIG></BIG><BR>
           <BR>
           <TABLE style=
-          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          "text-align: left; width: 70%; margin-left: 40px;"
           cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
@@ -39,9 +39,17 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
-                "#text_input">TEXT.INPUT</A></TD>
+                "#text_input">TEXT.INPUT</A><BR></TD>
                 <TD style="vertical-align: top;">Added Cancel
                 flag.<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#tget">TGET</A> and<BR>
+                <A href="#tget_sub">TGET.S/N/I/P</A></TD>
+                <TD style="vertical-align: top;">Overhauled for
+                console<BR>
+                Simple input for all screens<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -50,8 +58,7 @@
                 <A href=
                 "#select_multifile">SELECT.MULTIFILE</A><BR>
                 <A href="#select_dir"><SPAN style=
-                "color: rgb(0, 0, 238);">SELECT.DIR</SPAN></A><BR>
-                <A href="#chained"></A></TD>
+                "color: rgb(0, 0, 238);">SELECT.DIR</SPAN></A><BR></TD>
                 <TD style="vertical-align: top;">Select one or more
                 items<BR>
                 Select a file<BR>
@@ -59,10 +66,11 @@
                 Select a directory<BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><A href=
-                "#dialog_set">DIALOG.SET</A></TD>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="#dialog_set">DIALOG.SET</A></TD>
                 <TD style="vertical-align: top;">Customise
-                appearence to some of the dialogs</TD>
+                appearence to some of the dialogs<BR>
+                <BR></TD>
               </TR>
             </TBODY>
           </TABLE><BR>
@@ -74,8 +82,7 @@
           "color: rgb(0, 0, 153);"><FONT size=
           "+1">INPUT<BR></FONT></SPAN>
           <DIV style="text-align: right;">
-            (see also <A href=
-            "dialogs.html#dialog_set">DIALOG.SET</A>)<BR>
+            (see also <A href="#dialog_set">DIALOG.SET</A>)<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <SPAN style="color: rgb(0, 0, 153);">INPUT</SPAN>
@@ -178,6 +185,340 @@
             to the same orientation of the top most screen at the
             time the command is called.)
           </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name="tget" id=
+          "tget"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">TGET</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN> <B style=
+            "color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }</SPAN><BR>
+          </DIV><BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            Get text Input after the last line of the console.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            where<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="font-weight: bold;">result$</SPAN>
+              &nbsp;&nbsp; is the return string&nbsp;&nbsp; ( not
+              optional)<BR>
+              <DIV style="margin-left: 80px;">
+                This variable will be overwritten.<BR>
+                This result will be added to the prompt and printed
+                after the last line.<BR>
+                If the user entered nothing or was cancelled
+                (BackKey) the result will be the empty string and
+                only the prompt is printed.<BR>
+                <BR>
+              </DIV><SPAN style=
+              "font-weight: bold;">prompt</SPAN>&nbsp;&nbsp;&nbsp;
+              sets the prompt (optional)<BR>
+              <DIV style="margin-left: 80px;">
+                This string will be printed on the left of the
+                input line e.g "cmd&gt;"<BR>
+              </DIV>
+              <DIV style="margin-left: 80px;">
+                <BR>
+              </DIV><SPAN style="font-weight: bold;">title</SPAN>
+              &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              sets the window title (optional)<BR>
+              <BR>
+              <SPAN style="font-weight: bold;">backKey</SPAN> is a
+              variable to return the backKey flag (optional)
+            </DIV>
+            <DIV style="margin-left: 120px;">
+              0 =&gt; backKey was not pressed to exit TGET<BR>
+              1 =&gt; backKey was pressed to exit TGET<BR>
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              Preceding commas are needed to seperate parameters if
+              they are used.<BR>
+              <BR>
+            </DIV>TGET now closely resembles the output
+            console.<BR>
+            To simulate a terminal, make sure the console is in
+            front (otherwise it will just be a line overlaid on
+            graphics or web).<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">Input and
+            Output</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              Before input from the user, TGET ignores any value in
+              <SPAN style="font-weight: bold;">result$</SPAN>.<BR>
+              After input from the user, TGET <SPAN style=
+              "font-weight: bold;">prints both the prompt and user
+              input</SPAN> to the console.<BR>
+              This is not true for <A href=
+              "#tget_sub">subcommands</A> (see later).<BR>
+              <BR>
+              The exception is if the user presses 'Stop' from the
+              console menu, in which case 'Stopped by user' is
+              printed instead, and the program execution is stopped
+              or exited. You can also customise the menu via
+              <A href="menu.html">MENU</A> commands.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;"><A name=
+            "tget_main_styling" id=
+            "tget_main_styling"></A>Styling</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            TGET (main) colors will follow the console styling. Any
+            <A href="console.html#console_set">style changes</A> to
+            the console will do the same to TGET.<BR>
+            This is different to <A href=
+            "#tget_sub">subcommands</A>&nbsp; <A href=
+            "#tget_sub_styling">styling</A> (see later).<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <SPAN style="text-decoration: underline;">Graphics and
+            Web Screens</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 0, 153);">TGET</SPAN> (main)
+            now also works in graphics and web screens.<BR>
+            The input box will appear above the soft keyboard and
+            will overlay the content.<BR>
+            <DIV style="margin-left: 40px;">
+              The exception is <A href=
+              "decors.html#decors_immersive">immersive</A> mode,
+              where it will appear at the top.<BR>
+              (It is not advisable to have the actionbar showing in
+              immersive mode because it overlaps with TGET)
+            </DIV>The input box will still follow <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#console_set">
+            console styling</A>.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;"></DIV>
+          <DIV style="margin-left: 40px;">
+            Examples<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">r$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="color: rgb(0, 0, 153);">,
+            <SPAN style="color: rgb(102, 0, 0);">"cmd &gt;"</SPAN>,
+            <SPAN style="color: rgb(102, 0, 0);">"Enter
+            Command"</SPAN></SPAN></SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153); font-style: italic;"><BR>
+
+            <BR></SPAN></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">TGET</SPAN></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">r$</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 102, 0);"><SPAN style="color: rgb(0, 0, 153);">,
+            <SPAN style="color: rgb(102, 0, 0);">"Input your
+            password &gt;"</SPAN>, <SPAN style=
+            "color: rgb(102, 0, 0);">"Security
+            Check",</SPAN></SPAN></SPAN></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">bkey</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR style="color: rgb(51, 51, 51); font-size: 14.95px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 22.425px; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 255);">
+            </SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">IF bkey
+            THEN PRINT "Do you want to Quit ?"</SPAN><BR>
+            <BR>
+            (see sample program <SPAN style=
+            "color: rgb(0, 102, 0);">h05_shell.bas</SPAN> for a
+            demo of a terminal emulator)<BR>
+          </DIV><BR>
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="tget_sub" id=
+          "tget_sub"></A>TGET Sub commands</SPAN></FONT><BR>
+          <DIV style="text-align: right;">
+            (see also <A href="#dialog_set">DIALOG.SET</A>)
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            These sub-commnds are designed to quickly get input
+            <SPAN style="text-decoration: underline;">without
+            adding text</SPAN> to the console.<BR>
+            <BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            TGET.S</SPAN></SPAN></SPAN> <B style=
+            "color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }<BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            TGET.N</SPAN></SPAN></SPAN> <B style=
+            "color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN></SPAN> {
+            ,<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN></SPAN> }&nbsp;
+            {, <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN></SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN></SPAN> }<BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            TGET.I</SPAN></SPAN></SPAN> <B style=
+            "color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }<BR>
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "color: black;"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            TGET.P</SPAN></SPAN></SPAN> <B style=
+            "color: black;">result</B><B style=
+            "color: black;">$</B>_svar&nbsp;</SPAN> { ,<SPAN style=
+            "color: rgb(102, 51, 0);"><B style=
+            "color: black;">prompt</B>_sexp</SPAN> }&nbsp; {,
+            <SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">title</B>_sexp</SPAN> }&nbsp; {
+            ,<SPAN style="color: rgb(102, 51, 0);"><B style=
+            "color: black;">backKey</B>_nvar</SPAN> }<BR>
+            <BR>
+            These are the differences between TGET and
+            subcommands;<BR>
+            <BR>
+            <B>Al</B><B>l</B> subcommands <SPAN style=
+            "font-weight: bold;">do not print</SPAN> the
+            <SPAN style="font-weight: bold;">prompt+result$</SPAN>
+            after they finish.<BR>
+            All subcommands will use the <SPAN style=
+            "text-decoration: underline;">old value</SPAN> of
+            <SPAN style="font-weight: bold;">result$</SPAN> as the
+            intial value.<BR>
+            All subcommands have the prompt above the input unless
+            the prompt is empty or omitted.<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Both the prompt and input text will be centered.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              Both the prompt and input text will follow the TITLE
+              colors of DIALOG.SET (see below).<BR>
+            </DIV>All subcommands will have the input box overlaid
+            instead of after the bottom.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="font-style: italic;">Note: Even though the
+            screen will not scroll during input, your next PRINT
+            will automatically scroll the screen to the
+            bottom.</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            Like TGET, they get input into <SPAN style=
+            "font-weight: bold;">result$</SPAN> with optional
+            <SPAN style="font-weight: bold;">prompt</SPAN> and
+            <SPAN style="font-weight: bold;">title</SPAN>.<BR>
+            The <SPAN style="font-weight: bold;">title</SPAN> (if
+            used) temporarily replaces the console title. To
+            prevent this, omit the title.<BR>
+            The <SPAN style="font-weight: bold;">backKey</SPAN>
+            variable (if used) returns 1 if user had tapped the
+            back key, otherwise 0.<BR>
+            <BR>
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.<SPAN style="font-weight: bold;">S</SPAN></SPAN></FONT>&nbsp;&nbsp;&nbsp;
+            Similar to TGET except that it will <SPAN style=
+            "text-decoration: underline;">not</SPAN> print out any
+            <SPAN style="font-weight: bold;">text</SPAN>.<BR>
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>N</B></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
+            Brings up a NUMERIC keyboard - restricts input as a
+            real <B>number.</B><BR>
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>I</B></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN></FONT>
+            Brings up a NUMERIC keyboard - restricts input as an
+            <B>integer.</B><BR>
+            <FONT size="+1"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">TGET.</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><B>P</B></SPAN></FONT>&nbsp;&nbsp;&nbsp;
+            Same as TGET.S except that it hides the input like a
+            <B>password.</B><BR>
+            <BR>
+            Both <B>N</B> and <B>I</B> subcommands will still
+            accept a negative number.<BR>
+            Both <B>N</B> and <B>I</B> subcommands <SPAN style=
+            "text-decoration: underline;">will still return a
+            number as a string</SPAN>.<BR>
+            <DIV style="margin-left: 80px;">
+              You can use VAL() to parse it for a number.<BR>
+            </DIV>Both <B>N</B> and <B>I</B> subcommands have no
+            error checking on the default <SPAN style=
+            "font-weight: bold;">result$</SPAN><BR>
+            <DIV style="margin-left: 80px;">
+              i.e you can default the input with a string, but the
+              keyboard will only let you type a number.<BR>
+            </DIV><SPAN style="text-decoration: underline;"><BR>
+            <A name="tget_sub_styling" id=
+            "tget_sub_styling"></A>Styling</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              TGET subcommand colors will follow TITLE_FG and
+              TITLE_BG from <A href=
+              "#dialog_set">DIALOG.SET</A>.<BR>
+              If TITLE_FG has not been set, the default is a bright
+              grey.<BR>
+              If TITLE_BG has not been set, the default is
+              black.<BR>
+              This is different to TGET main <A href=
+              "#tget_main_styling">styling</A> (see above).<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Graphics and
+            Web Screens</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(0, 0, 153);">TGET</SPAN>
+              subcommands also works in graphics and web
+              screens.<BR>
+              The input box will appear above the soft keyboard and
+              will overlay the graphics screen.<BR>
+              <DIV style="margin-left: 40px;">
+                The exception is <A href=
+                "decors.html#decors_immersive">immersive</A> mode,
+                where it will appear at the top.<BR>
+                (It is not advisable to have the actionbar showing
+                in immersive mode because it overlaps with
+                TGET)<BR>
+              </DIV>The input box colors will follow DIALOG.SET
+              (see above).<BR>
+            </DIV>
+          </DIV><BR>
         </TD>
       </TR>
       <TR>
@@ -312,7 +653,6 @@
                 setting this to "" (empty).<BR>
               </DIV><BR>
               Example
-              <DIV style="margin-left: 160px;"></DIV>
               <TABLE style="text-align: left; width: 100%;"
               cellspacing="2" cellpadding="2" border="0">
                 <TBODY>
@@ -346,14 +686,13 @@
                     debug.dump.array p$[]<BR>
                     debug.off<BR></SPAN> END</TD>
                     <TD style="vertical-align: top;"><IMG src=
-                    "pics/select-multi.png" alt="" style=
+                    "pics/select_multi.png" alt="" style=
                     "width: 300px; height: 301px;"></TD>
                   </TR>
                 </TBODY>
               </TABLE><BR>
             </DIV>
           </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
         </TD>
       </TR>
       <TR>
@@ -852,14 +1191,12 @@
                   <BR>
                 </DIV>
               </DIV>
-              <DIV style="margin-left: 40px;"></DIV>
               <DIV style="margin-left: 80px;">
                 Filenames (i.e without ending slash&nbsp; / )
                 <SPAN style="text-decoration: underline;">are
                 always ignored</SPAN>. Only the directory is
                 taken.<BR>
               </DIV>
-              <DIV style="margin-left: 40px;"></DIV>
               <DIV style="margin-left: 40px;">
                 <DIV style="margin-left: 120px;">
                   e.g <SPAN style=
@@ -983,7 +1320,6 @@
                 (note that an asterisk is not needed and should not
                 be used.)<BR>
               </DIV><BR>
-              <DIV style="margin-left: 40px;"></DIV>
             </DIV>
             <DIV style="margin-left: 40px;">
               Example<BR>
@@ -1038,7 +1374,7 @@
                     debug.off<BR>
                     END</SPAN></TD>
                     <TD style="vertical-align: top;"><IMG src=
-                    "pics/select-multifile.png" alt="" style=
+                    "pics/select_multifile.png" alt="" style=
                     "width: 300px; height: 300px;"></TD>
                   </TR>
                 </TBODY>
@@ -1230,7 +1566,6 @@
                   "font-family: Courier New, Courier, monospace;">&lt;&gt;/data/</SPAN>
                   on a relative path,<BR>
                 </DIV>
-                <DIV style="margin-left: 40px;"></DIV>
                 <DIV style="margin-left: 80px;">
                   or if the dialog was cancelled or error.<BR>
                 </DIV>
@@ -1363,7 +1698,7 @@
                     END</SPAN></TD>
                     <TD style="vertical-align: top;"><IMG src=
                     "pics/select_dir1.png" alt="" style=
-                    "width: 300px; height: 244px;"></TD>
+                    "width: 300px; height: 300px;"></TD>
                   </TR>
                   <TR>
                     <TD style="vertical-align: top;"><SPAN style=
@@ -1428,7 +1763,7 @@
                     <TD style="vertical-align: top;"><SPAN style=
                     "font-family: Courier New, Courier, monospace;">
                     <IMG src="pics/select_dir2.png" alt="" style=
-                    "width: 300px; height: 249px;"></SPAN></TD>
+                    "width: 300px; height: 300px;"></SPAN></TD>
                   </TR>
                 </TBODY>
               </TABLE><BR>
@@ -1441,21 +1776,59 @@
           <BIG style="color: rgb(0, 0, 153);"><A name="dialog_set"
           id="text_input"></A></BIG><FONT size="+1"><SPAN style=
           "color: rgb(0, 0, 153);">DIALOG.SET</SPAN></FONT><BR>
-          <BR>
           <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "color: rgb(0, 0, 153);">DIALOG.SET</SPAN>&nbsp;
-            <SPAN style="font-weight: bold;">&lt;</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black; font-weight: bold;">pair</SPAN>_sexp</SPAN>
-            <SPAN style="font-weight: bold;">&gt;</SPAN>
-            <SPAN style="font-weight: bold;">{ , ..
-            }</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
-            <BR></SPAN> Certain attributes to the appearence of
-            dialogs (and screens that behave like dialogs) can be
-            changed with this command.<BR>
-            These settings will affect all future calls unless they
-            are reset with "default".<BR>
+            <SPAN style="color: rgb(102, 51, 0);"><BR></SPAN>
+            <TABLE style="text-align: left; width: 90%;"
+            cellspacing="2" cellpadding="2" border="0">
+              <TBODY>
+                <TR>
+                  <TD style=
+                  "vertical-align: top; white-space: nowrap; width: 30%;">
+                  <SPAN style="color: rgb(0, 0, 153);">&nbsp;
+                  DIALOG.SET</SPAN>&nbsp; <SPAN style=
+                  "font-weight: bold;">&lt;</SPAN> <SPAN style=
+                  "color: rgb(102, 51, 0);"><SPAN style=
+                  "color: black; font-weight: bold;">pair</SPAN>_sexp</SPAN>
+                  <SPAN style="font-weight: bold;">&gt;</SPAN>
+                  <SPAN style="font-weight: bold;">{ , .. }</SPAN>
+                  &nbsp; <SPAN style="color: rgb(102, 51, 0);"><BR>
+                  </SPAN></TD>
+                  <TD style="vertical-align: top;"><A href=
+                  "dialogs.html#set_dim">DIM</A>&nbsp; &nbsp;<BR>
+                  <A href=
+                  "dialogs.html#set_window_bg">WINDOW_BG</A>&nbsp;&nbsp;&nbsp;
+                  <A href=
+                  "dialogs.html#set_voidcolor">VOIDCOLOR</A>&nbsp;&nbsp;&nbsp;
+                  <A href=
+                  "dialogs.html#set_highcolor">HIGHCOLOR</A><BR>
+                  <A href=
+                  "dialogs.html#set_title_fg">TITLE_FG</A>&nbsp;
+                  &nbsp; <A href=
+                  "dialogs.html#set_title_bg">TITLE_BG</A>&nbsp;&nbsp;&nbsp;
+                  <A href=
+                  "dialogs.html#set_title_font">TITLE_FONT</A>
+                  &nbsp;&nbsp; <A href=
+                  "dialogs.html#set_title_align">TITLE_ALIGN</A>&nbsp;&nbsp;&nbsp;
+                  <A href=
+                  "dialogs.html#set_title_pad">TITLE_PAD</A><BR>
+                  <A href=
+                  "dialogs.html#set_text_fg">TEXT_FG</A>&nbsp;&nbsp;&nbsp;
+                  <A href=
+                  "dialogs.html#set_text_bg">TEXT_BG</A><BR>
+                  <A href=
+                  "dialogs.html#set_statustxt">STATUSTXT</A>&nbsp;&nbsp;&nbsp;
+                  <A href=
+                  "dialogs.html#set_navbartxt">NAVBARTXT</A></TD>
+                </TR>
+              </TBODY>
+            </TABLE><SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN> Certain
+            attributes to the appearence of dialogs (and screens
+            that behave like dialogs) can be changed with this
+            command.<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>
             <DIV style="margin-left: 40px;">
               e.g&nbsp;&nbsp;&nbsp; <SPAN style=
               "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
@@ -1466,13 +1839,21 @@
               <SPAN style=
               "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
               0</SPAN></SPAN><SPAN style=
-              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">"</SPAN></SPAN><BR>
-            </DIV>
-            <DIV style="margin-left: 40px;"></DIV>
-            <DIV style="text-align: left; margin-left: 120px;">
-              <SPAN style=
-              "font-weight: bold; font-family: monospace;"><BR></SPAN>
-            </DIV>where <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">"</SPAN></SPAN>&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp; <SPAN style=
+              "color: rgb(102, 102, 102);">% sets the background
+              dimming level for pop-up dialogs<BR>
+              <BR></SPAN>
+            </DIV>Do note that;<BR>
+            <DIV style="margin-left: 40px;">
+              These settings are <SPAN style=
+              "text-decoration: underline;">sticky and
+              shared</SPAN>.<BR>
+              i.e they will affect all future calls to dialogs that
+              use them.&nbsp; Some can be reset with "default".
+            </DIV><BR>
+            where <SPAN style=
             "color: rgb(102, 51, 0);">&lt;<SPAN style=
             "color: black; font-weight: bold;">pair</SPAN>_sexp&gt;</SPAN>
             = <SPAN style=
@@ -1484,7 +1865,7 @@
             <DIV style="text-align: center; margin-left: 40px;">
               <DIV style="text-align: right;">
                 <DIV style="text-align: center;">
-                  &nbsp;&nbsp; note :&nbsp; the <SPAN style=
+                  &nbsp;&nbsp; note :&nbsp; <SPAN style=
                   "font-weight: bold;">pair</SPAN> is a
                   <SPAN style="text-decoration: underline;">string
                   expression</SPAN>.<BR>
@@ -1498,9 +1879,7 @@
             </DIV>
           </DIV>
           <DIV style="margin-left: 120px;">
-            <DIV style="text-align: center;">
-              <DIV style="text-align: right;"></DIV>
-            </DIV>
+            <DIV style="text-align: center;"></DIV>
           </DIV>
           <DIV style="margin-left: 80px;">
             This format is similar to CONSOLE.SET.<BR>
@@ -1515,7 +1894,6 @@
               </DIV>
             </DIV>For some values, you may use the reserved value
             "default".<BR>
-            <DIV style="margin-left: 40px;"></DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             The Keyword Value Pairs accepted are;<BR>
@@ -1562,52 +1940,30 @@
             will use Android's default (usually 60%)<BR>
             <BR>
             Fractional part of numbers is allowed e.g 25.5<BR>
-          </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <HR style=
+          "width: 50%; height: 2px; margin-left: 40px; margin-right: auto;"
+          noshade="noshade">
+          <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 40px;">
             For <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
-            "font-weight: bold;">SELECT,&nbsp; SELECT.FILE,&nbsp;
-            SELECT.DIR</SPAN></SPAN>&nbsp; &amp; <SPAN style=
+            "font-weight: bold;">SELECT ,</SPAN></SPAN>
+            SELECT<SPAN style=
+            "font-weight: bold;">.</SPAN>&lt;<SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 153);">SubCommands</SPAN></SPAN>&gt;
+            ,&nbsp; <SPAN style=
             "color: rgb(0, 0, 153);"><SPAN style=
-            "font-weight: bold;">TEXT.INPUT</SPAN></SPAN>
-            only,&nbsp; (screens that behave like dialogs)<BR>
-            <BR>
-            <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_window_bg" id="wrap"></A></SPAN></BIG><SPAN style=
-            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
-            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
-            "color: rgb(0, 0, 153);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN>&nbsp;</SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">green"<BR>
-
-            <BR></SPAN>
-          </DIV>
-          <DIV style="margin-left: 160px;">
-            <SPAN style="color: rgb(0, 0, 153);">Set the window
-            background color. (see <A href=
-            "decors.html#window_bg">decors</A>)<BR></SPAN> This may
-            affect the dialog background and system bars background
-            colors.<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
-          <DIV style="margin-left: 160px;">
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
-            A <A href="colors.html">color string</A><BR>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">default</SPAN>
-            will use the default color (black)<BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 160px;"></DIV>
-          <DIV style="margin-left: 40px;"></DIV>
+            "font-weight: bold;">TEXT.INPUT</SPAN></SPAN>, &amp;
+            TGET<SPAN style=
+            "font-weight: bold;">.</SPAN>&lt;<SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 153);">SubCommands</SPAN></SPAN>&gt;
+            ,<BR>
+          </DIV><BR>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=
             "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
@@ -1622,25 +1978,24 @@
             "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">TITLE_FG</SPAN>&nbsp;</SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">white"</SPAN><BR>
-          </DIV><SPAN style=
-          "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+          </DIV>
           <DIV style="margin-left: 160px;">
             <SPAN style="color: rgb(0, 0, 153);">Set the title
             foreground color.</SPAN><BR>
           </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 160px;">
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
-            A <A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
-            color string</A><BR>
+            A <A href="colors.html">color string</A><BR>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">default</SPAN>
-            will use the default color (light grey).<BR>
+            will use the default color (bright grey).<BR>
+            <BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <BR>
+            <DIV style="margin-left: 120px;">
+              For TGET, this will also be the input text color.<BR>
+            </DIV><BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=
@@ -1667,18 +2022,324 @@
             <DIV style="margin-left: 40px;">
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+              A <A href="colors.html">color string</A><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">default</SPAN>
+              will be transparent, revealing the <A href=
+              "#set_window_bg">window_bg</A>.<BR>
+              <DIV style="margin-left: 40px;">
+                For <A href="#tget_sub">TGET subcommands</A>, the
+                default will be black instead.<BR>
+              </DIV>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 160px;">
+            For TGET, this will also be the input background
+            color.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <HR style=
+          "width: 50%; height: 2px; margin-left: 40px; margin-right: auto;"
+          noshade="noshade">
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 40px;">
+            For <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">SELECT ,</SPAN></SPAN>
+            SELECT<SPAN style=
+            "font-weight: bold;">.</SPAN>&lt;<SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 153);">SubCommands</SPAN></SPAN>&gt;
+            ,&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-weight: bold;">TEXT.INPUT</SPAN></SPAN>&nbsp;&nbsp;
+            (screens that behave like dialogs)<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_window_bg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">WINDOW_BG</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
+
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the window
+            background color. (see <A href=
+            "decors.html#window_bg">decors</A>)<BR></SPAN> This may
+            affect the dialog background and system bars background
+            colors.<BR>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+            A <A href="colors.html">color string</A><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">default</SPAN>
+            will use the default color (black)<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_voidcolor" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
+
+            <BR>
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the
+              background color for empty items.<BR></SPAN> For all
+              <SPAN style="font-weight: bold;"><SPAN style=
+              "color: rgb(0, 0, 153);">SELECT</SPAN></SPAN> type
+              dialogs only.<BR>
+              This is the color below the last line of a list that
+              fills the void of empty items.<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 120px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
               A <A href=
               "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
               color string</A><BR>
               <SPAN style=
               "font-family: Courier New, Courier, monospace;">default</SPAN>
-              will be transparent, revealing the <A href=
-              "#set_window_bg">window_bg</A>.<BR>
+              (if not set) will be to follow the text background
+              color <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">
+              TEXT_BG</SPAN></SPAN>.<BR>
+              <BR>
+              If you set this color to transparent (#00000000) then
+              the window background<BR>
+              <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/dialogs.html#set_window_bg">
+              window_bg</A> will be revealed.<BR>
             </DIV>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "set_highcolor" id="wrap"></A></SPAN></BIG><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">HIGHCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
+            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">HIGHCOLOR</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
+
+            <DIV style="margin-left: 120px;">
+              For all <SPAN style="font-weight: bold;"><SPAN style=
+              "color: rgb(0, 0, 153);">SELECT &amp;
+              SELECT.FILE</SPAN></SPAN> only.
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the highlight
+            color behind tapped text for
+            multi-selection.</SPAN><BR>
+            This is the highlight color of a <SPAN style=
+            "text-decoration: underline;">single
+            selection</SPAN>.<BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
+            A <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
+            color string</A><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">default
+            <SPAN style=
+            "font-family: Helvetica, Arial, sans-serif;">is
+            #0xFF00C000</SPAN></SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <A name="set_title_font" id=
+            "set_title_font"></A>"<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TITLE_FONT</SPAN></SPAN>&nbsp;&nbsp;&nbsp;
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;number|family&gt;"</SPAN>&nbsp;&nbsp;&nbsp;
+            &nbsp;<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN></SPAN>
+            <DIV style="margin-left: 240px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              e.g</SPAN> <SPAN style=
+              "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+              "<SPAN style="color: rgb(102, 51, 0);">TITLE_FONT =
+              2</SPAN>"&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% use loaded font
+              2</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 280px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">e.g</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN></SPAN>
+            "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">TITLE_FONT
+            = sans-serif-medium</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% use family
+            font</SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 120px;">
+              <SPAN style="color: rgb(0, 0, 153);">Set the font for
+              the title.</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 120px;">
+              The format of the name is the same as <A href=
+              "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/console.html#setfont">
+              CONSOLE.SET</A> "font = name{.style}<BR>
+              It can either be a font index number (loaded font) or
+              the name of a family font.<BR>
+              For a font index,<BR>
+              <DIV style="margin-left: 40px;">
+                the font must be loaded with the FONT command.
+                (<A href="samples.html">example</A>).<BR>
+                If the font index does not exist, there will be an
+                error.<BR>
+              </DIV>For a <A href="fonts.html#font_families">font
+              family</A>,<BR>
+              <DIV style="margin-left: 40px;">
+                If a font family is not found, it will fallback to
+                the system default&nbsp; (usually sans-serif).<BR>
+              </DIV><BR>
+              If unused or set to "default", it will use the system
+              default&nbsp; (usually sans-serif).<BR>
+              <DIV style="margin-left: 40px;">
+                (note that this default is different to the one in
+                <A href=
+                "console.html#actionbar_title">CONSOLE.TITLE</A>,
+                GR.TITLE..etc and <A href=
+                "console.html#console_set">CONSOLE.SET</A>)<BR>
+              </DIV>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <A name="set_title_align" id=
+            "set_title_align"></A>"<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TITLE_ALIGN</SPAN></SPAN>&nbsp;&nbsp;&nbsp;
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;alignment&gt;"</SPAN>&nbsp;&nbsp;&nbsp;
+            &nbsp;<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN></SPAN>
+            <DIV style="margin-left: 240px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              e.g</SPAN> <SPAN style=
+              "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+              "<SPAN style="color: rgb(102, 51, 0);">TITLE_ALIGN =
+              CENTER</SPAN>"</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 280px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">e.g</SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN></SPAN>
+            "</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">TITLE_ALIGN
+            = RIGHT</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the alignment
+            for the title.</SPAN><BR>
+            If any other value other than CENTER or RIGHT, then the
+            alignment will default to the left.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <A name="set_title_pad" id=
+            "set_title_pad"></A>"<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TITLE_PAD</SPAN></SPAN>
+            &nbsp;&nbsp; <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;number&gt;"</SPAN>&nbsp;&nbsp;&nbsp;
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">e.g</SPAN></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="color: rgb(102, 51, 51);"><SPAN style="font-family: Courier New, Courier, monospace;">TITLE_PAD</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">=
+            10"&nbsp;&nbsp;</SPAN><BIG><SPAN style=
+            "font-family: monospace;">&nbsp;</SPAN></BIG></SPAN></SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% 10 point dp
+            either side</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+
+            <BR></SPAN></SPAN>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the left and
+            right padding for the title.</SPAN><BR>
+            Horizontal padding will indent the title (if left or
+            right aligned).<BR>
+            It will also use the title background color for
+            padding.<BR>
+            <BR>
+            <SPAN style="color: rgb(0, 0, 153);">+ve</SPAN> size
+            means dp (device independent pixels)<BR>
+            <SPAN style="color: rgb(0, 0, 153);">-ve</SPAN> size
+            means sp (scaled pixels, <SPAN style=
+            "font-style: italic;">adhering to android user
+            prefs</SPAN>)<BR>
+            0 size is also allowed.<BR>
+            The default value is 6 dp (to look similar to android
+            system titles).<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 120px;">
+            <DIV style="margin-left: 40px;"></DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BIG><SPAN style="font-family: monospace;"><A name=
+            "set_text_fg" id="wrap"></A></SPAN></BIG><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXT_FG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
@@ -1696,13 +2357,10 @@
             <SPAN style="color: rgb(0, 0, 153);">Set the main text
             foreground color.</SPAN><BR>
           </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 160px;">
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
-            A <A href=
-            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/colors.html">
-            color string</A><BR>
+            A <A href="colors.html">color string</A><BR>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">default</SPAN>
             will use the default color (black).<BR>
@@ -1712,7 +2370,7 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "set_text_bg" id="wrap"></A></SPAN></BIG><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXT_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
@@ -1743,80 +2401,7 @@
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
-            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
-            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
-            "color: rgb(0, 0, 153);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">VOIDCOLOR</SPAN>&nbsp;</SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
-
-            <BR>
-            <DIV style="margin-left: 120px;">
-              <SPAN style="color: rgb(0, 0, 153);">Set the
-              background color behind the dialog.<BR></SPAN> For
-              all SELECT type dialogs only.<BR>
-              This would be the color below the last line of a list
-              that fills the void of empty items.<BR>
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 120px;">
-            <DIV style="margin-left: 40px;">
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">color&nbsp;&nbsp;</SPAN>
-              A <A href="colors.html">color string</A><BR>
-              <SPAN style=
-              "font-family: Courier New, Courier, monospace;">default</SPAN>
-              (if not set) will be to follow the text background
-              color.<BR>
-              <BR>
-              If you set this color to transparent (#00000000) then
-              the window background<BR>
-              <A href="#set_window_bg">window_bg</A> will be
-              revealed.<BR>
-            </DIV>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
-            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">HIGHCOLOR</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
-            e.g</SPAN>&nbsp;&nbsp;&nbsp; <SPAN style=
-            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
-            "color: rgb(0, 0, 153);"><SPAN style=
-            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">"<SPAN style="color: rgb(102, 0, 0);">HIGHCOLOR</SPAN>&nbsp;</SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">green"</SPAN><BR>
-
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 160px;">
-            <SPAN style="color: rgb(0, 0, 153);">Set the highlight
-            color behind tapped text.<BR></SPAN> For SELECT &amp;
-            SELECT.FILE only.<BR>
-            This is the highlight color of a <SPAN style=
-            "text-decoration: underline;">single
-            selection</SPAN>.<SPAN style=
-            "font-family: Courier New, Courier, monospace;"><BR>
-            color&nbsp;&nbsp;</SPAN> A <A href="colors.html">color
-            string</A><BR>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">default
-            <SPAN style=
-            "font-family: Helvetica, Arial, sans-serif;">is
-            #0xFF00C000</SPAN></SPAN><BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "set_statustxt" id="wrap"></A></SPAN></BIG><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">STATUSTXT</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">dark|light|default"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;
@@ -1833,7 +2418,6 @@
             <SPAN style="color: rgb(0, 0, 153);">Set the status bar
             text shading</SPAN><BR>
           </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 120px;">
             <DIV style="margin-left: 40px;">
               <SPAN style=
@@ -1846,7 +2430,7 @@
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "set_navbartxt" id="wrap"></A></SPAN></BIG><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">NAVBARTXT</SPAN></SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&nbsp;</SPAN>
@@ -1865,7 +2449,6 @@
             <SPAN style="color: rgb(0, 0, 153);">Set the navigation
             bar icon shading</SPAN><BR>
           </DIV>
-          <DIV style="margin-left: 40px;"></DIV>
           <DIV style="margin-left: 120px;">
             <DIV style="margin-left: 40px;">
               <SPAN style=
@@ -1915,7 +2498,6 @@
               </TBODY>
             </TABLE><BR>
           </DIV>
-          <DIV style="margin-left: 80px;"></DIV>
         </TD>
       </TR>
       <TR>
