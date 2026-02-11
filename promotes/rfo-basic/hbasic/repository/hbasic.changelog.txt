@@ -2,6 +2,11 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2026-02-11 v5.65
+		Fix GR.BRIGHTNESS regression
+			and permit -1 for system default. (0564)
+		Fix GR.SCREEN after keyboard input. (0565)
+
 2026-02-03 v5.63
 		Fix FONT.DELETE not deleting last font (0551)
 		Fix CLR to pad extra lines (0552)
@@ -515,6 +520,7 @@ v5.35	v2.33   Merged 0531-0535 Fix double execution, Bundle Exps
 v5.45	v2.34	Merged 0536-0545 SELECT subcommands
 v5.50	v2.35	Merged 0546-0550 shortcut from icon menu
 v5.63	v2.36	Merged 0551-0563 Targets API-36
+v5.65	v2.37	Merged 0564-0565
 
 ============================================================================
 Patches that were created.

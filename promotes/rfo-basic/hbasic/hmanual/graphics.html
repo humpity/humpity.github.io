@@ -65,11 +65,12 @@
                 <TD style="vertical-align: top;">Settings<BR></TD>
                 <TD style="vertical-align: top;"><A href=
                 "#gr_text_scalex">GR.TEXT.SCALEX</A><BR>
-                <A href=
-                "graphics.html#gr_set_dash">GR.SET.DASH</A><BR></TD>
+                <A href="#gr_set_dash">GR.SET.DASH</A><BR>
+                <A href="#gr_brightness">GR.BRIGHTNESS</A><BR></TD>
                 <TD style="vertical-align: top;">Scales text
                 horizontally<BR>
-                Dashed Lines</TD>
+                Dashed Lines<BR>
+                Allow back to system setting<BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -276,11 +277,18 @@
             <DIV style="text-align: left;">
               It is important to have the graphics view being
               displayed (in front) when executing this command.<BR>
-              You may need to use a PAUSE before executing this
-              command, especially if you have just come back to the
-              graphics screen or if the screen is just begining to
-              be displayed. Recommended is 50ms or more.<BR>
-              <BR>
+              You may need to use a PAUSE (&gt;50ms) before
+              executing this command,<BR>
+              <DIV style="margin-left: 40px;">
+                especially if you have just come back to the
+                graphics screen<BR>
+                or if the screen is just begining to be
+                displayed.<BR>
+                or just after an orientation change.<BR>
+              </DIV>Since v5.65, improvements have been made to
+              wait for any keyboard in the way to close before
+              taking measurements.<BR>
+              <DIV style="margin-left: 40px;"></DIV><BR>
             </DIV>
             <DIV style="text-align: left;">
               Notes<BR>
@@ -944,6 +952,111 @@
               "width: 200px; height: 200px;"><BR>
             </DIV>
           </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="gr_brightness" id=
+          "gr_brightness"></A><SPAN style=
+          "color: rgb(0, 0, 153);">GR.BRIGHTNESS</SPAN>
+          <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+          "color: black; font-weight: bold;">value</SPAN>_nexp {,
+          <SPAN style=
+          "color: black; font-weight: bold;">sysVal</SPAN>_nvar}</SPAN><BR>
+
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Sets the brightness of the graphics screen. The
+            <SPAN style="font-weight: bold;">value</SPAN> of the
+            numeric expression should be between 0.01 (darkest) and
+            1.00 (brightest). Any value above zero will override
+            the system setting and use this app's setting.<BR>
+            Any zero value will use the minimum level of 0.01.<BR>
+            Any value above 1 will use the maximum level of
+            1.00.<BR>
+            Note that this value is hardware related and may not
+            correlate to the percieved scale set by the system
+            slider in settings.<BR>
+            Once set to a positive value, the app will override the
+            system settings. There will not be any adaptive
+            brightness.<BR>
+            <BR>
+            hBasic also allows a <SPAN style=
+            "font-weight: bold;">value</SPAN> of -<SPAN style=
+            "font-weight: bold;">1</SPAN>. This disables the
+            GR.BRIGHTNESS override and tells android to go back to
+            the system setting.<BR>
+            For now, any any other negative value will behave the
+            same as <SPAN style="font-weight: bold;">-1</SPAN>.
+            (this may change in the future).<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">sysVal</SPAN> is an
+            optional return value that <SPAN style=
+            "text-decoration: underline;">can only be specified
+            if</SPAN> <SPAN style=
+            "text-decoration: underline;"><SPAN style=
+            "font-weight: bold;">value</SPAN></SPAN> <SPAN style=
+            "text-decoration: underline;">is -</SPAN><SPAN style=
+            "text-decoration: underline;"><SPAN style=
+            "font-weight: bold;">1</SPAN></SPAN><SPAN style=
+            "text-decoration: underline;">.</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              if <SPAN style="font-weight: bold;">value</SPAN> is
+              not -1, there will be a syntax error if <SPAN style=
+              "font-weight: bold;">sysVal</SPAN> is not
+              omitted.<BR>
+              <BR>
+              if <SPAN style="font-weight: bold;">value</SPAN> is
+              <SPAN style="font-weight: bold;">-1</SPAN>,
+              <SPAN style="font-weight: bold;">sysVal</SPAN> will
+              contain the brightness set by the settings slider in
+              the device preferences.<BR>
+              Note that <SPAN style=
+              "font-weight: bold;">sysVal</SPAN> is not the
+              percentage position of the slider, but the true value
+              after logarithmic adjustment of the slider.<BR>
+              You can use this value to feed back into
+              GR.BRIGHTNESS at a later stage. <SPAN style=
+              "text-decoration: underline;">Be aware that it might
+              not be precise</SPAN>.<BR>
+              If <SPAN style="font-weight: bold;">sysVal</SPAN>
+              fails to report a value, it will return <SPAN style=
+              "font-weight: bold;">-1</SPAN>.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Examples<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">Gr.Brightness
+              0.34<SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;</SPAN></SPAN> % this is
+              equivalent to about 50% of the system slider<BR>
+              <BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">Gr.Brightness
+              -1<SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;</SPAN></SPAN> % use system setting<BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              Gr.Brightness -1</SPAN>, last<SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;</SPAN></SPAN> % use system setting
+              and get it's current value<BR>
+            </DIV>
+          </DIV><BR>
         </TD>
       </TR>
       <TR>
