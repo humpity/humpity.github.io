@@ -646,15 +646,15 @@
             rectangle <SPAN style="font-weight: bold;">left,
             top,right, bottom</SPAN>.<BR>
             <BR>
-            By default, the rectangle coordinates are for the
-            actual (real) screen size.<BR>
-            <SPAN style="text-decoration: underline;">And</SPAN>
-            expected to be already scaled by the user( relative to
-            GR.SCALE).<BR>
+            By default, the input rectangle coordinates are
+            expected to be already scaled by the user( in the
+            GR.SCALE range).<BR>
+            These coordinates will be tested in the GR.SCALE range
+            (real pixels).<BR>
             <BR>
             (Note: <SPAN style="text-decoration: underline;">There
             is an error in the legacy manual</SPAN> that asks the
-            user to divide coordinates by the GR.SCALE The
+            user to divide virtual coordinates by GR.SCALE. The
             coordinates should multiply by GR.SCALE (not
             divide).<BR>
             <BR>
@@ -670,7 +670,8 @@
             non-scaled&nbsp; coordinates.<BR>
             <BR>
             The scale is set by GR.SCALE. If you do not use
-            GR.SCALE, the default scale is 1.0.<BR>
+            GR.SCALE, the default scale is 1.0 (i.e virtual&nbsp; =
+            real).<BR>
             <BR>
             Note that the rectangle is treated with right,bottom as
             exclusive (not part of the rectangle).<SPAN style=
