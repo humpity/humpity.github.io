@@ -553,15 +553,35 @@
             Otherwise returns false.<BR>
             <SPAN style="font-weight: bold;">x,y</SPAN> is expected
             to be <SPAN style=
-            "text-decoration: underline;">unscaled</SPAN> real
-            device coordinates.<BR>
+            "text-decoration: underline;">unscaled</SPAN>
+            coordinates.<BR>
             If x,y have been scaled, you must unscale them yourself
             before calling this function.<BR>
             <BR>
-            e.g this can be used after GR.TOUCH to test if an
-            object was touched.<BR>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "font-family: Liberation Sans;"><BR></SPAN></SPAN>
+            e.g<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">GR.TOUCH
+              tch, x, y,</SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">
+              1&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              &nbsp;&nbsp; &nbsp;</SPAN></SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% ask for an unscaled
+              point</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">hit =
+              GR_CONTAINS myObj, x, y<SPAN style=
+              "font-family: Helvetica, Arial, sans-serif;">&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;</SPAN></SPAN> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+              <SPAN style="color: rgb(102, 102, 102);">% is this
+              point inside my object ?</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">IF
+              hit THEN PRINT "Object Touched"</SPAN><BR>
+            </DIV><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style="font-family: Liberation Sans;"><BR>
+            </SPAN></SPAN>
           </DIV>
         </TD>
       </TR>
