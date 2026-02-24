@@ -2,10 +2,15 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2026-02-23 v5.67
+		Fix Android 14 crashes (0566) (-Spike)
+		Fix color of menu dots for titles (0567)
+		Fix SELECT.FILE return code (0568)
+
 2026-02-11 v5.65
-		Fix GR.BRIGHTNESS regression
-			and permit -1 for system default. (0564)
-		Fix GR.SCREEN after keyboard input. (0565)
+		Fix GR.BRIGHTNESS regression (0564) (-Spike) 
+			and permit -1 for system default.
+		Fix GR.SCREEN after keyboard input. (0565) (-Spike)
 
 2026-02-03 v5.63
 		Fix FONT.DELETE not deleting last font (0551)
@@ -521,6 +526,7 @@ v5.45	v2.34	Merged 0536-0545 SELECT subcommands
 v5.50	v2.35	Merged 0546-0550 shortcut from icon menu
 v5.63	v2.36	Merged 0551-0563 Targets API-36
 v5.65	v2.37	Merged 0564-0565
+v5.67	v2.38	Merged 0566-0567
 
 ============================================================================
 Patches that were created.
