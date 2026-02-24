@@ -2,7 +2,7 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
-2026-02-23 v5.67
+2026-02-23 v5.68
 		Fix Android 14 crashes (0566) (-Spike)
 		Fix color of menu dots for titles (0567)
 		Fix SELECT.FILE return code (0568)
