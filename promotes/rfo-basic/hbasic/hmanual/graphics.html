@@ -1133,7 +1133,8 @@
             <SPAN style=
             "color: rgb(0, 0, 153);">GR.BITMAP.SCAF</SPAN>
             <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">bitmap_ptr</SPAN>_nvar</SPAN>
+            "font-weight: bold;"><SPAN style=
+            "color: black;">bitmap_ptr</SPAN></SPAN>_nexp</SPAN>
             <SPAN style="color: rgb(102, 51, 0);">, <SPAN style=
             "color: black; font-weight: bold;">scale</SPAN>_nexp</SPAN>
             <SPAN style="color: rgb(102, 51, 0);">{, <SPAN style=
@@ -1145,8 +1146,16 @@
             <DIV style="margin-left: 40px;">
               The bitmap is replaced by the new image.<BR>
               The bitmap is made writable (for
-              Gr.bitmap.drawinto.start).
+              Gr.bitmap.drawinto.start).<BR>
+              <BR>
             </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">bitmap_ptr</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            This must be an existing bitmap index/pointer and will
+            be scaled in-place.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <SPAN style="font-weight: bold;">scale</SPAN><BR>
@@ -2257,7 +2266,7 @@
             "gr_anim_scale" id=
             "gr_anim_scale"></A>GR.ANIM.SCAF</SPAN> <SPAN style=
             "font-weight: bold;">ani</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar,</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">_nexp,</SPAN> <SPAN style=
             "font-weight: bold;">scale</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_nexp {,</SPAN> <SPAN style=
             "font-weight: bold;">smooth</SPAN>_<SPAN style=
@@ -2269,6 +2278,12 @@
               "font-weight: bold;">ani</SPAN>&nbsp; by a factor of
               <SPAN style="font-weight: bold;">scale</SPAN> in both
               directions.<BR>
+              <BR>
+              <SPAN style="font-weight: bold;">ani</SPAN><BR>
+              <DIV style="margin-left: 40px;">
+                This must be an existing animation index/pointer
+                and will be scaled in-place.<BR>
+              </DIV>
             </DIV><BR>
             <DIV style="margin-left: 40px;">
               <SPAN style="font-weight: bold;">scale</SPAN><BR>
