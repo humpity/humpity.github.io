@@ -2613,11 +2613,14 @@
             since the last GR.MOTION or<BR>
             GR.MOTION.MARK. Tweens are executed before any <A href=
             "graphics-system.html#object_motion">motion</A>.<BR>
-            <A name="tween_rules" id="tween_rules"></A><BR>
+            <BR>
+            <A name="tween_rules" id="tween_rules"></A><SPAN style=
+            "text-decoration: underline;">Tween Rules</SPAN><BR>
             <SPAN style="font-weight: bold;">object</SPAN> must
             have the given <SPAN style=
             "font-weight: bold;">parameter</SPAN> or there will be
             an error.<BR>
+            <BR>
             <SPAN style="font-weight: bold;">parameter</SPAN> must
             be <SPAN style=
             "text-decoration: underline;">numeric</SPAN>.<BR>
@@ -2813,9 +2816,9 @@
                   <BR>
                 </DIV>
               </DIV>
-            </DIV>The change <SPAN style=
-            "text-decoration: underline;">rate</SPAN> is linear and
-            is managed internally.<BR>
+            </DIV>The <SPAN style=
+            "text-decoration: underline;">rate</SPAN> of change is
+            linear and is managed internally.<BR>
             (see <A href="#gr_tween_add">GR.TWEEN.ADD</A> for tween
             mechanism with GR.MOTION).<BR>
             <BR>
@@ -2827,7 +2830,11 @@
               in pixels. For "angle"&nbsp; it will be degrees.
               ..eg<BR>
               For "speed"&nbsp; it will be pixels/sec...etc.<BR>
-            </DIV><A name="tween_rules" id="tween_rules"></A><BR>
+              Note that a negative amount is also allowed, e.g
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">"x",<SPAN style="font-weight: bold;">-200</SPAN></SPAN>
+              moves an object to the left.
+            </DIV><BR>
             <SPAN style="font-weight: bold;">duration</SPAN> is in
             milliseconds. (1 second = 1000 miliseconds).<BR>
             <DIV style="margin-left: 40px;">

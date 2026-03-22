@@ -46,6 +46,11 @@
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;"><A href=
+                "#screens">Screens</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
                 "#font_families">Font Families</A></TD>
                 <TD style="vertical-align: top;">Internal font
                 sets<BR></TD>
@@ -61,8 +66,27 @@
                 "#scaled_text">Scaled Text</A></TD>
                 <TD style="vertical-align: top;">SP vs DP<BR></TD>
               </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#console_fonts">Console Fonts</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
             </TBODY>
           </TABLE><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="screens" id="screens"></A><SPAN style=
+          "color: rgb(0, 0, 153);"><FONT size=
+          "+1">Screens</FONT></SPAN><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Fonts may be either built-in or loaded externally.<BR>
+            They may be used for the console, graphics, titles and
+            certain screen based dialogs.<BR>
+            <BR>
+          </DIV>
         </TD>
       </TR>
       <TR>
@@ -427,6 +451,72 @@
             scale of 2X in the device settings.<BR>
             <BR>
           </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="console_fonts" id=
+          "console_fonts"></A><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">Console Fonts</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Fonts for the console are specified with<BR>
+            <DIV style="margin-left: 40px;">
+              <A href="console.html#setfont">CONSOLE.SET</A>&nbsp;
+              <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+              "color: rgb(102, 51, 0);">FONT</SPAN> <SPAN style=
+              "font-weight: bold;">number</SPAN> |
+              family&gt;<SPAN style="font-weight: bold;">"</SPAN>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            e.g<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>&nbsp;&nbsp;
+            <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">FONT <SPAN style=
+            "color: rgb(0, 0, 0);">Serif</SPAN></SPAN><SPAN style=
+            "font-weight: bold;">" &nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% set current
+            font to built-in serif</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">CONSOLE.SET</SPAN>&nbsp;&nbsp;
+            <SPAN style="font-weight: bold;">"</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">FONT <SPAN style=
+            "color: rgb(0, 0, 0);">3</SPAN></SPAN><SPAN style=
+            "font-weight: bold;">"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>
+            <SPAN style="color: rgb(102, 102, 102);">% set current
+            font to loaded font #3</SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            For accurate positioning with PRINT.AT, you must use a
+            font with a <SPAN style=
+            "text-decoration: underline;">fixed width
+            characters</SPAN>, such as MONOSPACE or a loaded font
+            which is made specifically with "fixed width".<BR>
+            <BR>
+            Note that not all "fixed width"&nbsp; fonts are equal.
+            Most of them only cover the basic ASCII range.<BR>
+            <BR>
+            In the <A href="samples.html#console-demo">samples
+            demo</A>, there is a font called <SPAN style=
+            "font-weight: bold;">boxblue.ttf</SPAN>. This font
+            covers both the ascii range and another range
+            (U+2500-259F) which is the Box Drawing set used for DOS
+            based PCs (1981-1995).<BR>
+            You can find more mono-type fonts on the internet, e.g
+            <A href=
+            "https://www.nerdfonts.com/font-downloads">nerdfonts</A>.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <A href="samples.html#loadfont">Example</A> of loading
+            a font.<BR>
+          </DIV><BR>
         </TD>
       </TR>
       <TR>
