@@ -627,7 +627,7 @@ For those that love acceleration <font color="#000099"><code><br>
 "2"<br></code></font></code></font><br>
 <u>Some examples</u><br>
 <blockquote><tt># Almost No acceleration due to equal Deceleration
-+ low sensistivity for 800dpi</tt><br>
++ low sensistivity (800dpi</tt><br>
 <tt><font color="#000099">xset m 2 100</font></tt><font color=
 "#000099"><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
@@ -635,7 +635,7 @@ For those that love acceleration <font color="#000099"><code><br>
 <tt>xinput --set-prop $ID "Device Accel Profile"
 0</tt></font><br></blockquote>
 <blockquote><tt># Conservative - low acceleration + medium
-sensitivity</tt><br>
+sensitivity</tt> <tt>(</tt><tt><tt>1200 dpi)</tt></tt><br>
 <tt><font color="#000099">xset m 2 30</font></tt><font color=
 "#000099"><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
@@ -643,28 +643,28 @@ sensitivity</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Profile"
 0</tt></font><br></blockquote>
 <blockquote><tt># Regular - meduim flat acceleration + low
-sensitivity for menus</tt><br>
+sensitivity for menus</tt> <tt>(</tt><tt><tt>1200
+dpi)</tt></tt><br>
 <tt><font color="#000099">xset m 2 80</font></tt><br>
 <font color="#000099"><tt>xinput --set-prop $ID "Device Accel
 Constant Deceleration" 1.5</tt></font><br>
 <font color="#000099"><tt>xinput --set-prop $ID "Device Accel
 Profile" 0</tt></font><br>
-<tt><font color="#000099"><tt>xinput --set-prop $ID "Device Accel
-Profile" 7<br>
-<br></tt></font> # Accomdative - fast for long range, subdued short
-range<br>
-# (This is as close to ms windows as I could get)</tt><br>
-<font color="#000099"><tt>xset m 2 80</tt><br>
+<tt><font color="#000099"><tt><br></tt></font> # Accomdative - fast
+for long range, subdued short range (</tt><tt><tt>1200
+dpi)<br></tt> # (This is as close to ms windows as I could
+get)</tt><br>
+<font color="#000099"><tt>xset m 2 90</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
-1.6</tt><br></font> <font color="#000099"><tt><font color=
+1.5</tt><br></font> <font color="#000099"><tt><font color=
 "#000099"><tt><font color="#000099"><tt><font color=
 "#000099"><font color="#000099"><tt><font color=
 "#000099"><tt>xinput --set-prop $ID "Device Accel Adaptive
 Deceleration"
-1.2</tt></font></tt></font></font></tt></font></tt></font><br>
+1.3</tt></font></tt></font></font></tt></font></tt></font><br>
 xinput --set-prop $ID "Device Accel Profile" 7<br>
 <br></tt></font> <tt># An example of using only Adaptive'. (for a
-Logitech mouse at 1200 dpi)</tt><br>
+Logitech mouse (1200 dpi)</tt><br>
 <font color="#000099"><tt>xset m 2 <span style=
 "font-family: Helvetica, Arial, sans-serif;">100</span></tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
