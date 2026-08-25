@@ -1,0 +1,709 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>lubuntu-mouse-speed</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" vlink=
+"#990099" link="#000099" alink="#000099">
+<a href="https://humpity.github.io/home.htm">humpty</a> <a href=
+"http://humpity.github.io/home.htm">promotes</a> &gt; <a href=
+"http://humpity.github.io/promotes/linux/linux.html">Linux</a> &gt;
+<a href=
+"http://humpity.github.io/promotes/linux/lubuntu.html">Lubuntu
+Tips</a><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big><br>
+
+<table style=
+"text-align: left; width: 100%; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom: 1px solid black;"
+cellspacing="2" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 30%;"><big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Lubuntu
+linux Tips<br></small></big></big></big> <big><small style=
+"font-family: monospace;"><small>(2015-2022)</small></small><span style="font-family: Helvetica,Arial,sans-serif;">&nbsp;</span></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">Setting your mouse
+speed<br></span></big></big> This is a way to setup your mouse
+speed.<br>
+<br>
+<a href="#get_info">Getting Information</a><br>
+<a href="#create">Create a Script</a><br>
+<a href="#acceleration">Acceleration Explained</a><br>
+<a href="#harmony">Harmony with Xorg</a><br>
+<a href="#flat">Flat Acceleration</a><br>
+<font size="+1"><a moz-do-not-send="true" href=
+"#goback_evdev">Going back to evdev</a><br>
+<br></font>
+<div style="text-align: right;"><span style=
+"font-style: italic;"><span style="color: rgb(102, 0, 0);">(updated
+for lubuntu 20.04, 22.04)</span></span><br></div>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<table class="enclosed" style=
+"text-align: left; width: 800px; font-family: Helvetica, Arial, sans-serif; height: 812px; border-right-width: 1px; border-right-style: solid; border-right-color: black; border-bottom: 1 px solid black;"
+cellspacing="2" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top;">
+<big><big><big>T</big><small>he</small></big></big> most basic
+device you need for a desktop. Amazingly for multiple decades,
+Linux has still managed to make it difficult for users to setup
+their newly bought high resolution pointers.<br>
+<br>
+You buy a new mouse. Plug it in and boot up your OS only to find
+the mouse too fast, too slow not 'feeling' quite right? You try the
+regular mouse adjuster panel but it makes no difference,. What to
+do?<br>
+<br>
+The traditional way to set up a mouse is via xorg.conf. Since the
+new auto-detection scheme, the Ubuntu based distros added
+<span style=
+"color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d</span> to the
+mix, as if it wasn't already difficult enough. It is basically the
+xorg.conf files that have been divided up into levels of
+execution.<br>
+<br>
+For most distros, input is now handled by libinput which replaces
+evdev + xset. There are far fewer options, you can only set the
+acceleration and there are only two profiles to choose from.<br>
+<br>
+Here I'll show you how to fix you mouse speed for Lubuntu.<br>
+<br>
+<hr style="width: 100%; height: 2px;">
+<big><span style="color: rgb(0, 0, 153);"><big><span style=
+"color: rgb(0, 0, 153);">Getting
+Information<br></span></big></span></big>
+<div style="margin-left: 40px;"><big><span style=
+"color: rgb(0, 0, 153);">xinput</span></big><br>
+This command gets information about devices;<br>
+<br>
+1. Open a terminal and type<br></div>
+<div style="margin-left: 80px;"><span style=
+"color: rgb(102, 0, 0);">xinput list --short<br>
+<br></span> You'll get something like this;<br>
+<span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <small><span style=
+"font-family: Courier New, Courier, monospace;">⎡ Virtual core
+pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=2&nbsp;&nbsp;&nbsp; [master pointer&nbsp;
+(3)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">⎜&nbsp;&nbsp; ↳
+Virtual core XTEST
+pointer&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=4&nbsp;&nbsp;&nbsp; [slave&nbsp;
+pointer&nbsp; (2)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">⎜&nbsp;&nbsp; ↳
+SIGMACHIP USB
+Keyboard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=9&nbsp;&nbsp;&nbsp; [slave&nbsp;
+pointer&nbsp; (2)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">⎜&nbsp;&nbsp;
+↳</span> <span style=
+"font-family: Courier New, Courier, monospace;"><b><span style=
+"color: rgb(0, 0, 153);">2.4G Wireless Optical
+Mouse</span></b></span><span style=
+"font-family: Courier New, Courier, monospace;"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;</b></span> <span style=
+"font-family: Courier New, Courier, monospace;"><b><span style=
+"color: rgb(0, 0, 153);">id=10</span></b></span><span style=
+"font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+[slave&nbsp; pointer&nbsp; (2)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;">⎣
+Virtual core
+keyboard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=3&nbsp;&nbsp;&nbsp; [master keyboard
+(2)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+↳ Virtual core XTEST
+keyboard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=5&nbsp;&nbsp;&nbsp; [slave&nbsp; keyboard
+(3)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+↳ Power
+Button&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=6&nbsp;&nbsp;&nbsp; [slave&nbsp; keyboard
+(3)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+↳ Power
+Button&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=7&nbsp;&nbsp;&nbsp; [slave&nbsp; keyboard
+(3)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+↳ SIGMACHIP USB
+Keyboard&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; id=8&nbsp;&nbsp;&nbsp; [slave&nbsp; keyboard
+(3)]</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">[2]+&nbsp;
+Done&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+leafpad upback&nbsp; (wd: ~/utils)</span><span style=
+"font-family: monospace;"><br></span></small><br></div>
+<div style="margin-left: 40px;">And you can guess (in this case)
+the mouse device ID as 10. <span style="font-style: italic;">(it
+will be different for yours).</span><br>
+Once you know how to get the ID, you can use it in a script..<br>
+<br>
+<a name="create" id="create"></a> 2. Create the script<br></div>
+<div style="margin-left: 80px; width: 748px;"><span style=
+"color: rgb(0, 0, 102);"><span style="color: rgb(102, 0, 0);">$ cd
+~</span><br style="color: rgb(102, 0, 0);">
+<span style="color: rgb(102, 0, 0);">$ &lt;your_editor&gt;
+fixmouse.sh<br>
+<br></span></span>
+<table style="text-align: left; width: 100%;" cellspacing="2"
+cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);"><font size="-1"><span style=
+"font-family: Courier New, Courier, monospace;">#!/bin/bash</span><span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;">clear</span><span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">#NAME=Dakai</span><span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;">NAME='Wireless'</span><span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">ID=`xinput list
+--short | grep -i $NAME | cut -f2 | cut -c4-| head -n1
+`</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;">echo
+$NAME Mouse ID is $ID</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;">#input driver -
+libinput</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;">xinput
+--set-prop $ID "libinput Accel Speed" -0.80</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;">xinput --list-props
+$ID | grep Accel</span></font></span><br></td>
+</tr>
+</tbody>
+</table>
+<span style="color: rgb(0, 0, 102);"><br></span> The <font color=
+"#000099">NAME='Wireless'</font> line is the device ID. You should
+replace the word '<span style=
+"color: rgb(0, 0, 153);">Wireless</span>' with a word you see from
+<span style="color: rgb(102, 0, 0);">xinput list --short.<br>
+<br></span> The key command here is <font color="#000099">xinput
+--set-prop $ID "libinput Accel Speed" -0.80</font> which set
+decelerates (negative acceleration). It's value is between -1 and
+1.<br>
+So e.g -0.99 will hardly move the pointer and 1 is the maximum
+speed.<br>
+<span style="color: rgb(102, 0, 0);"><br></span> To run it, first
+make it executable;<span style="color: rgb(0, 0, 102);"><br></span>
+<span style="color: rgb(0, 0, 102);"><span style=
+"color: rgb(102, 0, 0);">$ chmod 775 fixmouse.sh<br></span></span>
+Then run it<br>
+<span style="color: rgb(102, 0, 0);">$ ./fixmouse.sh</span><br>
+<br>
+&nbsp; Example output :<br>
+<div style="margin-left: 40px;"><span style=
+"font-family: Courier New, Courier, monospace;"><small><span style=
+"color: rgb(0, 0, 153);">Wireless Mouse ID is 11</span><br style=
+"color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp; libinput
+Accel Speed (283):&nbsp;&nbsp;&nbsp; -0.800000</span><br style=
+"color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp; libinput
+Accel Speed Default (284):&nbsp;&nbsp;&nbsp;
+0.000000</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp; libinput
+Accel Profiles Available (285):&nbsp;&nbsp;&nbsp; 1,
+1</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp; libinput
+Accel Profile Enabled (286):&nbsp;&nbsp;&nbsp; 1,
+0</span><br style="color: rgb(0, 0, 153);">
+<span style="color: rgb(0, 0, 153);">&nbsp;&nbsp;&nbsp; libinput
+Accel Profile Enabled Default (287):&nbsp;&nbsp;&nbsp; 1,
+0</span></small></span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span></div>
+</div>
+<div style="margin-left: 40px;"><br>
+3. If you want to run this script every time you login, then see,
+<a href="lubuntu-autostart.html">&lt; lubuntu-autostart</a>
+&gt;<br>
+<br></div>
+<div style="margin-left: 80px;">Your session manager <span style=
+"text-decoration: underline;">might still</span> override both xorg
+and your autostart script. If this is the case, then to disable
+lxsession effects, <b>comment out</b> these lines in;<br>
+<span style="color: rgb(0, 102, 0);"><br>
+<font size=
+"+1">~/.config/lxsession/Lubuntu/</font></span><span style=
+"color: rgb(102, 51, 0);"><font size=
+"+1">desktop.conf</font><br></span> <font size="+1">(for LXQt, the
+settings are inside</font> <small><font size="+1"><span style=
+"color: rgb(0, 102, 0);">~/.config/lxqt/</span><span style=
+"color: rgb(102, 51, 0);">session.conf</span> and they will be
+different)</font><br></small><br>
+[Mouse]<br>
+#AccFactor=50&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+** Make sure these<br>
+#AccThreshold=50&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ** lines are commented
+out<br>
+LeftHanded=0<br>
+<br>
+(and <b>do not</b> adjust the mouse settings in
+<u>preferences&gt;keyboard&amp;mouse</u>, as this will add back the
+entries)<small><br>
+<br></small> <small><span style="font-style: italic;">Hot Tip for
+those who 'do' want to use lxsession settings;</span><br style=
+"font-style: italic;">
+<span style="font-style: italic;">Acceleration = AccFactor
+/10</span><br style="font-style: italic;">
+<span style="font-style: italic;">Sensitivity =
+110-</span></small><small style=
+"font-style: italic;">AccThreshold</small></div>
+<div style="margin-left: 40px;"><br>
+<br>
+4. If you want to attach your script to a <span style=
+"color: rgb(153, 0, 0);">hotkey</span> in openbox, then see
+<a href="lubuntu-assign-key.html">here</a>.<br></div>
+<br>
+<hr style="width: 100%; height: 2px;">
+<font size="+2"><a name="acceleration" id=
+"acceleration"></a><span style=
+"color: rgb(0, 0, 153);">Acceleration Explained</span></font><br>
+<br>
+<div style="margin-left: 40px;">The common approach with mouse
+control schemes is to first set an Acceleration and then to Tame
+it.<br>
+<br>
+Without <span style="font-weight: bold;">acceleration,</span> the
+pointer will not move very far for a fling of the wrist.<br>
+This is especially true for low dpi (800) mice.<br>
+He higher the dpi, the more pixel distance is reported for the same
+wrist movement.<br>
+So for low dpi, you need more Acceleration, and for hight dpi, you
+need less.<br>
+<br>
+To start, you will want at least some acceleration to work with.
+2/1 seems to be a common standard.<br>
+By keeping this as 2, it will be easier to tweak the other options
+until you are familiar with them.<br></div>
+<br>
+<hr style="width: 100%; height: 2px;">
+<big style="color: rgb(0, 0, 153);"><font size="+2">Harmony with
+XORG</font><br>
+<br></big>
+<div style="margin-left: 40px;">You can infact duplicate these
+settings in xorg. And it <span style="color: rgb(153, 0, 0);">will
+be what you end up doing</span> once you have them setup just the
+way you want.<br>
+<br>
+Normally, <span style="color: rgb(0, 0, 153);">Xorg is the
+first</span> to set the mouse speed at boot-up, <span style=
+"color: rgb(0, 0, 153);">followed by lxsession/lxqt</span>,
+<font color="#660000">followed by your scripts</font>. If you use
+xorg settings, then you should disable your scripts and comment out
+the mouse settings in <span style=
+"color: rgb(0, 102, 0);">~/.config/lxsession/Lubuntu/</span><span style="color: rgb(102, 51, 0);">desktop.conf</span>
+or <span style=
+"color: rgb(0, 102, 0);">~/.config/lxqt/</span><span style=
+"color: rgb(102, 51, 0);">session.conf</span>.<br>
+<br>
+<span style="color: rgb(0, 0, 153);">Xorg is also the default
+setting after any KVM switch</span>, (i.e when you toggle between
+two PCs with the same keyboard) so you might want to do this if you
+are using a KVM.<br>
+<br>
+To get Xorg to load your settings at boot, create an Xorg conf file
+(if one does not already exist) inside<br>
+<span style=
+"color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d</span>/<br>
+e.g<br>
+<span style="color: rgb(102, 51, 0);"><span style=
+"color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d/</span>45-mouse.conf</span><br>
+
+<br></div>
+<div style="margin-left: 80px;"><small style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Courier New, Courier, monospace;">Section
+"InputClass"</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;">&nbsp;
+Identifier "mouse"</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;">&nbsp;
+MatchDriver "libinput"</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;">&nbsp;
+MatchIsPointer "yes"</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;">&nbsp; Option
+"AccelSpeed" "-0.80"</span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;">EndSection</span><span style="font-family: monospace;"><br>
+</span></small></div>
+<div style="margin-left: 40px;"><br>
+To activate, logout and log back in.<br>
+<br>
+<small><span style=
+"font-style: italic;">Notes:</span></small><br style=
+"font-style: italic;">
+<small><span style="font-style: italic;">The Xorg config is the
+default after KVM switching, so it will be the most convenient if
+you use a KVM, otherwise you will have to execute a script after
+every KVM switch.</span></small><br></div>
+<small><span style="font-style: italic;"><br></span></small>
+<hr style="width: 100%; height: 2px;">
+<big style="color: rgb(0, 0, 153);"><a name="flat" id=
+"flat"></a><font size="+2">Flat Acceleration</font><br>
+<br></big>
+<div style="margin-left: 40px;">This is an alternative technique to
+slow down your mouse using the Xorg conf file.<br>
+If you still feel the mouse moves or feels weird, even though you
+have slowed it down with AccelSpeed, then you can opt to have a
+<font color="#000099">'flat'</font> acceleration profile (the
+default is 'adaptive').<br>
+e.g<br>
+<span style="color: rgb(102, 51, 0);"><span style=
+"color: rgb(0, 102, 0);">/usr/share/X11/xorg.conf.d/</span>45-mouse.conf</span><br>
+
+<br></div>
+<div style="margin-left: 80px;"><span style=
+"font-family: Courier New, Courier, monospace;"><small style=
+"color: rgb(0, 0, 153);">Section "InputClass"<br>
+&nbsp; Identifier "mouse"<br>
+&nbsp; MatchDriver "libinput"<br>
+&nbsp; MatchIsPointer "yes"<br>
+<br>
+&nbsp; Option "AccelSpeed" "-0.3"<br>
+&nbsp; Option "AccelProfile" "flat"<br>
+EndSection<br></small></span></div>
+<div style="margin-left: 40px;"><br>
+A flat profile, requires less deceleration (negative AccelSpeed)
+and is the closest thing you can get to 'constant' speed. In this
+case AccelSpeed behaves more like speed than acceleration.<br>
+<br></div>
+<hr style="width: 100%; height: 2px; font-style: italic;">
+<font size="+1" color="#000099"><a name="goback_evdev" id=
+"goback_evdev"></a><font size="+2">Going Back to
+evdev</font></font><br>
+<br>
+<div style="margin-left: 40px;"><font size="+1">Still not satisfied
+?</font> You can always go back to evdev, it offers <u>a lot</u>
+more options.<br>
+To use evdev, you must <span style=
+"text-decoration: underline;">turn off any libinput
+settings.</span><br></div>
+<blockquote>1. Install the evdev input for xorg<br>
+<blockquote><font color="#660000">apt-get install <font size=
+"+1">xserver-xorg-input-evdev</font><br></font><br></blockquote>
+2. Create an xorg&nbsp; .conf file<br>
+<blockquote><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#006600">/usr/share/X11/xorg.cong.d</font></span><span style=
+"font-family: Courier New, Courier, monospace;">/</span><span style="font-family: Courier New, Courier, monospace;"><font color="#663300">50-evdev-mouse.conf</font></span><span style="font-family: Courier New, Courier, monospace;"><br>
+</span></blockquote>
+<blockquote><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#000099"><code>Section "InputClass"</code><br>
+<code>&nbsp;&nbsp;&nbsp; Identifier "Mouse"</code><br>
+<code>&nbsp;&nbsp;&nbsp; MatchIsPointer "yes"</code><br>
+<code>&nbsp;&nbsp;&nbsp; Driver "evdev"</code><br>
+<br>
+<code>&nbsp;&nbsp;&nbsp; Option "AccelerationNumerator"
+"2"</code><br>
+<code>&nbsp;&nbsp;&nbsp; Option "AccelerationDenominator"
+"1"</code><br>
+<code>&nbsp;&nbsp;&nbsp; Option "AccelerationThreshold"
+"100"</code><br>
+<br>
+<code>&nbsp;&nbsp;&nbsp; Option "AccelerationProfile"
+"7"</code><br>
+<code>&nbsp;&nbsp;&nbsp; Option "ConstantDeceleration"
+"1.5"</code><br></font></span> <font color="#000099"><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#000099"><code>&nbsp;&nbsp;&nbsp; Option "AdaptiveDeceleration"
+"1.5"<br></code></font></span> <span style=
+"font-family: Courier New, Courier, monospace;">&nbsp;</span><span style="font-family: Courier New, Courier, monospace;"><br>
+</span> <span style=
+"font-family: Courier New, Courier, monospace;"><code>&nbsp;&nbsp;&nbsp;
+Option "VelocityScale" "8"</code></span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;"><code>#&nbsp;&nbsp;&nbsp;
+Option "AccelerationScheme" "none"</code></span><span style=
+"font-family: Courier New, Courier, monospace;"><br></span>
+<span style=
+"font-family: Courier New, Courier, monospace;"><code>EndSection</code></span><br>
+
+<br></font></blockquote>
+3 . Remember to remove any libinput .conf file if you had one
+previously.<br></blockquote>
+<blockquote>Here is a script for <span style=
+"text-decoration: underline;">testing</span> evdev with xset and
+xinput commands. The settings are only temporary until a
+reboot.<br>
+<blockquote><font size="-1"><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#000099">#!/bin/bash<br>
+clear<br>
+# xset m &lt;acc&gt; &lt;threshold&gt;<br>
+&nbsp; xset m 2 100<br>
+&nbsp; xset q | grep acceleration<br>
+#xinput --set-ptr-feedback $ID 0 18 10&nbsp;&nbsp;&nbsp; #(an
+alternative to xset m)<br>
+<br>
+NAME='Mouse'<br>
+<br>
+ID=`xinput list --short | grep -i "$NAME" | cut -f2 | cut -c4-|
+head -n1 `<br>
+echo $NAME Mouse ID is $ID<br>
+<br>
+xinput --set-prop $ID "Device Accel Profile" 7<br>
+xinput --set-prop $ID "Device Accel Constant Deceleration" 1.5<br>
+xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.5<br>
+xinput --set-prop $ID "Device Accel Velocity Scaling" 8<br>
+<br>
+xinput list-props $ID | grep
+Accel</font></span></font></blockquote>
+</blockquote>
+<blockquote>There are 4 settings that are most useful.<br>
+<br>
+<table width="100%" cellspacing="2" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td valign="top"><br></td>
+<td valign="top">Xorg Conf<br></td>
+<td valign="top">xset or xinput<br></td>
+</tr>
+<tr>
+<td valign="top">Acceleration</td>
+<td valign="top"><font color=
+"#000099"><code>"AccelerationNumerator"<br></code></font>
+<font color=
+"#000099"><code>"AccelerationDenominator"</code></font><br></td>
+<td valign="top">xset m &lt;acceleration&gt;<br></td>
+</tr>
+<tr>
+<td valign="top">Threshold</td>
+<td valign="top"><font color=
+"#000099"><code>"AccelerationThreshold"</code></font></td>
+<td valign="top">xset m &lt;acceleration&gt; &lt;threshold&gt;</td>
+</tr>
+<tr>
+<td valign="top">Constant Deceleration</td>
+<td valign="top"><font color=
+"#000099"><code>"ConstantDeceleration"</code></font></td>
+<td valign="top"><font color="#000099"><tt>"Device Accel Constant
+Deceleration"</tt></font></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Adaptive Deceleration</td>
+<td style="vertical-align: top;"><font color=
+"#000099"><code>"AdaptiveDeceleration"</code></font></td>
+<td style="vertical-align: top;"><font color="#000099"><tt>"Device
+Accel Adaptive Deceleration"</tt></font></td>
+</tr>
+<tr>
+<td valign="top">Acceleration Profile</td>
+<td valign="top"><font color=
+"#000099"><code>"AccelerationProfile"</code></font></td>
+<td valign="top"><font color="#000099"><tt>"Device Accel
+Profile"</tt></font></td>
+</tr>
+</tbody>
+</table>
+<br>
+<span style="font-weight: bold;">Acceleration</span>. Without
+Acceleration, the pointer will not move very far for a fling of the
+wrist.<br>
+It seems the common standard is 2. The equivalent command is
+<font size="-1"><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#000099">xset m 2</font></span></font><br>
+It is not recommended to set an Acceleration without a Threshold.
+e.g use <font size="-1"><span style=
+"font-family: Courier New, Courier, monospace;"><font color=
+"#000099">xset m 2 100</font></span></font><br>
+otherwise the acceleration will be untamed and wild.<br>
+<br>
+If you have an old mouse fixed at a low dpi (e.g 800,dpi), and
+short movement does not go very far, you may have no other option
+but to increase the Acceleration to 3 or 4.<br>
+Acceleration for evdev uses whole numbers as fractions instead of
+floating point expressed as<br>
+<font color="#000099"><code>AccelerationNumerator<br>
+-----------------------<br></code></font> <font color=
+"#000099"><code>AccelerationDenominator</code></font><br>
+<br>
+<span style="font-weight: bold;">Threshold</span> controls the
+sensitivity. The difference is how hard you have to fling your
+wrist in order to get the pointer to a corner of the screen. A low
+threshold will get you there quicker.<br>
+A setting of over 100 (mickeys=pixels) makes any wrist movement
+becomes less noticeable. Increase this to suppress
+acceleration.<br>
+Below 50, you will see significant affects of higher speed.
+Recommended is to keep it at 100 to suppress adverse effects, then
+tweak it later.<br>
+<font color="#000099"><code><br></code></font> <span style=
+"font-weight: bold;">Constant Deceleration</span> acts against
+acceleration and is the most significant setting, even though it
+does not act 'directly' against it one-to-one. To tame aggressive
+profiles such as 2, you will need to tweak this setting quite a
+lot.<br>
+<br>
+<div style="margin-left: 40px;">examples are&nbsp; 1.0 for 800 dpi.
+1.5 for 1200dpi and 2 for 1600dpi.<br></div>
+<div style="margin-left: 40px;">When the mouse is running at a high
+dpi setting (e.g 1600), there are more pixels reported per
+movement. Therefore you need more Deceleration for
+control.<br></div>
+<br>
+The mininum setting is 1.0<br>
+<br>
+<span style="font-weight: bold;">Adaptive Deceleration</span> adds
+to constant deceleration for short distances.<br>
+This makes short distances less affective and long distances more
+responsive.<br>
+So editing becomes manageable while a flick of the wrist will get
+to a far away menu quickly.<br>
+You should set this to 1.0 to start off and then tweak it
+later.<br>
+The mininum setting is 1.0<br>
+<br>
+It is possible to turn off Constant Deceleration and set only
+Adaptive deceleration (e.g Logitech).<br>
+<font color="#000099"><code><br></code></font> <u>Profiles</u><br>
+For users who like a quiet life with no thrills or need precise
+movement over a small area,<br>
+<font color="#000099"><code>"AccelerationProfile" "0"</code></font>
+gives the minimum of acceleration, which is close to flat
+acceleration.<br>
+Do note that if you need to get to the far corner of the screen,
+you may have to drag your mouse several times to get there.<br>
+<br>
+For users who want some acceleration but needs to keep a lid on
+large movements, I recommend<br>
+<font color="#000099"><code>"AccelerationProfile"
+"7"<br></code></font><br>
+For those that love acceleration <font color="#000099"><code><br>
+<font color="#000099"><code>"AccelerationProfile"
+"2"<br></code></font></code></font><br>
+<u>Some examples</u><br>
+<blockquote><tt># Almost No acceleration due to equal Deceleration
++ low sensistivity (800dpi</tt><br>
+<tt><font color="#000099">xset m 2 100</font></tt><font color=
+"#000099"><br>
+<tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
+2.0</tt><br>
+<tt>xinput --set-prop $ID "Device Accel Profile"
+0</tt></font><br></blockquote>
+<blockquote><tt># Conservative - low acceleration + medium
+sensitivity</tt> <tt>(</tt><tt><tt>1200 dpi)</tt></tt><br>
+<tt><font color="#000099">xset m 2 30</font></tt><font color=
+"#000099"><br>
+<tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
+1.8</tt><br>
+<tt>xinput --set-prop $ID "Device Accel Profile"
+0</tt></font><br></blockquote>
+<blockquote><tt># Regular - meduim flat acceleration + low
+sensitivity for menus</tt> <tt>(</tt><tt><tt>1200
+dpi)</tt></tt><br>
+<tt><font color="#000099">xset m 2 80</font></tt><br>
+<font color="#000099"><tt>xinput --set-prop $ID "Device Accel
+Constant Deceleration" 1.5</tt></font><br>
+<font color="#000099"><tt>xinput --set-prop $ID "Device Accel
+Profile" 0</tt></font><br>
+<tt><font color="#000099"><tt><br></tt></font> # Accomdative - fast
+for long range, subdued short range (</tt><tt><tt>1200
+dpi)<br></tt> # (This is as close to ms windows as I could
+get)</tt><br>
+<font color="#000099"><tt>xset m 2 90</tt><br>
+<tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
+1.5</tt><br></font> <font color="#000099"><tt><font color=
+"#000099"><tt><font color="#000099"><tt><font color=
+"#000099"><font color="#000099"><tt><font color=
+"#000099"><tt>xinput --set-prop $ID "Device Accel Adaptive
+Deceleration"
+1.3</tt></font></tt></font></font></tt></font></tt></font><br>
+xinput --set-prop $ID "Device Accel Profile" 7<br>
+<br></tt></font> <tt># An example of using only Adaptive'. (for a
+Logitech mouse (1200 dpi)</tt><br>
+<font color="#000099"><tt>xset m 2 <span style=
+"font-family: Helvetica, Arial, sans-serif;">100</span></tt><br>
+<tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
+1.0</tt><br></font> <font color="#000099"><tt><font color=
+"#000099"><tt><font color="#000099"><font color=
+"#000099"><tt><font color="#000099"><tt>xinput --set-prop $ID
+"Device Accel Adaptive Deceleration"
+1.5<br></tt></font></tt></font></font></tt></font> xinput
+--set-prop $ID "Device Accel Profile" 7</tt></font><br>
+<br>
+<font color="#000099"><tt><span style="color: rgb(0, 0, 0);"><tt>#
+For an old mouse fixed at 800 dpi. Needs more acceleration &amp;
+response.</tt></span><span style="color: rgb(0, 0, 0);"><br></span>
+<font color="#000099"><tt>xset m 25/10 80</tt><br>
+<tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
+1.0</tt><br></font></tt></font> <font color=
+"#000099"><tt><font color="#000099"><font color=
+"#000099"><tt><font color="#000099"><tt>xinput --set-prop $ID
+"Device Accel Adaptive Deceleration"
+1.0<br></tt></font></tt></font> <tt>xinput --set-prop $ID "Device
+Accel Profile" 7<br>
+xinput --set-prop $ID "Device Accel Velocity Scaling"
+8<br></tt></font></tt></font></blockquote>
+</blockquote>
+End.<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">
+<hr style="width: 100%; height: 2px; font-style: italic;">
+<small>Advertisement Space<br></small><br>
+<a href="lubuntu.html">[ More Lubuntu Tips,&nbsp;</a> <a href=
+"http://humpity.github.io/home.htm">Home ]</a></td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<script type="text/javascript" src=
+"http://humpity.github.io/counter.js"></script>
+<hr>
+</body>
+</html>

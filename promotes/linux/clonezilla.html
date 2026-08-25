@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+"generator">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Clonezilla</title>
+<link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body style=
+"color: rgb(0, 0, 0); background-color: rgb(237, 237, 237);" vlink=
+"#990099" link="#000099" alink="#000099">
+<a href="https://humpity.github.io/home.htm">humpty</a> <a href=
+"http://humpity.github.io/home.htm">promotes</a> &gt; <a href=
+"http://humpity.github.io/promotes/linux/linux.html">Linux</a> &gt;
+Clonezilla<big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small><br></small></big></big></big>
+<span style="font-family: Helvetica,Arial,sans-serif;"><br></span>
+<table style="text-align: left; width: 100%;" cellspacing="2"
+cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; width: 1px; white-space: nowrap;">
+<big style=
+"font-family: Helvetica,Arial,sans-serif;"><big><big><small>Linux
+Tips .<br></small></big></big></big></td>
+<td style="vertical-align: top;"><big><big style=
+"color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;">&nbsp;Clonezilla<br>
+<br></span></big></big> <font size="+2">Your All-In-One Backup
+Drive</font><big><big style="color: rgb(0, 0, 153);"><span style=
+"font-family: Helvetica,Arial,sans-serif;"><br style=
+"font-family: Helvetica,Arial,sans-serif;"></span></big></big><br></td>
+<td style="vertical-align: top; width: 1px;"><img src=
+"pics/usbssd.jpg" alt="" style=
+"width: 330px; height: 297px;"><br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<table style=
+"text-align: left; width: 100%; font-family: Helvetica, Arial, sans-serif;"
+cellspacing="2" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top;"><span style=
+"font-weight: bold;">Bit for bit Partition
+Backup.&nbsp;&nbsp;&nbsp; - -&nbsp; All In One Disk&nbsp; - -<br>
+<br></span>
+<div style="margin-left: 40px;">A reliable and pristine backup is
+important for data recovery during emergencies or mishaps.<br>
+This guides shows you how to make a bootable Clonezilla All-In-One
+backup drive using a UEFI boot.<br>
+<br>
+The trick is to be able to save your backups as images to the same
+disk that you booted from<br>
+and for that we create another partition for your backup
+images.<br></div>
+<br>
+<span style="font-weight: bold;">Create your backup drive in 4 easy
+steps.</span><br>
+<br>
+<font size="+1">Step 1.</font><font size=
+"+1">&nbsp;&nbsp;&nbsp;&nbsp; Create Partitions on your Backup
+drive.</font><br>
+<br>
+<div style="margin-left: 40px;">We will use a large USB SSD drive
+(e.g 500GB) as your Backup drive.<br>
+<br>
+Use a program e.g gparted to delete and create partitions.<br>
+<div style="margin-left: 40px;">Make sure you select a GPT
+partition table (not MBR).<br>
+<br></div>
+Create two partitions and format them like below;<br>
+<br></div>
+<table style="text-align: left; width: 80%; margin-left: 80px;"
+cellspacing="10" cellpadding="2" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top;">GPT<br></td>
+<td style="vertical-align: top;">Type<br></td>
+<td style="vertical-align: top; width: 1px;">Size<br></td>
+<td style="vertical-align: top;">Content<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top; width: 1px; white-space: nowrap;">
+Partition 1<br></td>
+<td style="vertical-align: top; width: 1px;">FAT32<br></td>
+<td style="vertical-align: top;">1GB<br></td>
+<td style="vertical-align: top; width: 1px; white-space: nowrap;">
+clonezilla UEFI Boot files<br></td>
+<td style="vertical-align: top;">from
+clonezilla-live-X.Y.Z-ab-amd64.zip<br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">Partition 2<br></td>
+<td style="vertical-align: top;">exFAT<br></td>
+<td style="vertical-align: top; white-space: nowrap;">the rest of
+the drive<br></td>
+<td style="vertical-align: top; white-space: nowrap;">for saving
+backup images<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br></td>
+<td style="vertical-align: top;"><br></td>
+<td style="vertical-align: top;"><br></td>
+<td style="vertical-align: top;"><br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+<br>
+<font size="+1">Step 2.</font><font size=
+"+1">&nbsp;&nbsp;&nbsp;&nbsp; Download the Clonezilla ZIP
+file.</font><br>
+<div style="margin-left: 40px;"><br>
+<a href="https://clonezilla.org/downloads.php">Download
+Clonezilla</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Choose the
+Debian-based stable version.<br>
+<div style="margin-left: 200px;">Select CPU architecture: amd64<br>
+Select file type: zip<br></div>
+Extract the zip file.<br>
+<div style="margin-left: 40px;">You will find there are several
+directories and files e.g boot, EFI, home..etc<br>
+<br>
+Copy everything into the <span style="font-weight: bold;">Partition
+1</span> of the Backup drive.&nbsp;&nbsp; (with EFI, etc&nbsp; at
+the root) .<br></div>
+<br></div>
+<font size="+1">Step 3.</font><font size=
+"+1">&nbsp;&nbsp;&nbsp;&nbsp; Boot the Backup drive.<br>
+<br></font>
+<div style="margin-left: 40px;">When you boot a modern motherboard
+as UEFI, it should recognise <span style=
+"font-weight: bold;">Partition 1</span> as a boot option.<br>
+<br>
+If your motherboard offers a UEFI menu, it should be one of the
+items.<br>
+If not, go into your motherboard BIOS and try to find this boot
+option under 'Boot' , 'Boot Option #2',<br>
+or an item inside 'Boot Override'.<br>
+<br>
+( If your motherboard cannot find the clonezilla UEFI boot
+partition, consider installing <a href=
+"https://www.rodsbooks.com/refind/">rEFInd,</a><br>
+which is a boot manager that boots everything under the sun. )<br>
+<br></div>
+<font size="+1">Step 4.</font><font size=
+"+1">&nbsp;&nbsp;&nbsp;&nbsp; Use Clonezilla<br>
+<br></font>
+<div style="margin-left: 40px;">Once you boot clonezilla, just
+follow the prompts.<br>
+<br>
+<div style="margin-left: 40px;">You can select to either save or
+restore an image of a partition or a disk.<br>
+When it comes to choosing a writable area to save,<br>
+choose your boot disk (usually sda);<br>
+<br>
+<div style="margin-left: 40px;"><span style=
+"color: rgb(102, 51, 0);"><span style=
+"font-family: Courier New, Courier, monospace;">sda
+&nbsp;&nbsp;&nbsp;&nbsp; disk 465.8G
+...</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;-- Use this disk<br></div>
+<br>
+and Partition 2 (usually sda2).<br>
+e.g<br></div>
+</div>
+<div style="margin-left: 120px;"><span style=
+"color: rgb(102, 51, 0);"><span style=
+"font-family: Courier New, Courier, monospace;"><span style=
+"color: rgb(102, 51, 0);"><span style=
+"font-family: Courier New, Courier, monospace;"><br></span></span>
+sda2 &nbsp;&nbsp;&nbsp; 465.8G|exfat|
+...</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&lt;-- Use this partition to save your clonezilla images
+to<br></div>
+<br>
+<font size="+1">That's it !<br></font><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br>
+<br>
+<br></td>
+</tr>
+</tbody>
+</table>
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<br style="font-family: Helvetica,Arial,sans-serif;">
+<script type="text/javascript" src=
+"http://humpity.github.io/counter.js"></script>
+</body>
+</html>
