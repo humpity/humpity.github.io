@@ -15,7 +15,7 @@ document.write ('<html><head>\
         <a href="http://humpity.github.io/home.htm">Humpty<br>\
         Promotes</a></td>\
         <td style=" border: 0pt none ; padding: 1pt; vertical-align: top; white-space: nowrap;">\
-        <a href="http://humpity.github.io/promotes/linux/lubuntu.html">Linux</a><br>\
+        <a href="http://humpity.github.io/promotes/linux/linux.html">Linux</a><br>\
         <br></td>\
         <td style="border: 0pt none ; padding: 1pt; vertical-align: top; white-space: nowrap;">\
         <br></td>\
