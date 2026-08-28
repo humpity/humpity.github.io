@@ -450,15 +450,15 @@ settings.</span><br></div>
 <code>&nbsp;&nbsp;&nbsp; Option "AccelerationDenominator"
 "1"</code><br>
 <code>&nbsp;&nbsp;&nbsp; Option "AccelerationThreshold"
-"100"</code><br>
+"80"</code><br>
 <br>
 <code>&nbsp;&nbsp;&nbsp; Option "AccelerationProfile"
 "7"</code><br>
 <code>&nbsp;&nbsp;&nbsp; Option "ConstantDeceleration"
-"1.5"</code><br></font></span> <font color="#000099"><span style=
+"1.4"</code><br></font></span> <font color="#000099"><span style=
 "font-family: Courier New, Courier, monospace;"><font color=
 "#000099"><code>&nbsp;&nbsp;&nbsp; Option "AdaptiveDeceleration"
-"1.5"<br></code></font></span> <span style=
+"1.3"<br></code></font></span> <span style=
 "font-family: Courier New, Courier, monospace;">&nbsp;</span><span style="font-family: Courier New, Courier, monospace;"><br>
 </span> <span style=
 "font-family: Courier New, Courier, monospace;"><code>&nbsp;&nbsp;&nbsp;
@@ -483,7 +483,7 @@ reboot.<br>
 "#000099">#!/bin/bash<br>
 clear<br>
 # xset m &lt;acc&gt; &lt;threshold&gt;<br>
-&nbsp; xset m 2 100<br>
+&nbsp; xset m 2 80<br>
 &nbsp; xset q | grep acceleration<br>
 #xinput --set-ptr-feedback $ID 0 18 10&nbsp;&nbsp;&nbsp; #(an
 alternative to xset m)<br>
@@ -495,8 +495,8 @@ head -n1 `<br>
 echo $NAME Mouse ID is $ID<br>
 <br>
 xinput --set-prop $ID "Device Accel Profile" 7<br>
-xinput --set-prop $ID "Device Accel Constant Deceleration" 1.5<br>
-xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.5<br>
+xinput --set-prop $ID "Device Accel Constant Deceleration" 1.4<br>
+xinput --set-prop $ID "Device Accel Adaptive Deceleration" 1.3<br>
 xinput --set-prop $ID "Device Accel Velocity Scaling" 8<br>
 <br>
 xinput list-props $ID | grep
@@ -559,7 +559,7 @@ It seems the common standard is 2. The equivalent command is
 It is not recommended to set an Acceleration without a Threshold.
 e.g use <font size="-1"><span style=
 "font-family: Courier New, Courier, monospace;"><font color=
-"#000099">xset m 2 100</font></span></font><br>
+"#000099">xset m 2 80</font></span></font><br>
 otherwise the acceleration will be untamed and wild.<br>
 <br>
 If you have an old mouse fixed at a low dpi (e.g 800,dpi), and
@@ -576,10 +576,10 @@ sensitivity. The difference is how hard you have to fling your
 wrist in order to get the pointer to a corner of the screen. A low
 threshold will get you there quicker.<br>
 A setting of over 100 (mickeys=pixels) makes any wrist movement
-becomes less noticeable. Increase this to suppress
-acceleration.<br>
+becomes less noticeable. Increase this to suppress acceleration.
+Decrease this e.g 80 for more response.<br>
 Below 50, you will see significant affects of higher speed.
-Recommended is to keep it at 100 to suppress adverse effects, then
+Recommended is to start at 100 to suppress adverse effects, then
 tweak it later.<br>
 <font color="#000099"><code><br></code></font> <span style=
 "font-weight: bold;">Constant Deceleration</span> acts against
@@ -654,9 +654,9 @@ Profile" 0</tt></font><br>
 for long range, subdued short range (</tt><tt><tt>1200
 dpi)<br></tt> # (This is as close to ms windows as I could
 get)</tt><br>
-<font color="#000099"><tt>xset m 2 90</tt><br>
+<font color="#000099"><tt>xset m 2 80</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
-1.5</tt><br></font> <font color="#000099"><tt><font color=
+1.4</tt><br></font> <font color="#000099"><tt><font color=
 "#000099"><tt><font color="#000099"><tt><font color=
 "#000099"><font color="#000099"><tt><font color=
 "#000099"><tt>xinput --set-prop $ID "Device Accel Adaptive
