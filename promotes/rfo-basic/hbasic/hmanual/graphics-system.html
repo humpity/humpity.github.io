@@ -231,7 +231,8 @@
             properties</SPAN><BR>
             <BR>
             In general, when GR.MOTION is called, it updates the
-            positions on all objects in the display list.<BR>
+            positions of all objects in the display list<BR>
+            according to their speed and direction.<BR>
             For more advanced usage see <A href=
             "graphics.html#gr_motion">GR.MOTION</A> and <A href=
             "graphics.html#tweens">motion with tweens</A>.<BR>
@@ -307,7 +308,7 @@
               then objects will not be moved by it.<BR>
               <BR>
               If you don't want objects affected by GR.MOTION, set
-              their speeds to zero.<BR>
+              their speeds to zero (default).<BR>
               (You can still manually move them in the usual way by
               using GR.MODIFY obj, "x", X, "y",Y).<BR>
               <BR>
