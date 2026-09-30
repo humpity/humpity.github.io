@@ -601,15 +601,24 @@ The mininum setting is 1.0<br>
 to constant deceleration for short distances.<br>
 This makes short distances less affective and long distances more
 responsive.<br>
-So editing becomes manageable while a flick of the wrist will get
-to a far away menu quickly.<br>
+E.g editing becomes manageable while a flick of the wrist will get
+to a far away corner quickly.<br>
+It adds some initial drag for a short movement.<br>
+If the value is too large you will notice some mismatch to where
+you expect the mouse to be.<br>
+If the value is too small, it might make picking menu items
+difficult.<br>
+When done right, can make the movement feel more solid and less
+'flaky'.<br>
+<br>
 You should set this to 1.0 to start off and then tweak it
 later.<br>
 The mininum setting is 1.0<br>
 <br>
 It is possible to turn off Constant Deceleration and set only
 Adaptive deceleration (e.g Logitech).<br>
-<font color="#000099"><code><br></code></font> <u>Profiles</u><br>
+<font color="#000099"><code><br></code></font> <span style=
+"font-weight: bold;"><u>Acceleration Profiles</u></span><br>
 For users who like a quiet life with no thrills or need precise
 movement over a small area,<br>
 <font color="#000099"><code>"AccelerationProfile" "0"</code></font>
@@ -654,15 +663,17 @@ Profile" 0</tt></font><br>
 for long range, subdued short range (</tt><tt><tt>1200
 dpi)<br></tt> # (This is as close to ms windows as I could
 get)</tt><br>
-<font color="#000099"><tt>xset m 2 80</tt><br>
+<span style="font-weight: bold;"><font color="#000099"><tt>xset m 2
+80</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
-1.4</tt><br></font> <font color="#000099"><tt><font color=
-"#000099"><tt><font color="#000099"><tt><font color=
-"#000099"><font color="#000099"><tt><font color=
-"#000099"><tt>xinput --set-prop $ID "Device Accel Adaptive
-Deceleration"
-1.3</tt></font></tt></font></font></tt></font></tt></font><br>
-xinput --set-prop $ID "Device Accel Profile" 7<br>
+1.4</tt><br></font></span> <font color="#000099"><tt><span style=
+"font-weight: bold;"><font color="#000099"><tt><font color=
+"#000099"><tt><font color="#000099"><font color=
+"#000099"><tt><font color="#000099"><tt>xinput --set-prop $ID
+"Device Accel Adaptive Deceleration"
+1.3</tt></font></tt></font></font></tt></font></tt></font></span><span style="font-weight: bold;"><br>
+</span> <span style="font-weight: bold;">xinput --set-prop $ID
+"Device Accel Profile" 7</span><br>
 <br></tt></font> <tt># An example of using only Adaptive'. (for a
 Logitech mouse (1200 dpi)</tt><br>
 <font color="#000099"><tt>xset m 2 <span style=
