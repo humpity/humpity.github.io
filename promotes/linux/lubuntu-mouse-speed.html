@@ -364,7 +364,8 @@ e.g<br>
 Identifier "mouse"</span><span style=
 "font-family: Courier New, Courier, monospace;"><br></span>
 <span style="font-family: Courier New, Courier, monospace;">&nbsp;
-MatchDriver "libinput"</span><span style=
+MatchDriver "<span style=
+"font-weight: bold;">libinput</span>"</span><span style=
 "font-family: Courier New, Courier, monospace;"><br></span>
 <span style="font-family: Courier New, Courier, monospace;">&nbsp;
 MatchIsPointer "yes"</span><span style=
@@ -407,7 +408,8 @@ e.g<br>
 "font-family: Courier New, Courier, monospace;"><small style=
 "color: rgb(0, 0, 153);">Section "InputClass"<br>
 &nbsp; Identifier "mouse"<br>
-&nbsp; MatchDriver "libinput"<br>
+&nbsp; MatchDriver "<span style=
+"font-weight: bold;">libinput</span>"<br>
 &nbsp; MatchIsPointer "yes"<br>
 <br>
 &nbsp; Option "AccelSpeed" "-0.3"<br>
@@ -546,6 +548,15 @@ Accel Adaptive Deceleration"</tt></font></td>
 <td valign="top"><font color="#000099"><tt>"Device Accel
 Profile"</tt></font></td>
 </tr>
+<tr>
+<td style="vertical-align: top;">Velocity Scaling<br></td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);"><font size=
+"-1">"VelocityScale"</font></span><br></td>
+<td style="vertical-align: top;"><span style=
+"color: rgb(0, 0, 153);"><font size="-1">"Device Accel Velocity
+Scaling"</font></span><br></td>
+</tr>
 </tbody>
 </table>
 <br>
@@ -634,6 +645,66 @@ large movements, I recommend<br>
 For those that love acceleration <font color="#000099"><code><br>
 <font color="#000099"><code>"AccelerationProfile"
 "2"<br></code></font></code></font><br>
+<span style="font-weight: bold;"><span style=
+"text-decoration: underline;">Velocity Scaling</span></span><br>
+This ratio is the polling frequency of the mouse relative to
+1000hz. A 500hz mouse polls half as slowly which makes the engine
+think it's half speed, so a multiplier of 2 (1000hz/5000hz) is
+neccessary to make it the same. A 125hz mouse needs a setting of
+8.<br>
+<br>
+You may use this as an alternative to the two Decelerations above
+if you feel it gives a better linear reposnse.<br>
+<br>
+<table style="text-align: left; width: 1%;" cellspacing="2"
+cellpadding="4" border="0">
+<tbody>
+<tr>
+<td style="vertical-align: top; white-space: nowrap;">Polling
+Frequency<br>
+Hz<br></td>
+<td style=
+"vertical-align: top; text-align: center; white-space: nowrap;">
+Compensating<br>
+Velocity Scaling<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">1000<br></td>
+<td style="vertical-align: top; text-align: center;">1<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">500<br></td>
+<td style="vertical-align: top; text-align: center;">2<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">250<br></td>
+<td style="vertical-align: top; text-align: center;">4<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">125<br></td>
+<td style="vertical-align: top; text-align: center;">8<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;">100<br></td>
+<td style="vertical-align: top; text-align: center;">10<br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+<tr>
+<td style="vertical-align: top;"><br></td>
+<td style="vertical-align: top; text-align: center;"><br></td>
+<td style="vertical-align: top;"><br></td>
+</tr>
+</tbody>
+</table>
+The polling frequency in Hz (refresh rate) of your mouse can be
+seen with the utility <a href=
+"https://github.com/marcoster/evhz">evhz</a>.<br>
+<br>
 <u>Some examples</u><br>
 <blockquote><tt># Almost No acceleration due to equal Deceleration
 + low sensistivity (800dpi</tt><br>
@@ -661,8 +732,7 @@ Constant Deceleration" 1.5</tt></font><br>
 Profile" 0</tt></font><br>
 <tt><font color="#000099"><tt><br></tt></font> # Accomdative - fast
 for long range, subdued short range (</tt><tt><tt>1200
-dpi)<br></tt> # (This is as close to ms windows as I could
-get)</tt><br>
+dpi)<br></tt> # (This is close to ms windows)</tt><br>
 <span style="font-weight: bold;"><font color="#000099"><tt>xset m 2
 80</tt><br>
 <tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
@@ -673,7 +743,24 @@ get)</tt><br>
 "Device Accel Adaptive Deceleration"
 1.3</tt></font></tt></font></font></tt></font></tt></font></span><span style="font-weight: bold;"><br>
 </span> <span style="font-weight: bold;">xinput --set-prop $ID
-"Device Accel Profile" 7</span><br>
+"Device Accel Profile" 7</span><br></tt></font><br>
+<font color="#000099"><tt><tt># Tamed Acceleration with No
+Deceleration&nbsp; (250hz mouse)</tt><tt><tt><br></tt> # (This is
+also close to ms windows)</tt><br>
+<span style="font-weight: bold;"><font color="#000099"><tt>xset m 2
+80</tt><br>
+<tt>xinput --set-prop $ID "Device Accel Constant Deceleration"
+1.0</tt><br></font></span> <font color="#000099"><tt><span style=
+"font-weight: bold;"><font color="#000099"><tt><font color=
+"#000099"><tt><font color="#000099"><font color=
+"#000099"><tt><font color="#000099"><tt>xinput --set-prop $ID
+"Device Accel Adaptive Deceleration"
+1.0</tt></font></tt></font></font></tt></font></tt></font></span><span style="font-weight: bold;"><br>
+</span> <span style="font-weight: bold;">xinput --set-prop $ID
+"Device Accel Profile" 7</span><br></tt></font></tt></font>
+<font color="#000099"><tt><font color="#000099"><tt><font color=
+"#000099"><tt>xinput --set-prop $ID "Device Accel Velocity Scaling"
+4</tt></font></tt></font><br>
 <br></tt></font> <tt># An example of using only Adaptive'. (for a
 Logitech mouse (1200 dpi)</tt><br>
 <font color="#000099"><tt>xset m 2 <span style=
