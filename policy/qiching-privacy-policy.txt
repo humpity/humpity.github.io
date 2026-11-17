@@ -1,0 +1,16 @@
+App  Name : Quick-I_Ching
+App Store : Google Playstore
+Developer : HmpSoft
+
+Quick-I-Ching
+				Privacy Policy
+
+Quick-IChing is a divination app.
+
+The app itself does not collect nor transmit any private data.
+
+However the app is ad supported which follows Google AdMob
+policies;
+	https://policies.google.com/technologies/partner-sites?hl=en-US
+
+18 Nov 2026

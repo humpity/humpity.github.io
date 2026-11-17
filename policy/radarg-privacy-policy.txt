@@ -1,0 +1,16 @@
+App  Name : Radar Ghost
+App Store : Google Playstore
+Developer : HmpSoft
+
+Radar Ghost
+				Privacy Policy
+
+Radar Ghost is an entertainment app.
+
+The app itself does not collect nor transmit any private data.
+
+However the app is ad supported which follows Google AdMob
+policies;
+	https://policies.google.com/technologies/partner-sites?hl=en-US
+
+18 Nov 2026
