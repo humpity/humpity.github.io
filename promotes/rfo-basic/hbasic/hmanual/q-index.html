@@ -29,17 +29,16 @@
           <DIV style="text-align: center;">
             <FONT size="+1">hBasic changes or adds the
             following</FONT> <FONT size="+1"><FONT size=
-            "+1">Commands &amp; Functions</FONT><BR></FONT>
-            <DIV style="text-align: left;">
+            "+1">Commands &amp; Functions</FONT></FONT><BR>
+            <DIV style="text-align: left; margin-left: 40px;">
               <FONT size="+1">Alphabetical</FONT><BR>
             </DIV>
           </DIV>
-          <TABLE style="text-align: left; width: 90%;" cellspacing=
-          "2" cellpadding="2" border="0">
+          <TABLE style=
+          "text-align: left; width: 1%; margin-left: 40px;"
+          cellspacing="2" cellpadding="4" border="0">
             <TBODY>
               <TR>
-                <TD style="vertical-align: top; width: 10%;">
-                <BR></TD>
                 <TD style=
                 "vertical-align: top; white-space: nowrap; width: 5%;">
                 <A href="console.html#cs_shortcut">.CS
@@ -68,6 +67,8 @@
                 "commands.html#audio_play">AUDIO.PLAY</A><BR>
                 <BR>
                 <A href="console.html#backspace">BACKSPACE</A><BR>
+                <BR>
+                <A href="ble.html">BLE.xxx Commands</A><BR>
                 <BR>
                 <A href=
                 "bluetooth.html#bt_connect">BT.CONNECT</A><BR>
@@ -133,11 +134,13 @@
                 <A href="commands.html#fn_rtn">FN.RTN</A><BR>
                 <BR>
                 <A href=
-                "commands.html#ftp_flags">FTP.&lt;&nbsp;&nbsp;&nbsp;
+                "ftp.html#ftp_flags">FTP.&lt;&nbsp;&nbsp;&nbsp;
                 &gt; flags</A><BR>
-                <A href="commands.html#ftps">FTPS.SET</A><BR>
-                <A href="commands.html#ftps">FTPS.START</A><BR>
-                <A href="commands.html#ftps">FTPS.STOP</A><BR>
+                <A href="ftp.html#ftps_set">FTPS.SET</A><BR>
+                <A href="ftp.html#ftps_start">FTPS.START</A><BR>
+                <A href="ftp.html#ftps_stop">FTPS.STOP</A><BR>
+                <A href=
+                "ftp.html#ftps_loopback">FTPS.LOOPBACK</A><BR>
                 <BR>
                 <A href="gps.html#open">GPS.OPEN</A><BR>
                 <BR>
@@ -198,7 +201,11 @@
                 <A href=
                 "graphics.html#gr_motion_all">GR.MOTION.ALL</A><BR>
                 <BR>
-                <A href="decors.html#decors">GR.OPEN</A><BR>
+                <A href=
+                "decors.html#decors">GR.OPEN</A>&nbsp;&nbsp;&nbsp;
+                see also GR.OPEN with <A href=
+                "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics-system.html#paints">
+                Paints</A>)<BR>
                 <A href="graphics.html#gr_push">GR.PUSH</A><BR>
                 <A href=
                 "graphics.html#gr_set_dash">GR.SET.DASH</A><BR>
@@ -302,103 +309,6 @@
                 <A href="functions.html#word_all">WORD_ALL$ ( ..
                 )</A><BR>
                 <BR></TD>
-                <TD style=
-                "vertical-align: top; width: 50%; white-space: nowrap;">
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                <BR>
-                (see also GR.OPEN with <A href=
-                "graphics-system.html#paints">Paints</A>)<BR>
-                <BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
             </TBODY>
@@ -407,57 +317,95 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
-          <FONT size="+1">Quick Links</FONT><BR>
-          <TABLE style="text-align: left; width: 90%;" cellspacing=
-          "2" cellpadding="2" border="0">
+          <FONT size="+1">Quick Links<BR>
+          <BR></FONT>
+          <TABLE style=
+          "text-align: left; width: 1%; margin-left: 40px;"
+          cellspacing="2" cellpadding="4" border="0">
             <TBODY>
               <TR>
-                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "console.html">Console</A><BR></TD>
+                "commands.html">Commands</A><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "functions.html">Functions</A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "system.html">System</A></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
+                <TD style="vertical-align: top;"><A href=
+                "console.html">Console</A><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
                 <TD style="vertical-align: top; width: 20%;">
                 <A href="graphics.html">Graphics<BR></A></TD>
                 <TD style="vertical-align: top;"><A href=
                 "functions.html#graphics">Graphics
                 functions</A></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top; width: 10%;">
-                <BR></TD>
-                <TD style="vertical-align: top; width: 5%;">
-                  <DIV style="margin-left: 40px;">
-                    <BR>
-                  </DIV>
-                </TD>
                 <TD style=
-                "vertical-align: top; width: 50%; white-space: nowrap;">
-                <A href="graphics-system.html">Graphics
-                System</A></TD>
+                "vertical-align: top; white-space: nowrap;">
+                <A href="file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/graphics-system.html">
+                Graphics System</A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
                 "menu.html">Menus</A></TD>
                 <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
                 "dialogs.html">Dialogs</A></TD>
                 <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "bundles.html">Bundles</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <A href="bundle-expr.html">Bundle
+                Expressions</A></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <A href="functions.html"></A><A href=
+                "sensors.html">Sensors</A>,&nbsp; <A href=
+                "gps.html">GPS</A>,<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <A href="bluetooth.html">Bluetooth,</A>&nbsp;
+                <A href="ble.html">BLE</A>,&nbsp;<BR></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                <BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "ftp.html">FTP</A>, <A href=
+                "saf.html">SAF</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "bundles.html">Bundles</A><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "bundle-expr.html">Bundle Expressions</A><BR></TD>
-              </TR>
-              <TR>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
                 "decors.html">Decors</A></TD>
@@ -465,44 +413,37 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "functions.html"><SPAN style=
-                "color: rgb(0, 0, 238);"><SPAN style=
-                "text-decoration: underline;">Functions</SPAN></SPAN></A></TD>
-                <TD style="vertical-align: top;"><BR></TD>
-              </TR>
-              <TR>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "system.html">System</A><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "sensors.html">Sensors</A>,&nbsp; <A href=
-                "gps.html">GPS</A>,&nbsp; <A href=
-                "bluetooth.html">Bluetooth,&nbsp;</A> <A href=
                 "system.html#directives">Directives</A></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "package.html">Package</A><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
+            </TBODY>
+          </TABLE><BR>
+          <TABLE style=
+          "text-align: left; width: 1%; margin-left: 40px;"
+          cellspacing="2" cellpadding="4" border="0">
+            <TBODY>
               <TR>
-                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "colors.html">Colors</A><BR></TD>
+                "package.html">Package</A></TD>
                 <TD style="vertical-align: top;"><A href=
-                "fonts.html">Fonts</A><BR></TD>
+                "colors.html">Colors</A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "fonts.html">Fonts</A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "samples.html">Samples</A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "editor.html">Editor</A></TD>
+                <TD style="vertical-align: top;"><A href=
+                "saf.html">SAF</A><BR></TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "samples.html">Samples</A><BR></TD>
+                "license.html">License</A></TD>
                 <TD style="vertical-align: top;"><BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><A href=
-                "license.html">License</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
               </TR>
@@ -511,11 +452,7 @@
         </TD>
       </TR>
       <TR>
-        <TD style="vertical-align: top;">
-          <DIV style="margin-left: 40px;">
-            <BR>
-          </DIV>
-        </TD>
+        <TD style="vertical-align: top;"><BR></TD>
       </TR>
     </TBODY>
   </TABLE><BR>

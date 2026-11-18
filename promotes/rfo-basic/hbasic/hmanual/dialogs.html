@@ -28,8 +28,8 @@
           Dialogs</BIG></BIG><BR>
           <BR>
           <TABLE style=
-          "text-align: left; width: 70%; margin-left: 40px;"
-          cellspacing="2" cellpadding="2" border="0">
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="4" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;"><A href=
@@ -741,8 +741,13 @@
                 commas</SPAN> <SPAN style="font-style: italic;">to
                 separate omitted arguments)</SPAN><BR>
               </DIV>
-            </DIV>Select a file from the file system.<SPAN style=
-            "font-weight: bold;"><BR></SPAN> where<BR>
+            </DIV>Select a file from the file system.<BR>
+            <DIV style="text-align: right;">
+              <SPAN style="font-style: italic;">Note that the 'file
+              system</SPAN><SPAN style="font-style: italic;">' is
+              scoped, i.e you can only navigate within your
+              scope.</SPAN><BR>
+            </DIV>where<BR>
             <DIV style="margin-left: 40px;">
               <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
               "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1099,7 +1104,12 @@
           <DIV style="margin-left: 40px;">
             Select a set of files from the file system into an
             array or list.<BR>
-            where<BR>
+            <DIV style="text-align: right;">
+              <SPAN style="font-style: italic;">Note that the 'file
+              system</SPAN><SPAN style="font-style: italic;">' is
+              scoped, i.e you can only navigate within your
+              scope.</SPAN><BR>
+            </DIV>where<BR>
             <DIV style="margin-left: 40px;">
               <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
               "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1290,6 +1300,13 @@
                 list</SPAN></SPAN>,&nbsp; &nbsp; it returns the
                 picked filenames.<BR>
                 <BR>
+                If using a <SPAN style=
+                "font-weight: bold;">list</SPAN>, the list must
+                already exist or there will be an error.<BR>
+                If using an array$[] that exists it will be
+                re-used. If it does not exist, it will be
+                created.<BR>
+                <BR>
                 If there is one selection or more, the array or
                 list is overwritten with the picked rows<BR>
                 and <SPAN style=
@@ -1299,6 +1316,9 @@
                 Warning: If using an array, the array will be
                 re-dimensioned to the number&nbsp; of items
                 returned.<BR>
+                If the selection was cancelled, the list or array
+                is untouched (a non-existent array will still not
+                exist).<BR>
                 <BR>
               </DIV><SPAN style=
               "font-weight: bold;">title</SPAN>_<SPAN style=
@@ -1324,7 +1344,10 @@
                 only those files that end with the string in
                 <SPAN style=
                 "font-weight: bold;">endsWith</SPAN>.<BR>
-                e.g ".txt"<BR>
+                e.g <SPAN style=
+                "color: rgb(0, 102, 0);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">".txt"</SPAN></SPAN><BR>
+
                 (note that an asterisk is not needed and should not
                 be used.)<BR>
               </DIV><BR>
@@ -1422,7 +1445,12 @@
               <SPAN style="font-style: italic;">to separate omitted
               arguments)</SPAN><BR>
             </DIV>Select a directory from the file system.<BR>
-            where<SPAN style="font-weight: bold;"><BR></SPAN>
+            <DIV style="text-align: right;">
+              <SPAN style="font-style: italic;">Note that the 'file
+              system</SPAN><SPAN style="font-style: italic;">' is
+              scoped, i.e you can only navigate within your
+              scope.</SPAN><BR>
+            </DIV>where<SPAN style="font-weight: bold;"><BR></SPAN>
             <DIV style="margin-left: 40px;">
               <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
               "color: black; font-weight: bold;">rc</SPAN>_nvar</SPAN>&nbsp;&nbsp;
@@ -1822,7 +1850,8 @@
                   <A href=
                   "dialogs.html#set_text_fg">TEXT_FG</A>&nbsp;&nbsp;&nbsp;
                   <A href=
-                  "dialogs.html#set_text_bg">TEXT_BG</A><BR>
+                  "dialogs.html#set_text_bg">TEXT_BG</A>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <A href="#set_text_align">TEXT_ALIGN</A><BR>
                   <A href=
                   "dialogs.html#set_statustxt">STATUSTXT</A>&nbsp;&nbsp;&nbsp;
                   <A href=
@@ -2010,7 +2039,7 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=
-            "set_title_fg" id="wrap"></A></SPAN></BIG><SPAN style=
+            "set_title_bg" id="wrap"></A></SPAN></BIG><SPAN style=
             "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TITLE_BG</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;</SPAN>
             <SPAN style=
             "font-family: Courier New, Courier, monospace;">&lt;color&gt;|default"&nbsp;
@@ -2279,15 +2308,13 @@
           </DIV>
           <DIV style="margin-left: 280px;">
             <SPAN style=
-            "font-family: Courier New, Courier, monospace;">e.g</SPAN>
-            <SPAN style=
             "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
-            <SPAN style=
+            e.g</SPAN> <SPAN style=
             "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
             "color: rgb(0, 0, 153);"><SPAN style=
             "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN></SPAN>
-            "</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">TITLE_ALIGN
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">TITLE_ALIGN
             = RIGHT</SPAN></SPAN><SPAN style=
             "font-family: Courier New, Courier, monospace;">"<BR>
             <BR></SPAN>
@@ -2410,6 +2437,47 @@
               "font-family: Courier New, Courier, monospace;">default</SPAN>
               will use the default color (white).<BR>
             </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <A name="set_title_align" id=
+            "set_title_align"></A>"<SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 0, 0);">TEXT_ALIGN</SPAN></SPAN>&nbsp;&nbsp;&nbsp;
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&lt;alignment&gt;"</SPAN><BR>
+
+            <DIV style="margin-left: 240px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              e.g</SPAN> <SPAN style=
+              "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN>
+              "<SPAN style="color: rgb(102, 51, 0);">TEXT_ALIGN =
+              CENTER</SPAN>"</SPAN><BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 280px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+            e.g</SPAN> <SPAN style=
+            "color: rgb(0, 0, 153);">DIALOG</SPAN><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">.SET</SPAN></SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">TEXT_ALIGN
+            = RIGHT</SPAN></SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;">"</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            For <SPAN style="font-weight: bold;"><SPAN style=
+            "color: rgb(0, 0, 153);">SELECT &amp;
+            SELECT.FILE</SPAN></SPAN> only.
+          </DIV>
+          <DIV style="margin-left: 160px;">
+            <SPAN style="color: rgb(0, 0, 153);">Set the alignment
+            for the content text.</SPAN><BR>
+            If any other value other than CENTER or RIGHT, then the
+            alignment will default to the left.<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
             <BIG><SPAN style="font-family: monospace;"><A name=

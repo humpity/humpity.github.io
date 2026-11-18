@@ -86,6 +86,13 @@
                 leading and trailing empty words<BR></TD>
               </TR>
               <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "#size">SIZE (..)</A><BR></TD>
+                <TD style="vertical-align: top;">Get the size of an
+                array<BR></TD>
+              </TR>
+              <TR>
                 <TD style="vertical-align: top;"><A name="graphics"
                 id="graphics"></A>Graphics<BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -293,7 +300,7 @@
                   </TR>
                   <TR>
                     <TD style="vertical-align: top;">"<A href=
-                    "#orient_locked">ORIENT_LOCK</A>"</TD>
+                    "#device_orient_locked">ORIENT_LOCK</A>"</TD>
                     <TD style="vertical-align: top;">"Yes"<BR></TD>
                     <TD style="vertical-align: top;">
                       User specified rotation Locking<BR>
@@ -310,13 +317,25 @@
                     <TD style="vertical-align: top;">"Off"<BR></TD>
                     <TD style="vertical-align: top;">
                       <SPAN style="color: rgb(0, 0, 153);">Night
-                      Mode</SPAN> status (dark mode)<BR>
+                      Mode</SPAN> status (dark mode in
+                      settings)<BR>
                       <DIV style="margin-left: 40px;">
                         "On", "Off",&nbsp; "" <SPAN style=
                         "color: rgb(102, 102, 102);">( empty means
                         undefined )</SPAN><BR>
                       </DIV>
                     </TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;"><A href=
+                    "#device_location">"LOCATION"</A><BR></TD>
+                    <TD style="vertical-align: top;">"Off"<BR></TD>
+                    <TD style="vertical-align: top;"><SPAN style=
+                    "color: rgb(0, 0, 153);">Location</SPAN> status
+                    (Location toggle in settings)<BR>
+                    "On", "Off",&nbsp; "" <SPAN style=
+                    "color: rgb(102, 102, 102);">( empty means
+                    undefined )</SPAN></TD>
                   </TR>
                 </TBODY>
               </TABLE>
@@ -349,7 +368,7 @@
               <A href="commands.html#onorient">OnORIENT
               ..ORIENT.Resume</A>.<BR>
             </DIV><BR>
-            <A name="orient_locked" id=
+            <A name="device_orient_locked" id=
             "orient_locked"></A>ORIENT_LOCK<BR>
             <DIV style="margin-left: 40px;">
               Returns whether or not the system setting has
@@ -366,8 +385,40 @@
             NIGHTMODE<BR>
             <DIV style="margin-left: 40px;">
               Returns whether or not the system setting is set to
-              nightmode (i.e dark mode)<BR>
+              nightmode (i.e dark mode).<BR>
               <BR>
+            </DIV><A name="device_location" id=
+            "device_location"></A>LOCATION<BR>
+            <DIV style="margin-left: 40px;">
+              Returns whether or not the user turned on Location in
+              system settings.<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="round" id="round"></A><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">ROUND
+          (..)</SPAN></FONT><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            Fix for ROUND function for precise input values<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            The math function <SPAN style=
+            "color: rgb(0, 0, 153);">ROUND</SPAN> <SPAN style=
+            "color: rgb(102, 51, 0);">(&lt;value_nexp&gt;{,
+            &lt;count_nexp&gt;{, &lt;mode_sexp&gt;}})</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              ..was using java BigDecimal for rounding BUT the
+              input values were still binary64 leading to precision
+              errors.<BR style="font-family: Liberation Sans;">
+              This was fixed internally to first convert to a
+              string.
             </DIV>
           </DIV>
         </TD>
@@ -448,14 +499,14 @@
           "color: rgb(0, 0, 153);"><BR></BIG> <FONT size=
           "+1"><TT><BR></TT></FONT>
           <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">WORD_ALL$</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);">WORD_ALL$</SPAN> (
             <SPAN style=
-            "color: rgb(102, 51, 0);">(</SPAN><SPAN style=
             "font-weight: bold;">source</SPAN><SPAN style=
             "color: rgb(102, 51, 0);">_sexp, <SPAN style=
             "color: black; font-weight: bold;">nth</SPAN>_nexp {,
             <SPAN style=
-            "color: black; font-weight: bold;">separator</SPAN>_sexp})</SPAN><BR>
+            "color: black; font-weight: bold;">separator</SPAN>_sexp}</SPAN>
+            )<BR>
           </DIV>
           <BLOCKQUOTE>
             Same as <SPAN style=
@@ -503,26 +554,62 @@
       </TR>
       <TR>
         <TD style="vertical-align: top;">
-          <A name="round" id="round"></A><FONT size=
-          "+1"><SPAN style="color: rgb(0, 0, 153);">ROUND
+          <A name="size" id="round"></A><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);">SIZE
           (..)</SPAN></FONT><BR>
           <BR>
           <DIV style="margin-left: 40px;">
-            Fix for ROUND function for precise input values<BR>
+            <SPAN style="color: rgb(0, 0, 153);">SIZE</SPAN> (
+            <SPAN style=
+            "font-weight: bold;">array[]</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_narray <SPAN style=
+            "color: rgb(0, 0, 0);"><SPAN style=
+            "font-weight: bold;">|</SPAN></SPAN> <SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "color: black;">array$[]</SPAN></SPAN>_sarray</SPAN>
+            )&nbsp;&nbsp;&nbsp; or &nbsp;&nbsp; <SPAN style=
+            "color: rgb(0, 0, 153);">SIZE</SPAN> ( <SPAN style=
+            "font-weight: bold;">list_ptr</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN> )<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
-            The math function <SPAN style=
-            "color: rgb(0, 0, 153);">ROUND</SPAN> <SPAN style=
-            "color: rgb(102, 51, 0);">(&lt;value_nexp&gt;{,
-            &lt;count_nexp&gt;{, &lt;mode_sexp&gt;}})</SPAN><BR>
+            Returns the size of an array or a list.<BR>
+            The array or list must already exist.<BR>
+            This is an alternative to the Array.length and
+            List.size commands.&nbsp;&nbsp; Array segments are not
+            allowed.<BR>
+            <BR>
+            e.g<BR>
             <DIV style="margin-left: 40px;">
-              ..was using java BigDecimal for rounding BUT the
-              input values were still binary64 leading to precision
-              errors.<BR style="font-family: Liberation Sans;">
-              This was fixed internally to first convert to a
-              string.
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">ARRAY.LOAD
+              a$[], "a","b","c","d"</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">FOR i
+              = 1 to <SPAN style=
+              "color: rgb(0, 0, 153);">SIZE</SPAN>
+              (a$[])&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% iterate through
+              array</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              PRINT a$[i]</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">NEXT<BR>
+
+              <BR>
+              LIST.CREATE SL, myLIST, "x","y","z"<BR>
+              FOR i = 1 to SIZE (mList)&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</SPAN> <SPAN style=
+              "color: rgb(102, 102, 102);">% iterate through
+              list</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR>
+              &nbsp;&nbsp;&nbsp; LIST.GET myList,i,s$<BR>
+              &nbsp;&nbsp;&nbsp; PRINT s$<BR>
+              NEXT<BR></SPAN>
             </DIV>
-          </DIV>
+          </DIV><BR>
         </TD>
       </TR>
       <TR>
@@ -546,7 +633,7 @@
             "color: black; font-weight: bold;">y</SPAN>_nexp</SPAN></SPAN>)<BR>
 
             <BR>
-            Does object contain X,Y ?<BR>
+            Does object contain coordinates X,Y ?<BR>
             Returns true if object given by object number
             <SPAN style="font-weight: bold;">objPtr</SPAN> contains
             coordinate <SPAN style="font-weight: bold;">x,y</SPAN>.
@@ -651,7 +738,7 @@
             the <SPAN style="text-decoration: underline;">display
             list</SPAN> are counted.<BR>
             If the <SPAN style="font-weight: bold;">all</SPAN>
-            argument is true, then all objects in the <SPAN style=
+            argument is true, then all tweens in the <SPAN style=
             "text-decoration: underline;">objects list</SPAN> are
             counted.<BR>
             <BR>

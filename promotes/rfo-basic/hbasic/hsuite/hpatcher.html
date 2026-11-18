@@ -318,16 +318,17 @@
           </DIV>
           <DIV style="margin-left: 40px;">
             <DIV style="margin-left: 40px;">
-              LOCATION permissions (COURSE, FINE, MOCK,
-              _EXTRA_COMMANDS) are needed for GPS.<BR>
+              LOCATION permissions ACCESS_COARSE_LOCATION and
+              ACCESS_FINE_LOCATION) are needed for GPS.<BR>
+              <BR>
+              ACCESS_FINE_LOCATION<BR>
+              <DIV style="margin-left: 40px;">
+                A <SPAN style="text-decoration: underline;">Play
+                Console declaration</SPAN> is required If you are
+                planning to submit your app to Playstore.
+                (01-27-2027+)<BR>
+              </DIV><BR>
             </DIV><BR>
-            ACCESS_BACKGROUND_LOCATION is not needed and is
-            probably not allowed anymore or doesn't work.<BR>
-          </DIV>
-          <DIV style="margin-left: 80px;">
-            <BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
             ACCESS_WIFI_STATE<BR>
           </DIV>
           <DIV style="margin-left: 80px;">
@@ -343,22 +344,65 @@
             <BR>
           </DIV>
           <DIV style="margin-left: 40px;">
+            ACCESS_LOCAL_NETWORK<BR>
+            <DIV style="margin-left: 40px;">
+              You need this for Android 17+ if you are opening
+              connections to a LAN address.<BR>
+              A <SPAN style="text-decoration: underline;">Play
+              Console declaration</SPAN> is required If you are
+              planning to submit your app to Playstore.<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
             BLUETOOTH<BR>
           </DIV>
           <DIV style="margin-left: 80px;">
-            All the BLUETOOTH permissions are needed for bluetooth
-            commands.<BR>
+            For Android 12+, you need BLUETOOTH_SCAN and
+            BLUETOOTH_CONNECT<BR>
+            For older devices (Android 11 and lower), you need
+            BLUETOOTH, BLUETOOTH_ADMIN and ACCESS_FINE_LOCATION to
+            find devices.<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
-            <BR>
-            CAMERA<BR>
+            <DIV style="margin-left: 40px;">
+              <BR>
+            </DIV>CAMERA<BR>
           </DIV>
           <DIV style="margin-left: 80px;">
-            For CAMERA commands.<BR>
+            For CAMERA commands<BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <BR>
+            RECORD_AUDIO<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            For AUDIO commands<BR>
             <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            VIBRATE<BR>
+            <DIV style="margin-left: 40px;">
+              For VIBRATE command<BR>
+              <BR>
+            </DIV>WAKE_LOCK<BR>
+            <DIV style="margin-left: 40px;">
+              For WAKELOCK command<BR>
+              <BR>
+            </DIV>CALL_PHONE, READ_PHONE_STATE,
+            READ_PHONE_NUMBERS<BR>
+            <DIV style="margin-left: 40px;">
+              For Telephony DEVICE and PHONE commands (which are
+              not present in the master).<BR>
+              To add these commands to your app, use the patch
+              ADDTEL.<BR>
+              <BR>
+            </DIV>POST_NOTIFICATION<BR>
+            <DIV style="margin-left: 40px;">
+              For Notify command<BR>
+            </DIV><BR>
           </DIV>
           <DIV style="margin-left: 80px;">
             (to be continued...)<BR>

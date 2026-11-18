@@ -37,42 +37,84 @@
             These commands ONLY work for <SPAN style=
             "color: rgb(0, 0, 153);">Android 5 (Lollipop / api 21)
             or later</SPAN>. Any lower version will fail silently
-            (will not runtime-error). <SMALL>You can check for a
-            phone's android version with Basic's DEVICE command
-            (which requires the "make and manage phone calls "
-            permission OR hBasic's DEVICE.OS command or DEVICE$()
-            function which do not require any
+            (will not runtime-error). <SMALL><BR>
+            You can check for a phone's android version with
+            Basic's DEVICE command (which requires the "make and
+            manage phone calls " permission OR hBasic's DEVICE.OS
+            command or DEVICE$() function which do not require any
             permissions.</SMALL><BR>
             <BR>
-            For any failed or unsuccessful command, there might be
-            (or not) additional information in GetError$().<BR>
-            To see these messages automatically, you can turn on
-            debugging mode with Debug.ON.<BR>
-            <BR>
-            <SPAN style="font-style: italic;">Since Android 11,
-            Google has furthur limited SAF access. SAF can no
-            longer access the top level directory of</SPAN>
-            <SPAN style=
-            "font-weight: bold; font-style: italic;">Download</SPAN><SPAN style="font-style: italic;">,&nbsp;</SPAN>
-            <SPAN style=
-            "font-weight: bold; font-style: italic;">Android/data</SPAN><SPAN style="font-style: italic;">,</SPAN>
-            <SPAN style=
-            "font-weight: bold; font-style: italic;">Android/obb</SPAN>
-            <SPAN style="font-style: italic;">and</SPAN>
-            <SPAN style=
-            "font-weight: bold; font-style: italic;">root</SPAN>.
-            In affect, the directories that you can access must
-            pre-exist.<BR>
+            <SPAN style="text-decoration: underline;">Limited
+            Storage Access<BR>
+            <BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              Google has changed the rules ever year from Android
+              10 to Android 14.<BR>
+              <SPAN style="font-style: italic;">Since Android 11,
+              Google has furthur limited SAF access. SAF can no
+              longer access the top level directory of</SPAN>
+              <SPAN style=
+              "font-weight: bold; font-style: italic;">Download</SPAN><SPAN style="font-style: italic;">,&nbsp;</SPAN>
+              <SPAN style=
+              "font-weight: bold; font-style: italic;">Android/data</SPAN><SPAN style="font-style: italic;">,</SPAN>
+              <SPAN style=
+              "font-weight: bold; font-style: italic;">Android/obb</SPAN>
+              <SPAN style="font-style: italic;">and</SPAN>
+              <SPAN style=
+              "font-weight: bold; font-style: italic;">root</SPAN>.<BR>
+
+              <BR>
+              The only way you can create <SPAN style=
+              "font-weight: bold;">new</SPAN> directories for a SAF
+              base is via the SAF File Picker from <A href=
+              "#FILE.SAF.GRANT">FILE.SAF.GRANT</A>, where the user
+              must physically create the subdirectory
+              themselves.<BR>
+              <BR>
+              There are 2 directory <SPAN style=
+              "font-weight: bold;">exceptions to the above
+              rule</SPAN>,<BR>
+              <DIV style="margin-left: 40px;">
+                Downloads and Documents<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                These two special directories will allow your app
+                to create (your own) subdirectories and file access
+                <SPAN style=
+                "text-decoration: underline;">without</SPAN> using
+                SAF.<BR>
+              </DIV>For most other directories, you will have to
+              use SAF to get access.<BR>
+              <BR>
+              Regardless of whether you choose to SAF or regular
+              TEXT/BYTE commands, the following applies;<BR>
+              <BR>
+              <DIV style="margin-left: 40px;">
+                Google restricts access to files that <SPAN style=
+                "text-decoration: underline;">only your app
+                created</SPAN>. You do not have access to another
+                app's files and vice-versa.<BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                <BR>
+              </DIV>
+              <DIV style="margin-left: 40px;">
+                Other apps cannot normally write to your created
+                directories, if they can you will only be able to
+                see media file types.<BR>
+                <BR>
+              </DIV>
+            </DIV>
           </BLOCKQUOTE>
-          <DIV style="margin-left: 40px;"></DIV>
         </TD>
       </TR>
       <TR>
         <TD style="vertical-align: top;">
           <BR>
           <DIV style="margin-left: 40px;"></DIV>
-          <TABLE style="text-align: left; width: 90%;" cellspacing=
-          "2" cellpadding="2" border="0">
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: 40px;"
+          cellspacing="2" cellpadding="2" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: bottom;" align="right">
@@ -200,9 +242,22 @@
                 <TD style="vertical-align: top;">open a file for
                 basic<BR></TD>
               </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#error_handling">Error Handling</A><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
             </TBODY>
           </TABLE>
           <DIV style="margin-left: 40px;"></DIV><BR>
+          <A name="error_handling" id="error_handling"></A>Error
+          Handling<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            For any failed or unsuccessful command, there might be
+            (or not) additional information in GetError$().<BR>
+          </DIV><BR>
           <BR>
           <A name="FILE.SAF.GRANT" id=
           "FILE.SAF.GRANT"></A><SPAN style=
@@ -221,18 +276,31 @@
             sdcards, If so, then this would show up with the sdcard
             name on the first screen or a slide-in&nbsp; 'recent'
             or 'advanced' menu.<BR>
+            <BR>
           </DIV>
           <DIV style="margin-left: 40px;">
             <IMG style="width: 300px; height: 307px;" alt="" src=
-            "pics/grant.jpg"><BR>
+            "pics/grant1.jpg"><IMG src="pics/grant2.png" alt=""
+            style="width: 300px; height: 336px;"><IMG src=
+            "pics/grant3.png" alt="" style=
+            "width: 300px; height: 262px;"><BR>
+            <BR>
+            <BR>
+            There are a number of things you must ask the user to
+            do before calling this dialog.<BR>
+            If the directory doesn't exist, you must Tell the user
+            to tap the '+' icon in order to create a subdirectory.
           </DIV>
           <DIV style="margin-left: 40px;">
-            You should ask the user to select this name which is
-            the root directory of the sdcard.<BR>
-            This action grants read/write permission from this
+            You must Tell the user to click the name of the
+            directory in order to enter it.<BR>
+            Then Tell the user to tap the 'USE THIS FOLDER'
+            button.<BR>
+            <BR>
+            This action grants read/write permission for the chosen
             directory and all sub-directories below it.<BR>
-            This action also persists the permission to survive
-            reboots for the lifetime of the app (until the app is
+            The permission persists to survive reboots for the
+            lifetime of the app (until the app is
             un-installed).<BR>
           </DIV><BR>
           <DIV style="margin-left: 40px;">
@@ -241,6 +309,8 @@
             be overwriten with the base uri of the saf drive.<BR>
             This uri is a string and can be saved for future use
             (<SMALL>see FILE.SAF.SET)</SMALL>.<BR>
+            The uri will also be the new SAF base (the same as
+            FILE.SAF.SET).<BR>
             <BR>
             On Failure:<BR>
             <SPAN style="color: rgb(102, 51, 0);">Uri$</SPAN> will
@@ -317,18 +387,33 @@
             5 =&gt; not supported<BR>
             6 =&gt; could not set base<BR>
             9 =&gt; other<BR>
+            <BR>
+            You can overwrite the current base with any valid base
+            <SPAN style="color: rgb(102, 51, 0);">Uri$</SPAN>.<BR>
+            You do not need to set the base if you have just
+            created a new one from FILE.SAF.GRANT.<BR>
+            The base survives until the app is uninstalled.<BR>
           </DIV><BR>
           <A name="FILE.SAF_GET" id="FILE.SAF_GET"></A><SPAN style=
           "color: rgb(0, 0, 153);">FILE.SAF.GET</SPAN>&nbsp;&nbsp;&nbsp;
-          <SPAN style="color: rgb(102, 51, 0);">Uri$
-          {,name$}&nbsp;</SPAN>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          <SPAN style="color: rgb(102, 51, 0);">Uri$ {,
+          name$}&nbsp;</SPAN>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
           &nbsp;&nbsp;&nbsp; get the saf base directory<BR>
           <BR>
           <DIV style="margin-left: 40px;">
             Gets the current saf base location (a uniform resource
             identifier),&nbsp; into <SPAN style=
             "color: rgb(102, 51, 0);">Uri$.</SPAN><BR>
-            Optionally, also get the directory name into name$.<BR>
+            Optionally, also get the directory name into
+            <SPAN style="color: rgb(102, 51, 0);">name$</SPAN>.<BR>
+            <BR>
+            If the base has not been set, then&nbsp; <SPAN style=
+            "color: rgb(102, 51, 0);">Uri$</SPAN> and <SPAN style=
+            "color: rgb(102, 51, 0);">name$</SPAN> will be empty
+            striings.<BR>
+            If the base has been set before or have been granted a
+            new base, then the base survives until the app is
+            uninstalled.<BR>
           </DIV><BR>
           <A name="FILE.SAF_DIR" id="FILE.SAF_DIR"></A><SPAN style=
           "color: rgb(0, 0, 153);">FILE.SAF.DIR</SPAN>&nbsp;&nbsp;&nbsp;
@@ -530,18 +615,19 @@
             This call returns a <SPAN style=
             "text-decoration: underline;">file number</SPAN>
             <SPAN style="color: rgb(0, 102, 0);">fileNum</SPAN>
-            which can be used for other basic commands; e.g
+            variable which can be used for other basic commands;
+            e.g <SPAN style=
+            "color: rgb(0, 0, 153);">byte.read.byte</SPAN>,
             <SPAN style=
-            "color: rgb(0, 0, 153);">byte.read.byte</SPAN>. It is
+            "color: rgb(0, 0, 153);">text.writeln</SPAN>. ..etc<BR>
+            <SPAN style="color: rgb(0, 102, 0);">fileNum</SPAN> is
             basic's internal file table entry index for the opened
             file.<BR>
             <BR>
-            <SPAN style="color: rgb(102, 51, 0);">path$</SPAN> is
-            relative to the current saf base.<BR>
+            <SPAN style="color: rgb(102, 51, 0);">path$</SPAN><BR>
+            Is a file path relative to the current saf base.<BR>
             <BR>
-            <SPAN style=
-            "text-decoration: underline; color: rgb(153, 0, 0);">mode</SPAN><BR>
-
+            <SPAN style="color: rgb(153, 0, 0);">mode</SPAN><BR>
             The open modes are <SPAN style=
             "color: rgb(153, 0, 0);">t, b, r</SPAN>,&nbsp;
             <SPAN style="color: rgb(153, 0, 0);">w</SPAN> or

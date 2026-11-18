@@ -2,13 +2,24 @@ hBasic changelog
 
 Date		Summary of Versions			(hcodes in brackets)
 ---------------	------------------------------------------------------------
+2026-11-18 v5.77
+		Fix directives when chaining Run command (0569)
+		Loopback address for hftp server (0570)
+		Add device$("location") (0571)
+		Add function SIZE (..) (0572)
+		Add "Text_Align" to DEVICE$(..) (0573)
+		Add GrauBasic's BLE Api (0574) (-Little-Pete)
+		Tidy up permissions	(0575)
+		minSdkVersion bumped to Api 21 (Lollipop) (0576)
+		Target Api 37	(0577)
+
 2026-02-23 v5.68
 		Fix Android 14 crashes (0566) (-Spike)
 		Fix color of menu dots for titles (0567)
 		Fix SELECT.FILE return code (0568)
 
 2026-02-11 v5.65
-		Fix GR.BRIGHTNESS regression (0564) (-Spike) 
+		Fix GR.BRIGHTNESS regression (0564) (-Spike)
 			and permit -1 for system default.
 		Fix GR.SCREEN after keyboard input. (0565) (-Spike)
 
@@ -50,7 +61,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Android decides POPUP position (0531)
 		DEVICE$(..) add more items     (0532)
 			"nightmode"			(-Spike)
-			"orient_lock" 
+			"orient_lock"
 		BUNDLE.CREATE more than one bundle (0533)
 		Add back Bundle Expressions (0534)
 		Fix double execution (0535)
@@ -60,7 +71,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		GR.BITMAP.LOAD - enhancements (0527)
 		AUDIO.PLAY - timeout (0528)
 		BT enhancements      (0529)
-			BT.CONNECT    {rc,}{secure} 
+			BT.CONNECT    {rc,}{secure}
 			BT.CONNECT.TO {rc,}{secure,} mac$  (-charles.rayer29)
 			BT.DEVICE.ADDR {rc,} mac$
 			BT.GET.PAIRED macList {,nameList}
@@ -268,7 +279,7 @@ Date		Summary of Versions			(hcodes in brackets)
 
 		Add GR.TITLE title$, textcolor$, backcolor$ (0411)
 		Mod CONSOLE.TITLE title$, textcolor$, backcolor$ (0412)
-		
+
 		Changed DIRECTIVE syntax to "@@" (0413)
 
 2021-12-24	v4.03
@@ -306,7 +317,7 @@ Date		Summary of Versions			(hcodes in brackets)
 		Add CONSOLE.SET "VOIDCOLOR (0317)
 		Add CONSOLE.SET "FONT (0318)
 		Add CONSOLE.SET "WRAP (0319)
-		Add CONSOLE.SET "SCROLL FASTON | FASTOFF" (0320)	
+		Add CONSOLE.SET "SCROLL FASTON | FASTOFF" (0320)
 		Add CONSOLE.SET "STACK FROMBASE | FROMTOP"(0320)
 		Upgrade HFTPS with Rename (0321)
 
@@ -514,7 +525,7 @@ v4.78	v2.22	Merged 0140 + 0469-0478
 v4.84	v2.23	Merged 0479-0484
 v4.91	v2.24	Merged 0485-0491 Targets API-34
 v4.93	v2.25	Merged 0492-0493
-v5.00	v2.26	Merged 0494-0500 Graphics upgrade (mkII engine)
+v5.00	v2.26	Merged 0494-0500 Graphics upgrade (MkII engine)
 v5.04	v2.27	Merged 0501-0504
 v5.10	v2.28	Merged 0505-0510
 v5.20	v2.29	Merged 0511-0512, 0520 Targets API-35
@@ -527,6 +538,7 @@ v5.50	v2.35	Merged 0546-0550 shortcut from icon menu
 v5.63	v2.36	Merged 0551-0563 Targets API-36
 v5.65	v2.37	Merged 0564-0565
 v5.68	v2.38	Merged 0566-0568
+v5.77	v2.39	Merged 0569-0577 Targets API-37
 
 ============================================================================
 Patches that were created.
@@ -546,7 +558,7 @@ H0160	M	0160 + 0161
 H0210	D	0210 + 0211	bundle.key expressions (see 0534)
 H0220	M	0220	Array pointers and assignment
 H0230	M	0230	REDIM
-H0240	M	0240	Array Functions 
+H0240	M	0240	Array Functions
 		M	0241	FN_RTN mod
 		M	0242    gr.modify error_msg mod
 		M	0243	Fix "&=" pre-assign op
@@ -571,7 +583,7 @@ H0306	M	0306	Fix invalid base paths
 H0312	D	0312	BACKSPACE and re-code append mode for PRINT
 HFTPS	O	0321	add Rename
 HFTPS	O	0333	basic can control hftps
-ADDTEL  O   	+ADDTEL adds DEVICE & PHONE cmds (for standalone apk)
+ADDTEL  O   +ADDTEL adds DEVICE & PHONE cmds (for standalone apk)
 
 ============================================================================
 -End-

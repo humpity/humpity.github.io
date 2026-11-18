@@ -1,0 +1,1718 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+  <META content="HTML Tidy for HTML5 for Linux version 5.6.0" name=
+  "generator">
+  <META http-equiv="content-type" content=
+  "text/html; charset=utf-8">
+  <META name="viewport" content=
+  "width=device-width, initial-scale=1.0">
+  <TITLE>Bluetooth BLE</TITLE>
+  <LINK rel="stylesheet" href="main.css" type="text/css">
+</HEAD>
+<BODY vlink="#990099" link="#000099" alink="#000099">
+  <A href="../hbasic.html">hBasic</A> &gt; <A href=
+  "index.html">hManual</A> &gt; <A href=
+  "commands.html">Commands</A> &gt; Bluetooth BLE<BR>
+  <BR style="font-family: Helvetica,Arial,sans-serif;">
+  <TABLE style=
+  "border-right: 1px solid black; border-bottom: 1px solid black; text-align: left; font-family: Helvetica,Arial,sans-serif;"
+  cellspacing="2" cellpadding="2">
+    <TBODY>
+      <TR>
+        <TD style="vertical-align: top;">
+          <DIV style="text-align: right;">
+            <BIG>hBasic Manual</BIG><BR>
+          </DIV><BIG><BIG style="color: rgb(0, 0, 153);">Bluetooth
+          Low Energy Grau API</BIG></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            This is the BLE Client API from <A href=
+            "https://grauonline.de/wordpress/?page_id=2673">GRAU
+            BASIC!</A> designed by <A href=
+            "https://www.tapatalk.com/groups/rfobasic/bluetooth-low-energy-ble-support-t5472.html#p39432">
+            <SPAN style="font-weight: bold;">greymfm76</SPAN></A>
+            plus a few enhancements.<BR>
+            <DIV style="text-align: right;">
+              <BR>
+            </DIV>
+          </DIV>
+          <TABLE style=
+          "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
+          cellspacing="2" cellpadding="4" border="0">
+            <TBODY>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#error_handling"><FONT size="+1">Error
+                Handling</FONT></A></TD>
+                <TD style="vertical-align: top;">Read This
+                First<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top; width: 30%;">
+                <A href="#ble_open"><FONT size=
+                "+1">BLE.OPEN</FONT></A></TD>
+                <TD style="vertical-align: top;">open BLE
+                session</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_close"><FONT size=
+                "+1">BLE.CLOSE</FONT></A></TD>
+                <TD style="vertical-align: top;">close BLE
+                session<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_connect"><FONT size=
+                "+1">BLE.CONNECT</FONT></A></TD>
+                <TD style="vertical-align: top;">connect to a
+                device</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_status"><FONT size=
+                "+1">BLE.STATUS</FONT></A></TD>
+                <TD style="vertical-align: top;">get connection
+                status</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_disconnect"><FONT size=
+                "+1">BLE.DISCONNECT</FONT></A></TD>
+                <TD style="vertical-align: top;">disconnect from a
+                device<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_status"><FONT size=
+                "+1">BLE.STATUS</FONT></A></TD>
+                <TD style="vertical-align: top;">get connection
+                status<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_scan"><FONT size=
+                "+1">BLE.SCAN</FONT></A></TD>
+                <TD style="vertical-align: top;">start/stop
+                scanning<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_notify"><FONT size=
+                "+1">BLE.NOTIFY</FONT></A></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">set
+                characteristic notifications (push
+                updates)<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_read_request"><FONT size=
+                "+1">BLE.READ.REQUEST</FONT></A></TD>
+                <TD style="vertical-align: top;">request a read
+                from a characteristic<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_read"><FONT size=
+                "+1">BLE.READ</FONT></A></TD>
+                <TD style="vertical-align: top;">read a device
+                characteristic<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_write"><FONT size=
+                "+1">BLE.WRITE</FONT></A></TD>
+                <TD style="vertical-align: top;">write to a device
+                characteristic<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_devices"><FONT size=
+                "+1">BLE.DEVICES</FONT></A></TD>
+                <TD style="vertical-align: top;">get scanned
+                devices to an array<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_name"><FONT size=
+                "+1">BLE.NAME</FONT></A></TD>
+                <TD style="vertical-align: top;">get the name of a
+                device</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_rssi"><FONT size=
+                "+1">BLE.RSSI</FONT></A></TD>
+                <TD style="vertical-align: top;">get the RSSI of a
+                device<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_teasers"><FONT size=
+                "+1">BLE.TEASERS</FONT></A></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">get
+                service teasers from connected device</TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_services"><FONT size=
+                "+1">BLE.SERVICES</FONT></A></TD>
+                <TD style="vertical-align: top;">get services from
+                connected device<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_characteristics"><FONT size=
+                "+1">BLE.CHARACTERISTICS</FONT></A></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">get
+                characteristics of a service from connected
+                device<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_properties"><FONT size=
+                "+1">BLE.PROPERTIES</FONT></A></TD>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">get
+                properties of a characteristic from connected
+                device<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><A href=
+                "#ble_timeout"><FONT size=
+                "+1">BLE.TIMEOUT</FONT></A></TD>
+                <TD style="vertical-align: top;">set timeout for
+                some command actions<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;">Use of
+                <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+                "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN>
+                and other tips.</TD>
+              </TR>
+            </TBODY>
+          </TABLE><BR>
+          <DIV style="margin-left: 80px;">
+            A copy of the original grau sample files are can be
+            found <A href=
+            "https://humpity.github.io/promotes/rfo-basic/hbasic/repository/other/grau-samples.zip">
+            here</A>.<BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><A name=
+          "error_handling" id="fn_import"></A>Error Handling<BR>
+          <BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">Use of</SPAN>
+            <SPAN style="text-decoration: underline;"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              Run-time-errors are intentionally kept to a
+              minimum.<BR>
+              Many errors are non-fatal and so instead, most BLE
+              commands will record an error message<BR>
+              into the system <SPAN style=
+              "font-weight: bold;">function</SPAN> <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">getError$<SPAN style="font-weight: bold;">()</SPAN></SPAN></SPAN>
+              and your program <SPAN style=
+              "text-decoration: underline;">will not
+              stop</SPAN>.<BR>
+              <BR>
+              If there is no error, <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN>
+              will be empty.<BR>
+              <BR>
+              e,g<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">BLE.WRITE</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">chwrite$,
+              chr$(byte)</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">e$
+              =</SPAN> <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
+              </SPAN> <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              e$&lt;&gt;</SPAN><SPAN style=
+              "color: rgb(0, 102, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">""</SPAN></SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">then
+              print</SPAN> <SPAN style=
+              "color: rgb(0, 102, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">"Error:
+              "</SPAN></SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">+e$ :
+              END</SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              <BR>
+              Commands that support <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN>
+              are<BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">BLE.OPEN</SPAN><BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">BLE.CONNECT</SPAN><BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">BLE.NOTIFY</SPAN><BR>
+              <SPAN style=
+              "color: rgb(0, 0, 153);">BLE.READ.REQUEST</SPAN><BR>
+              <SPAN style="color: rgb(0, 0, 153);">BLE.WRITE<BR>
+              BLE.PROPERTIES<BR></SPAN>
+            </DIV><SPAN style=
+            "text-decoration: underline;"><BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="text-decoration: underline;"><FONT size=
+              "+1">Exceptions</FONT></SPAN><BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              You <SPAN style="text-decoration: underline;">will
+              still get</SPAN> Run-Time-Errors for<BR>
+            </DIV>
+            <DIV style="margin-left: 40px;"></DIV>
+            <DIV style="margin-left: 120px;">
+              Syntax-Errors<BR>
+              If No Bluetooth permsissions granted<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 120px;"></DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="text-decoration: underline;">Use of an
+            error block</SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Use of the system Interrupt label <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">onError:</SPAN></SPAN>
+            is <SPAN style=
+            "text-decoration: underline;">discouraged</SPAN>
+            because you will be trapping all errors,<BR>
+            &nbsp; i.e if you have another error after <SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">onError:</SPAN></SPAN>
+            , e.g BLE.CLOSE, then you may enter an infinite loop
+            and the interpreter will crash.<BR>
+            <BR>
+            Use a normal label instead&nbsp;&nbsp;&nbsp;&nbsp; e.g
+            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">doError:</SPAN></SPAN><BR>
+
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Example<BR>
+            <BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">BLE.write
+              chwrite$, chr$(byte)</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if</SPAN>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN>&lt;&gt;""
+              then goto doError<BR>
+              PRINT "Write was sent"<BR>
+              END<BR></SPAN>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
+            "font-style: italic;"><SPAN style=
+            "color: rgb(102, 102, 102);">% be sure to stop any
+            data</SPAN></SPAN></SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">doError:</SPAN></SPAN><BR>
+
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; PRINT "Error&gt;
+              ";getError$()</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
+              onBackKey:</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; BLE.notify chdata$, 0</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp; BLE.close</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">END</SPAN><BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <BIG style="color: rgb(0, 0, 153);"><A name="ble_open"
+          id="printat"></A></BIG><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BLE.OPEN</SPAN></FONT>&nbsp;<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);">BT.OPEN<BR></SPAN>
+            Opens a BLE session<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Any error message is recorded into <A href=
+            "#error_handling"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></A>
+            otherwise it will be empty.
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              BLE.OPEN</SPAN></SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">if
+              getError$()&lt;&gt;"" then goto doError<BR></SPAN>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD>
+          <FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);"><A name="ble_close" id=
+          "ble_close"></A>BLE.CLOSE</SPAN></FONT>&nbsp;<BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BT.CLOSE<BR></SPAN> Closes the
+            BLE session.<BR>
+            Also disconnects any connected device and disables any
+            scanning.<BR>
+            <BR>
+            This <SPAN style="text-decoration: underline;">will
+            not</SPAN> stop any notifications from a device
+            (server).<BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD valign="top">
+          <A name="ble_connect" id="bt_connect_to"></A><BIG style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BLE.CONNECT</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.CONNECT</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-weight: bold;">mac</SPAN>$<SPAN style="color: rgb(102, 51, 0);">_sexp<BR>
+            </SPAN> Connects directly to a device given the MAC
+            address <SPAN style=
+            "font-weight: bold;">mac</SPAN>$.<BR>
+            <BR>
+            After the call, the status of the connection is updated
+            asynchronously. Get it using <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/ble.html#ble_status">
+            BLE.STATUS</A>.<BR>
+            <BR>
+            Any error message is recorded into <A href=
+            "#error_handling"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></A>
+            otherwise it will be empty.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">mac</SPAN>$<BR>
+            <DIV style="margin-left: 40px;">
+              A MAC address is 6 hex bytes separated with
+              colons<BR>
+              e.g 11:22:33:DD:EE:FF<BR>
+              It is exactly 17 characters long.<BR>
+              <BR>
+              The MAC address is not optional.<BR>
+              If you don't already have a MAC address, you can get
+              one from <A href="#ble_devices">BLE.DEVICES</A><BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+            <DIV style="margin-left: 80px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">BLE.OPEN<BR>
+
+              <BR>
+              tout = 20<BR>
+              st$ = "Disconnected"<BR>
+              do<BR>
+              &nbsp; if st$ = "Disconnected"<BR>
+              &nbsp;&nbsp;&nbsp;&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);">BLE.CONNECT</SPAN>
+              "</SPAN><SPAN style=
+              "font-family: Courier New, Courier, monospace;">11:22:33:DD:EE:FF"<BR>
+
+              &nbsp;&nbsp;&nbsp;&nbsp; if getError$()&lt;&gt;""
+              then goto doError<BR>
+              &nbsp; endif<BR>
+              <BR>
+              &nbsp; if --tout &lt; 0 then print "Stop. Timed
+              out.":END<BR>
+              &nbsp; pause 500<BR>
+              <BR>
+              &nbsp; BLE.STATUS st$<BR>
+              &nbsp; if st$ &lt;&gt; last$<BR>
+              &nbsp; &nbsp;&nbsp; last$ = st$<BR>
+              &nbsp; &nbsp;&nbsp; print st$<BR>
+              &nbsp; endif<BR>
+              until st$ = "Connected"<BR>
+              END<BR>
+              doError:<BR>
+              &nbsp; print "Connect Error"<BR>
+              END</SPAN><BR>
+            </DIV><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="ble_disconnect" id=
+          "bt_connect_to"></A><BIG style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BLE.DISCONNECT</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.DISCONNECT</SPAN></SPAN><BR>
+
+            Disconnects the current device (if connected).<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_status" id=
+          "ble_status"></A>BLE.STATUS</SPAN></FONT></BIG><BIG style="color: rgb(0, 0, 153);"><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.STATUS</SPAN></SPAN>&nbsp;
+            <SPAN style=
+            "font-weight: bold;">status</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_var</SPAN><BR>
+            Get current connection status<BR>
+            <BR>
+            <SPAN style=
+            "font-weight: bold;">status</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_var<BR></SPAN>
+            <DIV style="margin-left: 40px;">
+              A numeric or string variable to hold the result.<BR>
+              <BR>
+              Returns values are;<BR>
+              <TABLE style=
+              "text-align: left; width: 1%; margin-left: 40px;"
+              cellspacing="2" cellpadding="4" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; width: 1px; text-align: center;">
+                    Number<BR></TD>
+                    <TD style="vertical-align: top; width: 1px;">
+                    String<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    0<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Disconnected<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    2<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Connecting<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    3<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Discovering<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style=
+                    "vertical-align: top; text-align: center;">
+                    4<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Connected<BR></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="ble_scan" id="bt_connect_to"></A><BIG style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BLE.SCAN</SPAN></FONT></BIG><BIG style="color: rgb(0, 0, 153);"><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.SCAN</SPAN></SPAN>&nbsp;
+            enable<SPAN style=
+            "color: rgb(102, 51, 0);">_lexp</SPAN><BR>
+            Enables or Disables scanning for nearby devices.<BR>
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="ble_notify" id="bt_device_addr"></A><BIG style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BT.NOTIFY</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.NOTIFY</SPAN>&nbsp;</SPAN>
+            <SPAN style=
+            "font-weight: bold;">characteristic</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN> <SPAN style=
+            "font-weight: bold;">, enable</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN><BR>
+            Enable or Disable a characteristic notification for
+            push updates on the currently connected device.<BR>
+            <BR>
+            This is a request for continuous updates.<BR>
+            The device (server) responds by sending an (internal)
+            acknowledgement and will <SPAN style=
+            "text-decoration: underline;">later</SPAN> send data as
+            updates.<BR>
+            Use <SPAN style=
+            "color: rgb(0, 0, 153);">BLE.READ</SPAN> to actually
+            read them.<BR>
+            <BR>
+            When an update occurs it is received and held in a
+            session read-value holder.<BR>
+            It is up to you as to when to read it with
+            BLE.READ.<BR>
+            There is no buffering at all. Each received value will
+            overwrite any previous value, so your timing is
+            important.<BR>
+            <BR>
+            The update occurance is entirely up to the device
+            (server).<BR>
+            Some devices only update if there are changes, while
+            other devices might update periodically.<BR>
+            <BR>
+            By default, hBasic will synchronise the <SPAN style=
+            "text-decoration: underline;">request</SPAN> with the
+            device(server) acknowledgement using a common
+            timeout.<BR>
+            The timeout is by default 500ms, you can change it with
+            <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/ble.html#ble_timeout">
+            BLE.TIMEOUT</A>.<BR>
+            If this timeout is set to 0ms, then it becomes
+            asynchronous (there is no wait) and you must insert
+            pauses yourself.<BR>
+            A successful request only means an acknowledgement from
+            the <SPAN style=
+            "text-decoration: underline;">server</SPAN>. It does
+            not mean any data has been sent.<BR>
+            <BR>
+            Any error message is recorded into <A href=
+            "#error_handling"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></A>
+            otherwise it will be empty.<BR>
+            <BR>
+            <SPAN style=
+            "font-weight: bold;">characterisitic</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The characteristic ID<BR>
+              e.g 00002a37-0000-1000-8000-00805f9b34fb<BR>
+              It must match one of the characteristic IDs of a
+              service in the current connected device.<BR>
+              It must have the Notify <A href=
+              "#ble_properties">Property</A>.<BR>
+              <BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="font-weight: bold;">enable</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              True = Request to turn on updates.<BR>
+              False = Request to turn off updates.<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;"></DIV>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="ble_read_request" id=
+          "bt_get_paired"></A><BIG style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BLE.READ.REQUEST</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.READ.REQUEST</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;">characteristic</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">sexp<BR></SPAN> Request a
+            read for a given characteristic<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            This is a request for a one-time-read from the
+            connected device.<BR>
+            The session read-value holder <SPAN style=
+            "text-decoration: underline;">is cleared</SPAN> and a
+            request is sent.<BR>
+            The device (server) responds by sending the
+            characteristic value and the holder is filled.<BR>
+            Use <SPAN style=
+            "color: rgb(0, 0, 153);">BLE.READ</SPAN> to actually
+            read it.<BR>
+            <BR>
+            Note that values from the device (server) are not
+            buffered.<BR>
+            Each received value will overwrite any previous value,
+            so your timing is important.<BR>
+            <BR>
+            By default, hBasic will synchronise the <SPAN style=
+            "text-decoration: underline;">exchange</SPAN> with the
+            device(server) using a common timeout.<BR>
+            The timeout is by default 500ms, you can change it with
+            <A href="#ble_timeout">BLE.TIMEOUT</A>.<BR>
+            If this timeout is set to 0ms, then it becomes
+            asynchronous (there is no wait) and you must insert
+            pauses yourself.<BR>
+            On a successful exchange, the data will have arrived
+            and be ready to read.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Any error message is recorded into <A href=
+            "#error_handling"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></A>
+            otherwise it will be empty.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "font-weight: bold;">characterisitic</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The characteristic ID<BR>
+              e.g 00002a37-0000-1000-8000-00805f9b34fb<BR>
+              It must match one of the characteristic IDs of a
+              service in the current connected device.<BR>
+              <BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            Example<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 120px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">BLE.READ.REQUEST</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">chread$</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">if
+            getError$()&lt;&gt;"" then goto
+            doError</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            <BR></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">BLE.READ
+            v$<BR></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END</SPAN><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <A name="ble_read" id="bt_get_paired"></A><BIG style=
+          "color: rgb(0, 0, 153);"><FONT size="+1"><SPAN style=
+          "color: rgb(0, 0, 153);">BLE.READ</SPAN></FONT><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG><BR></BIG>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.READ</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;">value$</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">svar<BR></SPAN> Read a value
+            that is held by the session read holder into
+            <SPAN style="font-weight: bold;">value$</SPAN>.<BR>
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            Values are sent by the device (server) after BLE.NOTIFY
+            or BLE.REQUEST.READ, and held in a temporary
+            holder.<BR>
+            After a value is read, the holder is cleared.<BR>
+            <BR>
+            The holder maybe overwritten at any time by the device
+            (if using BLE.NOTIFY) or by the next
+            BLE.REQUEST.READ,<BR>
+            so your timing is important.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">value$</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The string variable to get the data.<BR>
+              <BR>
+              The value is binary data in the form of a Basic
+              'buffer string'. Each character is 16 bits.<BR>
+              The upper 8 bits are always zero. The lower 8 bits
+              contains the value.<BR>
+              <BR>
+              You can get the number of bytes returned with
+              <SPAN style=
+              "color: rgb(0, 0, 153);">LEN</SPAN>(<SPAN style=
+              "font-weight: bold;">value$</SPAN>)<BR>
+              Byte values can be extracted with ASCII(<SPAN style=
+              "font-weight: bold;">value$</SPAN>, index) which will
+              return a value from 0 to 255 (extended ASCII).<BR>
+              If a <SPAN style="font-weight: bold;"><SPAN style=
+              "font-weight: bold;">value$</SPAN></SPAN> is returned
+              empy ("") It means nothing was received and
+              ASCII(<SPAN style="font-weight: bold;">value$</SPAN>,
+              index) returns a special 256.<BR>
+            </DIV>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            Example<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">BLE.READ.REQUEST</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">chread$</SPAN>
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">if
+            getError$()&lt;&gt;"" then goto
+            doError</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            <BR></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">BLE.READ
+            v$ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <SPAN style=
+            "color: rgb(102, 102, 102);">% expect 1
+            byte.</SPAN><BR>
+            print "Read&gt; ";<BR>
+            v=ascii(v$)&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <SPAN style="color: rgb(102, 102, 102);">% empty string
+            is always 256<BR>
+            <BR></SPAN> if v=256 then print "(empty)" else print
+            v<BR></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END<BR></SPAN>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;"></DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_write" id=
+          "ble_write"></A>BLE.WRITE</SPAN></FONT></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.WRITE</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;">characteristic</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_</SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">sexp</SPAN><SPAN style=
+            "font-weight: bold;">,</SPAN>&nbsp; <SPAN style=
+            "font-weight: bold;">data</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_sexp</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN> Write data to
+            characteristic of the connected device.<BR>
+            <BR>
+            By default, hBasic will synchronise the <SPAN style=
+            "text-decoration: underline;">request</SPAN> with the
+            device(server) using a common timeout.<BR>
+            The timeout is by default 500ms, you can change it with
+            <A href=
+            "file:///home/batman/upload/web/promotes/rfo-basic/hbasic/hmanual/ble.html#ble_timeout">
+            BLE.TIMEOUT</A>.<BR>
+            If this timeout is set to 0ms, then it becomes
+            asynchronous (there is no wait) and you must insert
+            pauses yourself.<BR>
+            A successful request is only for the link layer, this
+            means the <SPAN style=
+            "text-decoration: underline;">server acknowledged this
+            request</SPAN> before any actual write.<BR>
+            <BR>
+            Any error message is recorded into <A href=
+            "#error_handling"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></A>
+            otherwise it will be empty.<BR>
+            <BR>
+            <SPAN style=
+            "font-weight: bold;">characterisitic</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The characteristic ID<BR>
+              e.g 00002a37-0000-1000-8000-00805f9b34fb<BR>
+              It must match one of the characteristic IDs of a
+              service in the current connected device.<BR>
+            </DIV><BR>
+            <SPAN style="font-weight: bold;">data</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The string to write.<BR>
+              The value is binary data in the form of a Basic
+              'buffer string'. Each character is 16 bits and is
+              converted to a byte.<BR>
+              The upper 8 bits are always discarded. The lower 8
+              bits contains the value.<BR>
+              <BR>
+              You can encode a value with <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              CHR</SPAN>$(byte1,byte2,..).</SPAN><BR>
+              An empy string ("") is still a valid payload,
+              although it is discouraged depending on the device
+              (server) recieving it.<BR>
+            </DIV><BR>
+            Example<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">BLE.WRITE</SPAN></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">charac$,
+            chr$(1)</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">if
+            getError$()&lt;&gt;"" then goto doError</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 120px;"></DIV>
+          <DIV style="margin-left: 80px;">
+            <BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END</SPAN>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_devices" id=
+          "ble_devices"></A>BLE.DEVICES</SPAN></FONT></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.DEVICES</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">devices_array$[]</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN> Returns scanned devices.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">devices_array$[]</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN>
+            <DIV style="margin-left: 40px;">
+              The string array to return the list of device
+              addresses.<BR>
+              If the array does not exist, it will be created,
+              otherwise it will be overwritten.<BR>
+              <BR>
+              The device addresses are MAC addresses<BR>
+              e.g 11:22:33:DD:EE:FF<BR>
+              <BR>
+              The internal list is updated continuously while
+              scanning is enabled.<BR>
+              <BR>
+            </DIV>Example<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+            BLE.DEVICES</SPAN> dl$[] : array.length dlen,dl$[]<BR>
+            <BR></SPAN> <SPAN style=
+            "font-family: Courier New, Courier, monospace;">for i=1
+            to dlen</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;
+            ble.rssi dl$[i], rssi</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;
+            ble.name dl$[i], name$</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;
+            if dl$[i] &lt;&gt; ""</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            print name$;"\n";dl$[i] ; "
+            rssi=";rssi</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;
+            endif</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">next
+            i</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END</SPAN><BR>
+
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR>
+            </SPAN>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_name" id=
+          "ble_name"></A>BLE.NAME</SPAN></FONT></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.NAME</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">device</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style="font-weight: bold;">,
+            name$</SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_svar<BR></SPAN> Returns a
+            name for a given device.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">device</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN>
+            <DIV style="margin-left: 40px;">
+              The device address.<BR>
+              This must be one of the scanned devices gathered in
+              your BLE session,<BR>
+              &nbsp;i.e it must be present inside the list
+              from&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "color: rgb(0, 0, 153);">BLE.DEVICES</SPAN></SPAN>.<BR>
+
+              <BR>
+            </DIV><SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">name$</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN>
+            <DIV style="margin-left: 40px;">
+              The name to return.<BR>
+            </DIV>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_rssi" id=
+          "ble_rssi"></A>BLE.RSSI</SPAN></FONT></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.RSSI</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">device</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style="font-weight: bold;">,
+            rssi</SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar</SPAN><BR>
+            Returns the Received Signal Strength Indicator for a
+            device as dBm (decibels milliwatts).<BR>
+            Is negative and closer to zero is stronger.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">device</SPAN></SPAN></SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The device address.<BR>
+              This must be one of the scanned devices gathered in
+              your BLE session,<BR>
+              &nbsp;i.e it must be present inside the list
+              from&nbsp; <SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "color: rgb(0, 0, 153);">BLE.DEVICES</SPAN></SPAN>.<BR>
+            </DIV><BR>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">rssi</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            The variable to return the rssi<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_teasers" id=
+          "ble_teasers"></A>BLE.TEASERS</SPAN></FONT></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.TEASERS</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">device</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style="font-weight: bold;">,
+            teasers$[]</SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN> Returns teaser
+            service IDs from a device into a string array.<BR>
+            <BR>
+            Teasers are advertised <SPAN style=
+            "text-decoration: underline;">services</SPAN> from a
+            device that show up during a scan (even without a
+            connection).<BR>
+            Teasers are optional depending on the configured
+            (server) device.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">device</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN><BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            The device address.<BR>
+            This must be one of the scanned devices gathered in
+            your BLE session,<BR>
+            &nbsp;i.e it must be present inside the list from&nbsp;
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.DEVICES</SPAN></SPAN>.<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+            <SPAN style="font-weight: bold;">teasers$[]</SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              The string array variable to return the teaser
+              list.<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <BR>
+            </DIV>Example<BR>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+          </DIV><SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; <SPAN style=
+          "color: rgb(0, 0, 153);">BLE.TEASERS</SPAN> dev$,t$[] :
+          array.length tlen,t$[]</SPAN><BR>
+          <SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; for j=1 to tlen<BR>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          if STARTS_WITH ("0000180d", t$[j])<BR></SPAN>
+          <SPAN style="font-family: Courier New, Courier, monospace;">
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; print "Found Heart Rate
+          teaser"</SPAN><BR>
+          <SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+          f_n.break<BR></SPAN> <SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; endif<BR></SPAN>
+          <SPAN style=
+          "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; print "HR teaser not
+          found"</SPAN><BR></SPAN><SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp; next j</SPAN><BR>
+          <DIV style="margin-left: 40px;"></DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END<BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <BR>
+          </DIV>
+          <DIV style="margin-left: 80px;"></DIV>
+          <DIV style="margin-left: 40px;">
+            <TABLE style="text-align: left; width: 90%;"
+            cellspacing="2" cellpadding="6" border="0">
+              <TBODY>
+                <TR>
+                  <TD style="vertical-align: top;">
+                    <SPAN style="text-decoration: underline;">How
+                    to Test Teasers<BR>
+                    <BR></SPAN> The sample program <SPAN style=
+                    "color: rgb(102, 51, 0);">h43_ble_heart.bas</SPAN>
+                    shows how to scan for a Heart Rate teaser
+                    service.<BR>
+                    <SPAN style=
+                    "text-decoration: underline;">Instructions</SPAN><BR>
+
+                    To emulate a Heart Rate service, you can<BR>
+                    <BR>
+                    1. Run an <SPAN style="font-weight: bold;">nRF
+                    Connect</SPAN> app on another Device 2, to
+                    simulate a BLE server.<BR>
+                    <BR>
+                    2. Configure the gatt-server to add a Heart
+                    Rate.<BR>
+                    <DIV style="margin-left: 40px;">
+                      Add an Advertiser with service UUID 180d
+                      inside Advertising data<BR>
+                      (type '180d' and it will find it).<BR>
+                      <BR>
+                    </DIV>3. Start your Advertiser on Device 2.<BR>
+                    <DIV style="margin-left: 40px;">
+                      <SPAN style="font-style: italic;">You may
+                      have to disable power savings for the nRF
+                      Connect app under Android Apps or App
+                      Settings to let it run in the background.<BR>
+                      <BR></SPAN>
+                    </DIV><SPAN style=
+                    "font-style: italic;">4.</SPAN> Run
+                    <SPAN style="color: rgb(102, 51, 0);">h43_ble_heart.bas</SPAN>
+                    on Device 1.<BR>
+                    <BR>
+                  </TD>
+                  <TD style="vertical-align: top;"><IMG src=
+                  "pics/teasers.jpg" alt="" style=
+                  "width: 300px; height: 667px;"><BR></TD>
+                </TR>
+                <TR>
+                  <TD style="vertical-align: top;"><BR></TD>
+                  <TD style="vertical-align: top;"><BR></TD>
+                </TR>
+              </TBODY>
+            </TABLE><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_services" id=
+          "ble_services"></A>BLE.SERVICES</SPAN></FONT></BIG><BR>
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.SERVICES</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">services$[]</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN> Returns services from the currently connected
+            device into a string array.<BR>
+            If the array does not exist, it will be created,
+            otherwise it will be overwritten.<BR>
+            If the service has no characteristics, the array will
+            still have one entry of an empty string.<BR>
+            <BR>
+            This will be the list of service IDs found from the
+            device.<BR>
+            The device with this service <SPAN style=
+            "text-decoration: underline;">must be
+            connected</SPAN>.<BR>
+            e.g&nbsp; "0000180d-0000-1000-8000-00805f9b34fb"
+            &nbsp;&nbsp;&nbsp; % hear rate service<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">services$[]</SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 80px;">
+              The string array variable to return the services
+              list.<BR>
+              <BR>
+            </DIV>Example<BR>
+          </DIV><SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;<BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;">BLE.SERVICES
+              sv$[] : array.length svlen,sv$[]<BR>
+              <BR></SPAN>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            for i=1 to svlen</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; print "sv " ; sv$[i]</SPAN><BR>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            next i</SPAN><BR>
+          </DIV><BR>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END</SPAN>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_characteristics" id=
+          "ble_characteristics"></A>BLE.CHARACTERISTICS</SPAN></FONT></BIG><BR>
+
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.CHARACTERISTICS</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">service</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN>
+            <SPAN style="font-weight: bold;">,</SPAN><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">&nbsp;</SPAN></SPAN></SPAN>
+            characs$[]</SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><BR></SPAN> Returns
+            characteristics for a given service of the currently
+            connected device into a string array.<BR>
+            If the array does not exist, it will be created,
+            otherwise it will be overwritten.<BR>
+            If the service has no characteristics, the array will
+            still have one entry of an empty string.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;">service</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The service ID<BR>
+              <BR>
+              The service ID of the device.<BR>
+              The device with this service <SPAN style=
+              "text-decoration: underline;">must be
+              connected</SPAN>.<BR>
+              e.g&nbsp; "0000180d-0000-1000-8000-00805f9b34fb"
+              &nbsp;&nbsp;&nbsp; % hear rate service<BR>
+              <BR>
+              <BR>
+            </DIV><SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">characs$[]</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              The string array variable to return the
+              characteristics list.<BR>
+            </DIV>
+            <DIV style="margin-left: 80px;">
+              <BR>
+            </DIV>
+            <DIV style="margin-left: 40px;">
+              This will be the list of characteristics found for
+              the service.<BR>
+              The device with this service characteristic
+              <SPAN style="text-decoration: underline;">must be
+              connected</SPAN>.<BR>
+              e.g&nbsp;<BR>
+              "00002a38-0000-1000-8000-00805f9b34fb"
+              &nbsp;&nbsp;&nbsp; % body sensor location<BR>
+              "00002a37-0000-1000-8000-00805f9b34fb"&nbsp;&nbsp;&nbsp;&nbsp;
+              % measurement notification<BR>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            Example<BR>
+          </DIV><SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;<BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              BLE.CHARACTERISTICS</SPAN> serviceID$,
+              ch$[]</SPAN><BR>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            array.length chlen,ch$[]</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            for j=1 to chlen</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp; print ch$[j]</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+            next</SPAN><SPAN style=
+            "font-family: Courier New, Courier, monospace;"><BR></SPAN>
+          </DIV>
+          <DIV style="margin-left: 80px;">
+            <SPAN style=
+            "font-family: Courier New, Courier, monospace;">END</SPAN>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_properties" id=
+          "ble_properties"></A>BLE.PROPERTIES</SPAN></FONT></BIG><BR>
+
+          <BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.PROPERTIES</SPAN>&nbsp;</SPAN>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">charac</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN>
+            <SPAN style="font-weight: bold;">,</SPAN><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">&nbsp;</SPAN></SPAN></SPAN>
+            props</SPAN></SPAN></SPAN><SPAN style=
+            "color: rgb(102, 51, 0);"><SPAN style=
+            "color: rgb(102, 51, 0);">_nvar<BR></SPAN></SPAN>
+            Returns properties of the given characteristic of the
+            currently connected device.<BR>
+            <BR>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">charac</SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN><SPAN style="color: rgb(102, 51, 0);"><BR>
+            </SPAN>
+            <DIV style="margin-left: 40px;">
+              The characteristic ID<BR>
+              The device with this characteristic <SPAN style=
+              "text-decoration: underline;">must be
+              connected</SPAN>.<BR>
+              e.g&nbsp; "00002a37-0000-1000-8000-00805f9b34fb"
+              &nbsp;&nbsp;&nbsp; % heart rate measurements<BR>
+            </DIV><BR>
+            <SPAN style="font-weight: bold;"><SPAN style=
+            "font-weight: bold;"><SPAN style=
+            "font-weight: bold;">props</SPAN></SPAN></SPAN><SPAN style="color: rgb(102, 51, 0);"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN><BR>
+
+            <DIV style="margin-left: 80px;">
+              The number variable to return the result.<BR>
+              If this variable does not already exist, it will be
+              created.<BR>
+              <BR>
+              If the characteristic has no properties or if there
+              was an error, the value returned will be 0.<BR>
+              Any error message is recorded into <A href=
+              "#error_handling"><SPAN style=
+              "color: rgb(0, 0, 153);"><SPAN style=
+              "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></A>
+              otherwise it will be empty.<BR>
+              <BR>
+              This will be the <SPAN style=
+              "text-decoration: underline;">byte value</SPAN> of a
+              property mask with each bit representing a
+              property;<BR>
+              <BR>
+              <TABLE style="text-align: left; width: 1%;"
+              cellspacing="2" cellpadding="4" border="0">
+                <TBODY>
+                  <TR>
+                    <TD style="vertical-align: top;">Hex<BR></TD>
+                    <TD style="vertical-align: top;">Dec<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right; white-space: nowrap;">
+                    Bit Position &nbsp;<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Property<BR></TD>
+                    <TD style="vertical-align: top;">hBasic
+                    supported<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Remarks<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x01</TD>
+                    <TD style="vertical-align: top;">1<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    0<BR></TD>
+                    <TD style="vertical-align: top;">
+                    Broadcast&nbsp;&nbsp;<BR></TD>
+                    <TD style="vertical-align: top;">No<BR></TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    billboard. defunct. unused.<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x02</TD>
+                    <TD style="vertical-align: top;">2<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    1<BR></TD>
+                    <TD style="vertical-align: top;">Read</TD>
+                    <TD style=
+                    "vertical-align: top; background-color: rgb(153, 255, 153);">
+                    Yes<BR></TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x04</TD>
+                    <TD style="vertical-align: top;">4<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    2<BR></TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    Write Without Response</TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    No<BR></TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">no
+                    ack<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x08</TD>
+                    <TD style="vertical-align: top;">8<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    3<BR></TD>
+                    <TD style="vertical-align: top;">Write</TD>
+                    <TD style=
+                    "vertical-align: top; background-color: rgb(153, 255, 153);">
+                    Yes<BR></TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    server ack<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x10</TD>
+                    <TD style="vertical-align: top;">16<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    4<BR></TD>
+                    <TD style="vertical-align: top;">Notify</TD>
+                    <TD style=
+                    "vertical-align: top; background-color: rgb(153, 255, 153);">
+                    Yes<BR></TD>
+                    <TD style="vertical-align: top;"><BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x20</TD>
+                    <TD style="vertical-align: top;">32<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    5<BR></TD>
+                    <TD style="vertical-align: top;">Indicate</TD>
+                    <TD style="vertical-align: top;">No<BR></TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    client auto-ack. design bug.<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x40</TD>
+                    <TD style="vertical-align: top;">64<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    6<BR></TD>
+                    <TD style=
+                    "vertical-align: top; white-space: nowrap;">
+                    Authenticated Signed Writes</TD>
+                    <TD style="vertical-align: top;">No<BR></TD>
+                    <TD style="vertical-align: top;">signing.
+                    buggy.<BR></TD>
+                  </TR>
+                  <TR>
+                    <TD style="vertical-align: top;">0x80</TD>
+                    <TD style="vertical-align: top;">128<BR></TD>
+                    <TD style=
+                    "vertical-align: top; text-align: right;">
+                    7<BR></TD>
+                    <TD style="vertical-align: top;">Extended
+                    Properties</TD>
+                    <TD style="vertical-align: top;">No<BR></TD>
+                    <TD style="vertical-align: top;">descriptor
+                    offload<BR></TD>
+                  </TR>
+                </TBODY>
+              </TABLE>
+            </DIV>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            As an example, a Characteristic without the Notify
+            Property (0x10) will not support BLE.NOTIFY.<BR>
+          </DIV><BR>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 80px;"></DIV>
+            <DIV style="margin-left: 40px;"></DIV>Example<BR>
+          </DIV><SPAN style=
+          "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;<BR></SPAN>
+          <DIV style="margin-left: 40px;">
+            <DIV style="margin-left: 40px;">
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(0, 0, 153);">
+              BLE.PROPERTIES</SPAN> ch$ , props<BR>
+              <BR>
+              if band (props, hex ("10")) then</SPAN><BR>
+              <SPAN style=
+              "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;">
+              &nbsp;&nbsp;&nbsp; BLE.NOTIFY ch$, 1<BR></SPAN>
+              &nbsp;&nbsp;&nbsp; PRINT "Notifications
+              Requested"<BR>
+              else<BR>
+              &nbsp;&nbsp; PRINT "Notifications Not Supported"<BR>
+              endif<BR>
+              <BR></SPAN>
+            </DIV><SPAN style=
+            "font-family: Courier New, Courier, monospace;">&nbsp;&nbsp;&nbsp;</SPAN>
+          </DIV>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">
+          <BIG style="color: rgb(0, 0, 153);"><FONT size=
+          "+1"><SPAN style="color: rgb(0, 0, 153);"><A name=
+          "ble_timeout" id=
+          "ble_timeout"></A>BLE.TIMEOUT</SPAN></FONT></BIG><BIG style="color: rgb(0, 0, 153);"><BIG style="color: rgb(0, 0, 153);"><BR>
+          </BIG></BIG><BR>
+          <DIV style="margin-left: 40px;">
+            <SPAN style="color: rgb(0, 0, 153);"><SPAN style=
+            "color: rgb(0, 0, 153);">BLE.TIMEOUT</SPAN></SPAN>&nbsp;
+            <SPAN style=
+            "font-weight: bold;">max_ms</SPAN><SPAN style=
+            "color: rgb(102, 51, 0);">_nexp</SPAN><BR>
+            Sets the general maximum timeout for some commands in
+            milliseconds.<BR>
+            <BR>
+            This is the maximum time taken before the session gives
+            up waiting for an action (i.e synchronised on
+            timeout).<BR>
+            The action depends upon the command. Most commands wait
+            for an acknowledgement from the server,<BR>
+            but this is not always the case. Please read the
+            command description if you are unsure how timeout
+            affects it.<BR>
+            <BR>
+            If a timeout occurs, a "... timed out ." error message
+            is recorded into <A href="#error_handling"><SPAN style=
+            "color: rgb(0, 0, 153);"><SPAN style=
+            "font-family: Courier New, Courier, monospace;">getError$()</SPAN></SPAN></A>
+            , otherwise it will be enpty ("").<BR>
+            It is up to you if you want to check the error message
+            or let it pass. Either way, your program will just
+            continue.<BR>
+            <BR>
+            <SPAN style="text-decoration: underline;">Default
+            Timeout</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              The default maximum timeout is 500ms, although most
+              commands usually complete before 100ms.<BR>
+              You can change the maximum with this command.<BR>
+            </DIV><BR>
+            <SPAN style="text-decoration: underline;">Timeout of
+            Zero</SPAN><BR>
+            <DIV style="margin-left: 40px;">
+              If you set the timeout to 0 or less, this is
+              essentially no_waiting and no_timeout_errors, which
+              is an <SPAN style=
+              "text-decoration: underline;">asynchronous</SPAN>
+              operation.<BR>
+              This will be true to the original Grau Api spec which
+              does not have timeouts.<BR>
+              You will have to add your own pauses in-between
+              commands to ensure they do not overlap each other and
+              confuse the session.<BR>
+            </DIV><BR>
+            Commands that are affected by this command are<BR>
+          </DIV>
+          <DIV style="margin-left: 40px;">
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BLE.OPEN</SPAN><BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BLE.NOTIFY</SPAN><BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BLE.READ.REQUEST</SPAN><BR>
+            <SPAN style=
+            "color: rgb(0, 0, 153);">BLE.WRITE</SPAN><BR>
+          </DIV><BR>
+        </TD>
+      </TR>
+      <TR>
+        <TD style="vertical-align: top;">-END<BR></TD>
+      </TR>
+    </TBODY>
+  </TABLE><BR>
+  <BR>
+  <HR>
+  <SCRIPT type="text/javascript" src=
+  "https://humpity.github.io/counter.js"></SCRIPT>
+</BODY>
+</HTML>

@@ -30,7 +30,7 @@
           "color: rgb(0, 0, 153);"><BR></BIG></BIG>
           <TABLE style=
           "text-align: left; width: 90%; margin-left: auto; margin-right: auto;"
-          cellspacing="2" cellpadding="2" border="0">
+          cellspacing="2" cellpadding="4" border="0">
             <TBODY>
               <TR>
                 <TD style="vertical-align: top;">Console</TD>
@@ -53,7 +53,8 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top; text-align: left;">
+                <TD style=
+                "vertical-align: top; text-align: left; white-space: nowrap;">
                 <A href="graphics.html">Graphics
                 commands<BR></A></TD>
                 <TD style="vertical-align: top;">commands that
@@ -68,24 +69,15 @@
               </TR>
               <TR>
                 <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;">HTML.OPEN<BR></TD>
+                <TD style="vertical-align: top;">HTML.OPEN<BR>
+                HTML.TITLE<BR>
+                <A href=
+                "commands.html#html_front">HTML.FRONT</A><BR></TD>
                 <TD style="vertical-align: top;"><A href=
-                "decors.html#decors">Decors Flag</A></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;">
-                HTML.TITLE<BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "#actionbar_title"><SPAN style=
-                "text-decoration: underline;">Title and
-                Colors</SPAN></A></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "#html_front">HTML.FRONT</A></TD>
-                <TD style="vertical-align: top;"><BR></TD>
+                "decors.html#decors">Decors Flag</A><BR>
+                <A href=
+                "commands.html#actionbar_title"><SPAN style="text-decoration: underline;">
+                Title and Colors</SPAN></A></TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;">Menu</TD>
@@ -101,7 +93,19 @@
                 bar menu system</TD>
               </TR>
               <TR>
-                <TD style="vertical-align: top;">File/FTP</TD>
+                <TD style="vertical-align: top;">FTP<BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;"><BR></TD>
+                <TD style="vertical-align: top;"><A href=
+                "ftp.html">FTP Commands</A><BR></TD>
+                <TD style="vertical-align: top;">FTP and FTPS
+                commands<BR></TD>
+              </TR>
+              <TR>
+                <TD style="vertical-align: top;">File</TD>
                 <TD style=
                 "vertical-align: top; text-align: right;"><BR></TD>
                 <TD style="vertical-align: top;"><BR></TD>
@@ -133,20 +137,6 @@
                 "#file_delete">FILE.DELETE</A></TD>
                 <TD style="vertical-align: top;">Recursive delete
                 option added</TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "commands.html#ftp_flags">FTP flags</A></TD>
-                <TD style="vertical-align: top;">ok flags added to
-                FTP Client commands</TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;"><BR></TD>
-                <TD style="vertical-align: top;"><A href=
-                "commands.html#ftps">FTPS commands</A></TD>
-                <TD style="vertical-align: top;">Controls hBasic's
-                internal FTP server</TD>
               </TR>
               <TR>
                 <TD style="vertical-align: top;">System</TD>
@@ -191,9 +181,10 @@
                 <A href="#actionbar_subtitle"><SPAN style=
                 "text-decoration: underline;">Subtitle and
                 styling</SPAN></A><BR></TD>
-                <TD style="vertical-align: top;">ActionBar
-                Titles&nbsp; and styling for Console, Graphics and
-                HTML<BR>
+                <TD style=
+                "vertical-align: top; white-space: nowrap;">
+                ActionBar Titles&nbsp; and styling for Console,
+                Graphics and HTML<BR>
                 ActionBar Subtitles and styling<BR></TD>
               </TR>
               <TR>
@@ -405,359 +396,6 @@
             ensure that any remaining text is wriiten and the file
             closed.<BR>
           </DIV><BR>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <SPAN style="color: rgb(0, 0, 153);">FTP.&lt;XXX&gt;
-          Return Flags</SPAN><BR>
-          <BR>
-          <DIV style="margin-left: 40px;">
-            An optional return flag was inserted into these FTP
-            client commands.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.OPEN&nbsp;&nbsp;
-            {<SPAN style=
-            "font-weight: bold;">ok</SPAN></SPAN>_<SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN>,}
-            url<SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN>,
-            port<SPAN style="color: rgb(102, 51, 0);">_nexp</SPAN>,
-            user</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,
-            pw</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.PUT&nbsp;
-            &nbsp; {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN>,}
-            source</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,
-            destination</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.GET&nbsp;&nbsp;&nbsp;
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
-            source</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>,
-            destination</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.DIR&nbsp;&nbsp;&nbsp;
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
-            list<SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN>
-            {,dirmark</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN>}</SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.CD&nbsp;&nbsp;&nbsp;&nbsp;
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
-            new_directory</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.RENAME
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
-            old_filename</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN>,
-            new_filename</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.DELETE
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
-            filename</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.RMDIR&nbsp;
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
-            directory</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.MKDIR&nbsp;
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>,}
-            directory</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_sexp</SPAN></SPAN></SPAN><SPAN style="font-family: Courier New, Courier, monospace;"><BR>
-            </SPAN> <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTP.CLOSE&nbsp;
-            {</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="font-weight: bold;">ok</SPAN></SPAN>_<SPAN style="font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">nvar</SPAN></SPAN></SPAN>}</SPAN><FONT size="+1"><BR>
-            </FONT> <SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(51, 51, 51);"><BR></SPAN></SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(51, 51, 51);">If</SPAN></SPAN> <SPAN style=
-            "font-weight: bold;">ok</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "font-weight: bold;">_nvar</SPAN></SPAN> is not
-            present, an error will stop with an error message (like
-            legacy Basic).<BR>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: rgb(51, 51, 51);">If</SPAN></SPAN> <SPAN style=
-            "font-weight: bold;">ok</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "font-weight: bold;">_nvar</SPAN></SPAN> is present,
-            the app <SPAN style="color: rgb(0, 0, 153);"><U>will
-            not</U> stop</SPAN> with a run-time error.<BR>
-            <BR>
-            if <SPAN style=
-            "font-weight: bold;">ok</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "font-weight: bold;">_nvar</SPAN></SPAN> is <B>1</B>
-            (true), the command was successful. There was <B>no
-            error</B>.<BR>
-            if <SPAN style=
-            "font-weight: bold;">ok</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "font-weight: bold;">_nvar</SPAN></SPAN> is 0, (false)
-            there was an <B>error.</B> Further information may be
-            contained in <FONT color=
-            "#000099">getERROR$()</FONT>.<BR>
-            <BR>
-            Note that if you don't use this flag (omitted), then
-            it's following comma (if any) is ignored.<BR>
-          </DIV>
-        </TD>
-      </TR>
-      <TR>
-        <TD style="vertical-align: top;">
-          <BIG style="color: rgb(0, 0, 153);"><A name="ftps" id=
-          "ftps"></A></BIG><FONT size="+1"><SPAN style=
-          "color: rgb(0, 0, 153);">FTPS</SPAN>
-          Commands</FONT><BIG style=
-          "color: rgb(0, 0, 153);"><BR></BIG><BR>
-          <DIV style="margin-left: 40px;">
-            These commands control the <A href=
-            "system.html#ftp_server">built-in ftp server</A>.<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTPS.SET
-            rc</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar
-            <SPAN style="color: rgb(51, 51, 51);">{
-            options}</SPAN></SPAN></SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              Configures the server. (must restart server
-              after)<BR>
-            </DIV><BR>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTPS.START
-            rc</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">
-            <SPAN style="color: rgb(51, 51, 51);">{
-            options}</SPAN></SPAN></SPAN><BR>
-            <DIV style="margin-left: 40px;">
-              Starts the server.<BR>
-            </DIV><BR>
-            <SPAN style=
-            "font-family: Courier New, Courier, monospace;">FTPS.STOP
-            rc</SPAN><SPAN style=
-            "font-family: Courier New, Courier, monospace;"><SPAN style="color: rgb(102, 51, 0);">_nvar</SPAN></SPAN><BR>
-
-            <DIV style="margin-left: 40px;">
-              Stops the server.<BR>
-            </DIV>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            Return codes<BR>
-          </DIV><BR>
-          <DIV style="margin-left: 80px;">
-            All commands return an exit code (not optional) which
-            will be one of the following;<BR>
-          </DIV><BR>
-          <TABLE style=
-          "text-align: left; width: 90%; margin-left: auto; margin-right: 0px;"
-          cellspacing="2" cellpadding="2" border="0">
-            <TBODY>
-              <TR>
-                <TD style="vertical-align: top;">0<BR></TD>
-                <TD style="vertical-align: top;">ok<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">1<BR></TD>
-                <TD style="vertical-align: top;">could not start
-                server<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">2<BR></TD>
-                <TD style="vertical-align: top;">server already
-                running<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">3<BR></TD>
-                <TD style="vertical-align: top;">could not stop
-                server<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">4<BR></TD>
-                <TD style="vertical-align: top;">server already
-                closed<BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">5<BR></TD>
-                <TD style="vertical-align: top;">bad port number
-                <SMALL>(port number must be from 1025 to
-                65535)</SMALL><BR></TD>
-              </TR>
-              <TR>
-                <TD style="vertical-align: top;">6<BR></TD>
-                <TD style="vertical-align: top;">no internet
-                permission<BR></TD>
-              </TR>
-            </TBODY>
-          </TABLE>
-          <TABLE style="text-align: left; margin-left: 80px;"
-          cellspacing="2" cellpadding="2" border="0"></TABLE><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">FTPS.SET</SPAN>
-            return_code<SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN> {,<SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">port</SPAN>_nexp</SPAN>} {,<SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">username</SPAN>_sexp</SPAN>}
-            {<SPAN style="font-weight: bold;">,</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">password</SPAN>_sexp</SPAN>}
-            {<SPAN style="font-weight: bold;">,</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">welcome_string</SPAN>_sexp</SPAN>}<BR>
-            <BR>
-            <DIV style="margin-left: 40px;">
-              Configures the server. (must restart server
-              after)<BR>
-            </DIV><BR>
-            <TABLE style=
-            "text-align: left; margin-left: auto; margin-right: 0px; width: 90%;"
-            cellspacing="2" cellpadding="2" border="0">
-              <TBODY>
-                <TR>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "color: rgb(102, 51, 0);"><SPAN style=
-                  "color: black;">port</SPAN>_nexp</SPAN></TD>
-                  <TD style="vertical-align: top;">the server's
-                  control port (1025 to 65535)<BR>
-                  <BR>
-                  default port : 2345<BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "color: rgb(102, 51, 0);"><SPAN style=
-                  "color: black;">username</SPAN>_sexp</SPAN></TD>
-                  <TD style="vertical-align: top;">the login user
-                  name from client to server<BR>
-                  <BR>
-                  default name : hbasic<BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "color: rgb(102, 51, 0);"><SPAN style=
-                  "color: black;">password</SPAN>_sexp</SPAN></TD>
-                  <TD style="vertical-align: top;">the login
-                  password from client to server<BR>
-                  <BR>
-                  default password : hbasic<BR></TD>
-                </TR>
-                <TR>
-                  <TD style="vertical-align: top;"><SPAN style=
-                  "color: rgb(102, 51, 0);"><SPAN style=
-                  "color: black;">welcome_string</SPAN>_sexp</SPAN></TD>
-                  <TD style="vertical-align: top;">The welcome
-                  string from server to client.<BR>
-                  This must not contain newline characters.<BR>
-                  <BR>
-                  default msg : "Welcome to the hBasic's
-                  FTP-Server"<BR></TD>
-                </TR>
-              </TBODY>
-            </TABLE><BR>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <DIV style="margin-left: 40px;">
-              e.g<BR>
-            </DIV>
-            <DIV style="margin-left: 80px;">
-              <FONT face=
-              "Courier New, Courier, monospace"><SPAN style=
-              "color: rgb(0, 0, 153);">FTPS.SET</SPAN> rc, "john",
-              "mypass"<BR>
-              <SPAN style="color: rgb(0, 0, 153);">FTPS.SET</SPAN>
-              rc, "john", p$, "Welcome to myApp's Server"<BR>
-              <SPAN style="color: rgb(0, 0, 153);">FTPS.SET</SPAN>
-              ,,newpassword$</FONT><BR>
-            </DIV>
-          </DIV>
-          <DIV style="margin-left: 40px;">
-            <BR>
-            <DIV style="margin-left: 40px;">
-              Use lowercase for all parameters.<BR>
-              <BR>
-              The config does not take place until a new server
-              starts. So do this before starting the server.<BR>
-              <BR>
-              Do not put any newlines ("\n") inside the welcome
-              string.<BR>
-              Note that some ftp-clients do not allow to have empty
-              usernames and/or passwords.<BR>
-            </DIV>
-          </DIV><BR>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">FTPS.START</SPAN>
-            return_code<SMALL><BIG><SPAN style=
-            "color: rgb(102, 51, 0);">_nvar</SPAN> {<SPAN style=
-            "font-weight: bold;">,</SPAN><SPAN style=
-            "color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">IP</SPAN>_svar</SPAN></BIG>}<BR>
-            <BR></SMALL>
-            <DIV style="margin-left: 40px;">
-              Starts the server.<BR>
-              <BR>
-              Returns <SPAN style=
-              "color: rgb(102, 51, 0);"><SPAN style=
-              "color: black;">IP</SPAN>_svar</SPAN> as the server's
-              ip address plus the port number used as "<SPAN style=
-              "color: rgb(0, 0, 102);">d.d.d.d:port"</SPAN><BR style="font-family: monospace; color: rgb(0, 0, 102);">
-
-              e.g &nbsp;&nbsp; 192.0.0.105:2345<BR>
-              <BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              e.g<BR>
-            </DIV>
-            <DIV style="margin-left: 80px;">
-              <SPAN style=
-              "color: rgb(0, 0, 153);">FTPS.START</SPAN> rc,
-              IP$<BR style="font-family: monospace;">
-              IF rc &gt; 0 THEN PRINT "Error" ELSE PRINT "Server
-              started on ";IP$<BR>
-            </DIV>
-          </DIV><BIG style="color: rgb(0, 0, 153);"><BR></BIG>
-          <DIV style="margin-left: 40px;">
-            <SPAN style="color: rgb(0, 0, 153);">FTPS.STOP</SPAN>
-            <SPAN style="color: rgb(102, 51, 0);"><SPAN style=
-            "color: black;">return_code</SPAN>_nvar</SPAN><BR>
-            <SMALL><BR></SMALL>
-            <DIV style="margin-left: 40px;">
-              Stops the server.<BR>
-            </DIV>
-            <DIV style="margin-left: 40px;">
-              e.g<BR>
-            </DIV>
-            <DIV style="margin-left: 80px;">
-              <SPAN style="color: rgb(0, 0, 153);">FTPS.STOP</SPAN>
-              rc<BR style="font-family: monospace;">
-              IF rc &lt;&gt; 0 THEN PRINT "Error" ELSE PRINT
-              "Server stopped"<BR style="font-family: monospace;">
-            </DIV>
-          </DIV>
         </TD>
       </TR>
       <TR>
